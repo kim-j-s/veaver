@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <link rel="stylesheet" media="screen" type="text/css" href="../css/normalize.css">
+    <link rel="stylesheet" media="screen" type="text/css" href="../css/common.css">
+    <link rel="stylesheet" media="screen" type="text/css" href="../css/style.css">
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/ui.js"></script>
+    <title>GUIDE</title>
+    <style>
+        body {
+            overflow: auto !important;
+        }
+    </style>
+</head>
+
+<body style="background: #fff;">
+    <div style="padding:30PX 50px;">
+        <!-- font -->
+        <h1>FONT</h1>
+        <span class="font_01">가나다라마바사 - [.font_01]</span><br><br>
+        <span class="font_02">가나다라마바사 - [.font_02]</span><br><br>
+        <span class="font_03">가나다라마바사 - [.font_03]</span><br><br>
+        <span class="font_04">가나다라마바사 - [.font_04]</span><br><br>
+        <span class="font_05" style="background-color:#000;">가나다라마바사 - [.font_05]</span><br><br>
+        <span class="font_06">가나다라마바사 - [.font_06]</span>
+        <!-- BUTTONS -->
+        <h1>BUTTONS</h1>
+
+        <h2>- normal</h2>
+        <!-- <button type="button" class="btn-gr">버튼 [.btn-gr]</button>
+		<br>
+		<button type="button" class="btn-gr" disabled>버튼 [.btn-gr:disabled]</button>
+		<br> -->
+        <button type="button" class="btn-pu">버튼 [.btn-pu]</button>
+        <br>
+        <button type="button" class="btn-pu" disabled>버튼 [.btn-pu:disabled]</button>
+        <!--
+		<br>
+		<button type="button" class="btn-bd-gr">버튼 [.btn-bd-gr]</button>
+		<br>
+		<button type="button" class="btn-bd-gr" disabled>버튼 [.btn-bd-gr:disabled]</button>
+		<br>
+		<button type="button" class="btn-bd-pu">버튼 [.btn-bd-pu]</button>
+		<br>
+		<button type="button" class="btn-bd-pu" disabled>버튼 [.btn-bd-pu:disabled]</button>
+		<br> -->
+        <h2>- press opacity</h2>
+        <button type="button" class="btn-pu op30">버튼 [.btn-pu]</button>
+        <br>
+        <button type="button" class="btn-pu op30" disabled>버튼 [.btn-pu:disabled]</button>
+        <br>
+        <h2>- 2BTN [.btnTwo]</h2>
+        <span class="btnTwo">
+		<button type="button" class="btn-bd-pu">버튼 [.btn-bd-pu]</button>		
+		<button type="button" class="btn-pu">버튼 [.btn-pu]</button>		
+		</span>
+        <br>
+        <br>
+        <span class="btnTwo op30">
+			<button type="button" class="btn-bd-pu">버튼 [.btn-bd-pu]</button>			
+			<button type="button" class="btn-pu">버튼 [.btn-pu]</button>	
+		</span>
+        <br>
+        <h2>Line BTN_gray</h2>
+        <button type="button" class="btn-bd-gr-s">버튼 [.btn-bd-gr-s]</button>
+        <br>
+        <button type="button" class="btn-bd-gr-s" disabled>버튼 [.btn-bd-gr-s:disabled]</button>
+        <br>
+        <h2>Line BTN_blue</h2>
+        <button type="button" class="btn-bd-pu-s">버튼 [.btn-bd-pu-s]</button>
+        <br>
+        <button type="button" class="btn-bd-pu-s" disabled>버튼 [.btn-bd-pu-s:disabled]</button>
+        <br>
+        <!-- // BUTTONS -->
+
+        <br>
+        <br>
+
+        <!-- INPUT -->
+        <h1>INPUT</h1>
+        <br>
+        <h2>- input-text</h2>
+
+        <div class="input-text">
+            <input type="text" placeholder="placeholder !!">
+            <span class="btn-remove">삭제</span>
+            <p class="msg">도움말</p>
+        </div>
+
+        <br>
+
+        <div class="input-text">
+            <input type="text" value="has value" placeholder="placeholder !!">
+            <span class="btn-remove">삭제</span>
+            <p class="msg">도움말</p>
+        </div>
+        <br>
+        <br>
+
+        <!-- error -->
+        <div class="input-text error">
+            <input type="text" value="has value" placeholder="placeholder !!">
+            <span class="btn-remove">삭제</span>
+            <p class="msg">에러 도움말</p>
+        </div>
+
+        <br>
+
+        <div class="input-text">
+            <input type="text" value="has value:disabled" placeholder="placeholder !!" disabled>
+            <span class="btn-remove">삭제</span>
+            <p class="msg">비활성:disabled</p>
+        </div>
+
+        <br>
+
+        <div class="input-text">
+            <input type="text" value="has value:read-only" placeholder="placeholder !!" readonly>
+            <span class="btn-remove">삭제</span>
+            <p class="msg">비활성:read-only</p>
+        </div>
+
+        <h2>- textarea</h2>
+        <div class="textarea">
+            <textarea rows="4" placeholder="텍스트를 입력해주세요"></textarea>
+            <div class="textarea-count"><span>(0/50)</span>자 이내</div>
+        </div>
+        <br>
+        <div class="textarea">
+            <textarea rows="4" placeholder="텍스트를 입력해주세요" disabled></textarea>
+            <div class="textarea-count"><span>(0/50)</span>자 이내</div>
+        </div>
+
+        <br>
+        <!-- checkbox -->
+        <h2>- input-checkbox</h2>
+
+        <label class="input-checkbox">
+            <input type="checkbox"><span>체크박스</span>
+        </label>
+
+        <br>
+        <br>
+
+        <label class="input-checkbox">
+            <input type="checkbox" checked><span>체크박스 [:checked]</span>
+        </label>
+
+        <br>
+        <br>
+
+        <label class="input-checkbox">
+            <input type="checkbox" disabled><span>체크박스 [:disabled]</span>
+        </label>
+
+        <br>
+        <br>
+
+        <label class="input-checkbox">
+            <input type="checkbox" checked disabled><span>체크박스 [:cheked:disabled]</span>
+        </label>
+
+        <br>
+        <br>
+        <!-- radio -->
+        <h2>- input-radio</h2>
+
+        <label class="input-radio">
+            <input type="radio" name="radioGroup_01"><span>라디오</span>
+        </label>
+
+        <br>
+        <br>
+
+        <label class="input-radio">
+            <input type="radio" name="radioGroup_01" checked><span>라디오 [:checked]</span>
+        </label>
+
+        <br>
+        <br>
+
+        <label class="input-radio">
+            <input type="radio" name="radioGroup_02" disabled><span>라디오 [:disabled]</span>
+        </label>
+
+        <br>
+        <br>
+
+        <label class="input-radio">
+            <input type="radio" name="radioGroup_02" checked disabled><span>라디오 [:cheked:disabled]</span>
+        </label>
+        <br>
+
+        <br>
+        <br>
+        <!-- input-check-toggle -->
+        <h2>- input-check-toggle</h2>
+
+        <label class="input-check-toggle">
+            <input type="checkbox"><span></span>
+        </label>
+
+        &nbsp;&nbsp;토글 버튼(checkbox)
+
+        <br>
+        <br>
+
+        <label class="input-check-toggle">
+            <input type="checkbox" checked><span></span>
+        </label>
+
+        &nbsp;&nbsp;토글 버튼(checkbox) [:checked]
+
+        <br>
+        <br>
+
+        <label class="input-check-toggle">
+            <input type="checkbox" disabled><span></span>
+        </label>
+
+        &nbsp;&nbsp;토글 버튼(checkbox) [:disabled]
+
+        <br>
+        <br>
+
+        <label class="input-check-toggle">
+            <input type="checkbox" checked disabled><span></span>
+        </label>
+
+        &nbsp;&nbsp;토글 버튼(checkbox) [:checked:disabled]
+
+
+        <!-- // INPUT -->
+    </div>
+</body>
+
+</html>
