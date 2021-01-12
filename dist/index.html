@@ -1,251 +1,1593 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-    <title>VOTING PLATFORM</title>
-    <script src="js/jquery.min.js"></script>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Health Mining</title>
+    <style>
+        .p-c1 {
+            color: gold !important;
+            letter-spacing: 2px;
+        }
+
+        .p-c2 {
+            color: greenyellow !important;
+            letter-spacing: 2px;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-size: 12px;
+        }
+
+        header {
+            position: fixed;
+            left: 0;
+            top: 0;
+            box-sizing: border-box;
+            display: -webkit-flex;
+            display: flex;
+            -webkit-align-items: center;
+            align-items: center;
+            width: 100%;
+            padding: 10px;
+            background: #000;
+            color: #fff;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 20px;
+            line-height: 26px;
+        }
+
+        header .control-list {
+            font-size: 0;
+            margin-left: 10px;
+        }
+
+        header .control-list button {
+            margin-left: 5px;
+            font-size: 10px;
+        }
+
+        .main {
+            margin: 60px 10px 10px;
+        }
+
+        .main h2 {
+            font-size: 18px;
+            line-height: 22px;
+            cursor: pointer;
+        }
+
+        .main h2::before {
+            content: '-';
+            display: inline-block;
+            vertical-align: top;
+            text-align: center;
+            width: 16px;
+            height: 16px;
+            line-height: 14px;
+            border-radius: 8px;
+            background-color: #000;
+            color: #fff;
+            margin: 4px 5px 0 0;
+        }
+
+        .main h2.on::before {
+            content: '+';
+        }
+
+        .main h2.on+table {
+            display: none;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            table-layout: fixed;
+            word-break: break-all;
+        }
+
+        tr {
+            border-top: 1px solid #000;
+            border-bottom: 1px solid #000;
+        }
+
+        th,
+        td {
+            padding: 5px 10px;
+            border-left: 1px solid #000;
+            border-right: 1px solid #000;
+            font-size: 12px;
+        }
+
+        th {
+            color: #fff;
+            background: #666;
+        }
+
+        th:first-child {
+            border-left: 1px solid #000;
+        }
+
+        th:last-child {
+            border-right: 1px solid #000;
+        }
+
+        colgroup .complete {
+            width: 90px;
+        }
+
+        colgroup .level {
+            width: 12%;
+        }
+
+        .complete {
+            text-align: center;
+        }
+
+        tbody tr:nth-child(2n) {
+            background: #eee;
+        }
+
+        .title {
+            display: table-row !important;
+            cursor: pointer;
+        }
+
+        .title th {
+            text-align: left;
+            font-size: 14px;
+            line-height: 22px;
+            letter-spacing: 1px;
+            background: #000;
+            text-decoration: underline;
+            padding: 8px 10px;
+            border-top: 3px solid #888;
+        }
+
+        colgroup+thead .title th {
+            border-top: 0;
+        }
+
+        .title th::before {
+            content: '';
+            display: inline-block;
+            vertical-align: top;
+            width: 0;
+            height: 0;
+            border-left: 5px solid transparent;
+            border-right: 5px solid transparent;
+            border-top: 0;
+            border-bottom: 8px solid #fff;
+            margin: 7px 10px 0 0;
+        }
+
+        .mini tr,
+        .mini+tbody {
+            display: none;
+        }
+
+        .mini .title th::before {
+            border-left: 5px solid transparent;
+            border-right: 5px solid transparent;
+            border-top: 8px solid #fff;
+            border-bottom: 0;
+        }
+    </style>
 </head>
 
 <body>
-    <h1>VOTING PLATFORM</h1>
-    <ul>
-        <li><a target="_blank" href="html/guide.html">guide</a></li>
-        <li><a target="_blank" href="guide/template_a.html">guide</a></li>
-        <li><a target="_blank" href="html/layout_01.html">layout_01</a></li>
-        <li><a target="_blank" href="html/layout_02.html">layout_02</a></li>
-        <li><a target="_blank" href="html/layout_03.html">layout_03</a></li>
-        <li><a target="_blank" href="html/popup_layout.html">popup_layout</a></li>
-        <li><a target="_blank" href="html/layer_popup_layout.html">layer_popup_layout</a></li>
-        <li><a target="_blank" href="html/layout_main.html">layout_main</a></li>
-    </ul>
-    <h2>00_메인</h2>
-    <ul>
-        <li><a target="_blank" href="html/MAIN_BEFORE_LOGIN.html">MAIN_BEFORE_LOGIN</a></li>
-        <li><a target="_blank" href="html/MAIN_AFTER_LOGIN.html">MAIN_AFTER_LOGIN</a></li>
-        <li><a target="_blank" href="html/MAIN_SEARCH_01.html">MAIN_SEARCH_01</a></li>
-        <li><a target="_blank" href="html/MAIN_SEARCH_02.html">MAIN_SEARCH_02</a></li>
-        <li><a target="_blank" href="html/M_MAIN_MENU.html">M_MAIN_MENU</a></li>
-        <li><a target="_blank" href="html/M_MAIN_MENU_01.html">M_MAIN_MENU_01</a></li>
-    </ul>
-    <h2>01_온라인전자투표_투표참여</h2>
-    <ul>
-        <li><a target="_blank" href="html/ONLINE_VOTE_PROGRESS.html">ONLINE_VOTE_PROGRESS</a></li>
-        <li><a target="_blank" href="html/ONLINE_VOTE_TERMINATE.html">ONLINE_VOTE_TERMINATE</a></li>
-        <li><a target="_blank" href="html/ONLINE_VOTE_AGREE.html">ONLINE_VOTE_AGREE</a></li>
-        <li><a target="_blank" href="html/ONLINE_VOTE_AGREE_01.html">ONLINE_VOTE_AGREE_01</a></li>
-        <li><a target="_blank" href="html/ONLINE_VOTE_AGREE_02.html">ONLINE_VOTE_AGREE_02</a></li>
-        <li><a target="_blank" href="html/ONLINE_VOTE_AGREE_03.html">ONLINE_VOTE_AGREE_03</a></li>
-        <li><a target="_blank" href="html/ONLINE_VOTE_SELECT.html">ONLINE_VOTE_SELECT</a></li>
-        <li><a target="_blank" href="html/ONLINE_VOTE_SELECT_01.html">ONLINE_VOTE_SELECT_01</a></li>
-        <li><a target="_blank" href="html/ONLINE_VOTE_SELECT_02.html">ONLINE_VOTE_SELECT_02</a></li>
-        <li><a target="_blank" href="html/ONLINE_VOTE_SELECT_03.html">ONLINE_VOTE_SELECT_03</a></li>
-        <li><a target="_blank" href="html/ONLINE_VOTE_ELECTION.html">ONLINE_VOTE_ELECTION</a></li>
-        <li><a target="_blank" href="html/ONLINE_VOTE_ELECTION_01.html">ONLINE_VOTE_ELECTION_01</a></li>
-        <li><a target="_blank" href="html/ONLINE_VOTE_ELECTION_02.html">ONLINE_VOTE_ELECTION_02</a></li>
-        <li><a target="_blank" href="html/ONLINE_VOTE_ELECTION_03.html">ONLINE_VOTE_ELECTION_03</a></li>
-        <li><a target="_blank" href="html/ONLINE_VOTE_SCORE.html">ONLINE_VOTE_SCORE</a></li>
-        <li><a target="_blank" href="html/ONLINE_VOTE_SCORE_01.html">ONLINE_VOTE_SCORE_01</a></li>
-        <li><a target="_blank" href="html/ONLINE_VOTE_SCORE_02.html">ONLINE_VOTE_SCORE_02</a></li>
-        <li><a target="_blank" href="html/ONLINE_VOTE_STANDARD.html">ONLINE_VOTE_STANDARD</a></li>
-        <li><a target="_blank" href="html/ONLINE_VOTE_STANDARD_01.html">ONLINE_VOTE_STANDARD_01</a></li>
-    </ul>
-    <h2>01_온라인전자투표_투표발의</h2>
-    <ul>
-        <li><a target="_blank" href="html/ONLINE_VOTE_MAKE_AGREE.html">ONLINE_VOTE_MAKE_AGREE</a></li>
-        <li><a target="_blank" href="html/ONLINE_VOTE_MAKE_AGREE_01.html">ONLINE_VOTE_MAKE_AGREE_01</a></li>
-        <li><a target="_blank" href="html/ONLINE_VOTE_MAKE_AGREE_02.html">ONLINE_VOTE_MAKE_AGREE_02</a></li>
-        <li><a target="_blank" href="html/ONLINE_VOTE_MAKE_AGREE_03.html">ONLINE_VOTE_MAKE_AGREE_03</a></li>
-        <li><a target="_blank" href="html/ONLINE_VOTE_MAKE_AGREE_04.html">ONLINE_VOTE_MAKE_AGREE_04</a></li>
-        <li><a target="_blank" href="html/ONLINE_VOTE_MAKE_AGREE_05.html">ONLINE_VOTE_MAKE_AGREE_05</a></li>
-        <li><a target="_blank" href="html/ONLINE_VOTE_MAKE_SELECT.html">ONLINE_VOTE_MAKE_SELECT</a></li>
-        <li><a target="_blank" href="html/ONLINE_VOTE_MAKE_SELECT_01.html">ONLINE_VOTE_MAKE_SELECT_01</a></li>
-        <li><a target="_blank" href="html/ONLINE_VOTE_MAKE_SELECT_02.html">ONLINE_VOTE_MAKE_SELECT_02</a></li>
-        <li><a target="_blank" href="html/ONLINE_VOTE_MAKE_SELECT_03.html">ONLINE_VOTE_MAKE_SELECT_03</a></li>
-        <li><a target="_blank" href="html/ONLINE_VOTE_MAKE_ELECTION.html">ONLINE_VOTE_MAKE_ELECTION</a></li>
-        <li><a target="_blank" href="html/ONLINE_VOTE_MAKE_ELECTION_01.html">ONLINE_VOTE_MAKE_ELECTION_01</a></li>
-        <li><a target="_blank" href="html/ONLINE_VOTE_MAKE_ELECTION_02.html">ONLINE_VOTE_MAKE_ELECTION_02</a></li>
-        <li><a target="_blank" href="html/ONLINE_VOTE_MAKE_ELECTION_03.html">ONLINE_VOTE_MAKE_ELECTION_03</a></li>
-        <li><a target="_blank" href="html/ONLINE_VOTE_MAKE_SCORE.html">ONLINE_VOTE_MAKE_SCORE</a></li>
-        <li><a target="_blank" href="html/ONLINE_VOTE_MAKE_SCORE_01_1.html">ONLINE_VOTE_MAKE_SCORE_01_1</a></li>
-        <li><a target="_blank" href="html/ONLINE_VOTE_MAKE_SCORE_01_2.html">ONLINE_VOTE_MAKE_SCORE_01_2</a></li>
-        <li><a target="_blank" href="html/ONLINE_VOTE_MAKE_SCORE_01_3.html">ONLINE_VOTE_MAKE_SCORE_01_3</a></li>
-        <li><a target="_blank" href="html/ONLINE_VOTE_MAKE_SCORE_02.html">ONLINE_VOTE_MAKE_SCORE_02</a></li>
-        <li><a target="_blank" href="html/ONLINE_VOTE_MAKE_SCORE_03.html">ONLINE_VOTE_MAKE_SCORE_03</a></li>
-        <li><a target="_blank" href="html/ONLINE_VOTE_MAKE_STANDARD.html">ONLINE_VOTE_MAKE_STANDARD</a></li>
-        <li><a target="_blank" href="html/ONLINE_VOTE_MAKE_STANDARD_01.html">ONLINE_VOTE_MAKE_STANDARD_01</a></li>
-        <li><a target="_blank" href="html/ONLINE_VOTE_MAKE_STANDARD_02.html">ONLINE_VOTE_MAKE_STANDARD_02</a></li>
-        <li><a target="_blank" href="html/ONLINE_VOTE_MAKE_STANDARD_03.html">ONLINE_VOTE_MAKE_STANDARD_03</a></li>
-    </ul>
-    <h2>02_여론조사_여론조사참여</h2>
-    <ul>
-        <li><a target="_blank" href="html/ONLINE_OPINION_POLL_PROGRESS.html">ONLINE_OPINION_POLL_PROGRESS</a></li>
-        <li><a target="_blank" href="html/ONLINE_OPINION_POLL_TERMINATE.html">ONLINE_OPINION_POLL_TERMINATE</a></li>
-        <li><a target="_blank" href="html/ONLINE_OPINION_POLL_AGREE_01.html">ONLINE_OPINION_POLL_AGREE_01</a></li>
-        <li><a target="_blank" href="html/ONLINE_OPINION_POLL_AGREE_02.html">ONLINE_OPINION_POLL_AGREE_02</a></li>
-        <li><a target="_blank" href="html/ONLINE_OPINION_POLL_AGREE_03.html">ONLINE_OPINION_POLL_AGREE_03</a></li>
-        <li><a target="_blank" href="html/ONLINE_OPINION_POLL_SELECT_01.html">ONLINE_OPINION_POLL_SELECT_01</a></li>
-        <li><a target="_blank" href="html/ONLINE_OPINION_POLL_SELECT_02.html">ONLINE_OPINION_POLL_SELECT_02</a></li>
-        <li><a target="_blank" href="html/ONLINE_OPINION_POLL_SELECT_03.html">ONLINE_OPINION_POLL_SELECT_03</a></li>
-        <li><a target="_blank" href="html/ONLINE_OPINION_POLL_ELECTION_01.html">ONLINE_OPINION_POLL_ELECTION_01</a></li>
-        <li><a target="_blank" href="html/ONLINE_OPINION_POLL_ELECTION_02.html">ONLINE_OPINION_POLL_ELECTION_02</a></li>
-        <li><a target="_blank" href="html/ONLINE_OPINION_POLL_ELECTION_02_P.html">ONLINE_OPINION_POLL_ELECTION_02_P</a></li>
-        <li><a target="_blank" href="html/ONLINE_OPINION_POLL_ELECTION_03.html">ONLINE_OPINION_POLL_ELECTION_03</a></li>
-    </ul>
-    <h2>02_여론조사_여론조사발의</h2>
-    <ul>
-        <li><a target="_blank" href="html/ONLINE_OPINION_MAKE_AGREE.html">ONLINE_OPINION_MAKE_AGREE</a></li>
-        <li><a target="_blank" href="html/ONLINE_OPINION_MAKE_AGREE_01.html">ONLINE_OPINION_MAKE_AGREE_01</a></li>
-        <li><a target="_blank" href="html/ONLINE_OPINION_MAKE_AGREE_02.html">ONLINE_OPINION_MAKE_AGREE_02</a></li>
-        <li><a target="_blank" href="html/ONLINE_OPINION_MAKE_AGREE_03.html">ONLINE_OPINION_MAKE_AGREE_03</a></li>
-        <li><a target="_blank" href="html/ONLINE_OPINION_MAKE_AGREE_04.html">ONLINE_OPINION_MAKE_AGREE_04</a></li>
-        <li><a target="_blank" href="html/ONLINE_OPINION_MAKE_SELECT.html">ONLINE_OPINION_MAKE_SELECT</a></li>
-        <li><a target="_blank" href="html/ONLINE_OPINION_MAKE_SELECT_01.html">ONLINE_OPINION_MAKE_SELECT_01</a></li>
-        <li><a target="_blank" href="html/ONLINE_OPINION_MAKE_SELECT_02.html">ONLINE_OPINION_MAKE_SELECT_02</a></li>
-        <li><a target="_blank" href="html/ONLINE_OPINION_MAKE_SELECT_03.html">ONLINE_OPINION_MAKE_SELECT_03</a></li>
-        <li><a target="_blank" href="html/ONLINE_OPINION_MAKE_ELECTION.html">ONLINE_OPINION_MAKE_ELECTION</a></li>
-        <li><a target="_blank" href="html/ONLINE_OPINION_MAKE_ELECTION_01.html">ONLINE_OPINION_MAKE_ELECTION_01</a></li>
-        <li><a target="_blank" href="html/ONLINE_OPINION_MAKE_ELECTION_02.html">ONLINE_OPINION_MAKE_ELECTION_02</a></li>
-        <li><a target="_blank" href="html/ONLINE_OPINION_MAKE_ELECTION_03.html">ONLINE_OPINION_MAKE_ELECTION_03</a></li>
-    </ul>
-    <h2>03_나의투표_온라인투표관리</h2>
-    <ul>
-        <li><a target="_blank" href="html/MYVOTE_VOTE_MANAGE_01_1.html">MYVOTE_VOTE_MANAGE_01_1</a></li>
-        <li><a target="_blank" href="html/MYVOTE_VOTE_MANAGE_01_4.html">MYVOTE_VOTE_MANAGE_01_4</a></li>
-        <li><a target="_blank" href="html/MYVOTE_VOTE_MANAGE_02.html">MYVOTE_VOTE_MANAGE_02</a></li>
-    </ul>
-    <h2>03_나의투표_여론조사관리</h2>
-    <ul>
-        <li><a target="_blank" href="html/MYVOTE_OPINION_MANAGE_01_1.html">MYVOTE_OPINION_MANAGE_01_1</a></li>
-        <li><a target="_blank" href="html/MYVOTE_OPINION_MANAGE_01_3.html">MYVOTE_OPINION_MANAGE_01_3</a></li>
-        <li><a target="_blank" href="html/MYVOTE_VOTE_MANAGE_02_1.html">MYVOTE_VOTE_MANAGE_02_1</a></li>
-        <li><a target="_blank" href="html/MYVOTE_VOTE_MANAGE_02_2.html">MYVOTE_VOTE_MANAGE_02_2</a></li>
-    </ul>
+    <div class="wrap">
+        <!-- header -->
+        <header>
+            <h1>Health Mining (PUB)</h1>
+            <div class="control-list">
+                <button class="close">-</button>
+                <button class="open">+</button>
+            </div>
+            <script>
+                document.querySelector('.control-list .close').onclick = function() {
+                    var el = document.querySelectorAll('.title');
+                    var len = el.length;
+                    if (len > 0) {
+                        for (var i = 0; i < len; i++) el[i].parentElement.classList.add('mini');
+                    }
+                };
 
-    <h2>03_나의투표_전자투표/위임내역</h2>
-    <ul>
-        <li><a target="_blank" href="html/MYVOTE_MANDATORY.html">MYVOTE_MANDATORY</a></li>
-        <li><a target="_blank" href="html/MYVOTE_MANDATORY_RESULT.html">MYVOTE_MANDATORY_RESULT</a></li>
-    </ul>
+                document.querySelector('.control-list .open').onclick = function() {
+                    var el = document.querySelectorAll('.mini');
+                    var len = el.length;
+                    if (len > 0) {
+                        for (var i = 0; i < len; i++) el[i].classList.remove('mini');
+                    }
+                };
+            </script>
+        </header>
+        <!-- // header -->
 
-    <h2>03_나의투표_전자투표/위임행사</h2>
-    <ul>
-        <li><a target="_blank" href="html/MYVOTE_ELEC_LIST_01.html">MYVOTE_ELEC_LIST_01</a></li>
-        <li><a target="_blank" href="html/MYVOTE_ELEC_VIEW_01_1.html">MYVOTE_ELEC_VIEW_01_1</a></li>
-        <li><a target="_blank" href="html/MYVOTE_ELEC_VIEW_POPUP_01.html">MYVOTE_ELEC_VIEW_POPUP_01</a></li>
-        <li><a target="_blank" href="html/MYVOTE_ELEC_VIEW_POPUP_01_2.html">MYVOTE_ELEC_VIEW_POPUP_01_2</a></li>
-        <li><a target="_blank" href="html/MYVOTE_ELEC_VIEW_POPUP_01_3.html">MYVOTE_ELEC_VIEW_POPUP_01_3</a></li>
-        <li><a target="_blank" href="html/MYVOTE_ELEC_LIST_02.html">MYVOTE_ELEC_LIST_02</a></li>
-        <li><a target="_blank" href="html/MYVOTE_ELEC_VIEW_02.html">MYVOTE_ELEC_VIEW_02</a></li>
-        <li><a target="_blank" href="html/MYVOTE_ELEC_VIEW_02_1.html">MYVOTE_ELEC_VIEW_02_1</a></li>
-        <li><a target="_blank" href="html/MYVOTE_ELEC_VIEW_POPUP_02.html">MYVOTE_ELEC_VIEW_POPUP_02</a></li>
-        <li><a target="_blank" href="html/MYVOTE_ELEC_VIEW_POPUP_02_1.html">MYVOTE_ELEC_VIEW_POPUP_02_1</a></li>
-        <li><a target="_blank" href="html/MYVOTE_ELEC_RESULT.html">MYVOTE_ELEC_RESULT</a></li>
-    </ul>
+        <div class="main">
+            <!-- table -->
+            <table>
+                <colgroup>
+                    <col class="level">
+                    <col class="level">
+                    <col class="level">
+                    <col class="level">
+                    <col class="link">
+                    <col class="complete">
+                    <col class="note">
+                </colgroup>
 
-    <h2>03_나의투표_주주총회 결과</h2>
-    <ul>
-        <li><a target="_blank" href="html/MYVOTE_OUTCOME.html">MYVOTE_OUTCOME</a></li>
-        <li><a target="_blank" href="html/MYVOTE_OUTCOME_RESULT.html">MYVOTE_OUTCOME_RESULT</a></li>
-    </ul>
+                <!-- 포털 [guide] -->
+                <thead>
+                    <tr class="title" onclick="this.parentElement.classList.toggle('mini');">
+                        <th colspan="7">포털 <span class="p-c1">[guide]</span></th>
+                    </tr>
+                    <tr>
+                        <th colspan="4">설명</th>
+                        <th>link</th>
+                        <th>완료여부</th>
+                        <th>비고</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td colspan="4">Gudie</td>
+                        <td class="link"><a target="_blank" href="guide/template_a.html">guide/template_a.html</a></td>
+                        <td class="complete"></td>
+                        <td class="note"></td>
+                    </tr>
 
-    <h2>03_나의투표_주주총회 일정</h2>
-    <ul>
-        <li><a target="_blank" href="html/MYVOTE_SCHEDULE.html">MYVOTE_SCHEDULE</a></li>
-        <li><a target="_blank" href="html/MYVOTE_SCHEDULE_RESULT.html">MYVOTE_SCHEDULE_RESULT</a></li>
-        <li><a target="_blank" href="html/MYVOTE_SCHEDULE_DETAIL.html">MYVOTE_SCHEDULE_DETAIL</a></li>
-    </ul>
+                </tbody>
+                <!-- // 포털 [guide] -->
 
-    <h2>03_나의투표_주주총회 등록</h2>
-    <ul>
-        <li><a target="_blank" href="html/MYVOTE_REGISTRATION_01.html">MYVOTE_REGISTRATION_01</a></li>
-        <li><a target="_blank" href="html/MYVOTE_REGISTRATION_02.html">MYVOTE_REGISTRATION_02</a></li>
-        <li><a target="_blank" href="html/MYVOTE_REGISTRATION_02_1.html">MYVOTE_REGISTRATION_02_1</a></li>
-        <li><a target="_blank" href="html/MYVOTE_REGISTRATION_03.html">MYVOTE_REGISTRATION_03</a></li>
-        <li><a target="_blank" href="html/MYVOTE_REGISTRATION_04.html">MYVOTE_REGISTRATION_04</a></li>
-        <li><a target="_blank" href="html/MYVOTE_REGISTRATION_04_POPUP_01_1.html">MYVOTE_REGISTRATION_04_POPUP_01_1</a></li>
-        <li><a target="_blank" href="html/MYVOTE_REGISTRATION_04_POPUP_02_1.html">MYVOTE_REGISTRATION_04_POPUP_02_1</a></li>
-        <li><a target="_blank" href="html/MYVOTE_REGISTRATION_04_POPUP_01.html">MYVOTE_REGISTRATION_04_POPUP_01</a></li>
-        <li><a target="_blank" href="html/MYVOTE_REGISTRATION_04_POPUP_02.html">MYVOTE_REGISTRATION_04_POPUP_02</a></li>
-    </ul>
+                <!-- 포털 [page] -->
+                <thead>
+                    <tr class="title" onclick="this.parentElement.classList.toggle('mini');">
+                        <th colspan="7">포털 <span class="p-c2">[page]</span></th>
+                    </tr>
+                    <tr>
+                        <th>lv[1]</th>
+                        <th>lv[2]</th>
+                        <th>lv[3]</th>
+                        <th>lv[4]</th>
+                        <th>link</th>
+                        <th>완료여부</th>
+                        <th>비고</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="level">메인</td>
+                        <td class="level">로그인전</td>
+                        <td class="level"></td>
+                        <td class="level"></td>
+                        <td class="link"><a target="_blank" href="prtl/F_메인_로그인전.html">prtl/F_메인_로그인전.html</a></td>
+                        <td class="complete"></td>
+                        <td class="note"></td>
+                    </tr>
+                    <tr>
+                        <td class="level">메인</td>
+                        <td class="level">로그인후</td>
+                        <td class="level"></td>
+                        <td class="level"></td>
+                        <td class="link"><a target="_blank" href="prtl/F_메인_로그인후.html">prtl/F_메인_로그인후.html</a></td>
+                        <td class="complete"></td>
+                        <td class="note"></td>
+                    </tr>
+                    <tr>
+                        <td class="level">서비스소개</td>
+                        <td class="level">메인</td>
+                        <td class="level"></td>
+                        <td class="level"></td>
+                        <td class="link"><a target="_blank" href="prtl/F_서비스소개_메인.html">prtl/F_서비스소개_메인.html</a></td>
+                        <td class="complete"></td>
+                        <td class="note"></td>
+                    </tr>
+                    <tr>
+                        <td class="level"></td>
+                        <td class="level">정보집합물결합</td>
+                        <td class="level"></td>
+                        <td class="level"></td>
+                        <td class="link"><a target="_blank" href="prtl/F_서비스소개_정보집합물결합.html">prtl/F_서비스소개_정보집합물결합.html</a></td>
+                        <td class="complete"></td>
+                        <td class="note"></td>
+                    </tr>
+                    <tr>
+                        <td class="level"></td>
+                        <td class="level">사전결합률분석</td>
+                        <td class="level"></td>
+                        <td class="level"></td>
+                        <td class="link"><a target="_blank" href="prtl/F_서비스소개_사전결합률분석.html">prtl/F_서비스소개_사전결합률분석.html</a></td>
+                        <td class="complete"></td>
+                        <td class="note"></td>
+                    </tr>
+                    <tr>
+                        <td class="level"></td>
+                        <td class="level">익명처리적정성평가</td>
+                        <td class="level"></td>
+                        <td class="level"></td>
+                        <td class="link"><a target="_blank" href="prtl/F_서비스소개_익명처리적정성평가.html">prtl/F_서비스소개_익명처리적정성평가.html</a></td>
+                        <td class="complete"></td>
+                        <td class="note"></td>
+                    </tr>
+                    <tr>
+                        <td class="level"></td>
+                        <td class="level">원격데이터분석시스템신청</td>
+                        <td class="level"></td>
+                        <td class="level"></td>
+                        <td class="link"><a target="_blank" href="prtl/F_서비스소개_원격데이터분석시스템신청.html">prtl/F_서비스소개_원격데이터분석시스템신청.html</a></td>
+                        <td class="complete"></td>
+                        <td class="note"></td>
+                    </tr>
+                    <tr>
+                        <td class="level">로그인</td>
+                        <td class="level"></td>
+                        <td class="level"></td>
+                        <td class="level"></td>
+                        <td class="link"><a target="_blank" href="prtl/F_홈_로그인.html">prtl/F_홈_로그인.html</a></td>
+                        <td class="complete"></td>
+                        <td class="note"></td>
+                    </tr>
+                    <tr>
+                        <td class="level"></td>
+                        <td class="level">본인인증 요청</td>
+                        <td class="level"></td>
+                        <td class="level"></td>
+                        <td class="link"><a target="_blank" href="prtl/F_홈_로그인_본인인증요청.html">prtl/F_홈_로그인_본인인증요청.html</a></td>
+                        <td class="complete"></td>
+                        <td class="note"></td>
+                    </tr>
+                    <tr>
+                        <td class="level"></td>
+                        <td class="level">계정잠금 안내</td>
+                        <td class="level"></td>
+                        <td class="level"></td>
+                        <td class="link"><a target="_blank" href="prtl/F_홈_로그인_계정잠금안내.html">prtl/F_홈_로그인_계정잠금안내.html</a></td>
+                        <td class="complete"></td>
+                        <td class="note"></td>
+                    </tr>
+                    <tr>
+                        <td class="level"></td>
+                        <td class="level"></td>
+                        <td class="level">비밀번호 재설정 안내</td>
+                        <td class="level"></td>
+                        <td class="link"><a target="_blank" href="prtl/F_홈_로그인_계정잠금안내_비밀번호재설정.html">prtl/F_홈_로그인_계정잠금안내_비밀번호재설정.html</a></td>
+                        <td class="complete"></td>
+                        <td class="note"></td>
+                    </tr>
+                    <tr>
+                        <td class="level"></td>
+                        <td class="level">동시접속 안내</td>
+                        <td class="level"></td>
+                        <td class="level"></td>
+                        <td class="link"><a target="_blank" href="prtl/F_홈_로그인_동시접속안내.html">prtl/F_홈_로그인_동시접속안내.html</a></td>
+                        <td class="complete"></td>
+                        <td class="note"></td>
+                    </tr>
+                    <tr>
+                        <td class="level">아이디찾기</td>
+                        <td class="level">본인인증</td>
+                        <td class="level"></td>
+                        <td class="level"></td>
+                        <td class="link"><a target="_blank" href="prtl/F_홈_아이디찾기_본인인증.html">prtl/F_홈_아이디찾기_본인인증.html</a></td>
+                        <td class="complete"></td>
+                        <td class="note"></td>
+                    </tr>
+                    <tr>
+                        <td class="level">이메일인증완료</td>
+                        <td class="level"></td>
+                        <td class="level"></td>
+                        <td class="level"></td>
+                        <td class="link"><a target="_blank" href="prtl/F_홈_이메일인증완료.html">prtl/F_홈_이메일인증완료.html</a></td>
+                        <td class="complete"></td>
+                        <td class="note"></td>
+                    </tr>
+                    <tr>
+                        <td class="level">회원가입</td>
+                        <td class="level">step01 (본인인증 및 약관 동의)</td>
+                        <td class="level"></td>
+                        <td class="level"></td>
+                        <td class="link"><a target="_blank" href="prtl/F_홈_회원가입_step01.html">prtl/F_홈_회원가입_step01.html</a></td>
+                        <td class="complete"></td>
+                        <td class="note"></td>
+                    </tr>
+                    <tr>
+                        <td class="level"></td>
+                        <td class="level">step02 (회원정보 입력)</td>
+                        <td class="level"></td>
+                        <td class="level"></td>
+                        <td class="link"><a target="_blank" href="prtl/F_홈_회원가입_step02.html">prtl/F_홈_회원가입_step02.html</a></td>
+                        <td class="complete"></td>
+                        <td class="note"></td>
+                    </tr>
+                    <tr>
+                        <td class="level"></td>
+                        <td class="level"></td>
+                        <td class="level">기업추가 팝업</td>
+                        <td class="level"></td>
+                        <td class="link"><a target="_blank" href="prtl/F_홈_회원가입_step02_기업추가팝업.html">prtl/F_홈_회원가입_step02_기업추가팝업.html</a></td>
+                        <td class="complete"></td>
+                        <td class="note"></td>
+                    </tr>
+                    <tr>
+                        <td class="level"></td>
+                        <td class="level">step03 (회원가입 완료 - 이메일 인증)</td>
+                        <td class="level"></td>
+                        <td class="level"></td>
+                        <td class="link"><a target="_blank" href="prtl/F_홈_회원가입_step03_이메일인증안내.html">prtl/F_홈_회원가입_step03_이메일인증안내.html</a></td>
+                        <td class="complete"></td>
+                        <td class="note"></td>
+                    </tr>
+                    <tr>
+                        <td class="level"></td>
+                        <td class="level">step03 (회원가입 완료 - 관리자 문의 안내)</td>
+                        <td class="level"></td>
+                        <td class="level"></td>
+                        <td class="link"><a target="_blank" href="prtl/F_홈_회원가입_step03_관리자문의안내.html">prtl/F_홈_회원가입_step03_관리자문의안내.html</a></td>
+                        <td class="complete"></td>
+                        <td class="note"></td>
+                    </tr>
+                    <tr>
+                        <td class="level">공지사항</td>
+                        <td class="level">목록</td>
+                        <td class="level"></td>
+                        <td class="level"></td>
+                        <td class="link"><a target="_blank" href="prtl/F_공지사항_목록.html">prtl/F_공지사항_목록.html</a></td>
+                        <td class="complete"></td>
+                        <td class="note"></td>
+                    </tr>
+                    <tr>
+                        <td class="level"></td>
+                        <td class="level">상세</td>
+                        <td class="level"></td>
+                        <td class="level"></td>
+                        <td class="link"><a target="_blank" href="prtl/F_공지사항_상세보기.html">prtl/F_공지사항_상세보기.html</a></td>
+                        <td class="complete"></td>
+                        <td class="note"></td>
+                    </tr>
+                    <tr>
+                        <td class="level">커뮤니티</td>
+                        <td class="level">자주묻는질문</td>
+                        <td class="level"></td>
+                        <td class="level"></td>
+                        <td class="link"><a target="_blank" href="prtl/F_커뮤니티_자주묻는질문.html">prtl/F_커뮤니티_자주묻는질문.html</a></td>
+                        <td class="complete"></td>
+                        <td class="note"></td>
+                    </tr>
+                    <tr>
+                        <td class="level">서비스 신청</td>
+                        <td class="level">데이터 결합 신청</td>
+                        <td class="level">01 신청 - 기본</td>
+                        <td class="level"></td>
+                        <td class="link"><a target="_blank" href="prtl/F_데이터결합_01_신청-기본.html">prtl/F_데이터결합_01_신청-기본.html</a></td>
+                        <td class="complete"></td>
+                        <td class="note"></td>
+                    </tr>
+                    <tr>
+                        <td class="level"></td>
+                        <td class="level"></td>
+                        <td class="level">01 신청 - 신청이력이_있는_경우</td>
+                        <td class="level"></td>
+                        <td class="link"><a target="_blank" href="prtl/F_데이터결합_01_신청-신청이력이_있는_경우.html">prtl/F_데이터결합_01_신청-신청이력이_있는_경우.html</a></td>
+                        <td class="complete"></td>
+                        <td class="note"></td>
+                    </tr>
+                    <tr>
+                        <td class="level"></td>
+                        <td class="level"></td>
+                        <td class="level">01 신청 - 신청이력이_있는_경우_선택완료</td>
+                        <td class="level"></td>
+                        <td class="link"><a target="_blank" href="prtl/F_데이터결합_01_신청-신청이력이_있는_경우_선택완료.html">prtl/F_데이터결합_01_신청-신청이력이_있는_경우_선택완료.html</a></td>
+                        <td class="complete"></td>
+                        <td class="note"></td>
+                    </tr>
+                    <tr>
+                        <td class="level"></td>
+                        <td class="level"></td>
+                        <td class="level">02 접수처리 - 서류제출완료</td>
+                        <td class="level"></td>
+                        <td class="link"><a target="_blank" href="prtl/F_데이터결합_02_접수처리-서류제출완료.html">prtl/F_데이터결합_02_접수처리-서류제출완료.html</a></td>
+                        <td class="complete"></td>
+                        <td class="note"></td>
+                    </tr>
+                    <tr>
+                        <td class="level"></td>
+                        <td class="level"></td>
+                        <td class="level">02 접수처리 - 직인제출요청</td>
+                        <td class="level"></td>
+                        <td class="link"><a target="_blank" href="prtl/F_데이터결합_02_접수처리-직인제출요청.html">prtl/F_데이터결합_02_접수처리-직인제출요청.html</a></td>
+                        <td class="complete"></td>
+                        <td class="note"></td>
+                    </tr>
+                    <tr>
+                        <td class="level"></td>
+                        <td class="level"></td>
+                        <td class="level">02 접수처리 - 정보수정요청</td>
+                        <td class="level"></td>
+                        <td class="link"><a target="_blank" href="prtl/F_데이터결합_02_접수처리-정보수정요청.html">prtl/F_데이터결합_02_접수처리-정보수정요청.html</a></td>
+                        <td class="complete"></td>
+                        <td class="note"></td>
+                    </tr>
+                    <tr>
+                        <td class="level"></td>
+                        <td class="level"></td>
+                        <td class="level">03 사전결합률분석 - 결합키등록요청</td>
+                        <td class="level"></td>
+                        <td class="link"><a target="_blank" href="prtl/F_데이터결합_03_사전결합률분석-결합키등록요청.html">prtl/F_데이터결합_03_사전결합률분석-결합키등록요청.html</a></td>
+                        <td class="complete"></td>
+                        <td class="note"></td>
+                    </tr>
+                    <tr>
+                        <td class="level"></td>
+                        <td class="level"></td>
+                        <td class="level">03 사전결합률분석 - 결합키등록완료</td>
+                        <td class="level"></td>
+                        <td class="link"><a target="_blank" href="prtl/F_데이터결합_03_사전결합률분석-결합키등록완료.html">prtl/F_데이터결합_03_사전결합률분석-결합키등록완료.html</a></td>
+                        <td class="complete"></td>
+                        <td class="note"></td>
+                    </tr>
+                    <tr>
+                        <td class="level"></td>
+                        <td class="level"></td>
+                        <td class="level">03 사전결합률분석 - 결합률분석완료</td>
+                        <td class="level"></td>
+                        <td class="link"><a target="_blank" href="prtl/F_데이터결합_03_사전결합률분석-결합률분석완료.html">prtl/F_데이터결합_03_사전결합률분석-결합률분석완료.html</a></td>
+                        <td class="complete"></td>
+                        <td class="note"></td>
+                    </tr>
+                    <tr>
+                        <td class="level"></td>
+                        <td class="level"></td>
+                        <td class="level">동의안내팝업</td>
+                        <td class="level"></td>
+                        <td class="link"><a target="_blank" href="prtl/F_서비스신청_동의안내팝업.html">prtl/F_서비스신청_동의안내팝업.html</a></td>
+                        <td class="complete"></td>
+                        <td class="note"></td>
+                    </tr>
+                    <tr>
+                        <td class="level">서비스 신청</td>
+                        <td class="level">데이터이용신청</td>
+                        <td class="level">신청</td>
+                        <td class="level"></td>
+                        <td class="link"><a target="_blank" href="prtl/F_서비스신청_데이터이용신청.html">prtl/F_서비스신청_데이터이용신청.html</a></td>
+                        <td class="complete"></td>
+                        <td class="note"></td>
+                    </tr>
+                    <tr>
+                        <td class="level"></td>
+                        <td class="level">적정성평가신청</td>
+                        <td class="level">신청</td>
+                        <td class="level"></td>
+                        <td class="link"><a target="_blank" href="prtl/F_서비스신청_적정성평가신청.html">prtl/F_서비스신청_적정성평가신청.html</a></td>
+                        <td class="complete"></td>
+                        <td class="note"></td>
+                    </tr>
+                    <tr>
+                        <td class="level"></td>
+                        <td class="level"></td>
+                        <td class="level">접수처리</td>
+                        <td class="level">01 서류제출완료</td>
+                        <td class="link"><a target="_blank" href="prtl/F_서비스신청_적정성평가신청_접수처리_01.html">prtl/F_서비스신청_적정성평가신청_접수처리_01.html</a></td>
+                        <td class="complete"></td>
+                        <td class="note"></td>
+                    </tr>
+                    <tr>
+                        <td class="level"></td>
+                        <td class="level"></td>
+                        <td class="level"></td>
+                        <td class="level">02 직인제출요청</td>
+                        <td class="link"><a target="_blank" href="prtl/F_서비스신청_적정성평가신청_접수처리_02.html">prtl/F_서비스신청_적정성평가신청_접수처리_02.html</a></td>
+                        <td class="complete"></td>
+                        <td class="note"></td>
+                    </tr>
+                    <tr>
+                        <td class="level"></td>
+                        <td class="level"></td>
+                        <td class="level"></td>
+                        <td class="level">03 정보수정요청</td>
+                        <td class="link"><a target="_blank" href="prtl/F_서비스신청_적정성평가신청_접수처리_03.html">prtl/F_서비스신청_적정성평가신청_접수처리_03.html</a></td>
+                        <td class="complete"></td>
+                        <td class="note"></td>
+                    </tr>
+                    <tr>
+                        <td class="level"></td>
+                        <td class="level"></td>
+                        <td class="level">적정성평가</td>
+                        <td class="level">01 결합 데이터 업로드 요청</td>
+                        <td class="link"><a target="_blank" href="prtl/F_서비스신청_적정성평가신청_적정성평가_01.html">prtl/F_서비스신청_적정성평가신청_적정성평가_01.html</a></td>
+                        <td class="complete"></td>
+                        <td class="note"></td>
+                    </tr>
+                    <tr>
+                        <td class="level"></td>
+                        <td class="level"></td>
+                        <td class="level"></td>
+                        <td class="level">02 결합 데이터 업로드 완료</td>
+                        <td class="link"><a target="_blank" href="prtl/F_서비스신청_적정성평가신청_적정성평가_02.html">prtl/F_서비스신청_적정성평가신청_적정성평가_02.html</a></td>
+                        <td class="complete"></td>
+                        <td class="note"></td>
+                    </tr>
+                    <tr>
+                        <td class="level"></td>
+                        <td class="level"></td>
+                        <td class="level"></td>
+                        <td class="level">03 적정성 평가중</td>
+                        <td class="link"><a target="_blank" href="prtl/F_서비스신청_적정성평가신청_적정성평가_03.html">prtl/F_서비스신청_적정성평가신청_적정성평가_03.html</a></td>
+                        <td class="complete"></td>
+                        <td class="note"></td>
+                    </tr>
+                    <tr>
+                        <td class="level"></td>
+                        <td class="level"></td>
+                        <td class="level">비용정산</td>
+                        <td class="level"></td>
+                        <td class="link"><a target="_blank" href="prtl/F_서비스신청_적정성평가신청_비용정산.html">prtl/F_서비스신청_적정성평가신청_비용정산.html</a></td>
+                        <td class="complete"></td>
+                        <td class="note"></td>
+                    </tr>
+                    <tr>
+                        <td class="level"></td>
+                        <td class="level">사전 결합률 분석 신청</td>
+                        <td class="level">신청</td>
+                        <td class="level"></td>
+                        <td class="link"><a target="_blank" href="prtl/F_서비스신청_사전결합률분석신청.html">prtl/F_서비스신청_사전결합률분석신청.html</a></td>
+                        <td class="complete"></td>
+                        <td class="note"></td>
+                    </tr>
+                    <tr>
+                        <td class="level"></td>
+                        <td class="level"></td>
+                        <td class="level">접수처리</td>
+                        <td class="level">01 서류제출 완료</td>
+                        <td class="link"><a target="_blank" href="prtl/F_서비스신청_사전결합률분석신청_접수처리_01.html">prtl/F_서비스신청_사전결합률분석신청_접수처리_01.html</a></td>
+                        <td class="complete"></td>
+                        <td class="note"></td>
+                    </tr>
+                    <tr>
+                        <td class="level"></td>
+                        <td class="level"></td>
+                        <td class="level"></td>
+                        <td class="level">02 직인제출요청</td>
+                        <td class="link"><a target="_blank" href="prtl/F_서비스신청_사전결합률분석신청_접수처리_02.html">prtl/F_서비스신청_사전결합률분석신청_접수처리_02.html</a></td>
+                        <td class="complete"></td>
+                        <td class="note"></td>
+                    </tr>
+                    <tr>
+                        <td class="level"></td>
+                        <td class="level"></td>
+                        <td class="level"></td>
+                        <td class="level">03 정부수정요청</td>
+                        <td class="link"><a target="_blank" href="prtl/F_서비스신청_사전결합률분석신청_접수처리_03.html">prtl/F_서비스신청_사전결합률분석신청_접수처리_03.html</a></td>
+                        <td class="complete"></td>
+                        <td class="note"></td>
+                    </tr>
+                    <tr>
+                        <td class="level"></td>
+                        <td class="level"></td>
+                        <td class="level">사전결합률분석</td>
+                        <td class="level">01 결합키 등록 요청</td>
+                        <td class="link"><a target="_blank" href="prtl/F_서비스신청_사전결합률분석신청_사전결합률분석_01.html">prtl/F_서비스신청_사전결합률분석신청_사전결합률분석_01.html</a></td>
+                        <td class="complete"></td>
+                        <td class="note"></td>
+                    </tr>
+                    <tr>
+                        <td class="level"></td>
+                        <td class="level"></td>
+                        <td class="level"></td>
+                        <td class="level">02 결합키 업로드 완료</td>
+                        <td class="link"><a target="_blank" href="prtl/F_서비스신청_사전결합률분석신청_사전결합률분석_02.html">prtl/F_서비스신청_사전결합률분석신청_사전결합률분석_02.html</a></td>
+                        <td class="complete"></td>
+                        <td class="note"></td>
+                    </tr>
+                    <tr>
+                        <td class="level"></td>
+                        <td class="level"></td>
+                        <td class="level"></td>
+                        <td class="level">03 사전 결합률 분석중</td>
+                        <td class="link"><a target="_blank" href="prtl/F_서비스신청_사전결합률분석신청_사전결합률분석_03.html">prtl/F_서비스신청_사전결합률분석신청_사전결합률분석_03.html</a></td>
+                        <td class="complete"></td>
+                        <td class="note"></td>
+                    </tr>
+                    <tr>
+                        <td class="level"></td>
+                        <td class="level"></td>
+                        <td class="level"></td>
+                        <td class="level">04 정보수정요청</td>
+                        <td class="link"><a target="_blank" href="prtl/F_서비스신청_사전결합률분석신청_사전결합률분석_04.html">prtl/F_서비스신청_사전결합률분석신청_사전결합률분석_04.html</a></td>
+                        <td class="complete"></td>
+                        <td class="note"></td>
+                    </tr>
+                    <tr>
+                        <td class="level"></td>
+                        <td class="level"></td>
+                        <td class="level">비용정산</td>
+                        <td class="level"></td>
+                        <td class="link"><a target="_blank" href="prtl/F_서비스신청_사전결합률분석신청_비용정산.html">prtl/F_서비스신청_사전결합률분석신청_비용정산.html</a></td>
+                        <td class="complete"></td>
+                        <td class="note"></td>
+                    </tr>
+                    <tr>
+                        <td class="level"></td>
+                        <td class="level">원격데이터분석</td>
+                        <td class="level">01신청</td>
+                        <td class="level"></td>
+                        <td class="link"><a target="_blank" href="prtl/F_서비스신청_원격데이터분석_01신청.html">prtl/F_서비스신청_원격데이터분석_01신청.html</a></td>
+                        <td class="complete"></td>
+                        <td class="note"></td>
+                    </tr>
+                    <tr>
+                        <td class="level"></td>
+                        <td class="level"></td>
+                        <td class="level">02준비중</td>
+                        <td class="level"></td>
+                        <td class="link"><a target="_blank" href="prtl/F_서비스신청_원격데이터분석_02준비중.html">prtl/F_서비스신청_원격데이터분석_02준비중.html</a></td>
+                        <td class="complete"></td>
+                        <td class="note"></td>
+                    </tr>
+                    <tr>
+                        <td class="level"></td>
+                        <td class="level"></td>
+                        <td class="level">03사용중</td>
+                        <td class="level"></td>
+                        <td class="link"><a target="_blank" href="prtl/F_서비스신청_원격데이터분석_03사용중.html">prtl/F_서비스신청_원격데이터분석_03사용중.html</a></td>
+                        <td class="complete"></td>
+                        <td class="note"></td>
+                    </tr>
+                    <tr>
+                        <td class="level">마이페이지</td>
+                        <td class="level"></td>
+                        <td class="level"></td>
+                        <td class="level"></td>
+                        <td class="link"><a target="_blank" href="prtl/F_마이페이지_메인.html">prtl/F_마이페이지_메인.html</a></td>
+                        <td class="complete"></td>
+                        <td class="note"></td>
+                    </tr>
+                    <tr>
+                        <td class="level"></td>
+                        <td class="level">프로필</td>
+                        <td class="level"></td>
+                        <td class="level"></td>
+                        <td class="link"><a target="_blank" href="prtl/F_마이페이지_프로필.html">prtl/F_마이페이지_프로필.html</a></td>
+                        <td class="complete"></td>
+                        <td class="note"></td>
+                    </tr>
+                    <tr>
+                        <td class="level"></td>
+                        <td class="level">회원탈퇴</td>
+                        <td class="level">미정산있는경우</td>
+                        <td class="level"></td>
+                        <td class="link"><a target="_blank" href="prtl/F_마이페이지_회원탈퇴(미정산있는경우).html">prtl/F_마이페이지_회원탈퇴(미정산있는경우).html</a></td>
+                        <td class="complete"></td>
+                        <td class="note"></td>
+                    </tr>
+                    <tr>
+                        <td class="level"></td>
+                        <td class="level"></td>
+                        <td class="level">미정산없는경우</td>
+                        <td class="level"></td>
+                        <td class="link"><a target="_blank" href="prtl/F_마이페이지_회원탈퇴(미정산없는경우).html">prtl/F_마이페이지_회원탈퇴(미정산없는경우).html</a></td>
+                        <td class="complete"></td>
+                        <td class="note"></td>
+                    </tr>
+                    <tr>
+                        <td class="level"></td>
+                        <td class="level"></td>
+                        <td class="level">안내팝업</td>
+                        <td class="level"></td>
+                        <td class="link"><a target="_blank" href="prtl/F_마이페이지_회원탈퇴_안내팝업.html">prtl/F_마이페이지_회원탈퇴_안내팝업.html</a></td>
+                        <td class="complete"></td>
+                        <td class="note"></td>
+                    </tr>
+                    <tr>
+                        <td class="level"></td>
+                        <td class="level"></td>
+                        <td class="level">완료</td>
+                        <td class="level"></td>
+                        <td class="link"><a target="_blank" href="prtl/F_마이페이지_회원탈퇴_완료.html">prtl/F_마이페이지_회원탈퇴_완료.html</a></td>
+                        <td class="complete"></td>
+                        <td class="note"></td>
+                    </tr>
+                    <tr>
+                        <td class="level"></td>
+                        <td class="level">서비스신청내역</td>
+                        <td class="level">목록</td>
+                        <td class="level"></td>
+                        <td class="link"><a target="_blank" href="prtl/F_마이페이지_서비스신청내역_목록.html">prtl/F_마이페이지_서비스신청내역_목록.html</a></td>
+                        <td class="complete"></td>
+                        <td class="note"></td>
+                    </tr>
+                    <tr>
+                        <td class="level"></td>
+                        <td class="level"></td>
+                        <td class="level">상세</td>
+                        <td class="level"></td>
+                        <td class="link"><a target="_blank" href="prtl/F_마이페이지_서비스신청내역_상세.html">prtl/F_마이페이지_서비스신청내역_상세.html</a></td>
+                        <td class="complete"></td>
+                        <td class="note"></td>
+                    </tr>
+                    <tr>
+                        <td class="level"></td>
+                        <td class="level">비용 정산</td>
+                        <td class="level"></td>
+                        <td class="level"></td>
+                        <td class="link"><a target="_blank" href="prtl/F_마이페이지_비용정산.html">prtl/F_마이페이지_비용정산.html</a></td>
+                        <td class="complete"></td>
+                        <td class="note"></td>
+                    </tr>
+                    <tr>
+                        <td class="level">적정성 평가</td>
+                        <td class="level"></td>
+                        <td class="level"></td>
+                        <td class="level"></td>
+                        <td class="link"><a target="_blank" href="prtl/F_홈_더보기_적정성평가.html">prtl/F_홈_더보기_적정성평가.html</a></td>
+                        <td class="complete"></td>
+                        <td class="note"></td>
+                    </tr>
+                    <tr>
+                        <td class="level"></td>
+                        <td class="level">리스트</td>
+                        <td class="level"></td>
+                        <td class="level"></td>
+                        <td class="link"><a target="_blank" href="prtl/F_홈_더보기_적정성평가_리스트.html">prtl/F_홈_더보기_적정성평가_리스트.html</a></td>
+                        <td class="complete"></td>
+                        <td class="note"></td>
+                    </tr>
+                    <tr>
+                        <td class="level"></td>
+                        <td class="level">서약서 작성</td>
+                        <td class="level"></td>
+                        <td class="level"></td>
+                        <td class="link"><a target="_blank" href="prtl/F_홈_더보기_적정성평가_서약서작성.html">prtl/F_홈_더보기_적정성평가_서약서작성.html</a></td>
+                        <td class="complete"></td>
+                        <td class="note"></td>
+                    </tr>
+                    <tr>
+                        <td class="level"></td>
+                        <td class="level">적정성평가</td>
+                        <td class="level"></td>
+                        <td class="level"></td>
+                        <td class="link"><a target="_blank" href="prtl/F_적정성평가.html">prtl/F_적정성평가.html</a></td>
+                        <td class="complete"></td>
+                        <td class="note"></td>
+                    </tr>
+                </tbody>
+                <!-- // 포털 [page] -->
 
-    <h2>03_나의투표_전자투표/위임장 관리</h2>
-    <ul>
-        <li><a target="_blank" href="html/MYVOTE_MANAGE_01_1.html">MYVOTE_MANAGE_01_1</a></li>
-        <li><a target="_blank" href="html/MYVOTE_MANAGE_01.html">MYVOTE_MANAGE_01</a></li>
-        <li><a target="_blank" href="html/MYVOTE_MANAGE_02.html">MYVOTE_MANAGE_02</a></li>
-        <li><a target="_blank" href="html/MYVOTE_MANAGE_03.html">MYVOTE_MANAGE_03</a></li>
-        <li><a target="_blank" href="html/MYVOTE_MANAGE_DEFAULT.html">MYVOTE_MANAGE_DEFAULT</a></li>
-    </ul>
+                <!-- 업무지원시스템 [guide] -->
+                <thead>
+                    <tr class="title" onclick="this.parentElement.classList.toggle('mini');">
+                        <th colspan="7">업무지원시스템 <span class="p-c1">[guide]</span></th>
+                    </tr>
+                    <tr>
+                        <th colspan="4">설명</th>
+                        <th>link</th>
+                        <th>완료여부</th>
+                        <th>비고</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td colspan="4">layout</td>
+                        <td class="link"><a target="_blank" href="mngt/layout_01.html">mngt/layout_01.html</a></td>
+                        <td class="complete"></td>
+                        <td class="note"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="4">일반 레이어팝업(.lp) 하단 스크립트 확인</td>
+                        <td class="link"><a target="_blank" href="mngt/layer_popup_01.html">mngt/layer_popup_01.html</a></td>
+                        <td class="complete"></td>
+                        <td class="note"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="4">알림 레이어팝업(.lp-dialog) 하단 스크립트 확인</td>
+                        <td class="link"><a target="_blank" href="mngt/layer_popup_02.html">mngt/layer_popup_02.html</a></td>
+                        <td class="complete"></td>
+                        <td class="note"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="4">esc 키 이벤트 예시 하단 스크립트 참조</td>
+                        <td class="link"><a target="_blank" href="mngt/layer_popup_03.html">mngt/layer_popup_03.html</a></td>
+                        <td class="complete"></td>
+                        <td class="note"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="4">grid 높이 설정</td>
+                        <td class="link"><a target="_blank" href="mngt/custom_height.html">mngt/custom_height.html</a></td>
+                        <td class="complete"></td>
+                        <td class="note"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="4">grid 체크박스 사용법</td>
+                        <td class="link"><a target="_blank" href="mngt/custom_checkbox.html">mngt/custom_checkbox.html</a></td>
+                        <td class="complete"></td>
+                        <td class="note"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="4">preloader</td>
+                        <td class="link"><a target="_blank" href="mngt/preloader.html">mngt/preloader.html</a></td>
+                        <td class="complete"></td>
+                        <td class="note"></td>
+                    </tr>
+                </tbody>
+                <!-- // 업무지원시스템 [guide] -->
 
-    <h2>04_주주총회 일정</h2>
-    <ul>
-        <li><a target="_blank" href="html/SHAREHOLDER.html">SHAREHOLDER</a></li>
-        <li><a target="_blank" href="html/SHAREHOLDER_RESULT.html">SHAREHOLDER_RESULT</a></li>
-    </ul>
+                <!-- 업무지원시스템 [page] -->
+                <thead>
+                    <tr class="title" onclick="this.parentElement.classList.toggle('mini');">
+                        <th colspan="7">업무지원시스템 <span class="p-c2">[page]</span></th>
+                    </tr>
+                    <tr>
+                        <th>lv[1]</th>
+                        <th>lv[2]</th>
+                        <th>lv[3]</th>
+                        <th>lv[4]</th>
+                        <th>link</th>
+                        <th>완료여부</th>
+                        <th>비고</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="level">메인_대시보드</td>
+                        <td class="level"></td>
+                        <td class="level"></td>
+                        <td class="level"></td>
+                        <td class="link"><a target="_blank" href="mngt/B_메인_대시보드.html">mngt/B_메인_대시보드.html</a></td>
+                        <td class="complete"></td>
+                        <td class="note"></td>
+                    </tr>
+                    <tr>
+                        <td class="level">메인_대시보드_todo없음</td>
+                        <td class="level"></td>
+                        <td class="level"></td>
+                        <td class="level"></td>
+                        <td class="link"><a target="_blank" href="mngt/B_메인_대시보드_todo없음.html">mngt/B_메인_대시보드_todo없음.html</a></td>
+                        <td class="complete"></td>
+                        <td class="note"></td>
+                    </tr>
+                    <tr>
+                        <td class="level">로그인</td>
+                        <td class="level"></td>
+                        <td class="level"></td>
+                        <td class="level"></td>
+                        <td class="link"><a target="_blank" href="mngt/B_로그인.html">mngt/B_로그인.html</a></td>
+                        <td class="complete"></td>
+                        <td class="note"></td>
+                    </tr>
+                    <tr>
+                        <td class="level"></td>
+                        <td class="level">본인인증요청</td>
+                        <td class="level"></td>
+                        <td class="level"></td>
+                        <td class="link"><a target="_blank" href="mngt/B_로그인_본인인증요청.html">mngt/B_로그인_본인인증요청.html</a></td>
+                        <td class="complete"></td>
+                        <td class="note"></td>
+                    </tr>
+                    <tr>
+                        <td class="level"></td>
+                        <td class="level">계정잠금안내</td>
+                        <td class="level"></td>
+                        <td class="level"></td>
+                        <td class="link"><a target="_blank" href="mngt/B_로그인_계정잠금안내.html">mngt/B_로그인_계정잠금안내.html</a></td>
+                        <td class="complete"></td>
+                        <td class="note"></td>
+                    </tr>
+                    <tr>
+                        <td class="level"></td>
+                        <td class="level">비밀번호재설정</td>
+                        <td class="level"></td>
+                        <td class="level"></td>
+                        <td class="link"><a target="_blank" href="mngt/B_로그인_비밀번호재설정.html">mngt/B_로그인_비밀번호재설정.html</a></td>
+                        <td class="complete"></td>
+                        <td class="note"></td>
+                    </tr>
+                    <tr>
+                        <td class="level"></td>
+                        <td class="level">아이디찾기</td>
+                        <td class="level"></td>
+                        <td class="level"></td>
+                        <td class="link"><a target="_blank" href="mngt/B_로그인_아이디찾기.html">mngt/B_로그인_아이디찾기.html</a></td>
+                        <td class="complete"></td>
+                        <td class="note"></td>
+                    </tr>
+                    <tr>
+                        <td class="level"></td>
+                        <td class="level">동시접속안내</td>
+                        <td class="level"></td>
+                        <td class="level"></td>
+                        <td class="link"><a target="_blank" href="mngt/B_로그인_동시접속안내.html">mngt/B_로그인_동시접속안내.html</a></td>
+                        <td class="complete"></td>
+                        <td class="note"></td>
+                    </tr>
+                    <!-- <tr>
+                        <td class="level">이메일인증완료</td>
+                        <td class="level"></td>
+                        <td class="level"></td>
+                        <td class="level"></td>
+                        <td class="link"><a target="_blank" href="mngt/B_이메일인증완료.html">mngt/B_이메일인증완료.html</a></td>
+                        <td class="complete"></td>
+                        <td class="note"></td>
+                    </tr> -->
+                    <tr>
+                        <td class="level">신청</td>
+                        <td class="level">데이터결합</td>
+                        <td class="level">목록</td>
+                        <td class="level"></td>
+                        <td class="link"><a target="_blank" href="mngt/B_신청_데이터결합신청.html">mngt/B_신청_데이터결합신청.html</a></td>
+                        <td class="complete"></td>
+                        <td class="note"></td>
+                    </tr>
+                    <tr>
+                        <td class="level"></td>
+                        <td class="level"></td>
+                        <td class="level">상세</td>
+                        <td class="level"></td>
+                        <td class="link"><a target="_blank" href="mngt/B_신청_데이터결합신청_상세.html">mngt/B_신청_데이터결합신청_상세.html</a></td>
+                        <td class="complete"></td>
+                        <td class="note"></td>
+                    </tr>
+                    <tr>
+                        <td class="level"></td>
+                        <td class="level"></td>
+                        <td class="level">피드백</td>
+                        <td class="level"></td>
+                        <td class="link"><a target="_blank" href="mngt/B_신청_데이터결합신청_피드백.html">mngt/B_신청_데이터결합신청_피드백.html</a></td>
+                        <td class="complete"></td>
+                        <td class="note"></td>
+                    </tr>
+                    <tr>
+                        <td class="level"></td>
+                        <td class="level">적정성평가 신청</td>
+                        <td class="level">목록</td>
+                        <td class="level"></td>
+                        <td class="link"><a target="_blank" href="mngt/B_신청_적정성평가신청.html">mngt/B_신청_적정성평가.html</a></td>
+                        <td class="complete"></td>
+                        <td class="note"></td>
+                    </tr>
+                    <tr>
+                        <td class="level"></td>
+                        <td class="level"></td>
+                        <td class="level">상세</td>
+                        <td class="level"></td>
+                        <td class="link"><a target="_blank" href="mngt/B_신청_적정성평가신청_상세.html">mngt/B_신청_적정성평가신청_상세.html</a></td>
+                        <td class="complete"></td>
+                        <td class="note"></td>
+                    </tr>
+                    <tr>
+                        <td class="level"></td>
+                        <td class="level"></td>
+                        <td class="level">피드백</td>
+                        <td class="level"></td>
+                        <td class="link"><a target="_blank" href="mngt/B_신청_적정성평가신청_피드백.html">mngt/B_신청_적정성평가신청_피드백.html</a></td>
+                        <td class="complete"></td>
+                        <td class="note"></td>
+                    </tr>
+                    <tr>
+                        <td class="level"></td>
+                        <td class="level">사전 결합률 분석 신청</td>
+                        <td class="level">목록</td>
+                        <td class="level"></td>
+                        <td class="link"><a target="_blank" href="mngt/B_신청_사전결합률분석신청.html">mngt/B_신청_사전결합률분석신청.html</a></td>
+                        <td class="complete"></td>
+                        <td class="note"></td>
+                    </tr>
+                    <tr>
+                        <td class="level"></td>
+                        <td class="level"></td>
+                        <td class="level">상세</td>
+                        <td class="level"></td>
+                        <td class="link"><a target="_blank" href="mngt/B_신청_사전결합률분석신청_상세.html">mngt/B_신청_사전결합률분석신청_상세.html</a></td>
+                        <td class="complete"></td>
+                        <td class="note"></td>
+                    </tr>
+                    <tr>
+                        <td class="level"></td>
+                        <td class="level"></td>
+                        <td class="level">피드백</td>
+                        <td class="level"></td>
+                        <td class="link"><a target="_blank" href="mngt/B_신청_사전결합률분석신청_피드백.html">mngt/B_신청_사전결합률분석신청_피드백.html</a></td>
+                        <td class="complete"></td>
+                        <td class="note"></td>
+                    </tr>
+                    <tr>
+                        <td class="level">설정</td>
+                        <td class="level">프로그램관리</td>
+                        <td class="level"></td>
+                        <td class="level"></td>
+                        <td class="link"><a target="_blank" href="mngt/B_설정_프로그램관리.html">mngt/B_설정_프로그램관리.html</a></td>
+                        <td class="complete"></td>
+                        <td class="note"></td>
+                    </tr>
+                    <tr>
+                        <td class="level"></td>
+                        <td class="level"></td>
+                        <td class="level">상세</td>
+                        <td class="level"></td>
+                        <td class="link"><a target="_blank" href="mngt/B_설정_프로그램관리_상세.html">mngt/B_설정_프로그램관리_상세.html</a></td>
+                        <td class="complete"></td>
+                        <td class="note"></td>
+                    </tr>
+                    <tr>
+                        <td class="level"></td>
+                        <td class="level">메뉴관리</td>
+                        <td class="level"></td>
+                        <td class="level"></td>
+                        <td class="link"><a target="_blank" href="mngt/B_설정_메뉴관리.html">mngt/B_설정_메뉴관리.html</a></td>
+                        <td class="complete"></td>
+                        <td class="note"></td>
+                    </tr>
+                    <tr>
+                        <td class="level"></td>
+                        <td class="level">공통관리</td>
+                        <td class="level">목록</td>
+                        <td class="level"></td>
+                        <td class="link"><a target="_blank" href="mngt/B_설정_공통관리_목록.html">mngt/B_설정_공통관리_목록.html</a></td>
+                        <td class="complete"></td>
+                        <td class="note"></td>
+                    </tr>
+                    <tr>
+                        <td class="level"></td>
+                        <td class="level">양식관리</td>
+                        <td class="level"></td>
+                        <td class="level"></td>
+                        <td class="link"><a target="_blank" href="mngt/B_설정_양식관리.html">mngt/B_설정_양식관리.html</a></td>
+                        <td class="complete"></td>
+                        <td class="note"></td>
+                    </tr>
+                    <tr>
+                        <td class="level"></td>
+                        <td class="level">동의문구설정</td>
+                        <td class="level"></td>
+                        <td class="level"></td>
+                        <td class="link"><a target="_blank" href="mngt/B_설정_동의문구설정.html">mngt/B_설정_동의문구설정.html</a></td>
+                        <td class="complete"></td>
+                        <td class="note"></td>
+                    </tr>
+                    <tr>
+                        <td class="level">계정</td>
+                        <td class="level">계정관리</td>
+                        <td class="level"></td>
+                        <td class="level"></td>
+                        <td class="link"><a target="_blank" href="mngt/B_계정_계정관리.html">mngt/B_계정_계정관리.html</a></td>
+                        <td class="complete"></td>
+                        <td class="note"></td>
+                    </tr>
+                    <tr>
+                        <td class="level"></td>
+                        <td class="level"></td>
+                        <td class="level">계정생성</td>
+                        <td class="level"></td>
+                        <td class="link"><a target="_blank" href="mngt/B_계정_계정관리_계정생성.html">mngt/B_계정_계정관리_계정생성.html</a></td>
+                        <td class="complete"></td>
+                        <td class="note"></td>
+                    </tr>
+                    <tr>
+                        <td class="level"></td>
+                        <td class="level"></td>
+                        <td class="level">계정상세</td>
+                        <td class="level"></td>
+                        <td class="link"><a target="_blank" href="mngt/B_계정_계정관리_계정상세.html">mngt/B_계정_계정관리_계정상세.html</a></td>
+                        <td class="complete"></td>
+                        <td class="note"></td>
+                    </tr>
+                    <tr>
+                        <td class="level"></td>
+                        <td class="level">기업관리</td>
+                        <td class="level"></td>
+                        <td class="level"></td>
+                        <td class="link"><a target="_blank" href="mngt/B_계정_기업관리.html">mngt/B_계정_기업관리.html</a></td>
+                        <td class="complete"></td>
+                        <td class="note"></td>
+                    </tr>
+                    <tr>
+                        <td class="level"></td>
+                        <td class="level"></td>
+                        <td class="level">기업생성</td>
+                        <td class="level"></td>
+                        <td class="link"><a target="_blank" href="mngt/B_계정_기업관리_기업생성.html">mngt/B_계정_기업관리_기업생성.html</a></td>
+                        <td class="complete"></td>
+                        <td class="note"></td>
+                    </tr>
+                    <tr>
+                        <td class="level"></td>
+                        <td class="level"></td>
+                        <td class="level">기업상세</td>
+                        <td class="level"></td>
+                        <td class="link"><a target="_blank" href="mngt/B_계정_기업관리_기업상세.html">mngt/B_계정_기업관리_기업상세.html</a></td>
+                        <td class="complete"></td>
+                        <td class="note"></td>
+                    </tr>
+                    <tr>
+                        <td class="level"></td>
+                        <td class="level">평가위원관리</td>
+                        <td class="level"></td>
+                        <td class="level"></td>
+                        <td class="link"><a target="_blank" href="mngt/B_계정_평가위원관리.html">mngt/B_계정_평가위원관리.html</a></td>
+                        <td class="complete"></td>
+                        <td class="note"></td>
+                    </tr>
+                    <tr>
+                        <td class="level"></td>
+                        <td class="level"></td>
+                        <td class="level">상세</td>
+                        <td class="level"></td>
+                        <td class="link"><a target="_blank" href="mngt/B_계정_평가위원관리_상세.html">mngt/B_계정_평가위원관리_상세.html</a></td>
+                        <td class="complete"></td>
+                        <td class="note"></td>
+                    </tr>
+                    <tr>
+                        <td class="level"></td>
+                        <td class="level"></td>
+                        <td class="level"></td>
+                        <td class="level">평가이력</td>
+                        <td class="link"><a target="_blank" href="mngt/B_계정_평가위원관리_상세_평가이력.html">mngt/B_계정_평가위원관리_상세_평가이력.html</a></td>
+                        <td class="complete"></td>
+                        <td class="note"></td>
+                    </tr>
+                    <tr>
+                        <td class="level">커뮤니티</td>
+                        <td class="level">게시글관리</td>
+                        <td class="level"></td>
+                        <td class="level"></td>
+                        <td class="link"><a target="_blank" href="mngt/B_커뮤니티_게시글관리.html">mngt/B_커뮤니티_게시글관리.html</a></td>
+                        <td class="complete"></td>
+                        <td class="note"></td>
+                    </tr>
+                    <tr>
+                        <td class="level"></td>
+                        <td class="level"></td>
+                        <td class="level">게시글생성</td>
+                        <td class="level"></td>
+                        <td class="link"><a target="_blank" href="mngt/B_커뮤니티_게시글생성.html">mngt/B_커뮤니티_게시글생성.html</a></td>
+                        <td class="complete"></td>
+                        <td class="note"></td>
+                    </tr>
+                    <tr>
+                        <td class="level"></td>
+                        <td class="level"></td>
+                        <td class="level">게시글상세</td>
+                        <td class="level"></td>
+                        <td class="link"><a target="_blank" href="mngt/B_커뮤니티_게시글상세.html">mngt/B_커뮤니티_게시글상세.html</a></td>
+                        <td class="complete"></td>
+                        <td class="note"></td>
+                    </tr>
+                    <tr>
+                        <td class="level"></td>
+                        <td class="level">커뮤니티관리</td>
+                        <td class="level"></td>
+                        <td class="level"></td>
+                        <td class="link"><a target="_blank" href="mngt/B_커뮤니티_커뮤니티관리.html">mngt/B_커뮤니티_커뮤니티관리.html</a></td>
+                        <td class="complete"></td>
+                        <td class="note"></td>
+                    </tr>
+                    <tr>
+                        <td class="level"></td>
+                        <td class="level"></td>
+                        <td class="level">커뮤니티생성</td>
+                        <td class="level"></td>
+                        <td class="link"><a target="_blank" href="mngt/B_커뮤니티_커뮤니티생성.html">mngt/B_커뮤니티_커뮤니티생성.html</a></td>
+                        <td class="complete"></td>
+                        <td class="note"></td>
+                    </tr>
+                    <tr>
+                        <td class="level"></td>
+                        <td class="level"></td>
+                        <td class="level">커뮤니티상세</td>
+                        <td class="level"></td>
+                        <td class="link"><a target="_blank" href="mngt/B_커뮤니티_커뮤니티상세.html">mngt/B_커뮤니티_커뮤니티상세.html</a></td>
+                        <td class="complete"></td>
+                        <td class="note"></td>
+                    </tr>
+                    <tr>
+                        <td class="level">로그</td>
+                        <td class="level">피드백</td>
+                        <td class="level"></td>
+                        <td class="level"></td>
+                        <td class="link"><a target="_blank" href="mngt/B_로그_피드백.html">mngt/B_로그_피드백.html</a></td>
+                        <td class="complete"></td>
+                        <td class="note"></td>
+                    </tr>
+                    <tr>
+                        <td class="level"></td>
+                        <td class="level"></td>
+                        <td class="level">상세 팝업</td>
+                        <td class="level"></td>
+                        <td class="link"><a target="_blank" href="mngt/B_로그_피드백_상세_팝업.html">mngt/B_로그_피드백_상세_팝업.html</a></td>
+                        <td class="complete"></td>
+                        <td class="note"></td>
+                    </tr>
+                    <tr>
+                        <td class="level"></td>
+                        <td class="level"></td>
+                        <td class="level">작성 팝업</td>
+                        <td class="level"></td>
+                        <td class="link"><a target="_blank" href="mngt/B_로그_피드백_작성_팝업.html">mngt/B_로그_피드백_작성_팝업.html</a></td>
+                        <td class="complete"></td>
+                        <td class="note"></td>
+                    </tr>
+                    <tr>
+                        <td class="level">프로젝트</td>
+                        <td class="level">데이터결합</td>
+                        <td class="level">프로젝트목록</td>
+                        <td class="level"></td>
+                        <td class="link"><a target="_blank" href="mngt/B_프로젝트_데이터결합_프로젝트목록.html">mngt/B_프로젝트_데이터결합_프로젝트목록.html</a></td>
+                        <td class="complete"></td>
+                        <td class="note"></td>
+                    </tr>
+                    <tr>
+                        <td class="level"></td>
+                        <td class="level"></td>
+                        <td class="level">프로젝트상세_01</td>
+                        <td class="level"></td>
+                        <td class="link"><a target="_blank" href="mngt/B_프로젝트_데이터결합_프로젝트상세_01.html">mngt/B_프로젝트_데이터결합_프로젝트상세_01.html</a></td>
+                        <td class="complete"></td>
+                        <td class="note"></td>
+                    </tr>
+                    <tr>
+                        <td class="level"></td>
+                        <td class="level"></td>
+                        <td class="level"></td>
+                        <td class="level">평가위원설정 - 팝업</td>
+                        <td class="link"><a target="_blank" href="mngt/B_평가위원설정팝업.html">mngt/B_평가위원설정팝업.html</a></td>
+                        <td class="complete"></td>
+                        <td class="note"></td>
+                    </tr>
+                    <tr>
+                        <td class="level"></td>
+                        <td class="level"></td>
+                        <td class="level"></td>
+                        <td class="level">이메일발송 - 팝업</td>
+                        <td class="link"><a target="_blank" href="mngt/B_이메일발송.html">mngt/B_이메일발송.html</a></td>
+                        <td class="complete"></td>
+                        <td class="note"></td>
+                    </tr>
+                    <!-- <tr>
+                        <td class="level"></td>
+                        <td class="level"></td>
+                        <td class="level">프로젝트상세_02</td>
+                        <td class="level"></td>
+                        <td class="link"><a target="_blank" href="mngt/B_프로젝트_데이터결합_프로젝트상세_02.html">mngt/B_프로젝트_데이터결합_프로젝트상세_02.html</a></td>
+                        <td class="complete"></td>
+                        <td class="note"></td>
+                    </tr> -->
+                    <tr>
+                        <td class="level"></td>
+                        <td class="level"></td>
+                        <td class="level">결합작업목록</td>
+                        <td class="level"></td>
+                        <td class="link"><a target="_blank" href="mngt/B_프로젝트_데이터결합_결합작업목록.html">mngt/B_프로젝트_데이터결합_결합작업목록.html</a></td>
+                        <td class="complete"></td>
+                        <td class="note"></td>
+                    </tr>
+                    <tr>
+                        <td class="level"></td>
+                        <td class="level"></td>
+                        <td class="level">결합작업 비용정산</td>
+                        <td class="level"></td>
+                        <td class="link"><a target="_blank" href="mngt/B_프로젝트_데이터결합_결합작업_비용정산.html">mngt/B_프로젝트_데이터결합_결합작업_비용정산.html</a></td>
+                        <td class="complete"></td>
+                        <td class="note"></td>
+                    </tr>
+                    <tr>
+                        <td class="level"></td>
+                        <td class="level"></td>
+                        <td class="level">업무목록</td>
+                        <td class="level"></td>
+                        <td class="link"><a target="_blank" href="mngt/B_프로젝트_데이터결합_업무목록.html">mngt/B_프로젝트_데이터결합_업무목록.html</a></td>
+                        <td class="complete"></td>
+                        <td class="note"></td>
+                    </tr>
+                    <tr>
+                        <td class="level"></td>
+                        <td class="level">적정성평가</td>
+                        <td class="level">프로젝트목록</td>
+                        <td class="level"></td>
+                        <td class="link"><a target="_blank" href="mngt/B_프로젝트_적정성평가_프로젝트목록.html">mngt/B_프로젝트_적정성평가_프로젝트목록.html</a></td>
+                        <td class="complete"></td>
+                        <td class="note"></td>
+                    </tr>
+                    <tr>
+                        <td class="level"></td>
+                        <td class="level"></td>
+                        <td class="level">프로젝트상세</td>
+                        <td class="level"></td>
+                        <td class="link"><a target="_blank" href="mngt/B_프로젝트_적정성평가_프로젝트상세.html">mngt/B_프로젝트_적정성평가_프로젝트상세.html</a></td>
+                        <td class="complete"></td>
+                        <td class="note"></td>
+                    </tr>
+                    <tr>
+                        <td class="level"></td>
+                        <td class="level"></td>
+                        <td class="level">비식별처리분석</td>
+                        <td class="level"></td>
+                        <td class="link"><a target="_blank" href="mngt/B_프로젝트_적정성평가_비식별처리분석.html">mngt/B_프로젝트_적정성평가_비식별처리분석.html</a></td>
+                        <td class="complete"></td>
+                        <td class="note"></td>
+                    </tr>
+                    <tr>
+                        <td class="level"></td>
+                        <td class="level"></td>
+                        <td class="level">데이터 유형 일괄변경 - 팝업</td>
+                        <td class="level"></td>
+                        <td class="link"><a target="_blank" href="mngt/B_프로젝트_적정성평가_비식별처리분석_데이터유형일괄변경.html">mngt/B_프로젝트_적정성평가_비식별처리분석_데이터유형일괄변경.html</a></td>
+                        <td class="complete"></td>
+                        <td class="note"></td>
+                    </tr>
+                    <tr>
+                        <td class="level"></td>
+                        <td class="level"></td>
+                        <td class="level">컬럼상세 - 팝업</td>
+                        <td class="level"></td>
+                        <td class="link"><a target="_blank" href="mngt/B_프로젝트_적정성평가_비식별처리분석_컬럼상세.html">mngt/B_프로젝트_적정성평가_비식별처리분석_컬럼상세.html</a></td>
+                        <td class="complete"></td>
+                        <td class="note"></td>
+                    </tr>
+                    <tr>
+                        <td class="level"></td>
+                        <td class="level">사전결합률분석</td>
+                        <td class="level">프로젝트목록</td>
+                        <td class="level"></td>
+                        <td class="link"><a target="_blank" href="mngt/B_프로젝트_사전결합률분석_프로젝트목록.html">mngt/B_프로젝트_사전결합률분석_프로젝트목록.html</a></td>
+                        <td class="complete"></td>
+                        <td class="note"></td>
+                    </tr>
+                    <tr>
+                        <td class="level"></td>
+                        <td class="level"></td>
+                        <td class="level">프로젝트상세</td>
+                        <td class="level"></td>
+                        <td class="link"><a target="_blank" href="mngt/B_프로젝트_사전결합률분석_프로젝트상세.html">mngt/B_프로젝트_사전결합률분석_프로젝트상세.html</a></td>
+                        <td class="complete"></td>
+                        <td class="note"></td>
+                    </tr>
+                    <tr>
+                        <td class="level"></td>
+                        <td class="level">정보집합물결합</td>
+                        <td class="level">적정성평가</td>
+                        <td class="level"></td>
+                        <td class="link"><a target="_blank" href="mngt/B_프로젝트_정보집합물결합_적정성평가.html">mngt/B_프로젝트_정보집합물결합_적정성평가.html</a></td>
+                        <td class="complete"></td>
+                        <td class="note"></td>
+                    </tr>
+                    <tr>
+                        <td class="level">정산</td>
+                        <td class="level">수수료기준설정</td>
+                        <td class="level"></td>
+                        <td class="level"></td>
+                        <td class="link"><a target="_blank" href="mngt/B_정산_수수료기준설정.html">mngt/B_정산_수수료기준설정.html</a></td>
+                        <td class="complete"></td>
+                        <td class="note"></td>
+                    </tr>
+                    <tr>
+                        <td class="level"></td>
+                        <td class="level">정산관리</td>
+                        <td class="level"></td>
+                        <td class="level"></td>
+                        <td class="link"><a target="_blank" href="mngt/B_정산_정산관리.html">mngt/B_정산_정산관리.html</a></td>
+                        <td class="complete"></td>
+                        <td class="note"></td>
+                    </tr>
+                    <tr>
+                        <td class="level"></td>
+                        <td class="level"></td>
+                        <td class="level">상세</td>
+                        <td class="level"></td>
+                        <td class="link"><a target="_blank" href="mngt/B_정산_정산관리_상세.html">mngt/B_정산_정산관리_상세.html</a></td>
+                        <td class="complete"></td>
+                        <td class="note"></td>
+                    </tr>
+                    <tr>
+                        <td class="level"></td>
+                        <td class="level"></td>
+                        <td class="level">세금계산서_팝업</td>
+                        <td class="level"></td>
+                        <td class="link"><a target="_blank" href="mngt/B_정산_정산관리_세금계산서_팝업.html">mngt/B_정산_정산관리_세금계산서_팝업.html</a></td>
+                        <td class="complete"></td>
+                        <td class="note"></td>
+                    </tr>
+                    <tr>
+                        <td class="level">결재</td>
+                        <td class="level">결재 상신팝업</td>
+                        <td class="level"></td>
+                        <td class="level"></td>
+                        <td class="link"><a target="_blank" href="mngt/B_결재_결재상신팝업.html">mngt/B_결재_결재상신팝업.html</a></td>
+                        <td class="complete"></td>
+                        <td class="note"></td>
+                    </tr>
+                    <tr>
+                        <td class="level"></td>
+                        <td class="level">결재관리</td>
+                        <td class="level">수신한결재목록</td>
+                        <td class="level"></td>
+                        <td class="link"><a target="_blank" href="mngt/B_결재_결재관리_수신한결재목록.html">mngt/B_결재_결재관리_수신한결재목록.html</a></td>
+                        <td class="complete"></td>
+                        <td class="note"></td>
+                    </tr>
+                    <tr>
+                        <td class="level"></td>
+                        <td class="level"></td>
+                        <td class="level">수신한결재상세</td>
+                        <td class="level"></td>
+                        <td class="link"><a target="_blank" href="mngt/B_결재_결재관리_수신한결재상세.html">mngt/B_결재_결재관리_수신한결재상세.html</a></td>
+                        <td class="complete"></td>
+                        <td class="note"></td>
+                    </tr>
+                    <tr>
+                        <td class="level"></td>
+                        <td class="level"></td>
+                        <td class="level">상신한결재목록</td>
+                        <td class="level"></td>
+                        <td class="link"><a target="_blank" href="mngt/B_결재_결재관리_상신한결재목록.html">mngt/B_결재_결재관리_상신한결재목록.html</a></td>
+                        <td class="complete"></td>
+                        <td class="note"></td>
+                    </tr>
+                    <tr>
+                        <td class="level"></td>
+                        <td class="level"></td>
+                        <td class="level">상신한결재상세</td>
+                        <td class="level"></td>
+                        <td class="link"><a target="_blank" href="mngt/B_결재_결재관리_상신한결재상세.html">mngt/B_결재_결재관리_상신한결재상세.html</a></td>
+                        <td class="complete"></td>
+                        <td class="note"></td>
+                    </tr>
+                    <tr>
+                        <td class="level">이력조회</td>
+                        <td class="level">감사이력</td>
+                        <td class="level">데이터결합처리내역</td>
+                        <td class="level"></td>
+                        <td class="link"><a target="_blank" href="mngt/B_이력조회_감사이력_데이터결합처리내역.html">mngt/B_이력조회_감사이력.html</a></td>
+                        <td class="complete"></td>
+                        <td class="note"></td>
+                    </tr>
+                    <tr>
+                        <td class="level"></td>
+                        <td class="level"></td>
+                        <td class="level">데이터결합수수료수입</td>
+                        <td class="level"></td>
+                        <td class="link"><a target="_blank" href="mngt/B_이력조회_감사이력_데이터결합수수료수입.html">mngt/B_이력조회_감사이력_데이터결합수수료수입.html</a></td>
+                        <td class="complete"></td>
+                        <td class="note"></td>
+                    </tr>
+                    <tr>
+                        <td class="level"></td>
+                        <td class="level"></td>
+                        <td class="level">위원회현황</td>
+                        <td class="level"></td>
+                        <td class="link"><a target="_blank" href="mngt/B_이력조회_감사이력_위원회현황.html">mngt/B_이력조회_감사이력_위원회현황.html</a></td>
+                        <td class="complete"></td>
+                        <td class="note"></td>
+                    </tr>
+                    <tr>
+                        <td class="level"></td>
+                        <td class="level"></td>
+                        <td class="level">데이터결합심의</td>
+                        <td class="level"></td>
+                        <td class="link"><a target="_blank" href="mngt/B_이력조회_감사이력_데이터결합심의.html">mngt/B_이력조회_감사이력_데이터결합심의.html</a></td>
+                        <td class="complete"></td>
+                        <td class="note"></td>
+                    </tr>
+                    <tr>
+                        <td class="level"></td>
+                        <td class="level"></td>
+                        <td class="level">익명성적정성평가</td>
+                        <td class="level"></td>
+                        <td class="link"><a target="_blank" href="mngt/B_이력조회_감사이력_익명성적정성평가.html">mngt/B_이력조회_감사이력_익명성적정성평가.html</a></td>
+                        <td class="complete"></td>
+                        <td class="note"></td>
+                    </tr>
+                </tbody>
+                <!-- // 업무지원시스템 [page] -->
+            </table>
+            <!-- // table -->
+        </div>
 
-    <h2>00_로그인/회원가입</h2>
-    <ul>
-        <li><a target="_blank" href="html/LOGIN_01_01.html">LOGIN_01_01</a></li>
-        <li><a target="_blank" href="html/LOGIN_01_02.html">LOGIN_01_02</a></li>
-        <li><a target="_blank" href="html/SIGNUP_01_1.html">SIGNUP_01_1</a></li>
-        <li><a target="_blank" href="html/SIGNUP_01_2.html">SIGNUP_01_2</a></li>
-        <li><a target="_blank" href="html/SIGNUP_01_3.html">SIGNUP_01_3</a></li>
-        <li><a target="_blank" href="html/SIGNUP_01_3_ACTIVE.html">SIGNUP_01_3_ACTIVE</a></li>
-        <li><a target="_blank" href="html/SIGNUP_01_4.html">SIGNUP_01_4</a></li>
-        <li><a target="_blank" href="html/SIGNUP_02_1.html">SIGNUP_02_1</a></li>
-        <li><a target="_blank" href="html/SIGNUP_02_2.html">SIGNUP_02_2</a></li>
-        <li><a target="_blank" href="html/SIGNUP_02_3_1.html">SIGNUP_02_3_1</a></li>
-        <li><a target="_blank" href="html/SIGNUP_02_3_2.html">SIGNUP_02_3_2</a></li>
-        <li><a target="_blank" href="html/SIGNUP_02_4.html">SIGNUP_02_4</a></li>
-        <li><a target="_blank" href="html/ID_FIND_P_01.html">ID_FIND_P_01</a></li>
-        <li><a target="_blank" href="html/ID_FIND_P_02.html">ID_FIND_P_02</a></li>
-        <li><a target="_blank" href="html/PASS_FIND_P_01.html">PASS_FIND_P_01</a></li>
-        <li><a target="_blank" href="html/PASS_FIND_P_02.html">PASS_FIND_P_02</a></li>
-    </ul>
-
-    <h2>00_기타</h2>
-    <ul>
-        <li><a target="_blank" href="html/ERROR_01.html">ERROR_01</a></li>
-        <li><a target="_blank" href="html/POLICY_01.html">POLICY_01</a></li>
-        <li><a target="_blank" href="html/POLICY_03.html">POLICY_03</a></li>
-    </ul>
-    <style>
-        h2 {
-            margin: .7em 0 .2em;
-            font-size: 18px;
-        }
-
-        h2::after {
-            content: '';
-            display: inline-block;
-            vertical-align: middle;
-            margin-left: 10px;
-            color: red;
-            border-top: 0;
-            border-bottom: 8px solid black;
-            border-left: 6px solid transparent;
-            border-right: 6px solid transparent;
-        }
-
-        h2.hidden::after {
-            content: '';
-            border-top: 8px solid black;
-            border-bottom: 0;
-        }
-
-        .hidden+ul {
-            display: none;
-        }
-    </style>
-    <script>
-        $(document).ready(function() {
-            $('h2').on('click', function() {
-                $(this).toggleClass('hidden');
-            });
-        });
-    </script>
+    </div>
 </body>
 
 </html>
