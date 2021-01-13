@@ -6,8 +6,7 @@
     <meta content="IE=edge" http-equiv="X-UA-Compatible">
     <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
     <meta name="x-apple-disable-message-reformatting" />
-    <title>Veaver Health mining</title>
-    <!-- <link href="../css/normalize.css" rel="stylesheet" /> -->
+    <title>증상입력 | Veaver Health mining</title>
     <link href="../css/reset.css" rel="stylesheet" />
     <link href="../css/common.css" rel="stylesheet" />
     <script type="text/javascript" src="../js/jquery.min.js"></script>
@@ -24,17 +23,85 @@
 </head>
 
 <body>
-    <div id="wrap">
-
+    <div class="layer-full-wrap">
         <!-- 헤더영역 -->
-        <header id="headerWrap">
-
-        </header>
+        <div class="layer-header">
+            <div class="layer-header-inner">
+                <div class="layer-title">Ai헬스큐</div>
+                <span class="u-profile">
+	    	<span class="u-profile-img">
+	    		<img src="https://m.upinews.kr/data/upi/image/20190523/p1065574177335900_669_thum.jpg" alt="프로픨 사진" class="u-profile-img">
+	    	</span>
+                <span class="name">홍길동</span>
+                </span>
+                <a href="#" class="layerCloseBtn">닫기</a>
+            </div>
+        </div>
         <!-- //헤더영역 -->
 
-        <!-- 컨텐츠 영역 -->
-        <section id="container">
 
+        <style>
+            .g-txt {
+                font-weight: 400;
+                font-size: 20px;
+                line-height: 29px;
+            }
+
+            .chk-list-wrap {
+                margin-top: 30px;
+            }
+
+            .chk-list-wrap .rnd-checkbox+.rnd-checkbox {
+                margin-top: 10px;
+            }
+        </style>
+
+        <!-- 컨텐츠 영역 -->
+        <section class="layer-content">
+            <div class="layer-inner">
+                <p class="g-txt">가장 문제가 되는<br> 상태를 선택해주세요.</p>
+                <div class="chk-list-wrap">
+                    <div class="rnd-checkbox">
+                        <label class="input-checkbox">
+                            <input type="checkbox"><span>어지럽다</span>
+                        </label>
+                        <button type="button" class="lp-btn btn-img-view">사진보기</button>
+                    </div>
+
+                    <div class="rnd-checkbox">
+                        <label class="input-checkbox">
+                            <input type="checkbox"><span>머리가 아프다</span>
+                        </label>
+                        <button type="button" class="lp-btn btn-video-view">영상보기</button>
+                    </div>
+
+                    <div class="rnd-checkbox">
+                        <label class="input-checkbox">
+                            <input type="checkbox"><span>열이 나는 것 같다</span>
+                        </label>
+                        <button type="button" class="lp-btn btn-video-view on">영상보기</button>
+                    </div>
+
+                    <div class="rnd-checkbox">
+                        <label class="input-checkbox">
+                            <input type="checkbox"><span>기절을 했다</span>
+                        </label>
+                    </div>
+
+                    <div class="rnd-checkbox">
+                        <label class="input-checkbox">
+                            <input type="checkbox"><span>어지럽다</span>
+                        </label>
+                    </div>
+
+                    <div class="rnd-checkbox">
+                        <label class="input-checkbox">
+                            <input type="checkbox"><span>머리가 아프다</span>
+                        </label>
+                    </div>
+
+                </div>
+            </div>
         </section>
         <!-- //컨텐츠 영역 -->
     </div>

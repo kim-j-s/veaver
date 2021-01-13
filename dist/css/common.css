@@ -432,7 +432,7 @@
 		height: 20px;
 		border-radius: 10px;
 		border:none;
-		background-image: url(../img/ac-ic-check-nor.svg);
+		background-image: url(../img/ac-ic-check-nor.png);
 		background-size:cover;
 		background-repeat: no-repeat;
 		background-position: center;
@@ -440,7 +440,7 @@
 		transition: background-color .2s, border-color .2s;
 	}
 	.input-checkbox > input:checked + span::before {
-		background-image: url(../img/ac-ic-check-sel.svg);
+		background-image: url(../img/ac-ic-check-sel.png);
 		background-color: #056bff;	
 		background-size:cover;
 	}
@@ -448,7 +448,7 @@
 		background-color: #dee2e7;	
 	}
 	.input-checkbox > input:checked:disabled + span::before {
-		background-image: url(../img/ac-ic-check-nor.svg);
+		background-image: url(../img/ac-ic-check-nor.png);
 		background-size:cover;
 	}
 
@@ -719,8 +719,7 @@
 		width: 22px;
 		height: 22px;
 		border-radius: 50%;
-		/*border: 1px solid #ebeff3;*/
-		border: 1px solid red;
+		border: 1px solid #ebeff3;
 		overflow: hidden;
 	}
 	.u-profile .u-profile-img img{
@@ -732,6 +731,7 @@
 		display: block;
 		max-width: 60px;
 		font-size: 12px;
+		color: #74777b;
 		line-height: 18px;
 		overflow:hidden;
 	    text-overflow:ellipsis;
