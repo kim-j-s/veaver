@@ -47,9 +47,15 @@
                 line-height: 29px;
             }
 
-            .q-txt-box.ty1+.chk-list-wrap {
+            .q-txt-box.ty1+.chk-list-cont {
                 max-height: calc(100% - 86px);
             }
+
+            /*
+.q-txt-box.ty1 + .chk-list-cont .chk-list-wrap{
+	max-height: calc(100% - 86px);
+}
+*/
 
             .chk-list-wrap {
                 position: relative;
@@ -65,26 +71,26 @@
                 z-index: 1;
                 width: calc(100% + 44px);
                 height: 56px;
-                /*background-color: rgb(255,255,255);*/
-                /**
-	background: rgb(255,255,255);
-	background: linear-gradient(0deg, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 100%);
-	background-image: url(../img/close-20-blue.png);
-	background-repeat: no-repeat;
-	background-size: 20px auto;
-	background-position: center center;
-	*/
-
                 background-image: url(../img/close-20-blue.png), linear-gradient(0deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 100%);
                 background-repeat: no-repeat, no-repeat;
                 background-position: center center, left top;
                 background-size: 20px auto, 100% auto;
-
-
-
             }
 
-            .chk-list-wrap.down:after {}
+            .chk-list-wrap.down:after {
+                content: '';
+                position: absolute;
+                bottom: 0;
+                left: -22px;
+                z-index: 1;
+                width: calc(100% + 44px);
+                height: 56px;
+                background-image: url(../img/open-20-blue.png), linear-gradient(0deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%);
+                ;
+                background-repeat: no-repeat, no-repeat;
+                background-position: center center, left top;
+                background-size: 20px auto, 100% auto;
+            }
 
             /*
 before
@@ -109,102 +115,104 @@ img-dim-02
                 <div class="q-txt-box ty1">
                     <p class="g-txt">가장 문제가 되는<br> 상태를 선택해주세요.</p>
                 </div>
-                <div class="chk-list-wrap up down">
-                    <div class="rnd-checkbox">
-                        <label class="input-checkbox">
-                            <input type="checkbox"><span>어지럽다</span>
-                        </label>
-                        <button type="button" class="lp-btn btn-img-view">사진보기</button>
-                    </div>
+                <div class="chk-list-cont up down">
+                    <div class="chk-list-wrap">
+                        <div class="rnd-checkbox">
+                            <label class="input-checkbox">
+                                <input type="checkbox"><span>어지럽다</span>
+                            </label>
+                            <button type="button" class="lp-btn btn-img-view">사진보기</button>
+                        </div>
 
-                    <div class="rnd-checkbox">
-                        <label class="input-checkbox">
-                            <input type="checkbox"><span>머리가 아프다</span>
-                        </label>
-                        <button type="button" class="lp-btn btn-video-view">영상보기</button>
-                    </div>
+                        <div class="rnd-checkbox">
+                            <label class="input-checkbox">
+                                <input type="checkbox"><span>머리가 아프다</span>
+                            </label>
+                            <button type="button" class="lp-btn btn-video-view">영상보기</button>
+                        </div>
 
-                    <div class="rnd-checkbox">
-                        <label class="input-checkbox">
-                            <input type="checkbox"><span>열이 나는 것 같다</span>
-                        </label>
-                        <button type="button" class="lp-btn btn-video-view on">영상보기</button>
-                    </div>
+                        <div class="rnd-checkbox">
+                            <label class="input-checkbox">
+                                <input type="checkbox"><span>열이 나는 것 같다</span>
+                            </label>
+                            <button type="button" class="lp-btn btn-video-view on">영상보기</button>
+                        </div>
 
-                    <div class="rnd-checkbox">
-                        <label class="input-checkbox">
-                            <input type="checkbox"><span>기절을 했다</span>
-                        </label>
-                    </div>
+                        <div class="rnd-checkbox">
+                            <label class="input-checkbox">
+                                <input type="checkbox"><span>기절을 했다</span>
+                            </label>
+                        </div>
 
-                    <div class="rnd-checkbox">
-                        <label class="input-checkbox">
-                            <input type="checkbox"><span>어지럽다</span>
-                        </label>
-                    </div>
+                        <div class="rnd-checkbox">
+                            <label class="input-checkbox">
+                                <input type="checkbox"><span>어지럽다</span>
+                            </label>
+                        </div>
 
-                    <div class="rnd-checkbox">
-                        <label class="input-checkbox">
-                            <input type="checkbox"><span>머리가 아프다</span>
-                        </label>
-                    </div>
+                        <div class="rnd-checkbox">
+                            <label class="input-checkbox">
+                                <input type="checkbox"><span>머리가 아프다</span>
+                            </label>
+                        </div>
 
-                    <div class="rnd-checkbox">
-                        <label class="input-checkbox">
-                            <input type="checkbox"><span>기절을 했다</span>
-                        </label>
-                    </div>
+                        <div class="rnd-checkbox">
+                            <label class="input-checkbox">
+                                <input type="checkbox"><span>기절을 했다</span>
+                            </label>
+                        </div>
 
-                    <div class="rnd-checkbox">
-                        <label class="input-checkbox">
-                            <input type="checkbox"><span>어지럽다</span>
-                        </label>
-                    </div>
+                        <div class="rnd-checkbox">
+                            <label class="input-checkbox">
+                                <input type="checkbox"><span>어지럽다</span>
+                            </label>
+                        </div>
 
-                    <div class="rnd-checkbox">
-                        <label class="input-checkbox">
-                            <input type="checkbox"><span>머리가 아프다</span>
-                        </label>
-                    </div>
-                    <div class="rnd-checkbox">
-                        <label class="input-checkbox">
-                            <input type="checkbox"><span>기절을 했다</span>
-                        </label>
-                    </div>
+                        <div class="rnd-checkbox">
+                            <label class="input-checkbox">
+                                <input type="checkbox"><span>머리가 아프다</span>
+                            </label>
+                        </div>
+                        <div class="rnd-checkbox">
+                            <label class="input-checkbox">
+                                <input type="checkbox"><span>기절을 했다</span>
+                            </label>
+                        </div>
 
-                    <div class="rnd-checkbox">
-                        <label class="input-checkbox">
-                            <input type="checkbox"><span>어지럽다</span>
-                        </label>
-                    </div>
+                        <div class="rnd-checkbox">
+                            <label class="input-checkbox">
+                                <input type="checkbox"><span>어지럽다</span>
+                            </label>
+                        </div>
 
-                    <div class="rnd-checkbox">
-                        <label class="input-checkbox">
-                            <input type="checkbox"><span>머리가 아프다</span>
-                        </label>
-                    </div>
+                        <div class="rnd-checkbox">
+                            <label class="input-checkbox">
+                                <input type="checkbox"><span>머리가 아프다</span>
+                            </label>
+                        </div>
 
-                    <div class="rnd-checkbox">
-                        <label class="input-checkbox">
-                            <input type="checkbox"><span>머리가 아프다</span>
-                        </label>
-                    </div>
-                    <div class="rnd-checkbox">
-                        <label class="input-checkbox">
-                            <input type="checkbox"><span>기절을 했다</span>
-                        </label>
-                    </div>
+                        <div class="rnd-checkbox">
+                            <label class="input-checkbox">
+                                <input type="checkbox"><span>머리가 아프다</span>
+                            </label>
+                        </div>
+                        <div class="rnd-checkbox">
+                            <label class="input-checkbox">
+                                <input type="checkbox"><span>기절을 했다</span>
+                            </label>
+                        </div>
 
-                    <div class="rnd-checkbox">
-                        <label class="input-checkbox">
-                            <input type="checkbox"><span>어지럽다</span>
-                        </label>
-                    </div>
+                        <div class="rnd-checkbox">
+                            <label class="input-checkbox">
+                                <input type="checkbox"><span>어지럽다</span>
+                            </label>
+                        </div>
 
-                    <div class="rnd-checkbox">
-                        <label class="input-checkbox">
-                            <input type="checkbox"><span>머리가 아프다</span>
-                        </label>
+                        <div class="rnd-checkbox">
+                            <label class="input-checkbox">
+                                <input type="checkbox"><span>머리가 아프다</span>
+                            </label>
+                        </div>
                     </div>
                 </div>
             </div>
