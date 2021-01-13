@@ -46,5 +46,12 @@ textarea{-webkit-appearance:none;}
 :-moz-placeholder { /* Firefox 18- */
   color: #999;
 }
-
+label,
+input,
+textarea,
+button,
+select,
+a {
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
 ::-ms-clear {display:none;}

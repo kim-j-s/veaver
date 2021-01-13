@@ -47,9 +47,46 @@
                 line-height: 29px;
             }
 
-            .chk-list-wrap {
-                margin-top: 30px;
+            .q-txt-box.ty1+.chk-list-wrap {
+                max-height: calc(100% - 86px);
             }
+
+            .chk-list-wrap {
+                position: relative;
+                margin-top: 30px;
+                overflow: auto;
+            }
+
+            .chk-list-wrap.up:before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: -22px;
+                z-index: 1;
+                width: calc(100% + 44px);
+                height: 56px;
+                /*background-color: rgb(255,255,255);*/
+                background: rgb(255, 255, 255);
+                background: linear-gradient(0deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 100%);
+                background-image: url(../img/close-20-blue.png);
+                background-repeat: no-repeat;
+                background-size: 20px auto;
+                background-position: center center;
+            }
+
+            .chk-list-wrap.down:after {}
+
+            /*
+before
+close-20-blue
+img-dim-01
+
+after
+open-20-blue
+img-dim-02
+
+*/
+
 
             .chk-list-wrap .rnd-checkbox+.rnd-checkbox {
                 margin-top: 10px;
@@ -59,8 +96,10 @@
         <!-- 컨텐츠 영역 -->
         <section class="layer-content">
             <div class="layer-inner">
-                <p class="g-txt">가장 문제가 되는<br> 상태를 선택해주세요.</p>
-                <div class="chk-list-wrap">
+                <div class="q-txt-box ty1">
+                    <p class="g-txt">가장 문제가 되는<br> 상태를 선택해주세요.</p>
+                </div>
+                <div class="chk-list-wrap up down">
                     <div class="rnd-checkbox">
                         <label class="input-checkbox">
                             <input type="checkbox"><span>어지럽다</span>
@@ -157,9 +196,61 @@
                             <input type="checkbox"><span>머리가 아프다</span>
                         </label>
                     </div>
-
                 </div>
             </div>
+
+            <div class="floating-btns">
+                <button type="button" class="btn-go-menu">목록으로 이동</button>
+                <button type="button" class="btn-go-next">다음</button>
+                <button type="button" class="btn-go-next" disabled="disabled">다음</button>
+            </div>
+
+
+            <style>
+                .floating-btns {
+                    position: fixed;
+                    right: 18px;
+                    bottom: 18px;
+                    z-index: 130;
+                    width: 70px;
+                }
+
+                .btn-go-menu {
+                    display: inline-block;
+                    width: 70px;
+                    height: 70px;
+                    overflow: hidden;
+                    text-indent: -9999px;
+                    background: url(../img/btn-floating-record.png) no-repeat 0 0 / 100% auto;
+                }
+
+                .btn-go-next {
+                    display: inline-block;
+                    width: 70px;
+                    height: 70px;
+                    overflow: hidden;
+                    text-indent: -9999px;
+                    background: url(../img/btn-floating-next-sel.png) no-repeat 0 0 / 100% auto;
+                }
+
+                .btn-go-next:disabled {
+                    background: url(../img/btn-floating-next-nor.png) no-repeat 0 0 / 100% auto;
+                }
+
+                /*
+이동 off
+btn-floating-next-nor
+
+이동 on
+btn-floating-next-sel
+
+목록
+btn-floating-record
+
+*/
+            </style>
+
+
         </section>
         <!-- //컨텐츠 영역 -->
 
@@ -180,9 +271,7 @@
             width: 100%;
             height: 100%;
             background-color: rgba(0, 0, 0, 0.7);
-
         }
-
 
         .dimmed-layer-cont {
             position: absolute;
@@ -209,12 +298,6 @@
             background: url(../img/btn-close-25-w.png) no-repeat 0 0 / 100% auto;
             text-indent: -9999px;
         }
-
-        /*
-close
-25 25
-
-*/
     </style>
 
 

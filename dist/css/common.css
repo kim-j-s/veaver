@@ -404,6 +404,7 @@
 		display: inline-block;
 		min-height: 20px;
 		min-width: 20px;
+		background: #fff !important;
 	}
 	.input-checkbox > input {
 		opacity: 0;
@@ -464,6 +465,9 @@
 	}
 	.rnd-checkbox .input-checkbox > span{
 		position: static;
+	}
+	.rnd-checkbox .input-checkbox > input:checked + span:after{
+		color: #056bff;
 	}
 	.rnd-checkbox .input-checkbox > span:before{
 		top: 13px;
