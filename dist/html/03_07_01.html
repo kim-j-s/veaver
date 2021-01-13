@@ -66,12 +66,22 @@
                 width: calc(100% + 44px);
                 height: 56px;
                 /*background-color: rgb(255,255,255);*/
-                background: rgb(255, 255, 255);
-                background: linear-gradient(0deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 100%);
-                background-image: url(../img/close-20-blue.png);
-                background-repeat: no-repeat;
-                background-size: 20px auto;
-                background-position: center center;
+                /**
+	background: rgb(255,255,255);
+	background: linear-gradient(0deg, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 100%);
+	background-image: url(../img/close-20-blue.png);
+	background-repeat: no-repeat;
+	background-size: 20px auto;
+	background-position: center center;
+	*/
+
+                background-image: url(../img/close-20-blue.png), linear-gradient(0deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 100%);
+                background-repeat: no-repeat, no-repeat;
+                background-position: center center, left top;
+                background-size: 20px auto, 100% auto;
+
+
+
             }
 
             .chk-list-wrap.down:after {}
