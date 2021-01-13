@@ -690,7 +690,7 @@
 		font-weight: 400;
 		font-size: 17px;
 	}
-	.layerCloseBtn {
+	.layer-close-btn{
 		position:absolute;
 		top: 0;
 		left: 0px;
@@ -699,6 +699,16 @@
 		background:url(../img/ac-black-close.png) no-repeat 0 0 / 100% auto;
 		text-indent:-9999px;
 	}
+
+
+	
+
+	
+
+
+
+
+
 	.layer-header-inner .u-profile{
 		position: absolute;
 		top: 50%;
