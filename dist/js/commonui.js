@@ -99,24 +99,24 @@ function chkListScroll() {
 	$('.chk-list-wrap').on('scroll', function(){
 		var st = Math.floor($(this).scrollTop());
 		var oh = Math.floor($(this).outerHeight());
-		$('.xxx').html(st  + ' + ' + oh + ' + ' + $(this)[0].scrollHeight);
+		//$('.xxx').html(st  + ' + ' + oh + ' + ' + $(this)[0].scrollHeight);
 		console.log('st : ' + st);
 		if ( st <= 0 ) {	// 최상단 도달 시
-			console.log('start');
-			$('.xxx').html('s v3');
+			//console.log('start');
+			//$('.xxx').html('s v3');
 			$(this).closest('.chk-list-cont').removeClass('up-dp');
 		}
 		 else if ( st > 0 && st + oh + 3 < $(this)[0].scrollHeight ) {		// 지나가는 중
-			console.log('middle');
+			//console.log('middle');
 			$(this).closest('.chk-list-cont').addClass('up-dp');
 			$(this).closest('.chk-list-cont').addClass('down-dp');
 		}
 		 else if ( st + oh + 3 >= $(this)[0].scrollHeight) {	// 바닥 도달 시
-			console.log('end + ' + st);
-			console.log('end + ' + $(this).outerHeight());
-			console.log('end + ' + $(this)[0].scrollHeight);
-			console.log('fin3');
-			$('.xxx').html('fin v3');
+			//console.log('end + ' + st);
+			//console.log('end + ' + $(this).outerHeight());
+			//console.log('end + ' + $(this)[0].scrollHeight);
+			//console.log('fin3');
+			//$('.xxx').html('fin v3');
 			$(this).closest('.chk-list-cont').removeClass('down-dp');
 		}
 	});
