@@ -102,7 +102,7 @@ function chkListScroll() {
 		console.log('st : ' + st);
 		if ( $(this).scrollTop() == 0 ) {	// 최상단 도달 시
 			console.log('start');
-			$('.xxx').html('start');
+			$('.xxx').html('start v5');
 			$(this).closest('.chk-list-cont').removeClass('up-dp');
 		}
 		/*
@@ -118,7 +118,7 @@ function chkListScroll() {
 			console.log('end + ' + $(this).outerHeight());
 			console.log('end + ' + $(this)[0].scrollHeight);
 			console.log('fin3');
-			$('.xxx').html('fin5');
+			$('.xxx').html('fin v5');
 			$(this).closest('.chk-list-cont').removeClass('down-dp');
 		}
 		/*
