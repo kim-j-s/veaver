@@ -118,15 +118,17 @@ function chkListScroll() {
 			console.log('end + ' + $(this).outerHeight());
 			console.log('end + ' + $(this)[0].scrollHeight);
 			console.log('fin3');
-			$('.xxx').html('fin3');
+			$('.xxx').html('fin5');
 			$(this).closest('.chk-list-cont').removeClass('down-dp');
 		}
+		/*
 		else if ( $(this).scrollTop() > 5 && (st - 50) + oh < $(this)[0].scrollHeight ) {		// 지나가는 중
 			console.log('middle');
 			$('.xxx').html('middle');
 			$(this).closest('.chk-list-cont').addClass('up-dp');
 			$(this).closest('.chk-list-cont').addClass('down-dp');
 		}
+		*/
 	});
 
 
