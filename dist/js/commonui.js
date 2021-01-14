@@ -102,6 +102,7 @@ function chkListScroll() {
 		console.log('st : ' + st);
 		if ( $(this).scrollTop() == 0 ) {	// 최상단 도달 시
 			console.log('start');
+			$('.xxx').html('start');
 			$(this).closest('.chk-list-cont').removeClass('up-dp');
 		}
 		/*
@@ -116,11 +117,13 @@ function chkListScroll() {
 			console.log('end + ' + $(this).scrollTop());
 			console.log('end + ' + $(this).outerHeight());
 			console.log('end + ' + $(this)[0].scrollHeight);
-			console.log('fin2');
+			console.log('fin3');
+			$('.xxx').html('fin3');
 			$(this).closest('.chk-list-cont').removeClass('down-dp');
 		}
-		else if ( $(this).scrollTop() > 5 && (st - 5) + oh < $(this)[0].scrollHeight ) {		// 지나가는 중
+		else if ( $(this).scrollTop() > 5 && (st - 50) + oh < $(this)[0].scrollHeight ) {		// 지나가는 중
 			console.log('middle');
+			$('.xxx').html('middle');
 			$(this).closest('.chk-list-cont').addClass('up-dp');
 			$(this).closest('.chk-list-cont').addClass('down-dp');
 		}
