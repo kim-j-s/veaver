@@ -97,8 +97,8 @@ function chkListWrap() {
 // 항목 체크 리스트 스크롤 처리
 function chkListScroll() {
 	$('.chk-list-wrap').on('scroll', function(){
-		var st = $(this).scrollTop();
-		var oh = $(this).outerHeight();
+		var st = Math.floor($(this).scrollTop());
+		var oh = Math.floor($(this).outerHeight());
 		$('.xxx').html(st  + ' + ' + oh + ' + ' + $(this)[0].scrollHeight);
 		console.log('st : ' + st);
 		if ( $(this).scrollTop() == 0 ) {	// 최상단 도달 시
@@ -106,15 +106,12 @@ function chkListScroll() {
 			//$('.xxx').html('start v5');
 			$(this).closest('.chk-list-cont').removeClass('up-dp');
 		}
-		/*
-		 else if ( $(this).scrollTop() > 0 && $(this).scrollTop() + $(this).outerHeight() + 3 >= $(this)[0].scrollHeight ) {		// 지나가는 중
+		 else if ( $(this).scrollTop() > 0 && $(this).scrollTop() + $(this).outerHeight() + 3 < $(this)[0].scrollHeight ) {		// 지나가는 중
 			console.log('middle');
 			$(this).closest('.chk-list-cont').addClass('up-dp');
 			$(this).closest('.chk-list-cont').addClass('down-dp');
 		}
-		*/
-
-		 else if ( st + oh >= $(this)[0].scrollHeight) {	// 바닥 도달 시
+		 else if ( st + oh + 3 >= $(this)[0].scrollHeight) {	// 바닥 도달 시
 			console.log('end + ' + $(this).scrollTop());
 			console.log('end + ' + $(this).outerHeight());
 			console.log('end + ' + $(this)[0].scrollHeight);
@@ -122,14 +119,6 @@ function chkListScroll() {
 			$('.xxx').html('fin v5');
 			$(this).closest('.chk-list-cont').removeClass('down-dp');
 		}
-		/*
-		else if ( $(this).scrollTop() > 5 && (st - 50) + oh < $(this)[0].scrollHeight ) {		// 지나가는 중
-			console.log('middle');
-			$('.xxx').html('middle');
-			$(this).closest('.chk-list-cont').addClass('up-dp');
-			$(this).closest('.chk-list-cont').addClass('down-dp');
-		}
-		*/
 	});
 
 
