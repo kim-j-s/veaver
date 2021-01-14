@@ -97,17 +97,26 @@ function chkListWrap() {
 // 항목 체크 리스트 스크롤 처리
 function chkListScroll() {
 	$('.chk-list-wrap').on('scroll', function(){
-		if ( $(this).scrollTop() + $(this).outerHeight() >= $(this)[0].scrollHeight)	// 바닥 도달 시
-		{
+		if ( $(this).scrollTop() == 0 ) {	// 최상단 도달 시
+			console.log('start');
+			$(this).closest('.chk-list-cont').removeClass('up-dp');
+		}
+		/*
+		 else if ( $(this).scrollTop() > 0 && $(this).scrollTop() + $(this).outerHeight() + 3 >= $(this)[0].scrollHeight ) {		// 지나가는 중
+			console.log('middle');
+			$(this).closest('.chk-list-cont').addClass('up-dp');
+			$(this).closest('.chk-list-cont').addClass('down-dp');
+		}
+		*/
+
+		 else if ( $(this).scrollTop() + $(this).outerHeight() >= $(this)[0].scrollHeight) {	// 바닥 도달 시
 			console.log('end + ' + $(this).scrollTop());
 			console.log('end + ' + $(this).outerHeight());
 			console.log('end + ' + $(this)[0].scrollHeight);
-			$(this).addClass('done');
+			console.log('fin');
 			$(this).closest('.chk-list-cont').removeClass('down-dp');
-		} else if ( $(this).scrollTop() == 0 ) {	// 최상단 도달 시
-			console.log('start');
-			$(this).closest('.chk-list-cont').removeClass('up-dp');
-		} else if ( $(this).scrollTop() > 0 ) {		// 지나가는 중
+		}
+		else if ( $(this).scrollTop() > 0 ) {		// 지나가는 중
 			console.log('middle');
 			$(this).closest('.chk-list-cont').addClass('up-dp');
 			$(this).closest('.chk-list-cont').addClass('down-dp');
