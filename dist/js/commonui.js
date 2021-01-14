@@ -99,10 +99,11 @@ function chkListScroll() {
 	$('.chk-list-wrap').on('scroll', function(){
 		var st = $(this).scrollTop();
 		var oh = $(this).outerHeight();
+		$('.xxx').html(st  + ' + ' + oh + ' + ' + $(this)[0].scrollHeight);
 		console.log('st : ' + st);
 		if ( $(this).scrollTop() == 0 ) {	// 최상단 도달 시
 			console.log('start');
-			$('.xxx').html('start v5');
+			//$('.xxx').html('start v5');
 			$(this).closest('.chk-list-cont').removeClass('up-dp');
 		}
 		/*
