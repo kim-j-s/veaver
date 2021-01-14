@@ -815,6 +815,9 @@
 		padding: 0 22px;
 		flex-grow: 1;
 	}
+	.chk-list-cont.in-img{
+		margin-top: 20px;
+	}
 	.chk-list-cont.ov-case{
 		margin-bottom: 20px;
 	}
@@ -849,7 +852,6 @@
 		opacity: 1;
 	}
 
-
 	.chk-list-wrap{
 		position: relative;
 		position: absolute;
@@ -859,7 +861,6 @@
 		height: 100%;
 		overflow: auto;
 	}
-
 	.chk-list-wrap .rnd-checkbox + .rnd-checkbox{
 		margin-top: 10px;
 	}
@@ -869,11 +870,14 @@
 	/** 문진 리스트 - 사진 제공 **/
 
 	.st-img{
-		margin-top: 20px;
+		/*margin-top: 20px;*/
 	}
 	.st-img img{
 		display: block;
 		width: 100%;
+	}
+	.st-img + .rnd-checkbox{
+		margin-top: 30px;
 	}
 
 	/** // 문진 리스트 - 사진 제공 **/
