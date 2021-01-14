@@ -12,7 +12,7 @@
 
 <style>
 .q-txt-box{
-	padding: 0 22px;
+	/*padding: 0 22px;*/
 }
 .g-txt{
 	font-weight: 400;
@@ -25,42 +25,52 @@
 	color: #74777b;
 	line-height: 19px;
 }
-
-
-
 .scroll-list-wrap{
 	display: flex;
 	flex-direction: column;	
 	height: 100%;
+	overflow: hidden;
 }
 
 .chk-list-cont{
 	position: relative;
+	margin: 0 -22px;
 	margin-top: 30px;
 	padding: 0 22px;
 	flex-grow: 1;
 
 }
+.chk-list-cont.ov-case{
+	margin-bottom: 20px;
+}
 
-.chk-list-cont.up:before{
+.chk-list-cont.up-dp:before{
 	content: '';
 	position: absolute;
-	top: -38px;
+	top: -20px;
 	left: 0;
 	z-index: 1;
 	width: 100%;
-	height: 56px;
-	background: url(../img/close-20-blue.png) no-repeat 0 0 / 20px auto;
+	height: 20px;
+	background: url(../img/close-20-blue.png) no-repeat center center / 20px auto;
+	transition: .2s;
 }
-.chk-list-cont.down:after{
+.chk-list-cont.up-dp.fin:before{
+	opacity: 0.3;
+}
+.chk-list-cont.down-dp:after{
 	content: '';
 	position: absolute;
 	bottom: -20px;
 	left: 0;
 	z-index: 1;
 	width: 100%;
-	height: 56px;
-	background: url(../img/open-20-blue.png) no-repeat 0 0 / 20px auto;
+	height: 20px;
+	background: url(../img/open-20-blue.png) no-repeat center center / 20px auto;
+	transition: .2s;
+}
+.chk-list-cont.down-dp.fin:before{
+	opacity: 0.3;
 }
 
 .chk-list-wrap{
@@ -88,7 +98,8 @@
 	            			<span class="desc">(중복 선택 가능)</span>
 	            		</p>
 	            	</div>
-	            	<div class="chk-list-cont up down">
+	            	<!-- <div class="chk-list-cont up-dp down-dp ov-case"> -->
+	            	<div class="chk-list-cont">
 	            		<div class="chk-list-wrap">
 	            			<div class="inner">
 
@@ -122,70 +133,6 @@
 								<div class="rnd-checkbox">
 									<label class="input-checkbox">
 										<input type="checkbox"><span>어지럽다</span>
-									</label>
-								</div>
-
-								<div class="rnd-checkbox">
-									<label class="input-checkbox">
-										<input type="checkbox"><span>머리가 아프다</span>
-									</label>
-								</div>
-
-								<div class="rnd-checkbox">
-									<label class="input-checkbox">
-										<input type="checkbox"><span>기절을 했다</span>
-									</label>
-								</div>
-
-								<div class="rnd-checkbox">
-									<label class="input-checkbox">
-										<input type="checkbox"><span>어지럽다</span>
-									</label>
-								</div>
-
-								<div class="rnd-checkbox">
-									<label class="input-checkbox">
-										<input type="checkbox"><span>머리가 아프다</span>
-									</label>
-								</div>
-								<div class="rnd-checkbox">
-									<label class="input-checkbox">
-										<input type="checkbox"><span>기절을 했다</span>
-									</label>
-								</div>
-
-								<div class="rnd-checkbox">
-									<label class="input-checkbox">
-										<input type="checkbox"><span>어지럽다</span>
-									</label>
-								</div>
-
-								<div class="rnd-checkbox">
-									<label class="input-checkbox">
-										<input type="checkbox"><span>머리가 아프다</span>
-									</label>
-								</div>
-
-								<div class="rnd-checkbox">
-									<label class="input-checkbox">
-										<input type="checkbox"><span>머리가 아프다</span>
-									</label>
-								</div>
-								<div class="rnd-checkbox">
-									<label class="input-checkbox">
-										<input type="checkbox"><span>기절을 했다</span>
-									</label>
-								</div>
-
-								<div class="rnd-checkbox">
-									<label class="input-checkbox">
-										<input type="checkbox"><span>어지럽다</span>
-									</label>
-								</div>
-
-								<div class="rnd-checkbox">
-									<label class="input-checkbox">
-										<input type="checkbox"><span>머리가 아프다</span>
 									</label>
 								</div>
 
@@ -232,6 +179,17 @@
 	background: url(../img/btn-floating-next-nor.png) no-repeat 0 0 / 100% auto;
 }
 
+/*
+이동 off
+btn-floating-next-nor
+
+이동 on
+btn-floating-next-sel
+
+목록
+btn-floating-record
+
+*/
 
 </style>
 
@@ -284,12 +242,16 @@
 	text-indent:-9999px;
 }
 
+
+
+
 </style>
 
 
 <script>
 $(function(){
 	$('.d-layer-close').on('click', function(){
+		console.log('ss');
 		$(this).closest('.dimmed-layer').remove();
 	});
 });

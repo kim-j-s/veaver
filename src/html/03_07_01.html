@@ -12,7 +12,7 @@
 
 <style>
 .q-txt-box{
-	padding: 0 22px;
+	/*padding: 0 22px;*/
 }
 .g-txt{
 	font-weight: 400;
@@ -25,17 +25,16 @@
 	color: #74777b;
 	line-height: 19px;
 }
-
-
-
 .scroll-list-wrap{
 	display: flex;
 	flex-direction: column;	
 	height: 100%;
+	overflow: hidden;
 }
 
 .chk-list-cont{
 	position: relative;
+	margin: 0 -22px;
 	margin-top: 30px;
 	padding: 0 22px;
 	flex-grow: 1;
@@ -45,7 +44,7 @@
 	margin-bottom: 20px;
 }
 
-.chk-list-cont.up:before{
+.chk-list-cont.up-dp:before{
 	content: '';
 	position: absolute;
 	top: -20px;
@@ -54,8 +53,14 @@
 	width: 100%;
 	height: 20px;
 	background: url(../img/close-20-blue.png) no-repeat center center / 20px auto;
+	transition: .2s;
 }
-.chk-list-cont.down:after{
+/*
+.chk-list-cont.up-dp.up-fin:before{
+	opacity: 0.3;
+}
+*/
+.chk-list-cont.down-dp:after{
 	content: '';
 	position: absolute;
 	bottom: -20px;
@@ -64,7 +69,13 @@
 	width: 100%;
 	height: 20px;
 	background: url(../img/open-20-blue.png) no-repeat center center / 20px auto;
+	transition: .2s;
 }
+/*
+.chk-list-cont.down-dp.down-fin:before{
+	opacity: 0.3;
+}
+*/
 
 .chk-list-wrap{
 	position: relative;
@@ -91,7 +102,8 @@
 	            			<span class="desc">(중복 선택 가능)</span>
 	            		</p>
 	            	</div>
-	            	<div class="chk-list-cont up down ov-case">
+	            	<!-- <div class="chk-list-cont up-dp down-dp ov-case"> -->
+	            	<div class="chk-list-cont">
 	            		<div class="chk-list-wrap">
 	            			<div class="inner">
 

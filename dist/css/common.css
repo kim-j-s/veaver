@@ -465,8 +465,9 @@
 	}
 	.rnd-checkbox .input-checkbox > span{
 		position: static;
+		transition: .2s;
 	}
-	.rnd-checkbox .input-checkbox > input:checked + span:after{
+	.rnd-checkbox .input-checkbox > input:checked + span{
 		color: #056bff;
 	}
 	.rnd-checkbox .input-checkbox > span:before{
@@ -483,10 +484,10 @@
 		border: 1px solid #dbdee5;
 		border-radius: 25px;
 		box-sizing: border-box;
+		transition: .2s;
 	}
 	.rnd-checkbox .input-checkbox > input:checked + span:after{
 		border: 2px solid #056bff;
-		transition: .2s;
 	}
 
 	/** // input-checkbox **/
@@ -662,8 +663,8 @@
 		position:relative;
 		height:100%;
 		min-height:100%;
-		padding:20px 0 0 0;
-		overflow:auto;
+		padding:20px 22px 0 22px;
+		overflow: hidden;
 	}
 	.layer-content > .layer-inner{
 		height:calc(100% - 20px);

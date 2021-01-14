@@ -13,6 +13,12 @@ $(function(){
 
 	// input reset
 	InputReset();
+
+	// check-list
+	chkListWrap();
+
+	// 항목 체크 리스트 스크롤 처리
+	chkListScroll();
 	
 //script ready
 });
@@ -24,6 +30,7 @@ function toggleButton() {
 		$(this).toggleClass('on');
 	})
 }
+
 
 // input reset
 function InputReset() {
@@ -70,3 +77,50 @@ function InputReset() {
 		}, 10);
 	});
 }
+
+
+// check-list
+function chkListWrap() {
+	var wrapHeight = $('.chk-list-cont').outerHeight();
+	var trgHiehgt = $('.chk-list-wrap > .inner').outerHeight();
+	//console.log(wrapHeight);
+	//console.log(trgHiehgt);
+
+	if ( $('.chk-list-cont').length > 0 ) {
+		if (trgHiehgt > wrapHeight) {
+			$('.chk-list-cont').addClass('ov-case down-dp');
+		}
+	}
+}
+
+
+// 항목 체크 리스트 스크롤 처리
+function chkListScroll() {
+	$('.chk-list-wrap').on('scroll', function(){
+		if ( $(this).scrollTop() + $(this).outerHeight() >= $(this)[0].scrollHeight)	// 바닥 도달 시
+		{
+			console.log('end + ' + $(this).scrollTop());
+			console.log('end + ' + $(this).outerHeight());
+			console.log('end + ' + $(this)[0].scrollHeight);
+			$(this).addClass('done');
+			$(this).closest('.chk-list-cont').removeClass('down-dp');
+		} else if ( $(this).scrollTop() == 0 ) {	// 최상단 도달 시
+			console.log('start');
+			$(this).closest('.chk-list-cont').removeClass('up-dp');
+		} else if ( $(this).scrollTop() > 0 ) {		// 지나가는 중
+			console.log('middle');
+			$(this).closest('.chk-list-cont').addClass('up-dp');
+			$(this).closest('.chk-list-cont').addClass('down-dp');
+		}
+	});
+
+
+
+// up-dp.up-fin
+
+
+}
+
+
+
+
