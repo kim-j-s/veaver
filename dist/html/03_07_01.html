@@ -78,7 +78,7 @@
                 margin-bottom: 20px;
             }
 
-            .chk-list-cont.up-dp:before {
+            .chk-list-cont:before {
                 content: '';
                 position: absolute;
                 top: -20px;
@@ -87,7 +87,12 @@
                 width: 100%;
                 height: 20px;
                 background: url(../img/close-20-blue.png) no-repeat center center / 20px auto;
+                opacity: 0;
                 transition: .2s;
+            }
+
+            .chk-list-cont.up-dp:before {
+                opacity: 1;
             }
 
             /*
@@ -95,7 +100,7 @@
 	opacity: 0.3;
 }
 */
-            .chk-list-cont.down-dp:after {
+            .chk-list-cont:after {
                 content: '';
                 position: absolute;
                 bottom: -20px;
@@ -104,7 +109,12 @@
                 width: 100%;
                 height: 20px;
                 background: url(../img/open-20-blue.png) no-repeat center center / 20px auto;
+                opacity: 0;
                 transition: .2s;
+            }
+
+            .chk-list-cont.down-dp:after {
+                opacity: 1;
             }
 
             /*
@@ -134,7 +144,7 @@
                 <div class="scroll-list-wrap">
                     <div class="q-txt-box">
                         <p class="g-txt">
-                            가장 문제가 되는<br> 상태를 선택해주세요.
+                            가장 문제가 되는<br> 상태를 선택해주세요. v2
                             <span class="desc">(중복 선택 가능)</span>
                         </p>
                     </div>
