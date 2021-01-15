@@ -1,0 +1,192 @@
+@@include('head.html',{
+    "title":"결과 리스트 | "
+})
+<body>
+    <div class="layer-full-wrap">
+        <!-- 헤더영역 -->
+        @@include('popupheader.html',{
+            "layertitle":"Ai헬스큐"
+        })
+        <!-- //헤더영역 -->
+
+        <!-- 컨텐츠 영역 -->
+        <section class="layer-content">
+            <div class="layer-inner">
+
+
+<style>
+.gr-box{
+    padding: 22px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 6px 0px rgba(179,187,199,0.3);
+}
+
+.i-txt{
+    position: relative;
+    padding-left: 22px;
+    font-size: 12px;
+    line-height: 18px;
+}
+.i-txt:before{
+    content: '';
+    position: absolute;
+    top: 1px;
+    left: 0;
+    width: 16px;
+    height: 16px;
+    background: url(../img/ic-info.png) no-repeat 0 0 / 100% auto;
+}
+
+.badge{
+    position: relative;
+    top: 4px;
+    display: inline-block;
+    vertical-align: top;
+    padding: 0 5px;
+    font-size: 11px;
+    line-height: 18px;
+    color: #fff;
+    border-radius: 2px;
+}
+/*위험*/
+.badge.ty1{
+    background: #ff4405;
+}
+/*의심*/
+.badge.ty2{
+    color: #000;
+    background: #ffbf00;
+}
+/*주의*/
+.badge.ty3{
+    background: #11b66b;
+}
+
+
+/*검진 결과*/
+.rst-list-wrap{
+    margin-top: 30px;
+}
+.rst-list{
+
+}
+.rst-list li {
+    
+}
+.rst-list > li + li{
+    margin-top: 30px;
+    padding-top: 30px;
+    border-top: 1px solid #ebeff3;
+}
+.rst-list li .btn-bl{
+    margin-top: 20px;
+}
+.rst-list-cont{
+    position: relative;
+    padding-right: 84px;
+}
+.rst-list-cont dl dt{
+    max-height: 52px;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 27px;
+    word-wrap: break-word;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+.rst-list-cont dl dd{
+    max-height: 48px;
+    font-size: 16px;
+    line-height: 24px;
+    word-wrap: break-word;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+.rst-list-cont .st-img{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 70px;
+    border-radius: 8px;
+    overflow: hidden;
+}
+.rst-list-cont .st-img img{
+    display: block;
+    width: 100%;
+}
+
+</style>
+
+                <div class="gr-box">
+                    <p class="i-txt">증상에 대한 정확한 진단 및 치료는 반드시 의료기관을 방문하셔서 의사 선생님께 받으셔야합니다.</p>
+                </div>
+
+                <div class="rst-list-wrap">
+                    <ul class="rst-list">
+                        <li>
+                            <div class="rst-list-cont">
+                                <dl>
+                                    <dt>
+                                        <span class="badge ty1">위험</span>
+                                        대증 구개편도와 아데노이드 대증 구개편도와 아데노이드 대증 구개편도와 아데노이드 대증 구개편도와 아데노이드
+                                    </dt>
+                                    <dd>
+                                        만성 어지럼증은 부정맥, 심부전 등에 기인하는 어지럼증, 뇌혈관의 만성 어지럼증은 부정맥, 심부전 등에 기인하는 어지럼증, 뇌혈관의
+                                    </dd>
+                                </dl>
+                                <div class="st-img">
+                                    <img src="../img/temp/@poptemp02.jpg" alt="">
+                                </div>
+                            </div>
+                            <button type="button" class="btn-bl">질병 정보 확인하기</button>
+                        </li>
+                        <li>
+                            <div class="rst-list-cont">
+                                <dl>
+                                    <dt>
+                                        <span class="badge ty2">의심</span>
+                                        심정지
+                                    </dt>
+                                    <dd>
+                                        만성 어지럼증은 부정맥, 심부전 등에 기인하는 어지럼증, 뇌혈관의 만성 어지럼증은 부정맥, 심부전 등에 기인하는 어지럼증, 뇌혈관의
+                                    </dd>
+                                </dl>
+                                <div class="st-img">
+                                    <img src="../img/temp/@poptemp02.jpg" alt="">
+                                </div>
+                            </div>
+                            <button type="button" class="btn-bl">질병 정보 확인하기</button>
+                        </li>
+                        <li>
+                            <div class="rst-list-cont">
+                                <dl>
+                                    <dt>
+                                        <span class="badge ty3">주의</span>
+                                        심정지
+                                    </dt>
+                                    <dd>
+                                        만성 어지럼증은 부정맥, 심부전 등에 기인하는 어지럼증, 뇌혈관의 만성 어지럼증은 부정맥, 심부전 등에 기인하는 어지럼증, 뇌혈관의
+                                    </dd>
+                                </dl>
+                                <div class="st-img">
+                                    <img src="../img/temp/@poptemp02.jpg" alt="">
+                                </div>
+                            </div>
+                            <button type="button" class="btn-bl">질병 정보 확인하기</button>
+                        </li>
+                    </ul>
+
+
+                </div>
+
+
+            </div>
+        </section>
+        <!-- //컨텐츠 영역 -->
+    </div>
+</body>
+</html>

@@ -106,7 +106,18 @@
 		}
 		.btn-pu.op30{
 			opacity:30%;
-		}				
+		}
+		.btn-bl{
+		    display: block;
+		    width: 100%;
+		    padding: 7px 10px;
+		    text-align: center;
+		    font-weight: 500;
+		    font-size: 14px;
+		    line-height: 24px;
+		    border: 1px solid #ebeff3;
+		    border-radius: 4px;
+		}
 
 		/* small size */		
 		.btn-bd-gr-s {
@@ -667,7 +678,7 @@
 	}
 	.layer-content > .layer-inner{
 		height:calc(100% - 20px);
-		overflow:auto;
+		/*overflow:auto;*/
 	}
 
 	/* 레이어팝업 헤더 */
@@ -787,6 +798,44 @@
 	/* // 딤드 레이어 팝업 */
 
 
+	/** floating button **/
+
+	.floating-btns{
+		display: none;
+		position: fixed;
+		right: 18px;
+		bottom: 18px;
+		z-index: 130;
+		width: 70px;
+	}
+	.btn-go-menu{
+		display: inline-block;
+		width: 70px;
+		height: 70px;
+		overflow: hidden;
+		text-indent: -9999px;
+		background: url(../img/btn-floating-record.png) no-repeat 0 0 / 100% auto;
+	}
+	.btn-go-next{
+		display: inline-block;
+		width: 70px;
+		height: 70px;
+		overflow: hidden;
+		text-indent: -9999px;
+		background: url(../img/btn-floating-next-sel.png) no-repeat 0 0 / 100% auto;
+	}
+	.btn-go-next:disabled{
+		background: url(../img/btn-floating-next-nor.png) no-repeat 0 0 / 100% auto;
+	}
+
+	/** // floating button **/
+
+
+/*** // layout ***/
+
+
+/*** content ***/
+
 	/** 문진 리스트 **/
 
 	.g-txt{
@@ -882,40 +931,82 @@
 	/** // 문진 리스트 - 사진 제공 **/
 
 
-	/** floating button **/
+	/** 문진 기록 **/
 
-	.floating-btns{
-		display: none;
-		position: fixed;
-		right: 18px;
-		bottom: 18px;
-		z-index: 130;
-		width: 70px;
+	.record-top{
+	    padding: 20px 22px;
+	    border-radius: 8px;
+	    background: #f5f7f9;
 	}
-	.btn-go-menu{
-		display: inline-block;
-		width: 70px;
-		height: 70px;
-		overflow: hidden;
-		text-indent: -9999px;
-		background: url(../img/btn-floating-record.png) no-repeat 0 0 / 100% auto;
+	.record-top > dl dt{
+	    font-size: 16px;
+	    line-height: 24px;
 	}
-	.btn-go-next{
-		display: inline-block;
-		width: 70px;
-		height: 70px;
-		overflow: hidden;
-		text-indent: -9999px;
-		background: url(../img/btn-floating-next-sel.png) no-repeat 0 0 / 100% auto;
-	}
-	.btn-go-next:disabled{
-		background: url(../img/btn-floating-next-nor.png) no-repeat 0 0 / 100% auto;
+	.record-top > dl dd{
+	    margin-top: 10px;
+	    font-weight: 500;
+	    font-size: 18px;
+	    line-height: 28px;
 	}
 
-	/** // floating button **/
+	.record-top + .rec-list-wrap{
+	    margin-top: 20px;
+	}
+
+	.rec-list{
+
+	}
+	.rec-list > li{
+
+	}
+	.rec-list > li + li{
+	    margin-top: 30px;
+	    padding-top: 30px;
+	    border-top: 1px solid #ebeff3;
+	}
+	.rec-list > li > .btn-bl{
+	    margin-top: 20px;
+	}
+	.rec-st-cont{
+
+	}
+	.rec-st-cont > dt{
+	    position: relative;
+	    padding-left: 26px;
+	    font-size: 14px;
+	}
+	.rec-st-cont > dt .q-txt{
+	    position: relative;
+	    display: block;
+	    font-size: 12px;
+	    color: #056bff;
+	    line-height: 18px;
+	}
+	.rec-st-cont > dt .q-txt:before{
+	    content: '';
+	    position: absolute;
+	    top: 50%;
+	    left: -16px;
+	    width: 6px;
+	    height: 6px;
+	    background: #056bff; 
+	    border-radius: 50%;
+	    transform: translateY(-50%);
+	}
+	.rec-st-cont > dd{
+	    margin-top: 10px;
+	    padding: 0 0 0 26px;
+	    font-weight: 500;
+	    font-size: 18px;
+	    line-height: 28px;
+	}
+
+	/** // 문진 기록 **/
 
 
-/*** // layout ***/
 
 
+
+
+/*** // content ***/
 
