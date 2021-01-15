@@ -15,16 +15,138 @@
 
 
 <style>
-.record-wrap{
+.record-top{
     padding: 20px 22px;
+    border-radius: 8px;
     background: #f5f7f9;
+}
+.record-top > dl dt{
+    font-size: 16px;
+    line-height: 24px;
+}
+.record-top > dl dd{
+    margin-top: 10px;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 28px;
+}
+
+.record-top + .rec-list-wrap{
+    margin-top: 20px;
+}
+
+.rec-st-cont{
+
+}
+.rec-st-cont > dt{
+    position: relative;
+    padding-left: 26px;
+    font-size: 14px;
+}
+.rec-st-cont > dt:before{
+    content: '';
+    position: absolute;
+    top: 7px;
+    left: 10px;
+    width: 6px;
+    height: 6px;
+    background: #056bff; 
+    border-radius: 50%;
+}
+
+.rec-st-cont > dt .q-txt{
+    display: block;
+    font-size: 12px;
+    color: #056bff;
+    line-height: 18px;
+}
+
+.rec-st-cont > dd{
+    margin-top: 10px;
+    padding: 0 0 0 26px;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 28px;
+}
+
+.btn-bl{
+    display: block;
+    width: 100%;
+    padding: 8px;
+    text-align: center;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 24px;
+    border: 1px solid #ebeff3;
+    border-radius: 4px;
+}
+
+
+.rec-list{
+
+}
+.rec-list > li{
+
+}
+.rec-list > li + li{
+    margin-top: 30px;
+    padding-top: 30px;
+    border-top: 1px solid #ebeff3;
+}
+.rec-list > li > .btn-bl{
+    margin-top: 20px;
 }
 </style>
 
+
+
                 <div class="record-wrap">
                     <div class="record-top">
-                        <div class="tit">불편하신 증상을 입력해주세요</div>
+                        <dl>
+                            <dt>
+                                불편하신 증상을 입력해주세요
+                            </dt>
+                            <dd>
+                                머리가 아파요<br>
+                                머리가 지끈지끈해<br>
+                                뒷머리
+                            </dd>
+                        </dl>
                     </div>
+
+                    <div class="rec-list-wrap">
+                        <ul class="rec-list">
+                            <li>
+                                <dl class="rec-st-cont">
+                                    <dt>
+                                        <span class="q-txt">질문 1.</span>
+                                        가장 문제가 되는 상태를 선택하세요.
+                                    </dt>
+                                    <dd>
+                                        어지럽다
+                                    </dd>
+                                </dl>
+                                <button type="button" class="btn-bl">질병 정보 확인하기</button>
+                            </li>
+                            <li>
+                                <dl class="rec-st-cont">
+                                    <dt>
+                                        <span class="q-txt">질문 2.</span>
+                                        보기에서 해당되는 증상을 모두 선택하세요.
+                                    </dt>
+                                    <dd>
+                                        평소보다 어지럽다.<br>
+                                        춥거나 앉은 상태로 갑자기 일어나면 어지럽다.
+                                    </dd>
+                                </dl>
+                                <button type="button" class="btn-bl">질병 정보 확인하기</button>
+                            </li>
+                        </ul>
+                    </div>  
+
+
+
+
                 </div>
 
             </div>
