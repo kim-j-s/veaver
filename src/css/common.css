@@ -1091,7 +1091,13 @@
 	}
 	.rst-list-cont{
 	    position: relative;
-	    padding-right: 84px;
+	    font-size: 0;
+	}
+	.rst-list-cont dl {
+		display: inline-block;
+		vertical-align: top;
+		width: calc(100% - 70px);
+		padding-right: 14px;
 	}
 	.rst-list-cont dl dt{
 	    max-height: 52px;
@@ -1115,18 +1121,14 @@
 	    overflow: hidden;
 	}
 	.rst-list-cont .st-img{
-	    position: absolute;
-	    top: 0;
-	    right: 0;
-	    width: 70px;
-	    border-radius: 8px;
-	    overflow: hidden;
+		display: inline-block;
+		vertical-align: top;
+		width: 70px;
 	}
 	.rst-list-cont .st-img img{
 	    display: block;
 	    width: 100%;
 	}
-
 
 	/** // 문진 결과 리스트 **/
 
