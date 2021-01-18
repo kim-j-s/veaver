@@ -338,7 +338,7 @@
 		display: none;
 		position: absolute;
 		right: 0;
-		top: 14px;
+		bottom: 4px;
 		z-index: 1;
 		width: 30px;
 		height: 30px;
@@ -346,11 +346,6 @@
 		text-indent: -999px;
 		background: url(../img/ac-ic-search.png) no-repeat 0 0 / 100% auto;
 	}
-	/*
-	.input-text > .btn-remove.active {
-		display: block;
-	}
-	*/
 	.input-text > .msg {
 		display: block;
 		margin: 10px 0 0;
@@ -879,6 +874,9 @@
 		padding-top: 35px;
 		width: calc(100% - 44px);
 	}
+	.dimmed-layer-cont.close-none{
+		padding-top: 0;
+	}
 	.dimmed-layer-img{
 
 	}
@@ -897,15 +895,15 @@
 		font-size: 18px;
 		line-height: 27px;
 	}
-	.dl-tit + .dl-txt{
+	.dl-tit + .d-txt{
 		margin-top: 30px;
 	}
-	.dl-txt{
-		font-size: 16px;
-		line-height: 24px;
+	.d-txt{
+	    font-size: 16px;
+	    line-height: 24px;
 	}
-	.dl-txt + .dl-txt{
-		margin-top: 20px;
+	.d-txt + .d-txt{
+	    margin-top: 20px;
 	}
 	.dl-pop-cont > .btn-area{
 		margin-top: 40px;
