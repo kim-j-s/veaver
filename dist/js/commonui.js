@@ -19,6 +19,12 @@ $(function(){
 
 	// 항목 체크 리스트 스크롤 처리
 	chkListScroll();
+
+	// 우측 메뉴 버튼 display 처리
+	if ( $('.floating-btns').length > 0 ) {
+		floatBtns();
+	}
+
 	
 //script ready
 });
@@ -96,7 +102,6 @@ function chkListScroll() {
 	$('.chk-list-wrap').on('scroll', function(){
 		var st = Math.floor($(this).scrollTop());
 		var oh = Math.floor($(this).outerHeight());
-		// console.log('st : ' + st);
 		if ( st <= 0 ) {	// 최상단 도달 시
 			$(this).closest('.chk-list-cont').removeClass('up-dp');
 		}
@@ -111,5 +116,20 @@ function chkListScroll() {
 }
 
 
-
-
+// 우측 메뉴 버튼 display 처리
+function floatBtns() {
+	console.log('go');
+	var $flb = $('.floating-btns');
+	var t;
+    $('.layer-content, .chk-list-wrap').scroll(function () {
+        $flb.addClass('on');
+        setTimeout(function(){
+        	$flb.hide();
+        }, 500)
+        if(t) clearTimeout(t);
+        t = setTimeout(function () {
+        	$flb.show();
+            $flb.removeClass('on');
+        }, 500);
+    });
+}

@@ -143,7 +143,7 @@
                 </div>
             </div>
 
-            <div class="floating-btns on">
+            <div class="floating-btns">
                 <button type="button" class="btn-go-menu">목록으로 이동</button>
                 <button type="button" class="btn-go-next">다음</button>
                 <button type="button" class="btn-go-next" disabled="disabled">다음</button>
@@ -154,30 +154,3 @@
 </body>
 
 </html>
-
-
-<script>
-    $(function() {
-        var $dd = $('.floating-btns');
-        var t;
-        $('.chk-list-wrap').scroll(function() {
-            console.log('sdf');
-
-            $dd.removeClass('on');
-            if (t) clearTimeout(t);
-            t = setTimeout(function() {
-                $dd.addClass('on');
-            }, 500);
-        });
-
-        // shadow 후 display 처리 필요
-
-
-        $('.lp-btn').on('click', function() {
-            console.log('click');
-        })
-
-
-
-    });
-</script>

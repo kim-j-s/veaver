@@ -921,19 +921,16 @@
 	/** floating button **/
 
 	.floating-btns{
-		/*display: none;*/
 		position: fixed;
 		right: 18px;
 		bottom: 18px;
 		z-index: 130;
 		width: 70px;
 		transition: .5s;
-		opacity: 0;
+		opacity: 1;
 	}
 	.floating-btns.on{
-		/*display: block;*/
-		opacity: 1;
-		transition: .5s;
+		opacity: 0;
 	}
 	.btn-go-menu{
 		display: inline-block;
