@@ -23,7 +23,7 @@
 </head>
 
 <body>
-    <div class="layer-full-wrap">
+    <div class="layer-full-wrap btn-add">
         <!-- 헤더영역 -->
         <div class="layer-header">
             <div class="layer-header-inner">
@@ -46,55 +46,32 @@
 
         <!-- 컨텐츠 영역 -->
         <section class="layer-content">
-            <div class="layer-inner">
-                <p class="g-txt b-type">
-                    정확한 부위 정보가<br> 필요합니다.
-                    <span class="desc">불편하신 부위와 증상을 입력해 주세요.</span>
-                </p>
+            <p class="g-txt b-type">
+                정확한 부위 정보가<br> 필요합니다.
+                <span class="desc">불편하신 부위와 증상을 입력해 주세요.</span>
+            </p>
 
-                <div class="input-text">
-                    <input type="text" placeholder="예) 가슴, 머리, 배, 무릎, 발가락">
-                    <button type="button" class="btn-remove">삭제</button>
-                </div>
-
-                <div class="ralated-d">
-                    <div class="tit">관련 질병</div>
-                    <div class="cases">
-                        <button type="button" class="btn-rnd-gr on">두통</button>
-                        <button type="button" class="btn-rnd-gr on">협심증</button>
-                        <button type="button" class="btn-rnd-gr on">심장병</button>
-                        <button type="button" class="btn-rnd-gr on">협심증</button>
-                    </div>
-                </div>
+            <div class="input-text">
+                <input type="text" placeholder="예) 가슴, 머리, 배, 무릎, 발가락">
+                <button type="button" class="btn-remove">삭제</button>
             </div>
 
-
-            <style>
-                /*관련질병*/
-                .ralated-d {
-                    margin-top: 90px;
-                }
-
-                .ralated-d>.tit {
-                    font-weight: 500;
-                    font-size: 16px;
-                    line-height: 24px;
-                    padding-bottom: 4px;
-                }
-
-                .cases {
-                    font-size: 0;
-                }
-
-                .cases>.btn-rnd-gr {
-                    margin: 6px 6px 0 0;
-                    font-size: 14px;
-                }
-            </style>
-
-
+            <div class="ralated-d">
+                <div class="tit">관련 질병</div>
+                <div class="cases">
+                    <button type="button" class="btn-rnd-gr on">두통</button>
+                    <button type="button" class="btn-rnd-gr on">협심증</button>
+                    <button type="button" class="btn-rnd-gr on">심장병</button>
+                    <button type="button" class="btn-rnd-gr on">협심증</button>
+                </div>
+            </div>
         </section>
         <!-- //컨텐츠 영역 -->
+
+        <div class="btn-bottom-area">
+            <button type="button" class="btn-pu">확인</button>
+        </div>
+
     </div>
 </body>
 

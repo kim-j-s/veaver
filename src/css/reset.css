@@ -4,8 +4,8 @@
 /* HTML Default */
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, article, aside, hgroup, header, footer, figure, figcaption, nav, section { margin:0; padding:0; border:0; font-weight: 300; font-size:14px; vertical-align:baseline;-webkit-box-sizing:border-box; box-sizing:border-box;}
 article, aside, hgroup, header, footer, figure, figcaption, nav, section { display: block; }
-html {height:100%;}
-body {position:relative; min-width:100%; margin:0; min-height:100%; padding:0; -webkit-box-sizing:border-box; box-sizing:border-box; font-family: 'Noto Sans Kr', sans-serif; font-size:14px; color:#000;}
+html {/*height:100%;*/}
+body {/*position:relative;*/ min-width:100%; margin:0; /*min-height:100%;*/ padding:0; -webkit-box-sizing:border-box; box-sizing:border-box; font-family: 'Noto Sans Kr', sans-serif; font-size:14px; color:#000;}
 ol, ul { list-style:none; }
 blockquote, q { quotes:none; }
 blockquote:before, blockquote:after,q:before, q:after { content:''; }
