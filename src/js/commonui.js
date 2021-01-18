@@ -96,7 +96,7 @@ function chkListScroll() {
 	$('.chk-list-wrap').on('scroll', function(){
 		var st = Math.floor($(this).scrollTop());
 		var oh = Math.floor($(this).outerHeight());
-		console.log('st : ' + st);
+		// console.log('st : ' + st);
 		if ( st <= 0 ) {	// 최상단 도달 시
 			$(this).closest('.chk-list-cont').removeClass('up-dp');
 		}

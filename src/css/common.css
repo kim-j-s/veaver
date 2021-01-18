@@ -927,6 +927,13 @@
 		bottom: 18px;
 		z-index: 130;
 		width: 70px;
+		transition: .5s;
+		opacity: 0;
+	}
+	.floating-btns.on{
+		/*display: block;*/
+		opacity: 1;
+		transition: .5s;
 	}
 	.btn-go-menu{
 		display: inline-block;

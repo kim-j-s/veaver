@@ -19,58 +19,34 @@
             	<div class="chk-list-cont">
             		<div class="chk-list-wrap">
             			<div class="inner">
-
 		            		<div class="rnd-checkbox">
 								<label class="input-checkbox">
 									<input type="checkbox"><span>어지럽다</span>
 								</label>
 								<button type="button" class="lp-btn btn-img-view">사진보기</button>
 							</div>
-
 							<div class="rnd-checkbox">
 								<label class="input-checkbox">
 									<input type="checkbox"><span>머리가 아프다</span>
 								</label>
 								<button type="button" class="lp-btn btn-video-view">영상보기</button>
 							</div>
-
 							<div class="rnd-checkbox">
 								<label class="input-checkbox">
 									<input type="checkbox"><span>열이 나는 것 같다</span>
 								</label>
 								<button type="button" class="lp-btn btn-video-view on">영상보기</button>
 							</div>
-
 							<div class="rnd-checkbox">
 								<label class="input-checkbox">
 									<input type="checkbox"><span>기절을 했다</span>
 								</label>
 							</div>
-
 							<div class="rnd-checkbox">
 								<label class="input-checkbox">
 									<input type="checkbox"><span>어지럽다</span>
 								</label>
 							</div>
-
-							<div class="rnd-checkbox">
-								<label class="input-checkbox">
-									<input type="checkbox"><span>머리가 아프다</span>
-								</label>
-							</div>
-
-							<div class="rnd-checkbox">
-								<label class="input-checkbox">
-									<input type="checkbox"><span>기절을 했다</span>
-								</label>
-							</div>
-
-							<div class="rnd-checkbox">
-								<label class="input-checkbox">
-									<input type="checkbox"><span>어지럽다</span>
-								</label>
-							</div>
-
 							<div class="rnd-checkbox">
 								<label class="input-checkbox">
 									<input type="checkbox"><span>머리가 아프다</span>
@@ -81,19 +57,11 @@
 									<input type="checkbox"><span>기절을 했다</span>
 								</label>
 							</div>
-
 							<div class="rnd-checkbox">
 								<label class="input-checkbox">
 									<input type="checkbox"><span>어지럽다</span>
 								</label>
 							</div>
-
-							<div class="rnd-checkbox">
-								<label class="input-checkbox">
-									<input type="checkbox"><span>머리가 아프다</span>
-								</label>
-							</div>
-
 							<div class="rnd-checkbox">
 								<label class="input-checkbox">
 									<input type="checkbox"><span>머리가 아프다</span>
@@ -104,26 +72,43 @@
 									<input type="checkbox"><span>기절을 했다</span>
 								</label>
 							</div>
-
 							<div class="rnd-checkbox">
 								<label class="input-checkbox">
 									<input type="checkbox"><span>어지럽다</span>
 								</label>
 							</div>
-
 							<div class="rnd-checkbox">
 								<label class="input-checkbox">
 									<input type="checkbox"><span>머리가 아프다</span>
 								</label>
 							</div>
-
+							<div class="rnd-checkbox">
+								<label class="input-checkbox">
+									<input type="checkbox"><span>머리가 아프다</span>
+								</label>
+							</div>
+							<div class="rnd-checkbox">
+								<label class="input-checkbox">
+									<input type="checkbox"><span>기절을 했다</span>
+								</label>
+							</div>
+							<div class="rnd-checkbox">
+								<label class="input-checkbox">
+									<input type="checkbox"><span>어지럽다</span>
+								</label>
+							</div>
+							<div class="rnd-checkbox">
+								<label class="input-checkbox">
+									<input type="checkbox"><span>머리가 아프다</span>
+								</label>
+							</div>
 						</div>
 
 					</div>
             	</div>
         	</div>
 
-            <div class="floating-btns">
+            <div class="floating-btns on">
             	<button type="button" class="btn-go-menu">목록으로 이동</button>
             	<button type="button" class="btn-go-next">다음</button>
             	<button type="button" class="btn-go-next" disabled="disabled">다음</button>
@@ -133,3 +118,32 @@
     </div>
 </body>
 </html>
+
+
+<script>
+$(function(){
+	var $dd = $('.floating-btns');
+	var t;
+    $('.chk-list-wrap').scroll(function () {
+    	console.log('sdf');
+
+        $dd.removeClass('on');
+        if(t) clearTimeout(t);
+        t = setTimeout(function () {
+            $dd.addClass('on');
+        }, 500);
+    });
+
+    // shadow 후 display 처리 필요
+
+
+    $('.lp-btn').on('click', function(){
+    	console.log('click');
+    })
+
+
+
+});
+</script>
+
+
