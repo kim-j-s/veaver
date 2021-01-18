@@ -23,7 +23,7 @@
 </head>
 
 <body>
-    <div class="content">
+    <div class="content btn-add">
         <!-- 헤더영역 -->
         <div class="layer-header content-ver">
             <div class="layer-header-inner content-ver">
@@ -53,7 +53,7 @@ acProfile02B
     		</p>
 
             <div class="inp-group">
-                <label for="inpage" class="label">나이</label> <span class="s-mark">*</span>
+                <label for="inpage" class="label">나이 <span class="s-mark">*</span></label>
                 <div class="input-text">
                     <input type="number" id="inpage" placeholder="숫자만 입력해 주세요.">
                     <button type="button" class="btn-remove">삭제</button>
@@ -61,8 +61,8 @@ acProfile02B
             </div>
 
             <div class="inp-group">
-                <span class="label">성별</span> <span class="s-mark">*</span>
-                <div class="half-ele">
+                <span class="label">성별 <span class="s-mark">*</span></span>
+                <div class="half-ele gender">
                     <label class="input-radio">
                         <input type="radio" name="gender"><span>남자</span>
                     </label>
@@ -71,59 +71,18 @@ acProfile02B
                     </label>
                 </div>
             </div>
-
-
-            <style>
-                .half-ele {
-                    display: flex;
-                }
-
-                .half-ele>* {
-                    flex: 1;
-                }
-
-                .g-txt+.inp-group {
-                    margin-top: 30px;
-                }
-
-                .inp-group {}
-
-                .inp-group+.inp-group {
-                    margin-top: 24px;
-                }
-
-                .inp-group>.label {
-                    display: inline-block;
-                    line-height: 30px;
-                }
-
-                .inp-group>label+.input-text {}
-
-                .s-mark {
-                    position: relative;
-                    top: 2px;
-                    display: inline-block;
-                    vertical-align: middle;
-                    overflow: hidden;
-                    font-weight: 500;
-                    font-size: 15px;
-                    color: #ff4405;
-                }
-
-                .s-mark:after {
-                    content: '필수입력';
-                    position: absolute;
-                    width: 1px;
-                    height: 1px;
-                    padding: 0;
-                    clip: rect(0, 0, 0, 0);
-                }
-            </style>
-
-
         </section>
         <!-- //컨텐츠 영역 -->
+        <div class="btn-bottom-area">
+            <button type="button" class="btn-pu">확인</button>
+        </div>
     </div>
+
+
+    <style>
+
+    </style>
+
 </body>
 
 </html>
