@@ -727,7 +727,7 @@
 	/** content **/
 
 	.content{
-		position: relative;
+		/*position: relative;*/
 		height: 100%;
 		padding: 58px 0 0 0;
 	}
