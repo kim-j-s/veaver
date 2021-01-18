@@ -1,0 +1,29 @@
+@@include('head.html',{
+	"title":"증상입력 | "
+})
+<body>
+	<div class="layer-full-wrap">
+        <!-- 헤더영역 -->
+        @@include('popupheader.html',{
+			"layertitle":"Ai헬스큐"
+		})
+        <!-- //헤더영역 -->
+
+        <!-- 컨텐츠 영역 -->
+        <section class="layer-content">
+        	<div class="layer-inner">
+	        	<p class="g-txt b-type">
+	    			어디가<br> 불편하세요?
+	    			<span class="desc">불편하신 부위와 증상을 입력해 주세요.</span>
+	    		</p>
+
+	    		<div class="input-text">
+					<input type="text" placeholder="예) 머리가아파요">
+					<button type="button" class="btn-remove">삭제</button>
+				</div>
+			</div>
+        </section>
+        <!-- //컨텐츠 영역 -->
+    </div>
+</body>
+</html>

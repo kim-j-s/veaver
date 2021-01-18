@@ -178,17 +178,11 @@
 			overflow: hidden;
 		}
 		.btnTwo > .btn-pu{
-			/*height:62px;
-			line-height:62px;
-			font-size:17px;*/
 			float: right;
 			width:47%;
 			vertical-align:top;
 		}
 		.btnTwo > .btn-bd-pu{
-			/*height:62px;
-			line-height:62px;*/
-			/*font-size:17px;*/
 			float: left;
 			width:47%;
 			vertical-align:top;
@@ -220,14 +214,12 @@
 
 		.btn-rnd-gr{
 			display: inline-block;
-			padding: 4px 16px;
-			font-weight: 300;
-			font-size: 13px;
+			padding: 4px 12px;
+			font-size: 14px;
+			line-height: 18px;
 			color: #b5b9c1;
-			line-height: 20px;
 			border: 1px solid #ebeff3;
 			border-radius: 25px;
-			box-sizing: border-box;
 			transition: .2s;
 			background: #fff;
 			outline: none;
@@ -237,7 +229,6 @@
 			background: #edf4ff;
 			border: 1px solid #edf4ff;
 		}
-
 		.btn-rnd-bd-gr{
 			display: inline-block;
 			padding: 3px 8px;
@@ -982,9 +973,13 @@
 	/** 문진 리스트 **/
 
 	.g-txt{
-		font-weight: 400;
 		font-size: 20px;
 		line-height: 29px;
+	}
+	.g-txt.b-type{
+		color: #056bff;
+		font-size: 24px;
+		line-height: 36px;
 	}
 	.g-txt .desc{
 		display: block;
@@ -992,7 +987,16 @@
 		color: #74777b;
 		line-height: 19px;
 	}
-
+	.g-txt.b-type .desc{
+		display: block;
+		margin-top: 10px;
+		font-size: 16px;
+		line-height: 24px;
+		color: #000;
+	}
+	.g-txt.b-type + .input-text{
+		margin-top: 40px;
+	}
 	.scroll-list-wrap{
 		display: flex;
 		flex-direction: column;	
