@@ -6,7 +6,7 @@
     <meta content="IE=edge" http-equiv="X-UA-Compatible">
     <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
     <meta name="x-apple-disable-message-reformatting" />
-    <title>증상입력 | Veaver Health mining</title>
+    <title>Guest로 시작 | Veaver Health mining</title>
     <link href="../css/reset.css" rel="stylesheet" />
     <link href="../css/common.css" rel="stylesheet" />
     <script type="text/javascript" src="../js/jquery.min.js"></script>
@@ -23,88 +23,104 @@
 </head>
 
 <body>
-    <div class="layer-full-wrap">
+    <div class="content">
         <!-- 헤더영역 -->
-        <div class="layer-header">
-            <div class="layer-header-inner">
+        <div class="layer-header content-ver">
+            <div class="layer-header-inner content-ver">
                 <div class="layer-title">Ai헬스큐</div>
                 <span class="u-profile">
 	    	<span class="u-profile-img">
 	    		<img src="https://m.upinews.kr/data/upi/image/20190523/p1065574177335900_669_thum.jpg" alt="프로픨 사진" class="u-profile-img">
 	    	</span>
-                <span class="name">홍길동</span>
+                <span class="name">Guest</span>
                 </span>
-                <button type="buton" class="layer-close-btn">닫기</button>
             </div>
         </div>
+
+        <!-- d
+남
+acProfile01B
+여
+acProfile02B
+ -->
         <!-- //헤더영역 -->
 
         <!-- 컨텐츠 영역 -->
         <section class="layer-content">
-            <div class="scroll-list-wrap">
-                <p class="g-txt">
-                    가장 문제가 되는<br> 상태를 선택해주세요.
-        		</p>
-                <div class="chk-list-cont">
-                    <div class="chk-list-wrap">
-                        <div class="inner">
+            <p class="g-txt">
+                AI헬스큐를 사용하실 사용자의<br>
+    			나이와 성별을 입력해 주세요.
+    		</p>
 
-                            <div class="rnd-checkbox">
-                                <label class="input-checkbox">
-                                    <input type="checkbox"><span>어지럽다</span>
-                                </label>
-                                <button type="button" class="lp-btn btn-img-view">사진보기</button>
-                            </div>
-
-                            <div class="rnd-checkbox">
-                                <label class="input-checkbox">
-                                    <input type="checkbox"><span>머리가 아프다</span>
-                                </label>
-                                <button type="button" class="lp-btn btn-video-view">영상보기</button>
-                            </div>
-
-                            <div class="rnd-checkbox">
-                                <label class="input-checkbox">
-                                    <input type="checkbox"><span>열이 나는 것 같다</span>
-                                </label>
-                                <button type="button" class="lp-btn btn-video-view on">영상보기</button>
-                            </div>
-
-                            <div class="rnd-checkbox">
-                                <label class="input-checkbox">
-                                    <input type="checkbox"><span>기절을 했다</span>
-                                </label>
-                            </div>
-
-                            <div class="rnd-checkbox">
-                                <label class="input-checkbox">
-                                    <input type="checkbox"><span>어지럽다</span>
-                                </label>
-                            </div>
-
-                            <div class="rnd-checkbox">
-                                <label class="input-checkbox">
-                                    <input type="checkbox"><span>머리가 아프다</span>
-                                </label>
-                            </div>
-
-                            <div class="rnd-checkbox">
-                                <label class="input-checkbox">
-                                    <input type="checkbox"><span>기절을 했다</span>
-                                </label>
-                            </div>
-
-                        </div>
-
-                    </div>
+            <div class="inp-group">
+                <label for="inpage" class="label">나이</label> <span class="s-mark">*</span>
+                <div class="input-text">
+                    <input type="number" id="inpage" placeholder="숫자만 입력해 주세요.">
+                    <button type="button" class="btn-remove">삭제</button>
                 </div>
             </div>
 
-            <div class="floating-btns">
-                <button type="button" class="btn-go-menu">목록으로 이동</button>
-                <button type="button" class="btn-go-next">다음</button>
-                <button type="button" class="btn-go-next" disabled="disabled">다음</button>
+            <div class="inp-group">
+                <span class="label">성별</span> <span class="s-mark">*</span>
+                <div class="half-ele">
+                    <label class="input-radio">
+                        <input type="radio" name="gender"><span>남자</span>
+                    </label>
+                    <label class="input-radio">
+                        <input type="radio" name="gender"><span>여자</span>
+                    </label>
+                </div>
             </div>
+
+
+            <style>
+                .half-ele {
+                    display: flex;
+                }
+
+                .half-ele>* {
+                    flex: 1;
+                }
+
+                .g-txt+.inp-group {
+                    margin-top: 30px;
+                }
+
+                .inp-group {}
+
+                .inp-group+.inp-group {
+                    margin-top: 24px;
+                }
+
+                .inp-group>.label {
+                    display: inline-block;
+                    line-height: 30px;
+                }
+
+                .inp-group>label+.input-text {}
+
+                .s-mark {
+                    position: relative;
+                    top: 2px;
+                    display: inline-block;
+                    vertical-align: middle;
+                    overflow: hidden;
+                    font-weight: 500;
+                    font-size: 15px;
+                    color: #ff4405;
+                }
+
+                .s-mark:after {
+                    content: '필수입력';
+                    position: absolute;
+                    width: 1px;
+                    height: 1px;
+                    padding: 0;
+                    clip: rect(0, 0, 0, 0);
+                }
+            </style>
+
+
         </section>
         <!-- //컨텐츠 영역 -->
     </div>
