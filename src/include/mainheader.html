@@ -1,6 +1,6 @@
  <div class="main-header">
  	<div class="main-header-inner">
- 		v2
+ 		v3
 	    <span class="u-profile">
 	    	<span class="u-profile-img">
 	    		<!-- 적용된 썸네일 -->
@@ -38,6 +38,18 @@
 	height: 70px;
 	background: radial-gradient(circle at bottom left, transparent 70px, #056bff 70px);
 	overflow: hidden;
+}
+.main-header-inner > .side-l:after{
+	content: '';
+	position: absolute;
+	top: -1px;
+	right: -1px;
+	width: 140px;
+	height: 140px;
+	background: transparent;
+	border: 1px solid #056bff;
+	/*border: 1px solid red;*/
+	border-radius: 50%;
 }
 /*
 i{
