@@ -118,7 +118,6 @@ function chkListScroll() {
 
 // 우측 메뉴 버튼 display 처리
 function floatBtns() {
-	console.log('go');
 	var $flb = $('.floating-btns');
 	var t;
     $('.layer-content, .chk-list-wrap').scroll(function () {

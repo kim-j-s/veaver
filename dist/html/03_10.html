@@ -36,35 +36,29 @@
             position: relative;
             left: -22px;
             width: calc(100% + 44px);
-            height: 86px;
+            height: 77px;
             margin-bottom: 12px;
-            overflow: hidden;
+            /*overflow: hidden;*/
+            background: url(../img/temp/@load.jpg) repeat 0 0 / 100% auto;
+            animation: animatedBackground 50s linear infinite;
 
         }
 
-        /*
-.loading-visual:before{
-	content: '';
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	width: 70px;
-	height: 70px;
-	border-radius: 50%;
-	background: #056bff;
-	transform: translate(-50%, -50%);
-}
-*/
+        @keyframes animatedBackground {
+            from {
+                background-position: 0 0;
+            }
+
+            to {
+                background-position: -10000px 0;
+            }
+        }
     </style>
     <!-- 레이어 팝업 -->
     <div class="dimmed-layer">
         <div class="dimmed-layer-cont">
             <div class="loading-cont">
-                <div class="loading-visual">
-                    <div class="lo-line01">
-                        로딩 이미지 적용 대기 중
-                    </div>
-                </div>
+                <div class="loading-visual"></div>
                 헬스마이닝의 빅데이터를 분석중입니다
             </div>
         </div>

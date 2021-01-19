@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+    <meta name="x-apple-disable-message-reformatting" />
+    <title>Veaver Health mining</title>
+    <link href="../css/reset.css" rel="stylesheet" />
+    <link href="../css/common.css" rel="stylesheet" />
+    <script type="text/javascript" src="../js/jquery.min.js"></script>
+    <script type="text/javascript" src="../js/commonui.js"></script>
+    <!--[if lt IE 9]>
+    <script type="text/javascript">
+        document.createElement("header"); 
+        document.createElement("nav"); 
+        document.createElement("section"); 
+        document.createElement("article"); 
+        document.createElement("footer");
+    </script>
+<![endif]-->
+</head>
+
+<body>
+
+
+    <style>
+        .main-wrap {
+            padding: 142px 0 0 0;
+        }
+
+
+        /*main-content*/
+        .main-content {
+            position: relative;
+            padding: 40px 32px 22px 32px;
+            border-radius: 0 25px 0 0;
+        }
+
+
+        .b-link {
+            display: inline-block;
+            padding-right: 16px;
+            font-weight: 400;
+            font-size: 16px;
+            color: #056bff;
+            line-height: 24px;
+            background: url(../img/btn-arrow-blue-16-right.png) no-repeat right center / 16px auto;
+        }
+
+        /*main-health-list*/
+
+        .main-health-list-wrap {
+            overflow: hidden;
+        }
+
+        .main-health-list {
+            position: relative;
+        }
+
+        .main-health-list:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 4px;
+            width: 2px;
+            height: 100%;
+            background: #f5f7f9;
+        }
+
+        .main-health-list>li {
+            position: relative;
+            padding: 10px 0 0 20px;
+        }
+
+        .main-health-list>li:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 10px;
+            border-bottom: 10px solid #000;
+            border-radius: 50%;
+        }
+
+        .main-health-list>li+li {
+            margin-top: 49px;
+        }
+
+        .main-health-list>li.ty2:before {
+            border-bottom-color: #056bff;
+        }
+
+        .main-health-list>li.ty3:before {
+            border-bottom-color: #59e9de;
+        }
+
+        .main-health-list>li:last-child:after {
+            content: '';
+            position: absolute;
+            top: 10px;
+            left: 0;
+            width: 10px;
+            height: 100%;
+            background: #fff;
+            z-index: 1;
+        }
+
+        .main-health-list>li .tit {
+            display: block;
+            font-weight: 500;
+            font-size: 20px;
+            line-height: 29px;
+        }
+
+        .main-health-list>li .txt {
+            display: block;
+            color: #74777b;
+            line-height: 20px;
+            margin-bottom: 10px;
+        }
+    </style>
+
+    <div class="main-wrap">
+        <!-- 헤더영역 -->
+        <div class="main-header">
+            <div class="main-header-inner">
+                <span class="u-profile">
+	    	<span class="u-profile-img">
+	    		<!-- 적용된 썸네일 -->
+	    		<img src="https://m.upinews.kr/data/upi/image/20190523/p1065574177335900_669_thum.jpg" alt="프로픨 사진" class="u-profile-img">
+	    		<!-- 남성 기본 썸네일 -->
+	    		<!-- <img src="../img/acProfile01B.png" alt="프로픨 사진" class="u-profile-img"> -->
+	    		<!-- 여성 기본 썸네일 -->
+	    		<!-- <img src="../img/acProfile02B.png" alt="프로픨 사진" class="u-profile-img"> -->
+	    	</span>
+                <span class="name">Guest</span>
+                </span>
+
+                <span class="side-l"></span>
+            </div>
+        </div>
+
+
+
+        <style>
+            .main-header {
+                position: fixed;
+                top: 0;
+                left: 0;
+                z-index: 2;
+                width: 100%;
+                height: 142px;
+                padding: 14px 22px 0 22px;
+                background: #056bff;
+            }
+
+            .main-header-inner>.side-l {
+                position: absolute;
+                right: 0;
+                bottom: -70px;
+                width: 70px;
+                height: 70px;
+                background: radial-gradient(circle at bottom left, transparent 70px, #056bff 70px);
+                overflow: hidden;
+            }
+
+            /*
+i{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 70px;
+	height: 70px;
+}
+*/
+            .main-header
+        </style>
+
+        <!-- //헤더영역 -->
+
+        <!-- 컨텐츠 영역 -->
+        <section class="main-content">
+            <div class="main-health-list-wrap">
+                <ul class="main-health-list">
+                    <li class="tyl">
+                        <strong class="tit">어디가 불편하세요?</strong>
+                        <span class="txt">AI에게 불편하신 증상을 말씀해주세요.</span>
+                        <a href="#" class="b-link">AI헬스큐</a>
+                    </li>
+                    <li class="ty2">
+                        <strong class="tit">건강 검진 결과 확인하세요</strong>
+                        <span class="txt">검진 기록을 관리/분석해드려요.</span>
+                        <a href="#" class="b-link">건강검진관리</a>
+                    </li>
+                    <li class="ty3">
+                        <strong class="tit">예방접종 기록 관리하세요</strong>
+                        <span class="txt"> 자녀의 접종 기록과 시기를 관리해드려요.</span>
+                        <a href="#" class="b-link">예방접종케어</a>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <!-- //컨텐츠 영역 -->
+    </div>
+</body>
+
+</html>
