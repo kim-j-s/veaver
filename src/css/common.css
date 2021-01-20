@@ -817,6 +817,7 @@
 	.u-profile{
 		position: relative;
 		display: inline-block;
+		vertical-align: middle;
 		padding: 2px 6px 2px 24px;
 		border-radius: 25px;
 		background: #f7f9fa;
