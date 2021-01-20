@@ -2,6 +2,7 @@
  	<div class="main-header-top">
  		<div class="nav">
  			<button type="button" class="menu-open">메뉴보기</button>
+ 			@@include('nav.html')
  		</div>
  		<div class="utils">
  			<a href="#" class="go-home">메인으로 이동</a>
@@ -14,10 +15,9 @@
 		    		<!-- 여성 기본 썸네일 -->
 		    		<!-- <img src="../img/acProfile02B.png" alt="프로픨 사진" class="u-profile-img"> -->
 		    	</span>
-		    	<span class="name">Guest</span>
+		    	<span class="name">GUEST</span>
 		    </span>
 	    </div>
-	    @@include('nav.html')
     </div>
     <a href="#" class="go-search">궁금하신 헬스케어 정보를 찾아보세요</a>
     <span class="side-bg"></span>
@@ -35,7 +35,7 @@
 }
 .go-home{
 	display: inline-block;
-	vertical-align: middle;
+	vertical-align: top;
 	width: 30px;
 	height: 30px;
 	background: url(../img/ac-white-home.png) no-repeat 0 0 / 100% auto;
@@ -44,8 +44,8 @@
 }
 .go-home + .u-profile{
 	margin-left: 11px;
+	vertical-align: top;
 }
-
 .go-search{
 	display: block;
 	padding: 10px 22px;
@@ -54,7 +54,12 @@
 	border: 2px solid #82b5ff;
 	border-radius: 25px;
 	background: url(../img/ic-search-w.png) no-repeat right 22px center / 30px auto;
-	
+}
+@media screen and (max-width:359px) {
+	.go-search{
+		font-size: 13px;
+		letter-spacing: -0.8px;
+	}
 }
 
 </style>
@@ -88,6 +93,13 @@
 	right: 0;
 	font-size: 0;
 }
+.main-header-top .utils .u-profile{
+	margin-top: 4px;
+	background: rgba(255, 255, 255, 0.3);
+}
+.main-header-top .utils .u-profile .name{
+	color: #fff;
+}
 .main-header > .side-bg{
 	position: absolute;
 	right: 0;
@@ -109,5 +121,4 @@
 	border-radius: 50%;
 }
 
-.main-header
 </style>
