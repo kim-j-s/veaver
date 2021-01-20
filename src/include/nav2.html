@@ -18,19 +18,23 @@
 			<a href="#">약관및정책</a>
 			<a href="#">설정</a>
 		</div>
-		<button type="button" class="btn-nav-close">닫기</button>		
 	</div>
 </nav>
 
 <script>
 $(function(){
-	$('.menu-open').click(function(){
+	
+	$('.menu-open-h:not(.on)').click(function(){
+		console.log('xx');
+		$(this).addClass('on');
 		$('nav').removeClass('out on');
 		$('nav').addClass('on');
 	})
-	$('.btn-nav-close').click(function(){
+	$('.menu-open-h.on').click(function(){
+		console.log('ss');
 		$('nav').addClass('out');
 	})
+
 });
 </script>
 
@@ -67,7 +71,7 @@ nav{
 	bottom: 0; 
 	left: -100%;
 	width: 100%;
-	z-index: 99;
+	z-index: 80;
 }
 nav.on{
 	animation: navopen .6s forwards;
