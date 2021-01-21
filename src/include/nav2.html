@@ -24,16 +24,16 @@
 <script>
 $(function(){
 	
-	$('.menu-open-h:not(.on)').click(function(){
-		console.log('xx');
-		$(this).addClass('on');
-		$('nav').removeClass('out on');
-		$('nav').addClass('on');
-	})
-	$('.menu-open-h.on').click(function(){
-		console.log('ss');
-		$('nav').addClass('out');
-	})
+	$('.menu-open-h').on('click', function(){
+		if ( !$(this).hasClass('on') ){
+			$(this).addClass('on');
+			$('nav').removeClass('out on');
+			$('nav').addClass('on');
+		} else {
+			$(this).removeClass('on');
+			$('nav').addClass('out');
+		}
+	});
 
 });
 </script>
