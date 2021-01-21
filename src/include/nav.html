@@ -25,10 +25,25 @@
 			<a href="#">설정</a>
 		</div>
 	</div>
+
+	<div class="aaa">
+		<input type="tel" name="" id="dd">
+		<button type="button" onclick="change()">변경</button>
+	</div>
 </nav>
 
+<style>
+.aaa{position: absolute; right: 30px; top: 10px;}
+.aaa input {}
+.aaa button {display: inline-block; background: #fff;}
+</style>
 
-
+<script>
+function change() {
+	var val = $('#dd').val();
+	$('html').css('font-size',val + 'px');
+}
+</script>
 
 <style>
 nav{
