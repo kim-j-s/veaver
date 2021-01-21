@@ -7,7 +7,7 @@ article, aside, hgroup, header, footer, figure, figcaption, nav, section { displ
 html {height: 100%; font-size: 100px;}
 @media screen and (max-width: 375px) {
   html{
-    font-size: 50px;
+    font-size: 80px;
   }
 }
 body {min-width:100%; height: 100%; margin:0; padding:0; box-sizing:border-box; font-family: 'Noto Sans Kr', sans-serif; font-size:14px; color:#000;}
