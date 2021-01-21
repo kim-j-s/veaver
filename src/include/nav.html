@@ -4,7 +4,7 @@
 			<span class="side-bg"></span>
 		</div>
 		<div class="nav-cont">
-			<div class="nav-cate-list-wrap">
+			<div class="nav-content">
 				<ul class="nav-cate-list">
 					<li class="ty1"><a href="#">AI헬스큐</a></li>
 					<li class="ty2"><a href="#">건강검진관리</a></li>
@@ -12,7 +12,7 @@
 					<li class="ty4"><a href="#">건강검진관리</a></li>
 				</ul>
 			</div>
-			<div class="nav-sub-link-wrap">
+			<div class="nav-content">
 				<ul class="nav-sub-link">
 					<li><a href="#">관심 질병 히스토리</a></li>
 					<li><a href="#">관심 콘텐츠 목록</a></li>
@@ -47,6 +47,23 @@ nav{
 nav.off{
 	animation: navclose .6s forwards;
 }
+.nav-inner{
+	position: relative;
+	left: -100%;
+	display: flex;
+	flex-direction: column;
+	width: calc(100% - 20px);
+	height: 100%;
+	padding: 0 0 78px 0;
+	background: #fff;
+	transition: .6s;
+}
+.menu-open.on + nav .nav-inner{
+	left: 0;
+}
+nav.off .nav-inner{
+	left: -100%;
+}
 
 @keyframes navopen {
     0% {
@@ -73,26 +90,6 @@ nav.off{
     }
 }
 
-
-.nav-inner{
-	position: relative;
-	left: -100%;
-	display: flex;
-	flex-direction: column;
-	width: calc(100% - 20px);
-	height: 100%;
-	padding: 0 0 78px 0;
-	background: #fff;
-	transition: .6s;
-}
-.menu-open.on + nav .nav-inner{
-	left: 0;
-}
-nav.off .nav-inner{
-	left: -100%;
-}
-
-
 /*Nav Content*/
 .nav-top{
 	position: relative;
@@ -110,7 +107,7 @@ nav.off .nav-inner{
 	background: radial-gradient(circle at bottom left, transparent 70px, #056bff 70px);
 	overflow: hidden;
 }
-.nav-top> .side-bg:after{
+.nav-top > .side-bg:after{
 	content: '';
 	position: absolute;
 	top: -1px;
@@ -126,11 +123,19 @@ nav.off .nav-inner{
 	padding: 39px 32px 0 32px;
 	overflow: auto;
 }
-.nav-cate-list-wrap{
-	position: relative;
+.nav-content{
+	position: relative;	
 }
-.nav-cate-list-wrap:before{
-	content: '';
+.nav-content + .nav-content{
+	margin-top: 30px;
+	padding-top: 30px;
+	border-top: 1px solid #ebeff3;
+}
+@media screen and (max-width:360px) {
+	.nav-content + .nav-content{
+		margin-top: 20px;
+		padding-top: 20px;
+	}
 }
 .nav-cate-list{
 
@@ -179,6 +184,13 @@ nav.off .nav-inner{
 .nav-cate-list > li + li{
 	margin-top: 28px;
 }
+
+@media screen and (max-width:360px) {
+	.nav-cate-list > li + li{
+		margin-top: 18px;
+	}
+}
+
 .nav-cate-list > li > a{
 	display: inline-block;
 	font-weight: 500;
@@ -186,16 +198,6 @@ nav.off .nav-inner{
 	color: #000;
 	line-height: 27px;
 }
-
-
-.nav-cate-list-wrap + .nav-sub-link-wrap{
-	margin-top: 30px;
-	padding-top: 30px;
-	border-top: 1px solid #ebeff3;
-}
-
-
-
 .nav-sub-link{
 
 }
@@ -204,6 +206,11 @@ nav.off .nav-inner{
 }
 .nav-sub-link > li + li{
 	margin-top: 20px;
+}
+@media screen and (max-width:360px) {
+	.nav-sub-link > li + li{
+		margin-top: 15px;
+	}
 }
 .nav-sub-link > li a{
 	display: block;
