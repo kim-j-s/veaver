@@ -229,6 +229,17 @@
 			background: #edf4ff;
 			border: 1px solid #edf4ff;
 		}
+		.btn-rnd-wh{
+			display: inline-block;
+			padding: 4px 12px;
+			font-weight: 500;
+			font-size: 14px;
+			line-height: 20px;
+			color: #fff;
+			border-radius: 25px;
+			background: #5097ff;
+			outline: none;
+		}
 		.btn-rnd-bd-gr{
 			display: inline-block;
 			padding: 3px 8px;
