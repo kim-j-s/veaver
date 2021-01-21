@@ -25,9 +25,25 @@ $(function(){
 		floatBtns();
 	}
 
+	// Nav Open Close
+	MenuOpenClose()
+
 	
 //script ready
 });
+
+// Nav Open Close
+function MenuOpenClose() {
+	$('.menu-open').on('click', function(){
+		if ( !$(this).hasClass('on') ){
+			$(this).addClass('on');
+			$('nav').removeClass('off');
+		} else {
+			$(this).removeClass('on');
+			$('nav').addClass('off');
+		}
+	});
+}
 
 
 // toggle Button
@@ -132,3 +148,4 @@ function floatBtns() {
         }, 500);
     });
 }
+

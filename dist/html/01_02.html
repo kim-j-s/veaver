@@ -28,7 +28,9 @@
         <div class="main-header">
             <div class="main-header-top">
                 <div class="nav-area">
-                    <button type="button" class="menu-open">메뉴보기</button>
+                    <button type="button" class="menu-open on">
+                        <span class="stick">메뉴</span>
+                    </button>
                     <nav>
                         <div class="nav-inner">
                             <div class="nav-top">sdfsdfsdf
@@ -43,51 +45,22 @@
                                         <li class="ty4"><a href="#">건강검진관리</a></li>
                                     </ul>
                                 </div>
+                                <div class="nav-sub-link-wrap">
+                                    <ul class="nav-sub-link">
+                                        <li><a href="#">관심 질병 히스토리</a></li>
+                                        <li><a href="#">관심 콘텐츠 목록</a></li>
+                                    </ul>
+                                </div>
                             </div>
                             <div class="nav-links">
                                 <a href="#">서비스문의</a>
                                 <a href="#">약관및정책</a>
                                 <a href="#">설정</a>
                             </div>
-                            <button type="button" class="btn-nav-close">닫기</button>
                         </div>
                     </nav>
 
-                    <script>
-                        $(function() {
-                            $('.menu-open').click(function() {
-                                $('nav').removeClass('out on');
-                                $('nav').addClass('on');
-                            })
-                            $('.btn-nav-close').click(function() {
-                                $('nav').addClass('out');
-                            })
-                        });
-                    </script>
 
-                    <style>
-                        .nav-top>.side-bg {
-                            position: absolute;
-                            right: 0;
-                            bottom: -69px;
-                            width: 70px;
-                            height: 70px;
-                            background: radial-gradient(circle at bottom left, transparent 70px, #056bff 70px);
-                            overflow: hidden;
-                        }
-
-                        .nav-top>.side-bg:after {
-                            content: '';
-                            position: absolute;
-                            top: -1px;
-                            right: -1px;
-                            width: 140px;
-                            height: 140px;
-                            background: transparent;
-                            border: 1px solid #056bff;
-                            border-radius: 50%;
-                        }
-                    </style>
 
 
 
@@ -99,17 +72,16 @@
                             bottom: 0;
                             left: -100%;
                             width: 100%;
-                            z-index: 99;
+                            z-index: 80;
                         }
 
-                        nav.on {
+                        .menu-open.on+nav {
                             animation: navopen .6s forwards;
                         }
 
-                        nav.on.out {
+                        nav.off {
                             animation: navclose .6s forwards;
                         }
-
 
                         @keyframes navopen {
                             0% {
@@ -152,14 +124,16 @@
                             transition: .6s;
                         }
 
-                        nav.on .nav-inner {
+                        .menu-open.on+nav .nav-inner {
                             left: 0;
                         }
 
-                        nav.on.out .nav-inner {
+                        nav.off .nav-inner {
                             left: -100%;
                         }
 
+
+                        /*Nav Content*/
                         .nav-top {
                             position: relative;
                             flex: none;
@@ -168,9 +142,31 @@
                             background: #056bff;
                         }
 
+                        .nav-top>.side-bg {
+                            position: absolute;
+                            right: 0;
+                            bottom: -69px;
+                            width: 70px;
+                            height: 70px;
+                            background: radial-gradient(circle at bottom left, transparent 70px, #056bff 70px);
+                            overflow: hidden;
+                        }
+
+                        .nav-top>.side-bg:after {
+                            content: '';
+                            position: absolute;
+                            top: -1px;
+                            right: -1px;
+                            width: 140px;
+                            height: 140px;
+                            background: transparent;
+                            border: 1px solid #056bff;
+                            border-radius: 50%;
+                        }
+
                         .nav-cont {
                             flex-grow: 1;
-                            padding: 39px 0 0 32px;
+                            padding: 39px 32px 0 32px;
                             overflow: auto;
                         }
 
@@ -202,7 +198,7 @@
                         .nav-cate-list>li:before {
                             content: '';
                             position: absolute;
-                            top: 10px;
+                            top: 9px;
                             left: 0;
                             width: 10px;
                             border-bottom: 10px solid #000;
@@ -224,7 +220,7 @@
                         .nav-cate-list>li:last-child:after {
                             content: '';
                             position: absolute;
-                            top: 20px;
+                            top: 19px;
                             left: 0;
                             width: 10px;
                             height: 100%;
@@ -244,6 +240,32 @@
                             line-height: 27px;
                         }
 
+
+                        .nav-cate-list-wrap+.nav-sub-link-wrap {
+                            margin-top: 30px;
+                            padding-top: 30px;
+                            border-top: 1px solid #ebeff3;
+                        }
+
+
+
+                        .nav-sub-link {}
+
+                        .nav-sub-link>li {}
+
+                        .nav-sub-link>li+li {
+                            margin-top: 20px;
+                        }
+
+                        .nav-sub-link>li a {
+                            display: block;
+                            padding-right: 20px;
+                            line-height: 20px;
+                            color: #000;
+                            background: url(../img/btn-arrow-black-20-right.png) no-repeat right center / 20px auto;
+                        }
+
+                        /*nva footer*/
                         .nav-links {
                             position: absolute;
                             bottom: 29px;
@@ -275,20 +297,9 @@
                             border-left: 1px solid #ebeff3;
                         }
 
-                        nav .btn-nav-close {
-                            position: absolute;
-                            top: 22px;
-                            left: 22px;
-                        }
+                        /* //nva footer*/
 
-                        .btn-nav-close {
-                            display: inline-block;
-                            width: 30px;
-                            height: 30px;
-                            overflow: hidden;
-                            text-indent: -9999px;
-                            background: url(../img/ac-white-close.png) no-repeat 0 0 / 100% auto;
-                        }
+                        /*Nav Content*/
                     </style>
                 </div>
                 <div class="utils">
@@ -309,50 +320,6 @@
             <a href="#" class="go-search">궁금하신 헬스케어 정보를 찾아보세요</a>
             <span class="side-bg"></span>
         </div>
-
-
-        <style>
-            .menu-open {
-                display: inline-block;
-                width: 30px;
-                height: 30px;
-                background: url(../img/ac-white-menu.png) no-repeat 0 0 / 100% auto;
-                overflow: hidden;
-                text-indent: -9999px;
-            }
-
-            .go-home {
-                display: inline-block;
-                vertical-align: top;
-                width: 30px;
-                height: 30px;
-                background: url(../img/ac-white-home.png) no-repeat 0 0 / 100% auto;
-                overflow: hidden;
-                text-indent: -9999px;
-            }
-
-            .go-home+.u-profile {
-                margin-left: 11px;
-                vertical-align: top;
-            }
-
-            .go-search {
-                display: block;
-                padding: 10px 22px;
-                color: #fff;
-                line-height: 20px;
-                border: 2px solid #82b5ff;
-                border-radius: 25px;
-                background: url(../img/ic-search-w.png) no-repeat right 22px center / 30px auto;
-            }
-
-            @media screen and (max-width:359px) {
-                .go-search {
-                    font-size: 13px;
-                    letter-spacing: -0.8px;
-                }
-            }
-        </style>
         <!-- //헤더영역 -->
 
         <!-- 컨텐츠 영역 -->

@@ -1,7 +1,9 @@
  <div class="main-header">
  	<div class="main-header-top">
  		<div class="nav-area">
- 			<button type="button" class="menu-open">메뉴보기</button>
+ 			<button type="button" class="menu-open on">
+ 				<span class="stick">메뉴</span>
+ 			</button>
  			@@include('nav.html')
  		</div>
  		<div class="utils">
@@ -22,44 +24,3 @@
     <a href="#" class="go-search">궁금하신 헬스케어 정보를 찾아보세요</a>
     <span class="side-bg"></span>
 </div>
-
-
-<style>
-.menu-open{
-	display: inline-block;
-	width: 30px;
-	height: 30px;
-	background: url(../img/ac-white-menu.png) no-repeat 0 0 / 100% auto;
-	overflow: hidden;
-	text-indent: -9999px;
-}
-.go-home{
-	display: inline-block;
-	vertical-align: top;
-	width: 30px;
-	height: 30px;
-	background: url(../img/ac-white-home.png) no-repeat 0 0 / 100% auto;
-	overflow: hidden;
-	text-indent: -9999px;
-}
-.go-home + .u-profile{
-	margin-left: 11px;
-	vertical-align: top;
-}
-.go-search{
-	display: block;
-	padding: 10px 22px;
-	color: #fff;
-	line-height: 20px;
-	border: 2px solid #82b5ff;
-	border-radius: 25px;
-	background: url(../img/ic-search-w.png) no-repeat right 22px center / 30px auto;
-}
-@media screen and (max-width:359px) {
-	.go-search{
-		font-size: 13px;
-		letter-spacing: -0.8px;
-	}
-}
-
-</style>

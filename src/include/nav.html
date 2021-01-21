@@ -12,50 +12,22 @@
 					<li class="ty4"><a href="#">건강검진관리</a></li>
 				</ul>
 			</div>
+			<div class="nav-sub-link-wrap">
+				<ul class="nav-sub-link">
+					<li><a href="#">관심 질병 히스토리</a></li>
+					<li><a href="#">관심 콘텐츠 목록</a></li>
+				</ul>
+			</div>
 		</div>
 		<div class="nav-links">
 			<a href="#">서비스문의</a>
 			<a href="#">약관및정책</a>
 			<a href="#">설정</a>
 		</div>
-		<button type="button" class="btn-nav-close">닫기</button>		
 	</div>
 </nav>
 
-<script>
-$(function(){
-	$('.menu-open').click(function(){
-		$('nav').removeClass('out on');
-		$('nav').addClass('on');
-	})
-	$('.btn-nav-close').click(function(){
-		$('nav').addClass('out');
-	})
-});
-</script>
 
-<style>
-.nav-top > .side-bg{
-	position: absolute;
-	right: 0;
-	bottom: -69px;
-	width: 70px;
-	height: 70px;
-	background: radial-gradient(circle at bottom left, transparent 70px, #056bff 70px);
-	overflow: hidden;
-}
-.nav-top> .side-bg:after{
-	content: '';
-	position: absolute;
-	top: -1px;
-	right: -1px;
-	width: 140px;
-	height: 140px;
-	background: transparent;
-	border: 1px solid #056bff;
-	border-radius: 50%;
-}
-</style>
 
 
 
@@ -67,15 +39,14 @@ nav{
 	bottom: 0; 
 	left: -100%;
 	width: 100%;
-	z-index: 99;
+	z-index: 80;
 }
-nav.on{
-	animation: navopen .6s forwards;
+.menu-open.on + nav{
+	animation: navopen .6s forwards;	
 }
-nav.on.out{
+nav.off{
 	animation: navclose .6s forwards;
 }
-
 
 @keyframes navopen {
     0% {
@@ -114,13 +85,15 @@ nav.on.out{
 	background: #fff;
 	transition: .6s;
 }
-nav.on .nav-inner{
+.menu-open.on + nav .nav-inner{
 	left: 0;
 }
-nav.on.out .nav-inner{
+nav.off .nav-inner{
 	left: -100%;
 }
 
+
+/*Nav Content*/
 .nav-top{
 	position: relative;
 	flex: none;
@@ -128,10 +101,29 @@ nav.on.out .nav-inner{
 	padding: 72px 0 0 22px;
 	background: #056bff;
 }
-
+.nav-top > .side-bg{
+	position: absolute;
+	right: 0;
+	bottom: -69px;
+	width: 70px;
+	height: 70px;
+	background: radial-gradient(circle at bottom left, transparent 70px, #056bff 70px);
+	overflow: hidden;
+}
+.nav-top> .side-bg:after{
+	content: '';
+	position: absolute;
+	top: -1px;
+	right: -1px;
+	width: 140px;
+	height: 140px;
+	background: transparent;
+	border: 1px solid #056bff;
+	border-radius: 50%;
+}
 .nav-cont{
 	flex-grow: 1;
-	padding: 39px 0 0 32px;
+	padding: 39px 32px 0 32px;
 	overflow: auto;
 }
 .nav-cate-list-wrap{
@@ -159,7 +151,7 @@ nav.on.out .nav-inner{
 .nav-cate-list > li:before{
 	content: '';
 	position: absolute;
-	top: 10px;
+	top: 9px;
 	left: 0;
 	width: 10px;
 	border-bottom: 10px solid #000;
@@ -177,7 +169,7 @@ nav.on.out .nav-inner{
 .nav-cate-list > li:last-child:after{
 	content: '';
     position: absolute;
-    top: 20px;
+    top: 19px;
     left: 0;
     width: 10px;
     height: 100%;
@@ -195,6 +187,33 @@ nav.on.out .nav-inner{
 	line-height: 27px;
 }
 
+
+.nav-cate-list-wrap + .nav-sub-link-wrap{
+	margin-top: 30px;
+	padding-top: 30px;
+	border-top: 1px solid #ebeff3;
+}
+
+
+
+.nav-sub-link{
+
+}
+.nav-sub-link > li{
+
+}
+.nav-sub-link > li + li{
+	margin-top: 20px;
+}
+.nav-sub-link > li a{
+	display: block;
+	padding-right: 20px;
+	line-height: 20px;
+	color: #000;
+	background: url(../img/btn-arrow-black-20-right.png) no-repeat right center / 20px auto;
+}
+
+/*nva footer*/
 .nav-links{
 	position: absolute;
 	bottom: 29px;
@@ -222,20 +241,8 @@ nav.on.out .nav-inner{
 	margin-top: -6px;
 	border-left: 1px solid #ebeff3;
 }
+/* //nva footer*/
 
-nav .btn-nav-close{
-	position: absolute;
-	top: 22px;
-	left: 22px;
-}
-
-.btn-nav-close{
-	display: inline-block;
-	width: 30px;
-	height: 30px;
-	overflow: hidden;
-	text-indent: -9999px;
-	background: url(../img/ac-white-close.png) no-repeat 0 0 / 100% auto;
-}
+/*Nav Content*/
 
 </style>
