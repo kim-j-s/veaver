@@ -40,96 +40,9 @@
                 <div class="terms-wrap">
                     <div class="term-chk-all">
                         <label class="input-checkbox">
-                            <input type="checkbox"><span>모두 동의</span>
+                            <input type="checkbox" class="chk-all"><span>모두 동의</span>
                         </label>
                     </div>
-
-
-                    <style>
-                        .term-chk-all {
-                            margin-bottom: 30px;
-                        }
-
-                        .term-chk-all .input-checkbox>span {
-                            font-weight: 400;
-                            font-size: 18px;
-                            line-height: 27px;
-                        }
-
-                        .terms-list {}
-
-                        .terms-list>li {
-                            position: relative;
-                            padding: 15px 22px 10px 22px;
-                            border-radius: 14px;
-                            box-shadow: 0px 0px 6px 0px rgba(179, 187, 199, 0.3);
-                            transition: .5s;
-                        }
-
-                        .terms-list>li.on {
-                            padding-top: 22px;
-                        }
-
-                        .terms-list>li+li {
-                            margin-top: 10px;
-                        }
-
-                        .term-cont-h {
-                            position: relative;
-                        }
-
-                        .term-cont-h .input-checkbox {
-                            margin-bottom: 5px;
-                        }
-
-                        .term-cont-h>.btn-slide-i {
-                            position: absolute;
-                            top: -5px;
-                            right: -5px;
-                            width: 30px;
-                            height: 30px;
-                            background: url(../img/btn-arrow-black-20-open.png) no-repeat center center / 20px auto;
-                            overflow: hidden;
-                            text-indent: -9999px;
-                            transition: .5s;
-                        }
-
-                        .term-cont-h>.btn-slide-i.on {
-                            transform: rotate(180deg);
-                        }
-
-                        .term-slide-cont {
-                            display: none;
-                            margin: 5px 0 12px 0;
-                            font-size: 12px;
-                            line-height: 18px;
-                            color: #74777b;
-                        }
-                    </style>
-
-
-
-                    <script>
-                        $(function() {
-
-                            var $chkItem = $('.terms-list').find("input[type='checkbox']");
-                            //var $chkItem = $('.terms-list');
-                            //$chkItem.on('')
-                            $chkItem.on('click', function() {
-                                if ($(this).prop('checked')) {
-                                    console.log('df');
-                                } else {
-                                    console.log('df2');
-                                }
-                            });
-
-
-                        });
-                    </script>
-
-
-
-
                     <ul class="terms-list">
                         <li>
                             <div class="term-cont-h">
@@ -176,16 +89,12 @@
                             </div>
                         </li>
                     </ul>
-
-
                 </div>
-
-
             </div>
         </section>
         <!-- //컨텐츠 영역 -->
         <div class="btn-bottom-area">
-            <button type="button" class="btn-pu">약관동의</button>
+            <button type="button" class="btn-pu" data-confirm="confirm" disabled="disabled">약관동의</button>
         </div>
     </div>
 </body>

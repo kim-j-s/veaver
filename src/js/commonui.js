@@ -31,6 +31,12 @@ $(function(){
 	// slide
 	slideEvent();
 
+	//약관 전체동의
+	termAllChk();
+
+	// 약관 개별 체크
+	termSingleChk();
+
 	
 //script ready
 });
@@ -48,14 +54,12 @@ function MenuOpenClose() {
 	});
 }
 
-
 // toggle Button
 function toggleButton() {
 	$(document).on('click', '.btn-s-toggle', function(){
 		$(this).toggleClass('on');
 	})
 }
-
 
 // input reset
 function InputReset() {
@@ -103,7 +107,6 @@ function InputReset() {
 	});
 }
 
-
 // check-list
 function chkListWrap() {
 	var wrapHeight = $('.chk-list-cont').outerHeight();
@@ -114,7 +117,6 @@ function chkListWrap() {
 		}
 	}
 }
-
 
 // 항목 체크 리스트 스크롤 처리
 function chkListScroll() {
@@ -134,7 +136,6 @@ function chkListScroll() {
 	});
 }
 
-
 // 우측 메뉴 버튼 display 처리
 function floatBtns() {
 	var $flb = $('.floating-btns');
@@ -152,7 +153,6 @@ function floatBtns() {
     });
 }
 
-
 //slide
 function slideEvent() {
     $('.btn-slide-i').on('click', function(){
@@ -167,3 +167,46 @@ function slideEvent() {
         }
     })
 }
+
+//약관 전체동의
+function termAllChk() {
+	var chkAll = $('.chk-all');
+	chkAll.on('click', function(){
+	    if ( $(this).prop('checked') ) {
+	        $('.terms-list').find("input[type='checkbox']").prop('checked',true);
+	        $("[data-confirm='confirm']").prop('disabled',false);
+	    } else {
+	        $('.terms-list').find("input[type='checkbox']").prop('checked',false);
+	        $("[data-confirm='confirm']").prop('disabled',true);
+	    }
+	});
+}
+
+// 약관 개별 체크
+function termSingleChk() {
+    var chkItem = $('.terms-list').find("input[type='checkbox']");
+    var chkAllLng = $('.terms-list').find("input[type='checkbox']").length;
+    var chkLng = $('.terms-list').find("input[type='checkbox']").not("input[type='checkbox'].exception").length;
+    chkItem.on('click', function(){
+        var allChked = $('.terms-list').find("input[type='checkbox']:checked").length;
+        var chked = $('.terms-list').find("input[type='checkbox']:checked").not("input[type='checkbox'].exception").length;
+        if ( $(this).prop('checked') ) {
+            if ( chkLng == chked){
+                $("[data-confirm='confirm']").prop('disabled',false);
+            }
+            if ( chkAllLng == allChked){
+                $('.chk-all').prop('checked',true);
+            }
+        } else {
+            if ( chkLng != chked){
+                $('.chk-all').prop('checked',false);
+                $("[data-confirm='confirm']").prop('disabled',true);
+            }
+            if (chkAllLng != allChked) {
+                $('.chk-all').prop('checked',false);
+            }
+        }
+    });
+}
+
+
