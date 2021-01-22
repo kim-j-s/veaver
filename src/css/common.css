@@ -549,7 +549,7 @@
 		color: #056bff;
 	}
 	.rnd-checkbox .input-checkbox > span:before{
-		top: 13px;
+		/*top: 13px;*/
 		left: 22px;
 	}
 	.rnd-checkbox .input-checkbox > span:after{
