@@ -30,9 +30,6 @@
     font-size: 18px;
     line-height: 27px;
 }
-.term-chk-all .input-checkbox > span::before{
-    top: 4px;
-}
 .terms-list{
 
 }
@@ -58,11 +55,11 @@
 
 .term-cont-h > .btn-slide-i{
     position: absolute;
-    top: 0;
-    right: 0;
-    width: 20px;
-    height: 20px;
-    background: url(../img/btn-arrow-black-20-open.png) no-repeat 0 0 / 100% auto;
+    top: -5px;
+    right: -5px;
+    width: 30px;
+    height: 30px;
+    background: url(../img/btn-arrow-black-20-open.png) no-repeat center center / 20px auto;
     overflow: hidden;
     text-indent: -9999px;
     transition: .5s;
@@ -71,6 +68,7 @@
     transform: rotate(180deg);
 }
 .term-slide-cont{
+    display: none;
     margin: 5px 0 12px 0;
     font-size: 12px;
     line-height: 18px;
@@ -82,17 +80,19 @@
 
 <script>
 $(function(){
-    $('.btn-slide-i').on('click', function(){
-        if ( !$(this).hasClass('on') ){
-            $(this).addClass('on');
-            $(this).closest('li').addClass('on');
-            $(this).closest('li').find('.term-slide-cont').stop(true).slideDown(500);
+
+    var $chkItem = $('.terms-list').find("input[type='checkbox']");
+    //var $chkItem = $('.terms-list');
+    //$chkItem.on('')
+    $chkItem.on('click', function(){
+        if ( $(this).prop('checked') ) {
+            console.log('df');
         } else {
-            $(this).removeClass('on');
-            $(this).closest('li').removeClass('on');
-            $(this).closest('li').find('.term-slide-cont').stop(true).slideUp(500);
+            console.log('df2');
         }
-    })
+    });
+
+
 });
 </script>
 
@@ -103,18 +103,40 @@ $(function(){
                         <li>
                             <div class="term-cont-h">
                                 <label class="input-checkbox">
-                                    <input type="checkbox"><span>모두 동의</span>
+                                    <input type="checkbox"><span>서비스 이용약관 1 (필수)</span>
                                 </label>
                                 <button type="button" class="btn-slide-i" aria-expanded="false">열기</button>
                             </div>
-                            <div class="term-slide-cont" style="display: none;">
+                            <div class="term-slide-cont">
                                 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용
                             </div>
                         </li>
                         <li>
                             <div class="term-cont-h">
                                 <label class="input-checkbox">
-                                    <input type="checkbox"><span>모두 동의</span>
+                                    <input type="checkbox"><span>서비스 이용약관 1 (필수)</span>
+                                </label>
+                                <button type="button" class="btn-slide-i" aria-expanded="false">열기</button>
+                            </div>
+                            <div class="term-slide-cont">
+                                내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용
+                            </div>
+                        </li>
+                        <li>
+                            <div class="term-cont-h">
+                                <label class="input-checkbox">
+                                    <input type="checkbox"><span>서비스 이용약관 1 (필수)</span>
+                                </label>
+                                <button type="button" class="btn-slide-i" aria-expanded="false">열기</button>
+                            </div>
+                            <div class="term-slide-cont">
+                                내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용
+                            </div>
+                        </li>
+                        <li>
+                            <div class="term-cont-h">
+                                <label class="input-checkbox">
+                                    <input type="checkbox" class="exception"><span>마케팅 정보 동의 (선택)</span>
                                 </label>
                                 <button type="button" class="btn-slide-i" aria-expanded="false">열기</button>
                             </div>

@@ -511,7 +511,7 @@
 		position: absolute;
 		box-sizing: border-box;
 		left: 0;
-		top: 0;
+		top: 50%;
 		width: 20px;
 		height: 20px;
 		border-radius: 10px;
@@ -522,6 +522,7 @@
 		background-position: center;
 		background-color: #dee2e7;
 		transition: background-color .2s, border-color .2s;
+		transform: translateY(-50%);
 	}
 	.input-checkbox > input:checked + span::before {
 		background-image: url(../img/ac-ic-check-sel.png);

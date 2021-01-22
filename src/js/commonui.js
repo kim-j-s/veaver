@@ -28,6 +28,9 @@ $(function(){
 	// Nav Open Close
 	MenuOpenClose()
 
+	// slide
+	slideEvent();
+
 	
 //script ready
 });
@@ -149,3 +152,18 @@ function floatBtns() {
     });
 }
 
+
+//slide
+function slideEvent() {
+    $('.btn-slide-i').on('click', function(){
+        var $this = $(this);
+        if ( !$this.hasClass('on') ){
+            $this.closest('.terms-wrap').find('.on').removeClass('on').find('.term-slide-cont').stop(true).slideUp(500);
+            $this.addClass('on').html('닫기').attr('aria-expanded',true);
+            $this.closest('li').addClass('on').find('.term-slide-cont').stop(true).slideDown(500);
+        } else {
+            $this.removeClass('on').html('열기').attr('aria-expanded',false);
+            $this.closest('li').removeClass('on').find('.term-slide-cont').stop(true).slideUp(500);
+        }
+    })
+}
