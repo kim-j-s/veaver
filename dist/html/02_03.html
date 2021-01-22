@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+    <meta name="x-apple-disable-message-reformatting" />
+    <title>약관동의 | Veaver Health mining</title>
+    <link href="../css/reset.css" rel="stylesheet" />
+    <link href="../css/common.css" rel="stylesheet" />
+    <script type="text/javascript" src="../js/jquery.min.js"></script>
+    <script type="text/javascript" src="../js/commonui.js"></script>
+    <!--[if lt IE 9]>
+    <script type="text/javascript">
+        document.createElement("header"); 
+        document.createElement("nav"); 
+        document.createElement("section"); 
+        document.createElement("article"); 
+        document.createElement("footer");
+    </script>
+<![endif]-->
+</head>
+
+<body>
+    <div class="layer-full-wrap btn-add">
+        <!-- 헤더영역 -->
+        <div class="layer-header">
+            <div class="layer-header-inner">
+                <div class="layer-title">이용약관 동의</div>
+                <button type="buton" class="layer-close-btn">닫기</button>
+            </div>
+        </div>
+        <!-- //헤더영역 -->
+
+        <!-- 컨텐츠 영역 -->
+        <section class="layer-content">
+            <div class="layer-inner">
+
+                <div class="terms-wrap">
+                    <div class="term-chk-all">
+                        <label class="input-checkbox">
+                            <input type="checkbox"><span>모두 동의</span>
+                        </label>
+                    </div>
+
+
+                    <style>
+                        .term-chk-all {
+                            margin-bottom: 30px;
+                        }
+
+                        .term-chk-all .input-checkbox>span {
+                            font-weight: 400;
+                            font-size: 18px;
+                            line-height: 27px;
+                        }
+
+                        .term-chk-all .input-checkbox>span::before {
+                            top: 4px;
+                        }
+
+                        .terms-list {}
+
+                        .terms-list>li {
+                            position: relative;
+                            padding: 15px 22px 10px 22px;
+                            border-radius: 14px;
+                            box-shadow: 0px 0px 6px 0px rgba(179, 187, 199, 0.3);
+                            transition: .5s;
+                        }
+
+                        .terms-list>li.on {
+                            padding-top: 22px;
+                        }
+
+                        .terms-list>li+li {
+                            margin-top: 10px;
+                        }
+
+                        .term-cont-h {
+                            position: relative;
+                        }
+
+                        .term-cont-h .input-checkbox {
+                            margin-bottom: 5px;
+                        }
+
+                        .term-cont-h>.btn-slide-i {
+                            position: absolute;
+                            top: 0;
+                            right: 0;
+                            width: 20px;
+                            height: 20px;
+                            background: url(../img/btn-arrow-black-20-open.png) no-repeat 0 0 / 100% auto;
+                            overflow: hidden;
+                            text-indent: -9999px;
+                            transition: .5s;
+                        }
+
+                        .term-cont-h>.btn-slide-i.on {
+                            transform: rotate(180deg);
+                        }
+
+                        .term-slide-cont {
+                            margin: 5px 0 12px 0;
+                            font-size: 12px;
+                            line-height: 18px;
+                            color: #74777b;
+                        }
+                    </style>
+
+
+
+                    <script>
+                        $(function() {
+                            $('.btn-slide-i').on('click', function() {
+                                if (!$(this).hasClass('on')) {
+                                    $(this).addClass('on');
+                                    $(this).closest('li').addClass('on');
+                                    $(this).closest('li').find('.term-slide-cont').stop(true).slideDown(500);
+                                } else {
+                                    $(this).removeClass('on');
+                                    $(this).closest('li').removeClass('on');
+                                    $(this).closest('li').find('.term-slide-cont').stop(true).slideUp(500);
+                                }
+                            })
+                        });
+                    </script>
+
+
+
+
+                    <ul class="terms-list">
+                        <li>
+                            <div class="term-cont-h">
+                                <label class="input-checkbox">
+                                    <input type="checkbox"><span>모두 동의</span>
+                                </label>
+                                <button type="button" class="btn-slide-i" aria-expanded="false">열기</button>
+                            </div>
+                            <div class="term-slide-cont" style="display: none;">
+                                내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용
+                            </div>
+                        </li>
+                        <li>
+                            <div class="term-cont-h">
+                                <label class="input-checkbox">
+                                    <input type="checkbox"><span>모두 동의</span>
+                                </label>
+                                <button type="button" class="btn-slide-i" aria-expanded="false">열기</button>
+                            </div>
+                            <div class="term-slide-cont" style="display: none;">
+                                내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용
+                            </div>
+                        </li>
+                    </ul>
+
+
+                </div>
+
+
+            </div>
+        </section>
+        <!-- //컨텐츠 영역 -->
+        <div class="btn-bottom-area">
+            <button type="button" class="btn-pu">약관동의</button>
+        </div>
+    </div>
+</body>
+
+</html>
