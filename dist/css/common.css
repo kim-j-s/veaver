@@ -336,6 +336,7 @@
 		padding: 8px 10px 8px 0;
 		width: 100%;
 		height: 40px;
+		font-weight: 400;
 		font-size: 16px;
 		background-color: #fff;
 		outline: none;
@@ -1307,16 +1308,16 @@
 	/* 레이어팝업 헤더 */
 	.layer-header{
 		position:fixed;
-		top:0;
-		left:0;
-		z-index:101;
-		width:100%;
-		height:58px;
+		top: 0;
+		left: 0;
+		z-index: 101;
+		width: 100%;
+		height: 58px;
 		padding: 14px 22px;
-		background:#fff;
-		font-size:17px;
-		font-weight:bold;
-		color:#191919;
+		font-size: 17px;
+		font-weight: bold;
+		color: #191919;
+		background: #fff;
 	}
 	.layer-header-inner{
 		position: relative;
@@ -1860,6 +1861,80 @@
 	}
 
 	/* // 약관 목록*/
+
+
+	/*탭*/
+
+	.tab-box{
+	    position: relative;
+	    margin: 0 -22px;
+	    padding-left: 22px;
+	    margin-bottom: 30px;
+	    overflow: hidden;
+	}
+	.tab-box:after{
+	    content: '';
+	    position: absolute;
+	    left: 0;
+	    bottom: 0;
+	    width: 100%;
+	    border-bottom: 1px solid #ebeff3;
+	}
+	.tab-menu-wrap.swiper-container{
+	    width: 100%;
+	    padding-right: 22px;
+	    overflow: visible;
+	}
+	.tab-menu{
+	    font-size: 0;
+	}
+	.tab-menu a{
+	    position: relative;
+	    z-index: 2;
+	    display: inline-block;
+	    padding: 2px 0 9px 0;
+	    font-size: 18px;
+	    color: #74777b;
+	    line-height: 27px;
+	    font-size: 18px;
+	}
+	.tab-menu a:after{
+	    content: '';
+	    position: absolute;
+	    left: 0;
+	    bottom: 0;
+	    width: 100%;
+	    border-bottom: 2px solid transparent;
+	}
+	.tab-menu a.active{
+	    padding-top: 0;
+	    font-weight: 500;
+	    font-size: 20px;
+	    line-height: 29px;
+	    color: #000;
+	}
+	.tab-menu a.active:after{
+	    border-color: #e1002a;
+	}
+	.tab-menu a .count{
+	    font-size: 18px;
+	    color: #74777b;
+	}
+	.tab-menu a.active .count{
+	    font-weight: 500;
+	    font-size: 20px;
+	    line-height: 29px;
+	    color: #000;
+	}
+	.tab-box .swiper-slide{
+	    width: auto;
+	    margin-right: 40px;
+	}
+	.tab-box .swiper-slide:last-child{
+	    margin-right: 0;
+	}
+
+	/* // 탭*/
 
 
 	/** 2분할 **/
