@@ -89,7 +89,9 @@
                             speed: 500,
                         });
 
-                        tabSwiper.swipeTo(3);
+                        // swiper 구동 시 탭의 처음을 지정하는 방식
+                        tabSwiper.slideTo(3, false, false);
+                        //mySwiper.slideTo(index, speed, runCallbacks);
                     });
                 </script>
 
