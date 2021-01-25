@@ -26,6 +26,16 @@
                                 <a href="#">병원<span class="count">(30)</span></a>
                             </div>
                             <div class="swiper-slide">
+                                <a href="#" class="active">약국<span class="count">(30)</span></a>
+                            </div>
+
+                            <div class="swiper-slide">
+                                <a href="#">닥터QA<span class="count">(30)</span></a>
+                            </div>
+                            <div class="swiper-slide">
+                                <a href="#">병원<span class="count">(30)</span></a>
+                            </div>
+                            <div class="swiper-slide">
                                 <a href="#">약국<span class="count">(30)</span></a>
                             </div>
 
@@ -45,13 +55,13 @@
 <script>
 $(function(){
     var tabSwiper = new Swiper('.tab-menu-wrap', {
-        direction: 'horizontal',
         slidesPerView: 'auto',
         observer: true,
         observeParents: true,
         speed: 500,
-        // spaceBetween: 30,
     });
+
+    tabSwiper.swipeTo(3);
 });
 </script>
 
@@ -65,40 +75,53 @@ $(function(){
 <style>
 
 .tab-box{
-    height: 59px;
+    position: relative;
     margin: 0 -22px;
     padding: 0 22px;
     margin-bottom: 30px;
+    overflow: hidden;
+}
+.tab-box:after{
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    border-bottom: 1px solid #ebeff3;
 }
 .tab-menu-wrap{
     width: 100%;
-    /*height: 100%;*/
-    background-color: #fff;
-    border-bottom: 1px solid #ebeff3;
     overflow: visible;
-    /*padding-right: 22px;*/
 }
 .tab-menu{
     font-size: 0;
-    /*
-    white-space: nowrap;
-    overflow-x: auto;
-    */
 }
 .tab-menu a{
+    position: relative;
+    z-index: 2;
     display: inline-block;
     padding: 2px 0 9px 0;
     font-size: 18px;
     color: #74777b;
     line-height: 27px;
-    font-size: 20px;
-    border-bottom: 2px solid #fff;
+    font-size: 18px;
+}
+.tab-menu a:after{
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    border-bottom: 2px solid transparent;
 }
 .tab-menu a.active{
+    padding-top: 0;
     font-weight: 500;
     font-size: 20px;
     line-height: 29px;
     color: #000;
+}
+.tab-menu a.active:after{
     border-color: #e1002a;
 }
 .tab-menu a .count{
@@ -112,16 +135,12 @@ $(function(){
     color: #000;
 }
 .tab-box .swiper-slide{
-    /*width: 150px;*/
     width: auto;
     margin-right: 40px;
 }
 .tab-box .swiper-slide:last-child{
     margin-right: 0;
 }
-
-
-.tab-menu a.active .count{color:#e1002a}
 
 </style>
 
