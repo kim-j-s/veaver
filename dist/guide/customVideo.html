@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>test</title>
+    <script src="../js/jquery.min.js"></script>
+    <style>
+        body {
+            padding: 0;
+            margin: 0;
+        }
+
+        .test {
+            padding: 0;
+        }
+
+        .test li {
+            padding: 0;
+            margin: 0;
+            height: 300px;
+            list-style: none;
+        }
+
+        .test li:nth-child(2n) {
+            background-color: #ddd;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="video01"></div>
+    <ul class="test">
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+    <div id="video02"></div>
+    <ul class="test">
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+    <div id="video03"></div>
+    <ul class="test">
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+
+    <div id="state"></div>
+</body>
+<link rel="stylesheet" href="../css/customVideo.css">
+<script src="../js/hls.js"></script>
+<script src="../js/customVideo.js"></script>
+
+<script>
+    var videoSrc = 'https://bitmovin-a.akamaihd.net/content/playhouse-vr/m3u8s/105560.m3u8';
+    var posterSrc = '../img/temp/@test_video_thumnail.png';
+
+    $('#video01, #video02, #video03').customVideo(videoSrc, posterSrc);
+
+    // $(비디오를 담을 비어있는 태그 셀렉터).customVideo(비디오 url, 썸네일 url);
+</script>
+
+</html>
