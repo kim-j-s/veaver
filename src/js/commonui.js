@@ -37,6 +37,9 @@ $(function(){
 	// 약관 개별 체크
 	termSingleChk();
 
+	// 탭 스위퍼
+	tabSwiper();
+
 	
 //script ready
 });
@@ -208,5 +211,18 @@ function termSingleChk() {
         }
     });
 }
+
+
+// tab swiper
+function tabSwiper() {
+	var tabSwiper = new Swiper('.tab-menu-wrap', {
+        slidesPerView: 'auto',
+        observer: true,
+        observeParents: true,
+        speed: 500,
+    });
+}
+
+
 
 

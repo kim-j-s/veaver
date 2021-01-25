@@ -4,14 +4,28 @@
 <body>
 	<div class="content">
         <!-- 헤더영역 -->
-        @@include('searchheader.html',{
-			"layertitle":"Ai헬스큐"
-		})
+         <div class="search-header">
+            <div class="search-header-inner">
+                <a href="#" class="history-back">뒤로가기</a>
+                <div class="input-text">
+                    <input type="text" placeholder="검색어를 입력하세요">
+                    <button type="button" class="btn-remove">삭제</button>
+                </div>
+                <div class="auto-comp-wrap">
+                    <ul class="auto-comp-list">
+                        <li><a href="#">머리가 아파요</a></li>
+                        <li><a href="#">허리 통증</a></li>
+                        <li><a href="#">코로나 증상</a></li>
+                        <li><a href="#">어린이용 비타민</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
         <!-- //헤더영역 -->
 
         <!-- 컨텐츠 영역 -->
         <section class="layer-content">
-        	content
+        	<!-- content -->
         </section>
         <!-- //컨텐츠 영역 -->
     </div>
