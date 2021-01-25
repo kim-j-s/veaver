@@ -9,8 +9,12 @@
     <title>약관동의 | Veaver Health mining</title>
     <link href="../css/reset.css" rel="stylesheet" />
     <link href="../css/common.css" rel="stylesheet" />
+    <!-- <link href="../css/swiper.css" rel="stylesheet" /> -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
     <script type="text/javascript" src="../js/jquery.min.js"></script>
     <script type="text/javascript" src="../js/commonui.js"></script>
+    <!-- <script type="text/javascript" src="../js/jquery.swiper.js"></script> -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <!--[if lt IE 9]>
     <script type="text/javascript">
         document.createElement("header"); 
@@ -38,18 +42,47 @@
             <div class="layer-inner">
 
                 <div class="tab-box">
-                    <div class="tab-menu-wrap">
-                        <div class="tab-menu">
-                            <a href="#" class="active">질병정보 <span class="count">(30)</span></a>
-                            <a href="#">닥터QA <span class="count">(30)</span></a>
-                            <a href="#">병원 <span class="count">(30)</span></a>
-                            <a href="#">약국 <span class="count">(30)</span></a>
+                    <div class="tab-menu-wrap swiper-container">
+                        <div class="tab-menu swiper-wrapper">
+                            <div class="swiper-slide">
+                                <a href="#" class="active">질병정보<span class="count">(30)</span></a>
+                            </div>
+                            <div class="swiper-slide">
+                                <a href="#">닥터QA<span class="count">(30)</span></a>
+                            </div>
+                            <div class="swiper-slide">
+                                <a href="#">병원<span class="count">(30)</span></a>
+                            </div>
+                            <div class="swiper-slide">
+                                <a href="#">약국<span class="count">(30)</span></a>
+                            </div>
+
+                            <div class="swiper-slide">
+                                <a href="#">닥터QA<span class="count">(30)</span></a>
+                            </div>
+                            <div class="swiper-slide">
+                                <a href="#">병원<span class="count">(30)</span></a>
+                            </div>
+                            <div class="swiper-slide">
+                                <a href="#">약국<span class="count">(30)</span></a>
+                            </div>
                         </div>
                     </div>
                 </div>
 
+                <script>
+                    $(function() {
+                        var tabSwiper = new Swiper('.tab-menu-wrap', {
+                            direction: 'horizontal',
+                            slidesPerView: 'auto',
+                            observer: true,
+                            observeParents: true,
+                            speed: 500,
+                            // spaceBetween: 30,
+                        });
+                    });
+                </script>
 
-                content
 
 
             </div>
@@ -61,86 +94,71 @@
             .tab-box {
                 height: 59px;
                 margin: 0 -22px;
+                padding: 0 22px;
                 margin-bottom: 30px;
             }
 
-            .tab-box .tab-menu-wrap {
-                position: relative;
-                z-index: 1;
+            .tab-menu-wrap {
                 width: 100%;
-                height: 56px;
-                margin: 0 22px;
+                /*height: 100%;*/
                 background-color: #fff;
                 border-bottom: 1px solid #ebeff3;
-                overflow-y: hidden;
+                overflow: visible;
+                /*padding-right: 22px;*/
             }
 
             .tab-menu {
                 font-size: 0;
-                white-space: nowrap;
-                overflow-x: auto;
-                /*padding-bottom: 30px;*/
+                /*
+    white-space: nowrap;
+    overflow-x: auto;
+    */
             }
-
-            .tab-menu>* {}
 
             .tab-menu a {
                 display: inline-block;
-                /*margin: 0 15px;*/
-                padding: 2px 0 15px 0;
+                padding: 2px 0 9px 0;
                 font-size: 18px;
                 color: #74777b;
                 line-height: 27px;
                 font-size: 20px;
-                border-bottom: 3px solid #fff;
-            }
-
-            .tab-menu a+a {
-                margin-left: 40px;
+                border-bottom: 2px solid #fff;
             }
 
             .tab-menu a.active {
                 font-weight: 500;
+                font-size: 20px;
                 line-height: 29px;
                 color: #000;
                 border-color: #e1002a;
             }
 
             .tab-menu a .count {
-                /*display: inline-block;*/
-                padding-left: 3px;
                 font-size: 18px;
                 color: #74777b;
-
-                /*font-size: 12px;
-    line-height: 1;*/
-                /*font-weight: 700;*/
-                /*color: #999;*/
-                /*vertical-align: baseline*/
             }
 
             .tab-menu a.active .count {
                 font-weight: 500;
+                font-size: 20px;
                 line-height: 29px;
                 color: #000;
+            }
+
+            .tab-box .swiper-slide {
+                /*width: 150px;*/
+                width: auto;
+                margin-right: 40px;
+            }
+
+            .tab-box .swiper-slide:last-child {
+                margin-right: 0;
             }
 
 
             .tab-menu a.active .count {
                 color: #e1002a
             }
-
-            /*
-.menu a:first-of-type, 
-.menu a:last-of-type{z-index: 3}
-*/
-            /*
-.menu:before, 
-.menu:after{display: block; content: ''; position: absolute; top: 0; width: 36px; height: 55px; z-index: 2}
-.menu:before{left: 0; background: -webkit-gradient(linear,  left top, right top,  from(rgba(255,255,255,1)),color-stop(50%, rgba(255,255,255,0.7)),to(rgba(255,255,255,0))); background: -webkit-linear-gradient(left,  rgba(255,255,255,1) 0%,rgba(255,255,255,0.7) 50%,rgba(255,255,255,0) 100%); background: -o-linear-gradient(left,  rgba(255,255,255,1) 0%,rgba(255,255,255,0.7) 50%,rgba(255,255,255,0) 100%); background: linear-gradient(to right,  rgba(255,255,255,1) 0%,rgba(255,255,255,0.7) 50%,rgba(255,255,255,0) 100%)}
-.menu:after{right: 0; background: -webkit-gradient(linear,  left top, right top,  from(rgba(255,255,255,0)),color-stop(50%, rgba(255,255,255,0.7)),to(rgba(255,255,255,1))); background: -webkit-linear-gradient(left,  rgba(255,255,255,0) 0%,rgba(255,255,255,0.7) 50%,rgba(255,255,255,1) 100%); background: -o-linear-gradient(left,  rgba(255,255,255,0) 0%,rgba(255,255,255,0.7) 50%,rgba(255,255,255,1) 100%); background: linear-gradient(to right,  rgba(255,255,255,0) 0%,rgba(255,255,255,0.7) 50%,rgba(255,255,255,1) 100%)}
-*/
-        </style>
         </style>
 
 
