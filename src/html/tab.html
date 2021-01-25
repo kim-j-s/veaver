@@ -1,0 +1,76 @@
+@@include('head.html',{
+	"title":"약관동의 | "
+})
+<body>
+	<div class="layer-full-wrap btn-add">
+        <!-- 헤더영역 -->
+        @@include('popupheader_none_profile.html',{
+			"layertitle":"이용약관 동의"
+		})
+        <!-- //헤더영역 -->
+
+        <!-- 컨텐츠 영역 -->
+        <section class="layer-content">
+            <div class="layer-inner">
+
+                <div class="tab-box">
+                    <div class="tab-menu-wrap swiper-container">
+                        <div class="tab-menu swiper-wrapper">
+                            <div class="swiper-slide">
+                                <a href="#" class="active">질병정보<span class="count">(30)</span></a>
+                            </div>
+                            <div class="swiper-slide">
+                                <a href="#">닥터QA<span class="count">(30)</span></a>
+                            </div>
+                            <div class="swiper-slide">
+                                <a href="#">병원<span class="count">(30)</span></a>
+                            </div>
+                            <div class="swiper-slide">
+                                <a href="#" class="active">약국<span class="count">(30)</span></a>
+                            </div>
+
+                            <div class="swiper-slide">
+                                <a href="#">닥터QA<span class="count">(30)</span></a>
+                            </div>
+                            <div class="swiper-slide">
+                                <a href="#">병원<span class="count">(30)</span></a>
+                            </div>
+                            <div class="swiper-slide">
+                                <a href="#">약국<span class="count">(30)</span></a>
+                            </div>
+
+                            <div class="swiper-slide">
+                                <a href="#">닥터QA<span class="count">(30)</span></a>
+                            </div>
+                            <div class="swiper-slide">
+                                <a href="#">병원<span class="count">(30)</span></a>
+                            </div>
+                            <div class="swiper-slide">
+                                <a href="#">약국<span class="count">(30)</span></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+<script>
+$(function(){
+    
+
+    // swiper 구동 시 탭의 처음을 지정하는 방식
+    tabSwiper.slideTo(3, false,false);
+    //mySwiper.slideTo(index, speed, runCallbacks);
+});
+</script>
+
+
+                
+            </div>
+        </section>
+        <!-- //컨텐츠 영역 -->
+
+        <div class="btn-bottom-area">
+            <button type="button" class="btn-pu" data-confirm="confirm" disabled="disabled">약관동의</button>
+        </div>
+    </div>
+</body>
+</html>
