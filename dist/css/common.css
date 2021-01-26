@@ -1960,25 +1960,11 @@
 
 
 	/*탭*/
-	.tab-box-wrap{
-		position: relative;
-		margin: 0 -22px;
-		height: 38px;
-	}
-	.tab-box.on{
-		position: fixed;
-		top: 58px;
-	}
-
 	.tab-box{
-	    position: absolute;
-	    top: 0;
-	    left: 0;
-	    width: 100%;
-	    z-index: 2;
-	    /*margin: 0 -22px;*/
-	    /*width: calc(100% + 44px);*/
-	    /*margin-left: -22px;*/
+	    position: relative;
+	    margin: 0 -22px;
+	    width: calc(100% + 44px);
+	    margin-left: -22px;
 	    padding-left: 22px;
 	    margin-bottom: 30px;
 	    overflow: hidden;
