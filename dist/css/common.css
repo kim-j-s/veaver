@@ -1537,16 +1537,11 @@
 
 	.floating-btns{
 		position: fixed;
-		/*right: 18px;
-		bottom: 18px;*/
 		right: 0;
 		bottom: 0;
 		z-index: 130;
-		/*width: 70px;*/
 		transition: .5s;
 		opacity: 1;
-		/*background: rgba(0, 0, 0, 0.0);*/
-		
 	}
 	.floating-btns.on{
 		opacity: 0;
@@ -1556,12 +1551,9 @@
 		height: 100%;
 		right: 0;
 		bottom: 0;
-		/*padding: 0 18px 18px 0;*/
-		/*transition: 0s;*/
 		transition: none;
 		-webkit-animation: dimmedBg .8s forwards;
 		animation: dimmedBg .8s forwards;
-		/*background: rgba(0, 0, 0, 0.7);*/
 	}
 	.floating-btns.out{
 		-webkit-animation: dimmedBgOff .8s forwards;
@@ -1618,8 +1610,6 @@
 	    }
 	}
 
-
-
 	.fb-list{
 		margin: 0 18px 18px 0;
 	}
@@ -1650,6 +1640,82 @@
 		overflow: hidden;
 		text-indent: -9999px;
 		background: url(../img/again.png) no-repeat 0 0 / 100% auto;
+	}
+	.floating-btns .btn-view-more{
+	    position: absolute;
+	    right: 18px;
+	    bottom: 18px;
+	}
+	.btn-view-more{
+	    display: inline-block;
+	    width: 70px;
+	    height: 70px;
+	    overflow: hidden;
+	    text-indent: -9999px;
+	    background: url(../img/btn-floating-more.png) no-repeat 0 0 / 100% auto;
+	    transition: .8s;
+	}
+	.btn-view-more.on{
+	    right: 18px;
+	    bottom: 18px;
+	    transform: rotate(45deg);
+	}
+	.more-view-btns{
+	    position: absolute;
+	    right: 0;
+	    bottom: 92px;
+	    width: 100%;
+	    overflow: hidden;
+	    text-align: right;
+	    transition: .5s;
+	}
+	.more-view-btns li{
+	    position: relative;
+	    width: 100%;
+	    height: 50px;
+	    padding-right: 28px;
+	}
+	.more-view-btns li + li{
+	    margin-top: 4px;
+	}
+	.more-view-btns.on .more-btns{
+	    right: 28px;
+	}
+	.more-view-btns > li:nth-child(1) .more-btns{
+	    transition-duration: .2s;
+	}
+	.more-view-btns > li:nth-child(2) .more-btns{
+	    transition-duration: .4s;
+	}
+	.more-view-btns > li:nth-child(3) .more-btns{
+	    transition-duration: .6s;
+	}
+	.more-view-btns > li:nth-child(4) .more-btns{
+	    transition-duration: .8s;
+	}
+	.more-btns{
+	    position: absolute;
+	    right: -100%;
+	    display: inline-block;
+	    padding-right: 54px;
+	    font-weight: 400;
+	    height: 50px;
+	    line-height: 50px;
+	    color: #fff;
+	    white-space: nowrap;
+	    transition: .8s;
+	}
+	.btn-doc-qa{
+	    background: url(../img/btn-floating-qa.png) no-repeat right center / auto 100%;
+	}
+	.btn-bookmark{
+	    background: url(../img/btn-floating-bookmark.png) no-repeat right center / auto 100%;
+	}
+	.btn-find-h{
+	    background: url(../img/btn-floating-search.png) no-repeat right center / auto 100%;
+	}
+	.btn-share{
+	    background: url(../img/btn-floating-share.png) no-repeat right center / auto 100%;
 	}
 
 	/** // floating button **/
@@ -1702,7 +1768,6 @@
 		display: flex;
 		flex-direction: column;	
 		height: 100%;
-		/*overflow: hidden;*/
 	}
 	.scroll-list-wrap .tab-box{
 		flex: none;

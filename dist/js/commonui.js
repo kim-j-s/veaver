@@ -40,6 +40,9 @@ $(function(){
 	// 탭 스위퍼
 	tabSwiper();
 
+	// 더보기
+	viewMoreDp();
+
 	
 //script ready
 });
@@ -226,5 +229,18 @@ function tabSwiper() {
 }
 
 
-
-
+function viewMoreDp() {
+	$('.btn-view-more').click(function(){
+	    if ( !$('.floating-btns').hasClass('fix') ) {
+	        $(this).addClass('on');
+	        $('.floating-btns').removeClass('out').addClass('fix');
+	        setTimeout(function(){
+	            $('.more-view-btns').addClass('on');
+	        },10);
+	    } else {
+	        $(this).removeClass('on');
+	        $('.more-view-btns').removeClass('on');
+	        $('.floating-btns').addClass('out').removeClass('fix');
+	    }
+	})
+}
