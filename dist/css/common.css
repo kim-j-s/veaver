@@ -1684,7 +1684,14 @@
 		display: flex;
 		flex-direction: column;	
 		height: 100%;
-		overflow: hidden;
+		/*overflow: hidden;*/
+	}
+	.scroll-list-wrap .tab-box{
+		flex: none;
+	}
+	.scroll-list-wrap .rst-list-wrap{
+		flex-grow: 1;
+		overflow: auto;
 	}
 	.chk-list-cont{
 		position: relative;
@@ -2025,7 +2032,7 @@
 	    width: calc(100% + 44px);
 	    margin-left: -22px;
 	    padding-left: 22px;
-	    margin-bottom: 30px;
+	    /*margin-bottom: 30px;*/
 	    overflow: hidden;
 	    background: #fff;
 	}

@@ -216,7 +216,6 @@ function termSingleChk() {
 // tab swiper
 function tabSwiper() {
 	if ( $('.tab-menu-wrap').length > 0 ){
-		console.log('z');
 		var tabSwiper = new Swiper('.tab-menu-wrap', {
 	        slidesPerView: 'auto',
 	        observer: true,
