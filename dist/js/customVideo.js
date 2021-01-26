@@ -5,7 +5,7 @@
     let WIN_WIDTH = $WIN.width();
 
     const baseHtml = '<div class="cv-inner">'
-        + '<video></video>'
+        + '<div class="cv-video"><video></video></div>'
         + '<div class="cv-ctrl">'
         + '<div class="cv-open-ctrl"></div>'
         + '<div class="cv-ctrl-box">'
@@ -86,6 +86,7 @@
 
             const video = $wrap.find('video')[0];
             const $video = $(video);
+            const $cvVideo = $inner.find('.cv-video');
 
             const $cvCtrl = $wrap.find('.cv-ctrl');
 
@@ -110,7 +111,7 @@
             let isPlaying = false;
 
             if(posterSrc) {
-                $video.after('<div class="cv-thumb"><img src="'+posterSrc+'"></div>');
+                $cvVideo.after('<div class="cv-thumb"><img src="'+posterSrc+'"></div>');
             }
 
             if (fe == 'm3u8') {
