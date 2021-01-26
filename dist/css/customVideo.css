@@ -307,8 +307,8 @@
 .custom-video.cv-floating video {
     display: inline-block;
     margin: 0;
-    max-width: calc(100% - 160px);
-    max-height: 80px;
+    width: 100%;
+    height: 80px;
 }
 .custom-video.cv-floating .cv-ctrl {
     flex: 0 0 auto;
