@@ -54,37 +54,28 @@
             <script>
                 $(function() {
                     $('.btn-view-more').click(function() {
-                        /*
-                        if ( !$('.more-view-btns').hasClass('on') ) {
-                            $('.more-view-btns').addClass('on');
-                        } else {
-                            $('.more-view-btns').removeClass('on');
-                        }
-                        */
-
                         if (!$('.floating-btns').hasClass('fix')) {
-                            $('.floating-btns').addClass('fix');
+                            $(this).addClass('on');
+                            $('.floating-btns').removeClass('out').addClass('fix');
+                            setTimeout(function() {
+                                $('.more-view-btns').addClass('on');
+                            }, 10);
+                            console.log('1');
                         } else {
-                            $('.floating-btns').removeClass('fix');
+                            $(this).removeClass('on');
+                            $('.more-view-btns').removeClass('on');
+                            $('.floating-btns').addClass('out');
+                            setTimeout(function() {
+                                $('.floating-btns').removeClass('fix out');
+                            }, 800);
+                            console.log('2');
                         }
-
-
-
                     })
                 })
             </script>
 
             <div class="floating-btns">
                 <button type="button" class="btn-view-more">더보기</button>
-
-                <!-- <div class="more-view-btns">
-                    <button type="button" class="more-btns btn-share">공유하기</button>
-                    <button type="button" class="more-btns btn-find-h">병원찾기</button>
-                    <button type="button" class="more-btns btn-bookmark">관심 질병으로 저장하기</button>
-                    <button type="button" class="more-btns btn-doc-qa">닥터 QA</button>
-                </div> -->
-
-
                 <ul class="more-view-btns">
                     <li><button type="button" class="more-btns btn-doc-qa">닥터 QA</button></li>
                     <li><button type="button" class="more-btns btn-bookmark">관심 질병으로 저장하기</button></li>
@@ -95,42 +86,38 @@
 
 
                 <style>
+                    .floating-btns.fix .more-view-btns {
+                        display: block;
+                    }
+
                     .more-view-btns {
                         position: absolute;
-                        right: 28px;
+                        /*right: 28px;*/
+                        right: 0;
                         bottom: 92px;
+                        display: none;
                         width: 100%;
-                        /*height: 0;*/
+                        overflow: hidden;
                         text-align: right;
                         transition: .5s;
-                        /*overflow: hidden;*/
                     }
 
                     .more-view-btns li {
                         position: relative;
+                        width: 100%;
                         height: 50px;
+                        padding-right: 28px;
                     }
 
                     .more-view-btns li+li {
                         margin-top: 4px;
                     }
 
-                    /*
-.more-view-list.on{
-    height: auto;
-}
-*/
 
                     .floating-btns .btn-view-more {
                         position: absolute;
                         right: 18px;
                         bottom: 18px;
-                    }
-
-                    .floating-btns.fix .btn-view-more {
-                        right: 18px;
-                        bottom: 18px;
-                        transform: rotate(45deg);
                     }
 
                     .btn-view-more {
@@ -140,12 +127,18 @@
                         overflow: hidden;
                         text-indent: -9999px;
                         background: url(../img/btn-floating-more.png) no-repeat 0 0 / 100% auto;
-                        transition: .5s;
+                        transition: .8s;
+                    }
+
+                    .btn-view-more.on {
+                        right: 18px;
+                        bottom: 18px;
+                        transform: rotate(45deg);
                     }
 
                     .more-btns {
                         position: absolute;
-                        right: 0;
+                        right: -100%;
                         display: inline-block;
                         padding-right: 54px;
                         font-weight: 400;
@@ -153,28 +146,29 @@
                         line-height: 50px;
                         color: #fff;
                         white-space: nowrap;
-                        transition: .5s;
+                        transition: .8s;
                     }
 
-                    /*
-.more-view-btns.on .more-btns{
-    width: auto;
-}
-*/
-                    /*
-.more-btns:nth-child(1){
-    bottom: 0;
-}
-.more-btns:nth-child(2){
-    bottom: 54px;
-}
-.more-btns:nth-child(3){
-    bottom: 108px;
-}
-.more-btns:nth-child(4){
-    bottom: 162px;
-}
-*/
+                    .more-view-btns.on .more-btns {
+                        right: 28px;
+                    }
+
+                    .more-view-btns>li:nth-child(1) .more-btns {
+                        transition-duration: .2s;
+                    }
+
+                    .more-view-btns>li:nth-child(2) .more-btns {
+                        transition-duration: .4s;
+                    }
+
+                    .more-view-btns>li:nth-child(3) .more-btns {
+                        transition-duration: .6s;
+                    }
+
+                    .more-view-btns>li:nth-child(4) .more-btns {
+                        transition-duration: .8s;
+                    }
+
                     .btn-doc-qa {
                         background: url(../img/btn-floating-qa.png) no-repeat right center / auto 100%;
                     }
