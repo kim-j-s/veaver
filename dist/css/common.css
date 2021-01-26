@@ -818,7 +818,7 @@
 		position: absolute;
 		top: 0;
 		left: 0;
-		z-index: 90;
+		z-index: 60;
 		display: inline-block;
 		width: 30px;
 		height: 30px;
@@ -909,11 +909,11 @@
 		bottom: 0; 
 		left: -100%;
 		width: 100%;
-		z-index: 80;
+		z-index: 50;
 	}
 	.menu-open.on + nav{
 		-webkit-animation: navopen .6s forwards;
-		animation: navopen .6s forwards;	
+		animation: navopen .6s forwards;
 	}
 	nav.off{
 		-webkit-animation: navclose .6s forwards;
@@ -1311,7 +1311,7 @@
 		position:fixed;
 		top: 0;
 		left: 0;
-		z-index: 101;
+		z-index: 70;
 		width: 100%;
 		height: 58px;
 		padding: 14px 22px;
@@ -1396,7 +1396,7 @@
 		position:fixed;
 		top: 0;
 		left: 0;
-		z-index: 101;
+		z-index: 70;
 		width: 100%;
 		height: 58px;
 		padding: 14px 22px;
@@ -1537,16 +1537,75 @@
 
 	.floating-btns{
 		position: fixed;
-		right: 18px;
-		bottom: 18px;
+		/*right: 18px;
+		bottom: 18px;*/
+		right: 0;
+		bottom: 0;
 		z-index: 130;
-		width: 70px;
+		/*width: 70px;*/
 		transition: .5s;
 		opacity: 1;
 	}
 	.floating-btns.on{
 		opacity: 0;
 	}
+	.floating-btns.fix{
+		width: 100%;
+		height: 100%;
+		right: 0;
+		bottom: 0;
+		/*padding: 0 18px 18px 0;*/
+		/*transition: 0s;*/
+		/*animation: dimmedBg .5s forwards;*/
+		background: rgba(0, 0, 0, 0.7);
+	}
+
+	@-webkit-keyframes dimmedBg {
+	    0% {
+	        background: rgba(0, 0, 0, 0);
+	    }
+	    100% {
+	        background: rgba(0, 0, 0, 0.7);
+	    }
+	}
+
+	@keyframes dimmedBg {
+	    0% {
+	        background: rgba(0, 0, 0, 0);
+	    }
+	    100% {
+	        background: rgba(0, 0, 0, 0.7);
+	    }
+	}
+	@-webkit-keyframes dimmedBgOff {
+	    0% {
+	    	background: rgba(0, 0, 0, 0.7);
+	    }
+	    99% {
+	        background: rgba(0, 0, 0, 0);
+	    }
+	    100% {
+	        width: auto;
+	    }
+	}
+	@keyframes dimmedBgOff {
+	    0% {
+	    	background: rgba(0, 0, 0, 0.7);
+	    }
+	    99% {
+	        background: rgba(0, 0, 0, 0);
+	    }
+	    100% {
+	        width: auto;
+	    }
+	}
+
+
+
+	.fb-list{
+		margin: 0 18px 18px 0;
+	}
+
 	.btn-go-menu{
 		display: inline-block;
 		width: 70px;
