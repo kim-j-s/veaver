@@ -150,11 +150,11 @@
     content: '';
     display: block;
     position: absolute;
-    border-top: 16px solid #ffc000;
+    border-top: 14px solid #ffc000;
     border-bottom: 0;
-    border-left: 8px solid transparent;
-    border-right: 8px solid transparent;
-    left: -3px;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    left: -1px;
     top: -24px;
     z-index: 1;
 }
