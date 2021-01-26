@@ -215,12 +215,14 @@ function termSingleChk() {
 
 // tab swiper
 function tabSwiper() {
-	var tabSwiper = new Swiper('.tab-menu-wrap', {
-        slidesPerView: 'auto',
-        observer: true,
-        observeParents: true,
-        speed: 500,
-    });
+	if ( $('.tab-menu-wrap').lenght > 0 ){
+		var tabSwiper = new Swiper('.tab-menu-wrap', {
+	        slidesPerView: 'auto',
+	        observer: true,
+	        observeParents: true,
+	        speed: 500,
+	    });
+    }
 }
 
 
