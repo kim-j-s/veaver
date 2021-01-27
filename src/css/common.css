@@ -723,27 +723,6 @@
 
 	/** // select **/
 
-
-	/** 안내문구 **/
-
-	.i-txt{
-	    position: relative;
-	    padding-left: 22px;
-	    font-size: 12px;
-	    line-height: 18px;
-	}
-	.i-txt:before{
-	    content: '';
-	    position: absolute;
-	    top: 1px;
-	    left: 0;
-	    width: 16px;
-	    height: 16px;
-	    background: url(../img/ic-info.png) no-repeat 0 0 / 100% auto;
-	}
-
-	/** 안내문구 **/
-
 /*** // common components ***/
 
 
@@ -1960,7 +1939,6 @@
 	}
 
 	/* 닥터 QA */
-
 	.rst-list-cont > .q-txt{
 		display: inline-block;
 		vertical-align: middle;
@@ -1998,7 +1976,6 @@
 	}
 
 	/** // 관련질병 **/
-
 
 
 	/*약관 목록*/
@@ -2163,7 +2140,65 @@
 		flex: 1;
 	}
 
-	/** //2분할 **/
+	/** // 2분할 **/
+
+
+	/** 경계선 엘리먼트 **/
+
+	.line-box + .line-box{
+	    margin-top: 30px;    
+	    padding-top: 30px;
+	    border-top: 1px solid #ebeff3;
+	}
+
+	/** // 경계선 엘리먼트 **/
+
+	/** 문구 **/
+
+	.txt-cont{
+
+	}
+	.txt-cont > dt{
+	    font-weight: 400;
+	    font-size: 24px;
+	    line-height: 36px;
+	    color: #000;
+	}
+	.txt-cont > dd{
+	    font-size: 16px;
+	    color: #74777b;
+	    line-height: 24px;
+	}
+	.txt-cont02{
+		
+	}
+	.txt-cont02 > dt{
+	    font-size: 24px;
+	    line-height: 36px;
+	    color: #000;
+	}
+	.txt-cont02 > dd{
+	    font-size: 16px;
+	    line-height: 24px;
+	}
+
+	.i-txt{
+	    position: relative;
+	    padding-left: 22px;
+	    font-size: 12px;
+	    line-height: 18px;
+	}
+	.i-txt:before{
+	    content: '';
+	    position: absolute;
+	    top: 1px;
+	    left: 0;
+	    width: 16px;
+	    height: 16px;
+	    background: url(../img/ic-info.png) no-repeat 0 0 / 100% auto;
+	}
+
+	/** 문구 **/
 
 
 /*** // content ***/

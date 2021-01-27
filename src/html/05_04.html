@@ -1,5 +1,5 @@
 @@include('head.html',{
-	"title":"질병정보 | "
+	"title":"질병정보 상세 | "
 })
 <body>
 	<div class="wrap">
@@ -19,63 +19,84 @@
     width: 100%;
 }
 
-.txt-cont{
-    padding-bottom: 30px;
-    border-bottom: 1px solid #ebeff3;
-}
-.txt-cont > dt{
-    font-weight: 400;
-    font-size: 24px;
-    line-height: 36px;
-    color: #000;
-}
-.txt-cont > dd{
-    font-size: 16px;
-    color: #74777b;
-    line-height: 24px;
+
+</style>
+
+<style>
+.content-card-area{
+    padding: 60px 0 70px 0;
 }
 
-.txt-cont02{
-    padding-bottom: 30px;
-    border-bottom: 1px solid #ebeff3;
-}
-.txt-cont02 > dt{
-    font-size: 24px;
-    line-height: 36px;
-    color: #000;
-}
-.txt-cont02 > dd{
-    font-size: 16px;
-    line-height: 24px;
-}
+
+
 </style>
 
             <div class="d-img-area">
                 <img src="../img/temp/@poptemp03.jpg" alt="예시 이미지">
             </div>
 
-            <dl class="txt-cont">
+            <dl class="txt-cont line-box">
                 <dt>편두통</dt>
                 <dd>편두통은 뇌가 특정 자극에 매우 예민하게 반응하도록 유전적으로 세팅된 뇌의 만성 질병이다. </dd>
             </dl>
 
-
-<style>
-.content-card-area{
-    padding: 60px 0 70px 0;
-}
-</style>
-
-            <div class="content-card-area">
+            <div class="content-card-area line-box">
                 콘텐츠 카드 영역
             </div>
 
-            <dl class="txt-cont02">
-                <dt>증상</dt>
-                <dd>편두통은 대개는 간헐적이면서 만성적인 경과를 보이나 그렇지 않은 경우도 상당수 있으며, 증상은 환자마다 천차만별이다.</dd>
+            <dl class="txt-cont02 line-box">
+                <h3 class="tit-h3">증상</h3>
+                <div class="rnd-group">
+                    <div class="scroll-x">
+                        <span class="btn-rnd-gr on">증상1</span>
+                        <span class="btn-rnd-gr on">증상1</span>
+                        <span class="btn-rnd-gr on">증상1</span>
+                        <span class="btn-rnd-gr on">증상1</span>
+                        <span class="btn-rnd-gr on">증상1</span>
+                        <span class="btn-rnd-gr on">증상1</span>
+                    </div>
+                </div>
+
+                <h3 class="tit-h3">진료과</h3>
+                <div class="rnd-group">
+                    <div class="scroll-x">
+                        <button type="button" class="btn-rnd-gr on">내과</button>
+                        <button type="button" class="btn-rnd-gr on">소아과</button>
+                    </div>
+                </div>
             </dl>
 
 
+
+<style>
+.tit-h3{
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 27px;
+}
+.tit-h3 + .rnd-group{
+    margin-top: 10px;
+}
+.rnd-group + .tit-h3{
+    margin-top: 30px;
+}
+.rnd-group{
+    height: 28px;
+    overflow-y: hidden;
+}
+.scroll-x{
+    padding-bottom: 10px;
+    font-size: 0;
+    white-space: nowrap;
+    overflow-x: auto;
+}
+.scroll-x .btn-rnd-gr{
+    vertical-align: top;
+}
+.scroll-x .btn-rnd-gr +.btn-rnd-gr{
+    margin-left: 6px;
+}
+</style>
 
 
             <div class="floating-btns">
