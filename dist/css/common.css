@@ -1965,12 +1965,12 @@
 		padding-right: 14px;
 	}
 	.rst-list-cont dl dt{
-	    max-height: 52px;
+	    max-height: 54px;
 	    font-weight: 500;
 	    font-size: 18px;
 	    line-height: 27px;
-	    word-wrap: break-word;
 	    display: -webkit-box;
+	    word-wrap: break-word;
 	    -webkit-line-clamp: 2;
 	    -webkit-box-orient: vertical;
 	    overflow: hidden;
@@ -1985,8 +1985,8 @@
 	    max-height: 48px;
 	    font-size: 16px;
 	    line-height: 24px;
-	    word-wrap: break-word;
 	    display: -webkit-box;
+	    word-wrap: break-word;
 	    -webkit-line-clamp: 2;
 	    -webkit-box-orient: vertical;
 	    overflow: hidden;

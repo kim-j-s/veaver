@@ -63,7 +63,7 @@
             </style>
 
             <style>
-                .content-card-area {
+                .card-content-area {
                     padding: 60px 0 70px 0;
                 }
             </style>
@@ -72,17 +72,190 @@
                 <img src="../img/temp/@poptemp03.jpg" alt="예시 이미지">
             </div>
 
-            <dl class="txt-cont line-box">
+            <!-- <dl class="txt-cont line-box">
                 <dt>편두통</dt>
                 <dd>편두통은 뇌가 특정 자극에 매우 예민하게 반응하도록 유전적으로 세팅된 뇌의 만성 질병이다. </dd>
-            </dl>
+            </dl> -->
 
-            <div class="content-card-area line-box">
-                콘텐츠 카드 영역
+            <div class="card-content-area line-box">
+                <!-- ㅇ
+                콘텐츠 카드 영역<br><br>
 
+                카드사이 간격 20px<br>
+                동영상 카드는 간격이 존재하지 않음<br>
+                갤러리 타입 1 / 2개 이상<br>
+                링크타입<br>
+                카드 타입별로 html / 합본 1장
+
+                <br><br>
+                -->
+
+                <style>
+                    .gallery-swiper {
+                        padding-bottom: 17px;
+                    }
+
+                    .gallery-swiper .swiper-slide a {
+                        display: block;
+                    }
+
+                    .gallery-swiper .swiper-slide a img {
+                        display: block;
+                        width: 100%;
+                    }
+
+
+                    .gallery-swiper .swiper-pagination {
+                        bottom: 0;
+                        display: flex;
+                        font-size: 0;
+                    }
+
+                    .gallery-swiper .swiper-pagination .swiper-pagination-bullet {
+                        position: relative;
+                        flex: 1 1 auto;
+                        margin: 0;
+                        height: 2px;
+                        opacity: 1;
+                        border-radius: 0;
+                        background: #dbdee5;
+                    }
+
+                    .gallery-swiper .swiper-pagination .swiper-pagination-bullet:after {
+                        content: '';
+                        position: absolute;
+                        top: 0;
+                        left: 50%;
+                        width: 0%;
+                        height: 2px;
+                        background: #000;
+                    }
+
+                    .gallery-swiper .swiper-pagination .swiper-pagination-bullet-active:after {
+                        left: 0;
+                        width: 100%;
+                        transition: .5s;
+
+                    }
+                </style>
+
+                <div class="gallery-swiper swiper-container">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <a href="#"><img src="../img/temp/@poptemp05.jpg" alt="예시 이미지"></a>
+                        </div>
+                        <div class="swiper-slide">
+                            <a href="#"><img src="../img/temp/@poptemp05.jpg" alt="예시 이미지"></a>
+                        </div>
+                        <div class="swiper-slide">
+                            <a href="#"><img src="../img/temp/@poptemp03.jpg" alt="예시 이미지"></a>
+                        </div>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                </div>
+
+                <script>
+                    $(function() {
+                        if ($('.gallery-swiper').length > 0) {
+                            var gallerySwiper = new Swiper('.gallery-swiper', {
+                                observer: true,
+                                observeParents: true,
+                                speed: 500,
+                                spaceBetween: 20,
+                                loop: true,
+                                pagination: {
+                                    el: '.swiper-pagination',
+                                },
+                            });
+                        }
+                    })
+                </script>
+
+
+                <style>
+                    a.link {
+                        position: relative;
+                        display: inline-block;
+                        padding-left: 30px;
+                        padding-top: 3px;
+                        font-size: 16px;
+                        color: #056bff;
+                        line-height: 24px;
+                    }
+
+                    a.link:before {
+                        content: '';
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 30px;
+                        height: 30px;
+                        background: url(../img/ic-link.png) no-repeat 0 0 / 100% auto;
+                    }
+
+                    a.link>span {
+                        text-decoration: underline;
+                    }
+
+                    .full-img-area {
+                        font-size: 0;
+                    }
+
+                    .full-img-area>img {
+                        display: block;
+                        width: 100%;
+                    }
+                </style>
+
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+
+                <!-- 다운로드 컨텐츠 -->
                 <div class="download-box">
                     <a href="#"><span>편두통 증상 자가 진단하기.pdf</span>(12.3kb)</a>
                 </div>
+                <!-- // 다운로드 컨텐츠 -->
+
+                <br><br>
+
+                <!-- 넓이 100% 이미지 영역 -->
+                <div class="full-img-area">
+                    <img src="../img/temp/@poptemp03.jpg" alt="예시 이미지">
+                </div>
+                <!-- // 넓이 100% 이미지 영역 -->
+
+                <!-- 링크 컨텐츠 -->
+                <a href="#" class="link"><span>https://link.card.co.kr</span></a>
+
+                <br><br>
+
+                <div class="link-box">
+                    <a href="#">
+                        <span class="word-box">
+                            <span class="txt">지역사회성 폐렴</span>
+                        </span>
+                        <span class="dw-img">
+                            <img src="../img/temp/@poptemp04.jpg" alt="예시 이미지">
+                        </span>
+                    </a>
+                </div>
+
+                <div class="link-box">
+                    <a href="#">
+                        <span class="word-box">
+                            <span class="txt">지역사회성 폐렴 지역사회성 폐렴 지역사회성 폐렴 지역사회성 폐렴 지역사회성 폐렴 지역사회성 폐렴</span>
+                        </span>
+                        <span class="dw-img">
+                            <img src="../img/temp/@poptemp04.jpg" alt="예시 이미지">
+                        </span>
+                    </a>
+                </div>
+                <!-- // 링크 컨텐츠 -->
+
+
 
 
                 <style>
@@ -109,6 +282,53 @@
                         font-size: 12px;
                         color: #000;
                         text-decoration: underline;
+                    }
+
+                    .link-box+.link-box {
+                        margin-top: 20px;
+                    }
+
+                    .link-box {
+                        position: relative;
+                        border: 1px solid #dbdee5;
+                    }
+
+                    .link-box>a {
+                        display: block;
+                        padding-left: 22px;
+                        font-size: 0;
+                    }
+
+                    .link-box .word-box {
+                        display: inline-block;
+                        width: calc(100% - 70px);
+                        padding-right: 20px;
+                        vertical-align: middle;
+                    }
+
+                    .link-box .txt {
+                        vertical-align: middle;
+                        font-weight: 500;
+                        font-size: 15px;
+                        line-height: 22px;
+                        color: #000;
+                        max-height: 44px;
+                        display: -webkit-box;
+                        -webkit-line-clamp: 2;
+                        -webkit-box-orient: vertical;
+                        overflow: hidden;
+                    }
+
+                    .link-box .dw-img {
+                        display: inline-block;
+                        vertical-align: middle;
+                        width: 70px;
+                        height: 68px;
+                    }
+
+                    .link-box .dw-img img {
+                        width: 100%;
+                        height: 100%;
                     }
                 </style>
 
