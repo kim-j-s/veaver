@@ -1,0 +1,84 @@
+@@include('head.html',{
+	"title":"검색결과 | "
+})
+<body>
+	<div class="wrap">
+        <!-- 헤더영역 -->
+        @@include('header04.html')
+        <!-- //헤더영역 -->
+
+        <!-- 컨텐츠 영역 -->
+        <section class="layer-content">
+            <div class="scroll-list-wrap">
+                <!-- 탭 -->
+                <div class="tab-box">
+                    <div class="tab-menu-wrap swiper-container">
+                        <div class="tab-menu swiper-wrapper">
+                            <div class="swiper-slide">
+                                <a href="#">질병정보<span class="count">(30)</span></a>
+                            </div>
+                            <div class="swiper-slide">
+                                <a href="#">닥터QA<span class="count">(30)</span></a>
+                            </div>
+                            <div class="swiper-slide">
+                                <a href="#" class="active">건강레시피<span class="count">(30)</span></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- //탭 -->
+
+                <div class="rst-list-wrap">
+                    <ul class="rst-list">
+                        <li>
+                            <div class="rst-list-cont">
+                                <div class="q-txt">내시경적 허리디스크 치료 수술은 어떤 건가요?</div>
+                                <div class="st-img">
+                                    <img src="../img/temp/@poptemp02.jpg" alt="">
+                                </div>
+                            </div>
+                            <button type="button" class="btn-bl">건강레시피</button>
+                        </li>
+                        <li>
+                            <div class="rst-list-cont">
+                                <div class="q-txt">허리디스크와 척추관협착증은 어떻게 다른가요?</div>
+                                <div class="st-img">
+                                    <img src="../img/temp/@poptemp02.jpg" alt="">
+                                </div>
+                            </div>
+                            <button type="button" class="btn-bl">건강레시피</button>
+                        </li>
+                        <li>
+                            <div class="rst-list-cont">
+                                <div class="q-txt">환자들이 알고 있어야 할 식이 습관을 알려주세요.</div>
+                                <div class="st-img">
+                                    <img src="../img/temp/@poptemp02.jpg" alt="">
+                                </div>
+                            </div>
+                            <button type="button" class="btn-bl">건강레시피</button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <!-- //컨텐츠 영역 -->
+    </div>
+
+
+<script>
+$(function(){
+    // tab swiper
+    var tabSwiper = new Swiper('.tab-menu-wrap', {
+        slidesPerView: 'auto',
+        observer: true,
+        observeParents: true,
+        speed: 500,
+    });
+    // swiper 구동 시 탭의 처음을 지정하는 방식
+    tabSwiper.slideTo(2, false,false);
+    //mySwiper.slideTo(index, speed, runCallbacks);
+});
+</script>
+
+</body>
+</html>
