@@ -11,6 +11,7 @@
         <section class="layer-content">
 
 <style>
+/* 상세 페이지 */
 .d-img-area{
     margin: -22px -22px 20px -22px;
 }
@@ -18,7 +19,7 @@
     display: block;
     width: 100%;
 }
-
+/* // 상세 페이지 */
 
 </style>
 
@@ -26,8 +27,6 @@
 .content-card-area{
     padding: 60px 0 70px 0;
 }
-
-
 
 </style>
 
@@ -42,18 +41,50 @@
 
             <div class="content-card-area line-box">
                 콘텐츠 카드 영역
+
+                <div class="download-box">
+                    <a href="#"><span>편두통 증상 자가 진단하기.pdf</span>(12.3kb)</a>                    
+                </div>
+
+
+<style>
+.download-box{
+    padding: 14px 22px;
+    border: 1px solid #dbdee5;
+}
+.download-box > a{
+    display: block;
+    padding-right: 30px;
+    font-weight: 500;
+    font-size: 12px;
+    color: #74777b;
+    line-height: 30px;
+    background: url(../img/ic-download.png) no-repeat right center / 30px auto;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+}
+.download-box > a > span{
+    font-weight: 500;
+    font-size: 12px;
+    color: #000;
+    text-decoration: underline;
+}
+
+</style>
+
             </div>
 
-            <dl class="txt-cont02 line-box">
+            <div class="line-box">
                 <h3 class="tit-h3">증상</h3>
                 <div class="rnd-group">
                     <div class="scroll-x">
-                        <span class="btn-rnd-gr on">증상1</span>
-                        <span class="btn-rnd-gr on">증상1</span>
-                        <span class="btn-rnd-gr on">증상1</span>
-                        <span class="btn-rnd-gr on">증상1</span>
-                        <span class="btn-rnd-gr on">증상1</span>
-                        <span class="btn-rnd-gr on">증상1</span>
+                        <span class="btn-rnd-gr on">어지러움</span>
+                        <span class="btn-rnd-gr on">탈수</span>
+                        <span class="btn-rnd-gr on">차갑고 촉촉한 피부</span>
+                        <span class="btn-rnd-gr on">어지러움</span>
+                        <span class="btn-rnd-gr on">탈수</span>
+                        <span class="btn-rnd-gr on">차갑고 촉촉한 피부</span>
                     </div>
                 </div>
 
@@ -64,40 +95,7 @@
                         <button type="button" class="btn-rnd-gr on">소아과</button>
                     </div>
                 </div>
-            </dl>
-
-
-
-<style>
-.tit-h3{
-    font-weight: 400;
-    font-size: 18px;
-    line-height: 27px;
-}
-.tit-h3 + .rnd-group{
-    margin-top: 10px;
-}
-.rnd-group + .tit-h3{
-    margin-top: 30px;
-}
-.rnd-group{
-    height: 28px;
-    overflow-y: hidden;
-}
-.scroll-x{
-    padding-bottom: 10px;
-    font-size: 0;
-    white-space: nowrap;
-    overflow-x: auto;
-}
-.scroll-x .btn-rnd-gr{
-    vertical-align: top;
-}
-.scroll-x .btn-rnd-gr +.btn-rnd-gr{
-    margin-left: 6px;
-}
-</style>
-
+            </div>
 
             <div class="floating-btns">
                 <button type="button" class="btn-view-more">더보기</button>

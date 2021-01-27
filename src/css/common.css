@@ -83,6 +83,16 @@
 
 /*** common components ***/
 
+	/** Titles **/
+
+		.tit-h3{
+		    font-weight: 400;
+		    font-size: 18px;
+		    line-height: 27px;
+		}
+
+	/** // Titles **/
+
 	/** buttons **/
 
 		/* normal size */		
@@ -1217,18 +1227,6 @@
 
 	/** //main **/
 
-	/** content **/
-
-	.wrap{
-		height: 100%;
-		padding: 58px 0 0 0;
-	}
-	.wrap.btn-add{
-		padding: 58px 0 74px 0;
-	}
-
-	/** // content **/
-
 
 	/** full layer Popup **/
 
@@ -1660,6 +1658,15 @@
 
 /*** content ***/
 
+	.wrap{
+		height: 100%;
+		padding: 58px 0 0 0;
+	}
+	.wrap.btn-add{
+		padding: 58px 0 74px 0;
+	}
+
+
 	/** 문진 리스트 **/
 
 	.g-txt{
@@ -2035,7 +2042,7 @@
 	/* // 약관 목록*/
 
 
-	/*탭*/
+	/* 탭 */
 	.tab-box{
 	    position: relative;
 	    margin: 0 -22px;
@@ -2170,7 +2177,7 @@
 	    line-height: 24px;
 	}
 	.txt-cont02{
-		
+
 	}
 	.txt-cont02 > dt{
 	    font-size: 24px;
@@ -2199,6 +2206,32 @@
 	}
 
 	/** 문구 **/
+
+
+	/* 버튼 좌우 스크롤 영역 */
+	.tit-h3 + .rnd-group{
+	    margin-top: 10px;
+	}
+	.rnd-group + .tit-h3{
+	    margin-top: 30px;
+	}
+	.rnd-group{
+	    height: 28px;
+	    overflow-y: hidden;
+	}
+	.scroll-x{
+	    padding-bottom: 10px;
+	    font-size: 0;
+	    white-space: nowrap;
+	    overflow-x: auto;
+	}
+	.scroll-x .btn-rnd-gr{
+	    vertical-align: top;
+	}
+	.scroll-x .btn-rnd-gr +.btn-rnd-gr{
+	    margin-left: 6px;
+	}
+	/* // 버튼 좌우 스크롤 영역 */
 
 
 /*** // content ***/
