@@ -1989,6 +1989,12 @@
 	    -webkit-box-orient: vertical;
 	    overflow: hidden;
 	}
+	.rst-list-cont dl dt > a{
+		font-weight: 500;
+	    font-size: 18px;
+	    line-height: 27px;
+	    color: #000;
+	}
 	.rst-list-cont dl dd{
 	    max-height: 48px;
 	    font-size: 16px;
@@ -2194,6 +2200,9 @@
 	}
 	.hq-keywords{
 	    color: #74777b;
+	}
+	.hq-keywords > a{
+		color: #74777b;
 	}
 	.hq-chk-cont .btn-bd-pu-s{
 	    margin-top: 10px;

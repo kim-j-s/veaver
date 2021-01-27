@@ -1,0 +1,29 @@
+@@include('head.html',{
+	"title":"질병정보 | "
+})
+<body>
+	<div class="wrap">
+        <!-- 헤더영역 -->
+        @@include('header06.html')
+        <!-- //헤더영역 -->
+
+        <!-- 컨텐츠 영역 -->
+        <section class="layer-content">
+        	<div style="height: 400px; background: red;"></div>
+            <div style="height: 400px; background: blue;"></div>
+            <div style="height: 400px; background: red;"></div>
+
+            <div class="floating-btns">
+                <button type="button" class="btn-view-more">더보기</button>
+                <ul class="more-view-btns">
+                    <li><button type="button" class="more-btns btn-doc-qa">닥터 QA</button></li>
+                    <li><button type="button" class="more-btns btn-bookmark">관심 질병으로 저장하기</button></li>
+                    <li><button type="button" class="more-btns btn-find-h">병원찾기</button></li>
+                    <li><button type="button" class="more-btns btn-share">공유하기</button></li>
+                </ul>
+            </div>
+        </section>
+        <!-- //컨텐츠 영역 -->
+    </div>
+</body>
+</html>

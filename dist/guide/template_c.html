@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+    <title>공통 템플릿</title>
+    <link href="../css/reset.css" rel="stylesheet" />
+    <link href="../css/common.css" rel="stylesheet" />
+    <script type="text/javascript" src="../js/jquery.min.js"></script>
+    <script type="text/javascript" src="../js/commonui.js"></script>
+    <!--[if lt IE 9]>
+    <script type="text/javascript">
+        document.createElement("header"); 
+        document.createElement("nav"); 
+        document.createElement("section"); 
+        document.createElement("article");
+        document.createElement("aside"); 
+        document.createElement("footer");
+    </script>
+<![endif]-->
+
+
+    <!-- 2018.05.16 -->
+    <script type="text/javascript" src="code/scripts/shCore.js"></script>
+    <script type="text/javascript" src="code/scripts/shBrushBash.js"></script>
+    <script type="text/javascript" src="code/scripts/shBrushCss.js"></script>
+    <script type="text/javascript" src="code/scripts/shBrushJava.js"></script>
+    <script type="text/javascript" src="code/scripts/shBrushJScript.js"></script>
+    <script type="text/javascript" src="code/scripts/shBrushXml.js"></script>
+
+    <link type="text/css" rel="stylesheet" href="code/styles/shCore.css" />
+    <link type="text/css" rel="stylesheet" href="code/styles/shThemeDefault.css" />
+    <script type="text/javascript">
+        SyntaxHighlighter.all();
+    </script>
+    <!-- //2018.05.16 -->
+    <style>
+        body {
+            padding: 20px;
+            padding-top: 100px;
+            background: #fff;
+        }
+
+        h1 {
+            font-size: 30px;
+            padding: 0 20px;
+        }
+
+        h2:not(.header-title) {
+            padding: 20px 0;
+            margin-top: 20px;
+            border-top: 1px dashed #666666;
+            font-size: 20px;
+        }
+
+        .guideLink {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 10px;
+            background: #fff;
+            border-bottom: 1px solid #333;
+        }
+
+        .guideLink>a {
+            display: inline-block;
+            border: 1px solid #333;
+            padding: 5px;
+        }
+
+        .box {
+            margin-top: 20px;
+            border: 1px solid #E3E3E3
+        }
+
+        .font {
+            font-size: 20px;
+            line-height: normal;
+        }
+
+        .font+.font {
+            margin-top: 10px
+        }
+
+        .a2 {
+            font-weight: 200;
+        }
+
+        .a3 {
+            font-weight: 300;
+        }
+
+        .a4 {
+            font-weight: 400;
+        }
+
+        .a5 {
+            font-weight: 500;
+        }
+
+        .a6 {
+            font-weight: 700;
+        }
+
+        header {
+            position: relative !important;
+            background: rgba(0, 0, 0, 0.2);
+        }
+    </style>
+
+<body>
+    <h1>헤더 종류</h1>
+
+    <h2>문구</h2>
+    <dl class="txt-cont">
+        <dt>편두통</dt>
+        <dd>편두통은 뇌가 특정 자극에 매우 예민하게 반응하도록 유전적으로 세팅된 뇌의 만성 질병이다. </dd>
+    </dl>
+
+    <!-- souce code 뷰어 -->
+    <div class="box">
+        <pre class="brush: html;">
+			<dl class="txt-cont">
+				<dt></dt>
+				<dd></dd>
+		    </dl>
+		</pre>
+    </div>
+    <!-- //souce code 뷰어 -->
+
+    <h2>타입</h2>
+
+    <!-- souce code 뷰어 -->
+    <div class="box">
+        <pre class="brush: html;">
+
+		</pre>
+    </div>
+    <!-- //souce code 뷰어 -->
+
+
+
+
+
+
+
+
+
+    <h2>타입</h2>
+    <!-- souce code 뷰어 -->
+    <div class="box">
+        <pre class="brush: html;">
+			<div class="gr-box">
+		    </div>
+		</pre>
+    </div>
+    <!-- //souce code 뷰어 -->
+
+
+
+    <div class="guideLink">
+        <a href="template_a.html">가이드 1</a>
+        <a href="template_b.html">가이드 2</a>
+        <a href="template_c.html">가이드 3</a>
+        <a href="template_d.html">가이드 4</a>
+    </div>
+
+</body>
+
+</html>
