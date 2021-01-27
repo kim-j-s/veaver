@@ -43,6 +43,9 @@ $(function(){
 	// 더보기
 	viewMoreDp();
 
+	// swiper Gallery
+	gallerySwiper();
+
 	
 //script ready
 });
@@ -142,6 +145,7 @@ function chkListScroll() {
 	});
 }
 
+
 // 우측 메뉴 버튼 display 처리
 function floatBtns() {
 	var $flb = $('.floating-btns');
@@ -215,7 +219,6 @@ function termSingleChk() {
     });
 }
 
-
 // tab swiper
 function tabSwiper() {
 	if ( $('.tab-menu-wrap').length > 0 ){
@@ -228,7 +231,7 @@ function tabSwiper() {
     }
 }
 
-
+// flaoting button 더보기 기능
 function viewMoreDp() {
 	$('.btn-view-more').click(function(){
 	    if ( !$('.floating-btns').hasClass('fix') ) {
@@ -243,4 +246,21 @@ function viewMoreDp() {
 	        $('.floating-btns').addClass('out').removeClass('fix');
 	    }
 	})
+}
+
+// swiper Gallery
+// 페이지 상 swiper 1개 이상 존재하고 등록된 컨텐츠가 2개 이상일때 구현
+function gallerySwiper() {
+	if ( $('.gallery-swiper').length > 0 && $('.gallery-swiper').find('.swiper-slide').length > 1 ){
+        var gallerySwiper = new Swiper('.gallery-swiper', {
+            observer: true,
+            observeParents: true,
+            speed: 500,
+            spaceBetween: 20,
+            loop: true,
+            pagination: {
+                el: '.swiper-pagination',
+            },
+        });
+    }
 }
