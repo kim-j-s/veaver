@@ -1582,7 +1582,7 @@
 	.btn-view-more.on{
 	    right: 18px;
 	    bottom: 18px;
-	    transform: rotate(45deg);
+	    transform: rotate(135deg);
 	}
 	.more-view-btns{
 	    position: absolute;
