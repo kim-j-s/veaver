@@ -1,8 +1,10 @@
 (function ($) {
+    // .layer-full-wrap .wrap
+    // .layer-content
     const $DOC = $(document);
     const $WIN = $(window);
-    let WIN_HEIGHT = $WIN.height();
-    let WIN_WIDTH = $WIN.width();
+    // let WIN_HEIGHT = $WIN.height();
+    // let WIN_WIDTH = $WIN.width();
 
     const baseHtml = '<div class="cv-inner">'
         + '<div class="cv-video"><video></video></div>'
@@ -62,17 +64,11 @@
     $.fn.customVideo = function (videoSrc, posterSrc) {
         if (!videoSrc) return;
 
-        $WIN.off('resize.cv').on('resize.cv', function () {
-            WIN_HEIGHT = $WIN.height();
-            WIN_WIDTH = $WIN.width();
-        }).off('scroll.cv').on('scroll.cv', function (e) {
-            $WIN.trigger('cv-afterscroll', [e, $WIN.scrollTop()]);
-        });
-
         return this.each(function () {
 
             const wrap = this;
             const $wrap = $(this);
+            const $layerContent = $wrap.closest('.layer-content');
 
             $wrap.addClass('custom-video');
             $wrap.empty();
@@ -178,12 +174,19 @@
 
                     $wrap.addClass('cv-set-height');
                     $wrap.css('padding-top', videoHeightRatio + '%');
-                    $WIN.on('cv-afterscroll', function (e, scrollEvent,sct) {
+
+                    let lcH = $layerContent.outerHeight();
+
+                    $WIN.on('resize', function(e) {
+                        lcH = $layerContent.outerHeight();
+                    });
+
+                    $layerContent.on('scroll', function (e) {
                         if($wrap.hasClass('cv-playing')) {
-                            const t = $wrap.offset().top;
+                            const t = $wrap.position().top;
                             const h = $wrap.outerHeight();
 
-                            if(sct+WIN_HEIGHT<=t || sct >= t+h) {
+                            if(t+h <= 0 || t>=lcH) {
                                 $wrap.addClass('cv-floating');
                             } else {
                                 $wrap.removeClass('cv-floating');
