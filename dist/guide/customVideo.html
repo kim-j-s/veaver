@@ -1,53 +1,61 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Health Mining</title>
-    <script src="../js/jquery.min.js"></script>
-    <style>
-        body {
-            padding: 0;
-            margin: 0;
-        }
-
-        .test {
-            padding: 0;
-        }
-
-        .test li {
-            padding: 0;
-            margin: 0;
-            height: 300px;
-            list-style: none;
-        }
-
-        .test li:nth-child(2n) {
-            background-color: #ddd;
-        }
-    </style>
+    <meta charset="utf-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+    <meta name="x-apple-disable-message-reformatting" />
+    <title>customVideo | Veaver Health mining</title>
+    <link href="../css/reset.css" rel="stylesheet" />
+    <link href="../css/common.css" rel="stylesheet" />
+    <link href="../css/swiper.css" rel="stylesheet" />
+    <script type="text/javascript" src="../js/jquery.min.js"></script>
+    <script type="text/javascript" src="../js/commonui.js"></script>
+    <script type="text/javascript" src="../js/jquery.swiper.js"></script>
+    <!--[if lt IE 9]>
+    <script type="text/javascript">
+        document.createElement("header"); 
+        document.createElement("nav"); 
+        document.createElement("section"); 
+        document.createElement("article"); 
+        document.createElement("footer");
+    </script>
+<![endif]-->
 </head>
 
 <body>
-    <div id="video01"></div>
-    <ul class="test">
-        <li></li>
-        <li></li>
-        <li></li>
-    </ul>
-    <div id="video02"></div>
-    <ul class="test">
-        <li></li>
-        <li></li>
-        <li></li>
-    </ul>
-    <div id="video03"></div>
-    <ul class="test">
-        <li></li>
-        <li></li>
-        <li></li>
-    </ul>
+    <div class="wrap">
+        <!-- 헤더영역 -->
+        <header>
+            <div class="header-inner">
+                <span class="u-profile">
+	    	<span class="u-profile-img">
+	    		<!-- 적용된 썸네일 -->
+	    		<img src="https://m.upinews.kr/data/upi/image/20190523/p1065574177335900_669_thum.jpg" alt="프로픨 사진" class="u-profile-img">
+	    		<!-- 남성 기본 썸네일 -->
+	    		<!-- <img src="../img/acProfile01B.png" alt="프로픨 사진" class="u-profile-img"> -->
+	    		<!-- 여성 기본 썸네일 -->
+	    		<!-- <img src="../img/acProfile02B.png" alt="프로픨 사진" class="u-profile-img"> -->
+	    	</span>
+                <span class="name">홍길동</span>
+                </span>
+                <a href="#" class="history-back">뒤로가기</a>
+            </div>
+        </header>
+        <!-- //헤더영역 -->
+
+        <!-- 컨텐츠 영역 -->
+        <section class="layer-content etc">
+            <div id="video01"></div>
+            <div style="height: 1000px;"></div>
+            <div id="video02"></div>
+            <div style="height: 1000px;"></div>
+            <div id="video03"></div>
+            <div style="height: 1000px;"></div>
+        </section>
+        <!-- //컨텐츠 영역 -->
+    </div>
 </body>
 <link rel="stylesheet" href="../css/customVideo.css">
 <script src="../js/hls.js"></script>
