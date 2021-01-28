@@ -93,6 +93,13 @@
 		    line-height: 27px;
 		}
 
+		.tit-h4{
+		    font-weight: 500;
+		    font-size: 16px;
+		    line-height: 24px;
+		    color: #056bff;
+		}
+
 	/** // Titles **/
 
 	/** buttons **/
@@ -2308,10 +2315,26 @@
 
 	/** 경계선 엘리먼트 **/
 
+		.line-box{
+			position: relative;
+		}
 		.line-box + .line-box{
-		    margin-top: 30px;    
+		    margin-top: 30px;
 		    padding-top: 30px;
 		    border-top: 1px solid #ebeff3;
+		}
+		.line-box.bold-line + .line-box.bold-line{
+		    margin-top: 40px;
+		    padding-top: 50px;
+		    border-top: none;
+		}
+		.line-box.bold-line + .line-box.bold-line:before{
+			content: '';
+			position: absolute;
+			top: 0;
+			left: -22px;
+			width: calc(100% + 44px);
+			border-top: 10px solid #f8f9fb;
 		}
 
 	/** // 경계선 엘리먼트 **/
@@ -2347,7 +2370,7 @@
 		.txt-cont03{
 
 		}
-		.txt-cont03 > .sort-txt{
+		.txt-cont03 > .b-txt{
 		    display: block;
 		    margin-bottom: 4px;
 		    font-weight: 400;
@@ -2360,6 +2383,14 @@
 		    line-height: 29px;
 		}
 		.txt-cont03 > .q-txt + .link02{
+		    margin-top: 10px;
+		}
+		.txt-cont03 > .caption{
+		    font-weight: 400;
+		    line-height: 20px;
+		    color: #74777b;
+		}
+		.txt-cont03 > .q-txt + .caption{
 		    margin-top: 10px;
 		}
 
@@ -2377,6 +2408,104 @@
 		    width: 16px;
 		    height: 16px;
 		    background: url(../img/ic-info.png) no-repeat 0 0 / 100% auto;
+		}
+
+
+		.tit-h4 + .list-01{
+		    margin-top: 10px;
+		}
+		.list-01 > li{
+		    line-height: 20px;
+		}
+		.list-01 > li + li{
+		    margin-top: 4px;
+		}
+
+		.tit-h4 + .list-02{
+		    margin-top: 10px;
+		}
+		.list-02{
+		    position: relative;
+		    overflow: hidden;
+		}
+		.list-02:before{
+		    content: '';
+		    position: absolute;
+		    top: 5px;
+		    left: 2px;
+		    height: 100%;
+		    border-left: 1px solid #e5e5e5;
+		}
+		.list-02 > li{
+		    position: relative;
+		    padding-left: 13px;
+		    line-height: 20px;
+		}
+		.list-02 > li:before{
+		    content: '';
+		    position: absolute;
+		    top: 4px;
+		    left: -4px;
+		    width: 13px;
+		    height: 13px;
+		    border: 4px solid #fff;
+		    border-radius: 50%;
+		    background: #222;
+		    box-sizing: border-box;
+		}
+		.list-02 > li:last-child:after{
+		    content: '';
+		    position: absolute;
+		    top: 13px;
+		    left: 2px;
+		    height: 100%;
+		    border-left: 1px solid #fff;
+		}
+		.list-02 > li + li{
+		    margin-top: 10px;
+		}
+		.tit-h4 + .list-03{
+		    margin-top: 20px;
+		}
+		.list-03{
+
+		}
+		.list-03 > li {
+		    border-radius: 14px;
+		    box-shadow: 0 0 6px 0 rgba(179, 187, 199, 0.3);
+		}
+		.list-03 > li + li{
+		    margin-top: 10px;
+		}
+		.list-03 > li > a{
+		    display: block;
+		    padding: 22px;
+		    font-size: 0;
+		}
+
+		.list-03 > li .word-box{
+		    display: inline-block;
+		    width: calc(100% - 70px);
+		    padding-right: 20px;
+		    vertical-align: middle;
+		}
+		.list-03 > li .txt{
+		    vertical-align: middle;
+		    font-weight: 400;
+		    line-height: 20px;
+		    color: #000;
+		}
+		.list-03 > li .ex-img{
+		    display: inline-block;
+		    vertical-align: middle;
+		    width: 60px;
+		    height: 60px;
+		    border-radius: 7px;
+		    overflow: hidden;
+		}
+		.list-03 > li .ex-img img{
+		    width: 100%;
+		    height: 100%;
 		}
 
 	/** 문구 **/
@@ -2597,6 +2726,7 @@
 		}
 
 	/* // 상세 페이지 컨텐츠 삽입 영역 */
+
 
 
 /*** // content ***/
