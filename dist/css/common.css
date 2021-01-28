@@ -1405,7 +1405,7 @@
 	}
 	.search-header-inner .input-text{
 		display: inline-block;
-		width: calc(100% - 30px);
+		width: 100%;
 	}
 	.search-header-inner .input-text input{
 		height: 30px;
@@ -2453,7 +2453,7 @@
 	/* 상세 페이지 상단 이미지 */
 
 		.d-img-area{
-		    margin: -22px -22px 20px -22px;
+		    margin: -20px -22px 20px -22px;
 		}
 		.d-img-area > img{
 		    display: block;
