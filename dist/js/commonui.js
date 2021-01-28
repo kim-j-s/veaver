@@ -145,7 +145,6 @@ function chkListScroll() {
 	});
 }
 
-
 // 우측 메뉴 버튼 display 처리
 function floatBtns() {
 	var $flb = $('.floating-btns');
