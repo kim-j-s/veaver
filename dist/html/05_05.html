@@ -189,10 +189,55 @@
 
         <!-- 하단 팝업 -->
         <div class="bottom-pop">
-
+            <div class="bottom-pop-head">
+                <div class="bph-innner">
+                    <h2 class="header-title">닥터QA</h2>
+                    <button type="buton" class="layer-close-btn">닫기</button>
+                </div>
+            </div>
+            <div class="bottom-pop-cont">
+                <div class="d-img-area">
+                    <img src="../img/temp/@poptemp03.jpg" alt="예시 이미지">
+                </div>
+            </div>
         </div>
         <!-- // 하단 팝업 -->
 
+
+        <style>
+            .bottom-pop {
+                position: fixed;
+                left: 0;
+                bottom: 0;
+                z-index: 200;
+                display: flex;
+                flex-direction: column;
+                width: 100%;
+                max-height: calc(100% - 30px);
+                border-radius: 14px 14px 0 0;
+                background: #fff;
+                overflow: hidden;
+            }
+
+            .bottom-pop-head {
+                position: relative;
+                padding: 14px 22px;
+                border-bottom: 1px solid #ebeff3;
+            }
+
+            .bph-innner {
+                position: relative;
+                min-height: 30px;
+                padding-left: 35px;
+            }
+
+            .bottom-pop-cont {
+                position: relative;
+                padding: 20px 22px;
+                flex-grow: 1;
+                overflow: auto;
+            }
+        </style>
 
 
     </div>
