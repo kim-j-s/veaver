@@ -149,7 +149,7 @@ function chkListScroll() {
 function floatBtns() {
 	var $flb = $('.floating-btns');
 	var t;
-    $('.layer-content, .chk-list-wrap').scroll(function () {
+    $('.layer-content, .chk-list-wrap, .rst-list-wrap').scroll(function () {
         $flb.addClass('on');
         setTimeout(function(){
         	$flb.hide();

@@ -1616,9 +1616,21 @@
 	    }
 	}
 
+	/*
 	.fb-list{
 		margin: 0 18px 18px 0;
 	}
+	*/
+	/*
+	.floating-btns{
+		right: 18px;
+		bottom: 18px;
+	}
+	.floating-btns .btn-view-more{
+		right: 0 !important;
+		bottom: 0 !important;
+	}
+	*/
 
 	.btn-go-menu{
 		display: inline-block;
@@ -1722,6 +1734,15 @@
 	}
 	.btn-share{
 	    background: url(../img/btn-floating-share.png) no-repeat right center / auto 100%;
+	}
+
+	.btn-fl-location{
+		display: inline-block;
+		width: 70px;
+		height: 70px;
+		overflow: hidden;
+		text-indent: -9999px;
+		background: url(../img/btn-floating-location.png) no-repeat 0 0 / 100% auto;
 	}
 
 	/** // floating button **/
