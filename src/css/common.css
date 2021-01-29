@@ -64,6 +64,7 @@
 .t-center {
 	text-align: center !important;
 }
+
 .mt0 {
 	margin-top: 0 !important;
 }
@@ -1327,6 +1328,9 @@
 	.layer-content.etc{
 		padding-bottom: 40px;
 	}
+	.layer-content.none-b{
+		padding-bottom: 0;
+	}
 
 	/* 헤더 */
 
@@ -1676,9 +1680,21 @@
 	    }
 	}
 
+	/*
 	.fb-list{
 		margin: 0 18px 18px 0;
 	}
+	*/
+	/*
+	.floating-btns{
+		right: 18px;
+		bottom: 18px;
+	}
+	.floating-btns .btn-view-more{
+		right: 0 !important;
+		bottom: 0 !important;
+	}
+	*/
 
 	.btn-go-menu{
 		display: inline-block;
@@ -1782,6 +1798,15 @@
 	}
 	.btn-share{
 	    background: url(../img/btn-floating-share.png) no-repeat right center / auto 100%;
+	}
+
+	.btn-fl-location{
+		display: inline-block;
+		width: 70px;
+		height: 70px;
+		overflow: hidden;
+		text-indent: -9999px;
+		background: url(../img/btn-floating-location.png) no-repeat 0 0 / 100% auto;
 	}
 
 	/** // floating button **/
@@ -2242,7 +2267,7 @@
 		    color: #000;
 		}
 		.tab-menu a.active:after{
-		    border-color: #e1002a;
+		    border-color: #000;
 		}
 		.tab-menu a .count{
 		    font-size: 18px;
@@ -2379,6 +2404,71 @@
 		.txt-cont03 > .q-txt + .caption{
 		    margin-top: 10px;
 		}
+		.txt-cont04{
+
+		}
+		.txt-cont04 > .t-case{
+		    margin-bottom: 2px;
+		    font-size: 12px;
+		    line-height: 18px;
+		}
+		.txt-cont04 > .t-case > span{
+			position: relative;
+			display: inline-block;
+			vertical-align: top;
+			font-size: 12px;
+		    line-height: 18px;
+		}
+		.txt-cont04 > .t-case > span + span{
+			margin-left: 10px;
+			padding-left: 11px;
+		}
+		.txt-cont04 > .t-case > span + span:before{
+			content: '';
+			position: absolute;
+			top: 4px;
+			left: 0;
+			height: 10px;
+			border-left: 1px solid #dbdee5;
+		}
+		.txt-cont04 > .q-txt{
+		    font-weight: 500;
+		    font-size: 16px;
+		    line-height: 24px;
+		}
+		.txt-cont04 > .q-txt + .d-info{
+		    margin-top: 2px;
+		}
+		.txt-cont04 .d-info{
+		    display: flex;
+		    flex-direction: row;
+		}
+		.txt-cont04 .d-info > span{
+		    position: relative;
+		    vertical-align: top;
+		    font-size: 12px;
+		    color: #74777b;
+		    line-height: 18px;
+		}
+		.txt-cont04 .d-info > span + span{
+		    margin-left: 10px;
+		    padding-left: 11px;
+		    flex-grow: 1;
+		}
+		.txt-cont04 .d-info > span + span:before{
+		    content: '';
+		    position: absolute;
+		    top: 4px;
+		    left: 0;
+		    height: 10px;
+		    border-left: 1px solid #dbdee5;
+		}
+		.txt-cont04 .sort-txt{
+			margin-top: 10px;
+			font-size: 12px;
+			color: #056bff;
+			line-height: 18px;
+		}
 
 		.i-txt{
 		    position: relative;
@@ -2405,6 +2495,9 @@
 		}
 		.list-01 > li + li{
 		    margin-top: 4px;
+		}
+		.list-01 > li > .gr{
+		    color: #74777b;
 		}
 
 		.tit-h4 + .list-02{
@@ -2468,7 +2561,6 @@
 		    padding: 22px;
 		    font-size: 0;
 		}
-
 		.list-03 > li .word-box{
 		    display: inline-block;
 		    width: calc(100% - 70px);
@@ -2715,6 +2807,48 @@
 		}
 
 	/* // 상세 페이지 컨텐츠 삽입 영역 */
+
+
+	.g-box{
+	    margin-top: 40px;
+	    padding: 32px 22px;
+	    font-size: 12px;
+	    line-height: 18px;
+	    color: #74777b;
+	    text-align: center;
+	    background: #f9fafb;
+	}
+
+	/* 더보기 */
+		.more-cont{
+		    margin-top: 20px;
+		    padding: 8px 2px;
+		    border-radius: 3px;
+		    background: #f9fafb;
+		}
+		.more-cont > .inner{
+		    display: flex;
+		    flex-direction: row;
+		}
+		.more-cont > .inner > a{
+		    position: relative;
+		    flex: 1;
+		    color: #000;
+		    text-align: center;
+		    line-height: 20px;
+		}
+		.more-cont > .inner > a + a{
+		    padding-left: 1px;
+		}
+		.more-cont > .inner > a + a:before{
+		    content: '';
+		    position: absolute;
+		    top: 5px;
+		    left: 0;
+		    height: 10px;
+		    border-left: 1px solid #dbdee5;
+		}
+	/* // 더보기 */
 
 
 
