@@ -2980,7 +2980,7 @@
 		.map-area{
 		    position: relative;
 		    margin: 20px -22px 0;
-		    flex-grow: 1;
+		    flex: 1 1 auto;
 		}
 		.map-area .btn-view-list{
 		    position: absolute;
