@@ -2704,10 +2704,13 @@
 
 	/* 상세 페이지 상단 이미지 */
 
-		.d-img-area{
-		    margin: -20px -22px 20px -22px;
+		.full-size-area{
+		    margin: 0 -22px;
 		}
-		.d-img-area > img{
+		.full-size-area.top{
+			margin: -20px -22px 20px -22px;
+		}
+		.full-size-area > img{
 		    display: block;
 		    width: 100%;
 		}
