@@ -2182,7 +2182,7 @@
 		    color: #000;
 		}
 		.tab-menu a.active:after{
-		    border-color: #e1002a;
+		    border-color: #000;
 		}
 		.tab-menu a .count{
 		    font-size: 18px;
@@ -2367,7 +2367,7 @@
 		}
 		.txt-cont04 .d-info > span + span{
 		    margin-left: 10px;
-		    padding-left: 25px;
+		    padding-left: 11px;
 		    flex-grow: 1;
 		}
 		.txt-cont04 .d-info > span + span:before{
@@ -2377,6 +2377,12 @@
 		    left: 0;
 		    height: 10px;
 		    border-left: 1px solid #dbdee5;
+		}
+		.txt-cont04 .sort-txt{
+			margin-top: 10px;
+			font-size: 12px;
+			color: #056bff;
+			line-height: 18px;
 		}
 
 		.i-txt{
@@ -2727,6 +2733,37 @@
 	    text-align: center;
 	    background: #f9fafb;
 	}
+
+	/* 더보기 */
+		.more-cont{
+		    margin-top: 20px;
+		    padding: 8px 2px;
+		    border-radius: 3px;
+		    background: #f9fafb;
+		}
+		.more-cont > .inner{
+		    display: flex;
+		    flex-direction: row;
+		}
+		.more-cont > .inner > a{
+		    position: relative;
+		    flex: 1;
+		    color: #000;
+		    text-align: center;
+		    line-height: 20px;
+		}
+		.more-cont > .inner > a + a{
+		    padding-left: 1px;
+		}
+		.more-cont > .inner > a + a:before{
+		    content: '';
+		    position: absolute;
+		    top: 5px;
+		    left: 0;
+		    height: 10px;
+		    border-left: 1px solid #dbdee5;
+		}
+	/* // 더보기 */
 
 
 
