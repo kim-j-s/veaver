@@ -278,3 +278,21 @@ function hostSwiper() {
         });
     }
 }
+
+
+var $arrPop = [];
+$.fn.openPop = function() {
+	if($(this).length > 1) {
+		return $(this);
+	} else {
+		return $(this).each(function(){
+			var $this = $(this);
+			$this.addClass('on');
+			if($this.hasClass('on')) {
+				$this.removeClass('on');
+			} else {
+				$this.addClass('on');
+			}
+		});
+	}
+};
