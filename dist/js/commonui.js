@@ -43,8 +43,11 @@ $(function(){
 	// 더보기
 	viewMoreDp();
 
-	// swiper Gallery
+	// swiper Gallery - 질병정보 상세 - 카드 컨텐츠
 	gallerySwiper();
+
+	// swiper Gallery - 병원목록 - 지도보기
+	hostSwiper();
 
 	
 //script ready
@@ -247,10 +250,9 @@ function viewMoreDp() {
 	})
 }
 
-// swiper Gallery
-// 페이지 상 swiper 1개 이상 존재하고 등록된 컨텐츠가 2개 이상일때 구현
+// swiper Gallery - 질병정보 상세 - 카드 컨텐츠
 function gallerySwiper() {
-	if ( $('.gallery-swiper').length > 0 && $('.gallery-swiper').find('.swiper-slide').length > 1 ){
+	if ( $('.gallery-swiper').find('.swiper-slide').length > 1 ){
         var gallerySwiper = new Swiper('.gallery-swiper', {
             observer: true,
             observeParents: true,
@@ -260,6 +262,19 @@ function gallerySwiper() {
             pagination: {
                 el: '.swiper-pagination',
             },
+        });
+    }
+}
+
+// swiper Gallery - 병원목록 - 지도보기
+function hostSwiper() {
+    if ( $('.hos-swiper').find('.swiper-slide').length > 1 ){
+        var hostSwiper = new Swiper('.hos-swiper', {
+            observer: true,
+            observeParents: true,
+            speed: 500,
+            spaceBetween: 20,
+            loop: true,
         });
     }
 }

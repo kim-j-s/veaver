@@ -1,14 +1,53 @@
-@@include('head.html',{
-    "title":"병원찾기 | "
-})
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+    <meta name="x-apple-disable-message-reformatting">
+    <title>병원목록 | Veaver Health mining</title>
+    <link href="../css/reset.css" rel="stylesheet">
+    <link href="../css/common.css" rel="stylesheet">
+    <link href="../css/swiper.css" rel="stylesheet">
+    <script type="text/javascript" src="../js/jquery.min.js"></script>
+    <script type="text/javascript" src="../js/jquery.swiper.js"></script>
+    <script type="text/javascript" src="../js/commonui.js"></script>
+    <script type="text/javascript" src="../js/drawui.js"></script>
+    <!--[if lt IE 9]>
+    <script type="text/javascript">
+        document.createElement("header"); 
+        document.createElement("nav"); 
+        document.createElement("section"); 
+        document.createElement("article"); 
+        document.createElement("footer");
+    </script>
+<![endif]-->
+</head>
+
 <body>
     <div class="layer-full-wrap">
         <!-- 헤더영역 -->
-        @@include('header05.html')
+        <header>
+            <div class="header-inner">
+                <span class="u-profile">
+	    	<span class="u-profile-img">
+	    		<!-- 적용된 썸네일 -->
+	    		<img src="https://m.upinews.kr/data/upi/image/20190523/p1065574177335900_669_thum.jpg" alt="프로픨 사진" class="u-profile-img">
+	    		<!-- 남성 기본 썸네일 -->
+	    		<!-- <img src="../img/acProfile01B.png" alt="프로픨 사진" class="u-profile-img"> -->
+	    		<!-- 여성 기본 썸네일 -->
+	    		<!-- <img src="../img/acProfile02B.png" alt="프로픨 사진" class="u-profile-img"> -->
+	    	</span>
+                <span class="name">홍길동</span>
+                </span>
+                <button type="buton" class="layer-close-btn">닫기</button>
+            </div>
+        </header>
         <!-- //헤더영역 -->
 
         <!-- 컨텐츠 영역 -->
-        <section class="layer-content etc">
+        <section class="layer-content">
             <div class="scroll-list-wrap">
                 <div class="tab-box">
                     <div class="tab-menu-wrap swiper-container">
@@ -23,46 +62,21 @@
                     </div>
                 </div>
 
-
-<style>
-.btn-setting-b{
-    display: inline-block;
-    width: 30px;
-    height: 30px;
-    overflow: hidden;
-    text-indent: -9999px;
-    background: url(../img/ic-setting-blue.png) no-repeat 0 0 / 100% auto;
-}
-
-.sort-area{
-    position: relative;
-    height: 30px;
-    margin-top: 14px;
-    padding-left: 40px;
-}
-.sort-area >.btn-setting-b{
-    position: absolute;
-    top: 0;
-    left: 0;
-}
-</style>
-
-                <div class="sort-area">
-                    <button type="button" class="btn-setting-b">진료과목 설정</button>
-                    <div class="rnd-group">
-                       <div class="scroll-x">
-                           <button type="button" class="btn-rnd-gr on">진료중</button>
-                           <span class="btn-rnd-gr on">내과</span>
-                           <span class="btn-rnd-gr on">이비인후과</span>
-                           <span class="btn-rnd-gr on">치과</span>
-                           <span class="btn-rnd-gr on">이비인후과</span>
-                           <span class="btn-rnd-gr on">재활의학과</span>
-                           <span class="btn-rnd-gr on">소아 청소년과</span>
-                       </div>
-                   </div>
-                </div>
-
-                <div style="flex: none">
+                <div class="full-size-area">
+                    <div class="sort-area">
+                        <button type="button" class="btn-setting-b">진료과목 설정</button>
+                        <div class="rnd-group">
+                            <div class="scroll-x">
+                                <button type="button" class="btn-rnd-gr on">진료중</button>
+                                <span class="btn-rnd-gr on">내과</span>
+                                <span class="btn-rnd-gr on">이비인후과</span>
+                                <span class="btn-rnd-gr on">치과</span>
+                                <span class="btn-rnd-gr on">이비인후과</span>
+                                <span class="btn-rnd-gr on">재활의학과</span>
+                                <span class="btn-rnd-gr on">소아 청소년과</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
                 <div class="rst-list-wrap">
@@ -146,4 +160,5 @@
         <!-- //컨텐츠 영역 -->
     </div>
 </body>
+
 </html>
