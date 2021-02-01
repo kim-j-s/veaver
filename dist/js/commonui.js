@@ -38,7 +38,7 @@ $(function(){
 	termSingleChk();
 
 	// 탭 스위퍼
-	tabSwiper();
+	//tabSwiper();
 
 	// 더보기
 	viewMoreDp();

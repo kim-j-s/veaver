@@ -314,6 +314,17 @@
 			background: #edf4ff;
 			border: 1px solid #edf4ff;
 		}
+		.btn-rnd-gr.big{
+			width: 100%;
+			padding: 8px 12px;
+			color: #fff;
+			background: rgba(5,107,255,0.3);
+			border: none;
+		}
+		.btn-rnd-gr.big.on{
+			color: #fff;
+			background: #056bff;
+		}
 		.btn-rnd-wh{
 			display: inline-block;
 			padding: 4px 12px;
@@ -364,6 +375,14 @@
 		    line-height: 26px;
 		    border-radius: 25px;
 		    background: rgba(0,0,0,0.45);
+		}
+		.btn-black-clock{
+			display: inline-block;
+			width: 30px;
+			height: 30px;
+			overflow: hidden;
+			text-indent: -9999px;
+			background: url(../img/ac-black-clocks.png) no-repeat center center / 100% auto;
 		}
 
 
@@ -1408,11 +1427,18 @@
 			font-weight: 400;
 			font-size: 17px;
 		}
-		.header-inner .u-profile{
+		.header-inner .h-utils{
 			position: absolute;
-			top: 50%;
+			top: 0;
 			right: 0;
-			transform: translateY(-50%);
+			font-size: 0;
+		}
+		.header-inner .h-utils > button{
+			display: inline-block;
+			vertical-align: top;
+		}
+		.header-inner .u-profile{
+			margin: 4px 0 0 11px;
 		}
 		.u-profile{
 			position: relative;
@@ -2147,6 +2173,9 @@
 
 		.rst-list-wrap{
 		    margin-top: 30px;
+		}
+		.rst-list-wrap.etc{
+		    margin-top: 0;
 		}
 		.rst-list{
 
