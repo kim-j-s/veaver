@@ -6,7 +6,7 @@
     <meta content="IE=edge" http-equiv="X-UA-Compatible">
     <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
     <meta name="x-apple-disable-message-reformatting">
-    <title>약국목록 | Veaver Health mining</title>
+    <title>병원목록 | Veaver Health mining</title>
     <link href="../css/reset.css" rel="stylesheet">
     <link href="../css/common.css" rel="stylesheet">
     <link href="../css/swiper.css" rel="stylesheet">
@@ -31,6 +31,7 @@
         <header>
             <div class="header-inner">
                 <div class="h-utils">
+                    <button type="button" class="btn-black-clock">방문기록 보기</button>
                     <span class="u-profile">
 		    	<span class="u-profile-img">
 		    		<!-- 적용된 썸네일 -->
@@ -49,7 +50,7 @@
         <!-- //헤더영역 -->
 
         <!-- 컨텐츠 영역 -->
-        <section class="layer-content">
+        <section class="layer-content none-b">
             <div class="scroll-list-wrap">
                 <div class="tab-box">
                     <div class="tab-menu-wrap swiper-container">
@@ -68,52 +69,49 @@
                     <button type="button" class="btn-rnd-gr big btn-s-toggle">영업중</button>
                 </div>
 
-                <div class="rst-list-wrap">
-                    <ul class="rst-list">
-                        <li>
-                            <div class="txt-cont04">
-                                <div class="t-case">
-                                    <span>영업중</span>
-                                </div>
-                                <div class="q-txt">약국명</div>
-                                <div class="d-info">
-                                    <span>327km</span>
-                                    <span>서울특별시 영등포구 국제금융로2길 24</span>
-                                </div>
-                            </div>
-                            <div class="more-cont">
-                                <div class="inner">
-                                    <a href="tel:010-0000-0000">전화걸기</a>
-                                    <a href="#">길찾기</a>
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="txt-cont04">
-                                <div class="t-case">
-                                    <span>영업종료</span>
-                                </div>
-                                <div class="q-txt">약국명</div>
-                                <div class="d-info">
-                                    <span>327km</span>
-                                    <span>서울특별시 영등포구 국제금융로2길 24</span>
-                                </div>
-                            </div>
-                            <div class="more-cont">
-                                <div class="inner">
-                                    <a href="tel:010-0000-0000">전화걸기</a>
-                                    <a href="#">길찾기</a>
-                                </div>
-                            </div>
-                        </li>
-                    </ul>
+                <!-- 지도영역 -->
+                <div class="map-area" style="background: rgba(0,0,0,0.3);">
+                    <!-- 더미 이미지 -->
+                    <img src="../img/temp/@poptemp08.jpg" alt="" style="display: block; width: 100%; height: 100%;">
+                    <!-- // 더미 이미지 -->
+                    <button type="button" class="btn-view-list">목록보기</button>
                 </div>
-            </div>
+                <!-- // 지도영역 -->
 
-            <div class="floating-btns">
-                <ul class="fb-list">
-                    <li><button type="button" class="btn-fl-location">지도로 보기</button></li>
-                </ul>
+                <div class="bottom-pop-wrap">
+                    <!-- 병원 스위퍼 -->
+                    <div class="hos-swiper swiper-container">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <div class="txt-cont04">
+                                    <div class="t-case">
+                                        <span>영업중</span>
+                                    </div>
+                                    <div class="q-txt">약국명</div>
+                                    <div class="d-info">
+                                        <span>327km</span>
+                                        <span>서울특별시 영등포구 국제금융로2길 24</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="txt-cont04">
+                                    <div class="t-case">
+                                        <span>영업종료</span>
+                                    </div>
+                                    <div class="q-txt">약국명</div>
+                                    <div class="d-info">
+                                        <span>327km</span>
+                                        <span>서울특별시 영등포구 국제금융로2길 24</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 병원 스위퍼 -->
+                    <button type="button" class="btn-po-change">내 위치로 이동</button>
+                </div>
+
             </div>
         </section>
         <!-- //컨텐츠 영역 -->

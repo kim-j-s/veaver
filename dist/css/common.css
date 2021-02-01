@@ -77,6 +77,9 @@
 .mt40 {
 	margin-top: 40px !important;
 }
+.pt0 {
+	padding-top: 0 !important;
+}
 .wd40 {
 	width: 40%;
 }
@@ -319,6 +322,7 @@
 			padding: 8px 12px;
 			color: #fff;
 			background: rgba(5,107,255,0.3);
+			border-radius: 10px;
 			border: none;
 		}
 		.btn-rnd-gr.big.on{
@@ -2544,7 +2548,6 @@
 			font-size: 12px;
 		    line-height: 18px;
 		}
-
 		.txt-cont04 > .t-case > span:after{
 			content: '';
 			position: absolute;
@@ -2552,6 +2555,13 @@
 			right: 0;
 			height: 10px;
 			border-left: 1px solid #dbdee5;
+		}
+		.txt-cont04 > .t-case > span:last-child{
+			margin-right: 0;
+			padding-right: 0;
+		}
+		.txt-cont04 > .t-case > span:last-child:after{
+			content: none;
 		}
 		.txt-cont04 > .q-txt{
 		    font-weight: 500;
@@ -3033,6 +3043,106 @@
 		}
 
 	/* // 병원 / 약국 찾기 - 지도보기 */
+
+
+	/* 상세목록 */
+
+		.scroll-list-wrap .details-list{
+		    flex-grow: 1;
+		}
+		.details-list{
+		    margin-top: 20px;
+		    overflow: auto;
+		}
+		.details-list.etc{
+			margin-top: 0;
+		}
+		.details-list > li{
+		    padding: 20px 0;
+		    font-size: 0;
+		    border-bottom: 1px solid #ebeff3;
+		}
+		.details-list > li .txt{
+		    display: inline-block;
+		    vertical-align: middle;
+		    font-size: 16px;
+		    color: #000;
+		    line-height: 24px;
+		}
+		.details-list > li .txt.omit{
+		    opacity: 0.3;
+		}
+		.details-list > li .txt2{
+		    display: inline-block;
+		    vertical-align: middle;
+		    font-weight: 500;
+		    font-size: 16px;
+		    color: #000;
+		    line-height: 24px;
+		}
+
+		/* 접종내역 */
+		.details-list > li.ty1 > a{
+		    display: block;
+		    font-size: 0;
+		}
+		.details-list > li.ty1 > a .txt{
+		    width: calc(100% - 85px);
+		    padding-right: 20px;
+		}
+		/* // 접종내역 */
+
+		/* 접종내역 상세 */
+		.details-list > li.ty2{
+		    font-size: 0;
+		}
+		.details-list > li.ty2 > .txt{
+		    width: 50%;
+		    padding-right: 10px;
+		}
+		.details-list > li.ty2 > .txt2{
+		    width: 50%;
+		    padding-left: 10px;
+		    text-align: right;
+		}
+		/* // 접종내역 상세 */
+
+		/* 일정보기 */
+		.details-list > li.ty3 .txt{
+		    width: calc(100% - 60px);
+		}
+		.details-list > li.ty3 .view{
+		    display: inline-block;
+		    vertical-align: middle;
+		    width: 60px;
+		    padding-right: 4px;
+		    text-align: right;
+		}
+		/* // 일정보기 */
+
+		.ing-box{
+		    display: inline-block;
+		    vertical-align: middle;
+		    width: 85px;
+		    font-size: 0;
+		    text-align: right;
+		}
+		.ing-box > span{
+		    display: inline-block;
+		    vertical-align: middle;
+		    width: 10px;
+		    border-bottom: 10px solid #dbdee5;
+		    border-radius: 50%;
+		    font-size: 0;
+		}
+		.ing-box > span + span{
+		    margin-left: 5px;
+		}
+		.ing-box > span.on{
+		    border-bottom-color: #056bff;
+		}
+
+	/* // 상세목록 */
 
 
 
