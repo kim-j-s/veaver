@@ -1,0 +1,62 @@
+@@include('head.html',{
+	"title":"일정보기 상세 | "
+})
+<body>
+	<div class="wrap">
+        <!-- 헤더영역 -->
+        @@include('header06.html')
+        <!-- //헤더영역 -->
+
+        <!-- 컨텐츠 영역 -->
+        <section class="layer-content etc">
+            content
+        </section>
+        <!-- //컨텐츠 영역 -->
+
+
+        <!-- 하단 팝업 -->
+        <div class="bottom-pop on">
+            <div class="bottom-pop-container">
+                <div class="bottom-pop-head">
+                    <div class="bph-innner">
+                        <h2 class="header-title">예정된 모든 접종</h2>
+                        <button type="buton" class="layer-close-btn">닫기</button>
+                    </div>
+                </div>
+                <div class="bottom-pop-cont pt0">
+                    <ul class="details-list etc">
+                        <li class="ty2">
+                            <span class="txt">파상풍, 디프테리아(Td)</span>
+                            <strong class="txt2">20210601<br> 6차</strong>
+                        </li>
+                        <li class="ty2">
+                            <span class="txt">백신명</span>
+                            <strong class="txt2">20210601<br> 6차</strong>
+                        </li>
+                        <li class="ty2">
+                            <span class="txt">제조사</span>
+                            <strong class="txt2">20210601<br> 6차</strong>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- // 하단 팝업 -->
+    </div>
+</body>
+</html>
+
+
+<!-- 팝업 구동 샘플 -->
+<script>
+$(function(){
+    $('html').click(function(){
+        if ( !$('.bottom-pop').hasClass('on') ) {
+            $('.bottom-pop').addClass('on');
+        } else {
+            $('.bottom-pop').removeClass('on');
+        }
+    });
+})
+</script>
+<!--// 팝업 구동 샘플 -->
