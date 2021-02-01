@@ -49,7 +49,6 @@ $(function(){
 	// swiper Gallery - 병원목록 - 지도보기
 	hostSwiper();
 
-	
 //script ready
 });
 
@@ -138,11 +137,11 @@ function chkListScroll() {
 		if ( st <= 0 ) {	// 최상단 도달 시
 			$(this).closest('.chk-list-cont').removeClass('up-dp');
 		}
-		 else if ( st > 0 && st + oh + 3 < $(this)[0].scrollHeight ) {
+		else if ( st > 0 && st + oh + 3 < $(this)[0].scrollHeight ) {
 			$(this).closest('.chk-list-cont').addClass('up-dp');
 			$(this).closest('.chk-list-cont').addClass('down-dp');
 		}
-		 else if ( st + oh + 3 >= $(this)[0].scrollHeight) {
+		else if ( st + oh + 3 >= $(this)[0].scrollHeight) {
 			$(this).closest('.chk-list-cont').removeClass('down-dp');
 		}
 	});
@@ -296,3 +295,33 @@ $.fn.openPop = function() {
 		});
 	}
 };
+
+// 로딩 보이기
+function showLoading(txt) {
+	$('.loading').remove();
+
+	if(typeof txt == 'string') {
+		// type 01
+		$('body').append(
+			`<div class="loading">
+				<span></span>
+				<span></span>
+				<span></span>
+				<div></div>
+				<p>${txt}</p>
+			</div>`
+		);
+	} else {
+		// type 02
+		$('body').append(
+			`<div class="loading">
+				<div></div>
+			</div>`
+		);
+	}
+}
+
+// 로딩 숨기기
+function hideLoading() {
+	$('.loading').remove();
+}
