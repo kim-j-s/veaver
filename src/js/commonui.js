@@ -296,3 +296,29 @@ $.fn.openPop = function() {
 		});
 	}
 };
+
+function showLoading(txt) {
+	$('.loading').remove();
+
+	if(typeof txt == 'string') {
+		$('body').append(
+			`<div class="loading">
+				<span></span>
+				<span></span>
+				<span></span>
+				<div></div>
+				<p>${txt}</p>
+			</div>`
+		);
+	} else {
+		$('body').append(
+			`<div class="loading">
+				<div></div>
+			</div>`
+		);
+	}
+}
+
+function hideLoading() {
+	$('.loading').remove();
+}
