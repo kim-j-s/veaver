@@ -49,7 +49,6 @@ $(function(){
 	// swiper Gallery - 병원목록 - 지도보기
 	hostSwiper();
 
-	
 //script ready
 });
 
@@ -138,11 +137,11 @@ function chkListScroll() {
 		if ( st <= 0 ) {	// 최상단 도달 시
 			$(this).closest('.chk-list-cont').removeClass('up-dp');
 		}
-		 else if ( st > 0 && st + oh + 3 < $(this)[0].scrollHeight ) {
+		else if ( st > 0 && st + oh + 3 < $(this)[0].scrollHeight ) {
 			$(this).closest('.chk-list-cont').addClass('up-dp');
 			$(this).closest('.chk-list-cont').addClass('down-dp');
 		}
-		 else if ( st + oh + 3 >= $(this)[0].scrollHeight) {
+		else if ( st + oh + 3 >= $(this)[0].scrollHeight) {
 			$(this).closest('.chk-list-cont').removeClass('down-dp');
 		}
 	});
