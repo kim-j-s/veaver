@@ -297,10 +297,12 @@ $.fn.openPop = function() {
 	}
 };
 
+// 로딩 보이기
 function showLoading(txt) {
 	$('.loading').remove();
 
 	if(typeof txt == 'string') {
+		// type 01
 		$('body').append(
 			`<div class="loading">
 				<span></span>
@@ -311,6 +313,7 @@ function showLoading(txt) {
 			</div>`
 		);
 	} else {
+		// type 02
 		$('body').append(
 			`<div class="loading">
 				<div></div>
@@ -319,6 +322,7 @@ function showLoading(txt) {
 	}
 }
 
+// 로딩 숨기기
 function hideLoading() {
 	$('.loading').remove();
 }
