@@ -99,7 +99,7 @@
 		background-position: 0 0;
 	}
 	to {
-		background-position: 1080px 0;
+		background-position: 895px 0;
 	}
 }
 .loading {
@@ -170,7 +170,7 @@
 	-webkit-animation-timing-function: linear;
 	animation-timing-function: linear;
 	background: url(../img/loading-line-01.png) repeat-x;
-	background-size: 1080px 80px;
+	background-size: 895px 80px;
 	background-position: 0 0;
 }
 .loading span:nth-child(2) {
@@ -181,7 +181,7 @@
 	-webkit-animation-timing-function: linear;
 	animation-timing-function: linear;
 	background: url(../img/loading-line-02.png) repeat-x;
-	background-size: 1080px 80px;
+	background-size: 895px 80px;
 	background-position: 0 0;
 }
 .loading span:nth-child(3) {
@@ -192,7 +192,7 @@
 	-webkit-animation-timing-function: linear;
 	animation-timing-function: linear;
 	background: url(../img/loading-line-03.png) repeat-x;
-	background-size: 1080px 80px;
+	background-size: 895px 80px;
 	background-position: 0 0;
 }
 .loading p {
