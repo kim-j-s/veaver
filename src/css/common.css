@@ -1670,7 +1670,7 @@
 		}
 
 	/* // 딤드 레이어 팝업 */
-	
+
 
 	/* 토스트 팝업 */
 
@@ -1764,6 +1764,10 @@
 		    flex-grow: 1;
 		    overflow: auto;
 		}
+		.bottom-pop-cont.etc{
+			padding: 20px 0;
+		}
+
 
 	/* // 하단 레이어 팝업 */
 
@@ -1955,6 +1959,9 @@
 	}
 	.gr-box .txt{
 		line-height: 20px;
+	}
+	.gr-box .txt + .txt{
+		margin-top: 10px;
 	}
 	.gr-box > .btn-pu{
 		margin-top: 20px;
@@ -3265,6 +3272,54 @@
 	.scroll-ud .details-list{
 	    margin-top: 0;
 	}
+
+
+
+
+	.scroll-ud.full{
+		padding: 20px 0;
+		margin: 0;
+	}
+	.scroll-ud.full:before{
+		top: 20px;
+		/*
+		background-image: url(../img/open-20-blue.png), linear-gradient(0deg, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 100%);
+		background-repeat: no-repeat, no-repeat;
+		background-position: center center, top;
+		background-size: 20px auto;
+		*/
+		background-image: linear-gradient(0deg, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 100%), url(../img/close-20-blue.png);
+		background-repeat: no-repeat, no-repeat;
+		background-position: top, center center;
+		background-size: auto 20px, 20px auto;
+	}
+	.scroll-ud.full:after{
+		bottom: 20px;
+		/*
+		background-image: url(../img/open-20-blue.png), linear-gradient(0deg, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 100%);
+		background-repeat: no-repeat, no-repeat;
+		background-position: center center, top;
+		background-size: 20px auto;
+		*/
+		background-image: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 100%), url(../img/open-20-blue.png);
+		background-repeat: no-repeat, no-repeat;
+		background-position: top, center center;
+		background-size: auto 20px, 20px auto;
+	}
+
+
+	/*
+
+	background: rgb(255,255,255);
+background: linear-gradient(0deg, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 100%);
+
+
+	background: rgb(255,255,255);
+background: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 100%);
+*/
+
+
+
 /* // 페이지 공통 스크롤 영역 */
 
 
