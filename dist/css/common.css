@@ -3216,6 +3216,13 @@
 html {overflow: hidden;}
 body {touch-action: none;}
 
+.layer-content{
+	background: rgba(0,0,0,0.3);
+}
+.scroll-ud{
+	background: rgba(255,175,100,0.3);	
+}
+
 
 /* 페이지 공통 스크롤 영역 */
 	.scroll-ud{
