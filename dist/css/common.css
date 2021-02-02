@@ -3220,10 +3220,11 @@
 	.scroll-ud{
 	    position: relative;
 	    /*padding-top: 30px;*/
-	    /*flex: 1 1 auto;*/
+	    flex: 1 1 auto;
 	    margin-top: 30px;
-	    flex-grow: 1;
-	    overflow: auto;
+	    /*flex-grow: 1;*/
+	    /*overflow: auto;*/
+	    overflow: hidden;
 	}
 	.scroll-ud.ov-case{
 		margin-top: 0;
