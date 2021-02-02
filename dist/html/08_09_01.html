@@ -68,245 +68,121 @@
                     <button type="button" class="btn-rnd-gr big btn-s-toggle">영업중</button>
                 </div>
 
-
-                <script>
-                    $(function() {
-                        // check-list
-                        /*
-                        function chkListWrap() {
-                            var wrapHeight = $('.chk-list-cont').outerHeight();
-                            var trgHiehgt = $('.chk-list-wrap > .inner').outerHeight();
-                            if ( $('.chk-list-cont').length > 0 ) {
-                                if (trgHiehgt > wrapHeight) {
-                                    $('.chk-list-cont').addClass('ov-case down-dp');
-                                }
-                            }
-                        }
-                        */
-
-                        // 항목 체크 리스트 스크롤 처리
-                        /*
-                        function chkListScroll() {
-                            $('.chk-list-wrap').on('scroll', function(){
-                                var st = Math.floor($(this).scrollTop());
-                                var oh = Math.floor($(this).outerHeight());
-                                if ( st <= 0 ) {    // 최상단 도달 시
-                                    $(this).closest('.chk-list-cont').removeClass('up-dp');
-                                }
-                                 else if ( st > 0 && st + oh + 3 < $(this)[0].scrollHeight ) {
-                                    $(this).closest('.chk-list-cont').addClass('up-dp');
-                                    $(this).closest('.chk-list-cont').addClass('down-dp');
-                                }
-                                 else if ( st + oh + 3 >= $(this)[0].scrollHeight) {
-                                    $(this).closest('.chk-list-cont').removeClass('down-dp');
-                                }
-                            });
-                        }
-                        */
-
-                        var sudHeight = $('.scroll-u-d').outerHeight();
-                        var sudInHiehgt = $('.scroll-u-d > *').outerHeight();
-                        if ($('.scroll-u-d').length > 0) {
-                            if (sudInHiehgt > sudHeight) {
-                                $('.scroll-u-d').addClass('ov-case down-dp');
-                            }
-                        }
-                        console.log(sudHeight);
-                        console.log(sudInHiehgt);
-
-                        $('.scroll-u-d > *').on('scroll', function() {
-                            var st = Math.floor($(this).scrollTop());
-                            var oh = Math.floor($(this).outerHeight());
-                            if (st <= 0) { // 최상단 도달 시
-                                $(this).closest('.scroll-u-d').removeClass('up-dp');
-                            } else if (st > 0 && st + oh + 3 < $(this)[0].scrollHeight) {
-                                $(this).closest('.scroll-u-d').addClass('up-dp');
-                                $(this).closest('.scroll-u-d').addClass('down-dp');
-                            } else if (st + oh + 3 >= $(this)[0].scrollHeight) {
-                                $(this).closest('.scroll-u-d').removeClass('down-dp');
-                            }
-                        });
-
-
-
-
-                    })
-                </script>
-
-                <style>
-                    .scroll-u-d {
-                        margin-top: 30px;
-                        flex-grow: 1;
-                        overflow: auto;
-                    }
-
-                    .scroll-u-d>.rst-list-wrap {
-                        margin-top: 0;
-                    }
-
-
-                    /*
-.chk-list-cont{
-    position: relative;
-    margin: 0 -22px;
-    margin-top: 30px;
-    padding: 0 22px;
-    flex-grow: 1;
-}
-.chk-list-cont.in-img{
-    margin-top: 20px;
-}
-.chk-list-cont.ov-case{
-    margin-bottom: 20px;
-}
-.chk-list-cont:before{
-    content: '';
-    position: absolute;
-    top: -20px;
-    left: 0;
-    z-index: 1;
-    width: 100%;
-    height: 20px;
-    background: url(../img/close-20-blue.png) no-repeat center center / 20px auto;
-    opacity: 0;
-    transition: .2s;
-}
-.chk-list-cont.up-dp:before{
-    opacity: 1;
-}
-.chk-list-cont:after{
-    content: '';
-    position: absolute;
-    bottom: -20px;
-    left: 0;
-    z-index: 1;
-    width: 100%;
-    height: 20px;
-    background: url(../img/open-20-blue.png) no-repeat center center / 20px auto;
-    opacity: 0;
-    transition: .2s;
-}
-.chk-list-cont.down-dp:after{
-    opacity: 1;
-}
-*/
-                </style>
-
-                <div class="scroll-u-d">
-
-                    <div class="rst-list-wrap">
-                        <ul class="rst-list">
-                            <li>
-                                <div class="txt-cont04">
-                                    <div class="t-case">
-                                        <span>영업중</span>
+                <div class="scroll-ud">
+                    <div class="scroll-ud-inner">
+                        <div class="rst-list-wrap">
+                            <ul class="rst-list">
+                                <li>
+                                    <div class="txt-cont04">
+                                        <div class="t-case">
+                                            <span>영업중</span>
+                                        </div>
+                                        <div class="q-txt">약국명</div>
+                                        <div class="d-info">
+                                            <span>327km</span>
+                                            <span>서울특별시 영등포구 국제금융로2길 24</span>
+                                        </div>
                                     </div>
-                                    <div class="q-txt">약국명</div>
-                                    <div class="d-info">
-                                        <span>327km</span>
-                                        <span>서울특별시 영등포구 국제금융로2길 24</span>
+                                    <div class="more-cont">
+                                        <div class="inner">
+                                            <a href="tel:010-0000-0000">전화걸기</a>
+                                            <a href="#">길찾기</a>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="more-cont">
-                                    <div class="inner">
-                                        <a href="tel:010-0000-0000">전화걸기</a>
-                                        <a href="#">길찾기</a>
+                                </li>
+                                <li>
+                                    <div class="txt-cont04">
+                                        <div class="t-case">
+                                            <span>영업종료</span>
+                                        </div>
+                                        <div class="q-txt">약국명</div>
+                                        <div class="d-info">
+                                            <span>327km</span>
+                                            <span>서울특별시 영등포구 국제금융로2길 24</span>
+                                        </div>
                                     </div>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="txt-cont04">
-                                    <div class="t-case">
-                                        <span>영업종료</span>
+                                    <div class="more-cont">
+                                        <div class="inner">
+                                            <a href="tel:010-0000-0000">전화걸기</a>
+                                            <a href="#">길찾기</a>
+                                        </div>
                                     </div>
-                                    <div class="q-txt">약국명</div>
-                                    <div class="d-info">
-                                        <span>327km</span>
-                                        <span>서울특별시 영등포구 국제금융로2길 24</span>
+                                </li>
+                                <li>
+                                    <div class="txt-cont04">
+                                        <div class="t-case">
+                                            <span>영업중</span>
+                                        </div>
+                                        <div class="q-txt">약국명</div>
+                                        <div class="d-info">
+                                            <span>327km</span>
+                                            <span>서울특별시 영등포구 국제금융로2길 24</span>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="more-cont">
-                                    <div class="inner">
-                                        <a href="tel:010-0000-0000">전화걸기</a>
-                                        <a href="#">길찾기</a>
+                                    <div class="more-cont">
+                                        <div class="inner">
+                                            <a href="tel:010-0000-0000">전화걸기</a>
+                                            <a href="#">길찾기</a>
+                                        </div>
                                     </div>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="txt-cont04">
-                                    <div class="t-case">
-                                        <span>영업중</span>
+                                </li>
+                                <li>
+                                    <div class="txt-cont04">
+                                        <div class="t-case">
+                                            <span>영업종료</span>
+                                        </div>
+                                        <div class="q-txt">약국명</div>
+                                        <div class="d-info">
+                                            <span>327km</span>
+                                            <span>서울특별시 영등포구 국제금융로2길 24</span>
+                                        </div>
                                     </div>
-                                    <div class="q-txt">약국명</div>
-                                    <div class="d-info">
-                                        <span>327km</span>
-                                        <span>서울특별시 영등포구 국제금융로2길 24</span>
+                                    <div class="more-cont">
+                                        <div class="inner">
+                                            <a href="tel:010-0000-0000">전화걸기</a>
+                                            <a href="#">길찾기</a>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="more-cont">
-                                    <div class="inner">
-                                        <a href="tel:010-0000-0000">전화걸기</a>
-                                        <a href="#">길찾기</a>
+                                </li>
+                                <li>
+                                    <div class="txt-cont04">
+                                        <div class="t-case">
+                                            <span>영업중</span>
+                                        </div>
+                                        <div class="q-txt">약국명</div>
+                                        <div class="d-info">
+                                            <span>327km</span>
+                                            <span>서울특별시 영등포구 국제금융로2길 24</span>
+                                        </div>
                                     </div>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="txt-cont04">
-                                    <div class="t-case">
-                                        <span>영업종료</span>
+                                    <div class="more-cont">
+                                        <div class="inner">
+                                            <a href="tel:010-0000-0000">전화걸기</a>
+                                            <a href="#">길찾기</a>
+                                        </div>
                                     </div>
-                                    <div class="q-txt">약국명</div>
-                                    <div class="d-info">
-                                        <span>327km</span>
-                                        <span>서울특별시 영등포구 국제금융로2길 24</span>
+                                </li>
+                                <li>
+                                    <div class="txt-cont04">
+                                        <div class="t-case">
+                                            <span>영업종료</span>
+                                        </div>
+                                        <div class="q-txt">약국명</div>
+                                        <div class="d-info">
+                                            <span>327km</span>
+                                            <span>서울특별시 영등포구 국제금융로2길 24</span>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="more-cont">
-                                    <div class="inner">
-                                        <a href="tel:010-0000-0000">전화걸기</a>
-                                        <a href="#">길찾기</a>
+                                    <div class="more-cont">
+                                        <div class="inner">
+                                            <a href="tel:010-0000-0000">전화걸기</a>
+                                            <a href="#">길찾기</a>
+                                        </div>
                                     </div>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="txt-cont04">
-                                    <div class="t-case">
-                                        <span>영업중</span>
-                                    </div>
-                                    <div class="q-txt">약국명</div>
-                                    <div class="d-info">
-                                        <span>327km</span>
-                                        <span>서울특별시 영등포구 국제금융로2길 24</span>
-                                    </div>
-                                </div>
-                                <div class="more-cont">
-                                    <div class="inner">
-                                        <a href="tel:010-0000-0000">전화걸기</a>
-                                        <a href="#">길찾기</a>
-                                    </div>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="txt-cont04">
-                                    <div class="t-case">
-                                        <span>영업종료</span>
-                                    </div>
-                                    <div class="q-txt">약국명</div>
-                                    <div class="d-info">
-                                        <span>327km</span>
-                                        <span>서울특별시 영등포구 국제금융로2길 24</span>
-                                    </div>
-                                </div>
-                                <div class="more-cont">
-                                    <div class="inner">
-                                        <a href="tel:010-0000-0000">전화걸기</a>
-                                        <a href="#">길찾기</a>
-                                    </div>
-                                </div>
-                            </li>
-                        </ul>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
-
                 </div>
             </div>
 

@@ -3218,8 +3218,55 @@
 
 
 
-
-
+/* 페이지 공통 스크롤 영역 */
+	.scroll-ud{
+	    position: relative;
+	    /*padding-top: 30px;*/
+	    flex: 1 1 auto;
+	    overflow: auto;
+	}
+	.scroll-ud.ov-case{
+		padding-top: 30px;
+	    padding-bottom: 20px;
+	}
+	.scroll-ud:before{
+	    content: '';
+	    position: absolute;
+	    top: 10px;
+	    left: 0;
+	    z-index: 1;
+	    width: 100%;
+	    height: 20px;
+	    background: url(../img/close-20-blue.png) no-repeat center center / 20px auto;
+	    opacity: 0;
+	    transition: .2s;
+	}
+	.scroll-ud.up-dp:before{
+	    opacity: 1;
+	}
+	.scroll-ud:after{
+	    content: '';
+	    position: absolute;
+	    bottom: 0;
+	    left: 0;
+	    z-index: 1;
+	    width: 100%;
+	    height: 20px;
+	    background: url(../img/open-20-blue.png) no-repeat center center / 20px auto;
+	    opacity: 0;
+	    transition: .2s;
+	}
+	.scroll-ud.down-dp:after{
+	    opacity: 1;
+	}
+	.scroll-ud .rst-list-wrap{
+	    margin-top: 0;
+	}
+	.scroll-ud-inner{
+	    height: 100%;
+	    overflow: auto;
+	}
+/* // 페이지 공통 스크롤 영역 */
 
 
 

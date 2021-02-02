@@ -15,10 +15,16 @@ $(function(){
 	InputReset();
 
 	// check-list
-	chkListWrap();
+	//chkListWrap();
 
 	// 항목 체크 리스트 스크롤 처리
-	chkListScroll();
+	//chkListScroll();
+
+	// 공통 스크롤 표시 설정
+	ScrollAreaChk();
+	
+	// 스크롤 화살표 표시
+	ScrollActive();
 
 	// 우측 메뉴 버튼 display 처리
 	if ( $('.floating-btns').length > 0 ) {
@@ -146,6 +152,44 @@ function chkListScroll() {
 		}
 	});
 }
+
+
+// 공통 스크롤 표시 설정
+function ScrollAreaChk() {
+	var sudHeight = $('.scroll-ud').outerHeight();
+	var sudInHiehgt = $('.scroll-ud-inner > *').outerHeight();
+	if ( $('.scroll-ud').length > 0 ) {
+	    if (sudInHiehgt > sudHeight) {
+	        $('.scroll-ud').addClass('ov-case down-dp');
+	    }
+	}
+
+	console.log(sudHeight);
+	console.log(sudInHiehgt);
+}
+
+
+// 스크롤 화살표 표시
+function ScrollActive() {
+	$('.scroll-ud > *').on('scroll', function(){
+	    var st = Math.floor($(this).scrollTop());
+	    var oh = Math.floor($(this).outerHeight());
+	    if ( st <= 0 ) {    // 최상단 도달 시
+	        $(this).closest('.scroll-ud').removeClass('up-dp');
+	    }
+	     else if ( st > 0 && st + oh + 3 < $(this)[0].scrollHeight ) {
+	        $(this).closest('.scroll-ud').addClass('up-dp');
+	        $(this).closest('.scroll-ud').addClass('down-dp');
+	    }
+	     else if ( st + oh + 3 >= $(this)[0].scrollHeight) {
+	        $(this).closest('.scroll-ud').removeClass('down-dp');
+	    }
+	});
+}
+
+
+
+
 
 // 우측 메뉴 버튼 display 처리
 function floatBtns() {
