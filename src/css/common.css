@@ -1606,71 +1606,94 @@
 
 	/* 딤드 레이어 팝업 */
 
-	.dimmed-layer{
-		position: fixed;
-		top: 0;
-		right: 0;
-		bottom: 0;
-		left: 0;
-		z-index: 200;
-		width: 100%;
-		height: 100%;
-		background-color: rgba(0, 0, 0, 0.7);
-	}
-	.dimmed-layer-cont{
-		position: absolute;
-		top: 50%;
-		left: 50%;
-		transform: translate(-50%, -50%);
-		padding-top: 35px;
-		width: calc(100% - 44px);
-	}
-	.dimmed-layer-cont.close-none{
-		padding-top: 0;
-	}
-	.dimmed-layer-img{
+		.dimmed-layer{
+			position: fixed;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+			z-index: 200;
+			width: 100%;
+			height: 100%;
+			background-color: rgba(0, 0, 0, 0.7);
+		}
+		.dimmed-layer-cont{
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			padding-top: 35px;
+			width: calc(100% - 44px);
+		}
+		.dimmed-layer-cont.close-none{
+			padding-top: 0;
+		}
+		.dimmed-layer-img{
 
-	}
-	.dimmed-layer-img img{
-		display: block;
-		width: 100%;
-	}
+		}
+		.dimmed-layer-img img{
+			display: block;
+			width: 100%;
+		}
 
-	.dl-pop-cont{
-		padding: 40px 30px 30px 30px;
-		border-radius: 14px;
-		background: #fff;
-	}
-	.dl-tit{
-		font-weight: 500;
-		font-size: 18px;
-		line-height: 27px;
-	}
-	.dl-tit + .d-txt{
-		margin-top: 30px;
-	}
-	.d-txt{
-	    font-size: 16px;
-	    line-height: 24px;
-	}
-	.d-txt + .d-txt{
-	    margin-top: 20px;
-	}
-	.dl-pop-cont > .btn-area{
-		margin-top: 40px;
-	}
-
-	.d-layer-close{
-		position:absolute;
-		top: 0;
-		left: 0px;
-		width: 25px;
-		height: 25px;
-		background:url(../img/btn-close-25-w.png) no-repeat 0 0 / 100% auto;
-		text-indent:-9999px;
-	}
+		.dl-pop-cont{
+			padding: 40px 30px 30px 30px;
+			border-radius: 14px;
+			background: #fff;
+		}
+		.dl-tit{
+			font-weight: 500;
+			font-size: 18px;
+			line-height: 27px;
+		}
+		.dl-tit + .d-txt{
+			margin-top: 30px;
+		}
+		.d-txt{
+		    font-size: 16px;
+		    line-height: 24px;
+		}
+		.d-txt + .d-txt{
+		    margin-top: 20px;
+		}
+		.dl-pop-cont > .btn-area{
+			margin-top: 40px;
+		}
+		.d-layer-close{
+			position:absolute;
+			top: 0;
+			left: 0px;
+			width: 25px;
+			height: 25px;
+			background:url(../img/btn-close-25-w.png) no-repeat 0 0 / 100% auto;
+			text-indent:-9999px;
+		}
 
 	/* // 딤드 레이어 팝업 */
+	
+
+	/* 토스트 팝업 */
+
+		.toast-layer{
+		    position: fixed;
+		    bottom: 5%;
+		    left: 50%;
+		    z-index: 150;
+		    width: calc(100% - 44px);
+		    transform: translate(-50%, -50%);
+		}
+		.toast-cont{
+		    padding: 15px;
+		    color: #fff;
+		    text-align: center;
+		    font-size: 14px;
+		    background: #000;
+		    opacity: 0.7;
+		    border-radius: 10px;
+		}
+
+	/* // 토스트 팝업 */
+
 
 	/* 하단 레이어 팝업 */
 
