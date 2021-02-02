@@ -3134,18 +3134,25 @@
 
 
 
-
-
 /* 페이지 공통 스크롤 영역 */
 	.scroll-ud{
 	    position: relative;
 	    /*padding-top: 30px;*/
-	    flex: 1 1 auto;
+	    /*flex: 1 1 auto;*/
+	    margin-top: 30px;
+	    flex-grow: 1;
 	    overflow: auto;
 	}
 	.scroll-ud.ov-case{
+		margin-top: 0;
 		padding-top: 30px;
 	    padding-bottom: 20px;
+	}
+	.scroll-ud.etc{
+		margin-top: 0;
+	}
+	.scroll-ud.ov-case.etc{
+		padding-top: 20px;
 	}
 	.scroll-ud:before{
 	    content: '';
@@ -3158,6 +3165,9 @@
 	    background: url(../img/close-20-blue.png) no-repeat center center / 20px auto;
 	    opacity: 0;
 	    transition: .2s;
+	}
+	.scroll-ud.etc:before{
+		top: 0;
 	}
 	.scroll-ud.up-dp:before{
 	    opacity: 1;

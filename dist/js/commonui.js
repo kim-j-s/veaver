@@ -22,7 +22,7 @@ $(function(){
 
 	// 공통 스크롤 표시 설정
 	ScrollAreaChk();
-	
+
 	// 스크롤 화살표 표시
 	ScrollActive();
 
@@ -161,12 +161,18 @@ function ScrollAreaChk() {
 	if ( $('.scroll-ud').length > 0 ) {
 	    if (sudInHiehgt > sudHeight) {
 	        $('.scroll-ud').addClass('ov-case down-dp');
+	    } else {
+	    	$('.scroll-ud').removeClass('ov-case down-dp');
 	    }
 	}
 
 	console.log(sudHeight);
 	console.log(sudInHiehgt);
 }
+
+$(window).resize(function(){
+	ScrollAreaChk();
+})
 
 
 // 스크롤 화살표 표시
