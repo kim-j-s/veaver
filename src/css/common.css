@@ -729,6 +729,9 @@
 		position: relative;
 		padding: 13px 20px 12px 20px;
 	}
+	.rnd-checkbox + .rnd-checkbox{
+		margin-top: 10px;
+	}
 	.rnd-checkbox .lp-btn{
 		position: absolute;
 		top: 7px;
@@ -3131,28 +3134,15 @@
 
 
 
-html {overflow: hidden;}
-body {touch-action: none;}
-
-.layer-content{
-	background: rgba(0,0,0,0.3);
-}
-.scroll-ud{
-	background: rgba(255,175,100,0.3);	
-}
 
 
 /* 페이지 공통 스크롤 영역 */
 	.scroll-ud{
 	    position: relative;
-	    /*padding-top: 30px;*/
-	    /*flex: 1 1 auto;*/
 	    flex: 1;
 	    min-height: 0;
 	    margin-top: 30px;
-	    /*flex-grow: 1;*/
 	    overflow: auto;
-	    /*overflow: hidden;*/
 	}
 	.scroll-ud.ov-case{
 		margin-top: 0;
@@ -3163,6 +3153,13 @@ body {touch-action: none;}
 		margin-top: 0;
 	}
 	.scroll-ud.ov-case.etc{
+		padding-top: 20px;
+	}
+	.scroll-ud.etc2{
+		margin-top: 20px;
+	}
+	.scroll-ud.ov-case.etc2{
+		margin-top: 0;
 		padding-top: 20px;
 	}
 	.scroll-ud:before{
@@ -3178,6 +3175,9 @@ body {touch-action: none;}
 	    transition: .2s;
 	}
 	.scroll-ud.etc:before{
+		top: 0;
+	}
+	.scroll-ud.etc2:before{
 		top: 0;
 	}
 	.scroll-ud.up-dp:before{
