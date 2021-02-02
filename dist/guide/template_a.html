@@ -2,15 +2,15 @@
 <html lang="ko">
 
 <head>
-	<meta charset="utf-8">
-	<meta content="IE=edge" http-equiv="X-UA-Compatible">
-	<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
-	<title>공통 템플릿</title>
-	<link href="../css/reset.css" rel="stylesheet" />
-	<link href="../css/common.css" rel="stylesheet" />
-	<script type="text/javascript" src="../js/jquery.min.js"></script>
-	<script type="text/javascript" src="../js/commonui.js"></script>
-	<!--[if lt IE 9]>
+    <meta charset="utf-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+    <title>공통 템플릿</title>
+    <link href="../css/reset.css" rel="stylesheet" />
+    <link href="../css/common.css" rel="stylesheet" />
+    <script type="text/javascript" src="../js/jquery.min.js"></script>
+    <script type="text/javascript" src="../js/commonui.js"></script>
+    <!--[if lt IE 9]>
     <script type="text/javascript">
         document.createElement("header"); 
         document.createElement("nav"); 
@@ -22,111 +22,111 @@
 <![endif]-->
 
 
-	<!-- 2018.05.16 -->
-	<script type="text/javascript" src="code/scripts/shCore.js"></script>
-	<script type="text/javascript" src="code/scripts/shBrushBash.js"></script>
-	<script type="text/javascript" src="code/scripts/shBrushCss.js"></script>
-	<script type="text/javascript" src="code/scripts/shBrushJava.js"></script>
-	<script type="text/javascript" src="code/scripts/shBrushJScript.js"></script>
-	<script type="text/javascript" src="code/scripts/shBrushXml.js"></script>
+    <!-- 2018.05.16 -->
+    <script type="text/javascript" src="code/scripts/shCore.js"></script>
+    <script type="text/javascript" src="code/scripts/shBrushBash.js"></script>
+    <script type="text/javascript" src="code/scripts/shBrushCss.js"></script>
+    <script type="text/javascript" src="code/scripts/shBrushJava.js"></script>
+    <script type="text/javascript" src="code/scripts/shBrushJScript.js"></script>
+    <script type="text/javascript" src="code/scripts/shBrushXml.js"></script>
 
-	<link type="text/css" rel="stylesheet" href="code/styles/shCore.css" />
-	<link type="text/css" rel="stylesheet" href="code/styles/shThemeDefault.css" />
-	<script type="text/javascript">
-		SyntaxHighlighter.all();
-	</script>
-	<!-- //2018.05.16 -->
-	<style>
-		body{
-			padding: 20px;
-			padding-top: 100px;
-			background: #fff;
-		}
+    <link type="text/css" rel="stylesheet" href="code/styles/shCore.css" />
+    <link type="text/css" rel="stylesheet" href="code/styles/shThemeDefault.css" />
+    <script type="text/javascript">
+        SyntaxHighlighter.all();
+    </script>
+    <!-- //2018.05.16 -->
+    <style>
+        body {
+            padding: 20px;
+            padding-top: 100px;
+            background: #fff;
+        }
 
-		h1{
-			font-size: 30px;
-			padding: 0 20px;
-		}
+        h1 {
+            font-size: 30px;
+            padding: 0 20px;
+        }
 
-		h2:not(.titH2){
-			padding: 20px 0;
-			margin-top: 20px;
-			border-top: 1px dashed #666666;
-			font-size: 20px;
-		}
+        h2:not(.titH2) {
+            padding: 20px 0;
+            margin-top: 20px;
+            border-top: 1px dashed #666666;
+            font-size: 20px;
+        }
 
-		.guideLink{
-			position: fixed;
-			top: 0;
-			left: 0;
-			width: 100%;
-			padding: 10px;
-			background: #fff;
-			border-bottom: 1px solid #333;
-		}
+        .guideLink {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 10px;
+            background: #fff;
+            border-bottom: 1px solid #333;
+        }
 
-		.guideLink>a{
-			display: inline-block;
-			border: 1px solid #333;
-			padding: 5px;
-		}
+        .guideLink>a {
+            display: inline-block;
+            border: 1px solid #333;
+            padding: 5px;
+        }
 
-		.box{
-			margin-top: 20px;
-			border: 1px solid #E3E3E3
-		}
+        .box {
+            margin-top: 20px;
+            border: 1px solid #E3E3E3
+        }
 
-		.font{
-			font-size: 20px;
-			line-height: normal;
-		}
+        .font {
+            font-size: 20px;
+            line-height: normal;
+        }
 
-		.font+.font{
-			margin-top: 10px
-		}
+        .font+.font {
+            margin-top: 10px
+        }
 
-		.a2{
-			font-weight: 200;
-		}
+        .a2 {
+            font-weight: 200;
+        }
 
-		.a3{
-			font-weight: 300;
-		}
+        .a3 {
+            font-weight: 300;
+        }
 
-		.a4{
-			font-weight: 400;
-		}
+        .a4 {
+            font-weight: 400;
+        }
 
-		.a5{
-			font-weight: 500;
-		}
+        .a5 {
+            font-weight: 500;
+        }
 
-		.a6{
-			font-weight: 700;
-		}
-	</style>
+        .a6 {
+            font-weight: 700;
+        }
+    </style>
 
 <body>
-	<h1>공통 템플릿</h1>
+    <h1>공통 템플릿</h1>
 
-	<h2>Font Family : NotoSansCJKkr</h2>
-	<div class="font a2">폰트 굵기 적용 테스트 NotoSansCJKkr-Light / font-weight [200]</div>
-	<div class="font a3">폰트 굵기 적용 테스트 NotoSansCJKkr-DemiLight / font-weight [300]</div>
-	<div class="font a4">폰트 굵기 적용 테스트 NotoSansCJKkr-Regular / font-weight [400]</div>
-	<div class="font a5">폰트 굵기 적용 테스트 NotoSansCJKkr-Medium / font-weight [500]</div>
-	<div class="font a6">폰트 굵기 적용 테스트 NotoSansCJKkr-Bold / font-weight [700]</div>
+    <h2>Font Family : NotoSansCJKkr</h2>
+    <div class="font a2">폰트 굵기 적용 테스트 NotoSansCJKkr-Light / font-weight [200]</div>
+    <div class="font a3">폰트 굵기 적용 테스트 NotoSansCJKkr-DemiLight / font-weight [300]</div>
+    <div class="font a4">폰트 굵기 적용 테스트 NotoSansCJKkr-Regular / font-weight [400]</div>
+    <div class="font a5">폰트 굵기 적용 테스트 NotoSansCJKkr-Medium / font-weight [500]</div>
+    <div class="font a6">폰트 굵기 적용 테스트 NotoSansCJKkr-Bold / font-weight [700]</div>
 
-	<h2>Font Color</h2>
-	<span class="font_01">가나다라마바사 - [.font_01]</span><br><br>
-	<span class="font_02">가나다라마바사 - [.font_02]</span><br><br>
-	<span class="font_03">가나다라마바사 - [.font_03]</span><br><br>
-	<span class="font_04">가나다라마바사 - [.font_04]</span><br><br>
-	<span class="font_05" style="background-color:#000;">가나다라마바사 - [.font_05]</span><br><br>
-	<span class="font_06">가나다라마바사 - [.font_06]</span>
+    <h2>Font Color</h2>
+    <span class="font_01">가나다라마바사 - [.font_01]</span><br><br>
+    <span class="font_02">가나다라마바사 - [.font_02]</span><br><br>
+    <span class="font_03">가나다라마바사 - [.font_03]</span><br><br>
+    <span class="font_04">가나다라마바사 - [.font_04]</span><br><br>
+    <span class="font_05" style="background-color:#000;">가나다라마바사 - [.font_05]</span><br><br>
+    <span class="font_06">가나다라마바사 - [.font_06]</span>
 
-	<!-- souce code 뷰어 -->
-	<div class="box">
-		<pre class="brush: html;">
+    <!-- souce code 뷰어 -->
+    <div class="box">
+        <pre class="brush: html;">
 			<span class="font_01"></span>
 
 			<span class="font_02"></span>
@@ -139,53 +139,53 @@
 
 			<span class="font_06"></span>
 		</pre>
-	</div>
-	<!-- //souce code 뷰어 -->
+    </div>
+    <!-- //souce code 뷰어 -->
 
 
-	<h2>Heading</h2>
-	<h3 class="tit-h3">tit-h3 [ weight : 400 / size : 18px / color : #000 / line-height : 27px ]</h3>
-	<h4 class="tit-h4">tit-h4 [ weight : 500 / size : 16px / color : #056bff / line-height : 24px ]</h4>
-	<!-- content here -->
-	<!-- souce code 뷰어 -->
-	<div class="box">
-		<pre class="brush: html;">
+    <h2>Heading</h2>
+    <h3 class="tit-h3">tit-h3 [ weight : 400 / size : 18px / color : #000 / line-height : 27px ]</h3>
+    <h4 class="tit-h4">tit-h4 [ weight : 500 / size : 16px / color : #056bff / line-height : 24px ]</h4>
+    <!-- content here -->
+    <!-- souce code 뷰어 -->
+    <div class="box">
+        <pre class="brush: html;">
 			<h3 class="tit-h3"></h3>
 
 			<h4 class="tit-h4"></h4>
 		</pre>
-	</div>
-	<!-- //souce code 뷰어 -->
+    </div>
+    <!-- //souce code 뷰어 -->
 
 
-	<h2>Checkbox</h2>
-	<label class="input-checkbox">
-		<input type="checkbox"><span>체크박스</span>
-	</label>
+    <h2>Checkbox</h2>
+    <label class="input-checkbox">
+        <input type="checkbox"><span>체크박스</span>
+    </label>
 
-	<br><br>
+    <br><br>
 
-	<label class="input-checkbox">
-		<input type="checkbox" checked><span>체크박스 [:checked]</span>
-	</label>
+    <label class="input-checkbox">
+        <input type="checkbox" checked><span>체크박스 [:checked]</span>
+    </label>
 
-	<br>
-	<br>
+    <br>
+    <br>
 
-	<label class="input-checkbox">
-		<input type="checkbox" disabled><span>체크박스 [:disabled]</span>
-	</label>
+    <label class="input-checkbox">
+        <input type="checkbox" disabled><span>체크박스 [:disabled]</span>
+    </label>
 
-	<br>
-	<br>
+    <br>
+    <br>
 
-	<label class="input-checkbox">
-		<input type="checkbox" checked="checked" disabled="disabled"><span>체크박스 [:cheked:disabled]</span>
-	</label>
+    <label class="input-checkbox">
+        <input type="checkbox" checked="checked" disabled="disabled"><span>체크박스 [:cheked:disabled]</span>
+    </label>
 
-	<!-- souce code 뷰어 -->
-	<div class="box">
-		<pre class="brush: html;">
+    <!-- souce code 뷰어 -->
+    <div class="box">
+        <pre class="brush: html;">
 			<label class="input-checkbox">
 				<input type="checkbox"><span></span>
 			</label>
@@ -202,38 +202,38 @@
 				<input type="checkbox" checked="checked" disabled="disabled"><span></span>
 			</label>
 		</pre>
-	</div>
-	<!-- //souce code 뷰어 -->
+    </div>
+    <!-- //souce code 뷰어 -->
 
-	<h2>Rndbox - Checkbox</h2>
-	<div class="rnd-checkbox">
-		<label class="input-checkbox">
-			<input type="checkbox"><span>체크박스</span>
-		</label>
-	</div>
+    <h2>Rndbox - Checkbox</h2>
+    <div class="rnd-checkbox">
+        <label class="input-checkbox">
+            <input type="checkbox"><span>체크박스</span>
+        </label>
+    </div>
 
-	<!-- souce code 뷰어 -->
-	<div class="box">
-		<pre class="brush: html;">
+    <!-- souce code 뷰어 -->
+    <div class="box">
+        <pre class="brush: html;">
 			<div class="rnd-checkbox">
 				<label class="input-checkbox">
 					<input type="checkbox"><span>체크박스</span>
 				</label>
 			</div>
 		</pre>
-	</div>
-	<!-- //souce code 뷰어 -->
+    </div>
+    <!-- //souce code 뷰어 -->
 
-	<h2>Rndbox - Checkbox - popup</h2>
-	<div class="rnd-checkbox">
-		<label class="input-checkbox">
-			<input type="checkbox"><span>체크박스</span>
-		</label>
-		<button type="button" class="lp-btn btn-img-view">사진보기</button>
-	</div>
-	<!-- souce code 뷰어 -->
-	<div class="box">
-		<pre class="brush: html;">
+    <h2>Rndbox - Checkbox - popup</h2>
+    <div class="rnd-checkbox">
+        <label class="input-checkbox">
+            <input type="checkbox"><span>체크박스</span>
+        </label>
+        <button type="button" class="lp-btn btn-img-view">사진보기</button>
+    </div>
+    <!-- souce code 뷰어 -->
+    <div class="box">
+        <pre class="brush: html;">
 			<div class="rnd-checkbox">
 				<label class="input-checkbox">
 					<input type="checkbox"><span>체크박스</span>
@@ -241,18 +241,18 @@
 				<button type="button" class="lp-btn btn-img-view">사진보기</button>
 			</div>
 		</pre>
-	</div>
-	<!-- //souce code 뷰어 -->
+    </div>
+    <!-- //souce code 뷰어 -->
 
-	<div class="rnd-checkbox mt20">
-		<label class="input-checkbox">
-			<input type="checkbox"><span>체크박스</span>
-		</label>
-		<button type="button" class="lp-btn btn-video-view">영상보기</button>
-	</div>
-	<!-- souce code 뷰어 -->
-	<div class="box">
-		<pre class="brush: html;">
+    <div class="rnd-checkbox mt20">
+        <label class="input-checkbox">
+            <input type="checkbox"><span>체크박스</span>
+        </label>
+        <button type="button" class="lp-btn btn-video-view">영상보기</button>
+    </div>
+    <!-- souce code 뷰어 -->
+    <div class="box">
+        <pre class="brush: html;">
 			<div class="rnd-checkbox">
 				<label class="input-checkbox">
 					<input type="checkbox"><span>체크박스</span>
@@ -260,18 +260,18 @@
 				<button type="button" class="lp-btn btn-video-view">영상보기</button>
 			</div>
 		</pre>
-	</div>
-	<!-- //souce code 뷰어 -->
+    </div>
+    <!-- //souce code 뷰어 -->
 
-	<div class="rnd-checkbox mt20">
-		<label class="input-checkbox">
-			<input type="checkbox"><span>체크박스</span>
-		</label>
-		<button type="button" class="lp-btn btn-video-view on">영상보기</button>
-	</div>
-	<!-- souce code 뷰어 -->
-	<div class="box">
-		<pre class="brush: html;">
+    <div class="rnd-checkbox mt20">
+        <label class="input-checkbox">
+            <input type="checkbox"><span>체크박스</span>
+        </label>
+        <button type="button" class="lp-btn btn-video-view on">영상보기</button>
+    </div>
+    <!-- souce code 뷰어 -->
+    <div class="box">
+        <pre class="brush: html;">
 			<div class="rnd-checkbox">
 				<label class="input-checkbox">
 					<input type="checkbox"><span>체크박스</span>
@@ -279,47 +279,47 @@
 				<button type="button" class="lp-btn btn-video-view on">영상보기</button>
 			</div>
 		</pre>
-	</div>
-	<!-- //souce code 뷰어 -->
-	
-	<h2>- input-check-toggle</h2>
+    </div>
+    <!-- //souce code 뷰어 -->
 
-	<label class="input-check-toggle">
-		<input type="checkbox"><span></span>
-	</label>
+    <h2>- input-check-toggle</h2>
 
-	&nbsp;&nbsp;토글 버튼(checkbox)
+    <label class="input-check-toggle">
+        <input type="checkbox"><span></span>
+    </label>
 
-	<br>
-	<br>
+    &nbsp;&nbsp;토글 버튼(checkbox)
 
-	<label class="input-check-toggle">
-		<input type="checkbox" checked><span></span>
-	</label>
+    <br>
+    <br>
 
-	&nbsp;&nbsp;토글 버튼(checkbox) [:checked]
+    <label class="input-check-toggle">
+        <input type="checkbox" checked><span></span>
+    </label>
 
-	<br>
-	<br>
+    &nbsp;&nbsp;토글 버튼(checkbox) [:checked]
 
-	<label class="input-check-toggle">
-		<input type="checkbox" disabled><span></span>
-	</label>
+    <br>
+    <br>
 
-	&nbsp;&nbsp;토글 버튼(checkbox) [:disabled]
+    <label class="input-check-toggle">
+        <input type="checkbox" disabled><span></span>
+    </label>
 
-	<br>
-	<br>
+    &nbsp;&nbsp;토글 버튼(checkbox) [:disabled]
 
-	<label class="input-check-toggle">
-		<input type="checkbox" checked="checked" disabled="disabled"><span></span>
-	</label>
+    <br>
+    <br>
 
-	&nbsp;&nbsp;토글 버튼(checkbox) [:checked:disabled]
-	
-	<!-- souce code 뷰어 -->
-	<div class="box">
-		<pre class="brush: html;">
+    <label class="input-check-toggle">
+        <input type="checkbox" checked="checked" disabled="disabled"><span></span>
+    </label>
+
+    &nbsp;&nbsp;토글 버튼(checkbox) [:checked:disabled]
+
+    <!-- souce code 뷰어 -->
+    <div class="box">
+        <pre class="brush: html;">
 			<label class="input-check-toggle">
 				<input type="checkbox"><span></span>
 			</label>
@@ -336,49 +336,49 @@
 				<input type="checkbox" checked="checked" disabled="disabled"><span></span>
 			</label>
 		</pre>
-	</div>
-	<!-- //souce code 뷰어 -->
+    </div>
+    <!-- //souce code 뷰어 -->
 
-	<h2>Link</h2>
-	<a href="#" class="b-link">이동</a>
+    <h2>Link</h2>
+    <a href="#" class="b-link">이동</a>
 
-	<!-- souce code 뷰어 -->
-	<div class="box">
-		<pre class="brush: html;">
+    <!-- souce code 뷰어 -->
+    <div class="box">
+        <pre class="brush: html;">
 			<a href="#" class="b-link"></a>
 		</pre>
-	</div>
-	<!-- //souce code 뷰어 -->
+    </div>
+    <!-- //souce code 뷰어 -->
 
-	<h2>Radio</h2>
-	<label class="input-radio">
-		<input type="radio" name="radioGroup_01"><span>라디오</span>
-	</label>
+    <h2>Radio</h2>
+    <label class="input-radio">
+        <input type="radio" name="radioGroup_01"><span>라디오</span>
+    </label>
 
-	<br>
-	<br>
+    <br>
+    <br>
 
-	<label class="input-radio">
-		<input type="radio" name="radioGroup_01" checked><span>라디오 [:checked]</span>
-	</label>
+    <label class="input-radio">
+        <input type="radio" name="radioGroup_01" checked><span>라디오 [:checked]</span>
+    </label>
 
-	<br>
-	<br>
+    <br>
+    <br>
 
-	<label class="input-radio">
-		<input type="radio" name="radioGroup_02" disabled><span>라디오 [:disabled]</span>
-	</label>
+    <label class="input-radio">
+        <input type="radio" name="radioGroup_02" disabled><span>라디오 [:disabled]</span>
+    </label>
 
-	<br>
-	<br>
+    <br>
+    <br>
 
-	<label class="input-radio">
-		<input type="radio" name="radioGroup_02" checked="checked" disabled="disabled"><span>라디오 [:cheked:disabled]</span>
-	</label>
+    <label class="input-radio">
+        <input type="radio" name="radioGroup_02" checked="checked" disabled="disabled"><span>라디오 [:cheked:disabled]</span>
+    </label>
 
-	<!-- souce code 뷰어 -->
-	<div class="box">
-		<pre class="brush: html;">
+    <!-- souce code 뷰어 -->
+    <div class="box">
+        <pre class="brush: html;">
 			<label class="input-radio">
 				<input type="radio" name=""><span></span>
 			</label>
@@ -395,50 +395,50 @@
 				<input type="radio" name="" checked="checked" disabled="disabled"><span></span>
 			</label>
 		</pre>
-	</div>
-	<!-- //souce code 뷰어 -->
+    </div>
+    <!-- //souce code 뷰어 -->
 
-	<h2>Button</h2>
-	<button type="button" class="btn-pu">버튼 [.btn-pu]</button>
-	<br>
-	<button type="button" class="btn-pu" disabled="disabled">버튼 [.btn-pu:disabled]</button>
-	<!-- souce code 뷰어 -->
-	<div class="box">
-		<pre class="brush: html;">
+    <h2>Button</h2>
+    <button type="button" class="btn-pu">버튼 [.btn-pu]</button>
+    <br>
+    <button type="button" class="btn-pu" disabled="disabled">버튼 [.btn-pu:disabled]</button>
+    <!-- souce code 뷰어 -->
+    <div class="box">
+        <pre class="brush: html;">
 			<button type="button" class="btn-pu"></button>
 
 			<button type="button" class="btn-pu" disabled="disabled"></button>
 		</pre>
-	</div>
-	<!-- //souce code 뷰어 -->
+    </div>
+    <!-- //souce code 뷰어 -->
 
-	<h2>Press opacity</h2>
-	<button type="button" class="btn-pu op30">버튼 [.btn-pu]</button>
-	<br>
-	<button type="button" class="btn-pu op30" disabled="disabled">버튼 [.btn-pu:disabled]</button>
-	<!-- souce code 뷰어 -->
-	<div class="box">
-		<pre class="brush: html;">
+    <h2>Press opacity</h2>
+    <button type="button" class="btn-pu op30">버튼 [.btn-pu]</button>
+    <br>
+    <button type="button" class="btn-pu op30" disabled="disabled">버튼 [.btn-pu:disabled]</button>
+    <!-- souce code 뷰어 -->
+    <div class="box">
+        <pre class="brush: html;">
 			<button type="button" class="btn-pu op30"></button>
 
 			<button type="button" class="btn-pu op30" disabled="disabled"></button>
 		</pre>
-	</div>
-	<!-- //souce code 뷰어 -->
+    </div>
+    <!-- //souce code 뷰어 -->
 
-	<h2>2BTN [.btnTwo]</h2>
-	<div class="btnTwo">
-		<button type="button" class="btn-bd-pu">버튼 [.btn-bd-pu]</button>		
-		<button type="button" class="btn-pu">버튼 [.btn-pu]</button>		
-	</div>
-	<br><br>
-	<div class="btnTwo op30">
-		<button type="button" class="btn-bd-pu">버튼 [.btn-bd-pu]</button>			
-		<button type="button" class="btn-pu">버튼 [.btn-pu]</button>	
-	</div>
-	<!-- souce code 뷰어 -->
-	<div class="box">
-		<pre class="brush: html;">
+    <h2>2BTN [.btnTwo]</h2>
+    <div class="btnTwo">
+        <button type="button" class="btn-bd-pu">버튼 [.btn-bd-pu]</button>
+        <button type="button" class="btn-pu">버튼 [.btn-pu]</button>
+    </div>
+    <br><br>
+    <div class="btnTwo op30">
+        <button type="button" class="btn-bd-pu">버튼 [.btn-bd-pu]</button>
+        <button type="button" class="btn-pu">버튼 [.btn-pu]</button>
+    </div>
+    <!-- souce code 뷰어 -->
+    <div class="box">
+        <pre class="brush: html;">
 			<div class="btnTwo">
 				<button type="button" class="btn-bd-pu"></button>
 				<button type="button" class="btn-pu"></button>
@@ -449,211 +449,211 @@
 				<button type="button" class="btn-pu">]</button>
 			</div>
 		</pre>
-	</div>
-	<!-- //souce code 뷰어 -->
+    </div>
+    <!-- //souce code 뷰어 -->
 
-	<h2>Line BTN_gray</h2>
-	<button type="button" class="btn-bd-gr-s">버튼 [.btn-bd-gr-s]</button>
-	<br>
-	<button type="button" class="btn-bd-gr-s" disabled="disabled">버튼 [.btn-bd-gr-s:disabled]</button>
-	<!-- souce code 뷰어 -->
-	<div class="box">
-		<pre class="brush: html;">
+    <h2>Line BTN_gray</h2>
+    <button type="button" class="btn-bd-gr-s">버튼 [.btn-bd-gr-s]</button>
+    <br>
+    <button type="button" class="btn-bd-gr-s" disabled="disabled">버튼 [.btn-bd-gr-s:disabled]</button>
+    <!-- souce code 뷰어 -->
+    <div class="box">
+        <pre class="brush: html;">
 			<button type="button" class="btn-bd-gr-s"></button>
 			
 			<button type="button" class="btn-bd-gr-s" disabled="disabled"></button>
 		</pre>
-	</div>
-	<!-- //souce code 뷰어 -->
+    </div>
+    <!-- //souce code 뷰어 -->
 
-	<h2>Line BTN_blue</h2>
-	<button type="button" class="btn-bd-pu-s">버튼 [.btn-bd-pu-s]</button>
-	<br>
-	<button type="button" class="btn-bd-pu-s" disabled="disabled">버튼 [.btn-bd-pu-s:disabled]</button>
-	<!-- souce code 뷰어 -->
-	<div class="box">
-		<pre class="brush: html;">
+    <h2>Line BTN_blue</h2>
+    <button type="button" class="btn-bd-pu-s">버튼 [.btn-bd-pu-s]</button>
+    <br>
+    <button type="button" class="btn-bd-pu-s" disabled="disabled">버튼 [.btn-bd-pu-s:disabled]</button>
+    <!-- souce code 뷰어 -->
+    <div class="box">
+        <pre class="brush: html;">
 			<button type="button" class="btn-bd-pu-s"></button>
 
 			<button type="button" class="btn-bd-pu-s" disabled="disabled"></button>
 		</pre>
-	</div>
-	<!-- //souce code 뷰어 -->
+    </div>
+    <!-- //souce code 뷰어 -->
 
-	<h2>Line Bl</h2>
-	<button type="button" class="btn-bl">질병 정보 확인하기</button>
-	<!-- souce code 뷰어 -->
-	<div class="box">
-		<pre class="brush: html;">
+    <h2>Line Bl</h2>
+    <button type="button" class="btn-bl">질병 정보 확인하기</button>
+    <!-- souce code 뷰어 -->
+    <div class="box">
+        <pre class="brush: html;">
 			<button type="button" class="btn-bl"></button>
 		</pre>
-	</div>
-	<!-- //souce code 뷰어 -->
+    </div>
+    <!-- //souce code 뷰어 -->
 
-	<h2>Rnd gr Button</h2>
-	<button type="button" class="btn-rnd-gr on">전체</button>
+    <h2>Rnd gr Button</h2>
+    <button type="button" class="btn-rnd-gr on">전체</button>
 
-	<!-- souce code 뷰어 -->
-	<div class="box">
-		<pre class="brush: html;">
+    <!-- souce code 뷰어 -->
+    <div class="box">
+        <pre class="brush: html;">
 			<button type="button" class="btn-rnd-gr on">전체</button>
 		</pre>
-	</div>
-	<!-- //souce code 뷰어 -->
+    </div>
+    <!-- //souce code 뷰어 -->
 
-	<h2>Rnd white Button</h2>
+    <h2>Rnd white Button</h2>
 
-	<div style="background: #056bff; padding: 10px;">
-		<button type="button" class="btn-rnd-wh">로그인</button>
-	</div>
-	<!-- souce code 뷰어 -->
-	<div class="box">
-		<pre class="brush: html;">
+    <div style="background: #056bff; padding: 10px;">
+        <button type="button" class="btn-rnd-wh">로그인</button>
+    </div>
+    <!-- souce code 뷰어 -->
+    <div class="box">
+        <pre class="brush: html;">
 			<button type="button" class="btn-rnd-wh">로그인</button>
 		</pre>
-	</div>
-	<!-- //souce code 뷰어 -->
+    </div>
+    <!-- //souce code 뷰어 -->
 
-	<h2>Rnd gr Button - toggle class</h2>
-	<button type="button" class="btn-rnd-gr btn-s-toggle">전체</button>
-	<button type="button" class="btn-rnd-gr on btn-s-toggle">전체</button>
-	<!-- souce code 뷰어 -->
-	<div class="box">
-		<pre class="brush: html;">
+    <h2>Rnd gr Button - toggle class</h2>
+    <button type="button" class="btn-rnd-gr btn-s-toggle">전체</button>
+    <button type="button" class="btn-rnd-gr on btn-s-toggle">전체</button>
+    <!-- souce code 뷰어 -->
+    <div class="box">
+        <pre class="brush: html;">
 			<button type="button" class="btn-rnd-gr btn-s-toggle">전체</button>
 		</pre>
-	</div>
-	<!-- //souce code 뷰어 -->
+    </div>
+    <!-- //souce code 뷰어 -->
 
-	<h2>Rnd bd gr</h2>
-	<button type="button" class="btn-rnd-bd-gr">보기</button>
-	<button type="button" class="btn-rnd-bd-gr" disabled="disabled">보기 [:disabled]</button>
+    <h2>Rnd bd gr</h2>
+    <button type="button" class="btn-rnd-bd-gr">보기</button>
+    <button type="button" class="btn-rnd-bd-gr" disabled="disabled">보기 [:disabled]</button>
 
-	<!-- souce code 뷰어 -->
-	<div class="box">
-		<pre class="brush: html;">
+    <!-- souce code 뷰어 -->
+    <div class="box">
+        <pre class="brush: html;">
 			<button type="button" class="btn-rnd-bd-gr"></button>
 
 			<button type="button" class="btn-rnd-bd-gr" disabled="disabled"></button>
 		</pre>
-	</div>
-	<!-- //souce code 뷰어 -->
+    </div>
+    <!-- //souce code 뷰어 -->
 
 
-	<h2>Input - normal</h2>
-	<div class="input-text">
-		<input type="text" placeholder="placeholder !!">
-		<button type="button" class="btn-remove">삭제</button>
-		<p class="msg">도움말</p>
-	</div>
-	<!-- souce code 뷰어 -->
-	<div class="box">
-		<pre class="brush: html;">
+    <h2>Input - normal</h2>
+    <div class="input-text">
+        <input type="text" placeholder="placeholder !!">
+        <button type="button" class="btn-remove">삭제</button>
+        <p class="msg">도움말</p>
+    </div>
+    <!-- souce code 뷰어 -->
+    <div class="box">
+        <pre class="brush: html;">
 			<div class="input-text">
 				<input type="text" placeholder="placeholder !!">
 				<button type="button" class="btn-remove">삭제</button>
 				<p class="msg">도움말</p>
 			</div>
 		</pre>
-	</div>
-	<!-- //souce code 뷰어 -->
+    </div>
+    <!-- //souce code 뷰어 -->
 
 
-<script>
-$(function(){
+    <script>
+        $(function() {
 
 
-});
-</script>
+        });
+    </script>
 
 
 
 
-	<h2>Input - error</h2>
-	<div class="input-text error">
-		<input type="text" value="has value" placeholder="placeholder !!">
-		<span class="btn-remove">삭제</span>
-		<p class="msg">에러 도움말</p>
-	</div>
-	<!-- souce code 뷰어 -->
-	<div class="box">
-		<pre class="brush: html;">
+    <h2>Input - error</h2>
+    <div class="input-text error">
+        <input type="text" value="has value" placeholder="placeholder !!">
+        <span class="btn-remove">삭제</span>
+        <p class="msg">에러 도움말</p>
+    </div>
+    <!-- souce code 뷰어 -->
+    <div class="box">
+        <pre class="brush: html;">
 			<div class="input-text error">
 				<input type="text" value="has value" placeholder="placeholder !!">
 				<span class="btn-remove">삭제</span>
 				<p class="msg">에러 도움말</p>
 			</div>
 		</pre>
-	</div>
-	<!-- //souce code 뷰어 -->
+    </div>
+    <!-- //souce code 뷰어 -->
 
-	<h2>Input - disabled</h2>
-	<div class="input-text">
-		<input type="text" value="has value:disabled" placeholder="placeholder !!" disabled="disabled">
-		<span class="btn-remove">삭제</span>
-		<p class="msg">비활성:disabled</p>
-	</div>
-	<!-- souce code 뷰어 -->
-	<div class="box">
-		<pre class="brush: html;">
+    <h2>Input - disabled</h2>
+    <div class="input-text">
+        <input type="text" value="has value:disabled" placeholder="placeholder !!" disabled="disabled">
+        <span class="btn-remove">삭제</span>
+        <p class="msg">비활성:disabled</p>
+    </div>
+    <!-- souce code 뷰어 -->
+    <div class="box">
+        <pre class="brush: html;">
 			<div class="input-text">
 				<input type="text" value="has value:disabled" placeholder="placeholder !!" disabled="disabled">
 				<span class="btn-remove">삭제</span>
 				<p class="msg">비활성:disabled</p>
 			</div>
 		</pre>
-	</div>
-	<!-- //souce code 뷰어 -->
+    </div>
+    <!-- //souce code 뷰어 -->
 
-	
 
-	<!-- souce code 뷰어 -->
-	<div class="box">
-		<pre class="brush: html;">
+
+    <!-- souce code 뷰어 -->
+    <div class="box">
+        <pre class="brush: html;">
 			<div class="inputBox idx">
 				<input type="text" name="" id="" class="inp num" onkeyup="numHangul2(this)" onblur="numHangulBlur(this)" data-max="3000000" data-min="500000"> <span class="idxTxt">원</span>
 			</div>
 		</pre>
-	</div>
-	<!-- //souce code 뷰어 -->
+    </div>
+    <!-- //souce code 뷰어 -->
 
-	<h2>Input - 달력</h2>
-	달력 인풋 / daterangepicker 적용
-	<!-- souce code 뷰어 -->
-	<div class="box">
-		<pre class="brush: html;">
+    <h2>Input - 달력</h2>
+    달력 인풋 / daterangepicker 적용
+    <!-- souce code 뷰어 -->
+    <div class="box">
+        <pre class="brush: html;">
 			달력 인풋 / daterangepicker 적용
 		</pre>
-	</div>
-	<!-- //souce code 뷰어 -->
+    </div>
+    <!-- //souce code 뷰어 -->
 
-	<h2>SelectBox</h2>
-	select
-	
-	<!-- souce code 뷰어 -->
-	<div class="box">
-		<pre class="brush: html;">
+    <h2>SelectBox</h2>
+    select
+
+    <!-- souce code 뷰어 -->
+    <div class="box">
+        <pre class="brush: html;">
 			select
 		</pre>
-	</div>
-	<!-- //souce code 뷰어 -->
+    </div>
+    <!-- //souce code 뷰어 -->
 
 
-	<h2>Textarea</h2>
-	<div class="textarea">
-		<textarea rows="4" placeholder="텍스트를 입력해주세요"></textarea>
-		<div class="textarea-count"><span>(0/50)</span>자 이내</div>
-	</div>
+    <h2>Textarea</h2>
+    <div class="textarea">
+        <textarea rows="4" placeholder="텍스트를 입력해주세요"></textarea>
+        <div class="textarea-count"><span>(0/50)</span>자 이내</div>
+    </div>
 
-	<br>
+    <br>
 
-	<div class="textarea">
-		<textarea rows="4" placeholder="텍스트를 입력해주세요" disabled="disabled"></textarea>
-		<div class="textarea-count"><span>(0/50)</span>자 이내</div>
-	</div>
-	<!-- souce code 뷰어 -->
-	<div class="box">
-		<pre class="brush: html;">
+    <div class="textarea">
+        <textarea rows="4" placeholder="텍스트를 입력해주세요" disabled="disabled"></textarea>
+        <div class="textarea-count"><span>(0/50)</span>자 이내</div>
+    </div>
+    <!-- souce code 뷰어 -->
+    <div class="box">
+        <pre class="brush: html;">
 			<div class="textarea">
 				<textarea rows="4" placeholder="텍스트를 입력해주세요"></textarea>
 				<div class="textarea-count"><span>(0/50)</span>자 이내</div>
@@ -664,26 +664,27 @@ $(function(){
 				<div class="textarea-count"><span>(0/50)</span>자 이내</div>
 			</div>
 		</pre>
-	</div>
-	<!-- //souce code 뷰어 -->
+    </div>
+    <!-- //souce code 뷰어 -->
 
 
 
-	<h2>Tab</h2>
-	<!-- souce code 뷰어 -->
-	<div class="box">
-		<pre class="brush: html;">
+    <h2>Tab</h2>
+    <!-- souce code 뷰어 -->
+    <div class="box">
+        <pre class="brush: html;">
 			<div class="gr-box">
 		    </div>
 		</pre>
-	</div>
+    </div>
 
-	<div class="guideLink">
-		<a href="template_a.html">가이드 1</a>
-		<a href="template_b.html">가이드 2</a>
-		<a href="template_c.html">가이드 3</a>
-		<a href="template_d.html">가이드 4</a>
-	</div>
+    <div class="guideLink">
+        <a href="template_a.html">가이드 1</a>
+        <a href="template_b.html">가이드 2</a>
+        <a href="template_c.html">가이드 3</a>
+        <a href="template_d.html">가이드 4</a>
+    </div>
 
 </body>
+
 </html>
