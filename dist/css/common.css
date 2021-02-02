@@ -77,6 +77,9 @@
 .mt40 {
 	margin-top: 40px !important;
 }
+.mb10 {
+	margin-bottom: 10px !important;
+}
 .pt0 {
 	padding-top: 0 !important;
 }
@@ -739,6 +742,9 @@
 	.rnd-checkbox{
 		position: relative;
 		padding: 13px 20px 12px 20px;
+	}
+	.rnd-checkbox + .rnd-checkbox{
+		margin-top: 10px;
 	}
 	.rnd-checkbox .lp-btn{
 		position: absolute;
@@ -2006,6 +2012,12 @@
 	    border-radius: 10px;
 	    box-shadow: 0px 0px 6px 0px rgba(179,187,199,0.3);
 	}
+	.gr-box .txt{
+		line-height: 20px;
+	}
+	.gr-box > .btn-pu{
+		margin-top: 20px;
+	}
 
 	/** // box **/
 
@@ -2422,6 +2434,17 @@
 		    bottom: 0;
 		    width: 100%;
 		    border-bottom: 1px solid #ebeff3;
+		}
+		.tab-box.disable:before{
+			content: '';
+			position: absolute;
+			top: 0;
+			left: 0;
+			z-index: 2;
+			width: 100%;
+			height: 100%;
+			background: #fff;
+			opacity: 0.7;
 		}
 		.tab-menu-wrap.swiper-container{
 		    width: 100%;
@@ -3215,11 +3238,93 @@
 
 
 
-
-
-
-
-
+/* 페이지 공통 스크롤 영역 */
+	.scroll-ud{
+	    position: relative;
+	    flex: 1;
+	    min-height: 0;
+	    margin-top: 30px;
+	    overflow: auto;
+	}
+	.scroll-ud.ov-case{
+		margin-top: 0;
+		padding-top: 30px;
+	    padding-bottom: 20px;
+	}
+	.scroll-ud.etc{
+		margin-top: 0;
+	}
+	.scroll-ud.ov-case.etc{
+		padding-top: 20px;
+	}
+	.scroll-ud.etc2{
+		margin-top: 20px;
+	}
+	.scroll-ud.ov-case.etc2{
+		margin-top: 0;
+		padding-top: 20px;
+	}
+	.scroll-ud.disable:after{
+		content: none;
+	}
+	.scroll-ud.disable:after{
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		z-index: 2;
+		width: 100%;
+		height: 100%;
+		background: #fff;
+		opacity: 0.7 !important;
+	}
+	.scroll-ud:before{
+	    content: '';
+	    position: absolute;
+	    top: 10px;
+	    left: 0;
+	    z-index: 1;
+	    width: 100%;
+	    height: 20px;
+	    background: url(../img/close-20-blue.png) no-repeat center center / 20px auto;
+	    opacity: 0;
+	    transition: .2s;
+	}
+	.scroll-ud.etc:before{
+		top: 0;
+	}
+	.scroll-ud.etc2:before{
+		top: 0;
+	}
+	.scroll-ud.up-dp:before{
+	    opacity: 1;
+	}
+	.scroll-ud:after{
+	    content: '';
+	    position: absolute;
+	    bottom: 0;
+	    left: 0;
+	    z-index: 1;
+	    width: 100%;
+	    height: 20px;
+	    background: url(../img/open-20-blue.png) no-repeat center center / 20px auto;
+	    opacity: 0;
+	    transition: .2s;
+	}
+	.scroll-ud.down-dp:after{
+	    opacity: 1;
+	}
+	.scroll-ud-inner{
+	    height: 100%;
+	    overflow: auto;
+	}
+	.scroll-ud .rst-list-wrap{
+	    margin-top: 0;
+	}
+	.scroll-ud .details-list{
+	    margin-top: 0;
+	}
+/* // 페이지 공통 스크롤 영역 */
 
 
 

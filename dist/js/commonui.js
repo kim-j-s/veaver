@@ -14,11 +14,11 @@ $(function(){
 	// input reset
 	InputReset();
 
-	// check-list
-	chkListWrap();
+	// 공통 스크롤 표시 설정
+	ScrollAreaChk();
 
-	// 항목 체크 리스트 스크롤 처리
-	chkListScroll();
+	// 스크롤 화살표 표시
+	ScrollActive();
 
 	// 우측 메뉴 버튼 display 처리
 	if ( $('.floating-btns').length > 0 ) {
@@ -118,34 +118,43 @@ function InputReset() {
 	});
 }
 
-// check-list
-function chkListWrap() {
-	var wrapHeight = $('.chk-list-cont').outerHeight();
-	var trgHiehgt = $('.chk-list-wrap > .inner').outerHeight();
-	if ( $('.chk-list-cont').length > 0 ) {
-		if (trgHiehgt > wrapHeight) {
-			$('.chk-list-cont').addClass('ov-case down-dp');
-		}
+
+// 공통 스크롤 표시 설정
+function ScrollAreaChk() {
+	var sudHeight = $('.scroll-ud').outerHeight();
+	var sudInHiehgt = $('.scroll-ud-inner > *').outerHeight();
+	if ( $('.scroll-ud').length > 0 ) {
+	    if (sudInHiehgt > sudHeight) {
+	        $('.scroll-ud').addClass('ov-case down-dp');
+	    } else {
+	    	$('.scroll-ud').removeClass('ov-case down-dp');
+	    }
 	}
 }
 
-// 항목 체크 리스트 스크롤 처리
-function chkListScroll() {
-	$('.chk-list-wrap').on('scroll', function(){
-		var st = Math.floor($(this).scrollTop());
-		var oh = Math.floor($(this).outerHeight());
-		if ( st <= 0 ) {	// 최상단 도달 시
-			$(this).closest('.chk-list-cont').removeClass('up-dp');
-		}
-		else if ( st > 0 && st + oh + 3 < $(this)[0].scrollHeight ) {
-			$(this).closest('.chk-list-cont').addClass('up-dp');
-			$(this).closest('.chk-list-cont').addClass('down-dp');
-		}
-		else if ( st + oh + 3 >= $(this)[0].scrollHeight) {
-			$(this).closest('.chk-list-cont').removeClass('down-dp');
-		}
+$(window).resize(function(){
+	ScrollAreaChk();
+})
+
+
+// 스크롤 화살표 표시
+function ScrollActive() {
+	$('.scroll-ud > *').on('scroll', function(){
+	    var st = Math.floor($(this).scrollTop());
+	    var oh = Math.floor($(this).outerHeight());
+	    if ( st <= 0 ) {    // 최상단 도달 시
+	        $(this).closest('.scroll-ud').removeClass('up-dp');
+	    }
+	     else if ( st > 0 && st + oh + 3 < $(this)[0].scrollHeight ) {
+	        $(this).closest('.scroll-ud').addClass('up-dp');
+	        $(this).closest('.scroll-ud').addClass('down-dp');
+	    }
+	     else if ( st + oh + 3 >= $(this)[0].scrollHeight) {
+	        $(this).closest('.scroll-ud').removeClass('down-dp');
+	    }
 	});
 }
+
 
 // 우측 메뉴 버튼 display 처리
 function floatBtns() {
