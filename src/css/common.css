@@ -3131,7 +3131,8 @@
 
 
 
-
+html {overflow: hidden;}
+body {touch-action: none;}
 
 
 /* 페이지 공통 스크롤 영역 */
