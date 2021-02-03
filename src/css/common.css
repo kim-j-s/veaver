@@ -3278,11 +3278,11 @@
 
 
 	.scroll-ud.full{
-		padding: 20px 0;
+		padding: 0 0 0 0;
 		margin: 0;
 	}
 	.scroll-ud.full:before{
-		top: 20px;
+		top: 0;
 		/*
 		background-image: url(../img/open-20-blue.png), linear-gradient(0deg, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 100%);
 		background-repeat: no-repeat, no-repeat;
@@ -3295,7 +3295,7 @@
 		background-size: auto 20px, 20px auto;
 	}
 	.scroll-ud.full:after{
-		bottom: 20px;
+		bottom: 0;
 		/*
 		background-image: url(../img/open-20-blue.png), linear-gradient(0deg, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 100%);
 		background-repeat: no-repeat, no-repeat;
