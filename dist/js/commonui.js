@@ -139,6 +139,9 @@ function ScrollAreaChk() {
 	    	$('.scroll-ud-inner').removeClass('on');
 	    }
 	}
+
+	console.log(sudHeight);
+	console.log(sudInHiehgt);
 }
 
 $(window).on('resize', function(){
