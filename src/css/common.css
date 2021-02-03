@@ -467,11 +467,8 @@
 		/* etc */
 
 		.btn-bottom-area{
-			position: absolute;
-			left: 0;
-			bottom: 22px;
-			width: 100%;
-			padding: 0 22px;
+			flex: none;
+			padding: 20px 22px;
 		}
 
 		/* // etc */
@@ -932,6 +929,7 @@
 		z-index: 2;
 		width: 100%;
 		height: 142px;
+		margin: 0;
 		padding: 14px 22px 0 22px;
 		background: #056bff;
 	}
@@ -1410,15 +1408,18 @@
 	/** full layer Popup **/
 
 	.layer-full-wrap{
-		position: absolute;
+		/*position: absolute;*/
+		position: fixed;
 		top: 0;
 		right: 0;
 		bottom: 0;
 		left: 0;
 		z-index: 100;
+		display: flex;
+		flex-direction: column;
 		width: 100%;
 		height: 100%;
-		padding: 58px 0 0 0;
+		padding: 0 0 20px 0;
 		background: #fff;
 	}
 	.layer-full-wrap.btn-add{
@@ -1426,8 +1427,13 @@
 	}
 	.layer-content{
 		position:relative;
+		/*
 		height:100%;
 		min-height:100%;
+		*/
+		flex: 1;
+		/*display: flex;
+		flex-direction: column;*/
 		padding:20px 22px 20px 22px;
 		overflow: auto;
 	}
@@ -1437,16 +1443,31 @@
 	.layer-content.none-b{
 		padding-bottom: 0;
 	}
+	.layer-content.scroll-ud,
+	.layer-content.scroll-ud.ov-case{
+		margin-top: 0;
+		padding-top: 20px;
+	}
+
+	.flex-none-cont{
+		flex: none;
+		padding: 0 22px;
+	}
 
 	/* 헤더 */
 
 		header{
+			/*
 			position:fixed;
 			top: 0;
 			left: 0;
 			z-index: 70;
 			width: 100%;
 			height: 58px;
+			*/
+			position: relative;
+			flex: none;
+			margin-bottom: 20px;
 			padding: 14px 22px;
 			font-size: 17px;
 			font-weight: bold;
@@ -1455,6 +1476,8 @@
 		}
 		.header-inner{
 			position: relative;
+			display: flex;
+			flex-direction: row;
 			min-height: 30px;
 			padding-left: 35px;
 		}
@@ -1463,15 +1486,21 @@
 		}
 		.header-title{
 			display: inline-block;
+			flex: 1 1 auto;
 			line-height: 30px;
 			font-weight: 400;
 			font-size: 17px;
 		}
 		.header-inner .h-utils{
+			/*
 			position: absolute;
 			top: 0;
 			right: 0;
 			font-size: 0;
+			*/
+			flex: 1 1 auto;
+			text-align: right;
+			/*float: right;*/
 		}
 		.header-inner .h-utils > button{
 			display: inline-block;
@@ -1533,6 +1562,7 @@
 	/* 검색 헤더 */
 
 		.search-header{
+			/*
 			position:fixed;
 			top: 0;
 			left: 0;
@@ -1544,6 +1574,7 @@
 			font-weight: bold;
 			color: #191919;
 			background: #fff;
+			*/
 		}
 		.search-header:after{
 			content: '';
@@ -1976,11 +2007,10 @@
 /*** content ***/
 
 	.wrap{
+		display: flex;
+		flex-direction: column;
 		height: 100%;
-		padding: 58px 0 0 0;
-	}
-	.wrap.btn-add{
-		padding: 58px 0 74px 0;
+		padding: 0 0 20px 0;
 	}
 
 
@@ -3184,14 +3214,13 @@
 
 
 
-
-
 /* 페이지 공통 스크롤 영역 */
 	.scroll-ud{
 	    position: relative;
 	    flex: 1;
 	    min-height: 0;
 	    margin-top: 30px;
+	    padding: 0 22px;
 	    overflow: auto;
 	}
 	.scroll-ud.ov-case{
@@ -3201,6 +3230,7 @@
 	}
 	.scroll-ud.etc{
 		margin-top: 0;
+		padding-top: 0;
 	}
 	.scroll-ud.ov-case.etc{
 		padding-top: 20px;
@@ -3263,9 +3293,14 @@
 	    opacity: 1;
 	}
 	.scroll-ud-inner{
-	    height: 100%;
-	    overflow: auto;
+	    /*height: 100%;
+	    overflow: auto;*/
 	}
+	.scroll-ud-inner.on{
+		height: 100%;
+	    overflow: auto;	
+	}
+
 	.scroll-ud .rst-list-wrap{
 	    margin-top: 0;
 	}
@@ -3274,50 +3309,39 @@
 	}
 
 
-
-
 	.scroll-ud.full{
-		padding: 20px 0;
+		padding: 0 22px;
 		margin: 0;
 	}
 	.scroll-ud.full:before{
-		top: 20px;
-		/*
-		background-image: url(../img/open-20-blue.png), linear-gradient(0deg, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 100%);
-		background-repeat: no-repeat, no-repeat;
-		background-position: center center, top;
-		background-size: 20px auto;
-		*/
+		top: 0;
 		background-image: linear-gradient(0deg, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 100%), url(../img/close-20-blue.png);
 		background-repeat: no-repeat, no-repeat;
 		background-position: top, center center;
 		background-size: auto 20px, 20px auto;
 	}
 	.scroll-ud.full:after{
-		bottom: 20px;
-		/*
-		background-image: url(../img/open-20-blue.png), linear-gradient(0deg, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 100%);
-		background-repeat: no-repeat, no-repeat;
-		background-position: center center, top;
-		background-size: 20px auto;
-		*/
+		bottom: 0;
 		background-image: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 100%), url(../img/open-20-blue.png);
 		background-repeat: no-repeat, no-repeat;
 		background-position: top, center center;
 		background-size: auto 20px, 20px auto;
 	}
 
-
-	/*
-
-	background: rgb(255,255,255);
-background: linear-gradient(0deg, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 100%);
-
-
-	background: rgb(255,255,255);
-background: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 100%);
-*/
-
+	.layer-content.scroll-ud:before{
+		top: 20px;
+		background-image: linear-gradient(0deg, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 100%), url(../img/close-20-blue.png);
+		background-repeat: no-repeat, no-repeat;
+		background-position: top, center center;
+		background-size: auto 20px, 20px auto;
+	}
+	.layer-content.scroll-ud:after{
+		bottom: 20px;
+		background-image: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 100%), url(../img/open-20-blue.png);
+		background-repeat: no-repeat, no-repeat;
+		background-position: top, center center;
+		background-size: auto 20px, 20px auto;
+	}
 
 
 /* // 페이지 공통 스크롤 영역 */

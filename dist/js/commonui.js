@@ -74,40 +74,46 @@ function toggleButton() {
 
 // input reset
 function InputReset() {
+	var $InpObj = $('input:text, input:password');
+	var $btnRemove = $('.btn-remove');
+
+	$InpObj.off('.InputReset');
+	$btnRemove.off('.InputReset');
+
 	// input reset
-	$('.btn-remove').click(function(){
+	$btnRemove.on('click.InputReset',function(){
 		$(this).closest('.input-text').find('input').val('');
 		$(this).hide();
 	});
 
 	// input reset button display
-	var InpObj = $('input:text, input:password');
-	$(InpObj).on('keyup', function(e) {
-		if($(this).val().length >= 1) {
-			$(this).closest('.input-text').find('.btn-remove').css('display','block');
+	$InpObj.on('keyup.InputReset', function(e) {
+		var $this = $(this);
+		if($this.val().length >= 1) {
+			$this.closest('.input-text').find('.btn-remove').css('display','block');
 		}
-		if ( $(this).val().length == 0 )
+		if ( $this.val().length == 0 )
 		{
-			$(this).next('.btn-remove').css('display','none');
+			$this.next('.btn-remove').css('display','none');
 		}
 	});
 
-	$(InpObj).unbind('focusin').focusin(function(){
+	$InpObj.on('focus.InputReset',function(){
 		if($(this).val().length >= 1) {
 			$(this).closest('.input-text').find('.btn-remove').css('display','block');
 		}
 	});
 
-	$('.btn-remove').unbind('focusout').focusout(function(){
+	$btnRemove.on('blur.InputReset',function(){
 		$(this).closest('.input-text').find('input').last().removeClass('focus');
 		$(this).hide();
 	});
 
-	$('.btn-remove').unbind('focusin').focusin(function(){
+	$btnRemove.on('focus.InputReset',function(){
 		$(this).closest('.input-text').find('input').last().addClass('focus');
 	});
 
-	$(InpObj).unbind('focusout').focusout(function(){
+	$InpObj.on('blur.InputReset',function(){
 		obj = this;
 		setTimeout(function(){
 			if ( !$(obj).closest('.input-text').find('.btn-remove').is(':focus'))
@@ -122,18 +128,27 @@ function InputReset() {
 // 공통 스크롤 표시 설정
 function ScrollAreaChk() {
 	var sudHeight = $('.scroll-ud').outerHeight();
-	var sudInHiehgt = $('.scroll-ud-inner > *').outerHeight();
+	//var sudInHiehgt = $('.scroll-ud-inner > *').outerHeight();
+	var sudInHiehgt = $('.scroll-ud-inner').outerHeight();
 	if ( $('.scroll-ud').length > 0 ) {
 	    if (sudInHiehgt > sudHeight) {
 	        $('.scroll-ud').addClass('ov-case down-dp');
+	        $('.scroll-ud-inner').addClass('on');
 	    } else {
 	    	$('.scroll-ud').removeClass('ov-case down-dp');
+	    	$('.scroll-ud-inner').removeClass('on');
 	    }
 	}
+
+	console.log(sudHeight);
+	console.log(sudInHiehgt);
 }
 
-$(window).resize(function(){
-	ScrollAreaChk();
+$(window).on('resize', function(){
+	$('.scroll-ud-inner').removeClass('on');
+	setTimeout(function(){
+		ScrollAreaChk();	
+	}, 10)
 })
 
 
