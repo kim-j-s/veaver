@@ -141,8 +141,11 @@ function ScrollAreaChk() {
 	}
 }
 
-$(window).resize(function(){
-	ScrollAreaChk();
+$(window).on('resize', function(){
+	$('.scroll-ud-inner').removeClass('on');
+	setTimeout(function(){
+		ScrollAreaChk();	
+	}, 10)
 })
 
 

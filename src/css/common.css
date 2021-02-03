@@ -467,11 +467,8 @@
 		/* etc */
 
 		.btn-bottom-area{
-			position: absolute;
-			left: 0;
-			bottom: 22px;
-			width: 100%;
-			padding: 0 22px;
+			flex: none;
+			padding: 0 22px 20px 22px;
 		}
 
 		/* // etc */
@@ -932,6 +929,7 @@
 		z-index: 2;
 		width: 100%;
 		height: 142px;
+		margin: 0;
 		padding: 14px 22px 0 22px;
 		background: #056bff;
 	}
@@ -1451,6 +1449,11 @@
 		padding-top: 20px;
 	}
 
+	.fl-none-cont{
+		flex: none;
+		padding: 0 22px;
+	}
+
 	/* 헤더 */
 
 		header{
@@ -1462,7 +1465,9 @@
 			width: 100%;
 			height: 58px;
 			*/
+			position: relative;
 			flex: none;
+			margin-bottom: 20px;
 			padding: 14px 22px;
 			font-size: 17px;
 			font-weight: bold;
@@ -1557,6 +1562,7 @@
 	/* 검색 헤더 */
 
 		.search-header{
+			/*
 			position:fixed;
 			top: 0;
 			left: 0;
@@ -1568,6 +1574,7 @@
 			font-weight: bold;
 			color: #191919;
 			background: #fff;
+			*/
 		}
 		.search-header:after{
 			content: '';
@@ -1977,7 +1984,7 @@
 	/** box **/
 
 	.gr-box{
-		margin: 6px 6px 0 6px;
+		/*margin: 6px 6px 0 6px;*/
 	    padding: 22px;
 	    border-radius: 10px;
 	    box-shadow: 0px 0px 6px 0px rgba(179,187,199,0.3);
@@ -2001,11 +2008,10 @@
 /*** content ***/
 
 	.wrap{
+		display: flex;
+		flex-direction: column;
 		height: 100%;
-		padding: 58px 0 0 0;
-	}
-	.wrap.btn-add{
-		padding: 58px 0 74px 0;
+		padding: 0 0 20px 0;
 	}
 
 
@@ -3217,6 +3223,7 @@
 	    flex: 1;
 	    min-height: 0;
 	    margin-top: 30px;
+	    padding: 0 22px;
 	    overflow: auto;
 	}
 	.scroll-ud.ov-case{
