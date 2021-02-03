@@ -54,7 +54,6 @@
         </section>
         <!-- //컨텐츠 영역 -->
 
-
         <!-- 하단 팝업 -->
         <div class="bottom-pop on">
             <div class="bottom-pop-container">
@@ -65,56 +64,6 @@
                     </div>
                 </div>
                 <div class="bottom-pop-cont etc">
-
-                    <style>
-                        .step-swiper {
-                            position: relative;
-                            padding-top: 40px;
-                        }
-
-                        .step-swiper .swiper-slide {
-                            padding: 0 22px;
-                        }
-
-                        .step-swiper .swiper-slide .details-list {
-                            margin-top: 0;
-                        }
-
-                        .step-swiper .swiper-slide .details-list li:last-child {
-                            border-bottom: none;
-                        }
-
-                        .step-swiper .swiper-pagination {
-                            position: absolute;
-                            top: 0;
-                            left: 0;
-                            bottom: auto;
-                            width: 100%;
-                            text-align: left;
-                        }
-
-                        .step-swiper .swiper-pagination:after {
-                            content: '';
-                            position: absolute;
-                            left: 0;
-                            bottom: 0;
-                            width: 100%;
-                            border-bottom: 1px solid #ebeff3;
-                        }
-
-                        .step-swiper .swiper-pagination .swiper-pagination-bullet {
-                            width: auto;
-                            height: auto;
-                            margin: 0;
-                            font-size: 20px;
-                            line-height: 29px;
-                            background: none;
-                            opacity: 1;
-                        }
-
-                        .step-swiper .swiper-pagination .swiper-pagination-bullet {}
-                    </style>
-
                     <div class="step-swiper swiper-container">
                         <div class="swiper-wrapper">
                             <div class="swiper-slide">
@@ -142,6 +91,10 @@
                                     <li class="ty2">
                                         <span class="txt">접종기관</span>
                                         <span class="txt2">송파구보건소</span>
+                                    </li>
+                                    <li class="ty2">
+                                        <span class="txt">주소</span>
+                                        <span class="txt2">서울특별시 송파구 올림픽로</span>
                                     </li>
                                 </ul>
                             </div>
@@ -171,6 +124,10 @@
                                         <span class="txt">접종기관</span>
                                         <span class="txt2">송파구보건소</span>
                                     </li>
+                                    <li class="ty2">
+                                        <span class="txt">주소</span>
+                                        <span class="txt2">서울특별시 송파구 올림픽로</span>
+                                    </li>
                                 </ul>
                             </div>
                             <div class="swiper-slide">
@@ -199,14 +156,15 @@
                                         <span class="txt">접종기관</span>
                                         <span class="txt2">송파구보건소</span>
                                     </li>
+                                    <li class="ty2">
+                                        <span class="txt">주소</span>
+                                        <span class="txt2">서울특별시 송파구 올림픽로</span>
+                                    </li>
                                 </ul>
                             </div>
                         </div>
                         <div class="swiper-pagination"></div>
                     </div>
-
-
-
                 </div>
             </div>
         </div>
@@ -215,28 +173,6 @@
 </body>
 
 </html>
-
-
-<script>
-    $(function() {
-        var stepSwiper = new Swiper('.step-swiper', {
-            observer: true,
-            observeParents: true,
-            speed: 500,
-            spaceBetween: 20,
-            loop: true,
-            pagination: {
-                el: '.swiper-pagination',
-                clickable: true,
-                renderBullet: function(index, className) {
-                    return '<span class="' + className + '">' + (index + 1) + '차' + '</span>';
-                },
-            },
-        });
-    })
-</script>
-
-
 
 
 <!-- 팝업 구동 샘플 -->
