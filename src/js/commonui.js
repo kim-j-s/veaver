@@ -122,12 +122,15 @@ function InputReset() {
 // 공통 스크롤 표시 설정
 function ScrollAreaChk() {
 	var sudHeight = $('.scroll-ud').outerHeight();
-	var sudInHiehgt = $('.scroll-ud-inner > *').outerHeight();
+	//var sudInHiehgt = $('.scroll-ud-inner > *').outerHeight();
+	var sudInHiehgt = $('.scroll-ud-inner').outerHeight();
 	if ( $('.scroll-ud').length > 0 ) {
 	    if (sudInHiehgt > sudHeight) {
 	        $('.scroll-ud').addClass('ov-case down-dp');
+	        $('.scroll-ud-inner').addClass('on');
 	    } else {
 	    	$('.scroll-ud').removeClass('ov-case down-dp');
+	    	$('.scroll-ud-inner').removeClass('on');
 	    }
 	}
 }

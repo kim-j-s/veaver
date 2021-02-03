@@ -1455,7 +1455,6 @@
 		width: 100%;
 		height: 100%;
 		/*padding: 58px 0 0 0;*/
-		padding: 0;
 		background: #fff;
 	}
 	.layer-full-wrap.btn-add{
@@ -1468,6 +1467,8 @@
 		min-height:100%;
 		*/
 		flex: 1;
+		/*display: flex;
+		flex-direction: column;*/
 		padding:20px 22px 20px 22px;
 		overflow: auto;
 	}
@@ -1476,6 +1477,11 @@
 	}
 	.layer-content.none-b{
 		padding-bottom: 0;
+	}
+	.layer-content.scroll-ud,
+	.layer-content.scroll-ud.ov-case{
+		margin-top: 0;
+		padding-top: 20px;
 	}
 
 	/* 헤더 */
@@ -3364,7 +3370,13 @@
 	    opacity: 1;
 	}
 	.scroll-ud-inner{
+		/*
 	    height: 100%;
+	    overflow: auto;
+	    */
+	}
+	.scroll-ud-inner.on{
+		height: 100%;
 	    overflow: auto;
 	}
 	.scroll-ud .rst-list-wrap{
@@ -3388,6 +3400,21 @@
 	}
 	.scroll-ud.full:after{
 		bottom: 0;
+		background-image: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 100%), url(../img/open-20-blue.png);
+		background-repeat: no-repeat, no-repeat;
+		background-position: top, center center;
+		background-size: auto 20px, 20px auto;
+	}
+
+	.layer-content.scroll-ud:before{
+		top: 20px;
+		background-image: linear-gradient(0deg, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 100%), url(../img/close-20-blue.png);
+		background-repeat: no-repeat, no-repeat;
+		background-position: top, center center;
+		background-size: auto 20px, 20px auto;
+	}
+	.layer-content.scroll-ud:after{
+		bottom: 20px;
 		background-image: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 100%), url(../img/open-20-blue.png);
 		background-repeat: no-repeat, no-repeat;
 		background-position: top, center center;
