@@ -48,7 +48,7 @@
 			padding: 0 20px;
 		}
 
-		h2:not(.titH2){
+		h2:not(.tit-h2){
 			padding: 20px 0;
 			margin-top: 20px;
 			border-top: 1px dashed #666666;
@@ -144,6 +144,7 @@
 
 
 	<h2>Heading</h2>
+	<h2 class="tit-h2">tit-h2 [ weight : 400 / size : 20px / color : #056bff / line-height : 29px ]</h2>
 	<h3 class="tit-h3">tit-h3 [ weight : 400 / size : 18px / color : #000 / line-height : 27px ]</h3>
 	<h4 class="tit-h4">tit-h4 [ weight : 500 / size : 16px / color : #056bff / line-height : 24px ]</h4>
 	<!-- content here -->
@@ -605,14 +606,18 @@ $(function(){
 	</div>
 	<!-- //souce code 뷰어 -->
 
-	
-
+	<h2>Input - box Type</h2>
+	<div class="input-text box-ty">
+        <input type="text" id="inpage" placeholder="숫자만 입력해 주세요.">
+        <button type="button" class="btn-remove">삭제</button>
+    </div>
 	<!-- souce code 뷰어 -->
 	<div class="box">
 		<pre class="brush: html;">
-			<div class="inputBox idx">
-				<input type="text" name="" id="" class="inp num" onkeyup="numHangul2(this)" onblur="numHangulBlur(this)" data-max="3000000" data-min="500000"> <span class="idxTxt">원</span>
-			</div>
+			<div class="input-text box-ty">
+		        <input type="text" id="inpage" placeholder="숫자만 입력해 주세요.">
+		        <button type="button" class="btn-remove">삭제</button>
+		    </div>
 		</pre>
 	</div>
 	<!-- //souce code 뷰어 -->

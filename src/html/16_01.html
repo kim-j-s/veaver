@@ -1,0 +1,152 @@
+@@include('head.html',{
+    "title":"건강검진관리 | "
+})
+<body>
+    <div class="layer-full-wrap pb0">
+        <!-- 헤더영역 -->
+        @@include('header10.html',{
+            "layertitle":"건강검진관리"
+        })
+        <!-- //헤더영역 -->
+
+        <!-- 컨텐츠 영역 -->
+        <section class="scroll-ud full mt0">
+            <div class="scroll-ud-inner">
+
+
+<style>
+.bg-box{
+    padding: 20px 22px;
+    background: #f7f8fc;
+}
+.bg-box > .txt{
+    font-size: 16px;
+    line-height: 24px;
+}
+</style>
+                <div class="bg-box">
+                    <p class="txt">
+                        검진 기록은 ‘직접 입력‘, 공단 기록을 ‘자동 입력’ 하는  두 가지 방법이 있습니다. 아래의 메뉴 버튼에서 원하는 방법을 선택하세요.
+                    </p>
+
+                    <div class="inp-group box-ty">
+                        <label for="chkdate" class="label bold-ty">검진일</label>
+                        <div class="input-text">
+                            <input type="text" id="chkdate" placeholder="YYYY/MM/DD">
+                        </div>
+                    </div>
+                    <div class="inp-group box-ty">
+                        <label for="center" class="label bold-ty">검진기관</label>
+                        <div class="input-text">
+                            <input type="text" id="center" placeholder="">
+                        </div>
+                    </div>
+                </div>
+
+
+<style>
+.part-cont{
+    display: flex;
+    flex-direction: row;
+}
+.part-cont + .part-cont{
+    margin-top: 22px;
+}
+.part-cont > *{
+    /*flex: 1 1 auto;*/
+    /*align-items: flex-end;*/
+    /*justify-content: bottom;*/
+    align-self: flex-end;
+}
+.part-cont > * + *{
+    margin-left: 10px;
+}
+.part-cont .inp-group.box-ty + .inp-group.box-ty{
+    margin-top: 0;
+}
+
+.l-cont{
+    padding: 30px 22px 20px 22px;
+}
+.l-cont + .l-cont{
+    padding-top: 40px;
+}
+.l-cont .tit-h2{
+    margin-bottom: 20px;
+}
+
+
+
+.inp-group .input-text.word-add{
+    display: flex;
+    flex-direction: row;
+    padding: 12px 10px 12px 22px;
+}
+.inp-group .input-text.word-add > input{
+    flex: 1 1 auto;
+}
+.inp-group .word-add:after{
+    content: attr(data-word);
+    flex: 1 1 auto;
+    margin-left: 10px;
+    font-weight: 400;
+    font-size: 12px;
+    color: #b5b9c1;
+}
+</style>
+                <div class="l-cont">
+                    <h2 class="tit-h2">계측검사</h2>
+                    <div class="part-cont">
+                        <div class="inp-group box-ty">
+                            <label for="long" class="label">키</label>
+                            <div class="input-text word-add" data-word="cm">
+                                <input type="text" id="long">
+                            </div>
+                        </div>
+                        <div class="inp-group box-ty">
+                            <label for="kg" class="label">체중</label>
+                            <div class="input-text word-add" data-word="kg">
+                                <input type="text" id="kg">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="part-cont">
+                        <div class="inp-group box-ty">
+                            <label for="size1" class="label">허리둘레</label>
+                            <div class="input-text word-add" data-word="cm">
+                                <input type="text" id="size1">
+                            </div>
+                        </div>
+                        <div class="inp-group box-ty">
+                            <label for="size2" class="label">체질량지수</label>
+                            <div class="input-text word-add" data-word="cm">
+                                <input type="text" id="size2">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="part-cont">
+                        <div class="inp-group box-ty">
+                            <label for="size1" class="label">시력</label>
+                            <div class="input-text word-add" data-word="L">
+                                <input type="text" id="size1">
+                            </div>
+                        </div>
+                        <div class="inp-group box-ty">
+                            <!-- <label for="size2" class="label">시력</label> -->
+                            <div class="input-text word-add" data-word="R">
+                                <input type="text" id="size2">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- //컨텐츠 영역 -->
+
+        <div class="btn-bottom-area">
+            <button type="button" class="btn-pu">저장하기</button>
+        </div>
+
+    </div>
+</body>
+</html>
