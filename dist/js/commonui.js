@@ -49,6 +49,9 @@ $(function(){
 	// swiper Gallery - 병원목록 - 지도보기
 	hostSwiper();
 
+	// 접종내역 - 상세
+	stepSwiper();
+
 //script ready
 });
 
@@ -139,10 +142,16 @@ function ScrollAreaChk() {
 	    	$('.scroll-ud-inner').removeClass('on');
 	    }
 	}
+
+	console.log(sudHeight);
+	console.log(sudInHiehgt);
 }
 
-$(window).resize(function(){
-	ScrollAreaChk();
+$(window).on('resize', function(){
+	$('.scroll-ud-inner').removeClass('on');
+	setTimeout(function(){
+		ScrollAreaChk();	
+	}, 10)
 })
 
 
@@ -169,7 +178,8 @@ function ScrollActive() {
 function floatBtns() {
 	var $flb = $('.floating-btns');
 	var t;
-    $('.layer-content, .chk-list-wrap, .rst-list-wrap').scroll(function () {
+    //$('.layer-content, .chk-list-wrap, .rst-list-wrap').scroll(function () {
+    $('.scroll-ud-inner').scroll(function () {
         $flb.addClass('on');
         setTimeout(function(){
         	$flb.hide();
@@ -295,6 +305,27 @@ function hostSwiper() {
         });
     }
 }
+
+// 접종내역 - 상세
+function stepSwiper() {
+	if ( $('.step-swiper').find('.swiper-slide').length > 1 ){
+		var stepSwiper = new Swiper('.step-swiper', {
+		    observer: true,
+		    observeParents: true,
+		    speed: 500,
+		    spaceBetween: 20,
+		    loop: true,
+		    pagination: {
+		        el: '.swiper-pagination',
+		        clickable: true,
+		        renderBullet: function (index, className) {
+		            return '<span class="' + className + '">' + (index + 1) + '차' + '</span>';
+		        },
+		    },
+		});
+	}
+}
+
 
 
 var $arrPop = [];
