@@ -3041,13 +3041,20 @@
 
 	/* 상세 페이지 컨텐츠 삽입 영역 */
 
-		.card-content-area{
+		.card-content-area {
+			letter-spacing: -1px;
 		}
-		.card-content + .card-content{
-		    margin-top: 20px;
+		.card-content-area b {
+			font-weight: 700;
+		}
+		.card-content-area p {
+			margin-bottom: 16px;
+		}
+		.card-content {
+			margin-bottom: 20px;
 		}
 		.card-content.etc + .card-content{
-		    margin-top: 0;
+			margin-top: 0;
 		}
 
 	/* // 상세 페이지 컨텐츠 삽입 영역 */
