@@ -146,12 +146,17 @@
 	<h2>Heading</h2>
 	<h2 class="tit-h2">tit-h2 [ weight : 400 / size : 20px / color : #056bff / line-height : 29px ]</h2>
 	<h3 class="tit-h3">tit-h3 [ weight : 400 / size : 18px / color : #000 / line-height : 27px ]</h3>
+	<h3 class="tit-h3 sm">tit-h3.sm [ weight : 400 / size : 14px / color : #000 / line-height : 20px ]</h3>
 	<h4 class="tit-h4">tit-h4 [ weight : 500 / size : 16px / color : #056bff / line-height : 24px ]</h4>
 	<!-- content here -->
 	<!-- souce code 뷰어 -->
 	<div class="box">
 		<pre class="brush: html;">
+			<h2 class="tit-h2"></h2>
+
 			<h3 class="tit-h3"></h3>
+
+			<h3 class="tit-h3 sm"></h3>
 
 			<h4 class="tit-h4"></h4>
 		</pre>
@@ -560,12 +565,29 @@
 	<!-- //souce code 뷰어 -->
 
 
-<script>
-$(function(){
+	<h2>Input - normal - box</h2>
+	<div class="inp-group box-ty">
+        <label for="lc-2-1" class="label">혈색소</label>
+        <div class="input-text word-add" data-word="g/dL">
+            <input type="text" id="lc-2-1">
+        </div>
+    </div>
+	<!-- souce code 뷰어 -->
+	<div class="box">
+		<pre class="brush: html;">
+			<div class="inp-group box-ty">
+		        <label for="" class="label"></label>
+		        <div class="input-text word-add" data-word="">
+		            <input type="text" id="">
+		        </div>
+		    </div>
+		</pre>
+	</div>
+	<!-- //souce code 뷰어 -->
+	<p class="i-txt">data-word는 필요여부에 따라 생성</p>
 
 
-});
-</script>
+
 
 
 

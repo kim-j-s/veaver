@@ -231,6 +231,10 @@
 		    font-size: 18px;
 		    line-height: 27px;
 		}
+		.tit-h3.sm{
+			font-size: 14px;
+			line-height: 20px;
+		}
 		.tit-h4{
 		    font-weight: 500;
 		    font-size: 16px;
@@ -615,7 +619,6 @@
 			width: 15px;
 		}
 
-
 		.inp-group.box-ty .label{
 			margin-bottom: 4px;
 			line-height: 20px;
@@ -638,6 +641,26 @@
 			top: 50%;
 			right: 22px;
 			transform: translateY(-50%);
+		}
+
+		.inp-group .input-text.word-add{
+		    display: flex;
+		    flex-direction: row;
+		    align-items: center;
+		    padding: 0 10px 0 22px;
+		    height: 48px;
+		}
+		.inp-group .input-text.word-add > input{
+		    flex: 1 1 auto;
+		}
+		.inp-group .word-add:after{
+		    content: attr(data-word);
+		    flex: 1 1 auto;
+		    margin-left: 5px;
+		    font-weight: 400;
+		    font-size: 12px;
+		    color: #b5b9c1;
+		    line-height: 18px;
 		}
 
 	/** // input-text **/
@@ -755,6 +778,10 @@
 		-webkit-transition: background-color .2s, border-color .2s;
 		transition: background-color .2s, border-color .2s;
 		transform: translateY(-50%);
+	}
+	.input-checkbox > span.etc::before {
+		top: 0;
+		transform: none;
 	}
 	.input-checkbox > input:checked + span::before {
 		background-image: url(../img/ac-ic-check-sel.png);
@@ -3063,16 +3090,6 @@
 	/* // 상세 페이지 컨텐츠 삽입 영역 */
 
 
-	.g-box{
-	    margin-top: 40px;
-	    padding: 32px 22px;
-	    font-size: 12px;
-	    line-height: 18px;
-	    color: #74777b;
-	    text-align: center;
-	    background: #f9fafb;
-	}
-
 	/* 더보기 */
 
 		.more-cont{
@@ -3433,4 +3450,51 @@
 /* // 페이지 공통 스크롤 영역 */
 
 
+	/*Element*/
+		.g-box{
+		    margin-top: 40px;
+		    padding: 32px 22px;
+		    font-size: 12px;
+		    line-height: 18px;
+		    color: #74777b;
+		    text-align: center;
+		    background: #f9fafb;
+		}
 
+		.bg-box{
+		    padding: 20px 22px;
+		    background: #f7f8fc;
+		}
+		.bg-box > .txt{
+		    font-size: 16px;
+		    line-height: 24px;
+		}
+
+		.part-cont{
+		    display: flex;
+		    flex-direction: row;
+		    align-items: flex-end;
+		}
+		.part-cont + .part-cont{
+		    margin-top: 22px;
+		}
+		.part-cont > *{
+		    width: 100%;
+		}
+		.part-cont > * + *{
+		    margin-left: 10px;
+		}
+		.part-cont .inp-group.box-ty + .inp-group.box-ty{
+		    margin-top: 0;
+		}
+
+		.l-cont{
+		    padding: 30px 22px 20px 22px;
+		}
+		.l-cont + .l-cont{
+		    padding-top: 40px;
+		}
+		.l-cont .tit-h2{
+		    margin-bottom: 20px;
+		}
+	/*Element*/

@@ -53,7 +53,7 @@
         <!-- 컨텐츠 영역 -->
         <section class="scroll-ud full mt0">
             <div class="scroll-ud-inner">
-                <div class="bg-box">
+                <div class="bg-box" style="display: none;">
                     <p class="txt">
                         검진 기록은 ‘직접 입력‘, 공단 기록을 ‘자동 입력’ 하는 두 가지 방법이 있습니다. 아래의 메뉴 버튼에서 원하는 방법을 선택하세요.
                     </p>
@@ -72,90 +72,19 @@
                     </div>
                 </div>
 
-
-                <style>
-                    .bg-box {
-                        padding: 20px 22px;
-                        background: #f7f8fc;
-                    }
-
-                    .bg-box>.txt {
-                        font-size: 16px;
-                        line-height: 24px;
-                    }
-
-                    .part-cont {
-                        display: flex;
-                        flex-direction: row;
-                        align-items: flex-end;
-                    }
-
-                    .part-cont+.part-cont {
-                        margin-top: 22px;
-                    }
-
-                    .part-cont>* {
-                        width: 100%;
-                    }
-
-                    .part-cont>*+* {
-                        margin-left: 10px;
-                    }
-
-                    .part-cont .inp-group.box-ty+.inp-group.box-ty {
-                        margin-top: 0;
-                    }
-
-                    .l-cont {
-                        padding: 30px 22px 20px 22px;
-                    }
-
-                    .l-cont+.l-cont {
-                        padding-top: 40px;
-                    }
-
-                    .l-cont .tit-h2 {
-                        margin-bottom: 20px;
-                    }
-
-
-
-                    .inp-group .input-text.word-add {
-                        display: flex;
-                        flex-direction: row;
-                        align-items: center;
-                        padding: 0 10px 0 22px;
-                        height: 48px;
-                    }
-
-                    .inp-group .input-text.word-add>input {
-                        flex: 1 1 auto;
-                        /*background: rgba(0,0,0,0.3);*/
-                    }
-
-                    .inp-group .word-add:after {
-                        content: attr(data-word);
-                        flex: 1 1 auto;
-                        margin-left: 10px;
-                        font-weight: 400;
-                        font-size: 12px;
-                        color: #b5b9c1;
-                        line-height: 18px;
-                    }
-                </style>
-                <div class="l-cont">
+                <div class="l-cont" style="display: none;">
                     <h2 class="tit-h2">계측검사</h2>
                     <div class="part-cont">
                         <div class="inp-group box-ty">
                             <label for="lc-1-1" class="label">키</label>
                             <div class="input-text word-add" data-word="cm">
-                                <input type="text" id="lc-1-1">
+                                <input type="text" id="lc-1-1" class="t-right">
                             </div>
                         </div>
                         <div class="inp-group box-ty">
                             <label for="lc-1-2" class="label">체중</label>
                             <div class="input-text word-add" data-word="kg">
-                                <input type="text" id="lc-1-2">
+                                <input type="text" id="lc-1-2" class="t-right">
                             </div>
                         </div>
                     </div>
@@ -163,13 +92,13 @@
                         <div class="inp-group box-ty">
                             <label for="lc-1-3" class="label">허리둘레</label>
                             <div class="input-text word-add" data-word="cm">
-                                <input type="text" id="lc-1-3">
+                                <input type="text" id="lc-1-3" class="t-right">
                             </div>
                         </div>
                         <div class="inp-group box-ty">
                             <label for="lc-1-4" class="label">체질량지수</label>
                             <div class="input-text word-add" data-word="cm">
-                                <input type="text" id="lc-1-4">
+                                <input type="text" id="lc-1-4" class="t-right">
                             </div>
                         </div>
                     </div>
@@ -177,12 +106,12 @@
                         <div class="inp-group box-ty">
                             <label for="lc-1-5" class="label">시력</label>
                             <div class="input-text word-add" data-word="L">
-                                <input type="text" id="lc-1-5">
+                                <input type="text" id="lc-1-5" class="t-right">
                             </div>
                         </div>
                         <div class="inp-group box-ty">
                             <div class="input-text word-add" data-word="R">
-                                <input type="text" id="">
+                                <input type="text" id="" class="t-right">
                             </div>
                         </div>
                     </div>
@@ -190,12 +119,12 @@
                         <div class="inp-group box-ty">
                             <label for="lc-1-7" class="label">청력</label>
                             <div class="input-text word-add" data-word="L">
-                                <input type="text" id="lc-1-7">
+                                <input type="text" id="lc-1-7" class="t-right">
                             </div>
                         </div>
                         <div class="inp-group box-ty">
                             <div class="input-text word-add" data-word="R">
-                                <input type="text" id="">
+                                <input type="text" id="" class="t-right">
                             </div>
                         </div>
                     </div>
@@ -203,31 +132,31 @@
                         <div class="inp-group box-ty">
                             <label for="lc-1-9" class="label">혈압(수축기)</label>
                             <div class="input-text word-add" data-word="mmHg">
-                                <input type="text" id="lc-1-9">
+                                <input type="text" id="lc-1-9" class="t-right">
                             </div>
                         </div>
                         <div class="inp-group box-ty">
                             <label for="lc-1-10" class="label">혈압(이완기)</label>
                             <div class="input-text word-add" data-word="mmHg">
-                                <input type="text" id="lc-1-10">
+                                <input type="text" id="lc-1-10" class="t-right">
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="l-cont">
+                <div class="l-cont" style="display: none;">
                     <h2 class="tit-h2">혈액검사</h2>
                     <div class="part-cont">
                         <div class="inp-group box-ty">
                             <label for="lc-2-1" class="label">혈색소</label>
                             <div class="input-text word-add" data-word="g/dL">
-                                <input type="text" id="lc-2-1">
+                                <input type="text" id="lc-2-1" class="t-right">
                             </div>
                         </div>
                         <div class="inp-group box-ty">
                             <label for="lc-2-2" class="label">공복혈당</label>
                             <div class="input-text word-add" data-word="mg/dL">
-                                <input type="text" id="lc-2-2">
+                                <input type="text" id="lc-2-2" class="t-right">
                             </div>
                         </div>
                     </div>
@@ -235,13 +164,13 @@
                         <div class="inp-group box-ty">
                             <label for="lc-2-3" class="label">중성지방</label>
                             <div class="input-text word-add" data-word="mmHg">
-                                <input type="text" id="lc-2-3">
+                                <input type="text" id="lc-2-3" class="t-right">
                             </div>
                         </div>
                         <div class="inp-group box-ty">
                             <label for="lc-2-4" class="label">저밀도(L이) 콜레스테롤</label>
                             <div class="input-text word-add" data-word="mmHg">
-                                <input type="text" id="lc-2-4">
+                                <input type="text" id="lc-2-4" class="t-right">
                             </div>
                         </div>
                     </div>
@@ -249,13 +178,13 @@
                         <div class="inp-group box-ty">
                             <label for="lc-2-5" class="label">혈청크레아티닌</label>
                             <div class="input-text word-add" data-word="g/dL">
-                                <input type="text" id="lc-2-5">
+                                <input type="text" id="lc-2-5" class="t-right">
                             </div>
                         </div>
                         <div class="inp-group box-ty">
                             <label for="lc-2-6" class="label">신사구체여과율(e-GFR)</label>
                             <div class="input-text word-add" data-word="mL/min /1.73m2">
-                                <input type="text" id="lc-2-6">
+                                <input type="text" id="lc-2-6" class="t-right">
                             </div>
                         </div>
                     </div>
@@ -263,13 +192,13 @@
                         <div class="inp-group box-ty">
                             <label for="lc-2-7" class="label">AST(SGOT)</label>
                             <div class="input-text word-add" data-word="IU/L">
-                                <input type="text" id="lc-2-7">
+                                <input type="text" id="lc-2-7" class="t-right">
                             </div>
                         </div>
                         <div class="inp-group box-ty">
                             <label for="lc-2-8" class="label">ALT(SGPT)</label>
                             <div class="input-text word-add" data-word="IU/L">
-                                <input type="text" id="lc-2-8">
+                                <input type="text" id="lc-2-8" class="t-right">
                             </div>
                         </div>
                     </div>
@@ -277,11 +206,147 @@
                         <div class="inp-group box-ty">
                             <label for="lc-2-9" class="label">감마지티피(γ-GTP)</label>
                             <div class="input-text word-add" data-word="IU/L">
-                                <input type="text" id="lc-2-9">
+                                <input type="text" id="lc-2-9" class="t-right">
                             </div>
                         </div>
                     </div>
                 </div>
+
+                <div class="l-cont">
+                    <h2 class="tit-h2">요검사</h2>
+                    <h3 class="tit-h3 sm">요단백</h3>
+                    <ul class="list-04">
+                        <li>
+                            <label class="input-radio">
+                                <input type="radio" name="text01"><span>정상</span>
+                            </label>
+                        </li>
+                        <li>
+                            <label class="input-radio">
+                                <input type="radio" name="text01"><span>경계</span>
+                            </label>
+                        </li>
+                        <li>
+                            <label class="input-radio">
+                                <input type="radio" name="text01"><span>단백뇨 의심</span>
+                            </label>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="l-cont">
+                    <h2 class="tit-h2">영상검사</h2>
+                    <h3 class="tit-h3 sm">흉부촬영</h3>
+                    <ul class="list-04">
+                        <li>
+                            <label class="input-radio">
+                                <input type="radio" name="text02"><span>정상</span>
+                            </label>
+                        </li>
+                        <li>
+                            <label class="input-radio">
+                                <input type="radio" name="text02"><span>비활동성 폐결핵</span>
+                            </label>
+                        </li>
+                        <li>
+                            <label class="input-radio">
+                                <input type="radio" name="text02"><span>질환의심</span>
+                            </label>
+                            <div class="inp-group box-ty">
+                                <div class="input-text word-add">
+                                    <input type="text" id="">
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <label class="input-radio">
+                                <input type="radio" name="text02"><span>기타증상</span>
+                            </label>
+                            <div class="inp-group box-ty">
+                                <div class="input-text word-add">
+                                    <input type="text" id="">
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="l-cont">
+                    <h2 class="tit-h2">문진정보</h2>
+                    <h3 class="tit-h3 sm">진단여부</h3>
+                    <ul class="list-04 half">
+                        <li>
+                            <label class="input-checkbox">
+                                <input type="checkbox"><span class="etc">뇌졸중(중풍)</span>
+                            </label>
+                        </li>
+                        <li>
+                            <label class="input-checkbox">
+                                <input type="checkbox"><span class="etc">심장병(심근경색/협심증)</span>
+                            </label>
+                        </li>
+                        <li>
+                            <label class="input-checkbox">
+                                <input type="checkbox"><span class="etc">폐결핵</span>
+                            </label>
+                        </li>
+                        <li>
+                            <label class="input-checkbox">
+                                <input type="checkbox"><span class="etc">이상지질혈증</span>
+                            </label>
+                        </li>
+                        <li>
+                            <label class="input-checkbox">
+                                <input type="checkbox"><span class="etc">고혈압</span>
+                            </label>
+                        </li>
+                        <li>
+                            <label class="input-checkbox">
+                                <input type="checkbox"><span class="etc">당뇨병</span>
+                            </label>
+                        </li>
+                        <li>
+                            <label class="input-checkbox">
+                                <input type="checkbox"><span class="etc">기타(암포함)</span>
+                            </label>
+                        </li>
+                    </ul>
+
+                    <h3 class="tit-h3 sm">약물치료 여부</h3>
+                </div>
+
+
+                <style>
+                    .tit-h3+.list-04 {
+                        margin-top: 10px;
+                    }
+
+                    .list-04+.tit-h3 {
+                        margin-top: 30px;
+                    }
+
+                    .list-04 {
+                        font-size: 0;
+                    }
+
+                    .list-04>li+li {
+                        margin-top: 20px;
+                    }
+
+                    .list-04 .input-radio+.inp-group {
+                        margin-top: 4px;
+                    }
+
+                    .list-04.half>li {
+                        display: inline-block;
+                        vertical-align: top;
+                        width: 50%;
+                    }
+
+                    .list-04.half>li:nth-child(-n + 2) {
+                        margin-top: 0;
+                    }
+                </style>
 
 
             </div>
