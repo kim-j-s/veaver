@@ -3050,6 +3050,9 @@
 		.card-content-area p {
 			margin-bottom: 16px;
 		}
+		.card-content-area span {
+			font-weight: inherit;
+		}
 		.card-content {
 			margin-bottom: 20px;
 		}

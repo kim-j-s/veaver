@@ -9,7 +9,7 @@
 
             if (code == 'setSelfDiagnosisCheck') $this.setSelfDiagnosisCheck(data);
             else if (code == 'setSelfDiagnosisResult') $this.setSelfDiagnosisResult(data);
-            else if (code == 'setHealthMiningDetail') $this.setHealthMiningDetail(data);
+            else if (code == 'setHealthMiningDetailBody') $this.setHealthMiningDetailBody(data);
         });
 
     };
@@ -75,32 +75,51 @@
             let strHtml = '';
             let strBadge = '';
 
-            let imgSlideIdx = 0;
+            let $swiperSlide = null;
 
             data.forEach(function (obj) {
-                console.log(obj);
-                console.log(obj.typeId);
-                console.log(obj.htmlText);
+                // console.log(obj);
+                // console.log(obj.typeId);
+                // console.log(obj.htmlText);
                 if (obj.typeId == 'T') {
                     // T: 텍스트 카드뷰
-                    // let strHtml = 
                     $this.append(`<div class="card-content">${obj.htmlText}</div>`);
                 } else if (obj.typeId == 'I') {
                     // I: 이미지 카드뷰
+                    console.log(obj);
+                    console.log(obj.imgType);
+                    console.log(obj.imgSeq);
                     if (obj.imgType == 'Y') {
+                        $this.append(`<div class="card-content"><div class="gallery-swiper swiper-container"><div class="swiper-wrapper"></div><div class="swiper-pagination"></div></div></div>`);
+                        $swiperSlide = $this.find('.card-content .swiper-wrapper');
+                        $swiperSlide.append(`<div class="swiper-slide"><a href="#"><img src="${obj.dataUrl}"></a></div>`);
+                    } else if (!!obj.imgSeq && $swiperSlide.length) {
+                        console.log("test="+obj.imgSeq);
+                        $swiperSlide.append(`<div class="swiper-slide"><a href="#"><img src="${obj.dataUrl}"></a></div>`);
                     } else {
                         $this.append(`<div class="full-img-area"><img src="${obj.dataUrl}" alt=""></div>`);
                     }
                 } else if (obj.typeId == 'L') {
                     // L: 링크 카드뷰
                     // * 브라우저 링크와 자체 컨텐츠 링크 둘다 L 타입을 사용한다.
+                    if(obj.linkUrl) {
+                        $this.append(`<a href="${obj.linkUrl}" class="link"><span>${obj.linkTitle ? obj.linkTitle : obj.linkUrl}</span></a>`);
+                    } else {
+                    }
                 } else if (obj.typeId == 'V') {
                     // V: 비디오 카드뷰
                     // * 브라우저 링크와 자체 컨텐츠 링크 둘다 L 타입을 사용한다.
                 } else if (obj.typeId == 'D') {
                     // D: 다운로드 카드뷰
+                } else {
                 }
             });
+
+            // swiper img();
+            gallerySwiper($this);
+
+            // NI 질병정보
+            // SI1 닥터QA
         });
     }
 })(jQuery);

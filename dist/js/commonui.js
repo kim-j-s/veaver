@@ -44,7 +44,8 @@ $(function(){
 	viewMoreDp();
 
 	// swiper Gallery - 질병정보 상세 - 카드 컨텐츠
-	gallerySwiper();
+	// gallerySwiper();
+	// drawui.js 에서 호출로 변경
 
 	// swiper Gallery - 병원목록 - 지도보기
 	hostSwiper();
@@ -278,19 +279,22 @@ function viewMoreDp() {
 }
 
 // swiper Gallery - 질병정보 상세 - 카드 컨텐츠
-function gallerySwiper() {
-	if ( $('.gallery-swiper').find('.swiper-slide').length > 1 ){
-        var gallerySwiper = new Swiper('.gallery-swiper', {
-            observer: true,
-            observeParents: true,
-            speed: 500,
-            spaceBetween: 20,
-            loop: true,
-            pagination: {
-                el: '.swiper-pagination',
-            },
-        });
-    }
+function gallerySwiper($target) {
+	$target.find('.gallery-swiper.swiper-container').each(function() {
+		var $this = $(this);
+		if ( $this.find('.swiper-slide').length > 1 ){
+			new Swiper(this, {
+				observer: true,
+				observeParents: true,
+				speed: 500,
+				spaceBetween: 20,
+				loop: true,
+				pagination: {
+					el: $this.find('.swiper-pagination')[0],
+				},
+			});
+		}
+	});
 }
 
 // swiper Gallery - 병원목록 - 지도보기
