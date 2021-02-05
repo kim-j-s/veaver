@@ -3151,7 +3151,7 @@
 	/* 상세 페이지 컨텐츠 삽입 영역 */
 
 		.card-content-area {
-			letter-spacing: 0;
+			letter-spacing: -1px;
 		}
 		.card-content-area b {
 			font-weight: 700;
@@ -3161,10 +3161,6 @@
 		}
 		.card-content-area span {
 			font-weight: inherit;
-		}
-		.card-content-area .link {
-			display: block;
-			margin: 10px 0;
 		}
 		.card-content {
 			margin-bottom: 20px;
