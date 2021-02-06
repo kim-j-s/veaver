@@ -53,6 +53,9 @@ $(function(){
 	// 접종내역 - 상세
 	stepSwiper();
 
+	//날짜 선택 daterangepicker
+	DatePicker()
+
 //script ready
 });
 
@@ -330,6 +333,26 @@ function stepSwiper() {
 	}
 }
 
+// 날짜 선탟
+function DatePicker() {
+	$('.datepicker').daterangepicker({
+        singleDatePicker: true,
+        autoUpdateInput: false,
+        locale: {
+            format: "YYYY/MM/DD",
+            monthNames: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'],
+            daysOfWeek: ['일', '월', '화', '수', '목', '금', '토'],
+        }
+    });
+
+    $('.datepicker').on('apply.daterangepicker', function(ev, picker) {
+        $(this).val(picker.startDate.format('YYYY/MM/DD'));
+    });
+
+    $('.datepicker').on('cancel.daterangepicker', function(ev, picker) {
+        $(this).val('');
+    });
+}
 
 
 var $arrPop = [];
