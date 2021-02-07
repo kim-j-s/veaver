@@ -86,6 +86,9 @@
 .pb0 {
 	padding-bottom: 0 !important;
 }
+.pb40 {
+	padding-bottom: 40px !important;
+}
 .wd40 {
 	width: 40%;
 }
@@ -245,6 +248,10 @@
 	/** // Titles **/
 
 	/** buttons **/
+
+		.btn-area{
+			padding: 20px 22px 0 22px;
+		}
 
 		/* normal size */		
 		.btn-pu {
@@ -424,6 +431,7 @@
 			border: 1px solid #909295;
 			border-radius: 5px;
 			box-sizing: border-box;
+			background: #fff;
 		}
 		.btn-rnd-bd-gr:disabled{
 			opacity: 0.3;
@@ -469,6 +477,24 @@
 			overflow: hidden;
 			text-indent: -9999px;
 			background: url(../img/ac-black-setting.png) no-repeat center center / 100% auto;
+		}
+		.btn-i-icon{
+		    display: inline-block;
+		    vertical-align: middle;
+		    width: 22px;
+		    height: 22px;
+		    overflow: hidden;
+		    text-indent: -9999px;
+		    background: url(../img/ic-info-gray.png) no-repeat 0 0 / 100% auto;
+		}
+		.btn-view-chart{
+		    display: inline-block;
+		    vertical-align: middle;
+		    width: 22px;
+		    height: 22px;
+		    overflow: hidden;
+		    text-indent: -9999px;
+		    background: url(../img/ic-graph.png) no-repeat 0 0 / 100% auto;
 		}
 
 
@@ -597,9 +623,11 @@
 			color: #ff4155;
 		}
 		.input-text > input:read-only {
+			/*
 			border-color: #f5f5f5;
 			background-color: #f5f5f5;
 			color: #000;
+			*/
 		}
 		.input-text > input:read-only + .btn-remove {
 			display: none;
@@ -632,17 +660,32 @@
 			line-height: 20px;
 		}
 		.inp-group.box-ty .input-text{
-			padding: 12px 22px;
-			border-radius: 4px;
+		    display: flex;
+		    flex-direction: row;
+		    align-items: center;
+		    padding: 0;
+		    border-radius: 4px;
 			border: 1px solid #dbdee5;
 			background: #fff;
+			overflow: hidden;
 		}
-		.inp-group.box-ty input{
-			height: 20px;
-			padding: 0;
+		.inp-group.box-ty .input-text > input{
+		    flex: 1 1 auto;
+		    height: 48px;
+			padding: 0 5px 0 22px;
 			font-size: 14px;
 			line-height: 20px;
 			border-bottom: none;
+		}
+		.inp-group .sub-txt{
+			flex: none;
+			display: inline-block;
+			white-space: nowrap;
+		    margin-right: 10px;
+		    font-weight: 400;
+		    font-size: 12px;
+		    color: #b5b9c1;
+		    line-height: 18px;
 		}
 		.inp-group.box-ty .input-text > .btn-remove{
 			bottom: 0;
@@ -651,26 +694,7 @@
 			transform: translateY(-50%);
 		}
 
-		.inp-group.box-ty .input-text{
-		    display: flex;
-		    flex-direction: row;
-		    align-items: center;
-		    padding: 0 10px 0 22px;
-		    height: 48px;
-		}
-		.inp-group.box-ty .input-text > input{
-		    flex: 1 1 auto;
-		}
-		.inp-group .sub-txt{
-			flex: none;
-			display: inline-block;
-			white-space: nowrap;
-		    margin-left: 5px;
-		    font-weight: 400;
-		    font-size: 12px;
-		    color: #b5b9c1;
-		    line-height: 18px;
-		}
+		
 
 	/** // input-text **/
 
@@ -707,7 +731,7 @@
 		.inp-group + .inp-group{
 			margin-top: 24px;
 		}
-		.bg-box .inp-group.box-ty{
+		.bg-box .txt + .inp-group.box-ty{
 			margin-top: 30px;
 		}
 		.inp-group.box-ty + .inp-group.box-ty{
@@ -715,6 +739,10 @@
 		}
 		.label{
 			display: inline-block;
+			vertical-align: middle;
+		}
+		.label + .btn-view-chart{
+			margin-left: 4px;
 		}
 		.inp-group > .label{
 			line-height: 30px;
@@ -794,16 +822,19 @@
 		top: 0;
 		transform: none;
 	}
-	.input-checkbox > input:checked + span::before {
+	.input-checkbox > input:checked + span::before{
 		background-image: url(../img/ac-ic-check-sel.png);
 		background-color: #056bff;	
 		background-size:cover;
 	}
-	.input-checkbox > input:disabled + span::before {
-		background-color: #dee2e7;	
+	.input-checkbox > input:disabled + span{
+		opacity: 0.5;
 	}
-	.input-checkbox > input:checked:disabled + span::before {
-		background-image: url(../img/ac-ic-check-nor.png);
+	.input-checkbox > input:disabled + span::before{
+		background-color: #dee2e7;
+	}
+	.input-checkbox > input:checked:disabled + span::before{
+		background-image: url(../img/ac-ic-check-sel.png);
 		background-size:cover;
 	}
 
@@ -812,7 +843,10 @@
 	}
 	.rnd-checkbox{
 		position: relative;
-		padding: 13px 20px 12px 20px;
+		/*padding: 13px 20px 12px 20px;*/
+	}
+	.rnd-checkbox > .input-checkbox{
+		display: block;
 	}
 	.rnd-checkbox + .rnd-checkbox{
 		margin-top: 10px;
@@ -826,6 +860,8 @@
 	.rnd-checkbox .input-checkbox > span{
 		position: static;
 		transition: .2s;
+		padding: 13px 20px 12px 46px;
+		border-radius: 25px;
 	}
 	.rnd-checkbox .input-checkbox > input:checked + span{
 		color: #056bff;
@@ -849,6 +885,19 @@
 	.rnd-checkbox .input-checkbox > input:checked + span:after{
 		border: 2px solid #056bff;
 	}
+	.rnd-checkbox .input-checkbox > input:disabled + span{
+		color: #74777b;
+		opacity: 1;
+		background: #f9fafb;
+	}
+	.rnd-checkbox .input-checkbox > input:checked:disabled + span{
+		color: #056bff;
+	}
+	.rnd-checkbox .input-checkbox > input:checked:disabled + span:after{
+		border: 1px solid #dbdee5;
+	}
+	
+	
 
 	/** // input-checkbox **/
 
@@ -909,15 +958,19 @@
 	.input-radio > input:checked + span::after {
 		background-color: #056bff;
 	}
+	.input-radio > input:disabled + span {
+		opacity: 0.5;
+	}
 	.input-radio > input:disabled + span::before {
 		border-color: #ddd;
 		background-color: #f5f5f5;
 	}
 	.input-radio > input:checked:disabled + span::before {
 		background-color: #fff;
+		border-color: #056bff;
 	}
 	.input-radio > input:checked:disabled + span::after {
-		background-color: #ddd;
+		background-color: #056bff;
 	}
 
 	/** // input-radio **/
@@ -1856,19 +1909,20 @@
 		}
 		.bottom-pop-cont{
 		    position: relative;
-		    padding: 20px 22px;
+		    /*padding: 20px 22px;*/
+		    padding: 20px 0;
 		    flex-grow: 1;
 		    overflow: auto;
 		}
 		.bottom-pop-cont.etc{
 			padding: 20px 0;
 		}
-		.bottom-pop-cont .rst-list-wrap{
+		/*.bottom-pop-cont .rst-list-wrap{
 			padding: 0;
-		}
-		.bottom-pop-cont .list-05{
+		}*/
+		/*.bottom-pop-cont .list-05{
 			padding: 0;
-		}
+		}*/
 
 
 	/* // 하단 레이어 팝업 */
@@ -1896,6 +1950,8 @@
 	.floating-btns.out{
 		animation: dimmedBgOff .8s forwards;
 	}
+
+	
 
 	@keyframes dimmedBg {
 	    0% {
@@ -2031,6 +2087,13 @@
 	.btn-share{
 	    background: url(../img/btn-floating-share.png) no-repeat right center / auto 100%;
 	}
+	.btn-enter{
+	    background: url(../img/btn-floating-enter.png) no-repeat right center / auto 100%;
+	}
+	.btn-reading{
+	    background: url(../img/btn-floating-reading.png) no-repeat right center / auto 100%;
+	}
+
 
 	.btn-fl-location{
 		display: inline-block;
@@ -2048,6 +2111,8 @@
 	    text-indent: -9999px;
 	    background: url(../img/ic-setting-blue.png) no-repeat 0 0 / 100% auto;
 	}
+	
+
 
 	/** // floating button **/
 
@@ -2602,6 +2667,7 @@
 
 		.line-box{
 			position: relative;
+			padding: 0 22px;
 		}
 		.line-box + .line-box{
 		    margin-top: 30px;
@@ -2617,10 +2683,13 @@
 			content: '';
 			position: absolute;
 			top: 0;
-			left: -22px;
-			width: calc(100% + 44px);
+			/*left: -22px;*/
+			left: 0;
+			/*width: calc(100% + 44px);*/
+			width: 100%;
 			border-top: 10px solid #f8f9fb;
 		}
+
 
 	/** // 경계선 엘리먼트 **/
 
@@ -3026,6 +3095,9 @@
 		    font-size: 16px;
 		    line-height: 24px;
 		}
+		.list-06 > li .input-checkbox{
+			display: block;
+		}
 
 	/** 문구 **/
 
@@ -3245,7 +3317,8 @@
 		    margin: 0 -22px;
 		}
 		.full-size-area.top{
-			margin: -20px -22px 20px -22px;
+			/*margin: -20px -22px 20px -22px;*/
+			margin: -20px 0 20px 0;
 		}
 		.full-size-area > img{
 		    display: block;
@@ -3389,9 +3462,9 @@
 		    position: relative;
 		    padding-top: 56px;
 		}
-		.step-swiper.swiper-container .swiper-slide{
+		/*.step-swiper.swiper-container .swiper-slide{
 		    padding: 0 22px;
-		}
+		}*/
 		.step-swiper .swiper-slide .list-05{
 		    margin-top: 0;
 		}
@@ -3563,6 +3636,23 @@
 	}
 
 
+
+
+	.scroll-ud .full-size-area{
+		margin: 0;
+	}
+	.scroll-ud .full-size-area.top{
+		margin: -20px 0 20px 0;
+	}
+
+	/*
+	.scroll-ud .line-box{
+		padding-left: 22px;
+		padding-right: 22px;
+	}
+	*/
+
+
 /* // 페이지 공통 스크롤 영역 */
 
 
@@ -3580,6 +3670,9 @@
 		.bg-box{
 		    padding: 20px 22px;
 		    background: #f7f8fc;
+		}
+		.bg-box.white{
+			background: #fff;
 		}
 		.bg-box > .txt{
 		    font-size: 16px;
@@ -3614,8 +3707,11 @@
 			margin-top: 4px;
 		}
 
+		.bg-box + .l-cont{
+			padding-top: 30px;
+		}
 		.l-cont{
-		    padding: 30px 22px 20px 22px;
+		    padding: 20px 22px 20px 22px;
 		}
 		.l-cont + .l-cont{
 		    padding-top: 40px;

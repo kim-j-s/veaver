@@ -277,6 +277,9 @@ function viewMoreDp() {
 	        $(this).removeClass('on');
 	        $('.more-view-btns').removeClass('on');
 	        $('.floating-btns').addClass('out').removeClass('fix');
+	        setTimeout(function(){
+	            $('.floating-btns').removeClass('out');
+	        },800);
 	    }
 	})
 }
