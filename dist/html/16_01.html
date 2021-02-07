@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+    <meta name="x-apple-disable-message-reformatting">
+    <title>건강검진관리 | Veaver Health mining</title>
+    <link href="../css/reset.css" rel="stylesheet">
+    <link href="../css/common.css" rel="stylesheet">
+    <link href="../css/swiper.css" rel="stylesheet">
+    <script type="text/javascript" src="../js/jquery.min.js"></script>
+    <script type="text/javascript" src="../js/jquery.swiper.js"></script>
+    <script type="text/javascript" src="../js/commonui.js"></script>
+    <script type="text/javascript" src="../js/drawui.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+    <!--[if lt IE 9]>
+    <script type="text/javascript">
+        document.createElement("header"); 
+        document.createElement("nav"); 
+        document.createElement("section"); 
+        document.createElement("article"); 
+        document.createElement("footer");
+    </script>
+<![endif]-->
+</head>
+
+<body>
+    <div class="layer-full-wrap pb0">
+        <!-- 헤더영역 -->
+        <header>
+            <div class="header-inner">
+                <h2 class="header-title">건강검진관리</h2>
+                <div class="h-utils">
+                    <button type="button" class="btn-black-clock">방문기록 보기</button>
+                    <span class="u-profile">
+		    	<span class="u-profile-img">
+		    		<!-- 적용된 썸네일 -->
+		    		<img src="https://m.upinews.kr/data/upi/image/20190523/p1065574177335900_669_thum.jpg" alt="프로픨 사진" class="u-profile-img">
+		    		<!-- 남성 기본 썸네일 -->
+		    		<!-- <img src="../img/acProfile01B.png" alt="프로픨 사진" class="u-profile-img"> -->
+		    		<!-- 여성 기본 썸네일 -->
+		    		<!-- <img src="../img/acProfile02B.png" alt="프로픨 사진" class="u-profile-img"> -->
+		    	</span>
+                    <span class="name">홍길동</span>
+                    </span>
+                </div>
+                <button type="buton" class="layer-close-btn">닫기</button>
+            </div>
+        </header>
+        <!-- //헤더영역 -->
+
+        <!-- 컨텐츠 영역 -->
+        <section class="scroll-ud full mt0">
+            <div class="scroll-ud-inner">
+                <div class="bg-box">
+                    <p class="txt">
+                        검진 기록은 ‘직접 입력‘, 공단 기록을 ‘자동 입력’ 하는 두 가지 방법이 있습니다. 아래의 메뉴 버튼에서 원하는 방법을 선택하세요.
+                    </p>
+
+                    <div class="inp-group box-ty">
+                        <label for="chkdate" class="label bold-ty">검진일</label>
+                        <div class="input-text">
+                            <input type="text" id="chkdate" class="datepicker" placeholder="YYYY/MM/DD">
+                        </div>
+                    </div>
+                    <div class="inp-group box-ty">
+                        <label for="center" class="label bold-ty">검진기관</label>
+                        <div class="input-text">
+                            <input type="text" id="center" placeholder="">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="l-cont">
+                    <h2 class="tit-h2">계측검사</h2>
+                    <div class="part-cont">
+                        <div class="inp-group box-ty">
+                            <label for="lc-1-1" class="label">키</label>
+                            <div class="input-text">
+                                <input type="text" id="lc-1-1" class="t-right">
+                                <span class="sub-txt">cm</span>
+                            </div>
+                        </div>
+                        <div class="inp-group box-ty">
+                            <label for="lc-1-2" class="label">체중</label>
+                            <div class="input-text">
+                                <input type="text" id="lc-1-2" class="t-right">
+                                <span class="sub-txt">kg</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="part-cont">
+                        <div class="inp-group box-ty">
+                            <label for="lc-1-3" class="label">허리둘레</label>
+                            <div class="input-text">
+                                <input type="text" id="lc-1-3" class="t-right">
+                                <span class="sub-txt">cm</span>
+                            </div>
+                        </div>
+                        <div class="inp-group box-ty">
+                            <label for="lc-1-4" class="label">체질량지수</label>
+                            <div class="input-text">
+                                <input type="text" id="lc-1-4" class="t-right">
+                                <span class="sub-txt">cm</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="part-cont">
+                        <div class="inp-group box-ty">
+                            <label for="lc-1-5" class="label">시력</label>
+                            <div class="input-text">
+                                <input type="text" id="lc-1-5" class="t-right">
+                                <span class="sub-txt">L</span>
+                            </div>
+                        </div>
+                        <div class="inp-group box-ty">
+                            <div class="input-text">
+                                <input type="text" class="t-right">
+                                <span class="sub-txt">R</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="part-cont">
+                        <div class="inp-group box-ty">
+                            <label for="lc-1-7" class="label">청력</label>
+                            <div class="input-text">
+                                <input type="text" id="lc-1-7" class="t-right">
+                                <span class="sub-txt">L</span>
+                            </div>
+                        </div>
+                        <div class="inp-group box-ty">
+                            <div class="input-text">
+                                <input type="text" class="t-right">
+                                <span class="sub-txt">R</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="part-cont">
+                        <div class="inp-group box-ty">
+                            <label for="lc-1-9" class="label">혈압(수축기)</label>
+                            <div class="input-text">
+                                <input type="text" id="lc-1-9" class="t-right">
+                                <span class="sub-txt">mmHg</span>
+                            </div>
+                        </div>
+                        <div class="inp-group box-ty">
+                            <label for="lc-1-10" class="label">혈압(이완기)</label>
+                            <div class="input-text">
+                                <input type="text" id="lc-1-10" class="t-right">
+                                <span class="sub-txt">mmHg</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="l-cont">
+                    <h2 class="tit-h2">혈액검사</h2>
+                    <div class="part-cont">
+                        <div class="inp-group box-ty">
+                            <label for="lc-2-1" class="label">혈색소</label>
+                            <div class="input-text">
+                                <input type="text" id="lc-2-1" class="t-right">
+                                <span class="sub-txt">g/dL</span>
+                            </div>
+                        </div>
+                        <div class="inp-group box-ty">
+                            <label for="lc-2-2" class="label">공복혈당</label>
+                            <div class="input-text">
+                                <input type="text" id="lc-2-2" class="t-right">
+                                <span class="sub-txt">mg/dL</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="part-cont">
+                        <div class="inp-group box-ty">
+                            <label for="lc-2-3" class="label">중성지방</label>
+                            <div class="input-text">
+                                <input type="text" id="lc-2-3" class="t-right">
+                                <span class="sub-txt">mmHg</span>
+                            </div>
+                        </div>
+                        <div class="inp-group box-ty">
+                            <label for="lc-2-4" class="label">저밀도(L이) 콜레스테롤</label>
+                            <div class="input-text">
+                                <input type="text" id="lc-2-4" class="t-right">
+                                <span class="sub-txt">mmHg</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="part-cont">
+                        <div class="inp-group box-ty">
+                            <label for="lc-2-5" class="label">혈청크레아티닌</label>
+                            <div class="input-text">
+                                <input type="text" id="lc-2-5" class="t-right">
+                                <span class="sub-txt">g/dL</span>
+                            </div>
+                        </div>
+                        <div class="inp-group box-ty">
+                            <label for="lc-2-6" class="label">신사구체여과율(e-GFR)</label>
+                            <div class="input-text">
+                                <input type="text" id="lc-2-6" class="t-right">
+                                <span class="sub-txt">mL/min<br>/1.73m2</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="part-cont">
+                        <div class="inp-group box-ty">
+                            <label for="lc-2-7" class="label">AST(SGOT)</label>
+                            <div class="input-text">
+                                <input type="text" id="lc-2-7" class="t-right">
+                                <span class="sub-txt">IU/L</span>
+                            </div>
+                        </div>
+                        <div class="inp-group box-ty">
+                            <label for="lc-2-8" class="label">ALT(SGPT)</label>
+                            <div class="input-text">
+                                <input type="text" id="lc-2-8" class="t-right">
+                                <span class="sub-txt">IU/L</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="part-cont">
+                        <div class="inp-group box-ty">
+                            <label for="lc-2-9" class="label">감마지티피(γ-GTP)</label>
+                            <div class="input-text">
+                                <input type="text" id="lc-2-9" class="t-right">
+                                <span class="sub-txt">IU/L</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="l-cont">
+                    <h2 class="tit-h2">요검사</h2>
+                    <h3 class="tit-h3 sm">요단백</h3>
+                    <ul class="list-04">
+                        <li>
+                            <label class="input-radio">
+                                <input type="radio" name="select01"><span>정상</span>
+                            </label>
+                        </li>
+                        <li>
+                            <label class="input-radio">
+                                <input type="radio" name="select01"><span>경계</span>
+                            </label>
+                        </li>
+                        <li>
+                            <label class="input-radio">
+                                <input type="radio" name="select01"><span>단백뇨 의심</span>
+                            </label>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="l-cont">
+                    <h2 class="tit-h2">영상검사</h2>
+                    <h3 class="tit-h3 sm">흉부촬영</h3>
+                    <ul class="list-04">
+                        <li>
+                            <label class="input-radio">
+                                <input type="radio" name="select02"><span>정상</span>
+                            </label>
+                        </li>
+                        <li>
+                            <label class="input-radio">
+                                <input type="radio" name="select02"><span>비활동성 폐결핵</span>
+                            </label>
+                        </li>
+                        <li>
+                            <label class="input-radio">
+                                <input type="radio" name="select02"><span>질환의심</span>
+                            </label>
+                            <div class="inp-group box-ty">
+                                <div class="input-text">
+                                    <input type="text">
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <label class="input-radio">
+                                <input type="radio" name="select02"><span>기타증상</span>
+                            </label>
+                            <div class="inp-group box-ty">
+                                <div class="input-text">
+                                    <input type="text">
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="l-cont">
+                    <h2 class="tit-h2">문진정보</h2>
+                    <h3 class="tit-h3 sm">진단여부</h3>
+                    <ul class="list-04 half">
+                        <li>
+                            <label class="input-checkbox">
+                                <input type="checkbox"><span class="etc">뇌졸중(중풍)</span>
+                            </label>
+                        </li>
+                        <li>
+                            <label class="input-checkbox">
+                                <input type="checkbox"><span class="etc">심장병(심근경색/협심증)</span>
+                            </label>
+                        </li>
+                        <li>
+                            <label class="input-checkbox">
+                                <input type="checkbox"><span class="etc">폐결핵</span>
+                            </label>
+                        </li>
+                        <li>
+                            <label class="input-checkbox">
+                                <input type="checkbox"><span class="etc">이상지질혈증</span>
+                            </label>
+                        </li>
+                        <li>
+                            <label class="input-checkbox">
+                                <input type="checkbox"><span class="etc">고혈압</span>
+                            </label>
+                        </li>
+                        <li>
+                            <label class="input-checkbox">
+                                <input type="checkbox"><span class="etc">당뇨병</span>
+                            </label>
+                        </li>
+                        <li>
+                            <label class="input-checkbox">
+                                <input type="checkbox"><span class="etc">기타(암포함)</span>
+                            </label>
+                        </li>
+                    </ul>
+
+                    <h3 class="tit-h3 sm">약물치료 여부</h3>
+                    <ul class="list-04 half">
+                        <li>
+                            <label class="input-checkbox">
+                                <input type="checkbox"><span class="etc">뇌졸중(중풍)</span>
+                            </label>
+                        </li>
+                        <li>
+                            <label class="input-checkbox">
+                                <input type="checkbox"><span class="etc">심장병(심근경색/협심증)</span>
+                            </label>
+                        </li>
+                        <li>
+                            <label class="input-checkbox">
+                                <input type="checkbox"><span class="etc">고혈압</span>
+                            </label>
+                        </li>
+                        <li>
+                            <label class="input-checkbox">
+                                <input type="checkbox"><span class="etc">당뇨병</span>
+                            </label>
+                        </li>
+                        <li>
+                            <label class="input-checkbox">
+                                <input type="checkbox"><span class="etc">이상지질혈증</span>
+                            </label>
+                        </li>
+                        <li>
+                            <label class="input-checkbox">
+                                <input type="checkbox"><span class="etc">폐결핵</span>
+                            </label>
+                        </li>
+                        <li>
+                            <label class="input-checkbox">
+                                <input type="checkbox"><span class="etc">기타(암포함)</span>
+                            </label>
+                        </li>
+                    </ul>
+
+                    <h3 class="tit-h3 sm">가족력 (부모, 형제, 자매)</h3>
+                    <ul class="list-04 half">
+                        <li>
+                            <label class="input-checkbox">
+                                <input type="checkbox"><span class="etc">뇌졸중(중풍)</span>
+                            </label>
+                        </li>
+                        <li>
+                            <label class="input-checkbox">
+                                <input type="checkbox"><span class="etc">심장병(심근경색/협심증)</span>
+                            </label>
+                        </li>
+                        <li>
+                            <label class="input-checkbox">
+                                <input type="checkbox"><span class="etc">고혈압</span>
+                            </label>
+                        </li>
+                        <li>
+                            <label class="input-checkbox">
+                                <input type="checkbox"><span class="etc">당뇨병</span>
+                            </label>
+                        </li>
+                        <li>
+                            <label class="input-checkbox">
+                                <input type="checkbox"><span class="etc">이상지질혈증</span>
+                            </label>
+                        </li>
+                        <li>
+                            <label class="input-checkbox">
+                                <input type="checkbox"><span class="etc">폐결핵</span>
+                            </label>
+                        </li>
+                        <li>
+                            <label class="input-checkbox">
+                                <input type="checkbox"><span class="etc">기타(암포함)</span>
+                            </label>
+                        </li>
+                    </ul>
+
+                    <h3 class="tit-h3 sm">B형 간염 바이러스 보유 여부</h3>
+                    <ul class="list-04">
+                        <li>
+                            <label class="input-radio">
+                                <input type="radio" name="select02"><span>예</span>
+                            </label>
+                        </li>
+                        <li>
+                            <label class="input-radio">
+                                <input type="radio" name="select02"><span>아니오</span>
+                            </label>
+                        </li>
+                        <li>
+                            <label class="input-radio">
+                                <input type="radio" name="select02"><span>모름</span>
+                            </label>
+                        </li>
+                    </ul>
+
+                    <h3 class="tit-h3 sm">흡연여부</h3>
+                    <ul class="list-04">
+                        <li>
+                            <label class="input-radio">
+                                <input type="radio" name="select03"><span>흡연</span>
+                            </label>
+                        </li>
+                        <li>
+                            <label class="input-radio">
+                                <input type="radio" name="select03"><span>흡연 후 금연</span>
+                            </label>
+                        </li>
+                        <li>
+                            <label class="input-radio">
+                                <input type="radio" name="select03"><span>안피움</span>
+                            </label>
+                        </li>
+                    </ul>
+                    <!-- 흡연 선택 시 노출 -->
+                    <div class="part-cont">
+                        <div class="inp-group box-ty">
+                            <label for="smoke-1" class="label">(총)</label>
+                            <div class="input-text">
+                                <input type="text" id="smoke-1" class="t-right">
+                                <span class="sub-txt">년</span>
+                            </div>
+                        </div>
+                        <div class="inp-group box-ty">
+                            <label for="smoke-2" class="label">(하루평균)</label>
+                            <div class="input-text">
+                                <input type="text" id="smoke-2" class="t-right">
+                                <span class="sub-txt">개피</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- // 흡연 선택 시 노출 -->
+
+                    <!-- 흡연 후 금연 선택 시 노출 -->
+                    <div class="part-cont">
+                        <div class="inp-group box-ty">
+                            <label for="smoke-3" class="label">(총)</label>
+                            <div class="input-text">
+                                <input type="text" id="smoke-3" class="t-right">
+                                <span class="sub-txt">년</span>
+                            </div>
+                        </div>
+                        <div class="inp-group box-ty">
+                            <label for="smoke-4" class="label">흡연 시 하루 평균</label>
+                            <div class="input-text">
+                                <input type="text" id="smoke-4" class="t-right">
+                                <span class="sub-txt">개피</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="part-cont">
+                        <div class="inp-group box-ty">
+                            <label for="smoke-5" class="label">끊은 지</label>
+                            <div class="input-text">
+                                <input type="text" id="smoke-5" class="t-right">
+                                <span class="sub-txt">년</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- // 흡연 후 금연 선택 시 노출 -->
+
+                    <h3 class="tit-h3 sm">음주여부</h3>
+                    <ul class="list-04">
+                        <li>
+                            <label class="input-radio">
+                                <input type="radio" name="select04"><span>일주일에</span>
+                            </label>
+                        </li>
+                        <li>
+                            <label class="input-radio">
+                                <input type="radio" name="select04"><span>한달에</span>
+                            </label>
+                        </li>
+                        <li>
+                            <label class="input-radio">
+                                <input type="radio" name="select04"><span>1년에</span>
+                            </label>
+                        </li>
+                        <li>
+                            <label class="input-radio">
+                                <input type="radio" name="select04"><span>마시지 않는다</span>
+                            </label>
+                        </li>
+                    </ul>
+                    <div class="part-cont">
+                        <div class="inp-group box-ty">
+                            <label for="drink-1" class="label">음주 횟수</label>
+                            <div class="input-text">
+                                <input type="text" id="drink-1" class="t-right">
+                                <span class="sub-txt">회</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="l-cont">
+                    <h2 class="tit-h2">운동(신체 활동) 관리</h2>
+                    <div class="part-cont">
+                        <div class="inp-group box-ty">
+                            <label for="health-1" class="label">평소에 숨이 많이 차는 고강도 운동이나 활동을 1 주일 중,</label>
+                            <div class="input-text">
+                                <input type="text" id="health-1" class="t-right">
+                                <span class="sub-txt">일 정도 한다.</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <label for="health-2" class="label l2">평소에 숨이 많이 차는 고강도 운동이나 활동을 하루 중,</label>
+                    <div class="part-cont">
+                        <div class="inp-group box-ty">
+                            <div class="input-text">
+                                <input type="text" id="health-2" class="t-right">
+                                <span class="sub-txt">시간</span>
+                            </div>
+                        </div>
+                        <div class="inp-group box-ty">
+                            <div class="input-text">
+                                <input type="text" class="t-right">
+                                <span class="sub-txt">분 정도 한다.</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="part-cont">
+                        <div class="inp-group box-ty">
+                            <label for="health-3" class="label">평소에 숨이 약간 차는 중강도 운동이나 활동을 1주일 중,</label>
+                            <div class="input-text">
+                                <input type="text" id="health-3" class="t-right">
+                                <span class="sub-txt">일 정도 한다.</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <label for="health-4" class="label l2">평소에 숨이 약간 차는 중강도 운동이나 활동을 하루 중,</label>
+                    <div class="part-cont">
+                        <div class="inp-group box-ty">
+                            <div class="input-text">
+                                <input type="text" id="health-4" class="t-right">
+                                <span class="sub-txt">시간</span>
+                            </div>
+                        </div>
+                        <div class="inp-group box-ty">
+                            <div class="input-text">
+                                <input type="text" class="t-right">
+                                <span class="sub-txt">분 정도 한다.</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="part-cont">
+                        <div class="inp-group box-ty">
+                            <label for="health-5" class="label">최근 1주일 동안 팔굽혀펴기, 윗몸일으키기, 아령, 철봉, 역기 등 근력운동을,</label>
+                            <div class="input-text">
+                                <input type="text" id="health-5" class="t-right">
+                                <span class="sub-txt">일 했다.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="floating-btns">
+                    <button type="button" class="btn-view-more">더보기</button>
+                    <ul class="more-view-btns">
+                        <li><button type="button" class="more-btns btn-enter">건강데이터 직접입력하기</button></li>
+                        <li><button type="button" class="more-btns btn-reading">검진 기록 열람</button></li>
+                    </ul>
+                </div>
+
+            </div>
+        </section>
+        <!-- //컨텐츠 영역 -->
+
+        <div class="btn-bottom-area">
+            <button type="button" class="btn-pu">저장하기</button>
+        </div>
+
+    </div>
+</body>
+
+</html>

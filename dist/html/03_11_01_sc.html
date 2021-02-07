@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+    <meta name="x-apple-disable-message-reformatting">
+    <title>결과 리스트 | Veaver Health mining</title>
+    <link href="../css/reset.css" rel="stylesheet">
+    <link href="../css/common.css" rel="stylesheet">
+    <link href="../css/swiper.css" rel="stylesheet">
+    <script type="text/javascript" src="../js/jquery.min.js"></script>
+    <script type="text/javascript" src="../js/jquery.swiper.js"></script>
+    <script type="text/javascript" src="../js/commonui.js"></script>
+    <script type="text/javascript" src="../js/drawui.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+    <!--[if lt IE 9]>
+    <script type="text/javascript">
+        document.createElement("header"); 
+        document.createElement("nav"); 
+        document.createElement("section"); 
+        document.createElement("article"); 
+        document.createElement("footer");
+    </script>
+<![endif]-->
+</head>
+
+<body>
+    <div class="layer-full-wrap">
+        <!-- 헤더영역 -->
+        <header>
+            <div class="header-inner">
+                <h2 class="header-title">Ai헬스큐</h2>
+                <div class="h-utils">
+                    <span class="u-profile">
+		    	<span class="u-profile-img">
+		    		<!-- 적용된 썸네일 -->
+		    		<img src="https://m.upinews.kr/data/upi/image/20190523/p1065574177335900_669_thum.jpg" alt="프로픨 사진" class="u-profile-img">
+		    		<!-- 남성 기본 썸네일 -->
+		    		<!-- <img src="../img/acProfile01B.png" alt="프로픨 사진" class="u-profile-img"> -->
+		    		<!-- 여성 기본 썸네일 -->
+		    		<!-- <img src="../img/acProfile02B.png" alt="프로픨 사진" class="u-profile-img"> -->
+		    	</span>
+                    <span class="name">홍길동</span>
+                    </span>
+                </div>
+                <button type="buton" class="layer-close-btn">닫기</button>
+            </div>
+        </header>
+        <!-- //헤더영역 -->
+
+        <!-- 컨텐츠 영역 -->
+        <section class="layer-content">
+            <div class="gr-box">
+                <p class="i-txt">증상에 대한 정확한 진단 및 치료는 반드시 의료기관을 방문하셔서 의사 선생님께 받으셔야합니다.</p>
+            </div>
+
+            <div class="rst-list-wrap" id="resultList">
+                <ul class="rst-list"></ul>
+            </div>
+
+            <div class="floating-btns">
+                <ul class="fb-list">
+                    <li><button type="button" class="btn-go-menu">목록으로 이동</button></li>
+                    <li><button type="button" class="btn-re">다시하기</button></li>
+                </ul>
+            </div>
+        </section>
+        <!-- //컨텐츠 영역 -->
+    </div>
+</body>
+<script>
+    const resultExam = [{
+            "indexNum": 430,
+            "name": "뇌진탕",
+            "detail": "뇌가 충격을 받아 일시적인 의식이상이나 어지러움 등을 동반한 상태, 기질적 손상 없음",
+            "totalPoint": 5,
+            "count": 11,
+            "thumbnail": "https://hm-contents-1302053493.s3.ap-northeast-2.amazonaws.com/ni-contents/2020/12/01/68f7d677-9eec-43c9-aeb3-889c00c3e282_S82_00.png",
+        },
+        {
+            "indexNum": 24,
+            "name": "메니에르병",
+            "detail": "귓속 내이(소리를 듣거나 평형감각을 유지하는 기관)에 발생하는 질환으로 어지러움, 이명등의 증상이 발생할 수 있는 상태",
+            "totalPoint": 2,
+            "count": 5,
+            "thumbnail": "https://hm-contents-1302053493.s3.ap-northeast-2.amazonaws.com/ni-contents/2020/12/01/68f7d677-9eec-43c9-aeb3-889c00c3e282_S82_00.png",
+        },
+        {
+            "indexNum": 26,
+            "name": "전정 신경염",
+            "detail": "귓속 전정기관에 있는 전정신경(평형감각을 뇌로 전달하는 역할)에 염증이 생긴 상태",
+            "totalPoint": 2,
+            "count": 5,
+            "thumbnail": "https://hm-contents-1302053493.s3.ap-northeast-2.amazonaws.com/ni-contents/2020/12/01/68f7d677-9eec-43c9-aeb3-889c00c3e282_S82_00.png",
+        },
+        {
+            "indexNum": 444,
+            "name": "열사병",
+            "detail": "고온의 환경에 노출되어 체온조절 중추기능의 장애가 나타나 심부 체온이 섭씨 37도에서 40도 사이로 상승한 상태(응급)",
+            "totalPoint": 3,
+            "count": 8,
+            "thumbnail": "https://hm-contents-1302053493.s3.ap-northeast-2.amazonaws.com/ni-contents/2020/12/01/68f7d677-9eec-43c9-aeb3-889c00c3e282_S82_00.png",
+        },
+        {
+            "indexNum": 437,
+            "name": "뇌염",
+            "detail": "뇌조직에 발생한 염증(응급)",
+            "totalPoint": 4,
+            "count": 11,
+            "thumbnail": "https://hm-contents-1302053493.s3.ap-northeast-2.amazonaws.com/ni-contents/2020/12/01/68f7d677-9eec-43c9-aeb3-889c00c3e282_S82_00.png",
+        },
+    ]
+
+    $('#resultList').drawUi('setSelfDiagnosisResult', resultExam);
+</script>
+
+</html>

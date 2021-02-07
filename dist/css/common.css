@@ -86,6 +86,9 @@
 .pb0 {
 	padding-bottom: 0 !important;
 }
+.pb40 {
+	padding-bottom: 40px !important;
+}
 .wd40 {
 	width: 40%;
 }
@@ -249,6 +252,10 @@
 	/** // Titles **/
 
 	/** buttons **/
+
+		.btn-area{
+			padding: 20px 22px 0 22px;
+		}
 
 		/* normal size */		
 		.btn-pu {
@@ -428,6 +435,7 @@
 			border: 1px solid #909295;
 			border-radius: 5px;
 			box-sizing: border-box;
+			background: #fff;
 		}
 		.btn-rnd-bd-gr:disabled{
 			opacity: 0.3;
@@ -465,6 +473,32 @@
 			overflow: hidden;
 			text-indent: -9999px;
 			background: url(../img/ac-black-clocks.png) no-repeat center center / 100% auto;
+		}
+		.btn-black-setting{
+			display: inline-block;
+			width: 30px;
+			height: 30px;
+			overflow: hidden;
+			text-indent: -9999px;
+			background: url(../img/ac-black-setting.png) no-repeat center center / 100% auto;
+		}
+		.btn-i-icon{
+		    display: inline-block;
+		    vertical-align: middle;
+		    width: 22px;
+		    height: 22px;
+		    overflow: hidden;
+		    text-indent: -9999px;
+		    background: url(../img/ic-info-gray.png) no-repeat 0 0 / 100% auto;
+		}
+		.btn-view-chart{
+		    display: inline-block;
+		    vertical-align: middle;
+		    width: 22px;
+		    height: 22px;
+		    overflow: hidden;
+		    text-indent: -9999px;
+		    background: url(../img/ic-graph.png) no-repeat 0 0 / 100% auto;
 		}
 
 
@@ -593,14 +627,18 @@
 			color: #ff4155;
 		}
 		.input-text > input:-moz-read-only {
+			/*
 			border-color: #f5f5f5;
 			background-color: #f5f5f5;
 			color: #000;
+			*/
 		}
 		.input-text > input:read-only {
+			/*
 			border-color: #f5f5f5;
 			background-color: #f5f5f5;
 			color: #000;
+			*/
 		}
 		.input-text > input:-moz-read-only + .btn-remove {
 			display: none;
@@ -636,17 +674,32 @@
 			line-height: 20px;
 		}
 		.inp-group.box-ty .input-text{
-			padding: 12px 22px;
-			border-radius: 4px;
+		    display: flex;
+		    flex-direction: row;
+		    align-items: center;
+		    padding: 0;
+		    border-radius: 4px;
 			border: 1px solid #dbdee5;
 			background: #fff;
+			overflow: hidden;
 		}
 		.inp-group.box-ty .input-text > input{
-			height: 20px;
-			padding: 0;
+		    flex: 1 1 auto;
+		    height: 48px;
+			padding: 0 5px 0 22px;
 			font-size: 14px;
 			line-height: 20px;
 			border-bottom: none;
+		}
+		.inp-group .sub-txt{
+			flex: none;
+			display: inline-block;
+			white-space: nowrap;
+		    margin-right: 10px;
+		    font-weight: 400;
+		    font-size: 12px;
+		    color: #b5b9c1;
+		    line-height: 18px;
 		}
 		.inp-group.box-ty .input-text > .btn-remove{
 			bottom: 0;
@@ -655,25 +708,7 @@
 			transform: translateY(-50%);
 		}
 
-		.inp-group .input-text.word-add{
-		    display: flex;
-		    flex-direction: row;
-		    align-items: center;
-		    padding: 0 10px 0 22px;
-		    height: 48px;
-		}
-		.inp-group .input-text.word-add > input{
-		    flex: 1 1 auto;
-		}
-		.inp-group .word-add:after{
-		    content: attr(data-word);
-		    flex: 1 1 auto;
-		    margin-left: 5px;
-		    font-weight: 400;
-		    font-size: 12px;
-		    color: #b5b9c1;
-		    line-height: 18px;
-		}
+		
 
 	/** // input-text **/
 
@@ -710,14 +745,20 @@
 		.inp-group + .inp-group{
 			margin-top: 24px;
 		}
-		.bg-box .inp-group.box-ty{
+		.bg-box .txt + .inp-group.box-ty{
 			margin-top: 30px;
 		}
 		.inp-group.box-ty + .inp-group.box-ty{
 			margin-top: 20px;
 		}
-		.inp-group > .label{
+		.label{
 			display: inline-block;
+			vertical-align: middle;
+		}
+		.label + .btn-view-chart{
+			margin-left: 4px;
+		}
+		.inp-group > .label{
 			line-height: 30px;
 		}
 		.inp-group > .label.bold-ty{
@@ -794,16 +835,19 @@
 		top: 0;
 		transform: none;
 	}
-	.input-checkbox > input:checked + span::before {
+	.input-checkbox > input:checked + span::before{
 		background-image: url(../img/ac-ic-check-sel.png);
 		background-color: #056bff;	
 		background-size:cover;
 	}
-	.input-checkbox > input:disabled + span::before {
-		background-color: #dee2e7;	
+	.input-checkbox > input:disabled + span{
+		opacity: 0.5;
 	}
-	.input-checkbox > input:checked:disabled + span::before {
-		background-image: url(../img/ac-ic-check-nor.png);
+	.input-checkbox > input:disabled + span::before{
+		background-color: #dee2e7;
+	}
+	.input-checkbox > input:checked:disabled + span::before{
+		background-image: url(../img/ac-ic-check-sel.png);
 		background-size:cover;
 	}
 
@@ -812,7 +856,10 @@
 	}
 	.rnd-checkbox{
 		position: relative;
-		padding: 13px 20px 12px 20px;
+		/*padding: 13px 20px 12px 20px;*/
+	}
+	.rnd-checkbox > .input-checkbox{
+		display: block;
 	}
 	.rnd-checkbox + .rnd-checkbox{
 		margin-top: 10px;
@@ -826,6 +873,8 @@
 	.rnd-checkbox .input-checkbox > span{
 		position: static;
 		transition: .2s;
+		padding: 13px 20px 12px 46px;
+		border-radius: 25px;
 	}
 	.rnd-checkbox .input-checkbox > input:checked + span{
 		color: #056bff;
@@ -849,6 +898,19 @@
 	.rnd-checkbox .input-checkbox > input:checked + span:after{
 		border: 2px solid #056bff;
 	}
+	.rnd-checkbox .input-checkbox > input:disabled + span{
+		color: #74777b;
+		opacity: 1;
+		background: #f9fafb;
+	}
+	.rnd-checkbox .input-checkbox > input:checked:disabled + span{
+		color: #056bff;
+	}
+	.rnd-checkbox .input-checkbox > input:checked:disabled + span:after{
+		border: 1px solid #dbdee5;
+	}
+	
+	
 
 	/** // input-checkbox **/
 
@@ -907,15 +969,19 @@
 	.input-radio > input:checked + span::after {
 		background-color: #056bff;
 	}
+	.input-radio > input:disabled + span {
+		opacity: 0.5;
+	}
 	.input-radio > input:disabled + span::before {
 		border-color: #ddd;
 		background-color: #f5f5f5;
 	}
 	.input-radio > input:checked:disabled + span::before {
 		background-color: #fff;
+		border-color: #056bff;
 	}
 	.input-radio > input:checked:disabled + span::after {
-		background-color: #ddd;
+		background-color: #056bff;
 	}
 
 	/** // input-radio **/
@@ -986,6 +1052,18 @@
 	/** // input-check-toggle  **/
 
 	/** select **/
+
+		.selectbox{
+		    display: inline-block;
+		    height: 40px;
+		    padding: 0 42px 0 22px;
+		    border: none;
+		    border-radius: 0;
+		    background: #f9fafb url(../img/btn-arrow-black-20-open.png) no-repeat right 12px center / 20px auto;
+		    -webkit-appearance:none;
+		    -moz-appearance: none;
+		    appearance: none;
+		}
 
 
 	/** // select **/
@@ -1762,6 +1840,9 @@
 		.dl-pop-cont > .btn-area{
 			margin-top: 40px;
 		}
+		.dl-pop-cont > .btn-area button + button{
+			margin-top: 15px;
+		}
 		.d-layer-close{
 			position:absolute;
 			top: 0;
@@ -1885,19 +1966,20 @@
 		}
 		.bottom-pop-cont{
 		    position: relative;
-		    padding: 20px 22px;
+		    /*padding: 20px 22px;*/
+		    padding: 20px 0;
 		    flex-grow: 1;
 		    overflow: auto;
 		}
 		.bottom-pop-cont.etc{
 			padding: 20px 0;
 		}
-		.bottom-pop-cont .rst-list-wrap{
+		/*.bottom-pop-cont .rst-list-wrap{
 			padding: 0;
-		}
-		.bottom-pop-cont .details-list{
+		}*/
+		/*.bottom-pop-cont .list-05{
 			padding: 0;
-		}
+		}*/
 
 
 	/* // 하단 레이어 팝업 */
@@ -1928,6 +2010,8 @@
 		animation: dimmedBgOff .8s forwards;
 	}
 
+	
+
 	@-webkit-keyframes dimmedBg {
 	    0% {
 	        background: rgba(0, 0, 0, 0);
@@ -1936,6 +2020,8 @@
 	        background: rgba(0, 0, 0, 0.7);
 	    }
 	}
+
+	
 
 	@keyframes dimmedBg {
 	    0% {
@@ -2087,6 +2173,13 @@
 	.btn-share{
 	    background: url(../img/btn-floating-share.png) no-repeat right center / auto 100%;
 	}
+	.btn-enter{
+	    background: url(../img/btn-floating-enter.png) no-repeat right center / auto 100%;
+	}
+	.btn-reading{
+	    background: url(../img/btn-floating-reading.png) no-repeat right center / auto 100%;
+	}
+
 
 	.btn-fl-location{
 		display: inline-block;
@@ -2104,6 +2197,8 @@
 	    text-indent: -9999px;
 	    background: url(../img/ic-setting-blue.png) no-repeat 0 0 / 100% auto;
 	}
+	
+
 
 	/** // floating button **/
 
@@ -2658,6 +2753,7 @@
 
 		.line-box{
 			position: relative;
+			padding: 0 22px;
 		}
 		.line-box + .line-box{
 		    margin-top: 30px;
@@ -2673,10 +2769,13 @@
 			content: '';
 			position: absolute;
 			top: 0;
-			left: -22px;
-			width: calc(100% + 44px);
+			/*left: -22px;*/
+			left: 0;
+			/*width: calc(100% + 44px);*/
+			width: 100%;
 			border-top: 10px solid #f8f9fb;
 		}
+
 
 	/** // 경계선 엘리먼트 **/
 
@@ -2804,6 +2903,44 @@
 			color: #056bff;
 			line-height: 18px;
 		}
+		.txt-cont05{
+
+		}
+		.txt-cont05 > dt{
+		    position: relative;
+		    padding-left: 12px;
+		    font-weight: 500;
+		    font-size: 18px;
+		    line-height: 27px;
+		}
+		.txt-cont05 > dt:before{
+		    content: '';
+		    position: absolute;
+		    top: 11px;
+		    left: 0;
+		    width: 6px;
+		    border-bottom: 6px solid #056bff;
+		    border-radius: 50%;
+		}
+		.txt-cont05 > dd{
+		    line-height: 20px;
+		}
+		.txt-cont05 > dt.ty1:before{
+		    border-bottom-color: #056bff;
+		}
+		.txt-cont05 > dt.ty2:before{
+		    border-bottom-color: #0ca6ea;
+		}
+		.txt-cont05 > dt.ty3:before{
+		    border-bottom-color: #ffbf00;
+		}
+		.txt-cont05 > dt.ty4:before{
+		    border-bottom-color: #ff7300;
+		}
+		.txt-cont05 > dt.ty5:before{
+		    border-bottom-color: #2e4260;
+		}
+
 
 		.i-txt{
 		    position: relative;
@@ -2919,6 +3056,133 @@
 		.list-03 > li .ex-img img{
 		    width: 100%;
 		    height: 100%;
+		}
+
+		.tit-h3 + .list-04{
+		    margin-top: 10px;
+		}
+		.list-04 + .tit-h3{
+		    margin-top: 30px;
+		}
+		.list-04{
+		    font-size: 0;
+		}
+		.list-04 > li + li{
+		    margin-top: 20px;
+		}
+		.list-04 .input-radio + .inp-group{
+		    margin-top: 4px;
+		}
+		.list-04.half > li{
+		    display: inline-block;
+		    vertical-align: top;
+		    width: 50%;
+		}
+		.list-04.half > li:nth-child(-n + 2){
+		    margin-top: 0;
+		}
+		.list-04 + .part-cont{
+		    margin-top: 20px;
+		}
+
+		.scroll-list-wrap .list-05{
+		    flex-grow: 1;
+		}
+		.list-05{
+		    margin-top: 20px;
+		    padding: 0 22px;
+		    overflow: auto;
+		}
+		.list-05.etc{
+			margin-top: 0;
+		}
+		.list-05 > li{
+		    padding: 20px 0;
+		    font-size: 0;
+		    border-bottom: 1px solid #ebeff3;
+		}
+		.list-05 > li .txt{
+		    display: inline-block;
+		    vertical-align: middle;
+		    font-size: 16px;
+		    color: #000;
+		    line-height: 24px;
+		}
+		.list-05 > li .txt.omit{
+		    opacity: 0.3;
+		}
+		.list-05 > li .txt2{
+		    display: inline-block;
+		    vertical-align: middle;
+		    font-weight: 500;
+		    font-size: 16px;
+		    color: #000;
+		    line-height: 24px;
+		}
+
+		/* 접종내역 */
+		.list-05 > li.ty1 > a{
+		    display: block;
+		    font-size: 0;
+		}
+		.list-05 > li.ty1 > a .txt{
+		    width: calc(100% - 85px);
+		    padding-right: 20px;
+		}
+		/* // 접종내역 */
+
+		/* 접종내역 상세 */
+		.list-05 > li.ty2{
+		    font-size: 0;
+		}
+		.list-05 > li.ty2 > .txt{
+		    width: 50%;
+		    padding-right: 10px;
+		}
+		.list-05 > li.ty2 > .txt2{
+		    width: 50%;
+		    padding-left: 10px;
+		    text-align: right;
+		}
+		/* // 접종내역 상세 */
+
+		/* 일정보기 */
+		.list-05 > li.ty3 .txt{
+		    width: calc(100% - 60px);
+		}
+		.list-05 > li.ty3 .view{
+		    display: inline-block;
+		    vertical-align: middle;
+		    width: 60px;
+		    padding-right: 4px;
+		    text-align: right;
+		}
+		/* // 일정보기 */
+
+
+		.list-06{
+		    padding: 0 22px;
+		}
+		.list-06 > li{
+		    padding: 0 0 16px 0;
+		    border-bottom: 1px solid #ebeff3;
+		}
+		.list-06 > li + li{
+		    padding-top: 16px;
+		}
+		.list-06 > li .date{
+		    font-size: 12px;
+		    line-height: 18px;
+		    color: #74777b;
+		}
+		.list-06 > li .txt{
+		    display: block;
+		    font-weight: 500;
+		    font-size: 16px;
+		    line-height: 24px;
+		}
+		.list-06 > li .input-checkbox{
+			display: block;
 		}
 
 	/** 문구 **/
@@ -3139,7 +3403,8 @@
 		    margin: 0 -22px;
 		}
 		.full-size-area.top{
-			margin: -20px -22px 20px -22px;
+			/*margin: -20px -22px 20px -22px;*/
+			margin: -20px 0 20px 0;
 		}
 		.full-size-area > img{
 		    display: block;
@@ -3158,6 +3423,9 @@
 		}
 		.card-content-area p {
 			margin-bottom: 16px;
+		}
+		.card-content-area span {
+			font-weight: inherit;
 		}
 		.card-content {
 			margin-bottom: 20px;
@@ -3247,79 +3515,7 @@
 
 	/* 상세목록 */
 
-		.scroll-list-wrap .details-list{
-		    flex-grow: 1;
-		}
-		.details-list{
-		    margin-top: 20px;
-		    padding: 0 22px;
-		    overflow: auto;
-		}
-		.details-list.etc{
-			margin-top: 0;
-		}
-		.details-list > li{
-		    padding: 20px 0;
-		    font-size: 0;
-		    border-bottom: 1px solid #ebeff3;
-		}
-		.details-list > li .txt{
-		    display: inline-block;
-		    vertical-align: middle;
-		    font-size: 16px;
-		    color: #000;
-		    line-height: 24px;
-		}
-		.details-list > li .txt.omit{
-		    opacity: 0.3;
-		}
-		.details-list > li .txt2{
-		    display: inline-block;
-		    vertical-align: middle;
-		    font-weight: 500;
-		    font-size: 16px;
-		    color: #000;
-		    line-height: 24px;
-		}
-
-		/* 접종내역 */
-		.details-list > li.ty1 > a{
-		    display: block;
-		    font-size: 0;
-		}
-		.details-list > li.ty1 > a .txt{
-		    width: calc(100% - 85px);
-		    padding-right: 20px;
-		}
-		/* // 접종내역 */
-
-		/* 접종내역 상세 */
-		.details-list > li.ty2{
-		    font-size: 0;
-		}
-		.details-list > li.ty2 > .txt{
-		    width: 50%;
-		    padding-right: 10px;
-		}
-		.details-list > li.ty2 > .txt2{
-		    width: 50%;
-		    padding-left: 10px;
-		    text-align: right;
-		}
-		/* // 접종내역 상세 */
-
-		/* 일정보기 */
-		.details-list > li.ty3 .txt{
-		    width: calc(100% - 60px);
-		}
-		.details-list > li.ty3 .view{
-		    display: inline-block;
-		    vertical-align: middle;
-		    width: 60px;
-		    padding-right: 4px;
-		    text-align: right;
-		}
-		/* // 일정보기 */
+		
 
 		.ing-box{
 		    display: inline-block;
@@ -3352,13 +3548,13 @@
 		    position: relative;
 		    padding-top: 56px;
 		}
-		.step-swiper.swiper-container .swiper-slide{
+		/*.step-swiper.swiper-container .swiper-slide{
 		    padding: 0 22px;
-		}
-		.step-swiper .swiper-slide .details-list{
+		}*/
+		.step-swiper .swiper-slide .list-05{
 		    margin-top: 0;
 		}
-		.step-swiper .swiper-slide .details-list li:last-child{
+		.step-swiper .swiper-slide .list-05 li:last-child{
 		    border-bottom: none;
 		}
 		.step-swiper.swiper-container .swiper-pagination{
@@ -3503,7 +3699,7 @@
 	.scroll-ud .rst-list-wrap{
 	    margin-top: 0;
 	}
-	.scroll-ud .details-list{
+	.scroll-ud .list-05{
 	    margin-top: 0;
 	}
 	.scroll-ud.full{
@@ -3526,6 +3722,23 @@
 	}
 
 
+
+
+	.scroll-ud .full-size-area{
+		margin: 0;
+	}
+	.scroll-ud .full-size-area.top{
+		margin: -20px 0 20px 0;
+	}
+
+	/*
+	.scroll-ud .line-box{
+		padding-left: 22px;
+		padding-right: 22px;
+	}
+	*/
+
+
 /* // 페이지 공통 스크롤 영역 */
 
 
@@ -3544,6 +3757,9 @@
 		    padding: 20px 22px;
 		    background: #f7f8fc;
 		}
+		.bg-box.white{
+			background: #fff;
+		}
 		.bg-box > .txt{
 		    font-size: 16px;
 		    line-height: 24px;
@@ -3555,7 +3771,7 @@
 		    align-items: flex-end;
 		}
 		.part-cont + .part-cont{
-		    margin-top: 22px;
+		    margin-top: 20px;
 		}
 		.part-cont > *{
 		    width: 100%;
@@ -3566,9 +3782,22 @@
 		.part-cont .inp-group.box-ty + .inp-group.box-ty{
 		    margin-top: 0;
 		}
+		.part-cont + .tit-h3{
+			margin-top: 30px;
+		}
+		.part-cont + .label{
+			margin-top: 22px;
+			line-height: 20px;
+		}
+		.label + .part-cont{
+			margin-top: 4px;
+		}
 
+		.bg-box + .l-cont{
+			padding-top: 30px;
+		}
 		.l-cont{
-		    padding: 30px 22px 20px 22px;
+		    padding: 20px 22px 20px 22px;
 		}
 		.l-cont + .l-cont{
 		    padding-top: 40px;

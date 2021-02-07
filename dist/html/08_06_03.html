@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+    <meta name="x-apple-disable-message-reformatting">
+    <title>병원목록 | Veaver Health mining</title>
+    <link href="../css/reset.css" rel="stylesheet">
+    <link href="../css/common.css" rel="stylesheet">
+    <link href="../css/swiper.css" rel="stylesheet">
+    <script type="text/javascript" src="../js/jquery.min.js"></script>
+    <script type="text/javascript" src="../js/jquery.swiper.js"></script>
+    <script type="text/javascript" src="../js/commonui.js"></script>
+    <script type="text/javascript" src="../js/drawui.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+    <!--[if lt IE 9]>
+    <script type="text/javascript">
+        document.createElement("header"); 
+        document.createElement("nav"); 
+        document.createElement("section"); 
+        document.createElement("article"); 
+        document.createElement("footer");
+    </script>
+<![endif]-->
+</head>
+
+<body>
+    <div class="layer-full-wrap pb0">
+        <!-- 헤더영역 -->
+        <header>
+            <div class="header-inner">
+                <div class="h-utils">
+                    <span class="u-profile">
+		    	<span class="u-profile-img">
+		    		<!-- 적용된 썸네일 -->
+		    		<img src="https://m.upinews.kr/data/upi/image/20190523/p1065574177335900_669_thum.jpg" alt="프로픨 사진" class="u-profile-img">
+		    		<!-- 남성 기본 썸네일 -->
+		    		<!-- <img src="../img/acProfile01B.png" alt="프로픨 사진" class="u-profile-img"> -->
+		    		<!-- 여성 기본 썸네일 -->
+		    		<!-- <img src="../img/acProfile02B.png" alt="프로픨 사진" class="u-profile-img"> -->
+		    	</span>
+                    <span class="name">홍길동</span>
+                    </span>
+                </div>
+                <button type="buton" class="layer-close-btn">닫기</button>
+            </div>
+        </header>
+        <!-- //헤더영역 -->
+
+        <!-- 컨텐츠 영역 -->
+        <section class="layer-content">
+            <div class="scroll-list-wrap">
+                <div class="tab-box">
+                    <div class="tab-menu-wrap swiper-container">
+                        <div class="tab-menu swiper-wrapper">
+                            <div class="swiper-slide">
+                                <a href="#" class="active">병원</a>
+                            </div>
+                            <div class="swiper-slide">
+                                <a href="#">약국</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="full-size-area">
+                    <div class="sort-area">
+                        <button type="button" class="btn-setting-b">진료과목 설정</button>
+                        <div class="rnd-group">
+                            <div class="scroll-x">
+                                <button type="button" class="btn-rnd-gr on">진료중</button>
+                                <span class="btn-rnd-gr on">내과</span>
+                                <span class="btn-rnd-gr on">이비인후과</span>
+                                <span class="btn-rnd-gr on">치과</span>
+                                <span class="btn-rnd-gr on">이비인후과</span>
+                                <span class="btn-rnd-gr on">재활의학과</span>
+                                <span class="btn-rnd-gr on">소아 청소년과</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 지도영역 -->
+                <div class="map-area" style="background: rgba(0,0,0,0.3);">
+                    <!-- 더미 이미지 -->
+                    <img src="../img/temp/@poptemp08.jpg" alt="" style="display: block; width: 100%; height: 100%;">
+                    <!-- // 더미 이미지 -->
+                    <button type="button" class="btn-view-list">목록보기</button>
+                </div>
+                <!-- // 지도영역 -->
+
+                <div class="bottom-pop-wrap">
+                    <!-- 병원 스위퍼 -->
+                    <div class="hos-swiper swiper-container">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <div class="txt-cont04">
+                                    <div class="t-case">
+                                        <span>전문병원</span>
+                                        <span>진료중</span>
+                                        <span>응급실</span>
+                                    </div>
+                                    <div class="q-txt">한국의학연구소 케이엠아이여의도의원</div>
+                                    <div class="d-info">
+                                        <span>327km</span>
+                                        <span>서울특별시 영등포구 국제금융로2길 24</span>
+                                    </div>
+                                    <div class="sort-txt">전문의</div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="txt-cont04">
+                                    <div class="t-case">
+                                        <span>전문병원</span>
+                                        <span>진료중</span>
+                                        <span>응급실</span>
+                                    </div>
+                                    <div class="q-txt">한국의학연구소 케이엠아이여의도의원</div>
+                                    <div class="d-info">
+                                        <span>327km</span>
+                                        <span>서울특별시 영등포구 국제금융로2길 24</span>
+                                    </div>
+                                    <div class="sort-txt">전문의</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 병원 스위퍼 -->
+                    <button type="button" class="btn-po-change">내 위치로 이동</button>
+                </div>
+
+            </div>
+        </section>
+        <!-- //컨텐츠 영역 -->
+    </div>
+</body>
+
+</html>

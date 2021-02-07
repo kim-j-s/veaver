@@ -44,13 +44,17 @@ $(function(){
 	viewMoreDp();
 
 	// swiper Gallery - 질병정보 상세 - 카드 컨텐츠
-	gallerySwiper();
+	// gallerySwiper();
+	// drawui.js 에서 호출로 변경
 
 	// swiper Gallery - 병원목록 - 지도보기
 	hostSwiper();
 
 	// 접종내역 - 상세
 	stepSwiper();
+
+	//날짜 선택 daterangepicker
+	DatePicker()
 
 //script ready
 });
@@ -273,24 +277,30 @@ function viewMoreDp() {
 	        $(this).removeClass('on');
 	        $('.more-view-btns').removeClass('on');
 	        $('.floating-btns').addClass('out').removeClass('fix');
+	        setTimeout(function(){
+	            $('.floating-btns').removeClass('out');
+	        },800);
 	    }
 	})
 }
 
 // swiper Gallery - 질병정보 상세 - 카드 컨텐츠
-function gallerySwiper() {
-	if ( $('.gallery-swiper').find('.swiper-slide').length > 1 ){
-        var gallerySwiper = new Swiper('.gallery-swiper', {
-            observer: true,
-            observeParents: true,
-            speed: 500,
-            spaceBetween: 20,
-            loop: true,
-            pagination: {
-                el: '.swiper-pagination',
-            },
-        });
-    }
+function gallerySwiper($target) {
+	$target.find('.gallery-swiper.swiper-container').each(function() {
+		var $this = $(this);
+		if ( $this.find('.swiper-slide').length > 1 ){
+			new Swiper(this, {
+				observer: true,
+				observeParents: true,
+				speed: 500,
+				spaceBetween: 20,
+				loop: true,
+				pagination: {
+					el: $this.find('.swiper-pagination')[0],
+				},
+			});
+		}
+	});
 }
 
 // swiper Gallery - 병원목록 - 지도보기
@@ -326,6 +336,26 @@ function stepSwiper() {
 	}
 }
 
+// 날짜 선탟
+function DatePicker() {
+	$('.datepicker').daterangepicker({
+        singleDatePicker: true,
+        autoUpdateInput: false,
+        locale: {
+            format: "YYYY/MM/DD",
+            monthNames: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'],
+            daysOfWeek: ['일', '월', '화', '수', '목', '금', '토'],
+        }
+    });
+
+    $('.datepicker').on('apply.daterangepicker', function(ev, picker) {
+        $(this).val(picker.startDate.format('YYYY/MM/DD'));
+    });
+
+    $('.datepicker').on('cancel.daterangepicker', function(ev, picker) {
+        $(this).val('');
+    });
+}
 
 
 var $arrPop = [];

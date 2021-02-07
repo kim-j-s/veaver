@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+    <meta name="x-apple-disable-message-reformatting">
+    <title>질병정보 상세 | Veaver Health mining</title>
+    <link href="../css/reset.css" rel="stylesheet">
+    <link href="../css/common.css" rel="stylesheet">
+    <link href="../css/swiper.css" rel="stylesheet">
+    <script type="text/javascript" src="../js/jquery.min.js"></script>
+    <script type="text/javascript" src="../js/jquery.swiper.js"></script>
+    <script type="text/javascript" src="../js/commonui.js"></script>
+    <script type="text/javascript" src="../js/drawui.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+    <!--[if lt IE 9]>
+    <script type="text/javascript">
+        document.createElement("header"); 
+        document.createElement("nav"); 
+        document.createElement("section"); 
+        document.createElement("article"); 
+        document.createElement("footer");
+    </script>
+<![endif]-->
+</head>
+
+<body>
+    <div class="wrap">
+        <!-- 헤더영역 -->
+        <header>
+            <div class="header-inner">
+                <div class="h-utils">
+                    <span class="u-profile">
+		    	<span class="u-profile-img">
+		    		<!-- 적용된 썸네일 -->
+		    		<img src="https://m.upinews.kr/data/upi/image/20190523/p1065574177335900_669_thum.jpg" alt="프로픨 사진" class="u-profile-img">
+		    		<!-- 남성 기본 썸네일 -->
+		    		<!-- <img src="../img/acProfile01B.png" alt="프로픨 사진" class="u-profile-img"> -->
+		    		<!-- 여성 기본 썸네일 -->
+		    		<!-- <img src="../img/acProfile02B.png" alt="프로픨 사진" class="u-profile-img"> -->
+		    	</span>
+                    <span class="name">홍길동</span>
+                    </span>
+                </div>
+                <a href="#" class="history-back">뒤로가기</a>
+            </div>
+        </header>
+        <!-- //헤더영역 -->
+
+        <!-- 컨텐츠 영역 -->
+        <section class="scroll-ud full mt0">
+            <div class="scroll-ud-inner">
+
+                <div class="full-size-area top">
+                    <img src="../img/temp/@poptemp03.jpg" alt="예시 이미지">
+                </div>
+
+                <dl class="txt-cont line-box">
+                    <dt>편두통</dt>
+                    <dd>편두통은 뇌가 특정 자극에 매우 예민하게 반응하도록 유전적으로 세팅된 뇌의 만성 질병이다. </dd>
+                </dl>
+
+                <div id="setHealthMiningDetailBody" class="card-content-area line-box"></div>
+
+                <div class="line-box">
+                    <h3 class="tit-h3">증상</h3>
+                    <div class="rnd-group">
+                        <div class="scroll-x">
+                            <span class="btn-rnd-gr on">어지러움</span>
+                            <span class="btn-rnd-gr on">탈수</span>
+                            <span class="btn-rnd-gr on">차갑고 촉촉한 피부</span>
+                            <span class="btn-rnd-gr on">어지러움</span>
+                            <span class="btn-rnd-gr on">탈수</span>
+                            <span class="btn-rnd-gr on">차갑고 촉촉한 피부</span>
+                        </div>
+                    </div>
+
+                    <h3 class="tit-h3">진료과</h3>
+                    <div class="rnd-group">
+                        <div class="scroll-x">
+                            <button type="button" class="btn-rnd-gr on">내과</button>
+                            <button type="button" class="btn-rnd-gr on">소아과</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 임시 -->
+                <div id="test"></div>
+                <!-- // 임시 -->
+
+                <div class="floating-btns">
+                    <button type="button" class="btn-view-more">더보기</button>
+                    <ul class="more-view-btns">
+                        <li><button type="button" class="more-btns btn-doc-qa">닥터 QA</button></li>
+                        <li><button type="button" class="more-btns btn-bookmark">관심 질병으로 저장하기</button></li>
+                        <li><button type="button" class="more-btns btn-find-h">병원찾기</button></li>
+                        <li><button type="button" class="more-btns btn-share">공유하기</button></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <!-- //컨텐츠 영역 -->
+    </div>
+</body>
+<link rel="stylesheet" href="../css/customVideo.css">
+<script src="../js/hls.js"></script>
+<script src="../js/customVideo.js"></script>
+
+<script>
+    const resultExam = [{
+            "id": "15987556099686211881",
+            "fileId": "16073192979512512154",
+            "seq": 1,
+            "typeId": "T",
+            "linkTitle": "",
+            "linkUrl": "",
+            "htmlText": "<p style=\"line-height: 1.5;\"><span style=\"font-size: 24px; background-color: rgb(206, 231, 247);\">﻿﻿Q. 어떤 질환인가요?</span></p><p style=\"text-align: justify; line-height: 1.5;\"><span style=\"font-size: 17px;\">폐에 생긴 악성 종양을 말하며, 폐암의 발생 부위에 따라 중심부의 폐문이라는 굵은 기관지에 암세포가 생긴 폐문부(중심형) 폐암과 폐의 말초 부근에 생긴 폐야부(말초형) 폐암으로 구분합니다.</span></p>",
+            "dataUrl": "",
+            "linkDetailId": "",
+            "imgId": "",
+            "imgSeq": "",
+            "imgType": "",
+            "fileName": "",
+            "fileSize": "",
+            "videoThumbnailUrl": ""
+        },
+        {
+            "id": "15987556099686211881",
+            "fileId": "16105318383121615205",
+            "seq": 2,
+            "typeId": "T",
+            "linkTitle": "",
+            "linkUrl": "",
+            "htmlText": "<p style=\"line-height: 1.5;\"><span style=\"font-size: 24px; background-color: rgb(206, 231, 247);\">﻿﻿Q. 대표적인 증상은 어떤 것이 있나요?\n</span><br></p><p style=\"line-height: 1.5;\"><b><span style=\"font-size: 17px;\">\n</span><span style=\"background-color: transparent; font-size: 17px;\">일반적인 증상 </span></b></p><p style=\"line-height: 1.5;\"><span style=\"font-size: 17px;\">•  좀처럼 낫지 않는 기침이나 흉통\n</span></p><p style=\"line-height: 1.5;\"><span style=\"font-size: 17px;\">•  호흡 시 색색거리는 소리(천명)</span></p><p style=\"line-height: 1.5;\"><span style=\"font-size: 17px;\">\n</span></p><p style=\"line-height: 1.5;\"><span style=\"font-size: 17px;\">•  숨이 차는 현상\n</span></p><p style=\"line-height: 1.5;\"><span style=\"font-size: 17px;\"><b style=\"\">•  혈담*\n</b></span></p><p style=\"line-height: 1.5;\"><span style=\"font-size: 17px;\">•  목이 쉬는 것\n</span></p><p style=\"line-height: 1.5;\"><span style=\"font-size: 17px;\">•  얼굴이나 목의 부종 등\n</span></p><p style=\"line-height: 1.5;\"><span style=\"background-color: transparent; font-size: 17px;\">말초형 폐암은 암이 작은 초기에는 증상이 거의 나타나지 않습니다. 건강 검진을 통해서나, 고혈압 등 기타 질환으로 인해 의료기관에 내원하였을 때 발견되는 경우가 많습니다. 하지만 더 진행되어 늑골이나 척추와 같은 주변 장기에 침윤되면 통증이 발생합니다. </span><br></p><p><span style=\"font-size: 17px;\"><font color=\"#9c9c94\">* 혈담: 가래에 피가 섞여 나오는 증상</font></span></p>",
+            "dataUrl": "",
+            "linkDetailId": "",
+            "imgId": "",
+            "imgSeq": "",
+            "imgType": "",
+            "fileName": "",
+            "fileSize": "",
+            "videoThumbnailUrl": ""
+        },
+        {
+            "id": "15987556099686211881",
+            "fileId": "16073216220850464677",
+            "seq": 3,
+            "typeId": "T",
+            "linkTitle": "",
+            "linkUrl": "",
+            "htmlText": "<p style=\"text-align: justify; line-height: 1.5;\"><span style=\"font-size: 24px; background-color: rgb(206, 231, 247);\">﻿Q. 원인은 무엇인가요?</span></p><p style=\"line-height: 1.5;\"></p><div style=\"line-height: 1.5;\"><b><span style=\"font-size: 17px;\">•  흡연</span></b></div><div style=\"line-height: 1.5;\"><span style=\"font-size: 17px;\">폐암의 가장 중요한 발병 요인입니다. 흡연자는 폐암에 걸릴 위험이 15~80배까지 증가합니다. 피우는 양이 많을수록, 일찍 시작할수록, 기간이 길수록 발생 위험이 증가합니다.</span></div><p style=\"line-height: 1.5;\"></p><p style=\"line-height: 1.5;\"><b><span style=\"font-size: 17px;\">•  간접 흡연</span></b><br><span style=\"font-size: 17px;\">직접 흡연과 마찬가지로 폐암을 일으킬 수 있습니다. 담배의 끝에서 바로 나오는 </span><b>부류연*</b><span style=\"font-size: 17px;\">에 몇 종의 발암 물질이 많이 노출되는 것으로 알려졌습니다.</span></p><p style=\"text-align: justify; line-height: 1.5;\"><b>•  석면</b><br>석면에 지속적으로 노출되면 10~35년 정도의 잠복기를 거쳐 폐암이 발병하는 것으로 알려졌습니다.</p><p style=\"text-align: justify; line-height: 1.5;\"><b>•  직업적 요인</b><br>결정형 유리규산 분진, 중금속, 화기 물질 등 특정 작업에 종사하는 경우에도 폐암 위험이 증가합니다.</p><p style=\"text-align: justify; line-height: 1.5;\"><b>•  방사성 물질</b><br>모든 종류의 방사성 <b>동위 원소*</b>는 발암의 원인이 될 수 있습니다. 흡연 다음으로 위험합니다. </p><p style=\"text-align: justify; line-height: 1.5;\"><b>•  환경적 요인</b><br>디젤 연소물, 대기오염 먼지 등에 장기간 다량의 노출이 있는 경우 폐암 발생 위험을 증가시킵니다.</p><p style=\"text-align: justify; line-height: 1.5;\"><b>•  유전적 요인</b><br>폐암은 대부분 후천적인 유전자 이상 때문에 발생하며, 가족력이 있는 경우 발병 위험이 2~3배 정도 되는 것으로 보고되었습니다.</p><p style=\"text-align: justify; line-height: 1.5;\"><span style=\"font-size: 17px;\"><font color=\"#9c9c94\">* 부류연: 타고 있는 담배의 끝에서 나오는 연기\n</font></span><br><span style=\"background-color: transparent; font-size: 17px;\"><font color=\"#9c9c94\">* 동위 원소: 원자 번호는 같으나 질량수가 서로 다른 원소 </font></span></p>",
+            "dataUrl": "",
+            "linkDetailId": "",
+            "imgId": "",
+            "imgSeq": "",
+            "imgType": "",
+            "fileName": "",
+            "fileSize": "",
+            "videoThumbnailUrl": ""
+        },
+        {
+            "id": "15987556099686211881",
+            "fileId": "16073268226833915967",
+            "seq": 4,
+            "typeId": "T",
+            "linkTitle": "",
+            "linkUrl": "",
+            "htmlText": "<p style=\"text-align: justify; line-height: 1.5;\"><span style=\"font-size: 24px; background-color: rgb(206, 231, 247);\">﻿Q. 진단은 어떻게 하나요?\n</span></p><p style=\"text-align: justify; line-height: 1.5;\">\n<span style=\"background-color: transparent; font-size: 17px;\">폐암의 진단에는 여러 가지 검사가 활용됩니다.  </span></p><p style=\"text-align: justify; line-height: 1.5;\"><b><span style=\"font-size: 17px;\">\n</span></b><b style=\"background-color: transparent;\"><span style=\"font-size: 17px;\">•  흉부 단순 X-ray 촬영 </span><br></b><span style=\"background-color: transparent;\">의심되는 병변이 있는지 볼 때 가장 먼저 사용되는 검사로 병변의 전체적인 범위를 파악하거나 변화를 볼 때 유용합니다.</span></p><p style=\"text-align: justify; line-height: 1.5;\"><b>\n•  흉부 CT 촬영<br></b><span style=\"background-color: transparent;\">단순 X-ray 촬영에 비해 약 10배 정도 작은 결절을 많이 발견합니다. 폐에 이상이 발견되는 경우 좀 더 자세한 검사를 위해 조영제를 주입하고 촬영합니다. CT는 폐암의 병기를 결정하는데 중요한 역할을 합니다. </span></p><p style=\"text-align: justify; \"><b>\n•  가래 세포 검사\n<br></b><span style=\"background-color: transparent;\">기관지나 폐의 조직에서 떨어져 나와 가래(객담)에 포함된 세포와 조직구, 백혈구 등을 검사하여 암세포를 발견해 내는 방법입니다. </span></p><p style=\"text-align: justify; \"><b>\n•  기관지 내시경 검사\n<br></b><span style=\"background-color: transparent;\">기관지에 내시경을 넣어서 암 조직의 기관지 침범 여부를 확인하는 방법입니다. 병변이 관찰될 경우 내시경을 통하여 겸자(날이 없는 기다란 가위같이 생긴 도구) 등의 기계를 넣어 조직 검사를 하거나 솔질 등을 통하여 검사함으로써 암을 확진할 수 있습니다. </span></p><p style=\"text-align: justify; \"><b>\n•  경피적 미세침 흡인 세포 검사\n<br></b><span style=\"background-color: transparent;\">국소 마취를 한 후 피부를 통해 해당 폐병변에 바늘을 찔러 넣어서 조직이나 세포를 채취하며, 병리 의사가 폐암인지의 여부를 판정합니다.</span></p><p style=\"text-align: justify; \"><img src=\"https://hm-contents-1302053493.s3.ap-northeast-2.amazonaws.com/ni-contents/2020/12/07/961df88a-5c98-4b0a-bf5c-c687c1a91573_image.png\" style=\"width: 100%;\"></p><p></p>",
+            "dataUrl": "",
+            "linkDetailId": "",
+            "imgId": "",
+            "imgSeq": "",
+            "imgType": "",
+            "fileName": "",
+            "fileSize": "",
+            "videoThumbnailUrl": ""
+        },
+        {
+            "id": "15987556099686211881",
+            "fileId": "16073276258103047508",
+            "seq": 5,
+            "typeId": "T",
+            "linkTitle": "",
+            "linkUrl": "",
+            "htmlText": "<p style=\"text-align: justify; line-height: 1.5;\"><span style=\"font-size: 24px; background-color: rgb(206, 231, 247);\">﻿Q. 치료는 어떻게 하나요?</span></p><p style=\"text-align: justify; line-height: 1.5;\"><span style=\"font-size: 17px;\">병기에 따라, 그리고 환자의 전신 상태와 치료 적응도에 따라 달라집니다. 주된 방법은 수술과 항암 화학 요법, 방사선 치료입니다. </span></p>",
+            "dataUrl": "",
+            "linkDetailId": "",
+            "imgId": "",
+            "imgSeq": "",
+            "imgType": "",
+            "fileName": "",
+            "fileSize": "",
+            "videoThumbnailUrl": ""
+        },
+        {
+            "id": "15987556099686211881",
+            "fileId": "16123385745298284581",
+            "seq": 6,
+            "typeId": "T",
+            "linkTitle": "",
+            "linkUrl": "",
+            "htmlText": "<p><span style=\"font-size: 24px;\">﻿</span><span style=\"font-size: 24px;\">테스트 콘텐츠 영역</span></p><p><span style=\"font-size: 24px;\"><br></span></p><p><span style=\"font-size: 17px;\">이미지 테스트 1개 (이미지가 하나만 등록된 경우 좌우 스와이프 동장안해야합니다)</span></p><p><span style=\"font-size: 17px;\">이미지가 여러개 등록된 경우 좌우 스와이프 됩니다.</span></p><p><span style=\"font-size: 17px;\"><br></span></p><p><span style=\"font-size: 17px;\">이미지 선택 시 이미지 크게보기 팝업이 구동되어야 합니다</span></p>",
+            "dataUrl": "",
+            "linkDetailId": "",
+            "imgId": "",
+            "imgSeq": "",
+            "imgType": "",
+            "fileName": "",
+            "fileSize": "",
+            "videoThumbnailUrl": ""
+        },
+        {
+            "id": "15987556099686211881",
+            "fileId": "16123385745485521589",
+            "seq": 7,
+            "typeId": "I",
+            "linkTitle": "",
+            "linkUrl": "",
+            "htmlText": "",
+            "dataUrl": "https://hm-contents-1302053493.s3.ap-northeast-2.amazonaws.com/ni-contents/2021/02/03/5db53510-3fad-4ff5-b727-cd99363df6f5_1612338574555.jpg",
+            "linkDetailId": "",
+            "imgId": "",
+            "imgSeq": "",
+            "imgType": "",
+            "fileName": "20111212133720_1_29637.jpg",
+            "fileSize": "33940",
+            "videoThumbnailUrl": ""
+        },
+        {
+            "id": "15987556099686211881",
+            "fileId": "16123385747065123526",
+            "seq": 8,
+            "typeId": "I",
+            "linkTitle": "",
+            "linkUrl": "",
+            "htmlText": "",
+            "dataUrl": "https://hm-contents-1302053493.s3.ap-northeast-2.amazonaws.com/ni-contents/2021/02/03/daeefac4-a71f-4bee-8c1d-4f2b5c1bc292_1612338574706.jpg",
+            "linkDetailId": "",
+            "imgId": "",
+            "imgSeq": "",
+            "imgType": "Y",
+            "fileName": "20111212133613_0_29637.jpg",
+            "fileSize": "65880",
+            "videoThumbnailUrl": ""
+        },
+        {
+            "id": "15987556099686211881",
+            "fileId": "16123385748654018293",
+            "seq": 8,
+            "typeId": "I",
+            "linkTitle": "",
+            "linkUrl": "",
+            "htmlText": "",
+            "dataUrl": "https://hm-contents-1302053493.s3.ap-northeast-2.amazonaws.com/ni-contents/2021/02/03/f56bd3f0-0c23-4f8b-94d6-f4fcd6f003d4_1612338574832.jpg",
+            "linkDetailId": "",
+            "imgId": "16123385747065123526",
+            "imgSeq": "0",
+            "imgType": "",
+            "fileName": "20111212133720_1_29637.jpg",
+            "fileSize": "33940",
+            "videoThumbnailUrl": ""
+        },
+        {
+            "id": "15987556099686211881",
+            "fileId": "16123385749266935632",
+            "seq": 8,
+            "typeId": "I",
+            "linkTitle": "",
+            "linkUrl": "",
+            "htmlText": "",
+            "dataUrl": "https://hm-contents-1302053493.s3.ap-northeast-2.amazonaws.com/ni-contents/2021/02/03/6ed49d90-eb83-4658-b509-9a686fae7977_1612338574876.jpg",
+            "linkDetailId": "",
+            "imgId": "16123385747065123526",
+            "imgSeq": "1",
+            "imgType": "",
+            "fileName": "images.jpg",
+            "fileSize": "6737",
+            "videoThumbnailUrl": ""
+        },
+        {
+            "id": "15987556099686211881",
+            "fileId": "16123387315411711888",
+            "seq": 9,
+            "typeId": "T",
+            "linkTitle": "",
+            "linkUrl": "",
+            "htmlText": "<p>링크 테스트</p>",
+            "dataUrl": "",
+            "linkDetailId": "",
+            "imgId": "",
+            "imgSeq": "",
+            "imgType": "",
+            "fileName": "",
+            "fileSize": "",
+            "videoThumbnailUrl": ""
+        },
+        {
+            "id": "15987556099686211881",
+            "fileId": "16123387315521970957",
+            "seq": 10,
+            "typeId": "L",
+            "linkTitle": "",
+            "linkUrl": "https://naver.com",
+            "htmlText": "",
+            "dataUrl": "",
+            "linkDetailId": "",
+            "imgId": "",
+            "imgSeq": "",
+            "imgType": "",
+            "fileName": "",
+            "fileSize": "",
+            "videoThumbnailUrl": ""
+        },
+        {
+            "id": "15987556099686211881",
+            "fileId": "16123387315625445150",
+            "seq": 11,
+            "typeId": "L",
+            "linkTitle": "네이버 텍스트 링크",
+            "linkUrl": "https://naver.com",
+            "htmlText": "",
+            "dataUrl": "",
+            "linkDetailId": "",
+            "imgId": "",
+            "imgSeq": "",
+            "imgType": "",
+            "fileName": "",
+            "fileSize": "",
+            "videoThumbnailUrl": ""
+        },
+        {
+            "id": "15987556099686211881",
+            "fileId": "16123389174504294530",
+            "seq": 12,
+            "typeId": "T",
+            "linkTitle": "",
+            "linkUrl": "",
+            "htmlText": "<p>콘텐츠 링크 테스트</p>",
+            "dataUrl": "",
+            "linkDetailId": "",
+            "imgId": "",
+            "imgSeq": "",
+            "imgType": "",
+            "fileName": "",
+            "fileSize": "",
+            "videoThumbnailUrl": ""
+        },
+        {
+            "id": "15987556099686211881",
+            "fileId": "16123389174609209966",
+            "seq": 13,
+            "typeId": "L",
+            "linkTitle": "",
+            "linkUrl": "",
+            "htmlText": "",
+            "dataUrl": "",
+            "linkDetailId": "16119684165924542785",
+            "imgId": "",
+            "imgSeq": "",
+            "imgType": "",
+            "fileName": "",
+            "fileSize": "",
+            "videoThumbnailUrl": ""
+        },
+        {
+            "id": "15987556099686211881",
+            "fileId": "16123389174699960021",
+            "seq": 14,
+            "typeId": "L",
+            "linkTitle": "치은염 콘텐츠 링크",
+            "linkUrl": "",
+            "htmlText": "",
+            "dataUrl": "",
+            "linkDetailId": "16119684165924542785",
+            "imgId": "",
+            "imgSeq": "",
+            "imgType": "",
+            "fileName": "",
+            "fileSize": "",
+            "videoThumbnailUrl": ""
+        },
+        {
+            "id": "15987556099686211881",
+            "fileId": "16123389174792554418",
+            "seq": 15,
+            "typeId": "L",
+            "linkTitle": "",
+            "linkUrl": "",
+            "htmlText": "",
+            "dataUrl": "https://hm-contents-1302053493.s3.ap-northeast-2.amazonaws.com/ni-contents/2021/02/03/26c9497a-61f8-4ec4-b2fb-6007831440a5_1612338917486.jpg",
+            "linkDetailId": "16119684165924542785",
+            "imgId": "",
+            "imgSeq": "",
+            "imgType": "",
+            "fileName": "images.jpg",
+            "fileSize": "6737",
+            "videoThumbnailUrl": ""
+        }
+    ];
+    console.log('dd');
+
+    $('#setHealthMiningDetailBody').drawUi('setHealthMiningDetailBody', resultExam);
+</script>
+
+</html>

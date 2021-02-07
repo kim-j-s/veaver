@@ -218,6 +218,24 @@
         </label>
     </div>
 
+    <div class="rnd-checkbox">
+        <label class="input-checkbox">
+            <input type="checkbox" checked="checked"><span>체크박스</span>
+        </label>
+    </div>
+
+    <div class="rnd-checkbox">
+        <label class="input-checkbox">
+            <input type="checkbox" disabled="disabled"><span>체크박스</span>
+        </label>
+    </div>
+
+    <div class="rnd-checkbox">
+        <label class="input-checkbox">
+            <input type="checkbox" checked="cheked" disabled="disabled"><span>체크박스</span>
+        </label>
+    </div>
+
     <!-- souce code 뷰어 -->
     <div class="box">
         <pre class="brush: html;">
@@ -568,8 +586,9 @@
     <h2>Input - normal - box</h2>
     <div class="inp-group box-ty">
         <label for="lc-2-1" class="label">혈색소</label>
-        <div class="input-text word-add" data-word="g/dL">
-            <input type="text" id="lc-2-1">
+        <div class="input-text">
+            <input type="text" id="health-1" class="t-right">
+            <span class="sub-txt">일 정도 한다.</span>
         </div>
     </div>
     <!-- souce code 뷰어 -->
@@ -577,19 +596,14 @@
         <pre class="brush: html;">
 			<div class="inp-group box-ty">
 		        <label for="" class="label"></label>
-		        <div class="input-text word-add" data-word="">
-		            <input type="text" id="">
+		        <div class="input-text">
+		            <input type="text" id="health-1" class="t-right">
+		            <span class="sub-txt"></span>
 		        </div>
 		    </div>
 		</pre>
     </div>
     <!-- //souce code 뷰어 -->
-    <p class="i-txt">data-word는 필요여부에 따라 생성</p>
-
-
-
-
-
 
 
     <h2>Input - error</h2>
