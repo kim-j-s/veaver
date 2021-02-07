@@ -1785,6 +1785,9 @@
 		.dl-pop-cont > .btn-area{
 			margin-top: 40px;
 		}
+		.dl-pop-cont > .btn-area button + button{
+			margin-top: 15px;
+		}
 		.d-layer-close{
 			position:absolute;
 			top: 0;
