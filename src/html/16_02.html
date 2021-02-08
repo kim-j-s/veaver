@@ -1,0 +1,372 @@
+@@include('head.html',{
+    "title":"건강검진관리 | "
+})
+<body>
+    <div class="layer-full-wrap">
+        <!-- 헤더영역 -->
+        @@include('header10.html',{
+            "layertitle":"건강검진관리"
+        })
+        <!-- //헤더영역 -->
+
+        <!-- 컨텐츠 영역 -->
+        <section class="scroll-ud full mt0">
+            <div class="scroll-ud-inner">
+                <div class="bg-box white">
+                    <div class="inp-group box-ty">
+                        <span class="label bold-ty">검진일</span>
+                        <div class="input-text">
+                            <input type="text" class="datepicker" disabled="disabled" value="2020/10/11">
+                        </div>
+                    </div>
+                    <div class="inp-group box-ty">
+                        <span class="label bold-ty">검진기관</span>
+                        <div class="input-text">
+                            <input type="text" disabled="disabled" value="햇살가득내과">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="g-band">
+                    <span class="txt">종합판정</span>
+                    <button type="button" class="btn-i-icon">정보보기</button>
+                    <button type="button" class="btn-view-chart">차트보기</button>
+                </div>
+                <div class="btn-area">
+                    <button type="button" class="btn-cb ty2">정상B</button>
+
+                    <!-- 상태별 버튼 색상 -->
+                    <!-- 
+                    기본값 정상B
+                    <button type="button" class="btn-cb ty1">정상A</button>
+                    <button type="button" class="btn-cb ty2">정상B</button>
+                    <button type="button" class="btn-cb ty3">주의</button>
+                    <button type="button" class="btn-cb ty4">의심</button>
+                    <button type="button" class="btn-cb ty5">위험</button>
+                    <button type="button" class="btn-cb ty6">고당</button>
+                    -->
+                    <!-- 상태별 버튼 색상 -->
+
+                </div>
+
+                <div class="g-band">
+                    <span class="txt">비만</span>
+                    <button type="button" class="btn-i-icon">정보보기</button>
+                    <button type="button" class="btn-view-chart">차트보기</button>
+                </div>
+                <div class="l-cont">
+                    <div class="part-cont">
+                        <div class="inp-group box-ty">
+                            <span class="label">키</span>
+                            <div class="input-text">
+                                <input type="tel" class="t-right" readonly="readonly" value="168">
+                                <span class="sub-txt">cm</span>
+                            </div>
+                        </div>
+                        <div class="inp-group box-ty">
+                            <span class="label">체중</span>
+                            <div class="input-text">
+                                <input type="tel" class="t-right" readonly="readonly" value="50">
+                                <span class="sub-txt">kg</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="part-cont">
+                        <div class="inp-group box-ty">
+                            <span class="label">허리둘레</span>
+                            <button type="button" class="btn-view-chart">차트보기</button>
+                            <div class="input-text">
+                                <input type="tel" class="t-right" readonly="readonly" value="94">
+                                <span class="sub-txt">cm</span>
+                            </div>
+                        </div>
+                        <div class="inp-group box-ty">
+                            <span class="label">체질량지수</span>
+                            <div class="input-text">
+                                <input type="tel" class="t-right" readonly="readonly" value="36">
+                                <span class="sub-txt">cm</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="g-band">
+                    <span class="txt">시각 이상</span>
+                    <button type="button" class="btn-rnd-bd-gr">노안관리</button>
+                    <button type="button" class="btn-view-chart">차트보기</button>
+                </div>
+                <div class="l-cont">
+                    <div class="part-cont etc">
+                        <span class="label">시력</span>
+                        <div class="t-right">
+                            <label class="input-checkbox">
+                                <input type="checkbox"><span>교정</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="part-cont">
+                        <div class="inp-group box-ty">
+                            <div class="input-text">
+                                <input type="tel" class="t-right" readonly="readonly" value="1.0">
+                                <span class="sub-txt">L</span>
+                            </div>
+                        </div>
+                        <div class="inp-group box-ty">
+                            <div class="input-text">
+                                <input type="tel" class="t-right" readonly="readonly" value="2.0">
+                                <span class="sub-txt">R</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="g-band">
+                    <span class="txt">청각 이상</span>
+                    <button type="button" class="btn-view-chart">차트보기</button>
+                </div>
+                <div class="l-cont">
+                    <div class="part-cont">
+                        <div class="inp-group box-ty">
+                            <span class="label">청력</span>
+                            <div class="input-text">
+                                <button type="button" class="btn-cb sm ty2">정상B</button>
+                                <input type="text" class="t-right" readonly="readonly" value="비정상">
+                                <span class="sub-txt">L</span>
+                            </div>
+                        </div>
+                        <div class="inp-group box-ty">
+                            <div class="input-text">
+                                <input type="text" class="t-right" readonly="readonly" value="정상">
+                                <span class="sub-txt">R</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="g-band">
+                    <span class="txt">고혈압</span>
+                    <button type="button" class="btn-i-icon">정보보기</button>
+                    <button type="button" class="btn-view-chart">차트보기</button>
+                </div>
+                <div class="l-cont">
+                    <div class="part-cont">
+                        <div class="inp-group box-ty">
+                            <span class="label">혈압(수축기)</span>
+                            <div class="input-text">
+                                <button type="button" class="btn-cb sm ty1">정상A</button>
+                                <input type="tel" class="t-right" readonly="readonly" value="145">
+                                <span class="sub-txt">mmHg</span>
+                            </div>
+                        </div>
+                        <div class="inp-group box-ty">
+                            <span class="label">혈압(이완기)</span>
+                            <div class="input-text">
+                                <input type="tel" class="t-right" readonly="readonly" value="85">
+                                <span class="sub-txt">mmHg</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="g-band">
+                    <span class="txt">빈혈</span>
+                    <button type="button" class="btn-i-icon">정보보기</button>
+                    <button type="button" class="btn-view-chart">차트보기</button>
+                </div>
+                <div class="l-cont">
+                    <div class="part-cont">
+                        <div class="inp-group box-ty">
+                            <span class="label">혈색소</span>
+                            <div class="input-text">
+                                <input type="tel" class="t-right" readonly="readonly" value="112">
+                                <span class="sub-txt">g/dL</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="g-band">
+                    <span class="txt">당뇨병</span>
+                    <button type="button" class="btn-i-icon">정보보기</button>
+                    <button type="button" class="btn-view-chart">차트보기</button>
+                </div>
+                <div class="l-cont">
+                    <div class="part-cont">
+                        <div class="inp-group box-ty">
+                            <span class="label">공복혈당</span>
+                            <div class="input-text">
+                                <button type="button" class="btn-cb sm ty3">주의</button>
+                                <input type="tel" class="t-right" readonly="readonly" value="128">
+                                <span class="sub-txt">mg/dL</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="g-band">
+                    <span class="txt">이상지질혈증</span>
+                    <button type="button" class="btn-i-icon">정보보기</button>
+                    <button type="button" class="btn-view-chart">차트보기</button>
+                </div>
+                <div class="l-cont">
+                    <div class="part-cont">
+                        <div class="inp-group box-ty">
+                            <span class="label">총 콜레스테롤</span>
+                            <button type="button" class="btn-view-chart">차트보기</button>
+                            <div class="input-text">
+                                <button type="button" class="btn-cb sm ty4">의심</button>
+                                <input type="tel" class="t-right" readonly="readonly" value="223">
+                                <span class="sub-txt">mmHg</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="part-cont">
+                        <div class="inp-group box-ty">
+                            <span class="label">고밀도(HDL) 콜레스테롤</span>
+                            <button type="button" class="btn-view-chart">차트보기</button>
+                            <div class="input-text">
+                                <button type="button" class="btn-cb sm ty5">위험</button>
+                                <input type="tel" class="t-right" readonly="readonly" value="223">
+                                <span class="sub-txt">mmHg</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="part-cont">
+                        <div class="inp-group box-ty">
+                            <span class="label">중성지방</span>
+                            <button type="button" class="btn-view-chart">차트보기</button>
+                            <div class="input-text">
+                                <button type="button" class="btn-cb sm ty6">고당</button>
+                                <input type="tel" class="t-right" readonly="readonly" value="223">
+                                <span class="sub-txt">mmHg</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="part-cont">
+                        <div class="inp-group box-ty">
+                            <span class="label">저밀도(LDL) 콜레스테롤</span>
+                            <button type="button" class="btn-view-chart">차트보기</button>
+                            <div class="input-text">
+                                <input type="tel" class="t-right" readonly="readonly" value="223">
+                                <span class="sub-txt">mmHg</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="g-band">
+                    <span class="txt">만성신장질환</span>
+                    <button type="button" class="btn-view-chart">차트보기</button>
+                </div>
+                <div class="l-cont">
+                    <div class="part-cont">
+                        <div class="inp-group box-ty">
+                            <span class="label">혈청크레아티닌</span>
+                            <button type="button" class="btn-view-chart">차트보기</button>
+                            <div class="input-text">
+                                <input type="tel" class="t-right" readonly="readonly" value="22">
+                                <span class="sub-txt">g/dL</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="part-cont">
+                        <div class="inp-group box-ty">
+                            <span class="label">신사구체여과율(e-GFR)</span>
+                            <button type="button" class="btn-view-chart">차트보기</button>
+                            <div class="input-text">
+                                <input type="tel" class="t-right" readonly="readonly" value="22">
+                                <span class="sub-txt">mL/min/1.73m2</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="g-band">
+                    <span class="txt">간장질환</span>
+                    <button type="button" class="btn-i-icon">정보보기</button>
+                    <button type="button" class="btn-view-chart">차트보기</button>
+                </div>
+                <div class="l-cont">
+                    <div class="part-cont">
+                        <div class="inp-group box-ty">
+                            <span class="label"></span>
+                            <label for="lc-2-7" class="label">AST(SGOT)</label>
+                            <div class="input-text">
+                                <input type="tel" class="t-right" readonly="readonly" value="33">
+                                <span class="sub-txt">IU/L</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="part-cont">
+                        <div class="inp-group box-ty">
+                            <span class="label">ALT(SGPT)</span>
+                            <div class="input-text">
+                                <input type="tel" class="t-right" readonly="readonly" value="22">
+                                <span class="sub-txt">IU/L</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="part-cont">
+                        <div class="inp-group box-ty">
+                            <span class="label">감마지티피(γ-GTP)</span>
+                            <div class="input-text">
+                                <input type="tel" class="t-right" readonly="readonly" value="22">
+                                <span class="sub-txt">IU/L</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="g-band">
+                    <span class="txt">신장질환</span>
+                    <button type="button" class="btn-i-icon">정보보기</button>
+                    <button type="button" class="btn-view-chart">차트보기</button>
+                </div>
+                <div class="l-cont">
+                    <h3 class="tit-h3 sm">요단백</h3>
+                    <ul class="list-04">
+                        <li>
+                            <label class="input-radio">
+                                <input type="radio" name="select01" disabled="disabled"><span>정상</span>
+                            </label>
+                        </li>
+                        <li>
+                            <label class="input-radio">
+                                <input type="radio" name="select01" disabled="disabled"><span>주의</span>
+                            </label>
+                        </li>
+                        <li>
+                            <label class="input-radio">
+                                <input type="radio" name="select01" checked="checked"><span>단백뇨 의심</span>
+                            </label>
+                            <button type="button" class="btn-cb sm ty5">위험</button>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="g-band">
+                    <span class="txt">폐결핵 흉부질환</span>
+                    <button type="button" class="btn-i-icon">정보보기</button>
+                    <button type="button" class="btn-view-chart">차트보기</button>
+                </div>
+                <div class="l-cont">
+                    <h3 class="tit-h3 sm">흉부촬영</h3>
+                    <ul class="list-04">
+                        <li>
+                            <label class="input-radio">
+                                <input type="radio" name="select02" disabled="disabled"><span>정상</span>
+                            </label>
+                        </li>
+                        <li>
+                            <label class="input-radio">
+                                <input type="radio" name="select02" checked="checked"><span>비활동성 폐결핵</span>
+                            </label>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <!-- //컨텐츠 영역 -->
+    </div>
+</body>
+</html>

@@ -305,6 +305,52 @@
 		    border-radius: 4px;
 		}
 
+		.btn-cb {
+			display: block;
+			box-sizing: border-box;
+			border-radius: 4px;
+			width: 100%;
+			font-weight: 500;
+			line-height: 50px;
+			font-size: 16px;
+			color: #fff;
+			text-align: center;
+			background-color: #056bff;
+			border: 0;
+			transition: .2s;
+		}
+		.btn-cb.sm {
+			display: inline-block;
+			vertical-align: middle;
+			width: auto;
+			padding: 0 5px;
+			font-weight: 300;
+			line-height: 18px;
+			font-size: 11px;
+		}
+		label + .btn-cb.sm {
+			margin-left: 4px;
+		}
+		.btn-cb.ty1{
+			background-color: #056bff;
+		}
+		.btn-cb.ty2{
+			background-color: #0ca6ea;
+		}
+		.btn-cb.ty3{
+			color: #000;
+			background-color: #ffbf00;
+		}
+		.btn-cb.ty4{
+			background-color: #ff7300;
+		}
+		.btn-cb.ty5{
+			background-color: #f00000;
+		}
+		.btn-cb.ty6{
+			background-color: #2e4260;
+		}
+
 		/* small size */		
 		.btn-bd-gr-s {
 			display: block;
@@ -701,6 +747,14 @@
 		    color: #b5b9c1;
 		    line-height: 18px;
 		}
+		.inp-group .input-text .btn-cb{
+			flex: none;
+			margin: 0 5px 0 10px;
+			white-space: nowrap;
+		}
+		.inp-group .input-text .btn-cb + input{
+			padding-left: 0;
+		}
 		.inp-group.box-ty .input-text > .btn-remove{
 			bottom: 0;
 			top: 50%;
@@ -918,6 +972,7 @@
 
 	.input-radio {
 		display: inline-block;
+		vertical-align: middle;
 		min-height: 20px;
 		min-width: 20px;
 	}
@@ -1659,10 +1714,11 @@
 			flex: 1 1 auto;
 			line-height: 30px;
 			font-weight: 400;
-			font-size: 17px;
+			font-size: 16px;
 		}
 		.header-inner .h-utils{
-			flex: 1 1 auto;
+			/*flex: 1 1 auto;*/
+			flex: none;
 			text-align: right;
 		}
 		.header-inner .h-utils > button{
@@ -2213,6 +2269,9 @@
 	.scroll-ud .gr-box{
 		margin: 6px 22px 0 22px;
 	}
+	.bottom-pop-cont .gr-box{
+		margin: 0 22px;
+	}
 	.gr-box .txt{
 		line-height: 20px;
 	}
@@ -2520,6 +2579,8 @@
 			vertical-align: top;
 			width: 70px;
 			padding: 0;
+			border-radius: 7px;
+			overflow: hidden;
 		}
 		.rst-list-cont .st-img img{
 		    display: block;
@@ -2753,7 +2814,8 @@
 
 		.line-box{
 			position: relative;
-			padding: 0 22px;
+			/*padding: 0 22px;*/
+			margin: 0 22px;
 		}
 		.line-box + .line-box{
 		    margin-top: 30px;
@@ -2761,8 +2823,14 @@
 		    border-top: 1px solid #ebeff3;
 		}
 		.line-box.bold-line + .line-box.bold-line{
+			/*
 		    margin-top: 40px;
-		    padding-top: 50px;
+		    margin-right: 0;
+		    margin-left: 0;
+		    */
+		    margin: 40px 0 0 0;
+		    /*padding-top: 50px;*/
+		    padding: 50px 22px 0 22px;
 		    border-top: none;
 		}
 		.line-box.bold-line + .line-box.bold-line:before{
@@ -3770,8 +3838,14 @@
 		    flex-direction: row;
 		    align-items: flex-end;
 		}
+		.part-cont.middle{
+		    align-items: center;
+		}
 		.part-cont + .part-cont{
 		    margin-top: 20px;
+		}
+		.part-cont.etc + .part-cont{
+		    margin-top: 4px;
 		}
 		.part-cont > *{
 		    width: 100%;
@@ -3792,6 +3866,18 @@
 		.label + .part-cont{
 			margin-top: 4px;
 		}
+		.part-cont .fl{
+			flex: 1 1 100%;
+		}
+		.part-cont .right-none-ty{
+			flex: none;
+			width: auto;
+			display: inline-block;
+			vertical-align: middle;
+			text-align: right;
+			padding: 0 4px 0 0;
+		}
+
 
 		.bg-box + .l-cont{
 			padding-top: 30px;
@@ -3804,5 +3890,28 @@
 		}
 		.l-cont .tit-h2{
 		    margin-bottom: 20px;
+		}
+
+		.bg-box + .g-band{
+		    margin-top: 20px;
+		}
+		.g-band{
+		    position: relative;
+		    margin-top: 40px;
+		    padding: 14px 22px;
+		    background: #f4f6f9;
+		}
+		.g-band .txt{
+		    display: inline-block;
+		    vertical-align: middle;
+		    font-weight: 500;
+		}
+		.g-band .txt + button{
+		    margin-left: 4px;
+		}
+		.g-band .btn-view-chart{
+		    position: absolute;
+		    top: 14px;
+		    right: 22px;
 		}
 	/*Element*/

@@ -6,7 +6,7 @@
     <meta content="IE=edge" http-equiv="X-UA-Compatible">
     <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
     <meta name="x-apple-disable-message-reformatting">
-    <title>CP정보 | Veaver Health mining</title>
+    <title>건강검진관리 | Veaver Health mining</title>
     <link href="../css/reset.css" rel="stylesheet">
     <link href="../css/common.css" rel="stylesheet">
     <link href="../css/swiper.css" rel="stylesheet">
@@ -33,7 +33,9 @@
         <!-- 헤더영역 -->
         <header>
             <div class="header-inner">
+                <h2 class="header-title">예방접종케어</h2>
                 <div class="h-utils">
+                    <button type="button" class="btn-black-clock">업데이트</button>
                     <span class="u-profile">
 		    	<span class="u-profile-img">
 		    		<!-- 적용된 썸네일 -->
@@ -53,64 +55,67 @@
 
         <!-- 컨텐츠 영역 -->
         <section class="layer-content etc">
-            화면 클릭시 구동<br>
-            on / off<br>
-            CP정보
+            content
         </section>
         <!-- //컨텐츠 영역 -->
 
-
         <!-- 하단 팝업 -->
-        <div class="bottom-pop">
+        <div class="bottom-pop on">
             <div class="bottom-pop-container">
                 <div class="bottom-pop-head">
                     <div class="bph-innner">
-                        <h2 class="header-title">닥터QA</h2>
+                        <h2 class="header-title">비만</h2>
                         <button type="buton" class="layer-close-btn">닫기</button>
                     </div>
                 </div>
                 <div class="bottom-pop-cont">
-                    <div class="full-size-area top">
-                        <img src="../img/temp/@poptemp06.jpg" alt="김민규 부교수">
-                    </div>
-                    <div class="line-box">
-                        <div class="txt-cont03">
-                            <div class="q-txt">김민규 부교수</div>
-                        </div>
+                    <div class="gr-box">
+                        <p class="i-txt">음식으로 섭취하는 에너지보다 소비하는 에너지가 적어 지방조직이 과다하게 축적된 상태를 말함</p>
                     </div>
 
-                    <div class="line-box">
-                        <h4 class="tit-h4">인필라테스의 건강레시피 (5)</h4>
-                        <ul class="list-03">
+                    <div class="rst-list-wrap mt30">
+                        <ul class="rst-list">
                             <li>
-                                <a href="#">
-                                    <span class="word-box">
-                                       <span class="txt">허리디스크와 척추관협착증은 어떻게 다른가요?</span>
-                                    </span>
-                                    <span class="ex-img">
-                                       <img src="../img/temp/@poptemp07.jpg" alt="예시 이미지">
-                                   </span>
-                                </a>
+                                <div class="rst-list-cont">
+                                    <dl>
+                                        <dt>고혈압</dt>
+                                        <dd>
+                                            혈압이 정상 범위보다 높은 만성 질환
+                                        </dd>
+                                    </dl>
+                                    <div class="st-img">
+                                        <img src="../img/temp/@poptemp02.jpg" alt="">
+                                    </div>
+                                </div>
+                                <button type="button" class="btn-bl">질병 정보 확인하기</button>
                             </li>
                             <li>
-                                <a href="#">
-                                    <span class="word-box">
-                                       <span class="txt">내시경적 허리디스크 치료 수술은 어떤 건가요?</span>
-                                    </span>
-                                    <span class="ex-img">
-                                       <img src="../img/temp/@poptemp07.jpg" alt="예시 이미지">
-                                   </span>
-                                </a>
+                                <div class="rst-list-cont">
+                                    <dl>
+                                        <dt>당뇨병</dt>
+                                        <dd>
+                                            당뇨병은 인슐린의 기능장애를 비롯한 여러가지 원인에 의해 발생할 수 있으며 혈당
+                                        </dd>
+                                    </dl>
+                                    <div class="st-img">
+                                        <img src="../img/temp/@poptemp02.jpg" alt="">
+                                    </div>
+                                </div>
+                                <button type="button" class="btn-bl">질병 정보 확인하기</button>
                             </li>
                             <li>
-                                <a href="#">
-                                    <span class="word-box">
-                                       <span class="txt">환자들이 알고 있어야 할 식이 습관을 알려주세요.</span>
-                                    </span>
-                                    <span class="ex-img">
-                                       <img src="../img/temp/@poptemp07.jpg" alt="예시 이미지">
-                                   </span>
-                                </a>
+                                <div class="rst-list-cont">
+                                    <dl>
+                                        <dt>고지혈증</dt>
+                                        <dd>
+                                            혈중 콜레스테롤이나 중성 지방이 높은 상태로 협심증, 심
+                                        </dd>
+                                    </dl>
+                                    <div class="st-img">
+                                        <img src="../img/temp/@poptemp02.jpg" alt="">
+                                    </div>
+                                </div>
+                                <button type="button" class="btn-bl">질병 정보 확인하기</button>
                             </li>
                         </ul>
                     </div>
@@ -127,13 +132,15 @@
 <!-- 팝업 구동 샘플 -->
 <script>
     $(function() {
-        $('html').click(function() {
-            if (!$('.bottom-pop').hasClass('on')) {
+        /*
+        $('html').click(function(){
+            if ( !$('.bottom-pop').hasClass('on') ) {
                 $('.bottom-pop').addClass('on');
             } else {
                 $('.bottom-pop').removeClass('on');
             }
         });
+        */
     })
 </script>
 <!--// 팝업 구동 샘플 -->
