@@ -9,7 +9,8 @@
 
             if (code == 'setSelfDiagnosisCheck') $this.setSelfDiagnosisCheck(data);
             else if (code == 'setSelfDiagnosisResult') $this.setSelfDiagnosisResult(data);
-            else if (code == 'setHealthMiningDetailBody') $this.setHealthMiningDetailBody(data);
+            else if (code == 'setDiseaseDetailBody') $this.setDiseaseDetailBody(data);
+            else if (code == 'setDiseaseSymptomSubject') $this.setDiseaseSymptomSubject(data);
         });
 
     };
@@ -68,8 +69,15 @@
         });
     };
 
-    // 질병 정보
-    $.fn.setHealthMiningDetailBody = function (data) {
+    // 질병 상세 에디터영역
+    $.fn.setDiseaseDetailHead = function (data) {
+        return $(this).each(function () {
+            const $this = $(this);
+        });
+    };
+
+    // 질병 증상 & 진료과
+    $.fn.setDiseaseDetailBody = function (data) {
         return $(this).each(function () {
             const $this = $(this);
             let strHtml = '';
@@ -94,7 +102,7 @@
                         $swiperSlide = $this.find('.card-content .swiper-wrapper');
                         $swiperSlide.append(`<div class="swiper-slide"><a href="#"><img src="${obj.dataUrl}"></a></div>`);
                     } else if (!!obj.imgSeq && $swiperSlide.length) {
-                        console.log("test="+obj.imgSeq);
+                        console.log("test=" + obj.imgSeq);
                         $swiperSlide.append(`<div class="swiper-slide"><a href="#"><img src="${obj.dataUrl}"></a></div>`);
                     } else {
                         $this.append(`<div class="full-img-area"><img src="${obj.dataUrl}" alt=""></div>`);
@@ -102,7 +110,9 @@
                 } else if (obj.typeId == 'L') {
                     // L: 링크 카드뷰
                     // * 브라우저 링크와 자체 컨텐츠 링크 둘다 L 타입을 사용한다.
-                    if(obj.linkUrl) {
+                    if (obj.linkDetailId) {
+
+                    } else if (!obj.linkDetailId && obj.linkUrl) {
                         $this.append(`<a href="${obj.linkUrl}" class="link"><span>${obj.linkTitle ? obj.linkTitle : obj.linkUrl}</span></a>`);
                     } else {
                     }
@@ -121,5 +131,34 @@
             // NI 질병정보
             // SI1 닥터QA
         });
-    }
+    };
+
+    // 증상, 진료과
+    $.fn.setDiseaseSymptomSubject = function (data) {
+        return $(this).each(function () {
+            const $this = $(this);
+
+            // 증상
+            if (data.Symptom.length > 0) {
+                let strHtml = '<h3 class="tit-h3">증상</h3><div class="rnd-group"><div class="scroll-x">';
+                data.Symptom.forEach(function (v) {
+                    strHtml += `<span class="btn-rnd-gr on">${v}</span>`;
+                });
+                strHtml += '</div></div>';
+
+                $this.append(strHtml);
+            }
+
+            // 진료과
+            if (data.Subject.length > 0) {
+                let strHtml = '<h3 class="tit-h3">진료과</h3><div class="rnd-group"><div class="scroll-x">';
+                data.Subject.forEach(function (v) {
+                    strHtml += `<button type="button" class="btn-rnd-gr on">${v}</button>`;
+                });
+                strHtml += '</div></div>';
+
+                $this.append(strHtml);
+            }
+        });
+    };
 })(jQuery);

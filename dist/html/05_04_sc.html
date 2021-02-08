@@ -55,42 +55,22 @@
         <section class="scroll-ud full mt0">
             <div class="scroll-ud-inner">
 
-                <div class="full-size-area top">
-                    <img src="../img/temp/@poptemp03.jpg" alt="예시 이미지">
+                <!-- 질병 상세 탑 -->
+                <div id="setDiseaseDetailHead" class="line-box">
+                    <div class="full-size-area">
+                        <img src="../img/temp/@poptemp03.jpg" alt="예시 이미지">
+                    </div>
+                    <dl class="txt-cont">
+                        <dt>편두통</dt>
+                        <dd>편두통은 뇌가 특정 자극에 매우 예민하게 반응하도록 유전적으로 세팅된 뇌의 만성 질병이다. </dd>
+                    </dl>
                 </div>
 
-                <dl class="txt-cont line-box">
-                    <dt>편두통</dt>
-                    <dd>편두통은 뇌가 특정 자극에 매우 예민하게 반응하도록 유전적으로 세팅된 뇌의 만성 질병이다. </dd>
-                </dl>
+                <!-- 질병 상세 -->
+                <div id="setDiseaseDetailBody" class="card-content-area line-box"></div>
 
-                <div id="setHealthMiningDetailBody" class="card-content-area line-box"></div>
-
-                <div class="line-box">
-                    <h3 class="tit-h3">증상</h3>
-                    <div class="rnd-group">
-                        <div class="scroll-x">
-                            <span class="btn-rnd-gr on">어지러움</span>
-                            <span class="btn-rnd-gr on">탈수</span>
-                            <span class="btn-rnd-gr on">차갑고 촉촉한 피부</span>
-                            <span class="btn-rnd-gr on">어지러움</span>
-                            <span class="btn-rnd-gr on">탈수</span>
-                            <span class="btn-rnd-gr on">차갑고 촉촉한 피부</span>
-                        </div>
-                    </div>
-
-                    <h3 class="tit-h3">진료과</h3>
-                    <div class="rnd-group">
-                        <div class="scroll-x">
-                            <button type="button" class="btn-rnd-gr on">내과</button>
-                            <button type="button" class="btn-rnd-gr on">소아과</button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 임시 -->
-                <div id="test"></div>
-                <!-- // 임시 -->
+                <!-- 증상 & 진료과 -->
+                <div id="setDiseaseSymptomSubject" class="line-box"></div>
 
                 <div class="floating-btns">
                     <button type="button" class="btn-view-more">더보기</button>
@@ -111,7 +91,16 @@
 <script src="../js/customVideo.js"></script>
 
 <script>
-    const resultExam = [{
+    // 질병 상세 상단 기본정보
+    const resultExam01 = {
+        "name": "열사병",
+        "detail": "고온의 환경에 노출되어 체온조절 중추기능의 장애가 나타나 심부 체온이 섭씨 37도에서 40도 사이로 상승한 상태(응급)",
+        "thumbnail": "https://hm-contents-1302053493.s3.ap-northeast-2.amazonaws.com/ni-contents/2020/12/01/68f7d677-9eec-43c9-aeb3-889c00c3e282_S82_00.png",
+    };
+    $('#setDiseaseDetailHead').drawUi('setDiseaseDetailHead', resultExam01);
+
+    // 질병 상세 에디터영역
+    const resultExam02 = [{
             "id": "15987556099686211881",
             "fileId": "16073192979512512154",
             "seq": 1,
@@ -401,9 +390,21 @@
             "videoThumbnailUrl": ""
         }
     ];
-    console.log('dd');
+    $('#setDiseaseDetailBody').drawUi('setDiseaseDetailBody', resultExam02);
 
-    $('#setHealthMiningDetailBody').drawUi('setHealthMiningDetailBody', resultExam);
+    // 질병 증상 & 진료과
+    const resultExam03 = {
+        "Subject": [
+            "비뇨기과",
+            "가정의학과"
+        ],
+        "Symptom": [
+            "지연뇨",
+            "긴박뇨",
+            "배뇨곤란"
+        ]
+    };
+    $('#setDiseaseSymptomSubject').drawUi('setDiseaseSymptomSubject', resultExam03);
 </script>
 
 </html>
