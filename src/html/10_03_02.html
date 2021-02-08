@@ -4,8 +4,8 @@
 <body>
     <div class="layer-full-wrap">
         <!-- 헤더영역 -->
-        @@include('header01.html',{
-            "layertitle":"Ai헬스큐"
+        @@include('header02.html',{
+            "layertitle":"문진 기록"
         })
         <!-- //헤더영역 -->
 
@@ -13,19 +13,6 @@
         <section class="scroll-ud full">
             <div class="scroll-ud-inner">
                 <div class="record-wrap">
-                    <div class="record-top">
-                        <dl>
-                            <dt>
-                                불편하신 증상을 입력해주세요
-                            </dt>
-                            <dd>
-                                머리가 아파요<br>
-                                머리가 지끈지끈해<br>
-                                뒷머리
-                            </dd>
-                        </dl>
-                    </div>
-
                     <div class="rec-list-wrap">
                         <ul class="rec-list">
                             <li>
@@ -38,7 +25,7 @@
                                         어지럽다
                                     </dd>
                                 </dl>
-                                <button type="button" class="btn-bl">질병 정보 확인하기</button>
+                                <button type="button" class="btn-bl">다시 선택 하기</button>
                             </li>
                             <li>
                                 <dl class="rec-st-cont">
@@ -51,7 +38,7 @@
                                         춥거나 앉은 상태로 갑자기 일어나면 어지럽다.
                                     </dd>
                                 </dl>
-                                <button type="button" class="btn-bl">질병 정보 확인하기</button>
+                                <button type="button" class="btn-bl">다시 선택 하기</button>
                             </li>
                             <li>
                                 <dl class="rec-st-cont">
@@ -63,7 +50,7 @@
                                         어지럽다
                                     </dd>
                                 </dl>
-                                <button type="button" class="btn-bl">질병 정보 확인하기</button>
+                                <button type="button" class="btn-bl">다시 선택 하기</button>
                             </li>
                             <li>
                                 <dl class="rec-st-cont">
@@ -76,7 +63,7 @@
                                         춥거나 앉은 상태로 갑자기 일어나면 어지럽다.
                                     </dd>
                                 </dl>
-                                <button type="button" class="btn-bl">질병 정보 확인하기</button>
+                                <button type="button" class="btn-bl">다시 선택 하기</button>
                             </li>
                         </ul>
                     </div>  
@@ -84,5 +71,21 @@
             </div>
         </section>
     </div>
+
+    <!-- 레이어 팝업 -->
+    <div class="dimmed-layer">
+        <div class="dimmed-layer-cont">
+            <div class="dl-pop-cont">
+                <div class="dl-tit">AI헬스큐</div>
+                <p class="d-txt">관심 질병 히스토리를 종료하고 불편하신 증상을 체크하기 위해 AI헬스큐를 시작합니다.</p>
+                <div class="btn-area">
+                    <button type="button" class="btn-pu">AI헬스큐 시작</button>
+                </div>
+            </div>
+            <button type="button" class="d-layer-close">닫기</button>
+        </div>
+    </div>
+    <!-- //레이어 팝업 -->
+
 </body>
 </html>

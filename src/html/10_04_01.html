@@ -2,7 +2,7 @@
 	"title":"관심질병 히스토리 | "
 })
 <body>
-	<div class="wrap">
+	<div class="wrap pb0">
         <!-- 헤더영역 -->
         @@include('header11.html',{
             "layertitle":"관심질병 히스토리"
@@ -37,51 +37,75 @@
             <div class="scroll-ud-inner">
                 <ul class="list-05">
                     <li class="etc">
-                        <a href="#" class="front">
-                            <span class="date">2020.01.21</span>
-                            <span class="txt2">채용검진</span>
-                        </a>
+                        <div class="front">
+                            <label class="input-checkbox">
+                                <input type="checkbox">
+                                <span>
+                                    <span class="date">2020.01.21</span>
+                                    <span class="txt2">채용검진</span>
+                                </span>
+                            </label>
+                        </div>
                         <div class="right-ty btn-add">
                             <button type="button" class="btn-rnd-bd-gr">보기</button>
                         </div>
-                    </li>
-                    <li class="etc">
-                        <a href="#" class="front">
-                            <span class="date">2020.01.21</span>
-                            <span class="txt2">회전근개파열</span>
-                        </a>
-                        <div class="right-ty btn-add">
-                            <button type="button" class="btn-rnd-bd-gr">보기</button>
-                        </div>
-                    </li>
-                    <li class="etc">
-                        <a href="#" class="front">
-                            <span class="date">2020.01.21</span>
-                            <span class="txt2">감기</span>
-                        </a>
-                    </li>
-                    <li class="etc">
-                        <a href="#" class="front">
-                            <span class="date">2020.01.21</span>
-                            <span class="txt2">척추증</span>
-                        </a>
                     </li>
                     <li class="etc">
                         <div class="front">
-                            <a href="#" class="">
-                                <span class="date">2020.01.21</span>
-                                <span class="txt2">[건강검진] 비만</span>
-                            </a>
+                            <label class="input-checkbox">
+                                <input type="checkbox">
+                                <span>
+                                    <span class="date">2020.01.21</span>
+                                    <span class="txt2">감기</span>
+                                </span>
+                            </label>
+                        </div>
+                        <div class="right-ty btn-add">
+                            <button type="button" class="btn-rnd-bd-gr">보기</button>
+                        </div>
+                    </li>
+                    <li class="etc">
+                        <div class="front">
+                            <label class="input-checkbox">
+                                <input type="checkbox">
+                                <span>
+                                    <span class="date">2020.01.21</span>
+                                    <span class="txt2">방사선 검진</span>
+                                </span>
+                            </label>
                             <div class="st">
                                 <button type="button" class="btn-cb sm ty4">질환의심</button>
                                 <span class="word">허리둘레</span>
                             </div>
-                        </div>                        
+                        </div>
+                    </li>
+                    <li class="etc">
+                        <label class="input-checkbox">
+                            <input type="checkbox">
+                            <span>
+                                <span class="date">2020.01.21</span>
+                                <span class="txt2">허리 엑스레이 촬영</span>
+                            </span>
+                        </label>
+                    </li>
+                    <li class="etc">
+                        <label class="input-checkbox">
+                            <input type="checkbox">
+                            <span>
+                                <span class="date">2020.01.21</span>
+                                <span class="txt2">흉부 촬영</span>
+                            </span>
+                        </label>
                     </li>
                 </ul>
             </div>
         </section>
         <!-- // 스크롤 영역 -->
+
+        <div class="btn-bottom-area">
+            <button type="button" class="btn-pu">삭제</button>
+            <button type="button" class="btn-pu" disabled="disabled">삭제</button>
+        </div>
         <!-- //컨텐츠 영역 -->
 
 <script>

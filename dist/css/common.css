@@ -1116,7 +1116,7 @@
 		    height: 40px;
 		    padding: 0 42px 0 22px;
 		    border: none;
-		    border-radius: 0;
+		    border-radius: 6px;
 		    background: #f9fafb url(../img/btn-arrow-black-20-open.png) no-repeat right 12px center / 20px auto;
 		    -webkit-appearance:none;
 		    -moz-appearance: none;
@@ -1898,6 +1898,7 @@
 		}
 		.dl-pop-cont > .btn-area{
 			margin-top: 40px;
+			padding: 0;
 		}
 		.dl-pop-cont > .btn-area button + button{
 			margin-top: 15px;
@@ -3179,21 +3180,21 @@
 		    border-bottom: 1px solid #ebeff3;
 		}
 		.list-05 > li .front{
-			/*flex: 1 1 auto;*/
 			flex: 1 1 100%;
-			/*white-space: nowrap;*/
 		}
-		.list-05 > li .right-none-ty{
-			/*flex: none;*/
+		.list-05 > li .right-ty{
 			flex: 1 1 100%;
-			/*display: inline-block;*/
 			padding-left: 10px;
 			vertical-align: middle;
 			text-align: right;
 		}
-		.list-05 > li .right-none-ty.btn-add{
+		.list-05 > li .right-ty.btn-add{
+			flex: 1 1 auto;
 			margin-right: 4px;
-		}		
+		}
+		.list-05 > li .right-ty.btn-add button{
+			white-space: nowrap;
+		}
 		.list-05 > li .txt{
 		    display: inline-block;
 		    vertical-align: middle;
@@ -3216,6 +3217,9 @@
 			display: block;
 			font-size: 12px;
 			color: #74777b;
+		}
+		.list-05 > li label + .st{
+			padding-left: 28px;
 		}
 		.list-05 > li .st{
 			flex: none;
@@ -3241,6 +3245,10 @@
 		    padding-right: 20px;
 		}
 		.list-05 > li.etc{
+			padding: 0 0 16px 0;
+			/*padding: 16px 0;*/
+		}
+		.list-05 > li.etc + li.etc{
 			padding: 16px 0;
 		}
 		.list-05 > li .input-checkbox{
@@ -3716,7 +3724,7 @@
 		background: #fff;
 		opacity: 0.7 !important;
 	}
-	.scroll-ud:before{
+	.scroll-ud.ov-case:before{
 	    content: '';
 	    position: absolute;
 	    top: 10px;
@@ -3728,16 +3736,16 @@
 	    opacity: 0;
 	    transition: .2s;
 	}
-	.scroll-ud.etc:before{
+	.scroll-ud.ov-case.etc:before{
 		top: 0;
 	}
-	.scroll-ud.etc2:before{
+	.scroll-ud.ov-case.etc2:before{
 		top: 0;
 	}
-	.scroll-ud.up-dp:before{
+	.scroll-ud.ov-case.up-dp:before{
 	    opacity: 1;
 	}
-	.scroll-ud:after{
+	.scroll-ud.ov-case:after{
 	    content: '';
 	    position: absolute;
 	    bottom: 0;
@@ -3749,7 +3757,7 @@
 	    opacity: 0;
 	    transition: .2s;
 	}
-	.scroll-ud.down-dp:after{
+	.scroll-ud.ov-case.down-dp:after{
 	    opacity: 1;
 	}
 	.scroll-ud-inner{
@@ -3858,7 +3866,7 @@
 		.part-cont .fl{
 			flex: 1 1 100%;
 		}
-		.part-cont .right-none-ty{
+		.part-cont .right-ty{
 			flex: none;
 			width: auto;
 			display: inline-block;

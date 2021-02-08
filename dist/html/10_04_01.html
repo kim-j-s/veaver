@@ -6,7 +6,7 @@
     <meta content="IE=edge" http-equiv="X-UA-Compatible">
     <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
     <meta name="x-apple-disable-message-reformatting">
-    <title>검진기록 | Veaver Health mining</title>
+    <title>관심질병 히스토리 | Veaver Health mining</title>
     <link href="../css/reset.css" rel="stylesheet">
     <link href="../css/common.css" rel="stylesheet">
     <link href="../css/swiper.css" rel="stylesheet">
@@ -33,7 +33,7 @@
         <!-- 헤더영역 -->
         <header>
             <div class="header-inner">
-                <h2 class="header-title">검진기록</h2>
+                <h2 class="header-title">관심질병 히스토리</h2>
                 <div class="h-utils">
                     <button type="button" class="btn-black-setting">설정</button>
                     <span class="u-profile">
@@ -61,11 +61,18 @@
                     <option value="">오래된순</option>
                     <option value="">가나다순</option>
                 </select>
-                <select name="" id="" class="selectbox">
-                    <option value="">전체 보기</option>
-                    <option value="">일반검진</option>
-                    <option value="">실시간검진</option>
-                </select>
+            </div>
+            <div class="rnd-group mt10">
+                <div class="scroll-x">
+                    <button type="button" class="btn-rnd-gr btn-s-toggle on">문진</button>
+                    <button type="button" class="btn-rnd-gr btn-s-toggle on">건강검진</button>
+                    <button type="button" class="btn-rnd-gr btn-s-toggle">관심질병</button>
+                    <button type="button" class="btn-rnd-gr btn-s-toggle">건강검진</button>
+                    <button type="button" class="btn-rnd-gr btn-s-toggle on">문진</button>
+                    <button type="button" class="btn-rnd-gr btn-s-toggle on">건강검진</button>
+                    <button type="button" class="btn-rnd-gr btn-s-toggle">관심질병</button>
+                    <button type="button" class="btn-rnd-gr btn-s-toggle">건강검진</button>
+                </div>
             </div>
         </section>
 
@@ -73,34 +80,50 @@
         <section class="scroll-ud">
             <div class="scroll-ud-inner">
                 <ul class="list-05">
-                    <li>
-                        <label class="input-checkbox">
-                            <input type="checkbox">
-                            <span>
-                                <span class="date">2020.01.21</span>
-                            <span class="txt2">채용검진</span>
-                            </span>
-                        </label>
+                    <li class="etc">
+                        <div class="front">
+                            <label class="input-checkbox">
+                                <input type="checkbox">
+                                <span>
+                                    <span class="date">2020.01.21</span>
+                                <span class="txt2">채용검진</span>
+                                </span>
+                            </label>
+                        </div>
+                        <div class="right-ty btn-add">
+                            <button type="button" class="btn-rnd-bd-gr">보기</button>
+                        </div>
                     </li>
-                    <li>
-                        <label class="input-checkbox">
-                            <input type="checkbox">
-                            <span>
-                                <span class="date">2020.01.21</span>
-                            <span class="txt2">감기</span>
-                            </span>
-                        </label>
+                    <li class="etc">
+                        <div class="front">
+                            <label class="input-checkbox">
+                                <input type="checkbox">
+                                <span>
+                                    <span class="date">2020.01.21</span>
+                                <span class="txt2">감기</span>
+                                </span>
+                            </label>
+                        </div>
+                        <div class="right-ty btn-add">
+                            <button type="button" class="btn-rnd-bd-gr">보기</button>
+                        </div>
                     </li>
-                    <li>
-                        <label class="input-checkbox">
-                            <input type="checkbox">
-                            <span>
-                                <span class="date">2020.01.21</span>
-                            <span class="txt2">방사선 검진</span>
-                            </span>
-                        </label>
+                    <li class="etc">
+                        <div class="front">
+                            <label class="input-checkbox">
+                                <input type="checkbox">
+                                <span>
+                                    <span class="date">2020.01.21</span>
+                                <span class="txt2">방사선 검진</span>
+                                </span>
+                            </label>
+                            <div class="st">
+                                <button type="button" class="btn-cb sm ty4">질환의심</button>
+                                <span class="word">허리둘레</span>
+                            </div>
+                        </div>
                     </li>
-                    <li>
+                    <li class="etc">
                         <label class="input-checkbox">
                             <input type="checkbox">
                             <span>
@@ -109,30 +132,12 @@
                             </span>
                         </label>
                     </li>
-                    <li>
+                    <li class="etc">
                         <label class="input-checkbox">
                             <input type="checkbox">
                             <span>
                                 <span class="date">2020.01.21</span>
                             <span class="txt2">흉부 촬영</span>
-                            </span>
-                        </label>
-                    </li>
-                    <li>
-                        <label class="input-checkbox">
-                            <input type="checkbox">
-                            <span>
-                                <span class="date">2020.01.21</span>
-                            <span class="txt2">일반검진</span>
-                            </span>
-                        </label>
-                    </li>
-                    <li>
-                        <label class="input-checkbox">
-                            <input type="checkbox">
-                            <span>
-                                <span class="date">2020.01.21</span>
-                            <span class="txt2">실시간 검진</span>
                             </span>
                         </label>
                     </li>
@@ -143,17 +148,20 @@
 
         <div class="btn-bottom-area">
             <button type="button" class="btn-pu">삭제</button>
+            <button type="button" class="btn-pu" disabled="disabled">삭제</button>
         </div>
         <!-- //컨텐츠 영역 -->
-    </div>
 
-    <!-- 레이어 팝업 -->
-    <div class="toast-layer">
-        <div class="toast-cont">
-            삭제되었습니다.
-        </div>
+        <script>
+            $(function() {
+                $('.btn-cb').click(function() {
+                    alert('xxxx');
+                })
+            });
+        </script>
+
+
     </div>
-    <!-- //레이어 팝업 -->
 </body>
 
 </html>
