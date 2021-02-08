@@ -1679,10 +1679,11 @@
 			flex: 1 1 auto;
 			line-height: 30px;
 			font-weight: 400;
-			font-size: 17px;
+			font-size: 16px;
 		}
 		.header-inner .h-utils{
-			flex: 1 1 auto;
+			/*flex: 1 1 auto;*/
+			flex: none;
 			text-align: right;
 		}
 		.header-inner .h-utils > button{
@@ -3744,6 +3745,9 @@
 		    flex-direction: row;
 		    align-items: flex-end;
 		}
+		.part-cont.middle{
+		    align-items: center;
+		}
 		.part-cont + .part-cont{
 		    margin-top: 20px;
 		}
@@ -3769,6 +3773,18 @@
 		.label + .part-cont{
 			margin-top: 4px;
 		}
+		.part-cont .fl{
+			flex: 1 1 100%;
+		}
+		.part-cont .right-none-ty{
+			flex: none;
+			width: auto;
+			display: inline-block;
+			vertical-align: middle;
+			text-align: right;
+			padding: 0 4px 0 0;
+		}
+
 
 		.bg-box + .l-cont{
 			padding-top: 30px;
