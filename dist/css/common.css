@@ -320,11 +320,16 @@
 			transition: .2s;
 		}
 		.btn-cb.sm {
+			display: inline-block;
+			vertical-align: middle;
 			width: auto;
 			padding: 0 5px;
 			font-weight: 300;
 			line-height: 18px;
 			font-size: 11px;
+		}
+		label + .btn-cb.sm {
+			margin-left: 4px;
 		}
 		.btn-cb.ty1{
 			background-color: #056bff;
@@ -744,7 +749,7 @@
 		}
 		.inp-group .input-text .btn-cb{
 			flex: none;
-			margin: 0 10px;
+			margin: 0 5px 0 10px;
 			white-space: nowrap;
 		}
 		.inp-group .input-text .btn-cb + input{
@@ -967,6 +972,7 @@
 
 	.input-radio {
 		display: inline-block;
+		vertical-align: middle;
 		min-height: 20px;
 		min-width: 20px;
 	}
@@ -2262,6 +2268,9 @@
 	.scroll-ud .gr-box{
 		margin: 6px 22px 0 22px;
 	}
+	.bottom-pop-cont .gr-box{
+		margin: 0 22px;
+	}
 	.gr-box .txt{
 		line-height: 20px;
 	}
@@ -2569,6 +2578,8 @@
 			vertical-align: top;
 			width: 70px;
 			padding: 0;
+			border-radius: 7px;
+			overflow: hidden;
 		}
 		.rst-list-cont .st-img img{
 		    display: block;
@@ -3856,5 +3867,28 @@
 		}
 		.l-cont .tit-h2{
 		    margin-bottom: 20px;
+		}
+
+		.bg-box + .g-band{
+		    margin-top: 20px;
+		}
+		.g-band{
+		    position: relative;
+		    margin-top: 40px;
+		    padding: 14px 22px;
+		    background: #f4f6f9;
+		}
+		.g-band .txt{
+		    display: inline-block;
+		    vertical-align: middle;
+		    font-weight: 500;
+		}
+		.g-band .txt + button{
+		    margin-left: 4px;
+		}
+		.g-band .btn-view-chart{
+		    position: absolute;
+		    top: 14px;
+		    right: 22px;
 		}
 	/*Element*/

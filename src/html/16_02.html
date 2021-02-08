@@ -1,56 +1,12 @@
-<!DOCTYPE html>
-<html lang="ko">
-
-<head>
-    <meta charset="utf-8">
-    <meta content="IE=edge" http-equiv="X-UA-Compatible">
-    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
-    <meta name="x-apple-disable-message-reformatting">
-    <title>건강검진관리 | Veaver Health mining</title>
-    <link href="../css/reset.css" rel="stylesheet">
-    <link href="../css/common.css" rel="stylesheet">
-    <link href="../css/swiper.css" rel="stylesheet">
-    <script type="text/javascript" src="../js/jquery.min.js"></script>
-    <script type="text/javascript" src="../js/jquery.swiper.js"></script>
-    <script type="text/javascript" src="../js/commonui.js"></script>
-    <script type="text/javascript" src="../js/drawui.js"></script>
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
-    <!--[if lt IE 9]>
-    <script type="text/javascript">
-        document.createElement("header"); 
-        document.createElement("nav"); 
-        document.createElement("section"); 
-        document.createElement("article"); 
-        document.createElement("footer");
-    </script>
-<![endif]-->
-</head>
-
+@@include('head.html',{
+    "title":"건강검진관리 | "
+})
 <body>
     <div class="layer-full-wrap">
         <!-- 헤더영역 -->
-        <header>
-            <div class="header-inner">
-                <h2 class="header-title">건강검진관리</h2>
-                <div class="h-utils">
-                    <button type="button" class="btn-black-clock">방문기록 보기</button>
-                    <span class="u-profile">
-		    	<span class="u-profile-img">
-		    		<!-- 적용된 썸네일 -->
-		    		<img src="https://m.upinews.kr/data/upi/image/20190523/p1065574177335900_669_thum.jpg" alt="프로픨 사진" class="u-profile-img">
-		    		<!-- 남성 기본 썸네일 -->
-		    		<!-- <img src="../img/acProfile01B.png" alt="프로픨 사진" class="u-profile-img"> -->
-		    		<!-- 여성 기본 썸네일 -->
-		    		<!-- <img src="../img/acProfile02B.png" alt="프로픨 사진" class="u-profile-img"> -->
-		    	</span>
-                    <span class="name">홍길동</span>
-                    </span>
-                </div>
-                <button type="buton" class="layer-close-btn">닫기</button>
-            </div>
-        </header>
+        @@include('header10.html',{
+            "layertitle":"건강검진관리"
+        })
         <!-- //헤더영역 -->
 
         <!-- 컨텐츠 영역 -->
@@ -60,13 +16,13 @@
                     <div class="inp-group box-ty">
                         <span class="label bold-ty">검진일</span>
                         <div class="input-text">
-                            <input type="text" id="chkdate" class="datepicker" disabled="disabled" value="2020/10/11">
+                            <input type="text" class="datepicker" disabled="disabled" value="2020/10/11">
                         </div>
                     </div>
                     <div class="inp-group box-ty">
                         <span class="label bold-ty">검진기관</span>
                         <div class="input-text">
-                            <input type="text" id="center" disabled="disabled" value="햇살가득내과">
+                            <input type="text" disabled="disabled" value="햇살가득내과">
                         </div>
                     </div>
                 </div>
@@ -98,37 +54,6 @@
                     <button type="button" class="btn-i-icon">정보보기</button>
                     <button type="button" class="btn-view-chart">차트보기</button>
                 </div>
-
-
-                <style>
-                    .bg-box+.g-band {
-                        margin-top: 20px;
-                    }
-
-                    .g-band {
-                        position: relative;
-                        margin-top: 40px;
-                        padding: 14px 22px;
-                        background: #f4f6f9;
-                    }
-
-                    .g-band .txt {
-                        display: inline-block;
-                        vertical-align: middle;
-                        font-weight: 500;
-                    }
-
-                    .g-band .txt+button {
-                        margin-left: 4px;
-                    }
-
-                    .g-band .btn-view-chart {
-                        position: absolute;
-                        top: 14px;
-                        right: 22px;
-                    }
-                </style>
-
                 <div class="l-cont">
                     <div class="part-cont">
                         <div class="inp-group box-ty">
@@ -182,7 +107,7 @@
                     <div class="part-cont">
                         <div class="inp-group box-ty">
                             <div class="input-text">
-                                <input type="tel" id="lc-1-5" class="t-right" readonly="readonly" value="1.0">
+                                <input type="tel" class="t-right" readonly="readonly" value="1.0">
                                 <span class="sub-txt">L</span>
                             </div>
                         </div>
@@ -193,6 +118,13 @@
                             </div>
                         </div>
                     </div>
+                </div>
+
+                <div class="g-band">
+                    <span class="txt">청각 이상</span>
+                    <button type="button" class="btn-view-chart">차트보기</button>
+                </div>
+                <div class="l-cont">
                     <div class="part-cont">
                         <div class="inp-group box-ty">
                             <span class="label">청력</span>
@@ -210,13 +142,7 @@
                         </div>
                     </div>
                 </div>
-                <script>
-                    $(function() {
-                        $('.btn-cb').click(function() {
-                            alert('xxx');
-                        })
-                    })
-                </script>
+
                 <div class="g-band">
                     <span class="txt">고혈압</span>
                     <button type="button" class="btn-i-icon">정보보기</button>
@@ -227,6 +153,7 @@
                         <div class="inp-group box-ty">
                             <span class="label">혈압(수축기)</span>
                             <div class="input-text">
+                                <button type="button" class="btn-cb sm ty1">정상A</button>
                                 <input type="tel" class="t-right" readonly="readonly" value="145">
                                 <span class="sub-txt">mmHg</span>
                             </div>
@@ -268,7 +195,8 @@
                         <div class="inp-group box-ty">
                             <span class="label">공복혈당</span>
                             <div class="input-text">
-                                <input type="tel" id="lc-2-2" class="t-right" readonly="readonly" value="128">
+                                <button type="button" class="btn-cb sm ty3">주의</button>
+                                <input type="tel" class="t-right" readonly="readonly" value="128">
                                 <span class="sub-txt">mg/dL</span>
                             </div>
                         </div>
@@ -286,6 +214,7 @@
                             <span class="label">총 콜레스테롤</span>
                             <button type="button" class="btn-view-chart">차트보기</button>
                             <div class="input-text">
+                                <button type="button" class="btn-cb sm ty4">의심</button>
                                 <input type="tel" class="t-right" readonly="readonly" value="223">
                                 <span class="sub-txt">mmHg</span>
                             </div>
@@ -296,7 +225,8 @@
                             <span class="label">고밀도(HDL) 콜레스테롤</span>
                             <button type="button" class="btn-view-chart">차트보기</button>
                             <div class="input-text">
-                                <input type="tel" id="lc-2-3" class="t-right" readonly="readonly" value="223">
+                                <button type="button" class="btn-cb sm ty5">위험</button>
+                                <input type="tel" class="t-right" readonly="readonly" value="223">
                                 <span class="sub-txt">mmHg</span>
                             </div>
                         </div>
@@ -306,6 +236,7 @@
                             <span class="label">중성지방</span>
                             <button type="button" class="btn-view-chart">차트보기</button>
                             <div class="input-text">
+                                <button type="button" class="btn-cb sm ty6">고당</button>
                                 <input type="tel" class="t-right" readonly="readonly" value="223">
                                 <span class="sub-txt">mmHg</span>
                             </div>
@@ -344,7 +275,7 @@
                             <button type="button" class="btn-view-chart">차트보기</button>
                             <div class="input-text">
                                 <input type="tel" class="t-right" readonly="readonly" value="22">
-                                <span class="sub-txt">mL/min<br>/1.73m2</span>
+                                <span class="sub-txt">mL/min/1.73m2</span>
                             </div>
                         </div>
                     </div>
@@ -408,6 +339,7 @@
                             <label class="input-radio">
                                 <input type="radio" name="select01" checked="checked"><span>단백뇨 의심</span>
                             </label>
+                            <button type="button" class="btn-cb sm ty5">위험</button>
                         </li>
                     </ul>
                 </div>
@@ -437,5 +369,4 @@
         <!-- //컨텐츠 영역 -->
     </div>
 </body>
-
 </html>
