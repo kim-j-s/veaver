@@ -2843,6 +2843,9 @@
 			width: 100%;
 			border-top: 10px solid #f8f9fb;
 		}
+		.line-box .full-size-area {
+			margin: 0 -22px 20px;
+		}
 
 
 	/** // 경계선 엘리먼트 **/
@@ -3789,12 +3792,6 @@
 		background-size: auto 20px, 20px auto;
 	}
 
-
-
-
-	.scroll-ud .full-size-area{
-		margin: 0;
-	}
 	.scroll-ud .full-size-area.top{
 		margin: -20px 0 20px 0;
 	}
