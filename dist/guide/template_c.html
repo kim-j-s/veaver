@@ -431,7 +431,7 @@
     <h2>list 05 - 상하 간격 20px</h2>
     <ul class="list-05">
         <li class="ty1">
-            <a href="#">
+            <a href="#" class="front">
                 <span class="txt">B형간염</span>
                 <span class="ing-box">
                     <span class="on"></span>
@@ -443,21 +443,61 @@
                 </span>
             </a>
         </li>
-        <li class="ty2">
-            <span class="txt">접종차수</span>
-            <span class="txt2">1차</span>
+        <li>
+            <div class="front txt">
+                접종차수
+            </div>
+            <div class="right-none-ty txt2">
+                1차
+            </div>
         </li>
-        <li class="ty3">
-            <span class="txt">누락된 예방접종</span>
-            <div class="view">
+        <li>
+            <div class="front txt">
+                누락된 예방접종
+            </div>
+            <div class="right-none-ty btn-add">
                 <button type="button" class="btn-rnd-bd-gr">보기</button>
             </div>
         </li>
-        <li class="ty3">
-            <span class="txt omit">누락된 예방접종</span>
-            <div class="view">
+        <li>
+            <div class="front txt omit">
+                누락된 예방접종
+            </div>
+            <div class="right-none-ty btn-add">
                 <button type="button" class="btn-rnd-bd-gr">보기</button>
             </div>
+        </li>
+        <li>
+            <div class="front txt">
+                백신명
+            </div>
+            <div class="right-none-ty txt2">
+                20210601<br> 6차
+            </div>
+        </li>
+        <li>
+            <dl class="txt-cont05">
+                <dt class="ty1">정상A</dt>
+                <dd>건강이 양호</dd>
+            </dl>
+        </li>
+        <li class="etc">
+            <div class="front">
+                <span class="date">2020.01.21</span>
+                <span class="txt2">li에 etc 클래스 부여 padding 20 -> 16으로 변경</span>
+            </div>
+            <div class="right-none-ty btn-add">
+                <button type="button" class="btn-rnd-bd-gr">보기</button>
+            </div>
+        </li>
+        <li>
+            <label class="input-checkbox">
+                <input type="checkbox">
+                <span>
+                    <span class="date">2020.01.21</span>
+                <span class="txt">채용검진</span>
+                </span>
+            </label>
         </li>
     </ul>
     <!-- souce code 뷰어 -->
@@ -465,8 +505,8 @@
         <pre class="brush: html;">
 			<ul class="list-05">
 				<li class="ty1">
-		            <a href="#">
-		                <span class="txt"></span>
+		            <a href="#" class="front">
+		                <span class="txt">B형간염</span>
 		                <span class="ing-box">
 		                    <span class="on"></span>
 		                    <span></span>
@@ -477,22 +517,62 @@
 		                </span>
 		            </a>
 		        </li>
-				<li class="ty2">
-		            <span class="txt"></span>
-		            <span class="txt2"></span>
+		        <li>
+		            <div class="front txt">
+		                접종차수
+		            </div>
+		            <div class="right-none-ty txt2">
+		                1차
+		            </div>
 		        </li>
-		        <li class="ty3">
-		            <span class="txt"></span>
-		            <div class="view">
+		        <li>
+		            <div class="front txt">
+		                누락된 예방접종
+		            </div>
+		            <div class="right-none-ty btn-add">
 		                <button type="button" class="btn-rnd-bd-gr">보기</button>
 		            </div>
 		        </li>
-		        <li class="ty3">
-		            <span class="txt omit"></span>
-		            <div class="view">
+		        <li>
+		            <div class="front txt omit">
+		                누락된 예방접종
+		            </div>
+		            <div class="right-none-ty btn-add">
 		                <button type="button" class="btn-rnd-bd-gr">보기</button>
 		            </div>
 		        </li>
+		        <li>
+		            <div class="front txt">
+		                백신명
+		            </div>
+		            <div class="right-none-ty txt2">
+		                20210601<br> 6차
+		            </div>
+		        </li>
+		        <li>
+		            <dl class="txt-cont05">
+		                <dt class="ty1">정상A</dt>
+		                <dd>건강이 양호</dd>
+		            </dl>
+		        </li>
+		        <li class="etc">
+			        <div class="front">
+			            <span class="date">2020.01.21</span>
+			            <span class="txt2">li에 etc 클래스 부여 padding 20 -> 16으로 변경</span>
+			        </div>
+			        <div class="right-none-ty btn-add">
+			            <button type="button" class="btn-rnd-bd-gr">보기</button>
+			        </div>
+			    </li>
+			    <li>
+	                <label class="input-checkbox">
+	                    <input type="checkbox">
+	                    <span>
+	                        <span class="date">2020.01.21</span>
+	                        <span class="txt">채용검진</span>
+	                    </span>
+	                </label>
+	            </li>
 			</ul>
 		</pre>
     </div>

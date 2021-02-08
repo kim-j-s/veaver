@@ -62,68 +62,81 @@
                     <option value="">가나다순</option>
                 </select>
             </div>
+            <div class="rnd-group mt10">
+                <div class="scroll-x">
+                    <button type="button" class="btn-rnd-gr btn-s-toggle on">문진</button>
+                    <button type="button" class="btn-rnd-gr btn-s-toggle on">건강검진</button>
+                    <button type="button" class="btn-rnd-gr btn-s-toggle">관심질병</button>
+                    <button type="button" class="btn-rnd-gr btn-s-toggle">건강검진</button>
+                    <button type="button" class="btn-rnd-gr btn-s-toggle on">문진</button>
+                    <button type="button" class="btn-rnd-gr btn-s-toggle on">건강검진</button>
+                    <button type="button" class="btn-rnd-gr btn-s-toggle">관심질병</button>
+                    <button type="button" class="btn-rnd-gr btn-s-toggle">건강검진</button>
+                </div>
+            </div>
         </section>
 
         <!-- 스크롤 영역 -->
         <section class="scroll-ud">
             <div class="scroll-ud-inner">
-
-
                 <ul class="list-05">
-                    <li class="ty1">
+                    <li class="etc">
                         <a href="#" class="front">
-                            <span class="txt">B형간염</span>
-                            <span class="ing-box">
-                                <span class="on"></span>
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                            </span>
-                        </a>
-                    </li>
-                    <li>
-                        <div class="front txt">
-                            접종차수
-                        </div>
-                        <div class="right-none-ty txt2">
-                            1차
-                        </div>
-                    </li>
-                    <li>
-                        <div class="front txt">
-                            누락된 예방접종
-                        </div>
-                        <div class="right-none-ty btn-add">
-                            <button type="button" class="btn-rnd-bd-gr">보기</button>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="front txt omit">
-                            누락된 예방접종
-                        </div>
-                        <div class="right-none-ty btn-add">
-                            <button type="button" class="btn-rnd-bd-gr">보기</button>
-                        </div>
-                    </li>
-                    <li class="ty4">
-                        <div class="front">
                             <span class="date">2020.01.21</span>
                             <span class="txt2">채용검진</span>
-                        </div>
+                        </a>
                         <div class="right-none-ty btn-add">
                             <button type="button" class="btn-rnd-bd-gr">보기</button>
+                        </div>
+                    </li>
+                    <li class="etc">
+                        <a href="#" class="front">
+                            <span class="date">2020.01.21</span>
+                            <span class="txt2">회전근개파열</span>
+                        </a>
+                        <div class="right-none-ty btn-add">
+                            <button type="button" class="btn-rnd-bd-gr">보기</button>
+                        </div>
+                    </li>
+                    <li class="etc">
+                        <a href="#" class="front">
+                            <span class="date">2020.01.21</span>
+                            <span class="txt2">감기</span>
+                        </a>
+                    </li>
+                    <li class="etc">
+                        <a href="#" class="front">
+                            <span class="date">2020.01.21</span>
+                            <span class="txt2">척추증</span>
+                        </a>
+                    </li>
+                    <li class="etc">
+                        <div class="front">
+                            <a href="#" class="">
+                                <span class="date">2020.01.21</span>
+                                <span class="txt2">[건강검진] 비만</span>
+                            </a>
+                            <div class="st">
+                                <button type="button" class="btn-cb sm ty4">질환의심</button>
+                                <span class="word">허리둘레</span>
+                            </div>
                         </div>
                     </li>
                 </ul>
-
-
-
             </div>
         </section>
         <!-- // 스크롤 영역 -->
         <!-- //컨텐츠 영역 -->
+
+        <script>
+            $(function() {
+                $('.btn-cb').click(function() {
+                    alert('xxxx');
+                })
+            });
+        </script>
+
+
     </div>
 </body>
 
