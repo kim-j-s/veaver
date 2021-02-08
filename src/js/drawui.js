@@ -9,6 +9,7 @@
 
             if (code == 'setSelfDiagnosisCheck') $this.setSelfDiagnosisCheck(data);
             else if (code == 'setSelfDiagnosisResult') $this.setSelfDiagnosisResult(data);
+            else if (code == 'setDiseaseDetailHead') $this.setDiseaseDetailHead(data);
             else if (code == 'setDiseaseDetailBody') $this.setDiseaseDetailBody(data);
             else if (code == 'setDiseaseSymptomSubject') $this.setDiseaseSymptomSubject(data);
         });
@@ -69,14 +70,25 @@
         });
     };
 
-    // 질병 상세 에디터영역
+    // 질병 상세 탑
     $.fn.setDiseaseDetailHead = function (data) {
         return $(this).each(function () {
-            const $this = $(this);
+            let strHtml = '';
+
+            if(data.thumbnail) strHtml += `<div class="full-size-area"><img src="${data.thumbnail}"></div>`;
+
+            strHtml += '<dl class="txt-cont">';
+
+            if(data.name) strHtml += `<dt>${data.name}</dt>`;
+            if(data.detail) strHtml += `<dd>${data.detail}</dd>`;
+
+            strHtml += '</dl>';
+
+            $(this).append(strHtml);
         });
     };
 
-    // 질병 증상 & 진료과
+    // 질병 상세
     $.fn.setDiseaseDetailBody = function (data) {
         return $(this).each(function () {
             const $this = $(this);
@@ -111,10 +123,13 @@
                     // L: 링크 카드뷰
                     // * 브라우저 링크와 자체 컨텐츠 링크 둘다 L 타입을 사용한다.
                     if (obj.linkDetailId) {
-
+                        let strHtml = `<div class="link-box"><a href="${obj.linkUrl}">`;
+                        strHtml +=`<span class="word-box"><span class="txt">${obj.linkTitle}</span></span>`;
+                        strHtml +=`<span class="lb-img"><img src="${obj.dataUrl}" alt="예시 이미지"></span>`;
+                        strHtml +=`</a></div>`;
+                        $this.append(strHtml);
                     } else if (!obj.linkDetailId && obj.linkUrl) {
                         $this.append(`<a href="${obj.linkUrl}" class="link"><span>${obj.linkTitle ? obj.linkTitle : obj.linkUrl}</span></a>`);
-                    } else {
                     }
                 } else if (obj.typeId == 'V') {
                     // V: 비디오 카드뷰
@@ -133,7 +148,7 @@
         });
     };
 
-    // 증상, 진료과
+    // 질병 증상 & 진료과
     $.fn.setDiseaseSymptomSubject = function (data) {
         return $(this).each(function () {
             const $this = $(this);
