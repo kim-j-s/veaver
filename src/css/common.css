@@ -301,6 +301,47 @@
 		    border-radius: 4px;
 		}
 
+		.btn-cb {
+			display: block;
+			box-sizing: border-box;
+			border-radius: 4px;
+			width: 100%;
+			font-weight: 500;
+			line-height: 50px;
+			font-size: 16px;
+			color: #fff;
+			text-align: center;
+			background-color: #056bff;
+			border: 0;
+			transition: .2s;
+		}
+		.btn-cb.sm {
+			width: auto;
+			padding: 0 5px;
+			font-weight: 300;
+			line-height: 18px;
+			font-size: 11px;
+		}
+		.btn-cb.ty1{
+			background-color: #056bff;
+		}
+		.btn-cb.ty2{
+			background-color: #0ca6ea;
+		}
+		.btn-cb.ty3{
+			color: #000;
+			background-color: #ffbf00;
+		}
+		.btn-cb.ty4{
+			background-color: #ff7300;
+		}
+		.btn-cb.ty5{
+			background-color: #f00000;
+		}
+		.btn-cb.ty6{
+			background-color: #2e4260;
+		}
+
 		/* small size */		
 		.btn-bd-gr-s {
 			display: block;
@@ -686,6 +727,14 @@
 		    font-size: 12px;
 		    color: #b5b9c1;
 		    line-height: 18px;
+		}
+		.inp-group .input-text .btn-cb{
+			flex: none;
+			margin: 0 10px;
+			white-space: nowrap;
+		}
+		.inp-group .input-text .btn-cb + input{
+			padding-left: 0;
 		}
 		.inp-group.box-ty .input-text > .btn-remove{
 			bottom: 0;
@@ -3686,6 +3735,9 @@
 		}
 		.part-cont + .part-cont{
 		    margin-top: 20px;
+		}
+		.part-cont.etc + .part-cont{
+		    margin-top: 4px;
 		}
 		.part-cont > *{
 		    width: 100%;
