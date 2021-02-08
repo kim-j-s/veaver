@@ -3168,10 +3168,27 @@
 			margin-top: 0;
 		}
 		.list-05 > li{
+			display: flex;
+			flex-direction: row;
+			align-items: center;
 		    padding: 20px 0;
 		    font-size: 0;
 		    border-bottom: 1px solid #ebeff3;
 		}
+		.list-05 > li .front{
+			flex: 1 1 auto;
+			white-space: nowrap;
+		}
+		.list-05 > li .right-none-ty{
+			/*flex: none;*/
+			display: inline-block;
+			padding-left: 10px;
+			vertical-align: middle;
+			text-align: right;
+		}
+		.list-05 > li .right-none-ty.btn-add{
+			margin-right: 4px;
+		}		
 		.list-05 > li .txt{
 		    display: inline-block;
 		    vertical-align: middle;
@@ -3190,13 +3207,19 @@
 		    color: #000;
 		    line-height: 24px;
 		}
+		.list-05 > li .date{
+			display: block;
+			font-size: 12px;
+			color: #74777b;
+		}
 
 		/* 접종내역 */
-		.list-05 > li.ty1 > a{
-		    display: block;
+		/*.list-05 > li.ty1 > a{*/
+		.list-05 > li > a{
 		    font-size: 0;
 		}
-		.list-05 > li.ty1 > a .txt{
+		/*.list-05 > li.ty1 > a .txt{*/
+		.list-05 > li > a .txt{
 		    width: calc(100% - 85px);
 		    padding-right: 20px;
 		}
@@ -3210,11 +3233,13 @@
 		    width: 50%;
 		    padding-right: 10px;
 		}
+		/*
 		.list-05 > li.ty2 > .txt2{
 		    width: 50%;
 		    padding-left: 10px;
 		    text-align: right;
 		}
+		*/
 		/* // 접종내역 상세 */
 
 		/* 일정보기 */
@@ -3227,6 +3252,9 @@
 		    width: 60px;
 		    padding-right: 4px;
 		    text-align: right;
+		}
+		.list-05 > li.ty4{
+			padding: 16px 0;
 		}
 		/* // 일정보기 */
 
