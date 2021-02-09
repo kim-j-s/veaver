@@ -788,6 +788,11 @@
 		.inp-group + .inp-group{
 			margin-top: 30px;
 		}
+		
+		.l-cont .inp-group,
+		.bg-box .inp-group{
+			padding: 0;
+		}
 		.bg-box .txt + .inp-group.box-ty{
 			margin-top: 30px;
 		}
@@ -3663,6 +3668,24 @@
 		.profile-cont .r-btn button{
 		    white-space: nowrap;
 		    vertical-align: middle;
+		}
+
+		.profile-img-modify{
+		    text-align: center;
+		}
+		.profile-img-modify .photo-zone{
+		    width: 70px;
+		    height: 70px;
+		}
+		.mo-btn{
+		    margin-top: 10px;
+		}
+		.mo-btn button{
+		    width: 70px;
+		}
+
+		.profile-img-modify + .inp-group{
+		    margin-top: 36px;
 		}
 
 

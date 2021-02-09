@@ -5,27 +5,9 @@
     <div class="layer-full-wrap pb0">
         <!-- 헤더영역 -->
         @@include('header02.html',{
-            "layertitle":"프로필 추가"
+            "layertitle":"프로필 수정"
         })
         <!-- //헤더영역 -->
-
-
-<style>
-.img-file{
-    position: relative;
-    overflow: hidden;
-}
-.img-file > input[type="file"]{
-    border: 0;
-    clip: rect(0, 0, 0, 0);
-    height: 1px;
-    overflow: hidden;
-    padding: 0;
-    position: absolute !important;
-    white-space: nowrap;
-    width: 1px;
-}
-</style>
 
         <!-- 컨텐츠 영역 -->
         <!-- 스크롤 영역 -->
@@ -33,22 +15,17 @@
             <div class="scroll-ud-inner">
                 <div class="profile-img-modify">
                     <div class="photo-zone">
-                        <img src="../img/ic-menu-profile-gray-01.png" alt="남성">
-                        <!-- <img src="../img/ic-menu-profile-gray-02.png" alt="여성"> -->
+                        <img src="https://m.upinews.kr/data/upi/image/20190523/p1065574177335900_669_thum.jpg" alt="김민주">
                     </div>
                     <div class="mo-btn">
-                        <!-- <button type="button" class="btn-rnd-gr on">수정</button> -->
-                        <div class="img-file">
-                            <label for="img-file">수정</label>
-                            <input type="file" name="" id="img-file" accept="image/*">
-                        </div>
+                        <button type="button" class="btn-rnd-gr on">수정</button>
                     </div>
                 </div>
 
                 <div class="inp-group">
                     <label for="inpage" class="label">이름 <span class="s-mark">*</span></label>
                     <div class="input-text">
-                        <input type="text" id="inpage" placeholder="이름을 입력하세요.">
+                        <input type="text" id="inpage" placeholder="이름을 입력하세요." value="김민주">
                         <button type="button" class="btn-remove">삭제</button>
                     </div>
                 </div>
@@ -56,7 +33,7 @@
                 <div class="inp-group">
                     <label for="date" class="label">생년월일 <span class="s-mark">*</span></label>
                     <div class="input-text">
-                        <input type="tel" id="date" placeholder="예) 19900101">
+                        <input type="tel" id="date" placeholder="예) 19900101" value="19900101">
                         <button type="button" class="btn-remove">삭제</button>
                     </div>
                 </div>
@@ -68,7 +45,7 @@
                             <input type="radio" name="gender"><span>남자</span>
                         </label>
                         <label class="input-radio">
-                            <input type="radio" name="gender"><span>여자</span>
+                            <input type="radio" name="gender" checked="checked"><span>여자</span>
                         </label>
                     </div>
                 </div>
@@ -77,7 +54,7 @@
                     <span class="label">그룹 <span class="s-mark">*</span></span>
                     <div class="part-cont no-margin">
                         <label class="input-radio">
-                            <input type="radio" name="group"><span>가족</span>
+                            <input type="radio" name="group" checked="checked"><span>가족</span>
                         </label>
                         <label class="input-radio">
                             <input type="radio" name="group"><span>친구</span>
@@ -91,7 +68,7 @@
         </section>
         <!-- 스크롤 영역 -->
         <div class="btn-bottom-area">
-            <button type="button" class="btn-pu">프로필 추가</button>
+            <button type="button" class="btn-pu">저장하기</button>
         </div>
         <!-- //컨텐츠 영역 -->
     </div>

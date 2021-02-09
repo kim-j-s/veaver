@@ -39,25 +39,6 @@
         </header>
         <!-- //헤더영역 -->
 
-
-        <style>
-            .img-file {
-                position: relative;
-                overflow: hidden;
-            }
-
-            .img-file>input[type="file"] {
-                border: 0;
-                clip: rect(0, 0, 0, 0);
-                height: 1px;
-                overflow: hidden;
-                padding: 0;
-                position: absolute !important;
-                white-space: nowrap;
-                width: 1px;
-            }
-        </style>
-
         <!-- 컨텐츠 영역 -->
         <!-- 스크롤 영역 -->
         <section class="scroll-ud full">
@@ -68,11 +49,7 @@
                         <!-- <img src="../img/ic-menu-profile-gray-02.png" alt="여성"> -->
                     </div>
                     <div class="mo-btn">
-                        <!-- <button type="button" class="btn-rnd-gr on">수정</button> -->
-                        <div class="img-file">
-                            <label for="img-file">수정</label>
-                            <input type="file" name="" id="img-file" accept="image/*">
-                        </div>
+                        <button type="button" class="btn-rnd-gr on">수정</button>
                     </div>
                 </div>
 
@@ -126,6 +103,32 @@
         </div>
         <!-- //컨텐츠 영역 -->
     </div>
+
+
+    <style>
+        .profile-img-modify {
+            text-align: center;
+        }
+
+        .profile-img-modify .photo-zone {
+            width: 70px;
+            height: 70px;
+        }
+
+        .mo-btn {
+            margin-top: 10px;
+        }
+
+        .mo-btn button {
+            width: 70px;
+        }
+
+        .profile-img-modify+.inp-group {
+            margin-top: 36px;
+        }
+    </style>
+
+
 </body>
 
 </html>
