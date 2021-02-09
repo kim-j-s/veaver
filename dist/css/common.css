@@ -771,6 +771,32 @@
 
 	/** input-file **/
 
+		.img-file{
+		    position: relative;
+		    overflow: hidden;
+		}
+		.img-file > label{
+		    display: inline-block;
+		    width: 70px;
+		    padding: 5px 12px;
+		    font-size: 14px;
+		    line-height: 18px;
+		    color: #056bff;
+		    background: #edf4ff;
+		    border-radius: 25px;
+		    text-align: center;
+		}
+		.img-file > input[type="file"]{
+		    border: 0;
+		    clip: rect(0, 0, 0, 0);
+		    height: 1px;
+		    overflow: hidden;
+		    padding: 0;
+		    position: absolute !important;
+		    white-space: nowrap;
+		    width: 1px;
+		}
+
 
 	/** // input-file **/
 
@@ -3755,7 +3781,6 @@
 		    white-space: nowrap;
 		    vertical-align: middle;
 		}
-
 		.profile-img-modify{
 		    text-align: center;
 		}
@@ -3766,19 +3791,31 @@
 		.mo-btn{
 		    margin-top: 10px;
 		}
-		.mo-btn button{
-		    width: 70px;
-		}
-
 		.profile-img-modify + .inp-group{
 		    margin-top: 36px;
 		}
+
+		.profile-cont > .input-checkbox{
+			flex: 1 1 100%;
+		}
+		.profile-cont > .input-checkbox > span{
+			font-size: 0;
+		}
+		.profile-cont > .input-checkbox > span .profile-info{
+			flex: none;
+			display: inline-block;
+			vertical-align: middle;
+			width: calc(100% - 70px);
+			padding-left: 10px;
+		}
+
 
 
 		/* 프로필 이미지 */
 
 			.photo-zone{
 			    display: inline-block;
+			    vertical-align: middle;
 			    width: 50px;
 			    height: 50px;
 			    font-size: 0;
