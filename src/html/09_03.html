@@ -1,0 +1,95 @@
+@@include('head.html',{
+    "title":"프로필 관리 | "
+})
+<body>
+    <div class="layer-full-wrap pb0">
+        <!-- 헤더영역 -->
+        @@include('header12.html',{
+            "layertitle":"프로필 추가"
+        })
+        <!-- //헤더영역 -->
+
+        <!-- 컨텐츠 영역 -->
+        <!-- 스크롤 영역 -->
+        <section class="scroll-ud full">
+            <div class="scroll-ud-inner">
+                <div class="profile-img-modify">
+                    <div class="photo-zone">
+                        <img src="../img/ic-menu-profile-gray-01.png" alt="남성">
+                    </div>
+                    <div class="mo-btn">
+                        <button type="button" class="btn-rnd-gr on">수정</button>
+                    </div>
+                </div>
+
+                <div class="inp-group">
+                    <label for="inpage" class="label">이름 <span class="s-mark">*</span></label>
+                    <div class="input-text">
+                        <input type="text" id="inpage" placeholder="이름을 입력하세요.">
+                        <button type="button" class="btn-remove">삭제</button>
+                    </div>
+                </div>
+
+                <div class="inp-group">
+                    <label for="date" class="label">생년월일 <span class="s-mark">*</span></label>
+                    <div class="input-text">
+                        <input type="tel" id="date" placeholder="예) 19900101">
+                        <button type="button" class="btn-remove">삭제</button>
+                    </div>
+                </div>
+
+                <div class="inp-group">
+                    <span class="label">성별 <span class="s-mark">*</span></span>
+                    <div class="part-cont no-margin">
+                        <label class="input-radio">
+                            <input type="radio" name="gender"><span>남자</span>
+                        </label>
+                        <label class="input-radio">
+                            <input type="radio" name="gender"><span>여자</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="inp-group">
+                    <span class="label">그룹 <span class="s-mark">*</span></span>
+                    <div class="part-cont no-margin">
+                        <label class="input-radio">
+                            <input type="radio" name="group"><span>가족</span>
+                        </label>
+                        <label class="input-radio">
+                            <input type="radio" name="group"><span>친구</span>
+                        </label>
+                        <label class="input-radio">
+                            <input type="radio" name="group"><span>기타</span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- 스크롤 영역 -->
+        <div class="btn-bottom-area">
+            <button type="button" class="btn-pu">프로필 추가</button>
+        </div>
+        <!-- //컨텐츠 영역 -->
+    </div>
+
+
+<style>
+.profile-img-modify{
+    text-align: center;
+}
+.profile-img-modify .photo-zone{
+    width: 70px;
+    height: 70px;
+}
+.mo-btn{
+    margin-top: 10px;
+}
+.mo-btn button{
+    width: 70px;
+}
+</style>
+
+
+</body>
+</html>

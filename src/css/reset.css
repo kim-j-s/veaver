@@ -52,6 +52,8 @@ textarea{-webkit-appearance:none;}
 :-moz-placeholder { /* Firefox 18- */
   color: #b5b9c1;
 }
+input[type="date"]::-webkit-inner-spin-button,    
+input[type="date"]::-webkit-clear-button { display: none; }
 label,
 input,
 textarea,

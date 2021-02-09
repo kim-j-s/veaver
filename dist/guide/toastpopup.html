@@ -53,7 +53,9 @@
 
         <!-- 컨텐츠 영역 -->
         <section class="layer-content">
-            content
+            <button type="button" class="b" data-class="case1">Up 0.5 Down 1 Rate 0.5</button>
+            <button type="button" class="b" data-class="case2">Up 0.5 Down 1.5 Rate 0.5</button>
+            <button type="button" class="b" data-class="case3">Up 1 Down 1 Rate 1</button>
         </section>
         <!-- //컨텐츠 영역 -->
 
@@ -66,6 +68,138 @@
         </div>
     </div>
     <!-- //레이어 팝업 -->
+
+
+
+    <style>
+        .b {
+            display: block;
+            width: 100%;
+            border-radius: 6px;
+            border: 1px solid blue;
+            text-align: center;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        .b+.b {
+            margin-top: 10px;
+        }
+
+        .toast-layer {
+            position: fixed;
+            bottom: 0;
+            left: 50%;
+            z-index: 150;
+            width: calc(100% - 44px);
+            /*transform: translate(-50%, -50%);*/
+            transform: translate(-50%, 0);
+            /*    transition: .5s;*/
+            opacity: 0;
+        }
+
+        .toast-layer.case1 {
+            animation: case1 2s linear alternate;
+        }
+
+        .toast-layer.case2 {
+            animation: case2 2.5s linear alternate;
+        }
+
+        .toast-layer.case3 {
+            animation: case3 3s linear alternate;
+        }
+
+        .toast-cont {
+            padding: 15px;
+            color: #fff;
+            text-align: center;
+            font-size: 14px;
+            background: #000;
+            opacity: 0.7;
+            border-radius: 10px;
+        }
+
+
+        @keyframes case1 {
+            0% {
+                bottom: 0;
+                opacity: 0;
+            }
+
+            25% {
+                bottom: 5%;
+                opacity: 1;
+            }
+
+            50% {
+                bottom: 5%;
+                opacity: 1;
+            }
+
+            100% {
+                bottom: 0;
+                opacity: 0;
+            }
+        }
+
+        @keyframes case2 {
+            0% {
+                bottom: 0;
+                opacity: 0;
+            }
+
+            25% {
+                bottom: 5%;
+                opacity: 1;
+            }
+
+            50% {
+                bottom: 5%;
+                opacity: 1;
+            }
+
+            100% {
+                bottom: 0;
+                opacity: 0;
+            }
+        }
+
+        @keyframes case3 {
+            0% {
+                bottom: 0;
+                opacity: 0;
+            }
+
+            30% {
+                bottom: 5%;
+                opacity: 1;
+            }
+
+            70% {
+                bottom: 5%;
+                opacity: 1;
+            }
+
+            100% {
+                bottom: 0;
+                opacity: 0;
+            }
+        }
+    </style>
+
+
+    <script>
+        $(function() {
+            $('.b').on('click', function() {
+                var data = $(this).data('class');
+                console.log(data);
+                $('.toast-layer').removeClass('case1 case2 case3').addClass(data);
+            })
+        })
+    </script>
+
+
 
 </body>
 

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+    <meta name="x-apple-disable-message-reformatting">
+    <title>프로필 관리 | Veaver Health mining</title>
+    <link href="../css/reset.css" rel="stylesheet">
+    <link href="../css/common.css" rel="stylesheet">
+    <link href="../css/swiper.css" rel="stylesheet">
+    <script type="text/javascript" src="../js/jquery.min.js"></script>
+    <script type="text/javascript" src="../js/jquery.swiper.js"></script>
+    <script type="text/javascript" src="../js/commonui.js"></script>
+    <script type="text/javascript" src="../js/drawui.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+    <!--[if lt IE 9]>
+    <script type="text/javascript">
+        document.createElement("header"); 
+        document.createElement("nav"); 
+        document.createElement("section"); 
+        document.createElement("article"); 
+        document.createElement("footer");
+    </script>
+<![endif]-->
+</head>
+
+<body>
+    <div class="layer-full-wrap pb0">
+        <!-- 헤더영역 -->
+        <header>
+            <div class="header-inner">
+                <h2 class="header-title">프로필 추가</h2>
+                <div class="h-utils">
+                    <button type="button" class="btn-black-setting">설정</button>
+                </div>
+                <button type="buton" class="layer-close-btn">닫기</button>
+            </div>
+        </header>
+        <!-- //헤더영역 -->
+
+        <!-- 컨텐츠 영역 -->
+        <!-- 스크롤 영역 -->
+        <section class="scroll-ud full">
+            <div class="scroll-ud-inner">
+                <div class="profile-img-modify">
+                    <div class="photo-zone">
+                        <img src="../img/ic-menu-profile-gray-01.png" alt="남성">
+                    </div>
+                    <div class="mo-btn">
+                        <button type="button" class="btn-rnd-gr on">수정</button>
+                    </div>
+                </div>
+
+                <div class="inp-group">
+                    <label for="inpage" class="label">이름 <span class="s-mark">*</span></label>
+                    <div class="input-text">
+                        <input type="text" id="inpage" placeholder="이름을 입력하세요.">
+                        <button type="button" class="btn-remove">삭제</button>
+                    </div>
+                </div>
+
+                <div class="inp-group">
+                    <label for="date" class="label">생년월일 <span class="s-mark">*</span></label>
+                    <div class="input-text">
+                        <input type="tel" id="date" placeholder="예) 19900101">
+                        <button type="button" class="btn-remove">삭제</button>
+                    </div>
+                </div>
+
+                <div class="inp-group">
+                    <span class="label">성별 <span class="s-mark">*</span></span>
+                    <div class="part-cont no-margin">
+                        <label class="input-radio">
+                            <input type="radio" name="gender"><span>남자</span>
+                        </label>
+                        <label class="input-radio">
+                            <input type="radio" name="gender"><span>여자</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="inp-group">
+                    <span class="label">그룹 <span class="s-mark">*</span></span>
+                    <div class="part-cont no-margin">
+                        <label class="input-radio">
+                            <input type="radio" name="group"><span>가족</span>
+                        </label>
+                        <label class="input-radio">
+                            <input type="radio" name="group"><span>친구</span>
+                        </label>
+                        <label class="input-radio">
+                            <input type="radio" name="group"><span>기타</span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- 스크롤 영역 -->
+        <div class="btn-bottom-area">
+            <button type="button" class="btn-pu">프로필 추가</button>
+        </div>
+        <!-- //컨텐츠 영역 -->
+    </div>
+
+
+    <style>
+        .profile-img-modify {
+            text-align: center;
+        }
+
+        .profile-img-modify .photo-zone {
+            width: 70px;
+            height: 70px;
+        }
+
+        .mo-btn {
+            margin-top: 10px;
+        }
+
+        .mo-btn button {
+            width: 70px;
+        }
+    </style>
+
+
+</body>
+
+</html>
