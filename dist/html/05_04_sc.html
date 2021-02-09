@@ -91,6 +91,24 @@
     $('#setDiseaseDetailHead').drawUi('setDiseaseDetailHead', resultExam01);
 
     // 질병 상세 에디터영역
+    /*
+
+    [L: 링크] typeId : "L"
+
+    - 일반, 카드뷰 링크 기준 값 "linkDetailId"
+
+    - 일반링크
+    linkDetailId == 빈값
+    // linkUrl == 링크값
+    // linkTitle == 보여지는 텍스트 없으면 linkUrl로 보여짐
+
+    - 카드뷰 링크
+    linkDetailId = 링크아이디값
+    // linkUrl = 링크값
+    // linkTitle = 텍스트값
+    // nisiType = NI
+
+    */
     const resultExam02 = [{
             "id": "15987556099686211881",
             "fileId": "16073192979512512154",
@@ -191,6 +209,23 @@
             "imgType": "",
             "fileName": "",
             "fileSize": "",
+            "videoThumbnailUrl": ""
+        },
+        {
+            "id": "16031639158670216901",
+            "fileId": "16055753856548477575",
+            "seq": 2,
+            "typeId": "V",
+            "linkTitle": "",
+            "linkUrl": "",
+            "htmlText": "<p><span style=\"font-size: 16px; background-color: rgb(255, 255, 0);\">[메디컬티비: 소아폐렴의 원인과 치료 - 최석우 과장(성남, 정병원, 소아청소년과)/0:06~0:47/소아 폐렴의 정의, 진단, 원인]</span></p><p><span style=\"font-size: 16px;\"><a href=\"https://tv.naver.com/v/15010839\" target=\"_blank\">https://tv.naver.com/v/15010839</a></span></p><p>\n</p>",
+            "dataUrl": "https://hm-contents-1302053493.s3.ap-northeast-2.amazonaws.com/ni-contents/2020/12/17/e4e0b9b5-a195-4397-a64b-d87ffa2f4607_01_ni.mp4",
+            "linkDetailId": "",
+            "imgId": "",
+            "imgSeq": "",
+            "imgType": "",
+            "fileName": "01_ni.mp4",
+            "fileSize": "6597113",
             "videoThumbnailUrl": ""
         },
         {
@@ -344,7 +379,8 @@
             "imgType": "",
             "fileName": "",
             "fileSize": "",
-            "videoThumbnailUrl": ""
+            "videoThumbnailUrl": "",
+            "nisiType": "NI"
         },
         {
             "id": "15987556099686211881",
