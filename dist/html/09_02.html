@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+    <meta name="x-apple-disable-message-reformatting">
+    <title>프로필 관리 | Veaver Health mining</title>
+    <link href="../css/reset.css" rel="stylesheet">
+    <link href="../css/common.css" rel="stylesheet">
+    <link href="../css/swiper.css" rel="stylesheet">
+    <script type="text/javascript" src="../js/jquery.min.js"></script>
+    <script type="text/javascript" src="../js/jquery.swiper.js"></script>
+    <script type="text/javascript" src="../js/commonui.js"></script>
+    <script type="text/javascript" src="../js/drawui.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+    <!--[if lt IE 9]>
+    <script type="text/javascript">
+        document.createElement("header"); 
+        document.createElement("nav"); 
+        document.createElement("section"); 
+        document.createElement("article"); 
+        document.createElement("footer");
+    </script>
+<![endif]-->
+</head>
+
+<body>
+    <div class="layer-full-wrap">
+        <!-- 헤더영역 -->
+        <header>
+            <div class="header-inner">
+                <h2 class="header-title">프로필 관리</h2>
+                <div class="h-utils">
+                    <button type="button" class="btn-black-setting">설정</button>
+                </div>
+                <button type="buton" class="layer-close-btn">닫기</button>
+            </div>
+        </header>
+        <!-- //헤더영역 -->
+
+        <!-- 컨텐츠 영역 -->
+        <section class="flex-none-cont">
+            <p class="d-txt">
+                선택된 프로필정보를 기준으로 헬스마이닝의 건강 정보를 추천해 드립니다.
+            </p>
+        </section>
+        <!-- 스크롤 영역 -->
+        <section class="scroll-ud">
+            <div class="scroll-ud-inner">
+                <ul class="list-03">
+                    <li>
+                        <div class="profile-cont">
+                            <div class="photo-zone">
+                                <img src="../img/ic-menu-profile-gray-01.png" alt="남성">
+                                <!-- <img src="../img/ic-menu-profile-gray-02.png" alt="여성"> -->
+                            </div>
+                            <div class="profile-info">
+                                <div class="pi-sort">
+                                    <span class="sort">본인</span>
+                                    <span class="comp">실명인증 완료</span>
+                                </div>
+                                <div class="pi-bottom">
+                                    <span class="name">김민주 김민주 김민주 김민주</span>
+                                    <span class="s">여, 27세</span>
+                                </div>
+                            </div>
+                            <div class="r-btn">
+                                <button type="button" class="btn-rnd-gr on">수정</button>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="profile-cont">
+                            <div class="photo-zone">
+                                <img src="../img/ic-menu-profile-gray-02.png" alt="여성">
+                            </div>
+                            <div class="profile-info">
+                                <div class="pi-sort">
+                                    <span class="sort">본인</span>
+                                    <span class="comp">실명인증 완료</span>
+                                </div>
+                                <div class="pi-bottom">
+                                    <span class="name">김민주</span>
+                                    <span class="s">여, 27세</span>
+                                </div>
+                            </div>
+                            <div class="r-btn">
+                                <button type="button" class="btn-rnd-gr on">수정</button>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="profile-cont">
+                            <div class="photo-zone">
+                                <img src="../img/ic-menu-profile-gray-01.png" alt="남성">
+                                <!-- <img src="../img/ic-menu-profile-gray-02.png" alt="여성"> -->
+                            </div>
+                            <div class="profile-info">
+                                <div class="pi-sort">
+                                    <span class="sort">본인</span>
+                                    <span class="comp">실명인증 완료</span>
+                                </div>
+                                <div class="pi-bottom">
+                                    <span class="name">김민주 김민주 김민주 김민주</span>
+                                    <span class="s">여, 27세</span>
+                                </div>
+                            </div>
+                            <div class="r-btn">
+                                <button type="button" class="btn-rnd-gr on">수정</button>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="profile-cont">
+                            <div class="photo-zone">
+                                <img src="../img/ic-menu-profile-gray-02.png" alt="여성">
+                            </div>
+                            <div class="profile-info">
+                                <div class="pi-sort">
+                                    <span class="sort">본인</span>
+                                    <span class="comp">실명인증 완료</span>
+                                </div>
+                                <div class="pi-bottom">
+                                    <span class="name">김민주</span>
+                                    <span class="s">여, 27세</span>
+                                </div>
+                            </div>
+                            <div class="r-btn">
+                                <button type="button" class="btn-rnd-gr on">수정</button>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="profile-cont">
+                            <div class="photo-zone">
+                                <img src="../img/ic-menu-profile-gray-01.png" alt="남성">
+                                <!-- <img src="../img/ic-menu-profile-gray-02.png" alt="여성"> -->
+                            </div>
+                            <div class="profile-info">
+                                <div class="pi-sort">
+                                    <span class="sort">본인</span>
+                                    <span class="comp">실명인증 완료</span>
+                                </div>
+                                <div class="pi-bottom">
+                                    <span class="name">김민주 김민주 김민주 김민주</span>
+                                    <span class="s">여, 27세</span>
+                                </div>
+                            </div>
+                            <div class="r-btn">
+                                <button type="button" class="btn-rnd-gr on">수정</button>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="profile-cont">
+                            <div class="photo-zone">
+                                <img src="../img/ic-menu-profile-gray-02.png" alt="여성">
+                            </div>
+                            <div class="profile-info">
+                                <div class="pi-sort">
+                                    <span class="sort">본인</span>
+                                    <span class="comp">실명인증 완료</span>
+                                </div>
+                                <div class="pi-bottom">
+                                    <span class="name">김민주</span>
+                                    <span class="s">여, 27세</span>
+                                </div>
+                            </div>
+                            <div class="r-btn">
+                                <button type="button" class="btn-rnd-gr on">수정</button>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="profile-cont">
+                            <div class="photo-zone">
+                                <img src="../img/ic-menu-profile-gray-01.png" alt="남성">
+                                <!-- <img src="../img/ic-menu-profile-gray-02.png" alt="여성"> -->
+                            </div>
+                            <div class="profile-info">
+                                <div class="pi-sort">
+                                    <span class="sort">본인</span>
+                                    <span class="comp">실명인증 완료</span>
+                                </div>
+                                <div class="pi-bottom">
+                                    <span class="name">김민주 김민주 김민주 김민주</span>
+                                    <span class="s">여, 27세</span>
+                                </div>
+                            </div>
+                            <div class="r-btn">
+                                <button type="button" class="btn-rnd-gr on">수정</button>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="profile-cont">
+                            <div class="photo-zone">
+                                <img src="../img/ic-menu-profile-gray-02.png" alt="여성">
+                            </div>
+                            <div class="profile-info">
+                                <div class="pi-sort">
+                                    <span class="sort">본인</span>
+                                    <span class="comp">실명인증 완료</span>
+                                </div>
+                                <div class="pi-bottom">
+                                    <span class="name">김민주</span>
+                                    <span class="s">여, 27세</span>
+                                </div>
+                            </div>
+                            <div class="r-btn">
+                                <button type="button" class="btn-rnd-gr on">수정</button>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <style>
+                /*
+.list-03{
+    margin: 6px 0;
+}
+*/
+                .list-03 {
+                    position: relative;
+                    z-index: 10;
+                }
+
+                .profile-cont {
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    padding: 22px;
+                }
+
+                .profile-cont .photo-zone {
+                    flex: none;
+                }
+
+                .profile-info {
+                    flex: 1 1 100%;
+                    padding: 0 10px;
+                }
+
+                .pi-sort {
+                    padding-bottom: 2px;
+                }
+
+                .pi-sort>span {
+                    display: inline-block;
+                    vertical-align: middle;
+                }
+
+                .pi-sort .sort {
+                    margin-right: 2px;
+                    font-size: 12px;
+                    line-height: 18px;
+                    color: #056bff;
+                }
+
+                .pi-sort .comp {
+                    font-size: 10px;
+                    line-height: 15px;
+                    color: #74777b;
+                }
+
+                .pi-bottom {}
+
+                .pi-bottom>span {
+                    display: inline-block;
+                    vertical-align: middle;
+                }
+
+                .pi-bottom .name {
+                    margin-right: 4px;
+                    font-weight: 500;
+                    font-size: 16px;
+                    line-height: 24px;
+                }
+
+                .pi-bottom .s {
+                    line-height: 20px;
+                    color: #74777b;
+                }
+
+                .profile-cont .r-btn {
+                    flex: none;
+                }
+
+                .profile-cont .r-btn button {
+                    white-space: nowrap;
+                    vertical-align: middle;
+                }
+
+
+
+                .photo-zone {
+                    display: inline-block;
+                    width: 50px;
+                    height: 50px;
+                    font-size: 0;
+                    border: 1px solid #ebeff3;
+                    border-radius: 50%;
+                    overflow: hidden;
+                }
+
+                .photo-zone>img {
+                    display: block;
+                    width: 100%;
+                    height: 100%;
+                }
+            </style>
+
+
+        </section>
+        <!-- 스크롤 영역 -->
+        <!-- //컨텐츠 영역 -->
+    </div>
+</body>
+
+</html>
