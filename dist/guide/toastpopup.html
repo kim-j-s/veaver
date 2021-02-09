@@ -52,11 +52,101 @@
         <!-- //헤더영역 -->
 
         <!-- 컨텐츠 영역 -->
-        <section class="layer-content">
-            <button type="button" class="b" data-class="case1">Up 0.5 Down 1 Rate 0.5</button>
-            <button type="button" class="b" data-class="case2">Up 0.5 Down 1.5 Rate 0.5</button>
+        <section class="flex-none-cont">
+            <!-- <button type="button" class="b" data-class="case1">Up 0.5 Down 1 Rate 0.5</button>
+            <button type="button" class="b" data-class="case2">Up 0.5 Down 1.5 Rate 0.5</button> -->
             <button type="button" class="b" data-class="case3">Up 1 Down 1 Rate 1</button>
+            <button type="button" class="b" data-class="case4">Up 1 Down 1 Rate 3</button>
         </section>
+
+        <section class="scroll-ud full">
+            <div class="scroll-ud-inner">
+                <div class="profile-img-modify">
+                    <div class="photo-zone">
+                        <img src="../img/ic-menu-profile-gray-01.png" alt="남성">
+                    </div>
+                    <div class="mo-btn">
+                        <button type="button" class="btn-rnd-gr on">수정</button>
+                    </div>
+                </div>
+
+                <div class="inp-group">
+                    <label for="inpage" class="label">이름 <span class="s-mark">*</span></label>
+                    <div class="input-text">
+                        <input type="text" id="inpage" placeholder="이름을 입력하세요.">
+                        <button type="button" class="btn-remove">삭제</button>
+                    </div>
+                </div>
+
+                <div class="inp-group">
+                    <label for="date" class="label">생년월일 <span class="s-mark">*</span></label>
+                    <div class="input-text">
+                        <input type="tel" id="date" placeholder="예) 19900101">
+                        <button type="button" class="btn-remove">삭제</button>
+                    </div>
+                </div>
+
+                <div class="inp-group">
+                    <span class="label">성별 <span class="s-mark">*</span></span>
+                    <div class="part-cont no-margin">
+                        <label class="input-radio">
+                            <input type="radio" name="gender"><span>남자</span>
+                        </label>
+                        <label class="input-radio">
+                            <input type="radio" name="gender"><span>여자</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="inp-group">
+                    <span class="label">그룹 <span class="s-mark">*</span></span>
+                    <div class="part-cont no-margin">
+                        <label class="input-radio">
+                            <input type="radio" name="group"><span>가족</span>
+                        </label>
+                        <label class="input-radio">
+                            <input type="radio" name="group"><span>친구</span>
+                        </label>
+                        <label class="input-radio">
+                            <input type="radio" name="group"><span>기타</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="inp-group">
+                    <span class="label">그룹 <span class="s-mark">*</span></span>
+                    <div class="part-cont no-margin">
+                        <label class="input-radio">
+                            <input type="radio" name="group"><span>가족</span>
+                        </label>
+                        <label class="input-radio">
+                            <input type="radio" name="group"><span>친구</span>
+                        </label>
+                        <label class="input-radio">
+                            <input type="radio" name="group"><span>기타</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="inp-group">
+                    <span class="label">그룹 <span class="s-mark">*</span></span>
+                    <div class="part-cont no-margin">
+                        <label class="input-radio">
+                            <input type="radio" name="group"><span>가족</span>
+                        </label>
+                        <label class="input-radio">
+                            <input type="radio" name="group"><span>친구</span>
+                        </label>
+                        <label class="input-radio">
+                            <input type="radio" name="group"><span>기타</span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div class="btn-bottom-area">
+            <button type="button" class="btn-pu">프로필 추가</button>
+        </div>
         <!-- //컨텐츠 영역 -->
 
     </div>
@@ -72,6 +162,23 @@
 
 
     <style>
+        .profile-img-modify {
+            text-align: center;
+        }
+
+        .profile-img-modify .photo-zone {
+            width: 70px;
+            height: 70px;
+        }
+
+        .mo-btn {
+            margin-top: 10px;
+        }
+
+        .mo-btn button {
+            width: 70px;
+        }
+
         .b {
             display: block;
             width: 100%;
@@ -108,6 +215,10 @@
 
         .toast-layer.case3 {
             animation: case3 3s linear alternate;
+        }
+
+        .toast-layer.case4 {
+            animation: case4 5s linear alternate;
         }
 
         .toast-cont {
@@ -186,6 +297,28 @@
                 opacity: 0;
             }
         }
+
+        @keyframes case4 {
+            0% {
+                bottom: 0;
+                opacity: 0;
+            }
+
+            20% {
+                bottom: 5%;
+                opacity: 1;
+            }
+
+            80% {
+                bottom: 5%;
+                opacity: 1;
+            }
+
+            100% {
+                bottom: 0;
+                opacity: 0;
+            }
+        }
     </style>
 
 
@@ -194,7 +327,7 @@
             $('.b').on('click', function() {
                 var data = $(this).data('class');
                 console.log(data);
-                $('.toast-layer').removeClass('case1 case2 case3').addClass(data);
+                $('.toast-layer').removeClass('case1 case2 case3 case4').addClass(data);
             })
         })
     </script>
