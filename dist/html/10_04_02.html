@@ -115,12 +115,12 @@
                                 <span>
                                     <span class="date">2020.01.21</span>
                                 <span class="txt2">방사선 검진</span>
+                                <span class="st">
+                                        <button type="button" class="btn-cb sm ty4">질환의심</button>
+                                        <span class="word">허리둘레</span>
+                                </span>
                                 </span>
                             </label>
-                            <div class="st">
-                                <button type="button" class="btn-cb sm ty4">질환의심</button>
-                                <span class="word">허리둘레</span>
-                            </div>
                         </div>
                     </li>
                     <li class="etc">
@@ -151,16 +151,6 @@
             <button type="button" class="btn-pu" disabled="disabled">삭제</button>
         </div>
         <!-- //컨텐츠 영역 -->
-
-        <script>
-            $(function() {
-                $('.btn-cb').click(function() {
-                    alert('xxxx');
-                })
-            });
-        </script>
-
-
     </div>
 
 
@@ -171,7 +161,7 @@
                 <div class="dl-tit">관심 질병 삭제</div>
                 <p class="d-txt">선택하신 관심 질병을 삭제하시겠습니까?</p>
                 <div class="btn-area">
-                    <button type="button" class="btn-pu">취소</button>
+                    <button type="button" class="btn-pu">삭제하기</button>
                 </div>
             </div>
             <button type="button" class="d-layer-close">닫기</button>

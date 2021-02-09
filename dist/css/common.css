@@ -1714,15 +1714,17 @@
 		}
 		.header-title{
 			display: inline-block;
-			flex: 1 1 auto;
+			/*flex: 1 1 auto;*/
+			flex: 1 1 100%;
 			line-height: 30px;
 			font-weight: 400;
 			font-size: 16px;
 		}
 		.header-inner .h-utils{
-			/*flex: 1 1 auto;*/
-			flex: none;
+			flex: 1 1 auto;
+			margin-left: 10px;
 			text-align: right;
+			white-space: nowrap;
 		}
 		.header-inner .h-utils > button{
 			display: inline-block;
@@ -3093,8 +3095,11 @@
 		.tit-h4 + .list-03{
 		    margin-top: 20px;
 		}
+		.line-box .list-03{
+			padding: 0;
+		}
 		.list-03{
-
+			padding: 0 22px;
 		}
 		.list-03 > li {
 		    border-radius: 14px;
