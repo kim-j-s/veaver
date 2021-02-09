@@ -135,7 +135,16 @@
                     }
                 } else if (obj.typeId == 'V') {
                     // V: 비디오 카드뷰
-                    // * 브라우저 링크와 자체 컨텐츠 링크 둘다 L 타입을 사용한다.
+                    // * 브라우저 링크와 자체 컨텐츠 링 크 둘다 L 타입을 사용한다.
+                    const video = document.createElement("div");
+                    $this.append(video);
+
+                    if(obj.videoThumbnailUrl) {
+                        $(video).addClass('card-content').customVideo(obj.dataUrl, obj.videoThumbnailUrl);
+                    } else {
+                        $(video).addClass('card-content').customVideo(obj.dataUrl);
+                    }
+
                 } else if (obj.typeId == 'D') {
                     // D: 다운로드 카드뷰
                 } else {
