@@ -782,9 +782,11 @@
 		.g-txt + .inp-group{
 			margin-top: 30px;
 		}
+		/*
 		.inp-group{
 			padding: 0 22px;
 		}
+		*/
 		.inp-group + .inp-group{
 			margin-top: 30px;
 		}
