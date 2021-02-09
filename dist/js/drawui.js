@@ -122,6 +122,8 @@
                 } else if (obj.typeId == 'L') {
                     // L: 링크 카드뷰
                     // * 브라우저 링크와 자체 컨텐츠 링크 둘다 L 타입을 사용한다.
+                    // NI 질병정보
+                    // SI1 닥터QA
                     if (obj.linkDetailId) {
                         let strHtml = `<div class="link-box"><a href="${obj.linkUrl}">`;
                         strHtml +=`<span class="word-box"><span class="txt">${obj.linkTitle}</span></span>`;
