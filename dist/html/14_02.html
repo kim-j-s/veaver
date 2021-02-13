@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+    <meta name="x-apple-disable-message-reformatting">
+    <title>설정 | Veaver Health mining</title>
+    <link href="../css/reset.css" rel="stylesheet">
+    <link href="../css/common.css" rel="stylesheet">
+    <link href="../css/swiper.css" rel="stylesheet">
+    <script type="text/javascript" src="../js/jquery.min.js"></script>
+    <script type="text/javascript" src="../js/jquery.swiper.js"></script>
+    <script type="text/javascript" src="../js/commonui.js"></script>
+    <script type="text/javascript" src="../js/drawui.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+    <!--[if lt IE 9]>
+    <script type="text/javascript">
+        document.createElement("header"); 
+        document.createElement("nav"); 
+        document.createElement("section"); 
+        document.createElement("article"); 
+        document.createElement("footer");
+    </script>
+<![endif]-->
+</head>
+
+<body>
+    <div class="layer-full-wrap">
+        <!-- 헤더영역 -->
+        <header>
+            <div class="header-inner">
+                <h2 class="header-title">회원정보 수정</h2>
+                <button type="buton" class="layer-close-btn">닫기</button>
+            </div>
+        </header>
+        <!-- //헤더영역 -->
+
+        <!-- 컨텐츠 영역 -->
+        <!-- 스크롤 영역 -->
+        <section class="scroll-ud full">
+            <div class="scroll-ud-inner">
+                <div class="profile-img-modify">
+                    <div class="photo-zone">
+                        <img src="../img/ic-menu-profile-gray-01.png" alt="남성">
+                    </div>
+                    <div class="mo-btn">
+                        <div class="img-file">
+                            <label for="img-file">수정</label>
+                            <input type="file" name="" id="img-file" accept="image/*">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="inp-group">
+                    <label for="inpage" class="label">이름</label>
+                    <div class="input-text">
+                        <input type="text" id="inpage" placeholder="이름을 입력하세요." value="김민주">
+                        <button type="button" class="btn-remove">삭제</button>
+                    </div>
+                </div>
+
+                <div class="inp-group">
+                    <label for="id" class="label">아이디</label>
+                    <div class="input-text">
+                        <input type="text" id="id" placeholder="아이디를 입력하세요." value="ejlee">
+                        <button type="button" class="btn-remove">삭제</button>
+                    </div>
+                </div>
+
+                <div class="inp-group">
+                    <label for="id" class="label">비밀번호</label>
+                    <div class="input-text modify">
+                        <input type="password" id="id" placeholder="비밀번호를 입력하세요." value="password">
+                        <button type="button" class="btn-remove">삭제</button>
+                        <button type="button" class="btn-rnd-gr on">수정</button>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+        <!-- 스크롤 영역 -->
+        <div class="btn-bottom-area">
+            <div class="btnTwo">
+                <button type="button" class="btn-bd-pu">회원탈퇴</button>
+                <button type="button" class="btn-pu">로그아웃</button>
+            </div>
+        </div>
+        <!-- //컨텐츠 영역 -->
+    </div>
+</body>
+
+</html>

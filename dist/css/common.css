@@ -638,12 +638,6 @@
 			outline: none;
 			border-radius: 0;
 		}
-		/*
-		.input-text > input:only-child {
-			padding-right: 17px !important;
-			padding-left: 17px !important;
-		}
-		*/
 		.input-text > input:focus {
 			border-color: #056bff;
 		}
@@ -720,6 +714,21 @@
 			color: #000;
 			text-align: right;
 			width: 15px;
+		}
+		.input-text.modify > input{
+			padding-right: 60px;
+		}
+		.input-text.modify > input:focus{
+			padding-right: 100px;
+		}
+		.input-text.modify .btn-rnd-gr{
+			position: absolute;
+			top: 50%;
+			right: 0;
+			transform: translateY(-50%);
+		}
+		.input-text.modify > .btn-remove{
+			right: 60px;
 		}
 
 		.inp-group.box-ty .label{
@@ -3223,13 +3232,24 @@
 		.list-05.etc{
 			margin-top: 0;
 		}
+		.list-05.full{
+			padding: 0;
+		}
 		.list-05 > li{
 			display: flex;
 			flex-direction: row;
 			align-items: center;
-		    padding: 20px 0;
+		    /*padding: 20px 0;*/
+		    padding: 0 0 20px 0;
 		    font-size: 0;
 		    border-bottom: 1px solid #ebeff3;
+		}
+		.list-05 > li + li{
+			padding-top: 20px;
+		}
+		.list-05.full > li{
+			padding-left: 22px;
+			padding-right: 22px;
 		}
 		.list-05 > li .front{
 			flex: 1 1 100%;
@@ -3238,11 +3258,12 @@
 			flex: 1 1 100%;
 			padding-left: 10px;
 			vertical-align: middle;
+			font-size: 0;
 			text-align: right;
 		}
 		.list-05 > li .right-ty.btn-add{
 			flex: 1 1 auto;
-			margin-right: 4px;
+			/*margin-right: 4px;*/
 		}
 		.list-05 > li .right-ty.btn-add button{
 			white-space: nowrap;
@@ -3292,13 +3313,22 @@
 		    font-size: 0;
 		    white-space: normal;
 		}
+		.list-05 > li a.nor{
+		    display: block;
+		    font-size: 14px;
+		    color: #000;
+		    background: url(../img/btn-arrow-black-20-right.png) no-repeat right center / 20px auto;
+		}
+		.list-05 > li > a.bold{
+			font-weight: 500;
+			font-size: 16px;
+		}
 		.list-05 > li a .txt{
 		    width: calc(100% - 85px);
 		    padding-right: 20px;
 		}
 		.list-05 > li.etc{
 			padding: 0 0 16px 0;
-			/*padding: 16px 0;*/
 		}
 		.list-05 > li.etc + li.etc{
 			padding: 16px 0;
@@ -3307,24 +3337,10 @@
 			display: block;
 			width: 100%;
 		}
+		
 
-		.list-06{
 
-		}
-		.list-06 > li{
-		    padding: 0 0 20px 0;
-		    border-bottom: 1px solid #ebeff3;
-		}
-		.list-06 > li + li{
-		    padding-top: 20px;
-		}
-		.list-06 > li > a{
-		    display: block;
-		    padding: 0 22px;
-		    font-size: 14px;
-		    color: #000;
-		    background: url(../img/btn-arrow-black-20-right.png) no-repeat right 22px center / 20px auto;
-		}
+		
 
 	/** 문구 **/
 
@@ -3687,11 +3703,8 @@
 
 		.step-swiper.swiper-container{
 		    position: relative;
-		    padding-top: 56px;
+		    padding-top: 76px;
 		}
-		/*.step-swiper.swiper-container .swiper-slide{
-		    padding: 0 22px;
-		}*/
 		.step-swiper .swiper-slide .list-05{
 		    margin-top: 0;
 		}
@@ -3892,7 +3905,8 @@
 	.scroll-ud.disable:after{
 		content: none;
 	}
-	.scroll-ud.disable:after{
+	.scroll-ud.disable:after,
+	.scroll-ud.ov-case.disable:after{
 		content: '';
 		position: absolute;
 		top: 0;
@@ -3953,10 +3967,11 @@
 	    margin-top: 0;
 	}
 	.scroll-ud.full{
-		/*margin: 20px 0 0 0;*/
 		margin: 20px 0;
 		padding: 0;
-		/*padding: 0 0 20px 0;*/
+	}
+	.scroll-ud.full.etc{
+		margin-top: 0;
 	}
 	
 	.scroll-ud.full:before{
