@@ -80,6 +80,9 @@
 .mt40 {
 	margin-top: 40px !important;
 }
+.mb0 {
+	margin-bottom: 0px !important;
+}
 .mb10 {
 	margin-bottom: 10px !important;
 }
@@ -567,7 +570,8 @@
 
 		.btn-bottom-area{
 			flex: none;
-			padding: 20px 22px;
+			/*padding: 20px 22px;*/
+			padding: 0 22px 20px 22px;
 		}
 
 		/* // etc */
@@ -1695,7 +1699,8 @@
 		flex-direction: column;
 		width: 100%;
 		height: 100%;
-		padding: 0 0 20px 0;
+		/*padding: 0 0 20px 0;*/
+		padding: 0 0 0 0;
 		background: #fff;
 	}
 	.layer-full-wrap.fl-btn-add{
@@ -1704,7 +1709,8 @@
 	.layer-content{
 		position:relative;
 		flex: 1;
-		padding: 20px 22px 0 20px;
+		/*padding: 20px 22px 0 20px;*/
+		padding: 20px 22px;
 		overflow: auto;
 	}
 	.layer-content.etc{
@@ -2337,7 +2343,8 @@
 		display: flex;
 		flex-direction: column;
 		height: 100%;
-		padding: 0 0 20px 0;
+		/*padding: 0 0 20px 0;*/
+		padding: 0;
 	}
 
 
@@ -2687,7 +2694,7 @@
 		    line-height: 27px;
 		}
 		.terms-list{
-
+			margin-bottom: 6px;
 		}
 		.terms-list > li{
 		    position: relative;
@@ -3301,6 +3308,24 @@
 			width: 100%;
 		}
 
+		.list-06{
+
+		}
+		.list-06 > li{
+		    padding: 0 0 20px 0;
+		    border-bottom: 1px solid #ebeff3;
+		}
+		.list-06 > li + li{
+		    padding-top: 20px;
+		}
+		.list-06 > li > a{
+		    display: block;
+		    padding: 0 22px;
+		    font-size: 14px;
+		    color: #000;
+		    background: url(../img/btn-arrow-black-20-right.png) no-repeat right 22px center / 20px auto;
+		}
+
 	/** 문구 **/
 
 
@@ -3758,7 +3783,7 @@
 		    color: #74777b;
 		}
 		.pi-bottom{
-
+			display: block;
 		}
 		.pi-bottom > span{
 		    display: inline-block;
@@ -3928,9 +3953,12 @@
 	    margin-top: 0;
 	}
 	.scroll-ud.full{
-		margin: 20px 0 0 0;
+		/*margin: 20px 0 0 0;*/
+		margin: 20px 0;
 		padding: 0;
+		/*padding: 0 0 20px 0;*/
 	}
+	
 	.scroll-ud.full:before{
 		top: 0;
 		background-image: linear-gradient(0deg, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 100%), url(../img/close-20-blue.png);
@@ -3949,13 +3977,6 @@
 	.scroll-ud .full-size-area.top{
 		margin: -20px 0 20px 0;
 	}
-
-	/*
-	.scroll-ud .line-box{
-		padding-left: 22px;
-		padding-right: 22px;
-	}
-	*/
 
 
 /* // 페이지 공통 스크롤 영역 */
@@ -4069,3 +4090,18 @@
 		    right: 22px;
 		}
 	/*Element*/
+
+
+
+	/* 약관내용 */
+	.terms{
+	    padding: 0 22px;
+	}
+	.terms h2{
+	    margin-top: 40px;
+	}
+	.terms p{
+	    margin-top: 20px;
+	    font-size: 12px;
+	}
+	/* // 약관내용 */

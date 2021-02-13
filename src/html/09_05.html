@@ -1,0 +1,45 @@
+@@include('head.html',{
+    "title":"프로필 관리 | "
+})
+<body>
+    <div class="layer-full-wrap">
+        <!-- 헤더영역 -->
+        @@include('header02.html',{
+            "layertitle":"이미지 선택"
+        })
+        <!-- //헤더영역 -->
+
+        <!-- 컨텐츠 영역 -->
+        <!-- 스크롤 영역 -->
+        <section class="scroll-ud full">
+            <div class="scroll-ud-inner">
+                <div class="change-img">
+                    <img src="../img/acProfile01B.png" alt="">
+                </div>
+            </div>
+        </section>
+        <!-- 스크롤 영역 -->
+        <div class="btn-bottom-area">
+            <button type="button" class="btn-pu">저장하기</button>
+        </div>
+        <!-- //컨텐츠 영역 -->
+    </div>
+</body>
+</html>
+
+<style>
+.change-img{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    transform: translate(-50%, -50%);
+}
+.change-img:after{
+
+}
+.change-img img{
+    display: block;
+    width: 100%;
+}
+</style>
