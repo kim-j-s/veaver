@@ -186,15 +186,9 @@
         return $(this).each(function () {
             const $this = $(this);
             data.forEach(function (obj) {
-                $this.append(`<li>
-                    <div class="rst-list-cont">
-                        <div class="q-txt">${obj.title}</div>
-                        <div class="st-img">
-                            <img src="${obj.thumbnail}" alt="">
-                        </div>
-                    </div>
-                    <button type="button" class="btn-bl">닥터의 소견</button>
-                </li>`);
+                $this.append(`<li><div class="rst-list-cont"><div class="q-txt">${obj.title}</div>`
+                        +(obj.thumbnail ? `<div class="st-img"><img src="${obj.thumbnail}" alt=""></div>` : '')
+                        +`</div><button type="button" class="btn-bl">닥터의 소견</button></li>`);
             });
         });
     };

@@ -2658,6 +2658,10 @@
 			font-size: 16px;
 			color: #000;
 		}
+		.rst-list-cont > .q-txt:only-child {
+			width: 100%;
+			padding-right: 0;
+		}
 		.rst-list-cont > .q-txt + .st-img{
 			vertical-align: middle;
 		}
