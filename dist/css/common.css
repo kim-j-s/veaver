@@ -3668,7 +3668,7 @@
 		    position: fixed;
 		    left: 22px;
 		    bottom: 0;
-		    z-index: 1;
+		    z-index: 101;
 		    width: calc(100% - 44px);
 		    padding: 22px;
 		    border-radius: 14px 14px 0 0;

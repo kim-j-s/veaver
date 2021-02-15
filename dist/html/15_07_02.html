@@ -55,69 +55,65 @@
 
         <!-- 컨텐츠 영역 -->
         <section class="layer-content etc">
-            content
+            예정된 모든 접종
         </section>
         <!-- //컨텐츠 영역 -->
+    </div>
 
-
-        <!-- 하단 팝업 -->
-        <div class="bottom-pop on">
-            <div class="bottom-pop-container">
-                <div class="bottom-pop-head">
-                    <div class="bph-innner">
-                        <h2 class="header-title">예정된 모든 접종</h2>
-                        <button type="buton" class="layer-close-btn">닫기</button>
-                    </div>
-                </div>
-                <div class="bottom-pop-cont pt0">
-                    <ul class="list-05">
-                        <li>
-                            <div class="front txt">
-                                파상풍, 디프테리아(Td)
-                            </div>
-                            <div class="right-ty txt2">
-                                20210601<br> 6차
-                            </div>
-                        </li>
-                        <li>
-                            <div class="front txt">
-                                백신명
-                            </div>
-                            <div class="right-ty txt2">
-                                20210601<br> 6차
-                            </div>
-                        </li>
-                        <li>
-                            <div class="front txt">
-                                제조사
-                            </div>
-                            <div class="right-ty txt2">
-                                20210601<br> 6차
-                            </div>
-                        </li>
-                    </ul>
+    <!-- 하단 팝업 -->
+    <div class="bottom-pop opened">
+        <div class="bottom-pop-container">
+            <div class="bottom-pop-head">
+                <div class="bph-innner">
+                    <h2 class="header-title">예정된 모든 접종</h2>
+                    <button type="buton" class="layer-close-btn">닫기</button>
                 </div>
             </div>
+            <div class="bottom-pop-cont pt0">
+                <ul class="list-05">
+                    <li>
+                        <div class="front txt">
+                            파상풍, 디프테리아(Td)
+                        </div>
+                        <div class="right-ty txt2">
+                            20210601<br> 6차
+                        </div>
+                    </li>
+                    <li>
+                        <div class="front txt">
+                            백신명
+                        </div>
+                        <div class="right-ty txt2">
+                            20210601<br> 6차
+                        </div>
+                    </li>
+                    <li>
+                        <div class="front txt">
+                            제조사
+                        </div>
+                        <div class="right-ty txt2">
+                            20210601<br> 6차
+                        </div>
+                    </li>
+                </ul>
+            </div>
         </div>
-        <!-- // 하단 팝업 -->
     </div>
+    <!-- // 하단 팝업 -->
 </body>
-
-</html>
-
 
 <!-- 팝업 구동 샘플 -->
 <script>
     $(function() {
-        /*
-        $('html').click(function(){
+        $('html').click(function() {
             if (!$('.bottom-pop').hasClass('opened')) {
                 $('.bottom-pop').openPop();
             } else {
                 $('.bottom-pop').closePop();
             }
         });
-        */
     })
 </script>
 <!--// 팝업 구동 샘플 -->
+
+</html>
