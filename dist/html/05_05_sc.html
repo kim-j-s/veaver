@@ -53,7 +53,7 @@
 
 
         <!-- 하단 팝업 -->
-        <div class="bottom-pop on">
+        <div class="bottom-pop">
             <div class="bottom-pop-container">
                 <div class="bottom-pop-head">
                     <div class="bph-innner">
@@ -82,6 +82,9 @@
     </div>
 </body>
 <script>
+    // 팝업열기
+    $('.bottom-pop').openPop();
+
     // 질병 증상 & 진료과
     const exData = [{
             "thumbnail": "../img/temp/@poptemp02.jpg",

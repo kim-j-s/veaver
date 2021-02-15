@@ -2038,6 +2038,7 @@
 		    }
 		    100% {
 		        bottom: -100%;
+				display: none;
 		    }
 		}
 		@keyframes dimmedBgOff02 {
@@ -2049,6 +2050,7 @@
 		    }
 		    100% {
 		        bottom: -100%;
+				display: none;
 		    }
 		}
 
