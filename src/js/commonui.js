@@ -359,7 +359,25 @@ function DatePicker() {
 
 
 var $arrPop = [];
+// 팝업 열기
 $.fn.openPop = function() {
+	if($(this).length > 1) {
+		return $(this);
+	} else {
+		return $(this).each(function(){
+			var $this = $(this);
+			$this.addClass('on');
+			if($this.hasClass('on')) {
+				$this.removeClass('on');
+			} else {
+				$this.addClass('on');
+			}
+		});
+	}
+};
+
+// 팝업닫기
+$.fn.closePop = function() {
 	if($(this).length > 1) {
 		return $(this);
 	} else {

@@ -1970,7 +1970,7 @@
 			background: rgba(0,0,0,0.0);
 			animation: dimmedBgOff02 .5s forwards;
 		}
-		.bottom-pop.on{
+		.bottom-pop.opened{
 			background: rgba(0,0,0,0.7);
 			animation: dimmedBg02 .5s forwards;
 		}
@@ -3503,6 +3503,9 @@
 		}
 		.card-content.etc + .card-content{
 			margin-top: 0;
+		}
+		.card-content-area .link {
+			display: block;
 		}
 
 	/* // 상세 페이지 컨텐츠 삽입 영역 */
