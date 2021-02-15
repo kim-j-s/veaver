@@ -1,8 +1,9 @@
 @@include('head.html',{
-	"title":"질병정보 목록 | "
+"title":"질병정보 목록 | "
 })
+
 <body>
-	<div class="wrap">
+    <div class="wrap">
         <!-- 헤더영역 -->
         @@include('header06.html')
         <!-- //헤더영역 -->
@@ -63,19 +64,20 @@
         <!-- // 하단 팝업 -->
     </div>
 </body>
+
 </html>
 
 
 <!-- 팝업 구동 샘플 -->
 <script>
-$(function(){
-    $('html').click(function(){
-        if ( !$('.bottom-pop').hasClass('on') ) {
-            $('.bottom-pop').addClass('on');
-        } else {
-            $('.bottom-pop').removeClass('on');
-        }
-    });
-})
+    $(function () {
+        $('html').click(function () {
+            if (!$('.bottom-pop').hasClass('opened')) {
+                $('.bottom-pop').openPop();
+            } else {
+                $('.bottom-pop').closePop();
+            }
+        });
+    })
 </script>
 <!--// 팝업 구동 샘플 -->

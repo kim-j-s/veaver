@@ -10,8 +10,9 @@
             if (code == 'setSelfDiagnosisCheck') $this.setSelfDiagnosisCheck(data);
             else if (code == 'setSelfDiagnosisResult') $this.setSelfDiagnosisResult(data);
             else if (code == 'setDiseaseDetailHead') $this.setDiseaseDetailHead(data);
-            else if (code == 'setDiseaseDetailBody') $this.setDiseaseDetailBody(data);
+            else if (code == 'setDetailCardView') $this.setDetailCardView(data);
             else if (code == 'setDiseaseSymptomSubject') $this.setDiseaseSymptomSubject(data);
+            else if (code == 'setDrQAList') $this.setDrQAList(data);
         });
 
     };
@@ -88,27 +89,19 @@
         });
     };
 
-    // 질병 상세
-    $.fn.setDiseaseDetailBody = function (data) {
+    // 카드뷰 상세
+    $.fn.setDetailCardView = function (data) {
         return $(this).each(function () {
             const $this = $(this);
-            let strHtml = '';
-            let strBadge = '';
 
             let $swiperSlide = null;
 
             data.forEach(function (obj) {
-                // console.log(obj);
-                // console.log(obj.typeId);
-                // console.log(obj.htmlText);
                 if (obj.typeId == 'T') {
                     // T: 텍스트 카드뷰
                     $this.append(`<div class="card-content">${obj.htmlText}</div>`);
                 } else if (obj.typeId == 'I') {
                     // I: 이미지 카드뷰
-                    console.log(obj);
-                    console.log(obj.imgType);
-                    console.log(obj.imgSeq);
                     if (obj.imgType == 'Y') {
                         $this.append(`<div class="card-content"><div class="gallery-swiper swiper-container"><div class="swiper-wrapper"></div><div class="swiper-pagination"></div></div></div>`);
                         $swiperSlide = $this.find('.card-content .swiper-wrapper');
@@ -185,6 +178,24 @@
 
                 $this.append(strHtml);
             }
+        });
+    };
+
+    // 닥터QA 리스트
+    $.fn.setDrQAList = function (data) {
+        return $(this).each(function () {
+            const $this = $(this);
+            data.forEach(function (obj) {
+                $this.append(`<li>
+                    <div class="rst-list-cont">
+                        <div class="q-txt">${obj.title}</div>
+                        <div class="st-img">
+                            <img src="${obj.thumbnail}" alt="">
+                        </div>
+                    </div>
+                    <button type="button" class="btn-bl">닥터의 소견</button>
+                </li>`);
+            });
         });
     };
 })(jQuery);

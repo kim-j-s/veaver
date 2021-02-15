@@ -267,10 +267,10 @@
     /*
 $(function(){
     $('html').click(function(){
-        if ( !$('.bottom-pop').hasClass('on') ) {
-            $('.bottom-pop').addClass('on');
+        if (!$('.bottom-pop').hasClass('opened')) {
+            $('.bottom-pop').openPop();
         } else {
-            $('.bottom-pop').removeClass('on');
+            $('.bottom-pop').closePop();
         }
     });
 })

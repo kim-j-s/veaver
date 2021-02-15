@@ -58,7 +58,7 @@
                 <div id="setDiseaseDetailHead" class="line-box"></div>
 
                 <!-- 질병 상세 -->
-                <div id="setDiseaseDetailBody" class="line-box card-content-area"></div>
+                <div id="setDetailCardView" class="line-box card-content-area"></div>
 
                 <!-- 증상 & 진료과 -->
                 <div id="setDiseaseSymptomSubject" class="line-box"></div>
@@ -83,12 +83,12 @@
 
 <script>
     // 질병 상세 상단 기본정보
-    const resultExam01 = {
+    const exData01 = {
         "name": "편두통",
         "detail": "편두통은 뇌가 특정 자극에 매우 예민하게 반응하도록 유전적으로 세팅된 뇌의 만성 질병이다.",
         "thumbnail": "../img/temp/@poptemp03.jpg",
     };
-    $('#setDiseaseDetailHead').drawUi('setDiseaseDetailHead', resultExam01);
+    $('#setDiseaseDetailHead').drawUi('setDiseaseDetailHead', exData01);
 
     // 질병 상세 에디터영역
     /*
@@ -109,7 +109,7 @@
     // nisiType = NI
 
     */
-    const resultExam02 = [{
+    const exData02 = [{
             "id": "15987556099686211881",
             "fileId": "16073192979512512154",
             "seq": 1,
@@ -417,10 +417,10 @@
             "videoThumbnailUrl": ""
         }
     ];
-    $('#setDiseaseDetailBody').drawUi('setDiseaseDetailBody', resultExam02);
+    $('#setDetailCardView').drawUi('setDetailCardView', exData02);
 
     // 질병 증상 & 진료과
-    const resultExam03 = {
+    const exData03 = {
         "Subject": [
             "비뇨기과",
             "가정의학과"
@@ -431,7 +431,7 @@
             "배뇨곤란"
         ]
     };
-    $('#setDiseaseSymptomSubject').drawUi('setDiseaseSymptomSubject', resultExam03);
+    $('#setDiseaseSymptomSubject').drawUi('setDiseaseSymptomSubject', exData03);
 </script>
 
 </html>

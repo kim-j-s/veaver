@@ -1,8 +1,9 @@
 @@include('head.html',{
-	"title":"CP정보 | "
+"title":"CP정보 | "
 })
+
 <body>
-	<div class="wrap">
+    <div class="wrap">
         <!-- 헤더영역 -->
         @@include('header06.html')
         <!-- //헤더영역 -->
@@ -34,38 +35,38 @@
                             <div class="q-txt">김민규 부교수</div>
                         </div>
                     </div>
-                   
+
                     <div class="line-box">
                         <h4 class="tit-h4">인필라테스의 건강레시피 (5)</h4>
                         <ul class="list-03">
                             <li>
                                 <a href="#">
                                     <span class="word-box">
-                                       <span class="txt">허리디스크와 척추관협착증은 어떻게 다른가요?</span>
-                                   </span>
-                                   <span class="ex-img">
-                                       <img src="../img/temp/@poptemp07.jpg" alt="예시 이미지">
-                                   </span>
+                                        <span class="txt">허리디스크와 척추관협착증은 어떻게 다른가요?</span>
+                                    </span>
+                                    <span class="ex-img">
+                                        <img src="../img/temp/@poptemp07.jpg" alt="예시 이미지">
+                                    </span>
                                 </a>
                             </li>
                             <li>
                                 <a href="#">
                                     <span class="word-box">
-                                       <span class="txt">내시경적 허리디스크 치료 수술은 어떤 건가요?</span>
-                                   </span>
-                                   <span class="ex-img">
-                                       <img src="../img/temp/@poptemp07.jpg" alt="예시 이미지">
-                                   </span>
+                                        <span class="txt">내시경적 허리디스크 치료 수술은 어떤 건가요?</span>
+                                    </span>
+                                    <span class="ex-img">
+                                        <img src="../img/temp/@poptemp07.jpg" alt="예시 이미지">
+                                    </span>
                                 </a>
                             </li>
                             <li>
                                 <a href="#">
                                     <span class="word-box">
-                                       <span class="txt">환자들이 알고 있어야 할 식이 습관을 알려주세요.</span>
-                                   </span>
-                                   <span class="ex-img">
-                                       <img src="../img/temp/@poptemp07.jpg" alt="예시 이미지">
-                                   </span>
+                                        <span class="txt">환자들이 알고 있어야 할 식이 습관을 알려주세요.</span>
+                                    </span>
+                                    <span class="ex-img">
+                                        <img src="../img/temp/@poptemp07.jpg" alt="예시 이미지">
+                                    </span>
                                 </a>
                             </li>
                         </ul>
@@ -76,19 +77,20 @@
         <!-- // 하단 팝업 -->
     </div>
 </body>
+
 </html>
 
 
 <!-- 팝업 구동 샘플 -->
 <script>
-$(function(){
-    $('html').click(function(){
-        if ( !$('.bottom-pop').hasClass('on') ) {
-            $('.bottom-pop').addClass('on');
-        } else {
-            $('.bottom-pop').removeClass('on');
-        }
-    });
-})
+    $(function () {
+        $('html').click(function () {
+            if (!$('.bottom-pop').hasClass('opened')) {
+                $('.bottom-pop').openPop();
+            } else {
+                $('.bottom-pop').closePop();
+            }
+        });
+    })
 </script>
 <!--// 팝업 구동 샘플 -->

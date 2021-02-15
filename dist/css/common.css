@@ -2006,7 +2006,7 @@
 			-webkit-animation: dimmedBgOff02 .5s forwards;
 			animation: dimmedBgOff02 .5s forwards;
 		}
-		.bottom-pop.on{
+		.bottom-pop.opened{
 			background: rgba(0,0,0,0.7);
 			-webkit-animation: dimmedBg02 .5s forwards;
 			animation: dimmedBg02 .5s forwards;
@@ -2065,7 +2065,7 @@
 		    overflow: hidden;
 		    transition: .5s;
 		}
-		.bottom-pop.on .bottom-pop-container{
+		.bottom-pop.opened .bottom-pop-container{
 			bottom: 0;
 		}
 		.bottom-pop-head{
@@ -3599,6 +3599,9 @@
 		}
 		.card-content.etc + .card-content{
 			margin-top: 0;
+		}
+		.card-content-area .link {
+			display: block;
 		}
 
 	/* // 상세 페이지 컨텐츠 삽입 영역 */
