@@ -10,7 +10,7 @@
             if (code == 'setSelfDiagnosisCheck') $this.setSelfDiagnosisCheck(data);
             else if (code == 'setSelfDiagnosisResult') $this.setSelfDiagnosisResult(data);
             else if (code == 'setDiseaseDetailHead') $this.setDiseaseDetailHead(data);
-            else if (code == 'setDiseaseDetailBody') $this.setDiseaseDetailBody(data);
+            else if (code == 'setDetailCardView') $this.setDetailCardView(data);
             else if (code == 'setDiseaseSymptomSubject') $this.setDiseaseSymptomSubject(data);
             else if (code == 'setDrQAList') $this.setDrQAList(data);
         });
@@ -89,8 +89,8 @@
         });
     };
 
-    // 질병 상세
-    $.fn.setDiseaseDetailBody = function (data) {
+    // 카드뷰 상세
+    $.fn.setDetailCardView = function (data) {
         return $(this).each(function () {
             const $this = $(this);
 
