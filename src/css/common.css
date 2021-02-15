@@ -3389,33 +3389,49 @@
 		    border: 1px solid #dbdee5;
 		}
 		.link-box > a{
-		    display: block;
+		    /*display: block;*/
+		    display: flex;
+		    flex-direction: row;
+		    align-items: center;
+		    min-height: 68px;
 		    padding-left: 22px;
 		    font-size: 0;
 		}
 		.link-box .word-box{
-		    display: inline-block;
-		    width: calc(100% - 70px);
-		    padding-right: 20px;
+		    flex: 1 1 100%;
+		    /*display: flex;*/
+		    /*align-items: center;*/
+		    padding-right: 22px;
 		    vertical-align: middle;
 		}
+		.link-box .b-tit{
+			flex: none;
+			display: block;
+			font-size: 12px;
+			color: #056bff;
+			line-height: 18px;
+		}
 		.link-box .txt{
+			flex: none;
 		    vertical-align: middle;
 		    font-weight: 500;
-		    font-size: 15px;
-		    line-height: 22px;
+		    font-size: 14px;
+		    line-height: 20px;
 		    color: #000;
-		    max-height: 44px;
+		    max-height: 40px;
 		    display: -webkit-box;
 		    -webkit-line-clamp: 2;
 		    -webkit-box-orient: vertical;
 		    overflow: hidden;
 		}
 		.link-box .lb-img{
+			/*flex: none;*/
+			flex: 0 0 70px;
 		    display: inline-block;
 		    vertical-align: middle;
 		    width: 70px;
-		    height: 68px;
+		    /*height: 68px;*/
+		    /*height: 100%;*/
 		}
 		.link-box .lb-img img{
 		    width: 100%;

@@ -53,7 +53,7 @@
 
         <!-- 컨텐츠 영역 -->
         <section class="flex-none-cont">
-            <button type="button" class="b" data-class="case4">Up 1 Down 1 Rate 2</button>
+            <button type="button" class="b" data-class="on">Up 1 Down 1 Rate 2</button>
         </section>
 
         <section class="scroll-ud full">
@@ -159,27 +159,6 @@
 
 
     <style>
-        .inp-group {
-            padding: 0 22px;
-        }
-
-        .profile-img-modify {
-            text-align: center;
-        }
-
-        .profile-img-modify .photo-zone {
-            width: 70px;
-            height: 70px;
-        }
-
-        .mo-btn {
-            margin-top: 10px;
-        }
-
-        .mo-btn button {
-            width: 70px;
-        }
-
         .b {
             display: block;
             width: 100%;
@@ -188,10 +167,6 @@
             text-align: center;
             padding: 10px 0;
             text-align: center;
-        }
-
-        .b+.b {
-            margin-top: 10px;
         }
 
         .toast-layer {
@@ -204,8 +179,8 @@
             opacity: 0;
         }
 
-        .toast-layer.case4 {
-            animation: case4 4s linear alternate;
+        .toast-layer.on {
+            animation: toastpopup 4s linear alternate;
         }
 
         .toast-cont {
@@ -219,7 +194,7 @@
             border-radius: 10px;
         }
 
-        @keyframes case4 {
+        @keyframes toastpopup {
             0% {
                 bottom: 0;
                 opacity: 0;
