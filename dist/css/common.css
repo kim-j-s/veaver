@@ -3475,7 +3475,6 @@
 		    border: 1px solid #dbdee5;
 		}
 		.link-box > a{
-		    /*display: block;*/
 		    display: flex;
 		    flex-direction: row;
 		    align-items: center;
@@ -3485,8 +3484,6 @@
 		}
 		.link-box .word-box{
 		    flex: 1 1 100%;
-		    /*display: flex;*/
-		    /*align-items: center;*/
 		    padding-right: 22px;
 		    vertical-align: middle;
 		}
@@ -3511,13 +3508,10 @@
 		    overflow: hidden;
 		}
 		.link-box .lb-img{
-			/*flex: none;*/
 			flex: 0 0 70px;
 		    display: inline-block;
 		    vertical-align: middle;
 		    width: 70px;
-		    /*height: 68px;*/
-		    /*height: 100%;*/
 		}
 		.link-box .lb-img img{
 		    width: 100%;
