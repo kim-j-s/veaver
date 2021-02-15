@@ -14,7 +14,8 @@
         <section class="scroll-ud full">
             <div class="scroll-ud-inner">
                 <div class="change-img">
-                    <img src="../img/acProfile01B.png" alt="">
+                    <!-- <img src="../img/acProfile01B.png" alt=""> -->
+                    <img src="https://m.upinews.kr/data/upi/image/20190523/p1065574177335900_669_thum.jpg" alt="">
                 </div>
             </div>
         </section>
@@ -29,14 +30,17 @@
 
 <style>
 .change-img{
-    /*
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 100%;
-    transform: translate(-50%, -50%);
-    */
+    display: flex;
     position: relative;
+    align-items: center;
+    justify-self: center;
+    overflow: hidden;
+
+}
+.change-img:before{
+    content: '';
+    float: left;
+    padding-top: 100%;
 }
 .change-img:after{
     content: '';
@@ -45,12 +49,24 @@
     left: 0;
     width: 100%;
     height: 100%;
-    /*background: radial-gradient(circle at center center, transparent 50%, rgba(0,0,0,0.7) 70px);*/
-    background: radial-gradient(circle at center center, transparent 70%, rgba(0,0,0,0.7) 0);
-
+    border-radius: 50%;
+    box-shadow: 0px 0px 0px 10000px rgba(0,0,0,0.7);
 }
 .change-img img{
+    /*position: absolute;
+    top: 0;
+    left: 0;
+    top: 50%;
+    left: 50%;
     display: block;
     width: 100%;
+    transform: translate(-50%, -50%);*/
+    min-width: 100%;
+    min-height: 100%;
+    /*height: 100%;*/
+    /*
+    display: block;
+    width: 100%;
+    */
 }
 </style>
