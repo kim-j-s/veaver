@@ -1992,7 +1992,6 @@
 		    }
 		    100% {
 		        bottom: -100%;
-				display: none;
 		    }
 		}
 
@@ -2009,7 +2008,7 @@
 		    overflow: hidden;
 		    transition: .5s;
 		}
-		.bottom-pop.on .bottom-pop-container{
+		.bottom-pop.opened .bottom-pop-container{
 			bottom: 0;
 		}
 		.bottom-pop-head{
