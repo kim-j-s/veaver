@@ -35,7 +35,6 @@
             <div class="header-inner">
                 <h2 class="header-title">예방접종수첩</h2>
                 <div class="h-utils">
-                    <button type="button" class="btn-black-clock">업데이트</button>
                     <span class="u-profile">
 		    	<span class="u-profile-img">
 		    		<!-- 적용된 썸네일 -->
@@ -54,6 +53,48 @@
         <!-- //헤더영역 -->
 
         <!-- 컨텐츠 영역 -->
+        <div class="child-select-wrap">
+            <div class="child-select swiper-container">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        1
+                    </div>
+                    <div class="swiper-slide">
+                        2
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <style>
+            .child-select-wrap {
+                flex: none;
+                position: relative;
+                margin-top: 20px;
+                padding: 0 22px;
+            }
+
+            .child-select-wrap {}
+        </style>
+
+
+        <script>
+            $(function() {
+                var childSwiper = new Swiper('.child-select', {
+                    observer: true,
+                    observeParents: true,
+                    speed: 500,
+                    spaceBetween: 20,
+                    //loop: true,
+                });
+            });
+        </script>
+
+
+        <br><br><br><br>
+
+
         <section class="flex-none-cont">
             <div class="tab-box">
                 <div class="tab-menu-wrap swiper-container">

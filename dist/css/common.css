@@ -846,7 +846,11 @@
 		.bg-box .inp-group{
 			padding: 0;
 		}
-		.bg-box .txt + .inp-group.box-ty{
+		.bg-box .txt + button{
+			margin-top: 20px;
+		}
+		.bg-box .txt + .inp-group.box-ty,
+		.bg-box button + .inp-group.box-ty{
 			margin-top: 30px;
 		}
 		.inp-group.box-ty + .inp-group.box-ty{
@@ -4033,6 +4037,9 @@
 		.bg-box > .txt{
 		    font-size: 16px;
 		    line-height: 24px;
+		}
+		.bg-box > .txt + .txt{
+			margin-top: 20px;
 		}
 
 		.part-cont{
