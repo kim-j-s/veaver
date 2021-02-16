@@ -120,7 +120,15 @@
                     // SI1 닥터QA
                     if (obj.linkDetailId) {
                         let strHtml = `<div class="link-box"><a href="${obj.linkUrl}">`;
-                        strHtml +=`<span class="word-box"><span class="txt">${obj.linkTitle}</span></span>`;
+                        strHtml +=`<span class="word-box">`;
+                        if(obj.nisiType == 'SI1') {
+                            // SI1 닥터QA
+                            strHtml +=`<strong class="b-tit">닥터 QA</strong>`;
+                        } else if(obj.nisiType == 'NI') {
+                            // NI 질병정보
+                            strHtml +=`<strong class="b-tit">질병정보</strong>`;
+                        }
+                        strHtml += `<span class="txt">${obj.linkTitle}</span></span>`;
                         strHtml +=`<span class="lb-img"><img src="${obj.dataUrl}" alt="예시 이미지"></span>`;
                         strHtml +=`</a></div>`;
                         $this.append(strHtml);
@@ -147,9 +155,6 @@
 
             // swiper img();
             gallerySwiper($this);
-
-            // NI 질병정보
-            // SI1 닥터QA
         });
     };
 
