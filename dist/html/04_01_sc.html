@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+    <meta name="x-apple-disable-message-reformatting">
+    <title>검색 | Veaver Health mining</title>
+    <link href="../css/reset.css" rel="stylesheet">
+    <link href="../css/common.css" rel="stylesheet">
+    <link href="../css/swiper.css" rel="stylesheet">
+    <script type="text/javascript" src="../js/jquery.min.js"></script>
+    <script type="text/javascript" src="../js/jquery.swiper.js"></script>
+    <script type="text/javascript" src="../js/commonui.js"></script>
+    <script type="text/javascript" src="../js/drawui.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+    <!--[if lt IE 9]>
+    <script type="text/javascript">
+        document.createElement("header"); 
+        document.createElement("nav"); 
+        document.createElement("section"); 
+        document.createElement("article"); 
+        document.createElement("footer");
+    </script>
+<![endif]-->
+</head>
+
+<body>
+    <div class="wrap">
+        <!-- 헤더영역 -->
+        <header class="search-header">
+            <div class="search-header-inner">
+                <a href="#" class="history-back">뒤로가기</a>
+                <div class="input-text">
+                    <input type="text" placeholder="검색어를 입력하세요">
+                    <button type="button" class="btn-remove">삭제</button>
+                </div>
+                <div class="auto-comp-wrap">
+                    <ul id="setAutoCompleteList" class="auto-comp-list"></ul>
+                </div>
+            </div>
+        </header>
+        <!-- //헤더영역 -->
+
+        <!-- 컨텐츠 영역 -->
+        <section class="layer-content">
+            <!-- content -->
+        </section>
+        <!-- //컨텐츠 영역 -->
+    </div>
+</body>
+<script>
+    let exData = [{
+            "seq": 423,
+            "dId": "15984204909278487313",
+            "hName": "폐암 (폐문부)",
+            "hDesc": "폐의 중심부 가까이에 있는 굵은 기관지에 발생하는 암으로 흡연자에게 주로 나타남",
+            "linkUrl": "http://naver.com" // 링크
+        },
+        {
+            "seq": 424,
+            "dId": "15984205079802858802",
+            "hName": "폐암 (폐야부)",
+            "hDesc": "폐의 말초에 발생하는 암으로 여성에게도 많이 발생함",
+            "linkUrl": "http://naver.com" // 링크
+        },
+        {
+            "seq": 445,
+            "dId": "15987547315350700833",
+            "hName": "폐암 (비소세포성)",
+            "hDesc": "조직형에 따라 구분한 소세포성 폐암을 제외한 폐암",
+            "linkUrl": "http://naver.com" // 링크
+        },
+        {
+            "seq": 446,
+            "dId": "15987548108287767717",
+            "hName": "폐암 (소세포성)",
+            "hDesc": "세포가 작은 조직형을 지닌 폐암",
+            "linkUrl": "http://naver.com" // 링크
+        }
+    ];
+
+    $('#setAutoCompleteList').drawUi('setAutoCompleteList', exData);
+</script>
+
+</html>

@@ -7,7 +7,8 @@
         return $(this).each(function () {
             const $this = $(this);
 
-            if (code == 'setSelfDiagnosisCheck') $this.setSelfDiagnosisCheck(data);
+            if (code == 'setAutoCompleteList') $this.setAutoCompleteList(data);
+            else if (code == 'setSelfDiagnosisCheck') $this.setSelfDiagnosisCheck(data);
             else if (code == 'setSelfDiagnosisResult') $this.setSelfDiagnosisResult(data);
             else if (code == 'setDiseaseDetailHead') $this.setDiseaseDetailHead(data);
             else if (code == 'setDetailCardView') $this.setDetailCardView(data);
@@ -186,16 +187,20 @@
         return $(this).each(function () {
             const $this = $(this);
             data.forEach(function (obj) {
-                $this.append(`<li>
-                    <div class="rst-list-cont">
-                        <div class="q-txt">${obj.title}</div>
-                        <div class="st-img">
-                            <img src="${obj.thumbnail}" alt="">
-                        </div>
-                    </div>
-                    <button type="button" class="btn-bl">닥터의 소견</button>
-                </li>`);
+                $this.append(`<li><div class="rst-list-cont"><div class="q-txt">${obj.title}</div>`
+                        +(obj.thumbnail ? `<div class="st-img"><img src="${obj.thumbnail}" alt=""></div>` : '')
+                        +`</div><button type="button" class="btn-bl">닥터의 소견</button></li>`);
             });
         });
     };
+
+    // autocomplete list
+    $.fn.setAutoCompleteList = function(data) {
+        return $(this).each(function() {
+            const $this = $(this);
+            data.forEach(function (obj) {
+                $this.append(`<li><a href="${obj.linkUrl}">${obj.hName}</a></li>`);
+            });
+        });
+    }
 })(jQuery);
