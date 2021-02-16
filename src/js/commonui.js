@@ -53,6 +53,9 @@ $(function(){
 	// 접종내역 - 상세
 	stepSwiper();
 
+	// 자녀선택
+	choiceSwiper();
+
 	//날짜 선택 daterangepicker
 	DatePicker()
 
@@ -335,6 +338,24 @@ function stepSwiper() {
 		});
 	}
 }
+
+
+// 자녀선택
+function choiceSwiper() {
+if ( $('.choice-wrap').find('.swiper-slide').length > 1 ){
+        var childSwiper = new Swiper('.choice', {
+            slidesPerView: 2,
+            observer: true,
+            observeParents: true,
+            speed: 500,
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+        });
+    }
+}
+
 
 // 날짜 선탟
 function DatePicker() {
