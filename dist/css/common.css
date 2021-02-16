@@ -1880,6 +1880,7 @@
 			padding: 40px 30px;
 			background: #fff;
 			box-shadow: 0px 5px 5px 0px rgba(179,187,199,0.3);
+			z-index: 1;
 		}
 		.auto-comp-list{
 

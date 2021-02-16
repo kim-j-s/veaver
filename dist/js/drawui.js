@@ -7,7 +7,8 @@
         return $(this).each(function () {
             const $this = $(this);
 
-            if (code == 'setSelfDiagnosisCheck') $this.setSelfDiagnosisCheck(data);
+            if (code == 'setAutoCompleteList') $this.setAutoCompleteList(data);
+            else if (code == 'setSelfDiagnosisCheck') $this.setSelfDiagnosisCheck(data);
             else if (code == 'setSelfDiagnosisResult') $this.setSelfDiagnosisResult(data);
             else if (code == 'setDiseaseDetailHead') $this.setDiseaseDetailHead(data);
             else if (code == 'setDetailCardView') $this.setDetailCardView(data);
@@ -192,4 +193,14 @@
             });
         });
     };
+
+    // autocomplete list
+    $.fn.setAutoCompleteList = function(data) {
+        return $(this).each(function() {
+            const $this = $(this);
+            data.forEach(function (obj) {
+                $this.append(`<li><a href="${obj.linkUrl}">${obj.hName}</a></li>`);
+            });
+        });
+    }
 })(jQuery);
