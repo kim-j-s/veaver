@@ -24,8 +24,7 @@
                     <div class="inp-group box-ty">
                         <label for="chkdate" class="label bold-ty">검진일</label>
                         <div class="input-text">
-                            <!-- <input type="text" id="chkdate" class="datepicker" placeholder="YYYY/MM/DD"> -->
-                            <input type="date" name="" id="">
+                            <input type="text" name="" id="" class="datepicker" placeholder="YYYY/MM/DD">
                         </div>
                     </div>
                     <div class="inp-group box-ty">
@@ -35,6 +34,14 @@
                         </div>
                     </div>
                 </div>
+
+
+<script>
+$(function(){
+    $('.datepicker').pickadate();
+})
+</script>
+
 
                 <div class="l-cont">
                     <h2 class="tit-h2">계측검사</h2>
