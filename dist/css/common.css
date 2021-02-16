@@ -1222,22 +1222,21 @@
 	.main-header > .side-bg{
 		position: absolute;
 		right: 0;
-		bottom: -69px;
+		bottom: -70px;
 		width: 70px;
 		height: 70px;
-		background: radial-gradient(circle at bottom left, transparent 70px, #056bff 70px);
 		overflow: hidden;
 	}
 	.main-header > .side-bg:after{
 		content: '';
 		position: absolute;
-		top: -1px;
-		right: -1px;
+		top: 0;
+		right: 0;
 		width: 140px;
 		height: 140px;
 		background: transparent;
-		border: 1px solid #056bff;
 		border-radius: 50%;
+		box-shadow: 0px 0px 0px 10000px #056bff;
 	}
 
 
@@ -1426,22 +1425,21 @@
 		.nav-top > .side-bg{
 			position: absolute;
 			right: 0;
-			bottom: -69px;
+			bottom: -70px;
 			width: 70px;
 			height: 70px;
-			background: radial-gradient(circle at bottom left, transparent 70px, #056bff 70px);
 			overflow: hidden;
 		}
 		.nav-top > .side-bg:after{
 			content: '';
 			position: absolute;
-			top: -1px;
-			right: -1px;
+			top: 0;
+			right: 0;
 			width: 140px;
 			height: 140px;
 			background: transparent;
-			border: 1px solid #056bff;
 			border-radius: 50%;
+			box-shadow: 0px 0px 0px 10000px #056bff;
 		}
 		.user-profile{
 			font-size: 0;
