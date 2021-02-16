@@ -14,9 +14,18 @@
     <script type="text/javascript" src="../js/jquery.swiper.js"></script>
     <script type="text/javascript" src="../js/commonui.js"></script>
     <script type="text/javascript" src="../js/drawui.js"></script>
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+    <!-- d
+<script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+ -->
+
+
+    <link rel="stylesheet" href="https://amsul.ca/pickadate.js/vendor/pickadate/lib/themes/default.css" id="theme_base">
+    <link rel="stylesheet" href="https://amsul.ca/pickadate.js/vendor/pickadate/lib/themes/default.date.css" id="theme_date">
+    <link rel="stylesheet" href="https://amsul.ca/pickadate.js/vendor/pickadate/lib/themes/default.time.css" id="theme_time">
+    <script type="text/javascript" src="../js/pickadate.js"></script>
+
     <!--[if lt IE 9]>
     <script type="text/javascript">
         document.createElement("header"); 
@@ -68,8 +77,7 @@
                     <div class="inp-group box-ty">
                         <label for="chkdate" class="label bold-ty">검진일</label>
                         <div class="input-text">
-                            <!-- <input type="text" id="chkdate" class="datepicker" placeholder="YYYY/MM/DD"> -->
-                            <input type="date" name="" id="">
+                            <input type="text" name="" id="" class="datepicker" placeholder="YYYY/MM/DD">
                         </div>
                     </div>
                     <div class="inp-group box-ty">
@@ -79,6 +87,14 @@
                         </div>
                     </div>
                 </div>
+
+
+                <script>
+                    $(function() {
+                        $('.datepicker').pickadate();
+                    })
+                </script>
+
 
                 <div class="l-cont">
                     <h2 class="tit-h2">계측검사</h2>

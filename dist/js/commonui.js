@@ -44,8 +44,10 @@ $(function () {
 	// 접종내역 - 상세
 	stepSwiper();
 
-	//날짜 선택 daterangepicker
-	DatePicker()
+	// 자녀선택
+	choiceSwiper();
+
+	
 
 	//script ready
 });

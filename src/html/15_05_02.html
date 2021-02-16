@@ -1,11 +1,11 @@
 @@include('head.html',{
-	"title":"예방접종수첩 | "
+	"title":"예방접종케어 | "
 })
 <body>
 	<div class="wrap">
         <!-- 헤더영역 -->
-        @@include('header08.html',{
-            "layertitle":"예방접종수첩"
+        @@include('header09.html',{
+            "layertitle":"예방접종케어"
         })
         <!-- //헤더영역 -->
 
@@ -53,6 +53,32 @@
                             </span>
                         </label>
                     </div>
+                    <div class="swiper-slide">
+                        <label class="choice-label">
+                            <input type="radio" name="choice">
+                            <span class="cont">
+                                <span class="img">
+                                    <img src="https://m.upinews.kr/data/upi/image/20190523/p1065574177335900_669_thum.jpg" alt="봉시하">
+                                </span>
+                                <span class="i">
+                                    <span class="name">봉시하시하</span> / 15세 / 남
+                                </span>
+                            </span>
+                        </label>
+                    </div>
+                    <div class="swiper-slide">
+                        <label class="choice-label">
+                            <input type="radio" name="choice">
+                            <span class="cont">
+                                <span class="img">
+                                    <img src="https://m.upinews.kr/data/upi/image/20190523/p1065574177335900_669_thum.jpg" alt="봉본비">
+                                </span>
+                                <span class="i">
+                                    <span class="name">봉본비비</span> / 12세 / 여
+                                </span>
+                            </span>
+                        </label>
+                    </div>
                 </div>
             </div>
             <div class="swiper-button-next"></div>
@@ -60,8 +86,13 @@
         </div>
         <!-- // 자녀선택 -->
 
-        <section class="flex-none-cont mt40">
-            <div class="tab-box">
+        <section class="flex-none-cont">
+            <div class="gr-box">
+                <p class="txt t-center">
+                    질병관리청에 등록된 접종기록이 존재하지 않아 서비스를 이용 할 수 없습니다.
+                </p>
+            </div>
+            <div class="tab-box mt40 disable">
                 <div class="tab-menu-wrap swiper-container">
                     <div class="tab-menu swiper-wrapper">
                         <div class="swiper-slide">
@@ -74,9 +105,8 @@
                 </div>
             </div>
         </section>
-
         <!-- 스크롤 영역 -->
-        <section class="scroll-ud">
+        <section class="scroll-ud disable">
             <div class="scroll-ud-inner">
                 <ul class="list-05">
                     <li>
@@ -120,7 +150,7 @@
                     </li>
                     <li>
                         <div class="front">
-                            <a href="#">
+                            <a href="#" class="front">
                                 <span class="txt">폐렴구균(PCV)</span>
                                 <span class="ing-box">
                                     <span></span>
