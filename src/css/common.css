@@ -1706,9 +1706,8 @@
 
 	.flex-none-cont{
 		flex: none;
-		/*margin-top: 20px;*/
-		/*padding: 0 22px;*/
-		padding: 20px 22px 0 22px;
+		margin-top: 20px;
+		padding: 0 22px;
 	}
 
 	/* 헤더 */
@@ -3816,7 +3815,7 @@
 		.choice-wrap{
 	        flex: none;
 	        position: relative;
-	        margin: 20px 0;
+	        margin: 20px 0 0 0;
 	        padding: 0 22px;
 	    }
 	    .choice.swiper-container{
@@ -3855,6 +3854,10 @@
 	    .choice-wrap .swiper-container-initialized + .swiper-button-next + .swiper-button-prev{
 	        display: block;
 	    }
+	    .choice-wrap .swiper-container-initialized + .swiper-button-next.swiper-button-disabled, 
+	    .choice-wrap .swiper-container-initialized + .swiper-button-next + .swiper-button-prev.swiper-button-disabled {
+	    	display: none;
+	    }
 	    .choice-label{
 	        position: relative;
 	        display: block;
@@ -3863,13 +3866,13 @@
 	        position: absolute;
 	        top: 0;
 	        left: -999px;
+	        display: none;
 	    }
 	    .choice-label .cont{
 	        position: relative;
 	        display: block;
 	        padding: 16px 0;
 	        border-radius: 9px;
-	        transition: .5s;
 	    }
 	    .choice-label input:checked + .cont{
 	        background: #fff;
@@ -3882,7 +3885,6 @@
 	        line-height: 24px;
 	        color: #74777b;
 	        text-align: center;
-	        transition: .5s;
 	        white-space: nowrap;
 	    }
 	    .choice-label input:checked + .cont .i{
@@ -3914,7 +3916,6 @@
 	        border: 2px solid transparent;
 	        border-radius: 50%;
 	        box-sizing: border-box;
-	        transition: .5s;
 	    }
 	    .choice-label input:checked + .cont .img:after{
 	        border: 2px solid #056bff;
