@@ -14,6 +14,7 @@
             else if (code == 'setDetailCardView') $this.setDetailCardView(data);
             else if (code == 'setDiseaseSymptomSubject') $this.setDiseaseSymptomSubject(data);
             else if (code == 'setDrQAList') $this.setDrQAList(data);
+            else if (code == 'setTermsList') $this.setTermsList(data);
         });
 
     };
@@ -206,6 +207,26 @@
             data.forEach(function (obj) {
                 $this.append(`<li><a href="${obj.linkUrl}">${obj.hName}</a></li>`);
             });
+        });
+    }
+
+    // 약관 리스트
+    $.fn.setTermsList = function(data) {
+        return $(this).each(function() {
+            const $target = $(this).find('.terms-list');
+            data.forEach(function (obj) {
+                $target.append(`<li>
+                    <div class="term-cont-h">
+                        <label class="input-checkbox">
+                            <input type="checkbox" class="${obj.kind==1 ? '' : 'exception'}"><span>${obj.title} ${obj.kind==1 ? '(필수)':'(선택)'}</span>
+                        </label>
+                        <button type="button" class="btn-slide-i" aria-expanded="false">열기</button>
+                    </div>
+                    <div class="term-slide-cont">${obj.content}</div>
+                </li>`);
+            });
+
+            termsWrap();
         });
     }
 })(jQuery);
