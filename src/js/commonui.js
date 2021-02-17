@@ -45,7 +45,7 @@ $(function () {
 	stepSwiper();
 
 	// 자녀선택
-	choiceSwiper();
+	// choiceSwiper();
 
 	
 

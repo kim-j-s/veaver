@@ -15,6 +15,7 @@
             else if (code == 'setDiseaseSymptomSubject') $this.setDiseaseSymptomSubject(data);
             else if (code == 'setDrQAList') $this.setDrQAList(data);
             else if (code == 'setTermsList') $this.setTermsList(data);
+            else if (code == 'setFindDiseaseList') $this.setFindDiseaseList(data);
         });
 
     };
@@ -208,7 +209,7 @@
                 $this.append(`<li><a href="${obj.linkUrl}">${obj.hName}</a></li>`);
             });
         });
-    }
+    };
 
     // 약관 리스트
     $.fn.setTermsList = function(data) {
@@ -230,5 +231,26 @@
 
             termsWrap();
         });
-    }
+    };
+
+    // 약관 리스트
+    $.fn.setFindDiseaseList = function(data) {
+        return $(this).each(function() {
+            const $target = $(this);
+            data.forEach(function (obj) {
+                $target.append(`<li>
+                    <div class="rst-list-cont">
+                        <dl>
+                            <dt>${obj.hName}</dt>
+                            <dd>${obj.hDesc}</dd>
+                        </dl>
+                        <div class="st-img">
+                            <img src="${obj.thumbnail}" alt="">
+                        </div>
+                    </div>
+                    <button type="button" class="btn-bl">질병 정보 확인하기</button>
+                </li>`);
+            });
+        });
+    };
 })(jQuery);

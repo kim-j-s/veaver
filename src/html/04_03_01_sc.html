@@ -1,0 +1,84 @@
+@@include('head.html',{
+"title":"검색결과 | "
+})
+
+<body>
+    <div class="wrap">
+        <!-- 헤더영역 -->
+        @@include('header04.html')
+        <!-- //헤더영역 -->
+
+        <!-- 컨텐츠 영역 -->
+        <section class="flex-none-cont">
+            <!-- 탭 -->
+            <div class="tab-box">
+                <div class="tab-menu-wrap swiper-container">
+                    <div class="tab-menu swiper-wrapper">
+                        <div class="swiper-slide">
+                            <a href="#">질병정보<span class="count">(30)</span></a>
+                        </div>
+                        <div class="swiper-slide">
+                            <a href="#" class="active">닥터QA<span class="count">(30)</span></a>
+                        </div>
+                        <div class="swiper-slide">
+                            <a href="#">건강레시피<span class="count">(30)</span></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- //탭 -->
+        </section>
+
+        <!-- 스크롤 영역 -->
+        <section class="scroll-ud">
+            <div class="scroll-ud-inner">
+                <div class="rst-list-wrap">
+                    <ul id="setFindDiseaseList" class="rst-list"></ul>
+                </div>
+            </div>
+        </section>
+        <!-- // 스크롤 영역 -->
+
+        <!-- //컨텐츠 영역 -->
+    </div>
+</body>
+<script>
+    const exData = [
+        {
+            "seq": 423,
+            "dId": "15984204909278487313",
+            "hName": "폐암 (폐문부)",
+            "hDesc": "폐의 중심부 가까이에 있는 굵은 기관지에 발생하는 암으로 흡연자에게 주로 나타남",
+            "linkUrl": "http://naver.com", // 링크
+            "thumbnail": "../img/temp/@poptemp02.jpg", // 썸네일 경로
+        },
+        {
+            "seq": 424,
+            "dId": "15984205079802858802",
+            "hName": "폐암 (폐야부)",
+            "hDesc": "폐의 말초에 발생하는 암으로 여성에게도 많이 발생함",
+            "linkUrl": "http://naver.com", // 링크
+            "thumbnail": "../img/temp/@poptemp02.jpg", // 썸네일 경로
+        },
+        {
+            "seq": 445,
+            "dId": "15987547315350700833",
+            "hName": "폐암 (비소세포성)",
+            "hDesc": "조직형에 따라 구분한 소세포성 폐암을 제외한 폐암",
+            "linkUrl": "http://naver.com", // 링크
+            "thumbnail": "../img/temp/@poptemp02.jpg", // 썸네일 경로
+        },
+        {
+            "seq": 446,
+            "dId": "15987548108287767717",
+            "hName": "폐암 (소세포성)",
+            "hDesc": "세포가 작은 조직형을 지닌 폐암",
+            "linkUrl": "http://naver.com", // 링크
+            "thumbnail": "../img/temp/@poptemp02.jpg", // 썸네일 경로
+        }
+    ];
+
+    $('#setFindDiseaseList').drawUi('setFindDiseaseList', exData);
+</script>
+
+</html>
