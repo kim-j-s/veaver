@@ -215,6 +215,8 @@
         return $(this).each(function() {
             const $target = $(this).find('.terms-list');
             data.forEach(function (obj) {
+                const txt = typeof obj.content == 'string' ? obj.content.replaceAll('\n','<br>') :'';
+
                 $target.append(`<li>
                     <div class="term-cont-h">
                         <label class="input-checkbox">
@@ -222,7 +224,7 @@
                         </label>
                         <button type="button" class="btn-slide-i" aria-expanded="false">열기</button>
                     </div>
-                    <div class="term-slide-cont">${obj.content}</div>
+                    <div class="term-slide-cont">${txt}</div>
                 </li>`);
             });
 
