@@ -45,8 +45,10 @@ $(function () {
 	stepSwiper();
 
 	// 자녀선택
-	// choiceSwiper();
+	choiceSwiper();
 
+	// 날짜선택
+	datepicker();
 	
 
 	//script ready
@@ -312,27 +314,54 @@ function stepSwiper() {
 	}
 }
 
-// 날짜 선탟
-function DatePicker() {
-	$('.datepicker').daterangepicker({
-		singleDatePicker: true,
-		autoUpdateInput: false,
-		locale: {
-			format: "YYYY/MM/DD",
-			monthNames: ['1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월'],
-			daysOfWeek: ['일', '월', '화', '수', '목', '금', '토'],
-		}
-	});
-
-	$('.datepicker').on('apply.daterangepicker', function (ev, picker) {
-		$(this).val(picker.startDate.format('YYYY/MM/DD'));
-	});
-
-	$('.datepicker').on('cancel.daterangepicker', function (ev, picker) {
-		$(this).val('');
-	});
+// 자녀선택
+function choiceSwiper() {
+if ( $('.choice-wrap').find('.swiper-slide').length > 1 ){
+        var childSwiper = new Swiper('.choice', {
+            slidesPerView: 2,
+            observer: true,
+            observeParents: true,
+            speed: 500,
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+        });
+    }
 }
 
+// 날짜 선탟
+function datepicker() {
+    $('.datepicker').pickadate({
+        monthsShort: ['1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월'],
+        weekdaysShort: ['일', '월', '화', '수', '목', '금', '토'],
+        showMonthsShort: true,
+        today: '',
+        clear: '',
+        close: '닫기',
+        format: 'yyyy/mm/dd',
+        formatSubmit: 'yyyy/mm/dd',
+        onRender: function(){
+            var year = $('.datepicker').pickadate('picker').get('highlight', 'yyyy');
+            var month = $('.datepicker').pickadate('picker').get('highlight', 'mm');
+            //console.log(year, month);
+            $('.picker__header').prepend(
+                '<div class="picker__date-display">' + 
+                    '<span class="picker__year-display">' + year + '년</span>' + 
+                    '<span class="picker__month-display">' + month + '월</span>' + 
+                '</div>'
+            );
+        },
+        // 달력 활성화 콜백
+        onOpen: function() {
+            $('.layer-full-wrap').css('display','block');
+        },
+        // 달력 비활성화 콜백
+        onClose: function() {
+            $('.layer-full-wrap').css('display','flex');
+        },
+    });
+}
 
 var $arrPop = [];
 // 팝업 열기

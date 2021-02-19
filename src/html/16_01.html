@@ -9,44 +9,6 @@
         })
         <!-- //헤더영역 -->
 
-
-
-<script>
-$(function(){
-    $('.datepicker').pickadate({
-        monthsShort: ['1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월'],
-        weekdaysShort: ['일', '월', '화', '수', '목', '금', '토'],
-        showMonthsShort: true,
-        today: '',
-        clear: '',
-        close: '닫기',
-        format: 'yyyy/mm/dd',
-        formatSubmit: 'yyyy/mm/dd',
-        onRender: function(){
-            var year = $('.datepicker').pickadate('picker').get('highlight', 'yyyy');
-            var month = $('.datepicker').pickadate('picker').get('highlight', 'mm');
-            //console.log(year, month);
-            $('.picker__header').prepend(
-                '<div class="picker__date-display">' + 
-                    '<span class="picker__year-display">' + year + '년</span>' + 
-                    '<span class="picker__month-display">' + month + '월</span>' + 
-                '</div>'
-            );
-        },
-        // 달력 활성화 콜백
-        onOpen: function() {
-            $('.layer-full-wrap').css('display','block');
-        },
-        // 달력 비활성화 콜백
-        onClose: function() {
-            $('.layer-full-wrap').css('display','flex');
-        },
-    });
-})
-</script>
-
-
-
         <!-- 컨텐츠 영역 -->
         <section class="scroll-ud full mt0">
             <div class="scroll-ud-inner">
