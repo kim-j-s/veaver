@@ -4199,6 +4199,7 @@
 
 
 	/*Element*/
+	
 		.g-box{
 		    margin-top: 40px;
 		    padding: 32px 22px;
@@ -4272,7 +4273,6 @@
 			padding: 0 4px 0 0;
 		}
 
-
 		.bg-box + .l-cont{
 			padding-top: 30px;
 		}
@@ -4308,19 +4308,97 @@
 		    top: 14px;
 		    right: 22px;
 		}
+
 	/*Element*/
 
 
 
 	/* 약관내용 */
-	.terms{
-	    padding: 0 22px;
-	}
-	.terms h2{
-	    margin-top: 40px;
-	}
-	.terms p{
-	    margin-top: 20px;
-	    font-size: 12px;
-	}
+
+		.terms{
+		    padding: 0 22px;
+		}
+		.terms h2{
+		    margin-top: 40px;
+		}
+		.terms p{
+		    margin-top: 20px;
+		    font-size: 12px;
+		}
+
 	/* // 약관내용 */
+
+
+
+	/* 달력 */
+
+		.picker__box{
+		    padding: 5px;
+		}
+		.picker__holder,
+		.picker__frame{
+		    z-index: 999;
+		}
+		@media (min-height: 40.125em) {
+		  .picker__frame {
+		    margin-bottom: 0;
+		  }
+		}
+		.picker__header{
+		    margin-top: 0;
+		    line-height: 40px;
+		}
+		.picker__year-display,
+		.picker__month-display{
+		    font-weight: 400;
+		    font-size: 16px;
+		}
+		.picker__header .picker__month-display{
+		    padding-left: 5px;
+		}
+		.picker__header .picker__year,
+		.picker__header .picker__month{
+		    display: none;
+		}
+		.picker__nav--prev,
+		.picker__nav--next{
+		    top: 0;
+		    width: 20px;
+		    height: 20px;
+		    padding: 10px 15px;
+		}
+		.picker__nav--prev,
+		.picker__nav--prev:hover{
+		    left: 0;
+		    background: url(../img/btn-arrow-black-20-left.png) no-repeat center center / 20px auto;
+		}
+		.picker__nav--next,
+		.picker__nav--next:hover{
+		    right: 0;
+		    background: url(../img/btn-arrow-black-20-right.png) no-repeat center center / 20px auto;
+		}
+		.picker__nav--prev:before,
+		.picker__nav--next:before{
+		    content: none;
+		}
+		.picker__weekday{
+		    font-size: 14px;
+		    font-weight: 300;
+		    color: #74777b;
+		}
+		.picker__day{
+		    font-weight: 300;
+		}
+		.picker__button--today,
+		.picker__button--clear,
+		.picker__button--close{
+		    width: auto;
+		    padding: 5px 0;
+		    font-weight: 400;
+		    font-size: 14px;
+
+		}
+
+	/* // 달력 */
+
+

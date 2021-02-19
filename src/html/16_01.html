@@ -22,29 +22,17 @@ $(function(){
         close: '닫기',
         format: 'yyyy/mm/dd',
         formatSubmit: 'yyyy/mm/dd',
-
-        dateFormat: "yyyy/mm",
-
         onRender: function(){
             var year = $('.datepicker').pickadate('picker').get('highlight', 'yyyy');
-            var day = $('.datepicker').pickadate('picker').get('highlight', 'dd');
             var month = $('.datepicker').pickadate('picker').get('highlight', 'mm');
-            console.log(year, day, month);
-
+            //console.log(year, month);
             $('.picker__header').prepend(
-                /*
-                '<div class="picker__date-display"><span class="picker__weekday-display">[current day label]</span><div class="picker__month-display"><div>' + month + '</div></div><div class="picker__day-display"><div>'+day+'</div></div><div    class="picker__year-display"><div>'+year+'</div></div></div>'
-                */
-
-
                 '<div class="picker__date-display">' + 
                     '<span class="picker__year-display">' + year + '년</span>' + 
                     '<span class="picker__month-display">' + month + '월</span>' + 
                 '</div>'
             );
         },
-
-
         // 달력 활성화 콜백
         onOpen: function() {
             $('.layer-full-wrap').css('display','block');
@@ -54,80 +42,9 @@ $(function(){
             $('.layer-full-wrap').css('display','flex');
         },
     });
-
-    //.scroll-ud
-
 })
 </script>
 
-<style>
-.picker__box{
-    padding: 5px;
-}
-.picker__holder,
-.picker__frame{
-    z-index: 999;
-}
-@media (min-height: 40.125em) {
-  .picker__frame {
-    margin-bottom: 0;
-  }
-}
-.picker__header{
-    margin-top: 0;
-    line-height: 40px;
-}
-.picker__year-display,
-.picker__month-display{
-    font-weight: 400;
-    font-size: 16px;
-}
-.picker__header .picker__month-display{
-    padding-left: 5px;
-}
-.picker__header .picker__year,
-.picker__header .picker__month{
-    display: none;
-}
-.picker__nav--prev,
-.picker__nav--next{
-    top: 0;
-    width: 20px;
-    height: 20px;
-    padding: 10px 15px;
-}
-.picker__nav--prev,
-.picker__nav--prev:hover{
-    left: 0;
-    background: url(../img/btn-arrow-black-20-left.png) no-repeat center center / 20px auto;
-}
-.picker__nav--next,
-.picker__nav--next:hover{
-    right: 0;
-    background: url(../img/btn-arrow-black-20-right.png) no-repeat center center / 20px auto;
-}
-.picker__nav--prev:before,
-.picker__nav--next:before{
-    content: none;
-}
-.picker__weekday{
-    font-size: 14px;
-    font-weight: 300;
-    color: #74777b;
-}
-.picker__day{
-    font-weight: 300;
-}
-.picker__button--today,
-.picker__button--clear,
-.picker__button--close{
-    width: auto;
-    padding: 5px 0;
-    font-weight: 400;
-    font-size: 14px;
-
-}
-</style>
 
 
         <!-- 컨텐츠 영역 -->
