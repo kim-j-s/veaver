@@ -106,11 +106,17 @@ $(function(){
     right: 0;
     background: url(../img/btn-arrow-black-20-right.png) no-repeat center center / 20px auto;
 }
-
-
-.picker__nav--prev:before, 
+.picker__nav--prev:before,
 .picker__nav--next:before{
     content: none;
+}
+.picker__weekday{
+    font-size: 14px;
+    font-weight: 300;
+    color: #74777b;
+}
+.picker__day{
+    font-weight: 300;
 }
 .picker__button--today,
 .picker__button--clear,
@@ -137,7 +143,7 @@ $(function(){
                     <button type="button" class="btn-pu">헬스마이닝앱 설치하기</button>
 
                     <div class="inp-group box-ty">
-                        <label for="chkdate" class="label bold-ty">검진일 - 1</label>
+                        <label for="chkdate" class="label bold-ty">검진일</label>
                         <div class="input-text etc">
                             <input type="text" name="" id="" class="datepicker" placeholder="YYYY/MM/DD">
                         </div>
