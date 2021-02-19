@@ -731,6 +731,10 @@
 			background: #fff;
 			overflow: hidden;
 		}
+		.inp-group.box-ty .input-text.etc{
+			display: block;
+			overflow: initial;
+		}
 		.inp-group.box-ty .input-text > input{
 		    flex: 1 1 auto;
 		    height: 48px;
