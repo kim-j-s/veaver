@@ -36,8 +36,9 @@
         <header>
             <div class="header-inner">
                 <div class="h-utils">
-                    <!-- <button type="button" class="btn-black-download">다운로드</button> -->
-                    <a href="../img/temp/@poptemp09.jpg" class="btn-black-download">다운로드</a>
+                    <!-- 페이지 진입 시 슬라이드 처음에 걸려있는 이미지 경로 부여 -->
+                    <a href="../img/temp/@poptemp07.jpg" class="btn-black-download" download>다운로드</a>
+                    <!-- // 페이지 진입 시 슬라이드 처음에 걸려있는 이미지 경로 부여 -->
                 </div>
                 <button type="buton" class="layer-close-btn">닫기</button>
             </div>
@@ -56,75 +57,13 @@
             </div>
         </section>
         <!-- 스크롤 영역 -->
-        <div class="btn-bottom-area">
+        <div class="btn-bottom-area view">
             <div class="view-swiper-pager">
                 <div class="view-swiper-pagination"></div>
             </div>
         </div>
         <!-- //컨텐츠 영역 -->
     </div>
-
-    <style>
-        .view-img.swiper-container {}
-
-        .view-img.swiper-container .swiper-slide img {
-            display: block;
-            width: 100%;
-        }
-
-        .view-swiper-pager {
-            margin-bottom: 20px;
-            text-align: center;
-            font-size: 0;
-        }
-
-        .view-swiper-pagination {
-            position: static;
-            display: inline-block;
-            width: auto;
-            padding: 5px 12px;
-            border: 1px solid #000;
-            border-radius: 25px;
-            font-size: 12px;
-            line-height: 18px;
-        }
-
-        .view-swiper-pagination>* {
-            font-size: 12px;
-            line-height: 18px;
-        }
-    </style>
-
-
-    <script>
-        $(function() {
-            var swiper = new Swiper('.view-img', {
-                pagination: {
-                    el: '.view-swiper-pagination',
-                    //el: '.swiper-pagination',
-
-                    type: 'fraction',
-                }
-            })
-
-            swiper.on('slideChange', function() {
-                console.log('slide changed');
-                console.log(swiper.realIndex);
-
-                let idx = swiper.realIndex;
-
-                let src = $('.swiper-slide').eq(idx).children('img').attr('src');
-
-                console.log(src);
-
-                $('.btn-black-download').attr('href', src);
-
-            });
-        })
-    </script>
-
-
-
 </body>
 
 </html>

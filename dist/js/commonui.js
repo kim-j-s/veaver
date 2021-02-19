@@ -49,6 +49,9 @@ $(function () {
 
 	// 날짜선택
 	datepicker();
+
+	// 크게보기 팝업
+	viewSwiper();
 	
 
 	//script ready
@@ -175,7 +178,6 @@ function ScrollActive() {
 function floatBtns() {
 	var $flb = $('.floating-btns');
 	var t;
-	//$('.layer-content, .chk-list-wrap, .rst-list-wrap').scroll(function () {
 	$('.scroll-ud-inner').scroll(function () {
 		$flb.addClass('on');
 		setTimeout(function () {
@@ -330,7 +332,7 @@ if ( $('.choice-wrap').find('.swiper-slide').length > 1 ){
     }
 }
 
-// 날짜 선탟
+// 날짜 선택
 function datepicker() {
     $('.datepicker').pickadate({
         monthsShort: ['1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월'],
@@ -361,6 +363,29 @@ function datepicker() {
             $('.layer-full-wrap').css('display','flex');
         },
     });
+}
+
+
+// 크게보기 슬라이드
+function viewSwiper() {
+	if ($('.view-img').find('.swiper-slide').length > 1) {
+        var imgswiper = new Swiper('.view-img', {
+            pagination: {
+                el: '.view-swiper-pagination',
+                type: 'fraction',
+            }
+        })
+
+        // 슬라이드 안에 포함된 이미지의 src를 페이지 상단 다운로드쪽 경로로 교체
+        imgswiper.on('slideChange', function () {
+            var src = $('.swiper-slide').eq(imgswiper.realIndex).children('img').attr('src');
+            $('.btn-black-download').attr('href',src);
+            
+        });
+    } else {
+        // 하단 페이징 display 처리용
+        $('.btn-bottom-area.view').hide();
+    }
 }
 
 var $arrPop = [];

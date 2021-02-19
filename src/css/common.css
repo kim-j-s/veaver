@@ -3998,6 +3998,38 @@
 
 	/* // 프로필 변경 */
 
+
+	/* 이미지 다운로드 팝업 */
+	
+		.view-img.swiper-container{
+
+		}
+		.view-img.swiper-container .swiper-slide img{
+		    display: block;
+		    width: 100%;
+		}
+		.view-swiper-pager{
+		    margin-bottom: 20px;
+		    text-align: center;
+		    font-size: 0;
+		}
+		.view-swiper-pagination{
+		    position: static;
+		    display: inline-block;
+		    width: auto;
+		    padding: 5px 12px;
+		    border: 1px solid #000;
+		    border-radius: 25px;
+		    font-size: 12px;
+		    line-height: 18px;
+		}
+		.view-swiper-pagination > *{
+		    font-size: 12px;
+		    line-height: 18px;
+		}
+
+	/* // 이미지 다운로드 팝업 */
+
 /*** // content ***/
 
 
