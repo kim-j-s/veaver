@@ -113,7 +113,7 @@
 
         <style>
             .picker__box {
-                padding: 5px 20px;
+                padding: 5px;
             }
 
             .picker__holder,
@@ -155,13 +155,18 @@
                 padding: 10px 15px;
             }
 
-            .picker__nav--prev {
+            .picker__nav--prev,
+            .picker__nav--prev:hover {
+                left: 0;
                 background: url(../img/btn-arrow-black-20-left.png) no-repeat center center / 20px auto;
             }
 
-            .picker__nav--next {
+            .picker__nav--next,
+            .picker__nav--next:hover {
+                right: 0;
                 background: url(../img/btn-arrow-black-20-right.png) no-repeat center center / 20px auto;
             }
+
 
             .picker__nav--prev:before,
             .picker__nav--next:before {
