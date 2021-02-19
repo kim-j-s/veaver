@@ -14,17 +14,15 @@
     <script type="text/javascript" src="../js/jquery.swiper.js"></script>
     <script type="text/javascript" src="../js/commonui.js"></script>
     <script type="text/javascript" src="../js/drawui.js"></script>
-    <!-- d
-<script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
-<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
- -->
+    <script type="text/javascript" src="https://amsul.ca/pickadate.js/vendor/pickadate/lib/picker.js"></script>
+    <script type="text/javascript" src="https://amsul.ca/pickadate.js/vendor/pickadate/lib/picker.date.js"></script>
+    <link rel="stylesheet" href="https://amsul.ca/pickadate.js/vendor/pickadate/lib/themes/default.css">
+    <link rel="stylesheet" href="https://amsul.ca/pickadate.js/vendor/pickadate/lib/themes/default.date.css">
+    <link rel="stylesheet" href="https://amsul.ca/pickadate.js/vendor/pickadate/lib/themes/default.time.css">
 
 
-    <link rel="stylesheet" href="https://amsul.ca/pickadate.js/vendor/pickadate/lib/themes/default.css" id="theme_base">
-    <link rel="stylesheet" href="https://amsul.ca/pickadate.js/vendor/pickadate/lib/themes/default.date.css" id="theme_date">
-    <link rel="stylesheet" href="https://amsul.ca/pickadate.js/vendor/pickadate/lib/themes/default.time.css" id="theme_time">
-    <script type="text/javascript" src="../js/pickadate.js"></script>
+
+
 
     <!--[if lt IE 9]>
     <script type="text/javascript">
@@ -62,6 +60,23 @@
         </header>
         <!-- //헤더영역 -->
 
+
+
+        <script>
+            $(function() {
+                $('.datepicker').pickadate({
+                    monthsShort: ['1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월'],
+                    weekdaysShort: ['일', '월', '화', '수', '목', '금', '토'],
+                    showMonthsShort: true,
+                    today: '',
+                    clear: '',
+                    close: '닫기',
+                    format: 'yyyy/mm/dd',
+                });
+            })
+        </script>
+
+
         <!-- 컨텐츠 영역 -->
         <section class="scroll-ud full mt0">
             <div class="scroll-ud-inner">
@@ -87,15 +102,6 @@
                         </div>
                     </div>
                 </div>
-
-
-                <script>
-                    $(function() {
-                        $('.datepicker').pickadate();
-                    })
-                </script>
-
-
                 <div class="l-cont">
                     <h2 class="tit-h2">계측검사</h2>
                     <div class="part-cont">
