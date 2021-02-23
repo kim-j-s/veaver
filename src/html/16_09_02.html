@@ -1,98 +1,115 @@
 @@include('head.html',{
 	"title":"건강365 | "
 })
+<script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
 <body>
-	<div class="wrap">
+	<div class="layer-full-wrap">
         <!-- 헤더영역 -->
-        @@include('header09.html',{
-            "layertitle":"예방접종케어"
-        })
+        @@include('header02.html',{
+			"layertitle":"종합판정"
+		})
         <!-- //헤더영역 -->
 
         <!-- 컨텐츠 영역 -->
-        <section class="layer-content etc">
-            상태
+        <section class="layer-content">
+            <div class="chart-ele">
+                <canvas id="canvas"></canvas>
+            </div>
         </section>
         <!-- //컨텐츠 영역 -->
     </div>
-
-    <!-- 하단 팝업 -->
-    <div class="bottom-pop opened">
-        <div class="bottom-pop-container">
-            <div class="bottom-pop-head">
-                <div class="bph-innner">
-                    <h2 class="header-title">비만</h2>
-                    <button type="buton" class="layer-close-btn">닫기</button>
-                </div>
-            </div>
-            <div class="bottom-pop-cont">
-                <div class="gr-box">
-                    <p class="i-txt">음식으로 섭취하는 에너지보다 소비하는 에너지가 적어 지방조직이 과다하게 축적된 상태를 말함</p>
-                </div>
-
-                <div class="rst-list-wrap mt30">
-                    <ul class="rst-list">
-                        <li>
-                            <div class="rst-list-cont">
-                                <dl>
-                                    <dt>고혈압</dt>
-                                    <dd>
-                                        혈압이 정상 범위보다 높은 만성 질환
-                                    </dd>
-                                </dl>
-                                <div class="st-img">
-                                    <img src="../img/temp/@poptemp02.jpg" alt="">
-                                </div>
-                            </div>
-                            <button type="button" class="btn-bl">질병 정보 확인하기</button>
-                        </li>
-                        <li>
-                            <div class="rst-list-cont">
-                                <dl>
-                                    <dt>당뇨병</dt>
-                                    <dd>
-                                        당뇨병은 인슐린의 기능장애를 비롯한 여러가지 원인에 의해 발생할 수 있으며 혈당
-                                    </dd>
-                                </dl>
-                                <div class="st-img">
-                                    <img src="../img/temp/@poptemp02.jpg" alt="">
-                                </div>
-                            </div>
-                            <button type="button" class="btn-bl">질병 정보 확인하기</button>
-                        </li>
-                        <li>
-                            <div class="rst-list-cont">
-                                <dl>
-                                    <dt>고지혈증</dt>
-                                    <dd>
-                                        혈중 콜레스테롤이나 중성 지방이 높은 상태로 협심증, 심
-                                    </dd>
-                                </dl>
-                                <div class="st-img">
-                                    <img src="../img/temp/@poptemp02.jpg" alt="">
-                                </div>
-                            </div>
-                            <button type="button" class="btn-bl">질병 정보 확인하기</button>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- // 하단 팝업 -->
 </body>
 
-<!-- 팝업 구동 샘플 -->
+
+<style>
+.chart-ele{
+    padding: 20px 0;
+}
+/*
+.c3-tooltip-container{
+
+}
+.c3-tooltip-container table{
+    width: auto;
+}
+*/
+</style>
+
+
 <script>
 $(function(){
-    $('html').click(function(){
-        if (!$('.bottom-pop').hasClass('opened')) {
-            $('.bottom-pop').openPop();
-        } else {
-            $('.bottom-pop').closePop();
+
+
+    // data
+    //labels: ['201510', '201703', '201901', '201903', '202010'],
+
+    // data
+    //data: [5, 4, 3, 2, 1],
+
+    //fill
+    //fill: false,
+
+    //options
+    /*
+    legend: {
+        display: false,
+    },
+    layout: {
+        padding:{ 
+            top: 20,
+        }
+    },
+    */
+
+
+    var ctx = document.getElementById('canvas').getContext('2d');
+    var myChart = new Chart(ctx, {
+        type: 'line',
+        scaleOverride : true,
+        scaleSteps : 10,
+        scaleStepWidth : 50,
+        scaleStartValue : 0,
+        data: {
+            labels: ['201510', '201703', '201901', '201903', '202010', '202009', '202008', '202007', '202006', '202005'],
+            datasets: [{
+                label: '종합판정',
+                data: [10, 9, 8, 7, 6, 5, 4, 3, 2, 1],
+                //data: [5, 4, 3, 2, 1],
+                fill: false,
+                borderColor: 'rgba(0, 0, 0, 1)',
+                lineTension: 0,
+                borderWidth: 1,
+            }]
+        },
+        options: {
+            legend: {
+                display: false,
+            },
+            scales: {
+                yAxes: [{
+                    display: false,
+                    /*
+                    ticks: {
+                        beginAtZero: true
+                    }
+                    */
+                }]
+            },
+            layout: {
+                padding: {
+                    top: 10,
+                }
+            }
         }
     });
+
+
+
+    
+
 })
 </script>
-<!--// 팝업 구동 샘플 -->
+
+
+
 </html>
