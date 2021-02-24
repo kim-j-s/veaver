@@ -87,31 +87,7 @@
             labels: ['201510', '201703', '201901', '201903', '202010', '202009', '202009'],
             datasets: [{
                 //data: [10, 9, 8, 7, 6, 5, 4, 3, 2, 1],
-                data: [10, 7, 6, 5, 2, 1, 9],
-                backgroundColor: [
-                    '#056bff',
-                    '#0ca6ea',
-                    '#ffbf00',
-                    '#ff7300',
-                    '#f00000',
-                    '#2e4260',
-                    '#2e4260',
-                    '#2e4260',
-                    '#2e4260',
-                    '#2e4260',
-                ],
-                color: [
-                    '#ffffff',
-                    '#ffffff',
-                    '#ffffff',
-                    '#ffffff',
-                    '#ffffff',
-                    '#ffffff',
-                    '#ffffff',
-                    '#ffffff',
-                    '#ffffff',
-                    '#ffffff',
-                ],
+                data: [10, 8, 6, 5, 2, 1, 9],
                 fill: false,
                 borderColor: 'rgba(0, 0, 0, 1)',
                 lineTension: 0,
@@ -133,66 +109,37 @@
                     top: 50,
                 }
             },
-            /*
-            tooltips: {
-                callbacks: {
-                    labelColor: function(tooltipItem, chart) {
-                        console.log(tooltipItem, chart)
-                        return {
-                            borderColor: 'rgb(255, 0, 0)',
-                            backgroundColor: 'rgb(255, 0, 0)'
-                        };
-                    },
-                }
-            },
-            */
+
             plugins: {
                 datalabels: {
                     align: 'top',
                     font: {
-                        size: '14',
-                        weight: 'bold',
+                        size: '12',
+                        //weight: 'bold',
                     },
 
                     color: function(context) {
                         var index = context.dataIndex;
                         var value = context.dataset.data[index];
 
-                        //Inside the "dataset" we look for the "labels" we are using
-                        //and store them in a variable
-                        var valueWhite = context.dataset.label;
-
-                        //We make the condition: if a value of the label is "Strong blue"
-                        //then we color this label 'white'
-                        if (valueWhite === 1) {
-                            return value = 'white';
-                        } else {
-                            //If it's any other label, we color it 'black'
-                            return value = '#ffffff';
-                        }
+                        console.log('color : ' + value);
+                        return value == 8 ? '#000000' : '#ffffff';
                     },
 
-
-                    /*
                     backgroundColor: function(context) {
-                        console.log('bg : ' + context);
-                        return context.dataset.backgroundColor;
+                        var index = context.dataIndex;
+                        var value = context.dataset.data[index];
+
+                        console.log('backgroundColor : ' + value);
+                        return value == 10 ? '#056bff' :
+                            value == 9 ? '#0ca6ea' :
+                            value == 8 ? '#ffbf00' :
+                            value == 7 ? '#ff7300' :
+                            value == 6 ? '#0ca6ea' :
+                            '#2e4260';
                     },
-                    */
-
-                    /*
-                    backgroundColor: function(value, context) {
-                        //var value = context.dataset.data[index];
-                        console.log(value + ' value');
-                        //console.log(context.data.labels + ' context');
-                    },
-                    */
-
-
 
                     formatter: function(value, context) {
-                        console.log(value, context);
-                        //console.log(context.dataIndex);
                         if (value == 1) {
                             value = '휴무'
                         }
@@ -223,15 +170,13 @@
                         if (value == 10) {
                             value = '정A'
                         }
-                        //return context.chart.data.labels[context.dataIndex];
-                        //return context.chart.data.labels[value.dataIndex];
                         return value;
                     },
                 }
             }
         }
 
-        var myPieChart = new Chart(ctx, {
+        var myLineChart = new Chart(ctx, {
             type: 'line',
             data: data,
             options: options,
