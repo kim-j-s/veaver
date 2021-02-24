@@ -36,7 +36,8 @@
     </script>
 <![endif]-->
 </head>
-<script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+<!-- <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script> -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
 <!-- <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0/dist/Chart.min.js"></script> -->
 <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@0.7.0"></script>
 
@@ -102,35 +103,73 @@
             scales: {
                 yAxes: [{
                     display: false,
+                    ticks: {
+                        beginAtZero: true,
+                        stepSize: 1,
+                    },
+                    // 최대값  + 1
+                    afterDataLimits(scale) {
+                        scale.max += 1;
+                    }
                 }]
             },
             layout: {
+                // 레이아웃 여백
                 padding: {
                     top: 50,
+                    right: 20,
                 }
+            },
+            tooltips: {
+                enabled: false,
             },
 
             plugins: {
                 datalabels: {
-                    align: 'top',
+                    //align: 'top',
+
+
+
+                    align: function(context) {
+                        var chart = context.chart;
+                        var area = chart.chartArea;
+                        var meta = chart.getDatasetMeta(context.datasetIndex);
+
+                        // WARNING: meta.data._model is PRIVATE and thus can 
+                        // change without notice, breaking code relying on it!
+                        var model = meta.data[context.dataIndex]._model;
+                        var bottom = Math.min(model.base, area.bottom);
+                        var height = bottom - model.y;
+                        return height < 50 ? 'end' : 'start'
+                    },
+
+
+
                     font: {
                         size: '12',
                         //weight: 'bold',
+                    },
+                    borderRadius: 50,
+
+                    font: function(context) {
+                        var width = context.chart.width;
+                        var size = Math.round(width / 32);
+                        console.log('width : ' + width);
+                        return {
+                            size: size,
+                            weight: 600
+                        };
                     },
 
                     color: function(context) {
                         var index = context.dataIndex;
                         var value = context.dataset.data[index];
-
-                        console.log('color : ' + value);
                         return value == 8 ? '#000000' : '#ffffff';
                     },
 
                     backgroundColor: function(context) {
                         var index = context.dataIndex;
                         var value = context.dataset.data[index];
-
-                        console.log('backgroundColor : ' + value);
                         return value == 10 ? '#056bff' :
                             value == 9 ? '#0ca6ea' :
                             value == 8 ? '#ffbf00' :
