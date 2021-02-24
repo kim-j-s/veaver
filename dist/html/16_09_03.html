@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+    <meta name="x-apple-disable-message-reformatting">
+    <title>건강365 | Veaver Health mining</title>
+    <link href="../css/reset.css" rel="stylesheet">
+    <link href="../css/pickadate.default.css" rel="stylesheet">
+    <link href="../css/pickadate.default.date.css" rel="stylesheet">
+    <link href="../css/pickadate.default.time.css" rel="stylesheet">
+
+    <link href="../css/c3.css" rel="stylesheet">
+
+    <link href="../css/swiper.css" rel="stylesheet">
+    <link href="../css/common.css" rel="stylesheet">
+    <script type="text/javascript" src="../js/jquery.min.js"></script>
+    <script type="text/javascript" src="../js/jquery.swiper.js"></script>
+    <script type="text/javascript" src="../js/commonui.js"></script>
+    <script type="text/javascript" src="../js/drawui.js"></script>
+    <script type="text/javascript" src="../js/picker.js"></script>
+    <script type="text/javascript" src="../js/picker.date.js"></script>
+
+    <script type="text/javascript" src="../js/d3-5.8.2.min.js"></script>
+    <script type="text/javascript" src="../js/c3.min.js"></script>
+
+    <!--[if lt IE 9]>
+    <script type="text/javascript">
+        document.createElement("header"); 
+        document.createElement("nav"); 
+        document.createElement("section"); 
+        document.createElement("article"); 
+        document.createElement("footer");
+    </script>
+<![endif]-->
+</head>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+<!-- <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0/dist/Chart.min.js"></script> -->
+<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@0.7.0"></script>
+
+<body>
+    <div class="layer-full-wrap">
+        <!-- 헤더영역 -->
+        <header>
+            <div class="header-inner">
+                <h2 class="header-title">종합판정</h2>
+                <button type="buton" class="layer-close-btn">닫기</button>
+            </div>
+        </header>
+        <!-- //헤더영역 -->
+
+        <!-- 컨텐츠 영역 -->
+        <section class="layer-content">
+            <div class="chart-ele">
+                <canvas id="canvas"></canvas>
+            </div>
+        </section>
+        <!-- //컨텐츠 영역 -->
+    </div>
+</body>
+
+
+<style>
+    .chart-ele {
+        padding: 20px 0;
+    }
+
+    /*
+.c3-tooltip-container{
+
+}
+.c3-tooltip-container table{
+    width: auto;
+}
+*/
+</style>
+
+
+<script>
+    $(function() {
+
+        var ctx = document.getElementById("canvas").getContext("2d");
+
+        var data = {
+            labels: ['201510', '201703', '201901', '201903', '202010', '202009', '202009'],
+            datasets: [{
+                //data: [10, 9, 8, 7, 6, 5, 4, 3, 2, 1],
+                data: [10, 7, 6, 5, 2, 1, 9],
+                backgroundColor: [
+                    '#056bff',
+                    '#0ca6ea',
+                    '#ffbf00',
+                    '#ff7300',
+                    '#f00000',
+                    '#2e4260',
+                    '#2e4260',
+                    '#2e4260',
+                    '#2e4260',
+                    '#2e4260',
+                ],
+                color: [
+                    '#ffffff',
+                    '#ffffff',
+                    '#ffffff',
+                    '#ffffff',
+                    '#ffffff',
+                    '#ffffff',
+                    '#ffffff',
+                    '#ffffff',
+                    '#ffffff',
+                    '#ffffff',
+                ],
+                fill: false,
+                borderColor: 'rgba(0, 0, 0, 1)',
+                lineTension: 0,
+                borderWidth: 1,
+            }]
+        };
+
+        var options = {
+            legend: {
+                display: false,
+            },
+            scales: {
+                yAxes: [{
+                    display: false,
+                }]
+            },
+            layout: {
+                padding: {
+                    top: 50,
+                }
+            },
+            /*
+            tooltips: {
+                callbacks: {
+                    labelColor: function(tooltipItem, chart) {
+                        console.log(tooltipItem, chart)
+                        return {
+                            borderColor: 'rgb(255, 0, 0)',
+                            backgroundColor: 'rgb(255, 0, 0)'
+                        };
+                    },
+                }
+            },
+            */
+            plugins: {
+                datalabels: {
+                    align: 'top',
+                    font: {
+                        size: '14',
+                        weight: 'bold',
+                    },
+
+                    color: function(context) {
+                        var index = context.dataIndex;
+                        var value = context.dataset.data[index];
+
+                        //Inside the "dataset" we look for the "labels" we are using
+                        //and store them in a variable
+                        var valueWhite = context.dataset.label;
+
+                        //We make the condition: if a value of the label is "Strong blue"
+                        //then we color this label 'white'
+                        if (valueWhite === 1) {
+                            return value = 'white';
+                        } else {
+                            //If it's any other label, we color it 'black'
+                            return value = '#ffffff';
+                        }
+                    },
+
+
+                    /*
+                    backgroundColor: function(context) {
+                        console.log('bg : ' + context);
+                        return context.dataset.backgroundColor;
+                    },
+                    */
+
+                    /*
+                    backgroundColor: function(value, context) {
+                        //var value = context.dataset.data[index];
+                        console.log(value + ' value');
+                        //console.log(context.data.labels + ' context');
+                    },
+                    */
+
+
+
+                    formatter: function(value, context) {
+                        console.log(value, context);
+                        //console.log(context.dataIndex);
+                        if (value == 1) {
+                            value = '휴무'
+                        }
+                        if (value == 2) {
+                            value = '단순'
+                        }
+                        if (value == 3) {
+                            value = '직업'
+                        }
+                        if (value == 4) {
+                            value = '일반'
+                        }
+                        if (value == 5) {
+                            value = '유질'
+                        }
+                        if (value == 6) {
+                            value = '고당'
+                        }
+                        if (value == 7) {
+                            value = '의심'
+                        }
+                        if (value == 8) {
+                            value = '주의'
+                        }
+                        if (value == 9) {
+                            value = '정B'
+                        }
+                        if (value == 10) {
+                            value = '정A'
+                        }
+                        //return context.chart.data.labels[context.dataIndex];
+                        //return context.chart.data.labels[value.dataIndex];
+                        return value;
+                    },
+                }
+            }
+        }
+
+        var myPieChart = new Chart(ctx, {
+            type: 'line',
+            data: data,
+            options: options,
+        });
+
+
+
+    })
+</script>
+
+
+
+</html>

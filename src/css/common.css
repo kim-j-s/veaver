@@ -2681,10 +2681,12 @@
 		}
 		.term-slide-cont{
 		    display: none;
+		    max-height: 300px;
 		    margin: 5px 0 12px 0;
 		    font-size: 12px;
 		    line-height: 18px;
 		    color: #74777b;
+		    overflow: auto;
 		}
 
 	/* // 약관 목록*/
