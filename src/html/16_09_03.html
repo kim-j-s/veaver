@@ -47,11 +47,11 @@ $(function(){
     var ctx = document.getElementById("canvas").getContext("2d");
 
     var data = {
-        labels: ['201510', '201703', '201901', '201903', '202010', '202009', '202009'],
+        labels: ['201510', '201703', '201901', '201903', '202010', '202009', '202009', '202009', '202009', '202009'],
         datasets: [
         {
-            //data: [10, 9, 8, 7, 6, 5, 4, 3, 2, 1],
-            data: [10, 8, 6, 5, 2, 1, 9],
+            data: [10, 9, 8, 7, 6, 5, 4, 3, 2, 1],
+            //data: [10, 8, 6, 5, 2, 1, 9],
             fill: false,
             borderColor: 'rgba(0, 0, 0, 1)',
             lineTension: 0,
@@ -65,8 +65,12 @@ $(function(){
         },
         scales: {
             yAxes: [{
-                display: false,
+                //drawTicks: true,
+                // gridLines: {
+                //     color: "rgba(0, 0, 0, 0)",
+                // },
                 ticks: {
+                    display: false,
                     beginAtZero: true,
                     stepSize : 1,
                 },
@@ -74,7 +78,13 @@ $(function(){
                 afterDataLimits(scale) {
                     scale.max += 1;
                 }
-            }]
+            }],
+            xAxes: [{
+                gridLines: {
+                    drawOnChartArea: true,
+                },
+
+            }],
         },
         layout: {
             // 레이아웃 여백
@@ -113,9 +123,7 @@ $(function(){
                     return value == 10 ? '#056bff' :
                            value == 9 ? '#0ca6ea' :
                            value == 8 ? '#ffbf00' :
-                           value == 7 ? '#ff7300' :
-                           value == 6 ? '#0ca6ea' :
-                           '#2e4260';
+                           value == 7 ? '#ff7300' : '#c00000';
                 },
                 // Label 문구 정의
                 formatter: function(value, context) {
