@@ -41,13 +41,13 @@
 
 		// 현재위치
 		$popArea.find('.btn-po-change').on('click', function () {
-			retIns.currentLocation(); // 현재위치
+			map.currentLocation(); // 현재위치
 		});
 
 		const clusterer = new kakao.maps.MarkerClusterer({
 			map: map, // 마커들을 클러스터로 관리하고 표시할 지도 객체
-			averageCenter: true, // 클러스터에 포함된 마커들의 평균 위치를 클러스터 마커 위치로 설정
-			minLevel: 10, // 클러스터 할 최소 지도 레벨
+			averageCenter: true, 	// 클러스터에 포함된 마커들의 평균 위치를 클러스터 마커 위치로 설정
+			minLevel: 4, // 클러스터 할 최소 지도 레벨
 			disableClickZoom: true // 클러스터 마커를 클릭했을 때 지도가 확대되지 않도록 설정한다
 		});
 
@@ -64,67 +64,61 @@
 			// console.log(map.getCenter());
 			map.radius = getDistanceFromLatLonInKm([map.getCenter(), map.getBounds().getSouthWest()]);
 
-			console.log(map.radius);
-
-			if (retIns.boundChange) {
-				retIns.boundChange(map);
+			if (map.boundChange) {
+				map.boundChange(map);
 			}
 		});
 
-		const retIns = {
-			currentLocation: function () {
-				// HTML5의 geolocation으로 사용할 수 있는지 확인합니다 
-				if (navigator.geolocation) {
-					console.log('geo');
-					// GeoLocation을 이용해서 접속 위치를 얻어옵니다
-					navigator.geolocation.getCurrentPosition(function (position) {
-						var locPosition = new kakao.maps.LatLng(position.coords.latitude, position.coords.longitude); // 마커가 표시될 위치를 geolocation으로 얻어온 좌표로 생성합니다
-						// 지도 중심을 이동 시킵니다
-						map.setCenter(locPosition);
-					});
-
-				} else {
-					console.log('geolocation 을 지원하지 않는 브라우져입니다.');
-				}
-			},
-			setHospData: function (data) {
-				console.log(data);
-				data.forEach(function (obj) {
-					console.log(obj);
-					var marker = new kakao.maps.Marker({
-						position: new kakao.maps.LatLng(Number(obj.YPos), Number(obj.XPos)),
-						clickable: true
-					});
-					marker.data = obj;
-					console.log(marker);
-					clusterer.addMarker(marker);
-
-					kakao.maps.event.addListener(marker, 'click', function () {
-						// 마커 위에 인포윈도우를 표시합니다
-						infowindow.open(map, marker);
-					});
+		map.currentLocation = function () {
+			// HTML5의 geolocation으로 사용할 수 있는지 확인합니다 
+			if (navigator.geolocation) {
+				// GeoLocation을 이용해서 접속 위치를 얻어옵니다
+				navigator.geolocation.getCurrentPosition(function (position) {
+					var locPosition = new kakao.maps.LatLng(position.coords.latitude, position.coords.longitude); // 마커가 표시될 위치를 geolocation으로 얻어온 좌표로 생성합니다
+					// 지도 중심을 이동 시킵니다
+					map.setCenter(locPosition);
 				});
 
-				// console.log(data);
-				// data.forEach(function (obj) {
-				// 	console.log(obj);
-				// 	var marker = new kakao.maps.Marker({
-				// 		// map: map,
-				// 		position: new kakao.maps.LatLng(Number(obj.YPos), Number(obj.XPos))
-				// 	});
-				// 	marker.setMap(map);
-				// });
-			},
-			getRadius: function () {
-				return;
-			},
-			getInstance: function () {
-				return map;
-			},
-			boundChange: null
+			} else {
+				console.log('geolocation 을 지원하지 않는 브라우져입니다.');
+			}
 		};
+		map.setHospData = function (data) {
+			data.forEach(function (obj) {
+				var marker = new kakao.maps.Marker({
+					position: new kakao.maps.LatLng(Number(obj.YPos), Number(obj.XPos)),
+					clickable: true
+				});
 
+				marker.data = obj;
+				clusterer.addMarker(marker);
 
-		return retIns;
+				kakao.maps.event.addListener(marker, 'click', function () {
+					// console.log('marker click !!');
+					// console.log(clusterer);
+					// console.log(obj);
+					$popArea.find('.map-marker-info').remove();
+					$popArea.append(`
+							<div class="map-marker-info">
+								<div class="txt-cont04">
+									<div class="t-case">
+										<span>전문병원</span>
+										<span>진료중</span>
+										<span>응급실</span>
+									</div>
+									<div class="q-txt">${obj.yadmNm}</div>
+									<div class="d-info">
+										<span>327km</span>
+										<span>${obj.addr}</span>
+									</div>
+									<div class="sort-txt">전문의</div>
+								</div>
+							</div>
+						`);
+				});
+			});
+		}
+
+		return map;
 	};
 }(jQuery));

@@ -169,10 +169,6 @@
 <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=fd3872d29334db88f3bf802e6c8c0ca1&libraries=clusterer"></script>
 <script type="text/javascript" src="../js/customMap.js"></script>
 <script>
-    const map = $('#map').initMap();
-    console.log(map);
-    map.currentLocation(); // 현재위치
-
     // http://apis.data.go.kr/B551182/hospInfoService/getHospBasisList?sidoCd=110000&sgguCd=110019&emdongNm=신내동&yadmNm=서울의료원&zipCd=2010&clCd=11&xPos=127.09854004628151&yPos=37.6132113197367&radius=3000&ServiceKey=P01OhcLwKzqmx%2FLtmwb04SZMcTx91ZPsMK62aUBctGOx%2F9pzupN0eZxTKCWYyLiT6Asi8hxEAu9O%2FDf16aeaPg%3D%3D
     var exData = [{
             "addr": "서울특별시 중랑구 사가정로49길 53 (면목동)",
@@ -629,16 +625,20 @@
         }
     ];
 
+    // 지도 초기화
+    const map = $('#map').initMap();
+
+    // 현재위치
+    map.currentLocation();
+
     // 지도에 병원 데이터 추가 exData : exData 형태
     map.setHospData(exData);
 
-    // 맵 보여지는 영역 변경될는 이벤트 (확대, 축소, 이동시 발생)
-    map.boundChange = function() {
-        // kakaoMapIns = 카카오맵 인스턴스
+    // 맵 보여지는 영역 변경 이벤트 (확대, 축소, 이동시 발생)
+    map.boundChange = function(ins) {
+        console.log(map.radius); // 반경
         console.log('지도 영역 변경');
     };
-
-    console.log('getInstance', map.getInstance());
 </script>
 
 </html>
