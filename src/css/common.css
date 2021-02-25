@@ -513,6 +513,7 @@
 		    line-height: 26px;
 		    border-radius: 25px;
 		    background: rgba(0,0,0,0.45);
+			z-index: 1;
 		}
 		.btn-black-clock{
 			display: inline-block;
@@ -3593,20 +3594,22 @@
 			width: 100%;
 			height: 100%;
 		}
-		.bottom-pop-wrap{
-		    position: fixed;
+		.map-pop-area{
+		    position: absolute;
 		    left: 22px;
 		    bottom: 0;
 		    z-index: 101;
 		    width: calc(100% - 44px);
-		    padding: 22px;
-		    border-radius: 14px 14px 0 0;
-		    background: #fff;
 		}
-		.bottom-pop-wrap .btn-po-change{
+		.map-pop-area .btn-po-change{
 		    position: absolute;
 		    top: -40px;
 		    right: 0;
+		}
+		.map-marker-info {
+			padding: 22px;
+		    border-radius: 14px 14px 0 0;
+		    background: #fff;
 		}
 
 	/* // 병원 / 약국 찾기 - 지도보기 */
