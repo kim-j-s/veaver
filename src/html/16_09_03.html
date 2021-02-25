@@ -42,6 +42,8 @@
 <script>
 $(function(){
 
+    var images = ['https://i.stack.imgur.com/2RAv2.png', 'https://i.stack.imgur.com/Tq5DA.png', 'https://i.stack.imgur.com/3KRtW.png', 'https://i.stack.imgur.com/iLyVi.png'];
+
     var ctx = document.getElementById("canvas").getContext("2d");
 
     var data = {
@@ -87,47 +89,24 @@ $(function(){
         
         plugins: {
             datalabels: {
-                //align: 'top',
-
-
-
-                align: function(context) {
-                    var chart = context.chart;
-                    var area = chart.chartArea;
-                    var meta = chart.getDatasetMeta(context.datasetIndex);
-
-                    // WARNING: meta.data._model is PRIVATE and thus can 
-                    // change without notice, breaking code relying on it!
-                    var model = meta.data[context.dataIndex]._model;
-                    var bottom = Math.min(model.base, area.bottom);
-                    var height = bottom - model.y;
-                    return height < 50 ? 'end' : 'start'
-                },
-
-
-                
+                align: 'top',
                 font: {
                     size: '12',
-                    //weight: 'bold',
                 },
                 borderRadius: 50,
-
-                font: function(context) {
-                    var width = context.chart.width;
-                    var size = Math.round(width / 32);
-                    console.log('width : ' + width);
-                    return {
-                        size: size,
-                        weight: 600
-                    };
+                padding: {
+                    top: 7,
+                    right: 7,
+                    bottom: 5,
+                    left: 7,
                 },
-
+                // 색상 정의
                 color: function(context) {
                     var index = context.dataIndex;
                     var value = context.dataset.data[index];
                     return value == 8 ? '#000000' : '#ffffff';
                 },
-
+                //바탕색 정의
                 backgroundColor: function(context) {
                     var index = context.dataIndex;
                     var value = context.dataset.data[index];
@@ -138,7 +117,7 @@ $(function(){
                            value == 6 ? '#0ca6ea' :
                            '#2e4260';
                 },
-
+                // Label 문구 정의
                 formatter: function(value, context) {
                     if ( value == 1) { value = '휴무' }
                     if ( value == 2) { value = '단순' }
