@@ -531,6 +531,15 @@
 			text-indent: -9999px;
 			background: url(../img/ac-black-setting.png) no-repeat center center / 100% auto;
 		}
+		.btn-black-download{
+			display: inline-block;
+			width: 30px;
+			height: 30px;
+			text-align: left;
+			text-indent: -9999px;
+			overflow: hidden;
+			background: url(../img/ac-black-download.png) no-repeat center center / 100% auto;
+		}
 		.btn-i-icon{
 		    display: inline-block;
 		    vertical-align: middle;
@@ -731,6 +740,10 @@
 			border: 1px solid #dbdee5;
 			background: #fff;
 			overflow: hidden;
+		}
+		.inp-group.box-ty .input-text.etc{
+			display: block;
+			overflow: initial;
 		}
 		.inp-group.box-ty .input-text > input{
 		    flex: 1 1 auto;
@@ -1695,6 +1708,9 @@
 	}
 	.layer-content.none-b{
 		padding-bottom: 0;
+	}
+	.layer-content.full{
+		padding: 20px 0;
 	}
 	.layer-content.scroll-ud,
 	.layer-content.scroll-ud.ov-case{
@@ -2666,10 +2682,12 @@
 		}
 		.term-slide-cont{
 		    display: none;
+		    max-height: 300px;
 		    margin: 5px 0 12px 0;
 		    font-size: 12px;
 		    line-height: 18px;
 		    color: #74777b;
+		    overflow: auto;
 		}
 
 	/* // 약관 목록*/
@@ -3985,6 +4003,38 @@
 
 	/* // 프로필 변경 */
 
+
+	/* 이미지 다운로드 팝업 */
+	
+		.view-img.swiper-container{
+
+		}
+		.view-img.swiper-container .swiper-slide img{
+		    display: block;
+		    width: 100%;
+		}
+		.view-swiper-pager{
+		    margin-bottom: 20px;
+		    text-align: center;
+		    font-size: 0;
+		}
+		.view-swiper-pagination{
+		    position: static;
+		    display: inline-block;
+		    width: auto;
+		    padding: 5px 12px;
+		    border: 1px solid #000;
+		    border-radius: 25px;
+		    font-size: 12px;
+		    line-height: 18px;
+		}
+		.view-swiper-pagination > *{
+		    font-size: 12px;
+		    line-height: 18px;
+		}
+
+	/* // 이미지 다운로드 팝업 */
+
 /*** // content ***/
 
 
@@ -4036,7 +4086,7 @@
 	    position: absolute;
 	    top: 10px;
 	    left: 0;
-	    z-index: 1;
+	    z-index: 2;
 	    width: 100%;
 	    height: 20px;
 	    background: url(../img/close-20-blue.png) no-repeat center center / 20px auto;
@@ -4112,6 +4162,7 @@
 
 
 	/*Element*/
+
 		.g-box{
 		    margin-top: 40px;
 		    padding: 32px 22px;
@@ -4185,7 +4236,6 @@
 			padding: 0 4px 0 0;
 		}
 
-
 		.bg-box + .l-cont{
 			padding-top: 30px;
 		}
@@ -4221,19 +4271,104 @@
 		    top: 14px;
 		    right: 22px;
 		}
+
 	/*Element*/
 
 
 
 	/* 약관내용 */
-	.terms{
-	    padding: 0 22px;
-	}
-	.terms h2{
-	    margin-top: 40px;
-	}
-	.terms p{
-	    margin-top: 20px;
-	    font-size: 12px;
-	}
+
+		.terms{
+		    padding: 0 22px;
+		}
+		.terms h2{
+		    margin-top: 40px;
+		}
+		.terms p{
+		    margin-top: 20px;
+		    font-size: 12px;
+		}
+
 	/* // 약관내용 */
+
+
+
+	/* 달력 */
+
+		.picker__box{
+		    padding: 5px;
+		}
+		.picker__holder,
+		.picker__frame{
+		    z-index: 999;
+		}
+		@media (min-height: 40.125em) {
+		  .picker__frame {
+		    margin-bottom: 0;
+		  }
+		}
+		.picker__header{
+		    margin-top: 0;
+		    line-height: 40px;
+		}
+		.picker__year-display,
+		.picker__month-display{
+		    font-weight: 400;
+		    font-size: 16px;
+		}
+		.picker__header .picker__month-display{
+		    padding-left: 5px;
+		}
+		.picker__header .picker__year,
+		.picker__header .picker__month{
+		    display: none;
+		}
+		.picker__nav--prev,
+		.picker__nav--next{
+		    top: 0;
+		    width: 20px;
+		    height: 20px;
+		    padding: 10px 15px;
+		}
+		.picker__nav--prev,
+		.picker__nav--prev:hover{
+		    left: 0;
+		    background: url(../img/btn-arrow-black-20-left.png) no-repeat center center / 20px auto;
+		}
+		.picker__nav--next,
+		.picker__nav--next:hover{
+		    right: 0;
+		    background: url(../img/btn-arrow-black-20-right.png) no-repeat center center / 20px auto;
+		}
+		.picker__nav--prev:before,
+		.picker__nav--next:before{
+		    content: none;
+		}
+		.picker__weekday{
+		    font-size: 14px;
+		    font-weight: 300;
+		    color: #74777b;
+		}
+		.picker__day{
+		    font-weight: 300;
+		}
+		.picker__button--today,
+		.picker__button--clear,
+		.picker__button--close{
+		    width: auto;
+		    padding: 5px 0;
+		    font-weight: 400;
+		    font-size: 14px;
+
+		}
+
+	/* // 달력 */
+
+
+	/* 차트 */
+
+		#chart-canvas {height: 400px;}
+
+	/* 차트 */
+
+

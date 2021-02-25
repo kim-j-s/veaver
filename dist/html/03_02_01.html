@@ -8,23 +8,23 @@
     <meta name="x-apple-disable-message-reformatting">
     <title>Guest로 시작 | Veaver Health mining</title>
     <link href="../css/reset.css" rel="stylesheet">
-    <link href="../css/common.css" rel="stylesheet">
+    <link href="../css/pickadate.default.css" rel="stylesheet">
+    <link href="../css/pickadate.default.date.css" rel="stylesheet">
+    <link href="../css/pickadate.default.time.css" rel="stylesheet">
+
+    <link href="../css/c3.css" rel="stylesheet">
+
     <link href="../css/swiper.css" rel="stylesheet">
+    <link href="../css/common.css" rel="stylesheet">
     <script type="text/javascript" src="../js/jquery.min.js"></script>
     <script type="text/javascript" src="../js/jquery.swiper.js"></script>
     <script type="text/javascript" src="../js/commonui.js"></script>
     <script type="text/javascript" src="../js/drawui.js"></script>
-    <!-- d
-<script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
-<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
- -->
+    <script type="text/javascript" src="../js/picker.js"></script>
+    <script type="text/javascript" src="../js/picker.date.js"></script>
 
-
-    <link rel="stylesheet" href="https://amsul.ca/pickadate.js/vendor/pickadate/lib/themes/default.css" id="theme_base">
-    <link rel="stylesheet" href="https://amsul.ca/pickadate.js/vendor/pickadate/lib/themes/default.date.css" id="theme_date">
-    <link rel="stylesheet" href="https://amsul.ca/pickadate.js/vendor/pickadate/lib/themes/default.time.css" id="theme_time">
-    <script type="text/javascript" src="../js/pickadate.js"></script>
+    <script type="text/javascript" src="../js/d3-5.8.2.min.js"></script>
+    <script type="text/javascript" src="../js/c3.min.js"></script>
 
     <!--[if lt IE 9]>
     <script type="text/javascript">
@@ -67,25 +67,25 @@
     			나이와 성별을 입력해 주세요.
     		</p>
 
-                <div class="inp-group">
-                    <label for="inpage" class="label">나이 <span class="s-mark">*</span></label>
-                    <div class="input-text">
-                        <input type="text" id="inpage" placeholder="숫자만 입력해 주세요.">
-                        <button type="button" class="btn-remove">삭제</button>
-                    </div>
+            <div class="inp-group">
+                <label for="inpage" class="label">나이 <span class="s-mark">*</span></label>
+                <div class="input-text">
+                    <input type="text" id="inpage" placeholder="숫자만 입력해 주세요.">
+                    <button type="button" class="btn-remove">삭제</button>
                 </div>
+            </div>
 
-                <div class="inp-group">
-                    <span class="label">성별 <span class="s-mark">*</span></span>
-                    <div class="part-cont no-margin">
-                        <label class="input-radio">
-                            <input type="radio" name="gender"><span>남자</span>
-                        </label>
-                        <label class="input-radio">
-                            <input type="radio" name="gender"><span>여자</span>
-                        </label>
-                    </div>
+            <div class="inp-group">
+                <span class="label">성별 <span class="s-mark">*</span></span>
+                <div class="part-cont no-margin">
+                    <label class="input-radio">
+                        <input type="radio" name="gender"><span>남자</span>
+                    </label>
+                    <label class="input-radio">
+                        <input type="radio" name="gender"><span>여자</span>
+                    </label>
                 </div>
+            </div>
         </section>
         <!-- //컨텐츠 영역 -->
 

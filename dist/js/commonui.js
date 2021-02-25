@@ -45,8 +45,13 @@ $(function () {
 	stepSwiper();
 
 	// 자녀선택
-	// choiceSwiper();
+	choiceSwiper();
 
+	// 날짜선택
+	datepicker();
+
+	// 크게보기 팝업
+	viewSwiper();
 	
 
 	//script ready
@@ -173,7 +178,6 @@ function ScrollActive() {
 function floatBtns() {
 	var $flb = $('.floating-btns');
 	var t;
-	//$('.layer-content, .chk-list-wrap, .rst-list-wrap').scroll(function () {
 	$('.scroll-ud-inner').scroll(function () {
 		$flb.addClass('on');
 		setTimeout(function () {
@@ -312,27 +316,77 @@ function stepSwiper() {
 	}
 }
 
-// 날짜 선탟
-function DatePicker() {
-	$('.datepicker').daterangepicker({
-		singleDatePicker: true,
-		autoUpdateInput: false,
-		locale: {
-			format: "YYYY/MM/DD",
-			monthNames: ['1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월'],
-			daysOfWeek: ['일', '월', '화', '수', '목', '금', '토'],
-		}
-	});
-
-	$('.datepicker').on('apply.daterangepicker', function (ev, picker) {
-		$(this).val(picker.startDate.format('YYYY/MM/DD'));
-	});
-
-	$('.datepicker').on('cancel.daterangepicker', function (ev, picker) {
-		$(this).val('');
-	});
+// 자녀선택
+function choiceSwiper() {
+if ( $('.choice-wrap').find('.swiper-slide').length > 1 ){
+        var childSwiper = new Swiper('.choice', {
+            slidesPerView: 2,
+            observer: true,
+            observeParents: true,
+            speed: 500,
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+        });
+    }
 }
 
+// 날짜 선택
+function datepicker() {
+    $('.datepicker').pickadate({
+        monthsShort: ['1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월'],
+        weekdaysShort: ['일', '월', '화', '수', '목', '금', '토'],
+        showMonthsShort: true,
+        today: '',
+        clear: '',
+        close: '닫기',
+        format: 'yyyy/mm/dd',
+        formatSubmit: 'yyyy/mm/dd',
+        onRender: function(){
+            var year = $('.datepicker').pickadate('picker').get('highlight', 'yyyy');
+            var month = $('.datepicker').pickadate('picker').get('highlight', 'mm');
+            //console.log(year, month);
+            $('.picker__header').prepend(
+                '<div class="picker__date-display">' + 
+                    '<span class="picker__year-display">' + year + '년</span>' + 
+                    '<span class="picker__month-display">' + month + '월</span>' + 
+                '</div>'
+            );
+        },
+        // 달력 활성화 콜백
+        onOpen: function() {
+            $('.layer-full-wrap').css('display','block');
+        },
+        // 달력 비활성화 콜백
+        onClose: function() {
+            $('.layer-full-wrap').css('display','flex');
+        },
+    });
+}
+
+
+// 크게보기 슬라이드
+function viewSwiper() {
+	if ($('.view-img').find('.swiper-slide').length > 1) {
+        var imgswiper = new Swiper('.view-img', {
+            pagination: {
+                el: '.view-swiper-pagination',
+                type: 'fraction',
+            }
+        })
+
+        // 슬라이드 안에 포함된 이미지의 src를 페이지 상단 다운로드쪽 경로로 교체
+        imgswiper.on('slideChange', function () {
+            var src = $('.swiper-slide').eq(imgswiper.realIndex).children('img').attr('src');
+            $('.btn-black-download').attr('href',src);
+            
+        });
+    } else {
+        // 하단 페이징 display 처리용
+        $('.btn-bottom-area.view').hide();
+    }
+}
 
 var $arrPop = [];
 // 팝업 열기

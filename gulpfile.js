@@ -126,7 +126,7 @@ function watchFile(done){
 function reload(done){
   setTimeout(function(){
     server.reload();
-  },500);
+  },1000);
   done();
 }
 function serve(done){
