@@ -96,7 +96,8 @@
 
                 <!-- 지도영역 -->
                 <div class="map-area" style="background: rgba(0,0,0,0.3);">
-                    <div class="map-area-inner" id="map"></div>
+                    <div class="map-area-inner" id="map">
+                    </div>
                     <button type="button" class="btn-view-list">목록보기</button>
                 </div>
                 <!-- // 지도영역 -->
@@ -107,7 +108,21 @@
 
     <!-- 하단 팝업 목록 -->
     <div class="bottom-pop-wrap">
+        <div class="txt-cont04">
+            <div class="t-case">
+                <span>전문병원</span>
+                <span>진료중</span>
+                <span>응급실</span>
+            </div>
+            <div class="q-txt">한국의학연구소 케이엠아이여의도의원</div>
+            <div class="d-info">
+                <span>327km</span>
+                <span>서울특별시 영등포구 국제금융로2길 24</span>
+            </div>
+            <div class="sort-txt">전문의</div>
+        </div>
         <!-- 병원 스위퍼 -->
+        <!--
         <div class="hos-swiper swiper-container">
             <div class="swiper-wrapper">
                 <div class="swiper-slide">
@@ -142,6 +157,7 @@
                 </div>
             </div>
         </div>
+        -->
         <!-- 병원 스위퍼 -->
         <button type="button" class="btn-po-change">내 위치로 이동</button>
     </div>
@@ -150,12 +166,479 @@
 </body>
 
 <!-- 지도 스크립트 -->
-<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=fd3872d29334db88f3bf802e6c8c0ca1"></script>
+<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=fd3872d29334db88f3bf802e6c8c0ca1&libraries=clusterer"></script>
 <script type="text/javascript" src="../js/customMap.js"></script>
 <script>
     const map = $('#map').initMap();
     console.log(map);
-    // map.currentLocation(); // 현재위치
+    map.currentLocation(); // 현재위치
+
+    // http://apis.data.go.kr/B551182/hospInfoService/getHospBasisList?sidoCd=110000&sgguCd=110019&emdongNm=신내동&yadmNm=서울의료원&zipCd=2010&clCd=11&xPos=127.09854004628151&yPos=37.6132113197367&radius=3000&ServiceKey=P01OhcLwKzqmx%2FLtmwb04SZMcTx91ZPsMK62aUBctGOx%2F9pzupN0eZxTKCWYyLiT6Asi8hxEAu9O%2FDf16aeaPg%3D%3D
+    var exData = [{
+            "addr": "서울특별시 중랑구 사가정로49길 53 (면목동)",
+            "clCd": "11",
+            "clCdNm": "종합병원",
+            "distance": "2954.0787375244219106142568703759794838",
+            "drTotCnt": "34",
+            "estbDd": "20030917",
+            "gdrCnt": "3",
+            "hospUrl": "http://www.greenhospital.co.kr/main.php",
+            "intnCnt": "0",
+            "postNo": "02221",
+            "resdntCnt": "0",
+            "sdrCnt": "31",
+            "sgguCd": "110019",
+            "sgguCdNm": "중랑구",
+            "sidoCd": "110000",
+            "sidoCdNm": "서울",
+            "telno": "02-490-2000",
+            "XPos": "127.0860738",
+            "YPos": "37.5835731",
+            "yadmNm": "녹색병원",
+            "ykiho": "JDQ4MTg4MSM1MSMkMSMkMCMkODkkMzgxMzUxIzExIyQxIyQ3IyQ5OSQzNjEwMDIjNTEjJDEjJDYjJDgz"
+        },
+        {
+            "addr": "서울특별시 중랑구 신내로 156 (신내동)",
+            "clCd": "11",
+            "clCdNm": "종합병원",
+            "distance": "785.42713999427095172695915371977416498",
+            "drTotCnt": "217",
+            "estbDd": "20110309",
+            "gdrCnt": "1",
+            "hospUrl": "http://www.seoulmc.or.kr",
+            "intnCnt": "24",
+            "postNo": "02053",
+            "resdntCnt": "68",
+            "sdrCnt": "124",
+            "sgguCd": "110019",
+            "sgguCdNm": "중랑구",
+            "sidoCd": "110000",
+            "sidoCdNm": "서울",
+            "telno": "02-2276-7000",
+            "XPos": "127.0978309",
+            "YPos": "37.6132762",
+            "yadmNm": "서울특별시서울의료원",
+            "ykiho": "JDQ4MTg4MSM1MSMkMSMkMCMkODkkMzgxMzUxIzExIyQyIyQ3IyQwMCQyNjEyMjIjNjEjJDEjJDgjJDgz"
+        },
+        {
+            "addr": "서울특별시 중랑구 망우로 511 (망우동, 동부제일병원)",
+            "clCd": "11",
+            "clCdNm": "종합병원",
+            "distance": "1979.7926065706694622523346177333463672",
+            "drTotCnt": "21",
+            "estbDd": "19830822",
+            "gdrCnt": "2",
+            "hospUrl": "http://www.dbjeil.co.kr",
+            "intnCnt": "0",
+            "postNo": "02063",
+            "resdntCnt": "0",
+            "sdrCnt": "19",
+            "sgguCd": "110019",
+            "sgguCdNm": "중랑구",
+            "sidoCd": "110000",
+            "sidoCdNm": "서울",
+            "telno": "02-437-5011",
+            "XPos": "127.1090094",
+            "YPos": "37.6007085",
+            "yadmNm": "의료법인풍산의료재단동부제일병원",
+            "ykiho": "JDQ4MTg4MSM1MSMkMSMkMCMkODkkMzgxMzUxIzExIyQxIyQzIyQxMyQyNjE4MzIjNDEjJDEjJDgjJDgz"
+        },
+        {
+            "addr": "서울특별시 노원구 노원로 75 한국원자력의학원 (공릉동)",
+            "clCd": "11",
+            "clCdNm": "종합병원",
+            "distance": "2187.7324983049944399342598218352167061",
+            "drTotCnt": "189",
+            "estbDd": "19851129",
+            "gdrCnt": "6",
+            "hospUrl": "http://www.kcch.re.kr",
+            "intnCnt": "27",
+            "postNo": "01812",
+            "resdntCnt": "39",
+            "sdrCnt": "117",
+            "sgguCd": "110022",
+            "sgguCdNm": "노원구",
+            "sidoCd": "110000",
+            "sidoCdNm": "서울",
+            "telno": "02-970-2114",
+            "XPos": "127.0826965",
+            "YPos": "37.6288213",
+            "yadmNm": "한국원자력의학원원자력병원",
+            "ykiho": "JDQ4MTg4MSM1MSMkMSMkMCMkODkkMzgxMzUxIzExIyQxIyQ3IyQ5OSQ0NjEwMDIjNjEjJDEjJDgjJDgz"
+        },
+        {
+            "addr": "서울특별시 중랑구 면목로 473 (상봉동)",
+            "clCd": "21",
+            "clCdNm": "병원",
+            "distance": "1812.2147515498649918829759295733529804",
+            "drTotCnt": "7",
+            "estbDd": "19840403",
+            "gdrCnt": "0",
+            "hospUrl": "http://www.kb21spine.co.kr/",
+            "intnCnt": "0",
+            "postNo": "02138",
+            "resdntCnt": "0",
+            "sdrCnt": "7",
+            "sgguCd": "110019",
+            "sgguCdNm": "중랑구",
+            "sidoCd": "110000",
+            "sidoCdNm": "서울",
+            "telno": "1577-6336",
+            "XPos": "127.0856597",
+            "YPos": "37.5940481",
+            "yadmNm": "강북21세기병원",
+            "ykiho": "JDQ4MTg4MSM1MSMkMSMkMCMkOTkkMzgxMzUxIzMxIyQxIyQzIyQ3OSQyNjEwMDIjNjEjJDEjJDgjJDgz"
+        },
+        {
+            "addr": "서울특별시 노원구 동일로 996 (공릉동)",
+            "clCd": "21",
+            "clCdNm": "병원",
+            "distance": "1645.0903754986231454765440952735126007",
+            "drTotCnt": "11",
+            "estbDd": "20160310",
+            "gdrCnt": "0",
+            "intnCnt": "0",
+            "postNo": "01849",
+            "resdntCnt": "0",
+            "sdrCnt": "11",
+            "sgguCd": "110022",
+            "sgguCdNm": "노원구",
+            "sidoCd": "110000",
+            "sidoCdNm": "서울",
+            "telno": "02-1800-0755",
+            "XPos": "127.0754877",
+            "YPos": "37.6191956",
+            "yadmNm": "강북연세병원",
+            "ykiho": "JDQ4MTg4MSM1MSMkMSMkMCMkOTkkMzgxMzUxIzQxIyQxIyQ3IyQ3OSQyNjEwMDIjODEjJDEjJDYjJDgz"
+        },
+        {
+            "addr": "경기도 구리시 인창2로 177 (인창동, 국군구리병원)",
+            "clCd": "21",
+            "clCdNm": "병원",
+            "distance": "2620.4847496542794419773817221719243794",
+            "drTotCnt": "22",
+            "estbDd": "20170919",
+            "gdrCnt": "0",
+            "intnCnt": "0",
+            "postNo": "11913",
+            "resdntCnt": "0",
+            "sdrCnt": "22",
+            "sgguCd": "311000",
+            "sgguCdNm": "구리시",
+            "sidoCd": "310000",
+            "sidoCdNm": "경기",
+            "telno": "031-554-0940",
+            "XPos": "127.1194764",
+            "YPos": "37.6101181",
+            "yadmNm": "국군구리병원",
+            "ykiho": "JDQ4MTYyMiM1MSMkMSMkMCMkOTkkMzgxOTYxIzExIyQxIyQzIyQ4MiQzNjE4MzIjODEjJDEjJDIjJDgz"
+        },
+        {
+            "addr": "서울특별시 중랑구 봉우재로 234 (망우동)",
+            "clCd": "21",
+            "clCdNm": "병원",
+            "distance": "1824.6083565915511009668058581841110075",
+            "drTotCnt": "5",
+            "estbDd": "20160705",
+            "gdrCnt": "0",
+            "hospUrl": "www.neulchan.co.kr",
+            "intnCnt": "0",
+            "postNo": "02173",
+            "resdntCnt": "0",
+            "sdrCnt": "5",
+            "sgguCd": "110019",
+            "sgguCdNm": "중랑구",
+            "sidoCd": "110000",
+            "sidoCdNm": "서울",
+            "telno": "02-1644-0710",
+            "XPos": "127.0988923",
+            "YPos": "37.5951850",
+            "yadmNm": "늘찬병원",
+            "ykiho": "JDQ4MTg4MSM1MSMkMSMkMCMkOTkkMzgxMzUxIzQxIyQxIyQ3IyQ3OSQyNjEyMjIjNzEjJDEjJDgjJDgz"
+        },
+        {
+            "addr": "서울특별시 중랑구 봉화산로 64 (중화동, 디엔에프병원)",
+            "clCd": "21",
+            "clCdNm": "병원",
+            "distance": "1210.3261464843056508528272496527640031",
+            "drTotCnt": "3",
+            "estbDd": "20111122",
+            "gdrCnt": "0",
+            "hospUrl": "http://dnfhospital.com",
+            "intnCnt": "0",
+            "postNo": "02089",
+            "resdntCnt": "0",
+            "sdrCnt": "3",
+            "sgguCd": "110019",
+            "sgguCdNm": "중랑구",
+            "sidoCd": "110000",
+            "sidoCdNm": "서울",
+            "telno": "02-434-2119",
+            "XPos": "127.0814897",
+            "YPos": "37.6014890",
+            "yadmNm": "디앤에프병원",
+            "ykiho": "JDQ4MTg4MSM1MSMkMSMkMCMkOTkkMzgxMzUxIzMxIyQxIyQzIyQxMyQyNjE4MzIjODEjJDEjJDIjJDgz"
+        },
+        {
+            "addr": "서울특별시 중랑구 망우로 470 (망우동)",
+            "clCd": "21",
+            "clCdNm": "병원",
+            "distance": "1679.6117240841705913196267114044342014",
+            "drTotCnt": "4",
+            "estbDd": "20200727",
+            "gdrCnt": "1",
+            "hospUrl": "http://www.ruskseoul.co.kr/",
+            "intnCnt": "0",
+            "postNo": "02177",
+            "resdntCnt": "0",
+            "sdrCnt": "3",
+            "sgguCd": "110019",
+            "sgguCdNm": "중랑구",
+            "sidoCd": "110000",
+            "sidoCdNm": "서울",
+            "telno": "02-3426-0100",
+            "XPos": "127.10431",
+            "YPos": "37.60012",
+            "yadmNm": "러스크서울병원",
+            "ykiho": "JDQ4MTg4MSM1MSMkMSMkMCMkOTkkMzgxMzUxIzIxIyQxIyQ5IyQwMyQzNjE0ODEjNTEjJDEjJDIjJDgz"
+        },
+        {
+            "addr": "서울특별시 중랑구 동일로 890 (묵동)",
+            "clCd": "21",
+            "clCdNm": "병원",
+            "distance": "1048.3121040145081240041608421311712203",
+            "drTotCnt": "6",
+            "estbDd": "20080404",
+            "gdrCnt": "0",
+            "intnCnt": "0",
+            "postNo": "02038",
+            "resdntCnt": "0",
+            "sdrCnt": "6",
+            "sgguCd": "110019",
+            "sgguCdNm": "중랑구",
+            "sidoCd": "110000",
+            "sidoCdNm": "서울",
+            "telno": "1661-0592",
+            "XPos": "127.0782087",
+            "YPos": "37.6098944",
+            "yadmNm": "마디세상병원",
+            "ykiho": "JDQ4MTg4MSM1MSMkMSMkMCMkOTkkMzgxMzUxIzQxIyQxIyQ3IyQ2MiQzNjEwMDIjNDEjJDEjJDgjJDgz"
+        },
+        {
+            "addr": "서울특별시 노원구 동일로 989 2~9층 (공릉동)",
+            "clCd": "21",
+            "clCdNm": "병원",
+            "distance": "1624.8353579737245488965133662081805469",
+            "drTotCnt": "12",
+            "estbDd": "20051215",
+            "gdrCnt": "0",
+            "hospUrl": "http://www.ysbang.net",
+            "intnCnt": "0",
+            "postNo": "01861",
+            "resdntCnt": "0",
+            "sdrCnt": "12",
+            "sgguCd": "110022",
+            "sgguCdNm": "노원구",
+            "sidoCd": "110000",
+            "sidoCdNm": "서울",
+            "telno": "02-1577-4447",
+            "XPos": "127.0750336",
+            "YPos": "37.6184022",
+            "yadmNm": "방병원",
+            "ykiho": "JDQ4MTg4MSM1MSMkMSMkMCMkOTkkMzgxMzUxIzIxIyQxIyQ5IyQxMyQzNjE4MzIjNjEjJDEjJDAjJDgz"
+        },
+        {
+            "addr": "서울특별시 중랑구 망우로 476 (망우동)",
+            "clCd": "21",
+            "clCdNm": "병원",
+            "distance": "1719.577788226114212853763717825344123",
+            "drTotCnt": "4",
+            "estbDd": "20080901",
+            "gdrCnt": "0",
+            "intnCnt": "0",
+            "postNo": "02178",
+            "resdntCnt": "0",
+            "sdrCnt": "4",
+            "sgguCd": "110019",
+            "sgguCdNm": "중랑구",
+            "sidoCd": "110000",
+            "sidoCdNm": "서울",
+            "telno": "02-2209-6677",
+            "XPos": "127.1050937",
+            "YPos": "37.6003119",
+            "yadmNm": "서울라본병원",
+            "ykiho": "JDQ4MTg4MSM1MSMkMSMkMCMkOTkkMzgxMzUxIzMxIyQxIyQ3IyQ5MiQzNjEwMDIjNjEjJDEjJDgjJDgz"
+        },
+        {
+            "addr": "서울특별시 중랑구 망우로 373 (상봉동, 서울선병원)",
+            "clCd": "21",
+            "clCdNm": "병원",
+            "distance": "1302.6902959473684894929277665018178446",
+            "drTotCnt": "3",
+            "estbDd": "20071205",
+            "gdrCnt": "0",
+            "intnCnt": "0",
+            "postNo": "02086",
+            "resdntCnt": "0",
+            "sdrCnt": "3",
+            "sgguCd": "110019",
+            "sgguCdNm": "중랑구",
+            "sidoCd": "110000",
+            "sidoCdNm": "서울",
+            "telno": "02-436-1900",
+            "XPos": "127.0936395",
+            "YPos": "37.5986318",
+            "yadmNm": "서울선병원",
+            "ykiho": "JDQ4MTg4MSM1MSMkMSMkMCMkOTkkMzgxMzUxIzQxIyQxIyQ3IyQ5OSQzNjEwMDIjNjEjJDEjJDgjJDgz"
+        },
+        {
+            "addr": "서울특별시 중랑구 양원역로 38 (망우동)",
+            "clCd": "21",
+            "clCdNm": "병원",
+            "distance": "1690.4787056592528696081343579875027761",
+            "drTotCnt": "11",
+            "estbDd": "20060427",
+            "gdrCnt": "1",
+            "hospUrl": "http://www.bbhosp.go.kr",
+            "intnCnt": "0",
+            "postNo": "02062",
+            "resdntCnt": "0",
+            "sdrCnt": "10",
+            "sgguCd": "110019",
+            "sgguCdNm": "중랑구",
+            "sidoCd": "110000",
+            "sidoCdNm": "서울",
+            "telno": "02-2036-0200",
+            "XPos": "127.1076807",
+            "YPos": "37.6043947",
+            "yadmNm": "서울특별시 북부병원",
+            "ykiho": "JDQ4MTg4MSM1MSMkMSMkMCMkOTkkMzgxMzUxIzIxIyQxIyQ5IyQ3MiQyNjEwMDIjNjEjJDEjJDgjJDgz"
+        },
+        {
+            "addr": "서울특별시 중랑구 공릉로 76 (묵동)",
+            "clCd": "21",
+            "clCdNm": "병원",
+            "distance": "1233.6234165473562783362411080262355174",
+            "drTotCnt": "1",
+            "estbDd": "20050329",
+            "gdrCnt": "0",
+            "hospUrl": "http://www.medicook.net/cpinfo/clinic_detail_01.asp?SEQ=83544",
+            "intnCnt": "0",
+            "postNo": "02019",
+            "resdntCnt": "0",
+            "sdrCnt": "1",
+            "sgguCd": "110019",
+            "sgguCdNm": "중랑구",
+            "sidoCd": "110000",
+            "sidoCdNm": "서울",
+            "telno": "02-975-7500",
+            "XPos": "127.0794651",
+            "YPos": "37.6172336",
+            "yadmNm": "의료법인한국의료재단프라임병원",
+            "ykiho": "JDQ4MTg4MSM1MSMkMSMkMCMkOTkkMzgxMzUxIzIxIyQxIyQ5IyQ5OSQzNjEwMDIjNzEjJDEjJDgjJDgz"
+        },
+        {
+            "addr": "서울특별시 중랑구 망우로 411 (망우동)",
+            "clCd": "21",
+            "clCdNm": "병원",
+            "distance": "1350.6703740297189549517419057999477285",
+            "drTotCnt": "2",
+            "estbDd": "20021025",
+            "gdrCnt": "0",
+            "intnCnt": "0",
+            "postNo": "02073",
+            "resdntCnt": "0",
+            "sdrCnt": "2",
+            "sgguCd": "110019",
+            "sgguCdNm": "중랑구",
+            "sidoCd": "110000",
+            "sidoCdNm": "서울",
+            "telno": "02-490-4000",
+            "XPos": "127.0978977",
+            "YPos": "37.5996050",
+            "yadmNm": "장스여성병원",
+            "ykiho": "JDQ4MTg4MSM1MSMkMSMkMCMkOTkkMzgxMzUxIzIxIyQxIyQ1IyQwMyQyNjE4MzIjODEjJDEjJDIjJDgz"
+        },
+        {
+            "addr": "서울특별시 중랑구 망우로 474 (망우동, 조앤조병원)",
+            "clCd": "21",
+            "clCdNm": "병원",
+            "distance": "1695.1659181876575529301034008956182425",
+            "drTotCnt": "5",
+            "estbDd": "20070322",
+            "gdrCnt": "0",
+            "hospUrl": "http://www.choncho.co.kr",
+            "intnCnt": "0",
+            "postNo": "02177",
+            "resdntCnt": "0",
+            "sdrCnt": "5",
+            "sgguCd": "110019",
+            "sgguCdNm": "중랑구",
+            "sidoCd": "110000",
+            "sidoCdNm": "서울",
+            "telno": "02-433-3336",
+            "XPos": "127.1047339",
+            "YPos": "37.6003058",
+            "yadmNm": "조앤조병원",
+            "ykiho": "JDQ4MTg4MSM1MSMkMSMkMCMkOTkkMzgxMzUxIzMxIyQxIyQ3IyQ4MiQzNjEyMjIjNzEjJDEjJDgjJDgz"
+        },
+        {
+            "addr": "서울특별시 노원구 동일로 987 (공릉동)",
+            "clCd": "21",
+            "clCdNm": "병원",
+            "distance": "1618.0700798624693993418027153318957188",
+            "drTotCnt": "2",
+            "estbDd": "20070427",
+            "gdrCnt": "0",
+            "intnCnt": "0",
+            "postNo": "01861",
+            "resdntCnt": "0",
+            "sdrCnt": "2",
+            "sgguCd": "110022",
+            "sgguCdNm": "노원구",
+            "sidoCd": "110000",
+            "sidoCdNm": "서울",
+            "telno": "970-0801",
+            "XPos": "127.0749719",
+            "YPos": "37.6182237",
+            "yadmNm": "태릉마이크로병원",
+            "ykiho": "JDQ4MTg4MSM1MSMkMSMkMCMkOTkkMzgxMzUxIzMxIyQxIyQzIyQxMyQzNjE4MzIjNDEjJDEjJDgjJDgz"
+        },
+        {
+            "addr": "서울특별시 중랑구 동일로 679 (면목동)",
+            "clCd": "21",
+            "clCdNm": "병원",
+            "distance": "2304.3502262517280166110984653886206912",
+            "drTotCnt": "10",
+            "emdongNm": "면목동",
+            "estbDd": "20131224",
+            "gdrCnt": "0",
+            "intnCnt": "0",
+            "postNo": "02130",
+            "resdntCnt": "0",
+            "sdrCnt": "10",
+            "sgguCd": "110019",
+            "sgguCdNm": "중랑구",
+            "sidoCd": "110000",
+            "sidoCdNm": "서울",
+            "telno": "02-1899-8875",
+            "XPos": "127.0796941",
+            "YPos": "37.5909515",
+            "yadmNm": "팔팔병원",
+            "ykiho": "JDQ4MTg4MSM1MSMkMSMkMCMkOTkkMzgxMzUxIzMxIyQxIyQ3IyQ2MiQzNjE0ODEjNjEjJDEjJDgjJDgz"
+        }
+    ];
+
+    // 지도에 병원 데이터 추가 exData : exData 형태
+    map.setHospData(exData);
+
+    // 맵 보여지는 영역 변경될는 이벤트 (확대, 축소, 이동시 발생)
+    map.boundChange = function() {
+        // kakaoMapIns = 카카오맵 인스턴스
+        console.log('지도 영역 변경');
+    };
+
+    console.log('getInstance', map.getInstance());
 </script>
 
 </html>

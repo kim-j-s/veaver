@@ -5,21 +5,77 @@
 		level: 3 //지도의 레벨(확대, 축소 정도)
 	};
 
+	// 두 좌표(위도,경도) 사이 거리
+	function getDistanceFromLatLonInKm(array) {
+		var lat1 = array[0].getLat();
+		var lng1 = array[0].getLng();
+		var lat2 = array[1].getLat();
+		var lng2 = array[1].getLng();
+
+		function deg2rad(deg) {
+			return deg * (Math.PI / 180)
+		}
+		var r = 6371; //지구의 반지름(km)
+		var dLat = deg2rad(lat2 - lat1);
+		var dLon = deg2rad(lng2 - lng1);
+		var a = Math.sin(dLat / 2) * Math.sin(dLat / 2) + Math.cos(deg2rad(lat1)) * Math.cos(deg2rad(lat2)) * Math.sin(dLon / 2) * Math.sin(dLon / 2);
+		var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+		var d = r * c; // Distance in km
+		return Math.round(d * 1000);
+	}
+
 	$.fn.initMap = function (options) {
 		if (this.length != 1) return null;
 
 		const container = this[0];
+		const $container = $(container);
 
 		this[0].innerHTML = ''; // 내부 비우기
 
 		const opt = $.extend({}, defaultOption, options);
 		const map = new kakao.maps.Map(container, opt);
 
-		return {
-			currentLocation : function () {
+		$container.append('<div class="map-pop-area"><button type="button" class="btn-po-change">내 위치로 이동</button></div>');
+
+		const $popArea = $container.find('.map-pop-area');
+
+		// 현재위치
+		$popArea.find('.btn-po-change').on('click', function () {
+			retIns.currentLocation(); // 현재위치
+		});
+
+		const clusterer = new kakao.maps.MarkerClusterer({
+			map: map, // 마커들을 클러스터로 관리하고 표시할 지도 객체
+			averageCenter: true, // 클러스터에 포함된 마커들의 평균 위치를 클러스터 마커 위치로 설정
+			minLevel: 10, // 클러스터 할 최소 지도 레벨
+			disableClickZoom: true // 클러스터 마커를 클릭했을 때 지도가 확대되지 않도록 설정한다
+		});
+
+		kakao.maps.event.addListener(clusterer, 'clusterclick', function (cluster) {
+			// 현재 지도 레벨에서 1레벨 확대한 레벨
+			var level = map.getLevel() - 1;
+
+			// 지도를 클릭된 클러스터의 마커의 위치를 기준으로 확대합니다
+			map.setLevel(level, { anchor: cluster.getCenter() });
+		});
+
+		kakao.maps.event.addListener(map, 'bounds_changed', function () {
+			console.log('bounds changed!');
+			// console.log(map.getCenter());
+			map.radius = getDistanceFromLatLonInKm([map.getCenter(), map.getBounds().getSouthWest()]);
+
+			console.log(map.radius);
+
+			if (retIns.boundChange) {
+				retIns.boundChange(map);
+			}
+		});
+
+		const retIns = {
+			currentLocation: function () {
 				// HTML5의 geolocation으로 사용할 수 있는지 확인합니다 
 				if (navigator.geolocation) {
-
+					console.log('geo');
 					// GeoLocation을 이용해서 접속 위치를 얻어옵니다
 					navigator.geolocation.getCurrentPosition(function (position) {
 						var locPosition = new kakao.maps.LatLng(position.coords.latitude, position.coords.longitude); // 마커가 표시될 위치를 geolocation으로 얻어온 좌표로 생성합니다
@@ -31,6 +87,44 @@
 					console.log('geolocation 을 지원하지 않는 브라우져입니다.');
 				}
 			},
+			setHospData: function (data) {
+				console.log(data);
+				data.forEach(function (obj) {
+					console.log(obj);
+					var marker = new kakao.maps.Marker({
+						position: new kakao.maps.LatLng(Number(obj.YPos), Number(obj.XPos)),
+						clickable: true
+					});
+					marker.data = obj;
+					console.log(marker);
+					clusterer.addMarker(marker);
+
+					kakao.maps.event.addListener(marker, 'click', function () {
+						// 마커 위에 인포윈도우를 표시합니다
+						infowindow.open(map, marker);
+					});
+				});
+
+				// console.log(data);
+				// data.forEach(function (obj) {
+				// 	console.log(obj);
+				// 	var marker = new kakao.maps.Marker({
+				// 		// map: map,
+				// 		position: new kakao.maps.LatLng(Number(obj.YPos), Number(obj.XPos))
+				// 	});
+				// 	marker.setMap(map);
+				// });
+			},
+			getRadius: function () {
+				return;
+			},
+			getInstance: function () {
+				return map;
+			},
+			boundChange: null
 		};
+
+
+		return retIns;
 	};
 }(jQuery));
