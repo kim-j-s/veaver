@@ -25,13 +25,13 @@
 $(function(){
 
     var COLOR = {
-        white: "#fff",
-        black: "#000",
-        red: "#c00000",
-        blue: "#056bff",
-        lightblue: "#0ca6ea",
-        yellow: "#ffbf00",
-        orange: "#ff7300"
+        type1: "#fff",
+        type2: "#000",
+        type3: "#056bff",
+        type4: "#0ca6ea",
+        type5: "#ffbf00",
+        type6: "#ff7300",
+        type7: "#c00000",
     };
 
     var ctx = document.getElementById("chart-canvas").getContext("2d");
@@ -44,44 +44,44 @@ $(function(){
             data: [10, 9, 8, 7, 6, 5, 4, 3, 2, 1],
             //data: [10, 9, 8, 7, 1, 1, 1, 1, 1, 1],
             customTooltip: [{
-                textColor: COLOR.white,
-                bgColor: COLOR.blue,
+                textColor: COLOR.type1,
+                bgColor: COLOR.type3,
                 text: "정A"
             }, {
-                textColor: COLOR.white,
-                bgColor: COLOR.lightblue,
+                textColor: COLOR.type1,
+                bgColor: COLOR.type4,
                 text: "정B"
             }, {
-                textColor: COLOR.black,
-                bgColor: COLOR.yellow,
+                textColor: COLOR.type2,
+                bgColor: COLOR.type5,
                 text: "주의"
             }, {
-                textColor: COLOR.white,
-                bgColor: COLOR.orange,
+                textColor: COLOR.type1,
+                bgColor: COLOR.type6,
                 text: "의심"
             }, {
-                textColor: COLOR.white,
-                bgColor: COLOR.red,
+                textColor: COLOR.type1,
+                bgColor: COLOR.type7,
                 text: "고당"
             }, {
-                textColor: COLOR.white,
-                bgColor: COLOR.red,
+                textColor: COLOR.type1,
+                bgColor: COLOR.type7,
                 text: "유질"
             }, {
-                textColor: COLOR.white,
-                bgColor: COLOR.red,
+                textColor: COLOR.type1,
+                bgColor: COLOR.type7,
                 text: "일반"
             }, {
-                textColor: COLOR.white,
-                bgColor: COLOR.red,
+                textColor: COLOR.type1,
+                bgColor: COLOR.type7,
                 text: "직업"
             }, {
-                textColor: COLOR.white,
-                bgColor: COLOR.red,
+                textColor: COLOR.type1,
+                bgColor: COLOR.type7,
                 text: "단순"
             }, {
-                textColor: COLOR.white,
-                bgColor: COLOR.red,
+                textColor: COLOR.type1,
+                bgColor: COLOR.type7,
                 text: "휴무"
             }],
             fill: false,
