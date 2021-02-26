@@ -27,19 +27,17 @@
             </div>
             <div class="bottom-pop-cont">
                 <div class="toggle-group">
-                    <button type="button" class="btn-rnd-gr btn-s-toggle">전체</button>
-                    <button type="button" class="btn-rnd-gr btn-s-toggle">이비인후과</button>
-                    <button type="button" class="btn-rnd-gr btn-s-toggle">내과</button>
-                    <button type="button" class="btn-rnd-gr btn-s-toggle">흉부외과</button>
-                    <button type="button" class="btn-rnd-gr btn-s-toggle">소아과</button>
-                    <button type="button" class="btn-rnd-gr btn-s-toggle">이비인후과</button>
-                    <button type="button" class="btn-rnd-gr btn-s-toggle">내과</button>
-                    <button type="button" class="btn-rnd-gr btn-s-toggle">흉부외과</button>
-                    <button type="button" class="btn-rnd-gr btn-s-toggle">소아과</button>
-                    <button type="button" class="btn-rnd-gr btn-s-toggle">이비인후과</button>
-                    <button type="button" class="btn-rnd-gr btn-s-toggle">내과</button>
-                    <button type="button" class="btn-rnd-gr btn-s-toggle">흉부외과</button>
-                    <button type="button" class="btn-rnd-gr btn-s-toggle">소아과</button>
+                    <label class="checkbox-rnd-gr"><input type="checkbox"><span>전체</span></label>
+                    <label class="checkbox-rnd-gr"><input type="checkbox"><span>이비인후과</span></label>
+                    <label class="checkbox-rnd-gr"><input type="checkbox"><span>내과</span></label>
+                    <label class="checkbox-rnd-gr"><input type="checkbox"><span>흉부외과</span></label>
+                    <label class="checkbox-rnd-gr"><input type="checkbox"><span>소아과</span></label>
+                    <label class="checkbox-rnd-gr"><input type="checkbox"><span>이비인후과</span></label>
+                    <label class="checkbox-rnd-gr"><input type="checkbox"><span>내과</span></label>
+                    <label class="checkbox-rnd-gr"><input type="checkbox"><span>이비인후과</span></label>
+                    <label class="checkbox-rnd-gr"><input type="checkbox"><span>내과</span></label>
+                    <label class="checkbox-rnd-gr"><input type="checkbox"><span>흉부외과</span></label>
+                    <label class="checkbox-rnd-gr"><input type="checkbox"><span>소아과</span></label>
                 </div>
             </div>
         </div>
@@ -50,12 +48,11 @@
 <!-- 팝업 구동 샘플 -->
 <script>
     $(function () {
-        $('html').click(function () {
-            if (!$('.bottom-pop').hasClass('opened')) {
-                $('.bottom-pop').openPop();
-            } else {
-                $('.bottom-pop').closePop();
-            }
+        $('.wrap').click(function () {
+            $('.bottom-pop').openPop();
+        });
+        $('.layer-close-btn').click(function () {
+            $('.bottom-pop').closePop();
         });
     })
 </script>

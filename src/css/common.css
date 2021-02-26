@@ -433,6 +433,46 @@
 			background-image: url(../img/ic-playing.png);
 		}
 
+		.checkbox-rnd-gr {
+			display: inline-block;
+		}
+		.checkbox-rnd-gr > input {
+			display: none;
+		}
+		.checkbox-rnd-gr > span {
+			display: block;
+			padding: 4px 12px;
+			font-size: 14px;
+			line-height: 18px;
+			color: #b5b9c1;
+			border: 1px solid #ebeff3;
+			border-radius: 25px;
+			transition: .2s;
+			background: #fff;
+			outline: none;
+		}
+		.checkbox-rnd-gr > input:checked + span {
+			color: #056bff;
+			background: #edf4ff;
+			border: 1px solid #edf4ff;
+		}
+		.checkbox-rnd-gr.big {
+			width: 100%;
+			text-align: center;
+		}
+		.checkbox-rnd-gr.big > span {
+			width: 100%;
+			padding: 8px 12px;
+			color: #fff;
+			background: rgba(5,107,255,0.3);
+			border-radius: 10px;
+		}
+		.checkbox-rnd-gr.big > input:checked + span {
+			color: #fff;
+			background: #056bff;
+			border: 1px solid rgba(5,107,255,0.3);
+		}
+
 		.btn-rnd-gr{
 			display: inline-block;
 			padding: 4px 12px;
@@ -462,6 +502,7 @@
 			color: #fff;
 			background: #056bff;
 		}
+
 		.btn-rnd-wh{
 			display: inline-block;
 			padding: 4px 12px;
@@ -3308,10 +3349,16 @@
 		    overflow-x: auto;
 		}
 		.scroll-x .btn-rnd-gr{
-		    vertical-align: top;
+			vertical-align: top;
+		}
+		.scroll-x .checkbox-rnd-gr {
+			vertical-align: top;
 		}
 		.scroll-x .btn-rnd-gr +.btn-rnd-gr{
-		    margin-left: 6px;
+			margin-left: 6px;
+		}
+		.scroll-x .checkbox-rnd-gr + .checkbox-rnd-gr {
+			margin-left: 6px;
 		}
 
 		.full-size-area .sort-area{
@@ -3590,6 +3637,9 @@
 		    margin-top: -16px;
 		}
 		.toggle-group > .btn-rnd-gr{
+		    margin: 16px 6px 0 0;
+		}
+		.toggle-group > .checkbox-rnd-gr{
 		    margin: 16px 6px 0 0;
 		}
 
