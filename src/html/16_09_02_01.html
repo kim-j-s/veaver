@@ -30,6 +30,7 @@ $(function(){
         labels: ['201510', '201703', '201901', '201903', '202010', '202009', '202009', '202009', '202009', '202009'],
         datasets: [
         {
+            type: "line",
             data: [10, 9, 8, 7, 6, 5, 4, 3, 2, 1],
             fill: false,
             borderColor: 'rgba(0, 0, 0, 1)',
@@ -116,7 +117,8 @@ $(function(){
 
     // 호출
     var myLineChart = new Chart(ctx, {
-        type: 'line',
+        //type: 'line',
+        type: 'bar',
         data: data,
         options: options,
     });    
