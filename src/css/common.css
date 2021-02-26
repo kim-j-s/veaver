@@ -2117,6 +2117,10 @@
 		transition: .5s;
 		opacity: 1;
 	}
+	.floating-btns.left{
+		right: auto;
+		left: 0;
+	}
 	.floating-btns.on{
 		opacity: 0;
 	}
@@ -2162,6 +2166,10 @@
 		right: 18px;
 		bottom: 18px;
 	}
+	.floating-btns.left .fb-list{
+		right: auto;
+		left: 18px;
+	}
 
 	.btn-go-menu{
 		display: inline-block;
@@ -2181,6 +2189,17 @@
 	}
 	.btn-go-next:disabled{
 		background: url(../img/btn-floating-next-nor.png) no-repeat 0 0 / 100% auto;
+	}
+	.btn-go-prev{
+		display: inline-block;
+		width: 70px;
+		height: 70px;
+		overflow: hidden;
+		text-indent: -9999px;
+		background: url(../img/btn-floating-prev-sel.png) no-repeat 0 0 / 100% auto;
+	}
+	.btn-go-prev:disabled{
+		background: url(../img/btn-floating-prev-nor.png) no-repeat 0 0 / 100% auto;
 	}
 	.btn-re{
 		display: inline-block;

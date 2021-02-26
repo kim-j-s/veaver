@@ -20,17 +20,13 @@
 </body>
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
-<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/chartjs-plugin-annotation/0.5.7/chartjs-plugin-annotation.min.js"></script> -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/chartjs-plugin-annotation/0.5.7/chartjs-plugin-annotation.js"></script>
 <script>
 $(function(){
-    console.log('ddcdd');
-
     var ctx = document.getElementById("chart-canvas").getContext("2d");
 
     var data = {
         labels: ['201510', '201703', '201901', '201903', '202010'],
-        //labels: ['0', '2', '4', '6', '8', '10'],
         datasets: [
         {
             type: "line",
@@ -47,7 +43,11 @@ $(function(){
         maintainAspectRatio: false,
         title: {
             display: true,
-            text: '혈색소'
+            text: '혈색소',
+            fontSize: 16,
+            fontStyle: 'bold',
+            fontColor: '#000',
+            lineHeight: 1,
         },
         legend: {
             display: false,
@@ -56,10 +56,6 @@ $(function(){
             yAxes: [{
                 ticks: {
                     stepSize : 2,
-                    /*
-                    min: 0,
-                    max: 100,
-                    */
                 },
                 afterDataLimits(scale) {
                     scale.min -= 2;
@@ -67,81 +63,59 @@ $(function(){
                 }
             }],
         },
-        layout: {
-            // 레이아웃 여백
-            padding: {
-                top: 20,
-                right: 20,
-            }
-        },
-        tooltips: {
-            //enabled: false,
-        },
-
-
+        // 차트 바탕색 정의
         annotation: {
             annotations: [
-            {
-                drawTime: "beforeDatasetsDraw",
-                type: "box",
-                xScaleID: "x-axis-0",
-                yScaleID: "y-axis-0",
-                borderWidth: 0,
-                yMin: 40,
-                yMax: 44,
-                backgroundColor: "rgba(215, 42, 43, 0.3)"
-            },
-            {
-                drawTime: "beforeDatasetsDraw",
-                type: "box",
-                xScaleID: "x-axis-0",
-                yScaleID: "y-axis-0",
-                borderWidth: 0,
-                yMin: 34,
-                yMax: 40,
-                backgroundColor: "rgba(246, 149, 26, 0.3)"
-            },
-            // 하단 미만 상태
-            {
-                drawTime: "beforeDatasetsDraw",
-                type: "box",
-                xScaleID: "x-axis-0",
-                yScaleID: "y-axis-0",
-                borderWidth: 0,
-                //yMin: 32,
-                yMin: ctx.chart.$stats.max - 10,
-                
-                yMax: 34,
-                backgroundColor: "rgba(146, 204, 85, 0.3)"
-            },
+                // 초과 영역
+                {
+                    drawTime: "beforeDatasetsDraw",
+                    type: "box",
+                    xScaleID: "x-axis-0",
+                    yScaleID: "y-axis-0",
+                    borderWidth: 0,
+                    //초과 영역 - 최소값
+                    yMin: 42,
+                    //초과 영역 - 최대값
+                    yMax: 46,
+                    backgroundColor: "rgba(215, 42, 43, 0.3)"
+                },
+                // 안정 영역
+                {
+                    drawTime: "beforeDatasetsDraw",
+                    type: "box",
+                    xScaleID: "x-axis-0",
+                    yScaleID: "y-axis-0",
+                    borderWidth: 0,
+                    //안정 영역 - 최소값
+                    yMin: 38,
+                    //안정 영역 - 최대값
+                    yMax: 42,
+                    backgroundColor: "rgba(246, 149, 26, 0.3)"
+                },
+                // 미달 영역
+                {
+                    drawTime: "beforeDatasetsDraw",
+                    type: "box",
+                    xScaleID: "x-axis-0",
+                    yScaleID: "y-axis-0",
+                    borderWidth: 0,
+                    //미달 영역 - 최소값
+                    yMin: 34,
+                    //미달 영역 - 최대값
+                    yMax: 38,
+                    backgroundColor: "rgba(146, 204, 85, 0.3)"
+                },
             ]
-        }
-        
-        
+        }       
     }
 
     // 호출
     var myLineChart = new Chart(ctx, {
-        //type: 'line',
         type: 'bar',
         data: data,
         options: options,
     });    
 
 })
-
-/*
-// 미달
-92cc55
-146, 204, 85, 0.3
-//안정
-f6951a
-246, 149, 26, 0.3
-// 위험
-d72a2b
-215, 42, 43, 0.3
-*/
-
-
 </script>
 </html>

@@ -63,12 +63,65 @@
 <script>
     $(function() {
 
+        var COLOR = {
+            type1: "#fff",
+            type2: "#000",
+            type3: "#056bff",
+            type4: "#0ca6ea",
+            type5: "#ffbf00",
+            type6: "#ff7300",
+            type7: "#c00000",
+        };
+
         var ctx = document.getElementById("chart-canvas").getContext("2d");
 
         var data = {
             labels: ['201510', '201703', '201901', '201903', '202010', '202009', '202009', '202009', '202009', '202009'],
             datasets: [{
+                type: "line",
                 data: [10, 9, 8, 7, 6, 5, 4, 3, 2, 1],
+                //data: [10, 9, 8, 7, 1, 1, 1, 1, 1, 1],
+                customTooltip: [{
+                    textColor: COLOR.type1,
+                    bgColor: COLOR.type3,
+                    text: "정A"
+                }, {
+                    textColor: COLOR.type1,
+                    bgColor: COLOR.type4,
+                    text: "정B"
+                }, {
+                    textColor: COLOR.type2,
+                    bgColor: COLOR.type5,
+                    text: "주의"
+                }, {
+                    textColor: COLOR.type1,
+                    bgColor: COLOR.type6,
+                    text: "의심"
+                }, {
+                    textColor: COLOR.type1,
+                    bgColor: COLOR.type7,
+                    text: "고당"
+                }, {
+                    textColor: COLOR.type1,
+                    bgColor: COLOR.type7,
+                    text: "유질"
+                }, {
+                    textColor: COLOR.type1,
+                    bgColor: COLOR.type7,
+                    text: "일반"
+                }, {
+                    textColor: COLOR.type1,
+                    bgColor: COLOR.type7,
+                    text: "직업"
+                }, {
+                    textColor: COLOR.type1,
+                    bgColor: COLOR.type7,
+                    text: "단순"
+                }, {
+                    textColor: COLOR.type1,
+                    bgColor: COLOR.type7,
+                    text: "휴무"
+                }],
                 fill: false,
                 borderColor: 'rgba(0, 0, 0, 1)',
                 lineTension: 0,
@@ -122,50 +175,19 @@
                     // 색상 정의
                     color: function(context) {
                         var index = context.dataIndex;
-                        var value = context.dataset.data[index];
-                        return value == 8 ? '#000000' : '#ffffff';
+                        var value = context.dataset.customTooltip[index].textColor;
+                        return value ? value : '#ffffff';
                     },
                     //바탕색 정의
                     backgroundColor: function(context) {
                         var index = context.dataIndex;
-                        var value = context.dataset.data[index];
-                        return value == 10 ? '#056bff' :
-                            value == 9 ? '#0ca6ea' :
-                            value == 8 ? '#ffbf00' :
-                            value == 7 ? '#ff7300' : '#c00000';
+                        var value = context.dataset.customTooltip[index].bgColor;
+                        return value ? value : '#ffffff';
                     },
                     // Label 문구 정의
                     formatter: function(value, context) {
-                        if (value == 1) {
-                            value = '휴무'
-                        }
-                        if (value == 2) {
-                            value = '단순'
-                        }
-                        if (value == 3) {
-                            value = '직업'
-                        }
-                        if (value == 4) {
-                            value = '일반'
-                        }
-                        if (value == 5) {
-                            value = '유질'
-                        }
-                        if (value == 6) {
-                            value = '고당'
-                        }
-                        if (value == 7) {
-                            value = '의심'
-                        }
-                        if (value == 8) {
-                            value = '주의'
-                        }
-                        if (value == 9) {
-                            value = '정B'
-                        }
-                        if (value == 10) {
-                            value = '정A'
-                        }
+                        var index = context.dataIndex;
+                        var value = context.dataset.customTooltip[index].text;
                         return value;
                     },
                 }
@@ -174,7 +196,7 @@
 
         // 호출
         var myLineChart = new Chart(ctx, {
-            type: 'line',
+            type: 'bar',
             data: data,
             options: options,
         });
