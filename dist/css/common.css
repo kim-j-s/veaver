@@ -3739,13 +3739,14 @@
 	/* 진료과목 선택 */
 
 		.toggle-group{
-		    margin-top: -16px;
+		    margin: -16px 15px 0 15px;
+			font-size: 0;
 		}
 		.toggle-group > .btn-rnd-gr{
-		    margin: 16px 6px 0 0;
+		    margin: 16px 7px 0;
 		}
 		.toggle-group > .checkbox-rnd-gr{
-		    margin: 16px 6px 0 0;
+		    margin: 16px 7px 0;
 		}
 
 	/* // 진료과목 선택 */
@@ -3783,6 +3784,9 @@
 			padding: 22px;
 		    border-radius: 14px 14px 0 0;
 		    background: #fff;
+		}
+		.map-area-dp {
+			height: 160px;
 		}
 
 	/* // 병원 / 약국 찾기 - 지도보기 */

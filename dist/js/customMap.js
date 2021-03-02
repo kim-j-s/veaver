@@ -35,14 +35,20 @@
 		const opt = $.extend({}, defaultOption, options);
 		const map = new kakao.maps.Map(container, opt);
 
-		$container.append('<div class="map-pop-area"><button type="button" class="btn-po-change">내 위치로 이동</button></div>');
+		$container.append('<div class="map-pop-area"></div>');
 
 		const $popArea = $container.find('.map-pop-area');
 
-		// 현재위치
-		$popArea.find('.btn-po-change').on('click', function () {
-			map.currentLocation(); // 현재위치
-		});
+		if (!options || !options.currentBtnDisable) {
+			$popArea.append('<button type="button" class="btn-po-change">내 위치로 이동</button>');
+
+			// 현재위치
+			$popArea.find('.btn-po-change').on('click', function () {
+				map.currentLocation(); // 현재위치
+			});
+		}
+
+
 
 		const clusterer = new kakao.maps.MarkerClusterer({
 			map: map, // 마커들을 클러스터로 관리하고 표시할 지도 객체
@@ -117,7 +123,70 @@
 						`);
 				});
 			});
-		}
+		};
+
+		map.delHospDataYkiho = function (v) {
+			const markers = clusterer.getMarkers();
+			for (let i = 0; i < markers.length; i++) {
+				const d = markers[i].data.ykiho;
+				if(d == v) {
+					clusterer.removeMarker(markers[i]);
+					console.log(clusterer.getMarkers().length);
+					break;
+				}
+			}
+		};
+
+		map.setPharmData = function (data) {
+			data.forEach(function (obj) {
+				var marker = new kakao.maps.Marker({
+					position: new kakao.maps.LatLng(Number(obj.latitude), Number(obj.longitude)),
+					clickable: true
+				});
+
+				marker.data = obj;
+				clusterer.addMarker(marker);
+
+				kakao.maps.event.addListener(marker, 'click', function () {
+					$popArea.find('.map-marker-info').remove();
+					$popArea.append(`
+							<div class="map-marker-info">
+								<div class="txt-cont04">
+									<div class="t-case">
+										<span>영업종료</span>
+									</div>
+									<div class="q-txt">${obj.dutyName}</div>
+									<div class="d-info">
+										<span>327km</span>
+										<span>${obj.dutyAddr}</span>
+									</div>
+								</div>
+							</div>
+						`);
+				});
+			});
+		};
+
+		map.delPharmDataHpid = function (v) {
+			const markers = clusterer.getMarkers();
+			for (let i = 0; i < markers.length; i++) {
+				const d = markers[i].data.hpid;
+				if(d == v) {
+					clusterer.removeMarker(markers[i]);
+					console.log(clusterer.getMarkers().length);
+					break;
+				}
+			}
+		};
+
+		map.setSimpleMark = function (lat, lon) {
+			var pos = new kakao.maps.LatLng(lat, lon);
+			var marker = new kakao.maps.Marker({
+				position: pos
+			});
+			clusterer.addMarker(marker);
+			map.setCenter(pos);
+		};
 
 		return map;
 	};

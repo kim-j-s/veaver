@@ -544,6 +544,9 @@
     // 지도에 병원 데이터 추가 exData : exData 형태
     map.setHospData(exData);
 
+    // 지도에 병원 데이터 삭제 (ykiho)
+    map.delHospDataYkiho('JDQ4MTg4MSM1MSMkMSMkMCMkOTkkMzgxMzUxIzMxIyQxIyQ3IyQ2MiQzNjE0ODEjNjEjJDEjJDgjJDgz');
+
     // 맵 보여지는 영역 변경 이벤트 (확대, 축소, 이동시 발생)
     map.boundChange = function (ins) {
         console.log(map.radius); // 반경
