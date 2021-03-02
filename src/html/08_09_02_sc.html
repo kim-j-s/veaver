@@ -1,0 +1,257 @@
+@@include('head.html',{
+"title":"병원목록 | "
+})
+
+<body>
+    <div class="layer-full-wrap">
+        <!-- 헤더영역 -->
+        @@include('header07.html')
+        <!-- //헤더영역 -->
+
+        <!-- 컨텐츠 영역 -->
+        <section class="layer-content pb0">
+            <div class="scroll-list-wrap">
+                <div class="tab-box">
+                    <div class="tab-menu-wrap swiper-container">
+                        <div class="tab-menu swiper-wrapper">
+                            <div class="swiper-slide">
+                                <a href="#">병원</a>
+                            </div>
+                            <div class="swiper-slide">
+                                <a href="#" class="active">약국</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt20">
+                    <label class="checkbox-rnd-gr big"><input type="checkbox" checked><span>영업중</span></label>
+                </div>
+
+                <!-- 지도영역 -->
+                <div class="map-area" style="background: rgba(0,0,0,0.3);">
+                    <div class="map-area-inner" id="map"></div>
+                    <button type="button" class="btn-view-list">목록보기</button>
+                </div>
+                <!-- // 지도영역 -->
+            </div>
+        </section>
+        <!-- //컨텐츠 영역 -->
+    </div>
+
+    <!-- 하단 팝업 목록 -->
+    <div class="bottom-pop-wrap">
+        <!-- 병원 스위퍼 -->
+        <div class="hos-swiper swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <div class="txt-cont04">
+                        <div class="t-case">
+                            <span>영업중</span>
+                        </div>
+                        <div class="q-txt">약국명</div>
+                        <div class="d-info">
+                            <span>327km</span>
+                            <span>서울특별시 영등포구 국제금융로2길 24</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="txt-cont04">
+                        <div class="t-case">
+                            <span>영업종료</span>
+                        </div>
+                        <div class="q-txt">약국명</div>
+                        <div class="d-info">
+                            <span>327km</span>
+                            <span>서울특별시 영등포구 국제금융로2길 24</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 병원 스위퍼 -->
+        <button type="button" class="btn-po-change">내 위치로 이동</button>
+    </div>
+    <!-- // 하단 팝업 목록 -->
+</body>
+<!-- 지도 스크립트 -->
+<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=fd3872d29334db88f3bf802e6c8c0ca1&libraries=clusterer"></script>
+<script type="text/javascript" src="../js/customMap.js"></script>
+<script>
+    // http://apis.data.go.kr/B552657/ErmctInsttInfoInqireService/getParmacyLcinfoInqire?WGS84_LON=127.09&WGS84_LAT=37.61&serviceKey=P01OhcLwKzqmx%2FLtmwb04SZMcTx91ZPsMK62aUBctGOx%2F9pzupN0eZxTKCWYyLiT6Asi8hxEAu9O%2FDf16aeaPg%3D%3D
+    var exData = [
+        {
+            "cnt": "5319",
+            "distance": "0.46",
+            "dutyAddr": "서울특별시 중랑구 신내로 115  (신내동, 신내10단지신내아파트)",
+            "dutyDiv": "H",
+            "dutyDivName": "약국",
+            "dutyName": "수성약국",
+            "dutyTel1": "02-3421-3649",
+            "endTime": "2130",
+            "hpid": "C1100866",
+            "latitude": "37.60929657890371",
+            "longitude": "127.09516452384688",
+            "rnum": "562",
+            "startTime": "0900"
+        },
+        {
+            "cnt": "5319",
+            "distance": "0.54",
+            "dutyAddr": "서울특별시 중랑구 신내로 135, 신내9단지아파트 제상가1동 1층 117호 (신내동)",
+            "dutyDiv": "H",
+            "dutyDivName": "약국",
+            "dutyFax": "030-33132-0209",
+            "dutyName": "건강약국",
+            "dutyTel1": "02-3421-7582",
+            "endTime": "1830",
+            "hpid": "C1103846",
+            "latitude": "37.611384535819134",
+            "longitude": "127.09584802788355",
+            "rnum": "2398",
+            "startTime": "0900"
+        },
+        {
+            "cnt": "5319",
+            "distance": "0.55",
+            "dutyAddr": "서울특별시 중랑구 봉화산로 190, 신내2동 관상복합청사 102호 (신내동)",
+            "dutyDiv": "H",
+            "dutyDivName": "약국",
+            "dutyName": "편한약국",
+            "dutyTel1": "02-3422-3619",
+            "endTime": "2000",
+            "hpid": "C1108544",
+            "latitude": "37.60626467167909",
+            "longitude": "127.09416082402393",
+            "rnum": "3907",
+            "startTime": "0900"
+        },
+        {
+            "cnt": "5319",
+            "distance": "0.57",
+            "dutyAddr": "서울특별시 중랑구 봉화산로 194, 신아타운 1층 (신내동)",
+            "dutyDiv": "H",
+            "dutyDivName": "약국",
+            "dutyName": "국제약국",
+            "dutyTel1": "02-3423-0828",
+            "endTime": "2100",
+            "hpid": "C1104015",
+            "latitude": "37.60645163871107",
+            "longitude": "127.09470919237165",
+            "rnum": "2495",
+            "startTime": "0900"
+        },
+        {
+            "cnt": "5319",
+            "distance": "0.57",
+            "dutyAddr": "서울특별시 중랑구 봉화산로 194, 신아타운 7층 705호 (신내동)",
+            "dutyDiv": "H",
+            "dutyDivName": "약국",
+            "dutyName": "단비약국",
+            "dutyTel1": "02-3421-1412",
+            "endTime": "1930",
+            "hpid": "C1107561",
+            "latitude": "37.60645163871107",
+            "longitude": "127.09470919237165",
+            "rnum": "3343",
+            "startTime": "0830"
+        },
+        {
+            "cnt": "5319",
+            "distance": "0.57",
+            "dutyAddr": "서울특별시 중랑구 신내로 128  (신내동, 동성아파트)",
+            "dutyDiv": "H",
+            "dutyDivName": "약국",
+            "dutyName": "중앙약국",
+            "dutyTel1": "02-491-0081",
+            "endTime": "1800",
+            "hpid": "C1104016",
+            "latitude": "37.610171308044535",
+            "longitude": "127.09644767019822",
+            "rnum": "2496",
+            "startTime": "0900"
+        },
+        {
+            "cnt": "5319",
+            "distance": "0.58",
+            "dutyAddr": "서울특별시 중랑구 봉화산로 194, 710호 (신내동, 신아타운)",
+            "dutyDiv": "H",
+            "dutyDivName": "약국",
+            "dutyName": "타워약국",
+            "dutyTel1": "02-3423-2077",
+            "endTime": "1900",
+            "hpid": "C1100541",
+            "latitude": "37.606415596807715",
+            "longitude": "127.09470916744013",
+            "rnum": "357",
+            "startTime": "0900"
+        },
+        {
+            "cnt": "5319",
+            "distance": "0.61",
+            "dutyAddr": "서울특별시 중랑구 신내로 82, 1층 109호(신내동. 금강빌딩)",
+            "dutyDiv": "H",
+            "dutyDivName": "약국",
+            "dutyName": "백세약국",
+            "dutyTel1": "02-3421-7015",
+            "endTime": "2300",
+            "hpid": "C1104660",
+            "latitude": "37.606681595583744",
+            "longitude": "127.09557021153239",
+            "rnum": "2889",
+            "startTime": "0900"
+        },
+        {
+            "cnt": "5319",
+            "distance": "0.61",
+            "dutyAddr": "서울특별시 중랑구 신내로 82, 금강프라자 1층 108호 (신내동)",
+            "dutyDiv": "H",
+            "dutyDivName": "약국",
+            "dutyFax": "02-3423-1459",
+            "dutyName": "수약국",
+            "dutyTel1": "02-3421-1459",
+            "endTime": "2100",
+            "hpid": "C1107110",
+            "latitude": "37.606681601597906",
+            "longitude": "127.09556566073736",
+            "rnum": "3113",
+            "startTime": "0900"
+        },
+        {
+            "cnt": "5319",
+            "distance": "0.63",
+            "dutyAddr": "서울특별시 중랑구 봉화산로 215  (신내동)",
+            "dutyDiv": "H",
+            "dutyDivName": "약국",
+            "dutyName": "온누리건강약국",
+            "dutyTel1": "02-3422-3097",
+            "endTime": "2100",
+            "hpid": "C1100894",
+            "latitude": "37.60758003589779",
+            "longitude": "127.09650779788305",
+            "rnum": "581",
+            "startTime": "0900"
+        }
+    ];
+
+    // 지도 초기화
+    const map = $('#map').initMap();
+
+    // 현재위치
+    map.currentLocation();
+
+    // 지도에 약국 데이터 추가 exData : exData 형태
+    map.setPharmData(exData);
+
+    // 지도에 약국 데이터 삭제 (hpid)
+    map.delPharmDataHpid('C1108544');
+
+    // 맵 보여지는 영역 변경 이벤트 (확대, 축소, 이동시 발생)
+    map.boundChange = function (ins) {
+        console.log(map.radius); // 반경
+        console.log('지도 영역 변경');
+    };
+</script>
+
+</html>

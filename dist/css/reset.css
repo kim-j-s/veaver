@@ -27,14 +27,6 @@ img, select, input, button { vertical-align:middle; }
 em { font-style:normal; }
 input { font-family: 'Noto Sans Kr', sans-serif;}
 label {cursor:pointer;}
-input::-webkit-input-placeholder,
-input::-webkit-input-placeholder,
-input::-moz-placeholder{
-  line-height: normal !important;
-}
-input::-webkit-input-placeholder{
-  line-height: normal !important;
-}
 input::placeholder,
 input::-webkit-input-placeholder,
 input::-moz-placeholder{
@@ -66,6 +58,11 @@ a {
   -webkit-tap-highlight-color: rgba(0,0,0,0);
 }
 ::-ms-clear {display:none;}
+
+input[type="button"] {
+  border: 0;
+  outline: 0;
+}
 
 
 /* font */

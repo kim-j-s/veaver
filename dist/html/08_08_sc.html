@@ -65,9 +65,8 @@
         <section class="scroll-ud full mt0 mb0">
             <div class="scroll-ud-inner">
                 <div class="full-size-area top">
-                    <!-- 지도 영역 샘플 이미지 -->
-                    <img src="../img/temp/@poptemp08.jpg" alt="예시 이미지">
-                    <!-- 지도 영역 샘플 이미지 -->
+                    <!-- 지도 -->
+                    <div class="map-area-dp" id="map"></div>
                 </div>
 
                 <div class="line-box">
@@ -145,10 +144,22 @@
                     제공하는 의료빅데이터입니다.
                 </div>
 
-            </div>
+                </div>
         </section>
         <!-- //컨텐츠 영역 -->
     </div>
 </body>
+<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=fd3872d29334db88f3bf802e6c8c0ca1&libraries=clusterer"></script>
+<script type="text/javascript" src="../js/customMap.js"></script>
+<script>
+    // 초기화
+    const map = $('#map').initMap({
+        currentBtnDisable: true // 현재 위치 버튼 숨기기
+    });
+
+    // 단순 마커 넣기(위도, 경도)
+    // 해당 위치를 중심으로 쟙음
+    map.setSimpleMark(33.450701, 126.570667);
+</script>
 
 </html>
