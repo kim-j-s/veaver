@@ -64,6 +64,11 @@ a {
 }
 ::-ms-clear {display:none;}
 
+input[type="button"] {
+  border: 0;
+  outline: 0;
+}
+
 
 /* font */
 @font-face {
