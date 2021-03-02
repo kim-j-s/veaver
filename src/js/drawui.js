@@ -16,6 +16,8 @@
             else if (code == 'setDrQAList') $this.setDrQAList(data);
             else if (code == 'setTermsList') $this.setTermsList(data);
             else if (code == 'setFindDiseaseList') $this.setFindDiseaseList(data);
+            else if (code == 'setVaccineList') $this.setVaccineList(data);
+            else if (code == 'setVaccineNote') $this.setVaccineNote(data);
         });
 
     };
@@ -79,12 +81,12 @@
         return $(this).each(function () {
             let strHtml = '';
 
-            if(data.thumbnail) strHtml += `<div class="full-size-area"><img src="${data.thumbnail}"></div>`;
+            if (data.thumbnail) strHtml += `<div class="full-size-area"><img src="${data.thumbnail}"></div>`;
 
             strHtml += '<dl class="txt-cont">';
 
-            if(data.name) strHtml += `<dt>${data.name}</dt>`;
-            if(data.detail) strHtml += `<dd>${data.detail}</dd>`;
+            if (data.name) strHtml += `<dt>${data.name}</dt>`;
+            if (data.detail) strHtml += `<dd>${data.detail}</dd>`;
 
             strHtml += '</dl>';
 
@@ -122,17 +124,17 @@
                     // SI1 닥터QA
                     if (obj.linkDetailId) {
                         let strHtml = `<div class="link-box"><a href="${obj.linkUrl}">`;
-                        strHtml +=`<span class="word-box">`;
-                        if(obj.nisiType == 'SI1') {
+                        strHtml += `<span class="word-box">`;
+                        if (obj.nisiType == 'SI1') {
                             // SI1 닥터QA
-                            strHtml +=`<strong class="b-tit">닥터 QA</strong>`;
-                        } else if(obj.nisiType == 'NI') {
+                            strHtml += `<strong class="b-tit">닥터 QA</strong>`;
+                        } else if (obj.nisiType == 'NI') {
                             // NI 질병정보
-                            strHtml +=`<strong class="b-tit">질병정보</strong>`;
+                            strHtml += `<strong class="b-tit">질병정보</strong>`;
                         }
                         strHtml += `<span class="txt">${obj.linkTitle}</span></span>`;
-                        strHtml +=`<span class="lb-img"><img src="${obj.dataUrl}" alt="예시 이미지"></span>`;
-                        strHtml +=`</a></div>`;
+                        strHtml += `<span class="lb-img"><img src="${obj.dataUrl}" alt="예시 이미지"></span>`;
+                        strHtml += `</a></div>`;
                         $this.append(strHtml);
                     } else if (!obj.linkDetailId && obj.linkUrl) {
                         $this.append(`<a href="${obj.linkUrl}" class="link"><span>${obj.linkTitle ? obj.linkTitle : obj.linkUrl}</span></a>`);
@@ -143,7 +145,7 @@
                     const video = document.createElement("div");
                     $this.append(video);
 
-                    if(obj.videoThumbnailUrl) {
+                    if (obj.videoThumbnailUrl) {
                         $(video).addClass('card-content').customVideo(obj.dataUrl, obj.videoThumbnailUrl);
                     } else {
                         $(video).addClass('card-content').customVideo(obj.dataUrl);
@@ -195,15 +197,15 @@
             const $this = $(this);
             data.forEach(function (obj) {
                 $this.append(`<li><div class="rst-list-cont"><div class="q-txt">${obj.title}</div>`
-                        +(obj.thumbnail ? `<div class="st-img"><img src="${obj.thumbnail}" alt=""></div>` : '')
-                        +`</div><button type="button" class="btn-bl">닥터의 소견</button></li>`);
+                    + (obj.thumbnail ? `<div class="st-img"><img src="${obj.thumbnail}" alt=""></div>` : '')
+                    + `</div><button type="button" class="btn-bl">닥터의 소견</button></li>`);
             });
         });
     };
 
     // autocomplete list
-    $.fn.setAutoCompleteList = function(data) {
-        return $(this).each(function() {
+    $.fn.setAutoCompleteList = function (data) {
+        return $(this).each(function () {
             const $this = $(this);
             data.forEach(function (obj) {
                 $this.append(`<li><a href="${obj.linkUrl}">${obj.hName}</a></li>`);
@@ -212,16 +214,16 @@
     };
 
     // 약관 리스트
-    $.fn.setTermsList = function(data) {
-        return $(this).each(function() {
+    $.fn.setTermsList = function (data) {
+        return $(this).each(function () {
             const $target = $(this).find('.terms-list');
             data.forEach(function (obj) {
-                const txt = typeof obj.content == 'string' ? obj.content.replaceAll('\n','<br>') :'';
+                const txt = typeof obj.content == 'string' ? obj.content.replaceAll('\n', '<br>') : '';
 
                 $target.append(`<li>
                     <div class="term-cont-h">
                         <label class="input-checkbox">
-                            <input type="checkbox" class="${obj.kind==1 ? '' : 'exception'}"><span>${obj.title} ${obj.kind==1 ? '(필수)':'(선택)'}</span>
+                            <input type="checkbox" class="${obj.kind == 1 ? '' : 'exception'}"><span>${obj.title} ${obj.kind == 1 ? '(필수)' : '(선택)'}</span>
                         </label>
                         <button type="button" class="btn-slide-i" aria-expanded="false">열기</button>
                     </div>
@@ -234,8 +236,8 @@
     };
 
     // 약관 리스트
-    $.fn.setFindDiseaseList = function(data) {
-        return $(this).each(function() {
+    $.fn.setFindDiseaseList = function (data) {
+        return $(this).each(function () {
             const $target = $(this);
             data.forEach(function (obj) {
                 $target.append(`<li>
@@ -250,6 +252,73 @@
                     </div>
                     <button type="button" class="btn-bl">질병 정보 확인하기</button>
                 </li>`);
+            });
+        });
+    };
+
+    // 접종 리스트
+    $.fn.setVaccineList = function (data) {
+        return $(this).each(function () {
+            const $target = $(this);
+            let bfNm = "";
+            data.forEach(function (obj) {
+                let htmlText = `<li><div class="front"><a href="#">
+                        <span class="txt">${obj.대상감염병 ? obj.대상감염병 : bfNm} [${obj.접종명}]</span>
+                        <span class="ing-box">`;
+
+                bfNm = obj.대상감염병 ? obj.대상감염병 : bfNm;
+
+                obj.백신종류및방법.forEach(function (v) {
+                    htmlText += Number(v.접종여부) == 1 ? '<span class="on"></span>' : '<span></span>';
+                });
+
+                htmlText += `</span></a></div></li>`;
+
+                $target.append(htmlText);
+            });
+        });
+    };
+
+    // 접종 수첩
+    $.fn.setVaccineNote = function (data) {
+        return $(this).each(function () {
+            const $target = $(this);
+
+            $target.empty();
+
+            $target.append('<div class="swiper-wrapper"></div><div class="swiper-pagination"></div>');
+
+            const $swiperWrapper = $target.find('.swiper-wrapper');
+            const $swiperPagination = $target.find('.swiper-pagination');
+
+            data.forEach(function (obj) {
+                let htmlText = `<div class="swiper-slide"><ul class="list-05">`;
+
+                for (let k in obj) {
+                    htmlText += `<li>
+                        <div class="front txt">${k}</div>
+                        <div class="right-ty txt2">${obj[k]}</div>
+                    </li>`;
+                }
+
+                htmlText += `</ul></div>`;
+
+                $swiperWrapper.append(htmlText);
+            });
+
+            var stepSwiper = new Swiper($target[0], {
+                observer: true,
+                observeParents: true,
+                speed: 500,
+                spaceBetween: 20,
+                loop: true,
+                pagination: {
+                    el: $swiperPagination[0],
+                    clickable: true,
+                    renderBullet: function (index, className) {
+                        return '<span class="' + className + '">' + (index + 1) + '차' + '</span>';
+                    },
+                },
             });
         });
     };

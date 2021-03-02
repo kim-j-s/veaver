@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+    <meta name="x-apple-disable-message-reformatting">
+    <title>예방접종수첩 | Veaver Health mining</title>
+    <link href="../css/reset.css" rel="stylesheet">
+    <link href="../css/pickadate.default.css" rel="stylesheet">
+    <link href="../css/pickadate.default.date.css" rel="stylesheet">
+    <link href="../css/pickadate.default.time.css" rel="stylesheet">
+
+    <link href="../css/c3.css" rel="stylesheet">
+
+    <link href="../css/swiper.css" rel="stylesheet">
+    <link href="../css/common.css" rel="stylesheet">
+    <script type="text/javascript" src="../js/jquery.min.js"></script>
+    <script type="text/javascript" src="../js/jquery.swiper.js"></script>
+    <script type="text/javascript" src="../js/commonui.js"></script>
+    <script type="text/javascript" src="../js/drawui.js"></script>
+    <script type="text/javascript" src="../js/picker.js"></script>
+    <script type="text/javascript" src="../js/picker.date.js"></script>
+
+    <script type="text/javascript" src="../js/d3-5.8.2.min.js"></script>
+    <script type="text/javascript" src="../js/c3.min.js"></script>
+
+    <!--[if lt IE 9]>
+    <script type="text/javascript">
+        document.createElement("header"); 
+        document.createElement("nav"); 
+        document.createElement("section"); 
+        document.createElement("article"); 
+        document.createElement("footer");
+    </script>
+<![endif]-->
+</head>
+
+<body>
+    <div class="wrap">
+        <!-- 헤더영역 -->
+        <header>
+            <div class="header-inner">
+                <h2 class="header-title">예방접종수첩</h2>
+                <div class="h-utils">
+                    <button type="button" class="btn-black-clock">업데이트</button>
+                    <span class="u-profile">
+		    	<span class="u-profile-img">
+		    		<!-- 적용된 썸네일 -->
+		    		<img src="https://m.upinews.kr/data/upi/image/20190523/p1065574177335900_669_thum.jpg" alt="프로픨 사진" class="u-profile-img">
+		    		<!-- 남성 기본 썸네일 -->
+		    		<!-- <img src="../img/acProfile01B.png" alt="프로픨 사진" class="u-profile-img"> -->
+		    		<!-- 여성 기본 썸네일 -->
+		    		<!-- <img src="../img/acProfile02B.png" alt="프로픨 사진" class="u-profile-img"> -->
+		    	</span>
+                    <span class="name">홍길동</span>
+                    </span>
+                </div>
+                <a href="#" class="history-back">뒤로가기</a>
+            </div>
+        </header>
+        <!-- //헤더영역 -->
+
+        <!-- 컨텐츠 영역 -->
+        <section class="flex-none-cont">
+            <div class="tab-box">
+                <div class="tab-menu-wrap swiper-container">
+                    <div class="tab-menu swiper-wrapper">
+                        <div class="swiper-slide">
+                            <a href="#" class="active">접종내역</a>
+                        </div>
+                        <div class="swiper-slide">
+                            <a href="#">일정보기</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 스크롤 영역 -->
+        <section class="scroll-ud">
+            <div class="scroll-ud-inner">
+                <!-- setVaccineList -->
+                <ul class="list-05" id="setVaccineList"></ul>
+            </div>
+        </section>
+        <!-- // 스크롤 영역 -->
+        <!-- //컨텐츠 영역 -->
+    </div>
+</body>
+<script>
+    // http://app.healthmining.co.kr/api/v1/ChildVaccine/Info/001
+    const exData = [{
+            "대상감염병": "B형간염",
+            "접종명": "Hepβ(유전자재조합)",
+            "백신종류및방법": [{
+                    "접종여부": "1",
+                    "접종차수": "1차",
+                    "접종일자": "20100510"
+                },
+                {
+                    "접종여부": "1",
+                    "접종차수": "2차",
+                    "접종일자": "20100610"
+                },
+                {
+                    "접종여부": "1",
+                    "접종차수": "3차",
+                    "접종일자": "20101110"
+                }
+            ]
+        },
+        {
+            "대상감염병": "디프테리아ㆍ파상풍ㆍ백일해",
+            "접종명": "DTaP",
+            "백신종류및방법": [{
+                    "접종여부": "1",
+                    "접종차수": "1차",
+                    "접종일자": "20100709"
+                },
+                {
+                    "접종여부": "1",
+                    "접종차수": "2차",
+                    "접종일자": "20100910"
+                },
+                {
+                    "접종여부": "1",
+                    "접종차수": "3차",
+                    "접종일자": "20101119"
+                },
+                {
+                    "접종여부": "1",
+                    "접종차수": "추4차",
+                    "접종일자": "20111216"
+                },
+                {
+                    "접종여부": "1",
+                    "접종차수": "추5차",
+                    "접종일자": "20160601"
+                }
+            ]
+        },
+        {
+            "대상감염병": null,
+            "접종명": "Tdap",
+            "백신종류및방법": [{
+                "접종여부": "2",
+                "접종차수": "추6차",
+                "접종일자": "20210509~20230508"
+            }]
+        },
+        {
+            "대상감염병": "폴리오",
+            "접종명": "IPV",
+            "백신종류및방법": [{
+                    "접종여부": "1",
+                    "접종차수": "1차",
+                    "접종일자": "20100709"
+                },
+                {
+                    "접종여부": "1",
+                    "접종차수": "2차",
+                    "접종일자": "20100909"
+                },
+                {
+                    "접종여부": "1",
+                    "접종차수": "3차",
+                    "접종일자": "20101110"
+                },
+                {
+                    "접종여부": "1",
+                    "접종차수": "추4차",
+                    "접종일자": "20160601"
+                }
+            ]
+        },
+        {
+            "대상감염병": "b형헤모필루스인플루엔자",
+            "접종명": "Hib",
+            "백신종류및방법": [{
+                    "접종여부": "1",
+                    "접종차수": "1차",
+                    "접종일자": "20100716"
+                },
+                {
+                    "접종여부": "1",
+                    "접종차수": "2차",
+                    "접종일자": "20100916"
+                },
+                {
+                    "접종여부": "1",
+                    "접종차수": "3차",
+                    "접종일자": "20101126"
+                },
+                {
+                    "접종여부": "1",
+                    "접종차수": "추4차",
+                    "접종일자": "20111025"
+                }
+            ]
+        },
+        {
+            "대상감염병": "폐렴구균",
+            "접종명": "PCV",
+            "백신종류및방법": [{
+                    "접종여부": "1",
+                    "접종차수": "1차",
+                    "접종일자": "20100716"
+                },
+                {
+                    "접종여부": "1",
+                    "접종차수": "2차",
+                    "접종일자": "20100916"
+                },
+                {
+                    "접종여부": "1",
+                    "접종차수": "3차",
+                    "접종일자": "20101126"
+                },
+                {
+                    "접종여부": "1",
+                    "접종차수": "추4차",
+                    "접종일자": "20111025"
+                }
+            ]
+        },
+        {
+            "대상감염병": null,
+            "접종명": "PPSV",
+            "백신종류및방법": [{
+                "접종여부": "2",
+                "접종차수": "고위험군에 한하여 접종",
+                "접종일자": "20120509~20230508"
+            }]
+        },
+        {
+            "대상감염병": "홍역ㆍ유행성이하선염ㆍ풍진",
+            "접종명": "MMR",
+            "백신종류및방법": [{
+                    "접종여부": "1",
+                    "접종차수": "1차",
+                    "접종일자": "20110628"
+                },
+                {
+                    "접종여부": "1",
+                    "접종차수": "2차",
+                    "접종일자": "20150413"
+                }
+            ]
+        },
+        {
+            "대상감염병": "수두",
+            "접종명": "VAR",
+            "백신종류및방법": [{
+                "접종여부": "1",
+                "접종차수": "1회",
+                "접종일자": "20110628"
+            }]
+        },
+        {
+            "대상감염병": "A형간염",
+            "접종명": "HepA",
+            "백신종류및방법": [{
+                    "접종여부": "1",
+                    "접종차수": "1차",
+                    "접종일자": "20110719"
+                },
+                {
+                    "접종여부": "1",
+                    "접종차수": "2차 1차접종  6개월 후",
+                    "접종일자": "20120306"
+                }
+            ]
+        },
+        {
+            "대상감염병": "일본뇌염",
+            "접종명": "IJEV(불활성화 백신)",
+            "백신종류및방법": [{
+                    "접종여부": "2",
+                    "접종차수": "1~2차",
+                    "접종일자": "20110509~20120508"
+                },
+                {
+                    "접종여부": "2",
+                    "접종차수": "3차 2차 접종 후 12개월 후",
+                    "접종일자": ""
+                },
+                {
+                    "접종여부": "2",
+                    "접종차수": "추4차",
+                    "접종일자": "20160509"
+                },
+                {
+                    "접종여부": "2",
+                    "접종차수": "추5차",
+                    "접종일자": "20220509"
+                }
+            ]
+        },
+        {
+            "대상감염병": null,
+            "접종명": "LJEV(햄스터 신장세포 유래 약독화 생백신)",
+            "백신종류및방법": [{
+                    "접종여부": "1",
+                    "접종차수": "1차",
+                    "접종일자": "20111004"
+                },
+                {
+                    "접종여부": "1",
+                    "접종차수": "2차 1차 접종 후 12개월 후",
+                    "접종일자": "20121013"
+                }
+            ]
+        },
+        {
+            "대상감염병": "사람유두종바이러스 감염증",
+            "접종명": "HPV",
+            "백신종류및방법": [{
+                "접종여부": "2",
+                "접종차수": "1~2차",
+                "접종일자": "20220509~20230508"
+            }]
+        },
+        {
+            "대상감염병": "인플루엔자",
+            "접종명": "IIV",
+            "백신종류및방법": [{
+                "접종여부": "1",
+                "접종차수": "우선접종권장 대상자",
+                "접종일자": "20201008"
+            }]
+        },
+        {
+            "대상감염병": "결핵",
+            "접종명": "BCG(경피용)",
+            "백신종류및방법": [{
+                "접종여부": "1",
+                "접종차수": "1회",
+                "접종일자": "20100531"
+            }]
+        },
+        {
+            "대상감염병": "로타바이러스 감염증",
+            "접종명": "RV1",
+            "백신종류및방법": [{
+                    "접종여부": "2",
+                    "접종차수": "1차",
+                    "접종일자": "20100709"
+                },
+                {
+                    "접종여부": "2",
+                    "접종차수": "2차",
+                    "접종일자": "20100909"
+                }
+            ]
+        },
+        {
+            "대상감염병": null,
+            "접종명": "RV5",
+            "백신종류및방법": [{
+                    "접종여부": "1",
+                    "접종차수": "1차",
+                    "접종일자": "20100716"
+                },
+                {
+                    "접종여부": "1",
+                    "접종차수": "2차",
+                    "접종일자": "20100916"
+                },
+                {
+                    "접종여부": "1",
+                    "접종차수": "3차",
+                    "접종일자": "20101119"
+                }
+            ]
+        }
+    ];
+
+    $('#setVaccineList').drawUi('setVaccineList', exData);
+</script>
+
+</html>

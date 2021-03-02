@@ -41,9 +41,6 @@ $(function () {
 	// swiper Gallery - 병원목록 - 지도보기
 	hostSwiper();
 
-	// 접종내역 - 상세
-	stepSwiper();
-
 	// 자녀선택
 	choiceSwiper();
 
@@ -292,26 +289,6 @@ function hostSwiper() {
 			speed: 500,
 			spaceBetween: 20,
 			loop: true,
-		});
-	}
-}
-
-// 접종내역 - 상세
-function stepSwiper() {
-	if ($('.step-swiper').find('.swiper-slide').length > 1) {
-		var stepSwiper = new Swiper('.step-swiper', {
-			observer: true,
-			observeParents: true,
-			speed: 500,
-			spaceBetween: 20,
-			loop: true,
-			pagination: {
-				el: '.swiper-pagination',
-				clickable: true,
-				renderBullet: function (index, className) {
-					return '<span class="' + className + '">' + (index + 1) + '차' + '</span>';
-				},
-			},
 		});
 	}
 }
