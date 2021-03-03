@@ -249,9 +249,11 @@
 
     // 맵 보여지는 영역 변경 이벤트 (확대, 축소, 이동시 발생)
     var boundChangeTimer = null;
-    map.boundChange = function (ins) {
+    map.boundChange = function (mapIns) {
         console.log('지도 영역 변경');
-        console.log(ins.radius); // 반경
+        console.log(mapIns.radius); // 반경
+        console.log(mapIns.centerLat); // 중심 위도
+        console.log(mapIns.centerLng); // 중심 경도
 
         clearInterval(boundChangeTimer);
 
