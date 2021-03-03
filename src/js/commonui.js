@@ -143,8 +143,8 @@ function ScrollAreaChk() {
 		}
 	}
 
-	console.log(sudHeight);
-	console.log(sudInHiehgt);
+	//console.log(sudHeight);
+	//console.log(sudInHiehgt);
 }
 
 $(window).on('resize', function () {
