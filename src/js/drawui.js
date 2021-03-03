@@ -18,6 +18,8 @@
             else if (code == 'setFindDiseaseList') $this.setFindDiseaseList(data);
             else if (code == 'setVaccineList') $this.setVaccineList(data);
             else if (code == 'setVaccineNote') $this.setVaccineNote(data);
+            else if (code == 'setHospList') $this.setHospList(data);
+            else if (code == 'setPharmList') $this.setPharmList(data);
         });
 
     };
@@ -319,6 +321,70 @@
                         return '<span class="' + className + '">' + (index + 1) + '차' + '</span>';
                     },
                 },
+            });
+        });
+    };
+
+    // 병원 리스트
+    $.fn.setHospList = function (data) {
+        return $(this).each(function () {
+            const $target = $(this);
+
+            data.forEach(function (obj) {
+                $target.append(`
+                    <li>
+                        <div class="txt-cont04">
+                            <div class="t-case">
+                                <span>전문병원</span>
+                                <span>진료중</span>
+                                <span>응급실</span>
+                            </div>
+                            <div class="q-txt">${obj.yadmNm}</div>
+                            <div class="d-info">
+                                <span>327km</span>
+                                <span>${obj.addr}</span>
+                            </div>
+                            <div class="sort-txt">전문의</div>
+                        </div>
+                        <div class="more-cont">
+                            <div class="inner">
+                                <a href="tel:${obj.telno}">전화걸기</a>
+                                <a href="#">길찾기</a>
+                                <a href="#">더보기</a>
+                            </div>
+                        </div>
+                    </li>
+                `);
+            });
+        });
+    };
+
+    // 약국 리스트
+    $.fn.setPharmList = function (data) {
+        return $(this).each(function () {
+            const $target = $(this);
+
+            data.forEach(function (obj) {
+                $target.append(`
+                    <li>
+                        <div class="txt-cont04">
+                            <div class="t-case">
+                                <span>영업중</span>
+                            </div>
+                            <div class="q-txt">${obj.dutyName}</div>
+                            <div class="d-info">
+                                <span>327km</span>
+                                <span>${obj.dutyAddr}</span>
+                            </div>
+                        </div>
+                        <div class="more-cont">
+                            <div class="inner">
+                                <a href="tel:${obj.dutyTel1}">전화걸기</a>
+                                <a href="#">길찾기</a>
+                            </div>
+                        </div>
+                    </li>
+                `);
             });
         });
     };
