@@ -113,14 +113,63 @@
                 bottom: 0;
                 z-index: 1;
                 width: calc(100% - 44px);
+                max-height: 146px;
                 padding: 22px;
                 background: #fff;
-                overflow: auto;
+                display: flex;
+                flex-direction: column;
+                border-radius: 10px 10px 0 0;
+                box-shadow: 0px 0px 6px 0px rgba(179, 187, 199, 0.3);
                 transition: .5s;
             }
 
             .bottom-list-cont.on {
+                height: auto;
                 max-height: 50%;
+            }
+
+            .bottom-list-cont:before {
+                /*.bottom-list-cont.on:before{*/
+                content: '';
+                position: absolute;
+                top: -30px;
+                left: 50%;
+                width: 60px;
+                height: 30px;
+                padding: 6px 6px 0 6px;
+                transform: translateX(-50%);
+                background: #fff;
+                /*border-radius: 50%;*/
+                border-radius: 90px 90px 0 0;
+                box-shadow: 0px 0px 6px 0px rgba(179, 187, 199, 0.3);
+                box-sizing: border-box;
+                overflow: hidden;
+            }
+
+            .bottom-list-cont:after {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 50%;
+                width: 50%;
+                height: 10px;
+                background: #fff;
+                transform: translateX(-50%);
+            }
+
+            .bottom-list-cont .inner {
+                flex: 1 1 100%;
+                /*overflow: auto;*/
+            }
+
+            .bottom-list-cont.on .inner {
+                overflow: auto;
+            }
+
+            .bottom-list-cont .list-06 {
+                position: relative;
+                z-index: 2;
+                background: #fff;
             }
 
             .bottom-list-cont .list-06>li:last-child {
@@ -134,59 +183,101 @@
             }
 
             .list-06>li+li {
-                padding-top: 11px;
+                padding-top: 10px;
                 border-top: 1px solid #ebeff3;
             }
 
             .list-06>li>button {
                 display: block;
+                width: 100%;
                 font-weight: 600;
                 line-height: 20px;
                 text-align: left;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+            }
+
+            .bottom-list-cont .btn-ro-arrow {
+                position: absolute;
+                top: -20px;
+                left: 50%;
+                margin-left: -10px;
+            }
+
+            .btn-ro-arrow {
+                display: inline-block;
+                width: 20px;
+                height: 20px;
+                transition: .5s;
+                overflow: hidden;
+                text-indent: -9999px;
+                background: #fff url(../img/close-20-blue.png) no-repeat center center / 100% auto;
+            }
+
+            .btn-ro-arrow.on {
+                background: #fff url(../img/btn-arrow-black-20-open.png) no-repeat center center / 100% auto;
+                transform: rotate(360deg);
             }
         </style>
 
-        <div class="bottom-list-cont on">
-            <ul class="list-06">
-                <li>
-                    <button type="button">한국의학연구소 케이엠아이여의도의원 한국의학연구소 케이엠아이여의도의원</button>
-                </li>
-                <li>
-                    <button type="button">한국의학연구소 케이엠아이여의도의원</button>
-                </li>
-                <li>
-                    <button type="button">한국의학연구소 케이엠아이여의도의원</button>
-                </li>
-                <li>
-                    <button type="button">한국의학연구소 케이엠아이여의도의원</button>
-                </li>
-                <li>
-                    <button type="button">한국의학연구소 케이엠아이여의도의원</button>
-                </li>
-                <li>
-                    <button type="button">한국의학연구소 케이엠아이여의도의원</button>
-                </li>
-                <li>
-                    <button type="button">한국의학연구소 케이엠아이여의도의원 한국의학연구소 케이엠아이여의도의원</button>
-                </li>
-                <li>
-                    <button type="button">한국의학연구소 케이엠아이여의도의원</button>
-                </li>
-                <li>
-                    <button type="button">한국의학연구소 케이엠아이여의도의원</button>
-                </li>
-                <li>
-                    <button type="button">한국의학연구소 케이엠아이여의도의원</button>
-                </li>
-                <li>
-                    <button type="button">한국의학연구소 케이엠아이여의도의원</button>
-                </li>
-                <li>
-                    <button type="button">한국의학연구소 케이엠아이여의도의원</button>
-                </li>
-            </ul>
+
+        <script>
+            $(function() {
+                $('.btn-ro-arrow').on('click', function() {
+                    $(this).toggleClass('on');
+                    $('.bottom-list-cont').toggleClass('on');
+                })
+            });
+        </script>
+
+        <div class="bottom-list-cont">
+            <div class="inner">
+                <ul class="list-06">
+                    <li>
+                        <button type="button">한국의학연구소 케이엠아이여의도의원 한국의학연구소 케이엠아이여의도의원</button>
+                    </li>
+                    <li>
+                        <button type="button">한국의학연구소 케이엠아이여의도의원</button>
+                    </li>
+                    <li>
+                        <button type="button">한국의학연구소 케이엠아이여의도의원</button>
+                    </li>
+                    <li>
+                        <button type="button">한국의학연구소 케이엠아이여의도의원</button>
+                    </li>
+                    <li>
+                        <button type="button">한국의학연구소 케이엠아이여의도의원</button>
+                    </li>
+                    <li>
+                        <button type="button">한국의학연구소 케이엠아이여의도의원</button>
+                    </li>
+                    <li>
+                        <button type="button">한국의학연구소 케이엠아이여의도의원 한국의학연구소 케이엠아이여의도의원</button>
+                    </li>
+                    <li>
+                        <button type="button">한국의학연구소 케이엠아이여의도의원</button>
+                    </li>
+                    <li>
+                        <button type="button">한국의학연구소 케이엠아이여의도의원</button>
+                    </li>
+                    <li>
+                        <button type="button">한국의학연구소 케이엠아이여의도의원</button>
+                    </li>
+                    <li>
+                        <button type="button">한국의학연구소 케이엠아이여의도의원</button>
+                    </li>
+                    <li>
+                        <button type="button">한국의학연구소 케이엠아이여의도의원</button>
+                    </li>
+                </ul>
+            </div>
+            <button type="button" class="btn-ro-arrow">더보기</button>
         </div>
     </div>
+
+
+
 
 </body>
 
