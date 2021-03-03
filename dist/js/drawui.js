@@ -318,7 +318,7 @@
                     el: $swiperPagination[0],
                     clickable: true,
                     renderBullet: function (index, className) {
-                        return '<span class="' + className + '">' + (index + 1) + '차' + '</span>';
+                        return '<span class="' + className + '">' + data[index].접종차수 + '</span>';
                     },
                 },
             });
