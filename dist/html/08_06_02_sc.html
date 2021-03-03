@@ -600,9 +600,19 @@
     map.delHospDataYkiho('JDQ4MTg4MSM1MSMkMSMkMCMkOTkkMzgxMzUxIzMxIyQxIyQ3IyQ2MiQzNjE0ODEjNjEjJDEjJDgjJDgz');
 
     // 맵 보여지는 영역 변경 이벤트 (확대, 축소, 이동시 발생)
-    map.boundChange = function(ins) {
-        console.log(map.radius); // 반경
+    var boundChangeTimer = null;
+    map.boundChange = function(mapIns) {
         console.log('지도 영역 변경');
+        console.log(mapIns.radius); // 반경
+        console.log(mapIns.centerLat); // 중심 위도
+        console.log(mapIns.centerLng); // 중심 경도
+
+        clearInterval(boundChangeTimer);
+
+        boundChangeTimer = setTimeout(function() {
+            // 확대 축소 이동 후 0.2초 후 실행
+            console.log('test');
+        }, 200);
     };
 
     // 위도 경도로 센터 위치 설정

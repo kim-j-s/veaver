@@ -66,9 +66,10 @@
 		});
 
 		kakao.maps.event.addListener(map, 'bounds_changed', function () {
-			console.log('bounds changed!');
-			// console.log(map.getCenter());
 			map.radius = getDistanceFromLatLonInKm([map.getCenter(), map.getBounds().getSouthWest()]);
+			var center = map.getCenter();
+			map.centerLat = center.getLat(); // 위도
+			map.centerLng = center.getLng(); // 경도
 
 			if (map.boundChange) {
 				map.boundChange(map);
