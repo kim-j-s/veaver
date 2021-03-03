@@ -188,6 +188,19 @@
 			map.setCenter(pos);
 		};
 
+		map.setCenterLatLon = function (lat, lon) {
+			var pos = new kakao.maps.LatLng(lat, lon);
+			map.setCenter(pos);
+		};
+
+		map.clearAll = function () {
+			clusterer.clear();
+		};
+
+		map.clearInfoPop = function () {
+			$popArea.find('.map-marker-info').remove();
+		};
+
 		return map;
 	};
 }(jQuery));

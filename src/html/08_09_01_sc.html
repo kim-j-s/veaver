@@ -1,83 +1,51 @@
 @@include('head.html',{
-"title":"병원목록 | "
+"title":"약국목록 | "
 })
 
 <body>
-    <div class="layer-full-wrap">
+    <div class="layer-full-wrap fl-btn-add">
         <!-- 헤더영역 -->
-        @@include('header07.html')
+        @@include('header05.html')
         <!-- //헤더영역 -->
 
         <!-- 컨텐츠 영역 -->
-        <section class="layer-content pb0">
-            <div class="scroll-list-wrap">
-                <div class="tab-box">
-                    <div class="tab-menu-wrap swiper-container">
-                        <div class="tab-menu swiper-wrapper">
-                            <div class="swiper-slide">
-                                <a href="#">병원</a>
-                            </div>
-                            <div class="swiper-slide">
-                                <a href="#" class="active">약국</a>
-                            </div>
+        <section class="flex-none-cont">
+            <div class="tab-box">
+                <div class="tab-menu-wrap swiper-container">
+                    <div class="tab-menu swiper-wrapper">
+                        <div class="swiper-slide">
+                            <a href="#">병원</a>
+                        </div>
+                        <div class="swiper-slide">
+                            <a href="#" class="active">약국</a>
                         </div>
                     </div>
                 </div>
+            </div>
 
-                <div class="mt20">
-                    <label class="checkbox-rnd-gr big"><input type="checkbox" checked><span>영업중</span></label>
-                </div>
-
-                <!-- 지도영역 -->
-                <div class="map-area" style="background: rgba(0,0,0,0.3);">
-                    <div class="map-area-inner" id="map"></div>
-                    <button type="button" class="btn-view-list">목록보기</button>
-                </div>
-                <!-- // 지도영역 -->
+            <div class="mt20">
+                <label class="checkbox-rnd-gr big"><input type="checkbox"><span>영업중</span></label>
             </div>
         </section>
-        <!-- //컨텐츠 영역 -->
-    </div>
 
-    <!-- 하단 팝업 목록 -->
-    <div class="bottom-pop-wrap">
-        <!-- 병원 스위퍼 -->
-        <div class="hos-swiper swiper-container">
-            <div class="swiper-wrapper">
-                <div class="swiper-slide">
-                    <div class="txt-cont04">
-                        <div class="t-case">
-                            <span>영업중</span>
-                        </div>
-                        <div class="q-txt">약국명</div>
-                        <div class="d-info">
-                            <span>327km</span>
-                            <span>서울특별시 영등포구 국제금융로2길 24</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="swiper-slide">
-                    <div class="txt-cont04">
-                        <div class="t-case">
-                            <span>영업종료</span>
-                        </div>
-                        <div class="q-txt">약국명</div>
-                        <div class="d-info">
-                            <span>327km</span>
-                            <span>서울특별시 영등포구 국제금융로2길 24</span>
-                        </div>
-                    </div>
+        <!-- 스크롤 영역 -->
+        <section class="scroll-ud">
+            <div class="scroll-ud-inner">
+                <div class="rst-list-wrap">
+                    <ul id="setPharmList" class="rst-list"></ul>
                 </div>
             </div>
+        </section>
+        <!-- // 스크롤 영역 -->
+
+        <div class="floating-btns">
+            <ul class="fb-list">
+                <li><button type="button" class="btn-fl-location">지도로 보기</button></li>
+            </ul>
         </div>
-        <!-- 병원 스위퍼 -->
-        <button type="button" class="btn-po-change">내 위치로 이동</button>
+        <!-- //컨텐츠 영역 -->
     </div>
-    <!-- // 하단 팝업 목록 -->
 </body>
-<!-- 지도 스크립트 -->
-<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=fd3872d29334db88f3bf802e6c8c0ca1&libraries=clusterer"></script>
-<script type="text/javascript" src="../js/customMap.js"></script>
 <script>
     // http://apis.data.go.kr/B552657/ErmctInsttInfoInqireService/getParmacyLcinfoInqire?WGS84_LON=127.09&WGS84_LAT=37.61&serviceKey=P01OhcLwKzqmx%2FLtmwb04SZMcTx91ZPsMK62aUBctGOx%2F9pzupN0eZxTKCWYyLiT6Asi8hxEAu9O%2FDf16aeaPg%3D%3D
     var exData = [
@@ -235,32 +203,7 @@
         }
     ];
 
-    // 지도 초기화
-    const map = $('#map').initMap();
-
-    // 현재위치
-    map.currentLocation();
-
-    // 지도에 약국 데이터 추가 exData : exData 형태
-    map.setPharmData(exData);
-
-    // 지도에 약국 데이터 삭제 (hpid)
-    map.delPharmDataHpid('C1108544');
-
-    // 맵 보여지는 영역 변경 이벤트 (확대, 축소, 이동시 발생)
-    map.boundChange = function (ins) {
-        console.log(map.radius); // 반경
-        console.log('지도 영역 변경');
-    };
-
-    // 위도 경도로 센터 위치 설정
-    // map.setCenterLatLon(33.450701, 126.570667);
-
-    // 팝업 닫기
-    // map.clearInfoPop();
-
-    // 마커 전부 삭제
-    // map.clearAll();
+    $('#setPharmList').drawUi('setPharmList', exData);
 </script>
 
 </html>

@@ -1,68 +1,15 @@
-<!DOCTYPE html>
-<html lang="ko">
-
-<head>
-    <meta charset="utf-8">
-    <meta content="IE=edge" http-equiv="X-UA-Compatible">
-    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
-    <meta name="x-apple-disable-message-reformatting">
-    <title>병원목록 | Veaver Health mining</title>
-    <link href="../css/reset.css" rel="stylesheet">
-    <link href="../css/pickadate.default.css" rel="stylesheet">
-    <link href="../css/pickadate.default.date.css" rel="stylesheet">
-    <link href="../css/pickadate.default.time.css" rel="stylesheet">
-
-    <link href="../css/c3.css" rel="stylesheet">
-
-    <link href="../css/swiper.css" rel="stylesheet">
-    <link href="../css/common.css" rel="stylesheet">
-    <script type="text/javascript" src="../js/jquery.min.js"></script>
-    <script type="text/javascript" src="../js/jquery.swiper.js"></script>
-    <script type="text/javascript" src="../js/commonui.js"></script>
-    <script type="text/javascript" src="../js/drawui.js"></script>
-    <script type="text/javascript" src="../js/picker.js"></script>
-    <script type="text/javascript" src="../js/picker.date.js"></script>
-
-    <script type="text/javascript" src="../js/d3-5.8.2.min.js"></script>
-    <script type="text/javascript" src="../js/c3.min.js"></script>
-
-    <!--[if lt IE 9]>
-    <script type="text/javascript">
-        document.createElement("header"); 
-        document.createElement("nav"); 
-        document.createElement("section"); 
-        document.createElement("article"); 
-        document.createElement("footer");
-    </script>
-<![endif]-->
-</head>
+@@include('head.html',{
+"title":"병원목록 | "
+})
 
 <body>
-    <div class="layer-full-wrap">
+    <div class="layer-full-wrap ">
         <!-- 헤더영역 -->
-        <header>
-            <div class="header-inner">
-                <div class="h-utils">
-                    <button type="button" class="btn-black-clock">방문기록 보기</button>
-                    <span class="u-profile">
-		    	<span class="u-profile-img">
-		    		<!-- 적용된 썸네일 -->
-		    		<img src="https://m.upinews.kr/data/upi/image/20190523/p1065574177335900_669_thum.jpg" alt="프로픨 사진" class="u-profile-img">
-		    		<!-- 남성 기본 썸네일 -->
-		    		<!-- <img src="../img/acProfile01B.png" alt="프로픨 사진" class="u-profile-img"> -->
-		    		<!-- 여성 기본 썸네일 -->
-		    		<!-- <img src="../img/acProfile02B.png" alt="프로픨 사진" class="u-profile-img"> -->
-		    	</span>
-                    <span class="name">홍길동</span>
-                    </span>
-                </div>
-                <button type="buton" class="layer-close-btn">닫기</button>
-            </div>
-        </header>
+        @@include('header05.html')
         <!-- //헤더영역 -->
 
         <!-- 컨텐츠 영역 -->
-        <section class="layer-content pb0">
+        <section class="layer-content">
             <div class="scroll-list-wrap">
                 <div class="tab-box">
                     <div class="tab-menu-wrap swiper-container">
@@ -94,45 +41,26 @@
                     </div>
                 </div>
 
-                <!-- 지도영역 -->
-                <div class="map-area" style="background: rgba(0,0,0,0.3);">
-                    <div class="map-area-inner" id="map">
+                <div class="scroll-ud">
+                    <div class="scroll-ud-inner">
+                        <ul id="setHospList" class="rst-list"></ul>
                     </div>
-                    <button type="button" class="btn-view-list">목록보기</button>
                 </div>
-                <!-- // 지도영역 -->
+            </div>
+
+            <div class="floating-btns">
+                <ul class="fb-list">
+                    <li><button type="button" class="btn-fl-location">지도로 보기</button></li>
+                </ul>
             </div>
         </section>
         <!-- //컨텐츠 영역 -->
     </div>
-
-    <!-- 하단 팝업 목록 -->
-    <!-- <div class="bottom-pop-wrap">
-        <div class="txt-cont04">
-            <div class="t-case">
-                <span>전문병원</span>
-                <span>진료중</span>
-                <span>응급실</span>
-            </div>
-            <div class="q-txt">한국의학연구소 케이엠아이여의도의원</div>
-            <div class="d-info">
-                <span>327km</span>
-                <span>서울특별시 영등포구 국제금융로2길 24</span>
-            </div>
-            <div class="sort-txt">전문의</div>
-        </div>
-        <button type="button" class="btn-po-change">내 위치로 이동</button>
-    </div> -->
-    <!-- // 하단 팝업 목록 -->
-
 </body>
-
-<!-- 지도 스크립트 -->
-<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=fd3872d29334db88f3bf802e6c8c0ca1&libraries=clusterer"></script>
-<script type="text/javascript" src="../js/customMap.js"></script>
 <script>
     // http://apis.data.go.kr/B551182/hospInfoService/getHospBasisList?sidoCd=110000&sgguCd=110019&emdongNm=신내동&yadmNm=서울의료원&zipCd=2010&clCd=11&xPos=127.09854004628151&yPos=37.6132113197367&radius=3000&ServiceKey=P01OhcLwKzqmx%2FLtmwb04SZMcTx91ZPsMK62aUBctGOx%2F9pzupN0eZxTKCWYyLiT6Asi8hxEAu9O%2FDf16aeaPg%3D%3D
-    var exData = [{
+    var exData = [
+        {
             "addr": "서울특별시 중랑구 사가정로49길 53 (면목동)",
             "clCd": "11",
             "clCdNm": "종합병원",
@@ -587,32 +515,6 @@
         }
     ];
 
-    // 지도 초기화
-    const map = $('#map').initMap();
-
-    // 현재위치
-    map.currentLocation();
-
-    // 지도에 병원 데이터 추가 exData : exData 형태
-    map.setHospData(exData);
-
-    // 지도에 병원 데이터 삭제 (ykiho)
-    map.delHospDataYkiho('JDQ4MTg4MSM1MSMkMSMkMCMkOTkkMzgxMzUxIzMxIyQxIyQ3IyQ2MiQzNjE0ODEjNjEjJDEjJDgjJDgz');
-
-    // 맵 보여지는 영역 변경 이벤트 (확대, 축소, 이동시 발생)
-    map.boundChange = function(ins) {
-        console.log(map.radius); // 반경
-        console.log('지도 영역 변경');
-    };
-
-    // 위도 경도로 센터 위치 설정
-    // map.setCenterLatLon(33.450701, 126.570667);
-
-    // 팝업 닫기
-    // map.clearInfoPop();
-
-    // 마커 전부 삭제
-    // map.clearAll();
+    $('#setHospList').drawUi('setHospList', exData);
 </script>
-
 </html>

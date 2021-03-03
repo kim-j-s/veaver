@@ -1,8 +1,9 @@
 @@include('head.html',{
-	"title":"접종내역 상세 | "
+"title":"접종내역 상세 | "
 })
+
 <body>
-	<div class="wrap">
+    <div class="wrap">
         <!-- 헤더영역 -->
         @@include('header06.html')
         <!-- //헤더영역 -->
@@ -24,7 +25,7 @@
                 </div>
             </div>
             <div class="bottom-pop-cont etc">
-                <div class="step-swiper swiper-container">
+                <div id="setVaccineNote" class="step-swiper swiper-container">
                     <div class="swiper-wrapper">
                         <div class="swiper-slide">
                             <ul class="list-05">
@@ -215,19 +216,53 @@
     <!-- // 하단 팝업 -->
 </body>
 
-<!-- 팝업 구동 샘플 -->
 <script>
-$(function(){
-    $('.layer-content').click(function(){
+    // 팝업
+    $('.layer-content').click(function () {
         // 열기
         $('.bottom-pop').openPop();
     });
 
-    $('.layer-close-btn').click(function(){
+    $('.layer-close-btn').click(function () {
         // 닫기
         $('.bottom-pop').closePop();
     });
-})
+
+    // http://app.healthmining.co.kr/api/v1/ChildVaccine/Info/001
+    const exData = {
+        "대상감염병": "로타바이러스 감염증",
+        "백신종류및방법": [
+            {
+                "접종명": "RV5",
+                "접종차수": "1차",
+                "접종일자": "20100716",
+                "접종기관": "차의과학대학교 강남차병원",
+                "백신명": "",
+                "제조사": "",
+                "로트번호": ""
+            },
+            {
+                "접종명": "RV5",
+                "접종차수": "2차",
+                "접종일자": "20100916",
+                "접종기관": "차의과학대학교 강남차병원",
+                "백신명": "",
+                "제조사": "",
+                "로트번호": ""
+            },
+            {
+                "접종명": "RV5",
+                "접종차수": "3차",
+                "접종일자": "20101119",
+                "접종기관": "차의과학대학교 강남차병원",
+                "백신명": "",
+                "제조사": "",
+                "로트번호": ""
+            }
+        ]
+    };
+
+    $('#setVaccineNote').drawUi('setVaccineNote', exData.백신종류및방법);
 </script>
-<!--// 팝업 구동 샘플 -->
+
 </html>

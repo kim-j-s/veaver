@@ -1,0 +1,75 @@
+@@include('head.html',{
+	"title":"진료과목 선택 | "
+})
+<body>
+	<div class="wrap">
+        <!-- 헤더영역 -->
+        @@include('header06.html')
+        <!-- //헤더영역 -->
+
+        <!-- 컨텐츠 영역 -->
+        <section class="layer-content etc">
+            <div class="full-size-area">
+                <div class="sort-area">
+                    <button type="button" class="btn-setting-b">진료과목 설정</button>
+                    <div class="rnd-group">
+                        <div class="scroll-x"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- //컨텐츠 영역 -->
+    </div>
+
+    <!-- 하단 팝업 -->
+    <div class="bottom-pop opened">
+        <div class="bottom-pop-container">
+            <div class="bottom-pop-head">
+                <div class="bph-innner">
+                    <h2 class="header-title">진료과목을 선택해 주세요</h2>
+                    <button type="buton" class="layer-close-btn">닫기</button>
+                </div>
+            </div>
+            <div class="bottom-pop-cont">
+                <div class="toggle-group">
+                    <label class="checkbox-rnd-gr"><input type="checkbox"><span>전체</span></label>
+                    <label class="checkbox-rnd-gr"><input type="checkbox"><span>이비인후과</span></label>
+                    <label class="checkbox-rnd-gr"><input type="checkbox"><span>내과</span></label>
+                    <label class="checkbox-rnd-gr"><input type="checkbox"><span>흉부외과</span></label>
+                    <label class="checkbox-rnd-gr"><input type="checkbox"><span>소아과</span></label>
+                    <label class="checkbox-rnd-gr"><input type="checkbox"><span>이비인후과</span></label>
+                    <label class="checkbox-rnd-gr"><input type="checkbox"><span>내과</span></label>
+                    <label class="checkbox-rnd-gr"><input type="checkbox"><span>이비인후과</span></label>
+                    <label class="checkbox-rnd-gr"><input type="checkbox"><span>내과</span></label>
+                    <label class="checkbox-rnd-gr"><input type="checkbox"><span>흉부외과</span></label>
+                    <label class="checkbox-rnd-gr"><input type="checkbox"><span>소아과</span></label>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- // 하단 팝업 -->
+</body>
+
+<!-- 팝업 구동 샘플 -->
+<script>
+    $('.btn-setting-b').click(function () {
+        $('.bottom-pop').openPop();
+    });
+    $('.layer-close-btn').click(function () {
+        $('.bottom-pop').closePop();
+    });
+
+    // 진료과목 선택
+    var $target = $('.rnd-group .scroll-x');
+
+    $('.toggle-group input').on('input', function(){
+        if(this.checked) {
+            this.cloneEl = this.parentElement.cloneNode(true);
+            $target.append(this.cloneEl);
+        } else {
+            if(this.cloneEl) this.cloneEl.remove();
+        }
+    });
+</script>
+<!--// 팝업 구동 샘플 -->
+</html>
