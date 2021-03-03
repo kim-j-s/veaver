@@ -170,18 +170,8 @@
             <button type="buton" class="close-btn-right share">닫기</button>
         </div>
         <div class="targets">
-            <a class="button">
-                <svg>
-                    <use href="#facebook"></use>
-                </svg>
-                <span>Facebook</span>
-            </a>
-            <a class="button">
-                <svg>
-                    <use href="#kakao"></use>
-                </svg>
-                <span>Kakao</span>
-            </a>
+            <a href='http://www.facebook.com/sharer.php?u=' + encodeURIComponent(https://kim-j-s.github.io/veaver/dist/html/07_01.html)>Facebook</a>
+            <a href="">Kakao</a>
         </div>
     </div>
 
@@ -198,7 +188,7 @@
     </svg>
 
 
-
+<script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
 <script>
 const shareButton = document.querySelector('.btn-share');
 const shareDialog = document.querySelector('.share-dialog');
@@ -211,6 +201,10 @@ shareButton.addEventListener('click', event => {
 closeButton.addEventListener('click', event => {
   shareDialog.classList.remove('is-open');
 });
+
+
+Kakao.init('fd3872d29334db88f3bf802e6c8c0ca1');
+console.log(Kakao.isInitialized());
 
 </script>
 
