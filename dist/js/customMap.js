@@ -188,6 +188,11 @@
 			map.setCenter(pos);
 		};
 
+		map.setCenterLatLon = function (lat, lon) {
+			var pos = new kakao.maps.LatLng(lat, lon);
+			map.setCenter(pos);
+		};
+
 		return map;
 	};
 }(jQuery));
