@@ -3427,6 +3427,28 @@
 			display: block;
 			width: 100%;
 		}
+
+
+		.list-06{
+
+		}
+		.list-06 > li{
+		    padding-bottom: 10px;
+		}
+		.list-06 > li + li{
+		    padding-top: 10px;
+		    border-top: 1px solid #ebeff3;
+		}
+		.list-06 > li > button{
+		    display: block;
+		    width: 100%;
+		    font-weight: 600;
+		    line-height: 20px;
+		    text-align: left;
+		    overflow:hidden;
+		    text-overflow:ellipsis;
+		    white-space:nowrap;
+		}
 		
 
 
