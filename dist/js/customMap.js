@@ -193,6 +193,14 @@
 			map.setCenter(pos);
 		};
 
+		map.clearAll = function () {
+			clusterer.clear();
+		};
+
+		map.clearInfoPop = function () {
+			$popArea.find('.map-marker-info').remove();
+		};
+
 		return map;
 	};
 }(jQuery));
