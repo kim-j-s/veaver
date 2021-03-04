@@ -1,63 +1,10 @@
-<!DOCTYPE html>
-<html lang="ko">
-
-<head>
-    <meta charset="utf-8">
-    <meta content="IE=edge" http-equiv="X-UA-Compatible">
-    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
-    <meta name="x-apple-disable-message-reformatting">
-    <title>customVideo | Veaver Health mining</title>
-    <link href="../css/reset.css" rel="stylesheet">
-    <link href="../css/pickadate.default.css" rel="stylesheet">
-    <link href="../css/pickadate.default.date.css" rel="stylesheet">
-    <link href="../css/pickadate.default.time.css" rel="stylesheet">
-
-    <link href="../css/c3.css" rel="stylesheet">
-
-    <link href="../css/swiper.css" rel="stylesheet">
-    <link href="../css/common.css" rel="stylesheet">
-    <script type="text/javascript" src="../js/jquery.min.js"></script>
-    <script type="text/javascript" src="../js/jquery.swiper.js"></script>
-    <script type="text/javascript" src="../js/commonui.js"></script>
-    <script type="text/javascript" src="../js/drawui.js"></script>
-    <script type="text/javascript" src="../js/picker.js"></script>
-    <script type="text/javascript" src="../js/picker.date.js"></script>
-
-    <script type="text/javascript" src="../js/d3-5.8.2.min.js"></script>
-    <script type="text/javascript" src="../js/c3.min.js"></script>
-
-    <!--[if lt IE 9]>
-    <script type="text/javascript">
-        document.createElement("header"); 
-        document.createElement("nav"); 
-        document.createElement("section"); 
-        document.createElement("article"); 
-        document.createElement("footer");
-    </script>
-<![endif]-->
-</head>
-
+@@include('head.html',{
+	"title":"customVideo | "
+})
 <body>
-    <div class="wrap">
+	<div class="wrap">
         <!-- 헤더영역 -->
-        <header>
-            <div class="header-inner">
-                <div class="h-utils">
-                    <span class="u-profile">
-		    	<span class="u-profile-img">
-		    		<!-- 적용된 썸네일 -->
-		    		<img src="https://m.upinews.kr/data/upi/image/20190523/p1065574177335900_669_thum.jpg" alt="프로픨 사진" class="u-profile-img">
-		    		<!-- 남성 기본 썸네일 -->
-		    		<!-- <img src="../img/acProfile01B.png" alt="프로픨 사진" class="u-profile-img"> -->
-		    		<!-- 여성 기본 썸네일 -->
-		    		<!-- <img src="../img/acProfile02B.png" alt="프로픨 사진" class="u-profile-img"> -->
-		    	</span>
-                    <span class="name">홍길동</span>
-                    </span>
-                </div>
-                <a href="#" class="history-back">뒤로가기</a>
-            </div>
-        </header>
+        @@include('header06.html')
         <!-- //헤더영역 -->
 
         <!-- 컨텐츠 영역 -->
@@ -84,5 +31,4 @@
 
     // $(비디오를 담을 비어있는 태그 셀렉터).customVideo(비디오 url, 썸네일 url);
 </script>
-
 </html>
