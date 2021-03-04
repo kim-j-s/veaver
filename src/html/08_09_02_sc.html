@@ -76,7 +76,8 @@
     <!-- // 하단 팝업 목록 -->
 </body>
 <!-- 지도 스크립트 -->
-<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=fd3872d29334db88f3bf802e6c8c0ca1&libraries=clusterer"></script>
+<script type="text/javascript"
+    src="//dapi.kakao.com/v2/maps/sdk.js?appkey=fd3872d29334db88f3bf802e6c8c0ca1&libraries=clusterer"></script>
 <script type="text/javascript" src="../js/customMap.js"></script>
 <script>
     // http://apis.data.go.kr/B552657/ErmctInsttInfoInqireService/getParmacyLcinfoInqire?WGS84_LON=127.09&WGS84_LAT=37.61&serviceKey=P01OhcLwKzqmx%2FLtmwb04SZMcTx91ZPsMK62aUBctGOx%2F9pzupN0eZxTKCWYyLiT6Asi8hxEAu9O%2FDf16aeaPg%3D%3D
@@ -248,20 +249,13 @@
     map.delPharmDataHpid('C1108544');
 
     // 맵 보여지는 영역 변경 이벤트 (확대, 축소, 이동시 발생)
-    var boundChangeTimer = null;
-    map.boundChange = function (mapIns) {
+    map.boundChangeEnd = function (mapIns) {
         console.log('지도 영역 변경');
-        console.log(mapIns.radius); // 반경
-        console.log(mapIns.centerLat); // 중심 위도
-        console.log(mapIns.centerLng); // 중심 경도
-
-        clearInterval(boundChangeTimer);
-
-        boundChangeTimer = setTimeout(function(){
-            // 확대 축소 이동 후 0.2초 후 실행
-            console.log('test');
-        },200);
+        // console.log(mapIns.radius); // 반경
+        // console.log(mapIns.centerLat); // 중심 위도
+        // console.log(mapIns.centerLng); // 중심 경도
     };
+
 
     // 위도 경도로 센터 위치 설정
     // map.setCenterLatLon(33.450701, 126.570667);

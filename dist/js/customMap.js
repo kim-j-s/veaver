@@ -67,12 +67,31 @@
 
 		kakao.maps.event.addListener(map, 'bounds_changed', function () {
 			map.radius = getDistanceFromLatLonInKm([map.getCenter(), map.getBounds().getSouthWest()]);
+
 			var center = map.getCenter();
 			map.centerLat = center.getLat(); // 위도
 			map.centerLng = center.getLng(); // 경도
+		});
 
-			if (map.boundChange) {
-				map.boundChange(map);
+		map.isIdling = false;
+
+		kakao.maps.event.addListener(map, 'idle', function () {
+			console.log('idle');
+
+			clearInterval(map.boundChangeTimer);
+
+			map.boundChangeTimer = setTimeout(function(){
+				if (map.boundChangeEnd) map.boundChangeEnd(map);
+			},300);
+		});
+
+		kakao.maps.event.addListener(map, 'dragend', function () {
+			console.log('dragEnd');
+
+			clearInterval(map.boundChangeTimer);
+
+			if (map.boundChangeEnd) {
+				map.boundChangeEnd(map);
 			}
 		});
 
