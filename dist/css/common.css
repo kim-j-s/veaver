@@ -436,6 +436,19 @@
 			background: url(../img/ic-play.png) no-repeat center center / 100% auto;
 			background-image: url(../img/ic-playing.png);
 		}
+		.btn-ro-arrow{
+		    display: inline-block;
+		    width: 20px;
+		    height: 20px;
+		    transition: .5s;
+		    overflow: hidden;
+		    text-indent: -9999px;
+		    background:#fff url(../img/close-20-blue.png) no-repeat center center / 100% auto;
+		}
+		.btn-ro-arrow.on{
+		    background:#fff url(../img/btn-arrow-black-20-open.png) no-repeat center center / 100% auto;
+		    transform: rotate(360deg);
+		}
 
 		.checkbox-rnd-gr {
 			display: inline-block;
@@ -4215,6 +4228,84 @@
 		}
 
 	/* // 이미지 다운로드 팝업 */
+
+	/* 지도 보기 하단 리스트 */
+
+		.bottom-list-cont{
+		    position: fixed;
+		    left: 22px;
+		    bottom: 0;
+		    z-index: 1;
+		    width: calc(100% - 44px);
+		    max-height: 146px;
+		    padding: 22px;
+		    background: #fff;
+		    display: flex;
+		    flex-direction: column;
+		    border-radius: 10px 10px 0 0;
+		    box-shadow: 0px 0px 6px 0px rgba(179,187,199,0.3);
+		    transition: .5s;
+		}
+		.bottom-list-cont.on{
+		    height: auto;
+		    max-height: 50%;
+		}
+		.bottom-list-cont.more:before{
+		    content: '';
+		    position: absolute;
+		    top: -30px;
+		    left: 50%;
+		    width: 60px;
+		    height: 30px;
+		    padding: 6px 6px 0 6px;
+		    transform: translateX(-50%);
+		    background: #fff;
+		    border-radius: 90px 90px 0 0;
+		    box-shadow: 0px 0px 6px 0px rgba(179,187,199,0.3);
+		    box-sizing: border-box;
+		    overflow: hidden;
+		}
+		.bottom-list-cont.more:after{
+		    content: '';
+		    position: absolute;
+		    top: 0;
+		    left: 50%;
+		    width: 50%;
+		    height: 10px;
+		    background: #fff;
+		    transform: translateX(-50%);
+		}
+		.bottom-list-cont .inner{
+		    flex: 1 1 100%;
+		}
+		.bottom-list-cont.on .inner{
+		    overflow: auto;
+		}
+		.bottom-list-cont .list-06{
+		    position: relative;
+		    z-index: 2;
+		    background: #fff;
+		}
+		.bottom-list-cont .list-06 > li:last-child{
+		    padding-bottom: 0;
+		}
+		.bottom-list-cont .btn-ro-arrow{
+		    position: absolute;
+		    top: -20px;
+		    left: 50%;
+		    display: none;
+		    margin-left: -10px;
+		}
+		.bottom-list-cont.more .btn-ro-arrow{
+			display: inline-block;
+		}
+		.bottom-list-cont .btn-po-change{
+			position: absolute;
+			top: -40px;
+			right: 0;
+		}
+
+	/* // 지도 보기 하단 리스트 */
 
 /*** // content ***/
 

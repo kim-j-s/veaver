@@ -171,7 +171,7 @@
         </div>
         <div class="targets">
             <a href='http://www.facebook.com/sharer.php?u=' + encodeURIComponent(https://kim-j-s.github.io/veaver/dist/html/07_01.html)>Facebook</a>
-            <a href="">Kakao</a>
+            <a href="" class="kakao-share">Kakao</a>
         </div>
     </div>
 
@@ -205,6 +205,22 @@ closeButton.addEventListener('click', event => {
 
 Kakao.init('fd3872d29334db88f3bf802e6c8c0ca1');
 console.log(Kakao.isInitialized());
+
+
+/*
+kakao-share
+*/
+
+Kakao.Link.createDefaultButton({
+    container: '.kakao-share',
+    objectType: 'feed',
+    content: {
+        link: {
+            mobileWebUrl: 'https://kim-j-s.github.io/veaver/dist/html/07_01.html',
+        }
+    }
+    
+})
 
 </script>
 

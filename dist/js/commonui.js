@@ -49,6 +49,9 @@ $(function () {
 
 	// 크게보기 팝업
 	viewSwiper();
+
+	// 지도 보기 하단 리스트 토글
+	listToggle();
 	
 
 	//script ready
@@ -363,6 +366,15 @@ function viewSwiper() {
         // 하단 페이징 display 처리용
         $('.btn-bottom-area.view').hide();
     }
+}
+
+
+// 지도 보기 하단 리스트 토글
+function listToggle() {
+	$('.btn-ro-arrow').on('click', function(){
+        $(this).toggleClass('on');
+        $('.bottom-list-cont').toggleClass('on');
+    })
 }
 
 var $arrPop = [];

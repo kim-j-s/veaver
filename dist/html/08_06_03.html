@@ -105,107 +105,7 @@
         </section>
         <!-- //컨텐츠 영역 -->
 
-
-        <style>
-            .bottom-list-cont {
-                position: fixed;
-                left: 22px;
-                bottom: 0;
-                z-index: 1;
-                width: calc(100% - 44px);
-                max-height: 146px;
-                padding: 22px;
-                background: #fff;
-                display: flex;
-                flex-direction: column;
-                border-radius: 10px 10px 0 0;
-                box-shadow: 0px 0px 6px 0px rgba(179, 187, 199, 0.3);
-                transition: .5s;
-            }
-
-            .bottom-list-cont.on {
-                height: auto;
-                max-height: 50%;
-            }
-
-            .bottom-list-cont.more:before {
-                content: '';
-                position: absolute;
-                top: -30px;
-                left: 50%;
-                width: 60px;
-                height: 30px;
-                padding: 6px 6px 0 6px;
-                transform: translateX(-50%);
-                background: #fff;
-                border-radius: 90px 90px 0 0;
-                box-shadow: 0px 0px 6px 0px rgba(179, 187, 199, 0.3);
-                box-sizing: border-box;
-                overflow: hidden;
-            }
-
-            .bottom-list-cont.more:after {
-                content: '';
-                position: absolute;
-                top: 0;
-                left: 50%;
-                width: 50%;
-                height: 10px;
-                background: #fff;
-                transform: translateX(-50%);
-            }
-
-            .bottom-list-cont .inner {
-                flex: 1 1 100%;
-            }
-
-            .bottom-list-cont.on .inner {
-                overflow: auto;
-            }
-
-            .bottom-list-cont .list-06 {
-                position: relative;
-                z-index: 2;
-                background: #fff;
-            }
-
-            .bottom-list-cont .list-06>li:last-child {
-                padding-bottom: 0;
-            }
-
-            .bottom-list-cont .btn-ro-arrow {
-                position: absolute;
-                top: -20px;
-                left: 50%;
-                margin-left: -10px;
-            }
-
-            .btn-ro-arrow {
-                display: inline-block;
-                width: 20px;
-                height: 20px;
-                transition: .5s;
-                overflow: hidden;
-                text-indent: -9999px;
-                background: #fff url(../img/close-20-blue.png) no-repeat center center / 100% auto;
-            }
-
-            .btn-ro-arrow.on {
-                background: #fff url(../img/btn-arrow-black-20-open.png) no-repeat center center / 100% auto;
-                transform: rotate(360deg);
-            }
-        </style>
-
-
-        <script>
-            $(function() {
-                $('.btn-ro-arrow').on('click', function() {
-                    $(this).toggleClass('on');
-                    $('.bottom-list-cont').toggleClass('on');
-                })
-            });
-        </script>
-
+        <!-- 하단 팝업 목록 -->
         <div class="bottom-list-cont more">
             <div class="inner">
                 <ul class="list-06">
@@ -247,13 +147,11 @@
                     </li>
                 </ul>
             </div>
+            <button type="button" class="btn-po-change">내 위치로 이동</button>
             <button type="button" class="btn-ro-arrow">더보기</button>
         </div>
+        <!-- // 하단 팝업 목록 -->
     </div>
-
-
-
-
 </body>
 
 </html>
