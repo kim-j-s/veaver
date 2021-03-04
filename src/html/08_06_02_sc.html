@@ -42,7 +42,7 @@
                 </div>
 
                 <!-- 지도영역 -->
-                <div class="map-area" style="background: rgba(0,0,0,0.3);">
+                <div class="map-area">
                     <div class="map-area-inner" id="map">
                     </div>
                     <button type="button" class="btn-view-list">목록보기</button>
@@ -535,25 +535,32 @@
         }
     ];
 
-    // 지도 초기화
-    const map = $('#map').initMap();
+    alert("test");
+    try {
+        // 지도 초기화
+        const map = $('#map').initMap();
+    
 
-    // 현재위치
-    map.currentLocation();
-
-    // 지도에 병원 데이터 추가 exData : exData 형태
-    map.setHospData(exData);
-
-    // 지도에 병원 데이터 삭제 (ykiho)
-    map.delHospDataYkiho('JDQ4MTg4MSM1MSMkMSMkMCMkOTkkMzgxMzUxIzMxIyQxIyQ3IyQ2MiQzNjE0ODEjNjEjJDEjJDgjJDgz');
-
-    // 맵 보여지는 영역 변경 이벤트 (확대, 축소, 이동시 발생)
-    map.boundChangeEnd = function (mapIns) {
-        console.log('지도 영역 변경');
-        // console.log(mapIns.radius); // 반경
-        // console.log(mapIns.centerLat); // 중심 위도
-        // console.log(mapIns.centerLng); // 중심 경도
-    };
+        alert($('#map').height());
+        // 현재위치
+        map.currentLocation();
+    
+        // 지도에 병원 데이터 추가 exData : exData 형태
+        map.setHospData(exData);
+    
+        // 지도에 병원 데이터 삭제 (ykiho)
+        map.delHospDataYkiho('JDQ4MTg4MSM1MSMkMSMkMCMkOTkkMzgxMzUxIzMxIyQxIyQ3IyQ2MiQzNjE0ODEjNjEjJDEjJDgjJDgz');
+    
+        // 맵 보여지는 영역 변경 이벤트 (확대, 축소, 이동시 발생)
+        map.boundChangeEnd = function (mapIns) {
+            console.log('지도 영역 변경');
+            // console.log(mapIns.radius); // 반경
+            // console.log(mapIns.centerLat); // 중심 위도
+            // console.log(mapIns.centerLng); // 중심 경도
+        };
+    } catch (error) {
+        alert(error);
+    }
 
     // 위도 경도로 센터 위치 설정
     // map.setCenterLatLon(33.450701, 126.570667);
