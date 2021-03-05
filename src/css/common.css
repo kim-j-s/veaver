@@ -4232,7 +4232,8 @@
 /* 페이지 공통 스크롤 영역 */
 	.scroll-ud{
 	    position: relative;
-	    flex: 1;
+	    flex: 1 1 auto;
+		height: 0;
 	    min-height: 0;
 	    margin-top: 30px;
 	    overflow: auto;
