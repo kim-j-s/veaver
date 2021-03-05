@@ -14,9 +14,6 @@ $(function () {
 	// input reset
 	InputReset();
 
-	// 공통 스크롤 표시 설정
-	ScrollAreaChk();
-
 	// 스크롤 화살표 표시
 	ScrollActive();
 
@@ -56,6 +53,12 @@ $(function () {
 
 	//script ready
 });
+
+
+$(window).on('load', function(){
+	// 공통 스크롤 표시 설정
+	ScrollAreaChk();
+})
 
 // Nav Open Close
 function MenuOpenClose() {
@@ -127,24 +130,21 @@ function InputReset() {
 	});
 }
 
-
 // 공통 스크롤 표시 설정
 function ScrollAreaChk() {
 	var sudHeight = $('.scroll-ud').outerHeight();
-	//var sudInHiehgt = $('.scroll-ud-inner > *').outerHeight();
 	var sudInHiehgt = $('.scroll-ud-inner').outerHeight();
 	if ($('.scroll-ud').length > 0) {
 		if (sudInHiehgt > sudHeight) {
 			$('.scroll-ud').addClass('ov-case down-dp');
 			$('.scroll-ud-inner').addClass('on');
+			console.log("1");
 		} else {
 			$('.scroll-ud').removeClass('ov-case down-dp');
 			$('.scroll-ud-inner').removeClass('on');
+			console.log("2");
 		}
 	}
-
-	//console.log(sudHeight);
-	//console.log(sudInHiehgt);
 }
 
 $(window).on('resize', function () {
@@ -298,7 +298,7 @@ function hostSwiper() {
 
 // 자녀선택
 function choiceSwiper() {
-if ( $('.choice-wrap').find('.swiper-slide').length > 1 ){
+	if ( $('.choice-wrap').find('.swiper-slide').length > 1 ){
         var childSwiper = new Swiper('.choice', {
             slidesPerView: 2,
             observer: true,
@@ -367,7 +367,6 @@ function viewSwiper() {
         $('.btn-bottom-area.view').hide();
     }
 }
-
 
 // 지도 보기 하단 리스트 토글
 function listToggle() {
