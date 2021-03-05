@@ -64,7 +64,8 @@ a {
 }
 ::-ms-clear {display:none;}
 
-input[type="button"] {
+input[type="button"],
+input[type="submit"] {
   border: 0;
   outline: 0;
 }
