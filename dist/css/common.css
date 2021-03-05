@@ -458,9 +458,6 @@
 		    background: url(../img/ac-black-close-right.png) no-repeat center center / 100% auto;
 		}
 
-
-
-
 		.checkbox-rnd-gr {
 			display: inline-block;
 		}
@@ -500,7 +497,6 @@
 			background: #056bff;
 			border: 1px solid rgba(5,107,255,0.3);
 		}
-
 		.btn-rnd-gr{
 			display: inline-block;
 			padding: 4px 12px;
@@ -638,14 +634,12 @@
 		    color: #056bff;
 		    line-height: 24px;
 		    background: url(../img/btn-arrow-blue-16-right.png) no-repeat right center / 16px auto;
-		}
-		
+		}		
 
 		/* etc */
 
 		.btn-bottom-area{
 			flex: none;
-			/*padding: 20px 22px;*/
 			padding: 0 22px 20px 22px;
 		}
 
@@ -748,20 +742,6 @@
 		.input-text.error > .msg {
 			color: #ff4155;
 		}
-		.input-text > input:-moz-read-only {
-			/*
-			border-color: #f5f5f5;
-			background-color: #f5f5f5;
-			color: #000;
-			*/
-		}
-		.input-text > input:read-only {
-			/*
-			border-color: #f5f5f5;
-			background-color: #f5f5f5;
-			color: #000;
-			*/
-		}
 		.input-text > input:-moz-read-only + .btn-remove {
 			display: none;
 		}
@@ -855,9 +835,7 @@
 			top: 50%;
 			right: 22px;
 			transform: translateY(-50%);
-		}
-
-		
+		}		
 
 	/** // input-text **/
 
@@ -891,23 +869,6 @@
 
 
 	/** // input-file **/
-
-	/** input-date **/
-
-
-
-	/** // input-date **/
-
-	/** input-time **/
-
-
-	/** // input-time **/
-
-	/** search-bar **/
-
-
-	/** // search-bar **/
-
 
 	/** inp-group **/
 
@@ -1043,7 +1004,6 @@
 	}
 	.rnd-checkbox{
 		position: relative;
-		/*padding: 13px 20px 12px 20px;*/
 	}
 	.rnd-checkbox > .input-checkbox{
 		display: block;
@@ -1067,7 +1027,6 @@
 		color: #056bff;
 	}
 	.rnd-checkbox .input-checkbox > span:before{
-		/*top: 13px;*/
 		left: 22px;
 	}
 	.rnd-checkbox .input-checkbox > span:after{
@@ -1095,9 +1054,7 @@
 	}
 	.rnd-checkbox .input-checkbox > input:checked:disabled + span:after{
 		border: 1px solid #dbdee5;
-	}
-	
-	
+	}	
 
 	/** // input-checkbox **/
 
@@ -1234,7 +1191,7 @@
 		transform: translateX(16px);
 	}
 	.input-check-toggle > input:disabled + span {
-		background-color: #999;
+		opacity: 0.5;
 	}
 
 	/** // input-check-toggle  **/
@@ -1850,7 +1807,6 @@
 		}
 		.header-title{
 			display: inline-block;
-			/*flex: 1 1 auto;*/
 			flex: 1 1 100%;
 			line-height: 30px;
 			font-weight: 400;
@@ -2177,13 +2133,6 @@
 		.bottom-pop-cont.etc{
 			padding: 20px 0;
 		}
-		/*.bottom-pop-cont .rst-list-wrap{
-			padding: 0;
-		}*/
-		/*.bottom-pop-cont .list-05{
-			padding: 0;
-		}*/
-
 
 	/* // 하단 레이어 팝업 */
 
@@ -2215,9 +2164,7 @@
 	.floating-btns.out{
 		-webkit-animation: dimmedBgOff .8s forwards;
 		animation: dimmedBgOff .8s forwards;
-	}
-
-	
+	}	
 
 	@-webkit-keyframes dimmedBg {
 	    0% {
@@ -2226,9 +2173,7 @@
 	    100% {
 	        background: rgba(0, 0, 0, 0.7);
 	    }
-	}
-
-	
+	}	
 
 	@keyframes dimmedBg {
 	    0% {
@@ -2419,8 +2364,6 @@
 	    text-indent: -9999px;
 	    background: url(../img/ic-setting-blue.png) no-repeat 0 0 / 100% auto;
 	}
-	
-
 
 	/** // floating button **/
 
@@ -2996,13 +2939,7 @@
 		    border-top: 1px solid #ebeff3;
 		}
 		.line-box.bold-line + .line-box.bold-line{
-			/*
-		    margin-top: 40px;
-		    margin-right: 0;
-		    margin-left: 0;
-		    */
 		    margin: 40px 0 0 0;
-		    /*padding-top: 50px;*/
 		    padding: 50px 22px 0 22px;
 		    border-top: none;
 		}
@@ -3010,9 +2947,7 @@
 			content: '';
 			position: absolute;
 			top: 0;
-			/*left: -22px;*/
 			left: 0;
-			/*width: calc(100% + 44px);*/
 			width: 100%;
 			border-top: 10px solid #f8f9fb;
 		}
@@ -3472,11 +3407,7 @@
 		    overflow:hidden;
 		    text-overflow:ellipsis;
 		    white-space:nowrap;
-		}
-		
-
-
-		
+		}		
 
 	/** 문구 **/
 
@@ -3712,7 +3643,6 @@
 		    margin: 0 -22px;
 		}
 		.full-size-area.top{
-			/*margin: -20px -22px 20px -22px;*/
 			margin: -20px 0 20px 0;
 		}
 		.full-size-area > img{
@@ -3840,8 +3770,6 @@
 
 
 	/* 상세목록 */
-
-		
 
 		.ing-box{
 		    display: inline-block;
@@ -4015,8 +3943,6 @@
 			width: calc(100% - 70px);
 			padding-left: 10px;
 		}
-
-
 
 		/* 프로필 이미지 */
 
@@ -4497,7 +4423,6 @@
 
 /* // 페이지 공통 스크롤 영역 */
 
-
 	/*Element*/
 
 		.g-box{
@@ -4611,8 +4536,6 @@
 
 	/*Element*/
 
-
-
 	/* 약관내용 */
 
 		.terms{
@@ -4627,8 +4550,6 @@
 		}
 
 	/* // 약관내용 */
-
-
 
 	/* 달력 */
 
@@ -4696,7 +4617,6 @@
 		    padding: 5px 0;
 		    font-weight: 400;
 		    font-size: 14px;
-
 		}
 
 	/* // 달력 */
