@@ -49,7 +49,6 @@ $(function () {
 
 	// 지도 보기 하단 리스트 토글
 	listToggle();
-	
 
 	//script ready
 });
