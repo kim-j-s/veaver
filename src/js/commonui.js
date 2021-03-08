@@ -28,9 +28,6 @@ $(function () {
 	// 탭 스위퍼
 	tabSwiper();
 
-	// 더보기
-	viewMoreDp();
-
 	// swiper Gallery - 질병정보 상세 - 카드 컨텐츠
 	// gallerySwiper();
 	// drawui.js 에서 호출로 변경
@@ -49,13 +46,12 @@ $(function () {
 
 	// 지도 보기 하단 리스트 토글
 	listToggle();
-	
 
 	//script ready
 });
 
 
-$(window).on('load', function(){
+$(window).on('load', function () {
 	// 공통 스크롤 표시 설정
 	ScrollAreaChk();
 })
@@ -176,19 +172,51 @@ function ScrollActive() {
 
 // 우측 메뉴 버튼 display 처리
 function floatBtns() {
-	var $flb = $('.floating-btns');
-	var t;
-	$('.scroll-ud-inner').scroll(function () {
-		$flb.addClass('on');
-		setTimeout(function () {
-			$flb.hide();
-		}, 500)
-		if (t) clearTimeout(t);
-		t = setTimeout(function () {
-			$flb.show();
-			$flb.removeClass('on');
-		}, 500);
+	$('.floating-btns').each(function () {
+		var $target = $(this);
+		var $targetWrap = $target.parent();
+		var $targetScroll = null;
+		var t;
+		if ($targetWrap.hasClass('bottom-pop')) {
+			$targetScroll = $targetWrap.find('.bottom-pop-cont');
+		} else if($targetWrap.hasClass('wrap')){
+			$targetScroll = $targetWrap.find('.scroll-ud-inner');
+		}
+
+		if($targetScroll) {
+			$targetScroll.off('scroll.floatingBtn').on('scroll.floatingBtn',function () {
+				$target.addClass('on');
+				setTimeout(function () {
+					$target.hide();
+				}, 500)
+				if (t) clearTimeout(t);
+				t = setTimeout(function () {
+					$target.show();
+					$target.removeClass('on');
+				}, 500);
+			});
+		}
 	});
+
+	// flaoting button 더보기 기능
+	$('.btn-view-more').off('click.floatingBtn').on('click.floatingBtn', function () {
+		var $this = $(this);
+		var $wrap = $this.parent();
+		if (!$wrap.hasClass('fix')) {
+			$this.addClass('on');
+			$wrap.removeClass('out').addClass('fix');
+			setTimeout(function () {
+				$wrap.find('.more-view-btns').addClass('on');
+			}, 10);
+		} else {
+			$this.removeClass('on');
+			$wrap.find('.more-view-btns').removeClass('on');
+			$wrap.addClass('out').removeClass('fix');
+			setTimeout(function () {
+				$wrap.removeClass('out');
+			}, 800);
+		}
+	})
 }
 
 // 약관 리스트
@@ -212,9 +240,9 @@ function termsWrap() {
 		}).on('input.termsWrap', 'input[type=checkbox]', function () {
 			var $this = $(this);
 
-			if($this.hasClass('chk-all')) {
+			if ($this.hasClass('chk-all')) {
 				// all check
-				if($this.prop('checked')) {
+				if ($this.prop('checked')) {
 					$target.find('input[type=checkbox]').prop('checked', true);
 				} else {
 					$target.find('input[type=checkbox]').prop('checked', false);
@@ -223,10 +251,10 @@ function termsWrap() {
 
 			var $defaultCheck = $target.find('.terms-list input[type=checkbox]:not(.exception)');
 
-			if($defaultCheck.length == $defaultCheck.filter(':checked').length) {
-				$target.closest('.layer-full-wrap, .wrap').find('.btn-bottom-area .btn-pu').prop('disabled',false);
+			if ($defaultCheck.length == $defaultCheck.filter(':checked').length) {
+				$target.closest('.layer-full-wrap, .wrap').find('.btn-bottom-area .btn-pu').prop('disabled', false);
 			} else {
-				$target.closest('.layer-full-wrap, .wrap').find('.btn-bottom-area .btn-pu').prop('disabled',true);
+				$target.closest('.layer-full-wrap, .wrap').find('.btn-bottom-area .btn-pu').prop('disabled', true);
 			}
 		});
 	});
@@ -242,26 +270,6 @@ function tabSwiper() {
 			speed: 500,
 		});
 	}
-}
-
-// flaoting button 더보기 기능
-function viewMoreDp() {
-	$('.btn-view-more').click(function () {
-		if (!$('.floating-btns').hasClass('fix')) {
-			$(this).addClass('on');
-			$('.floating-btns').removeClass('out').addClass('fix');
-			setTimeout(function () {
-				$('.more-view-btns').addClass('on');
-			}, 10);
-		} else {
-			$(this).removeClass('on');
-			$('.more-view-btns').removeClass('on');
-			$('.floating-btns').addClass('out').removeClass('fix');
-			setTimeout(function () {
-				$('.floating-btns').removeClass('out');
-			}, 800);
-		}
-	})
 }
 
 // swiper Gallery - 질병정보 상세 - 카드 컨텐츠
@@ -298,82 +306,82 @@ function hostSwiper() {
 
 // 자녀선택
 function choiceSwiper() {
-	if ( $('.choice-wrap').find('.swiper-slide').length > 1 ){
-        var childSwiper = new Swiper('.choice', {
-            slidesPerView: 2,
-            observer: true,
-            observeParents: true,
-            speed: 500,
-            navigation: {
-                nextEl: '.swiper-button-next',
-                prevEl: '.swiper-button-prev',
-            },
-        });
-    }
+	if ($('.choice-wrap').find('.swiper-slide').length > 1) {
+		var childSwiper = new Swiper('.choice', {
+			slidesPerView: 2,
+			observer: true,
+			observeParents: true,
+			speed: 500,
+			navigation: {
+				nextEl: '.swiper-button-next',
+				prevEl: '.swiper-button-prev',
+			},
+		});
+	}
 }
 
 // 날짜 선택
 function datepicker() {
-    $('.datepicker').pickadate({
-        monthsShort: ['1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월'],
-        weekdaysShort: ['일', '월', '화', '수', '목', '금', '토'],
-        showMonthsShort: true,
-        today: '',
-        clear: '',
-        close: '닫기',
-        format: 'yyyy/mm/dd',
-        formatSubmit: 'yyyy/mm/dd',
-        onRender: function(){
-            var year = $('.datepicker').pickadate('picker').get('highlight', 'yyyy');
-            var month = $('.datepicker').pickadate('picker').get('highlight', 'mm');
-            //console.log(year, month);
-            $('.picker__header').prepend(
-                '<div class="picker__date-display">' + 
-                    '<span class="picker__year-display">' + year + '년</span>' + 
-                    '<span class="picker__month-display">' + month + '월</span>' + 
-                '</div>'
-            );
-        },
-        // 달력 활성화 콜백
-        onOpen: function() {
-            $('.layer-full-wrap').css('display','block');
-        },
-        // 달력 비활성화 콜백
-        onClose: function() {
-            $('.layer-full-wrap').css('display','flex');
-        },
-    });
+	$('.datepicker').pickadate({
+		monthsShort: ['1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월'],
+		weekdaysShort: ['일', '월', '화', '수', '목', '금', '토'],
+		showMonthsShort: true,
+		today: '',
+		clear: '',
+		close: '닫기',
+		format: 'yyyy/mm/dd',
+		formatSubmit: 'yyyy/mm/dd',
+		onRender: function () {
+			var year = $('.datepicker').pickadate('picker').get('highlight', 'yyyy');
+			var month = $('.datepicker').pickadate('picker').get('highlight', 'mm');
+			//console.log(year, month);
+			$('.picker__header').prepend(
+				'<div class="picker__date-display">' +
+				'<span class="picker__year-display">' + year + '년</span>' +
+				'<span class="picker__month-display">' + month + '월</span>' +
+				'</div>'
+			);
+		},
+		// 달력 활성화 콜백
+		onOpen: function () {
+			$('.layer-full-wrap').css('display', 'block');
+		},
+		// 달력 비활성화 콜백
+		onClose: function () {
+			$('.layer-full-wrap').css('display', 'flex');
+		},
+	});
 }
 
 
 // 크게보기 슬라이드
 function viewSwiper() {
 	if ($('.view-img').find('.swiper-slide').length > 1) {
-        var imgswiper = new Swiper('.view-img', {
-            pagination: {
-                el: '.view-swiper-pagination',
-                type: 'fraction',
-            }
-        })
+		var imgswiper = new Swiper('.view-img', {
+			pagination: {
+				el: '.view-swiper-pagination',
+				type: 'fraction',
+			}
+		})
 
-        // 슬라이드 안에 포함된 이미지의 src를 페이지 상단 다운로드쪽 경로로 교체
-        imgswiper.on('slideChange', function () {
-            var src = $('.swiper-slide').eq(imgswiper.realIndex).children('img').attr('src');
-            $('.btn-black-download').attr('href',src);
-            
-        });
-    } else {
-        // 하단 페이징 display 처리용
-        $('.btn-bottom-area.view').hide();
-    }
+		// 슬라이드 안에 포함된 이미지의 src를 페이지 상단 다운로드쪽 경로로 교체
+		imgswiper.on('slideChange', function () {
+			var src = $('.swiper-slide').eq(imgswiper.realIndex).children('img').attr('src');
+			$('.btn-black-download').attr('href', src);
+
+		});
+	} else {
+		// 하단 페이징 display 처리용
+		$('.btn-bottom-area.view').hide();
+	}
 }
 
 // 지도 보기 하단 리스트 토글
 function listToggle() {
-	$('.btn-ro-arrow').on('click', function(){
-        $(this).toggleClass('on');
-        $('.bottom-list-cont').toggleClass('on');
-    })
+	$('.btn-ro-arrow').on('click', function () {
+		$(this).toggleClass('on');
+		$('.bottom-list-cont').toggleClass('on');
+	})
 }
 
 var $arrPop = [];
@@ -415,4 +423,32 @@ function showLoading(txt) {
 // 로딩 숨기기
 function hideLoading() {
 	$('.loading').remove();
+}
+
+// 오디오 플레이 스탑 버튼
+$.fn.audioBtn = function (url) {
+	if (!url) return;
+
+	$(this).each(function () {
+		const $target = $(this);
+		$target.after(`<audio classs="hidden" src="${url}"></audio>`);
+
+		const $audio = $target.next('audio');
+
+		$audio.on('ended', function () {
+			$target.removeClass('on');
+		});
+
+		$target.click(function (e) {
+			if ($target.hasClass('on')) {
+				$target.removeClass('on');
+				$audio[0].pause();
+				$audio[0].currentTime = 0;
+
+			} else {
+				$target.addClass('on');
+				$audio[0].play();
+			}
+		});
+	});
 }

@@ -55,9 +55,7 @@
 
         <!-- 컨텐츠 영역 -->
         <section class="layer-content etc">
-            화면 클릭시 구동<br>
-            on / off<br>
-            닥터 QA상세
+            화면 클릭시 구동
         </section>
         <!-- //컨텐츠 영역 -->
     </div>
@@ -95,21 +93,32 @@
                 </div>
             </div>
         </div>
+        <div class="floating-btns">
+            <button type="button" class="btn-view-more">더보기</button>
+            <ul class="more-view-btns">
+                <li><button type="button" class="more-btns btn-doc-qa">닥터 QA</button></li>
+                <li><button type="button" class="more-btns btn-bookmark">관심 질병으로 저장하기</button></li>
+                <li><button type="button" class="more-btns btn-find-h">병원찾기</button></li>
+                <li><button type="button" class="more-btns btn-share">공유하기</button></li>
+            </ul>
+        </div>
     </div>
     <!-- // 하단 팝업 -->
 </body>
 
 <!-- 팝업 구동 샘플 -->
 <script>
+    // 화면 로딩후 floating-btns을 동적으로 삽입할경우
+    // floatBtns(); 함수 호출 필요
+
     $(function() {
-        $('html').click(function() {
-            if (!$('.bottom-pop').hasClass('opened')) {
-                $('.bottom-pop').openPop();
-            } else {
-                $('.bottom-pop').closePop();
-            }
+        $('.layer-content').click(function() {
+            $('.bottom-pop').openPop();
         });
-    })
+        $('.layer-close-btn').click(function() {
+            $('.bottom-pop').closePop();
+        });
+    });
 </script>
 <!--// 팝업 구동 샘플 -->
 

@@ -95,7 +95,7 @@
 			}
 		});
 
-		map.currentLocation = function () {
+		map.currentLocation = function (flag) {
 			// HTML5의 geolocation으로 사용할 수 있는지 확인합니다 
 			if (navigator.geolocation) {
 				// GeoLocation을 이용해서 접속 위치를 얻어옵니다
@@ -103,6 +103,9 @@
 					var locPosition = new kakao.maps.LatLng(position.coords.latitude, position.coords.longitude); // 마커가 표시될 위치를 geolocation으로 얻어온 좌표로 생성합니다
 					// 지도 중심을 이동 시킵니다
 					map.setCenter(locPosition);
+					if (flag) {
+						map.setSimpleMark(position.coords.latitude, position.coords.longitude);
+					}
 				});
 
 			} else {

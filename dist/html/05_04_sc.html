@@ -64,19 +64,18 @@
 
                 <!-- 증상 & 진료과 -->
                 <div id="setDiseaseSymptomSubject" class="line-box"></div>
-
-                <div class="floating-btns">
-                    <button type="button" class="btn-view-more">더보기</button>
-                    <ul class="more-view-btns">
-                        <li><button type="button" class="more-btns btn-doc-qa">닥터 QA</button></li>
-                        <li><button type="button" class="more-btns btn-bookmark">관심 질병으로 저장하기</button></li>
-                        <li><button type="button" class="more-btns btn-find-h">병원찾기</button></li>
-                        <li><button type="button" class="more-btns btn-share">공유하기</button></li>
-                    </ul>
-                </div>
             </div>
         </section>
         <!-- //컨텐츠 영역 -->
+        <div class="floating-btns">
+            <button type="button" class="btn-view-more">더보기</button>
+            <ul class="more-view-btns">
+                <li><button type="button" class="more-btns btn-doc-qa">닥터 QA</button></li>
+                <li><button type="button" class="more-btns btn-bookmark">관심 질병으로 저장하기</button></li>
+                <li><button type="button" class="more-btns btn-find-h">병원찾기</button></li>
+                <li><button type="button" class="more-btns btn-share">공유하기</button></li>
+            </ul>
+        </div>
     </div>
 </body>
 <link rel="stylesheet" href="../css/customVideo.css">
@@ -84,6 +83,9 @@
 <script src="../js/customVideo.js"></script>
 
 <script>
+    // 화면 로딩후 floating-btns을 동적으로 삽입할경우
+    // floatBtns(); 함수 호출 필요
+
     // 질병 상세 상단 기본정보
     const exData01 = {
         "name": "편두통",
@@ -221,7 +223,8 @@
             "linkTitle": "",
             "linkUrl": "",
             "htmlText": "<p><span style=\"font-size: 16px; background-color: rgb(255, 255, 0);\">[메디컬티비: 소아폐렴의 원인과 치료 - 최석우 과장(성남, 정병원, 소아청소년과)/0:06~0:47/소아 폐렴의 정의, 진단, 원인]</span></p><p><span style=\"font-size: 16px;\"><a href=\"https://tv.naver.com/v/15010839\" target=\"_blank\">https://tv.naver.com/v/15010839</a></span></p><p>\n</p>",
-            "dataUrl": "https://hm-contents-1302053493.s3.ap-northeast-2.amazonaws.com/ni-contents/2020/12/17/e4e0b9b5-a195-4397-a64b-d87ffa2f4607_01_ni.mp4",
+            // "dataUrl": "https://hm-contents-1302053493.s3.ap-northeast-2.amazonaws.com/ni-contents/2020/12/17/e4e0b9b5-a195-4397-a64b-d87ffa2f4607_01_ni.mp4",
+            "dataUrl": "https://bitmovin-a.akamaihd.net/content/playhouse-vr/m3u8s/105560.m3u8",
             "linkDetailId": "",
             "imgId": "",
             "imgSeq": "",

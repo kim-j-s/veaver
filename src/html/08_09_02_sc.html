@@ -240,7 +240,8 @@
     const map = $('#map').initMap();
 
     // 현재위치
-    map.currentLocation();
+    map.currentLocation(true);
+    // map.currentLocation(flag); (flag == true) 현재위치에 마크 삽입
 
     // 지도에 약국 데이터 추가 exData : exData 형태
     map.setPharmData(exData);
