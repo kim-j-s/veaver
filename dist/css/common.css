@@ -13,6 +13,9 @@
 	margin: -1px;
 	overflow: hidden;
 }
+.hidden {
+	display: none;
+}
 .font_01 {
 	color: #000 !important;
 }
@@ -424,7 +427,7 @@
 			text-indent: -9999px;
 		}
 
-		.btn-video-view{
+		.btn-audio-play{
 			display: inline-block;
 			width: 30px;
 			height: 30px;
@@ -432,7 +435,7 @@
 			overflow: hidden;
 			text-indent: -9999px;
 		}
-		.btn-video-view.on{
+		.btn-audio-play.on{
 			background: url(../img/ic-play.png) no-repeat center center / 100% auto;
 			background-image: url(../img/ic-playing.png);
 		}

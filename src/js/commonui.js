@@ -416,3 +416,31 @@ function showLoading(txt) {
 function hideLoading() {
 	$('.loading').remove();
 }
+
+// 오디오 플레이 스탑 버튼
+$.fn.audioBtn = function (url) {
+	if(!url) return;
+
+	$(this).each(function(){
+		const $target = $(this);
+		$target.after(`<audio classs="hidden" src="${url}"></audio>`);
+
+		const $audio = $target.next('audio');
+
+		$audio.on('ended',function(){
+			$target.removeClass('on');
+		});
+
+		$target.click(function(e){
+			if($target.hasClass('on')) {
+				$target.removeClass('on');
+				$audio[0].pause();
+				$audio[0].currentTime = 0;
+
+			} else {
+				$target.addClass('on');
+				$audio[0].play();
+			}
+		});
+	});
+}

@@ -32,12 +32,13 @@ F@@include('head.html',{
 							<input type="checkbox"><span>머리가 아프다</span>
 						</label>
 						<button type="button" class="lp-btn btn-audio-play">영상보기</button>
+                        <audio id="audio_test" class="hidden" src="../img/temp/audio_file.wav"></audio>
 					</div>
 					<div class="rnd-checkbox">
 						<label class="input-checkbox">
 							<input type="checkbox"><span>열이 나는 것 같다</span>
 						</label>
-						<button type="button" class="lp-btn btn-audio-play on">영상보기</button>
+						<button type="button" id="ad_test" class="lp-btn btn-audio-play">영상보기</button>
 					</div>
 					<div class="rnd-checkbox">
 						<label class="input-checkbox">
@@ -100,5 +101,8 @@ F@@include('head.html',{
 		<!-- //컨텐츠 영역 -->
 	</div>
 </body>
-
+<script>
+    $('.btn-audio-play').eq(0).audioBtn('../img/temp/audio_file.wav');
+    $('.btn-audio-play').eq(1).audioBtn('../img/temp/audio_file.wav');
+</script>
 </html>
