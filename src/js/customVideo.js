@@ -107,6 +107,7 @@
             let isPlaying = false;
 
             if (posterSrc) {
+                $wrap.addClass('has-thumb');
                 $cvVideo.after('<div class="cv-thumb"><img src="' + posterSrc + '"></div>');
             }
 
@@ -145,8 +146,6 @@
                 $curTime.text('00:00');
                 $durationTime.text(formatTime(video.duration));
 
-                console.log('loadmetadata');
-
                 if (checkMobile == 'ios') {
                     video.muted = true;
                     video.play();
@@ -178,6 +177,7 @@
                     $wrap.css('padding-top', videoHeightRatio + '%');
 
                     let lcH = $layerContent.outerHeight();
+                    const hdH = $('header').eq(0).outerHeight();
 
                     $WIN.on('resize', function (e) {
                         lcH = $layerContent.outerHeight();
@@ -185,7 +185,8 @@
 
                     $layerContent.on('scroll', function (e) {
                         if ($wrap.hasClass('cv-playing')) {
-                            const t = $wrap.position().top;
+                            // const t = $wrap.position().top;
+                            const t = $wrap.offset().top - hdH;
                             const h = $wrap.outerHeight();
 
                             if (t + h <= 0 || t >= lcH) {

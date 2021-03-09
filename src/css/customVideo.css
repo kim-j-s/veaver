@@ -20,6 +20,11 @@
     height: 100%;
     overflow: hidden;
 }
+.has-thumb .cv-thumb {
+    position: relative;
+    left: auto;
+    top: auto;
+}
 .cv-thumb img {
     display: block;
     width: 100%;
@@ -298,6 +303,12 @@
     z-index: 1000;
     background-color: #000;
     overflow: hidden;
+}
+.has-thumb .cv-video {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
 }
 .custom-video.cv-floating .cv-video {
     flex: 1 1 auto;
