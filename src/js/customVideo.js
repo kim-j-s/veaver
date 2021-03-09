@@ -106,8 +106,8 @@
 
             let isPlaying = false;
 
-            if(posterSrc) {
-                $cvVideo.after('<div class="cv-thumb"><img src="'+posterSrc+'"></div>');
+            if (posterSrc) {
+                $cvVideo.after('<div class="cv-thumb"><img src="' + posterSrc + '"></div>');
             }
 
             if (fe == 'm3u8') {
@@ -144,22 +144,17 @@
             video.addEventListener('loadedmetadata', function () {
                 $curTime.text('00:00');
                 $durationTime.text(formatTime(video.duration));
-                
+
                 console.log('loadmetadata');
 
                 if (checkMobile == 'ios') {
-                    setTimeout(function(){
-                        video.muted = true;
-                        video.play();
-                        video.pause();
-                        video.muted = false;
-                        video.currentTime = 0;
-                        $wrap.addClass('cv-canplay');
-                    }, 200);
-                } else {
-                    video.currentTime = 0;
-                    $wrap.addClass('cv-canplay');
+                    video.muted = true;
+                    video.play();
+                    video.pause();
+                    video.muted = false;
                 }
+                video.currentTime = 0;
+                $wrap.addClass('cv-canplay');
 
             });
 
@@ -176,7 +171,7 @@
                 $wrap.addClass('cv-off-thumb');
                 pbTimer = setInterval(setCurrentTime, intervalTime);
 
-                if (!videoHeightRatio && video.videoHeight!=0) {
+                if (!videoHeightRatio && video.videoHeight != 0) {
                     videoHeightRatio = video.videoHeight / video.videoWidth * 100;
 
                     $wrap.addClass('cv-set-height');
@@ -184,16 +179,16 @@
 
                     let lcH = $layerContent.outerHeight();
 
-                    $WIN.on('resize', function(e) {
+                    $WIN.on('resize', function (e) {
                         lcH = $layerContent.outerHeight();
                     });
 
                     $layerContent.on('scroll', function (e) {
-                        if($wrap.hasClass('cv-playing')) {
+                        if ($wrap.hasClass('cv-playing')) {
                             const t = $wrap.position().top;
                             const h = $wrap.outerHeight();
 
-                            if(t+h <= 0 || t>=lcH) {
+                            if (t + h <= 0 || t >= lcH) {
                                 $wrap.addClass('cv-floating');
                             } else {
                                 $wrap.removeClass('cv-floating');
@@ -207,7 +202,7 @@
             video.onpause = function () {
                 isPlaying = false;
                 $wrap.removeClass('cv-playing');
-                if(video.currentTime == 0) {
+                if (video.currentTime == 0) {
                     $wrap.removeClass('cv-off-thumb');
                 }
                 clearInterval(pbTimer);
@@ -229,7 +224,7 @@
 
             // play btn
             $btnPlay.on('click', function () {
-                if($wrap.hasClass('cv-floating')) {
+                if ($wrap.hasClass('cv-floating')) {
                     $('.cv-playing').trigger('cv-stop');
                 } else {
                     $('.cv-playing, .cv-floating').trigger('cv-stop');

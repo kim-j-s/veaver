@@ -51,6 +51,7 @@
     display: block;
     margin: 0 auto;
     width: 100%;
+    background-color: #000;
 }
 .custom-video .cv-ctrl {
     display: none;
