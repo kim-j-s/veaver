@@ -7,7 +7,7 @@
     // let WIN_WIDTH = $WIN.width();
 
     const baseHtml = '<div class="cv-inner">'
-        + '<div class="cv-video"><video></video></div>'
+        + '<div class="cv-video"><video playsinline webkit-playsinline></video></div>'
         + '<div class="cv-ctrl">'
         + '<div class="cv-open-ctrl"></div>'
         + '<div class="cv-ctrl-box">'
@@ -113,8 +113,8 @@
 
             if (fe == 'm3u8') {
                 if (video.canPlayType('application/vnd.apple.mpegurl')) {
-                    video.setAttribute('playsinline', true);
-                    video.setAttribute('webkit-playsinline', true);
+                    // video.setAttribute('playsinline', true);
+                    // video.setAttribute('webkit-playsinline', true);
                     video.src = videoSrc+"?playsinline=1";
                 } else if (Hls.isSupported()) {
                     const hls = new Hls();
