@@ -68,7 +68,7 @@
 
             const wrap = this;
             const $wrap = $(this);
-            const $layerContent = $wrap.closest('.layer-content');
+            const $layerContent = $wrap.closest('.layer-content, .scroll-ud-inner');
 
             $wrap.addClass('custom-video');
             $wrap.empty();
@@ -144,16 +144,23 @@
             video.addEventListener('loadedmetadata', function () {
                 $curTime.text('00:00');
                 $durationTime.text(formatTime(video.duration));
+                
+                console.log('loadmetadata');
 
                 if (checkMobile == 'ios') {
-                    video.muted = true;
-                    video.play();
-                    video.pause();
-                    video.muted = false;
+                    setTimeout(function(){
+                        video.muted = true;
+                        video.play();
+                        video.pause();
+                        video.muted = false;
+                        video.currentTime = 0;
+                        $wrap.addClass('cv-canplay');
+                    }, 200);
+                } else {
+                    video.currentTime = 0;
+                    $wrap.addClass('cv-canplay');
                 }
 
-                video.currentTime = 0;
-                $wrap.addClass('cv-canplay');
             });
 
             // on play
