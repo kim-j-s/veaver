@@ -308,7 +308,8 @@
 .has-thumb .cv-video {
     position: absolute;
     left: 0;
-    top: 0;
+    top: 50%;
+    transform: translateY(-50%);
     width: 100%;
 }
 .custom-video.cv-floating .cv-video {
