@@ -2,12 +2,12 @@
 
 /*@import url(http://fonts.googleapis.com/earlyaccess/notosanskr.css);*/
 @import url(http://fonts.googleapis.com/css?family=Roboto:400,300,500,700);
-
+/*
 html, body {
 	width: 100%;
 	height: 100%;
 	overflow: hidden;
-}
+} */
 /*** util ***/
 .blind {
 	position: absolute;
@@ -1732,30 +1732,6 @@ html, body {
 	.layer-full-wrap.fl-btn-add{
 		padding-bottom: 68px;
 	}
-	.layer-content{
-		position:relative;
-		flex: 1;
-		/*padding: 20px 22px 0 20px;*/
-		padding: 20px 22px;
-		overflow: auto;
-	}
-	.layer-content.etc{
-		padding-bottom: 40px;
-	}
-	.layer-content.none-b{
-		padding-bottom: 0;
-	}
-	.layer-content.full{
-		padding: 20px 0;
-	}
-	.layer-content.scroll-ud,
-	.layer-content.scroll-ud.ov-case{
-		margin-top: 0;
-		padding-top: 20px;
-	}
-	.layer-content .inp-group{
-		padding: 0;
-	}
 
 	.flex-none-cont{
 		flex: none;
@@ -2335,6 +2311,10 @@ html, body {
 		height: 100%;
 		/*padding: 0 0 20px 0;*/
 		padding: 0;
+		position: fixed;
+		width: 100%;
+		left: 0;
+		top: 0;
 	}
 
 
@@ -4242,27 +4222,43 @@ html, body {
 	    flex: 1 1 auto;
 		height: 0;
 	    min-height: 0;
-	    margin-top: 30px;
-	    overflow: auto;
+	    overflow: hidden;
 	}
-	.scroll-ud.ov-case{
-		margin-top: 0;
-		padding-top: 30px;
-	    padding-bottom: 20px;
+	.scroll-ud.ov-case:before{
+	    content: '';
+	    position: absolute;
+	    top: 0;
+	    left: 0;
+	    z-index: 2;
+	    width: 100%;
+	    height: 20px;
+	    opacity: 0;
+	    transition: .2s;
+		background-image: linear-gradient(0deg, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 100%), url(../img/close-20-blue.png);
+		background-repeat: no-repeat, no-repeat;
+		background-position: top, center center;
+		background-size: auto 20px, 20px auto;
 	}
-	.scroll-ud.etc{
-		margin-top: 0;
-		padding-top: 0;
+	.scroll-ud.ov-case:after{
+	    content: '';
+	    position: absolute;
+	    bottom: 0;
+	    left: 0;
+	    z-index: 1;
+	    width: 100%;
+	    height: 20px;
+	    opacity: 0;
+	    transition: .2s;
+		background-image: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 100%), url(../img/open-20-blue.png);
+		background-repeat: no-repeat, no-repeat;
+		background-position: top, center center;
+		background-size: auto 20px, 20px auto;
 	}
-	.scroll-ud.ov-case.etc{
-		padding-top: 20px;
+	.scroll-ud.ov-case.up-dp:before{
+	    opacity: 1;
 	}
-	.scroll-ud.etc2{
-		margin-top: 20px;
-	}
-	.scroll-ud.ov-case.etc2{
-		margin-top: 0;
-		padding-top: 20px;
+	.scroll-ud.ov-case.down-dp:after{
+	    opacity: 1;
 	}
 	.scroll-ud.disable:after{
 		content: none;
@@ -4279,48 +4275,10 @@ html, body {
 		background: #fff;
 		opacity: 0.7 !important;
 	}
-	.scroll-ud.ov-case:before{
-	    content: '';
-	    position: absolute;
-	    top: 10px;
-	    left: 0;
-	    z-index: 2;
-	    width: 100%;
-	    height: 20px;
-	    background: url(../img/close-20-blue.png) no-repeat center center / 20px auto;
-	    opacity: 0;
-	    transition: .2s;
-	}
-	.scroll-ud.ov-case.etc:before{
-		top: 0;
-	}
-	.scroll-ud.ov-case.etc2:before{
-		top: 0;
-	}
-	.scroll-ud.ov-case.up-dp:before{
-	    opacity: 1;
-	}
-	.scroll-ud.ov-case:after{
-	    content: '';
-	    position: absolute;
-	    bottom: 0;
-	    left: 0;
-	    z-index: 1;
-	    width: 100%;
-	    height: 20px;
-	    background: url(../img/open-20-blue.png) no-repeat center center / 20px auto;
-	    opacity: 0;
-	    transition: .2s;
-	}
-	.scroll-ud.ov-case.down-dp:after{
-	    opacity: 1;
-	}
 	.scroll-ud-inner{
-	    
-	}
-	.scroll-ud-inner.on{
-		height: 100%;
+	    height: 100%;
 	    overflow: auto;
+		padding: 20px 0;
 	}
 	.scroll-ud .rst-list-wrap{
 	    margin-top: 0;
@@ -4328,31 +4286,8 @@ html, body {
 	.scroll-ud .list-05{
 	    margin-top: 0;
 	}
-	.scroll-ud.full{
-		margin: 20px 0;
-		padding: 0;
-	}
-	.scroll-ud.full.etc{
-		margin-top: 0;
-	}
-	
-	.scroll-ud.full:before{
-		top: 0;
-		background-image: linear-gradient(0deg, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 100%), url(../img/close-20-blue.png);
-		background-repeat: no-repeat, no-repeat;
-		background-position: top, center center;
-		background-size: auto 20px, 20px auto;
-	}
-	.scroll-ud.full:after{
-		bottom: 0;
-		background-image: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 100%), url(../img/open-20-blue.png);
-		background-repeat: no-repeat, no-repeat;
-		background-position: top, center center;
-		background-size: auto 20px, 20px auto;
-	}
-
 	.scroll-ud .full-size-area.top{
-		margin: -20px 0 20px 0;
+		margin-top: -20px;
 	}
 
 
@@ -4369,7 +4304,9 @@ html, body {
 		    text-align: center;
 		    background: #f9fafb;
 		}
-
+		.g-box.bot {
+			margin-bottom: -20px;
+		}
 		.bg-box{
 		    padding: 20px 22px;
 		    background: #f7f8fc;
@@ -4383,6 +4320,9 @@ html, body {
 		}
 		.bg-box > .txt + .txt{
 			margin-top: 20px;
+		}
+		.scroll-ud-inner > .bg-box:first-child {
+			margin-top: -20px;
 		}
 
 		.part-cont{

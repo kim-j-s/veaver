@@ -53,7 +53,7 @@ $(function () {
 
 $(window).on('load', function () {
 	// 공통 스크롤 표시 설정
-	ScrollAreaChk();
+	// ScrollAreaChk();
 })
 
 // Nav Open Close
@@ -127,45 +127,80 @@ function InputReset() {
 }
 
 // 공통 스크롤 표시 설정
-function ScrollAreaChk() {
-	var sudHeight = $('.scroll-ud').outerHeight();
-	var sudInHiehgt = $('.scroll-ud-inner').outerHeight();
-	if ($('.scroll-ud').length > 0) {
-		if (sudInHiehgt > sudHeight) {
-			$('.scroll-ud').addClass('ov-case down-dp');
-			$('.scroll-ud-inner').addClass('on');
-			console.log("1");
-		} else {
-			$('.scroll-ud').removeClass('ov-case down-dp');
-			$('.scroll-ud-inner').removeClass('on');
-			console.log("2");
-		}
-	}
-}
+// function ScrollAreaChk() {
+// 	var sudHeight = $('.scroll-ud').outerHeight();
+// 	var sudInHiehgt = $('.scroll-ud-inner').outerHeight();
+// 	if ($('.scroll-ud').length > 0) {
+// 		if (sudInHiehgt > sudHeight) {
+// 			$('.scroll-ud').addClass('ov-case down-dp');
+// 			$('.scroll-ud-inner').addClass('on');
+// 			console.log("1");
+// 		} else {
+// 			$('.scroll-ud').removeClass('ov-case down-dp');
+// 			$('.scroll-ud-inner').removeClass('on');
+// 			console.log("2");
+// 		}
+// 	}
+// }
 
-$(window).on('resize', function () {
-	$('.scroll-ud-inner').removeClass('on');
-	setTimeout(function () {
-		ScrollAreaChk();
-	}, 10)
-})
+// $(window).on('resize', function () {
+// 	$('.scroll-ud-inner').removeClass('on');
+// 	setTimeout(function () {
+// 		ScrollAreaChk();
+// 	}, 10)
+// })
 
 
 // 스크롤 화살표 표시
+// function ScrollActive() {
+// 	$('.scroll-ud > *').on('scroll', function () {
+// 		var st = Math.floor($(this).scrollTop());
+// 		var oh = Math.floor($(this).outerHeight());
+// 		if (st <= 0) {    // 최상단 도달 시
+// 			$(this).closest('.scroll-ud').removeClass('up-dp');
+// 		}
+// 		else if (st > 0 && st + oh + 3 < $(this)[0].scrollHeight) {
+// 			$(this).closest('.scroll-ud').addClass('up-dp');
+// 			$(this).closest('.scroll-ud').addClass('down-dp');
+// 		}
+// 		else if (st + oh + 3 >= $(this)[0].scrollHeight) {
+// 			$(this).closest('.scroll-ud').removeClass('down-dp');
+// 		}
+// 	});
+// }
+
+// scroll 화살표
 function ScrollActive() {
-	$('.scroll-ud > *').on('scroll', function () {
-		var st = Math.floor($(this).scrollTop());
-		var oh = Math.floor($(this).outerHeight());
-		if (st <= 0) {    // 최상단 도달 시
-			$(this).closest('.scroll-ud').removeClass('up-dp');
+	$('.scroll-ud').each(function(){
+		var $wrap = $('.scroll-ud');
+		var $inner = $wrap.children('.scroll-ud-inner');
+
+		if($wrap.length != 1 || $inner.length != 1) {
+			$wrap.removeClass('ov-case');
+			return true;
+		} else {
+			$wrap.addClass('ov-case');
 		}
-		else if (st > 0 && st + oh + 3 < $(this)[0].scrollHeight) {
-			$(this).closest('.scroll-ud').addClass('up-dp');
-			$(this).closest('.scroll-ud').addClass('down-dp');
-		}
-		else if (st + oh + 3 >= $(this)[0].scrollHeight) {
-			$(this).closest('.scroll-ud').removeClass('down-dp');
-		}
+
+
+		$inner.off('scroll.scrollud').on('scroll.scrollud', function (e) {
+			var sct = $inner.scrollTop();
+			var h = $inner.outerHeight();
+
+			if(sct <= 0) {
+				$wrap.removeClass('up-dp');
+			} else {
+				$wrap.addClass('up-dp');
+			}
+
+			if(sct >= this.scrollHeight - h) {
+				$wrap.removeClass('down-dp');
+			} else {
+				$wrap.addClass('down-dp');
+			}
+		});
+
+		$inner.trigger('scroll');
 	});
 }
 
