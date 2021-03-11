@@ -6,7 +6,7 @@
     <meta content="IE=edge" http-equiv="X-UA-Compatible">
     <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
     <meta name="x-apple-disable-message-reformatting">
-    <title>CP정보 | Veaver Health mining</title>
+    <title>질병정보 상세 | Veaver Health mining</title>
     <link href="../css/reset.css" rel="stylesheet">
     <link href="../css/pickadate.default.css" rel="stylesheet">
     <link href="../css/pickadate.default.date.css" rel="stylesheet">
@@ -55,11 +55,9 @@
 
         <!-- 컨텐츠 영역 -->
         <section class="layer-content etc">
-            화면 클릭시 구동<br>
-            on / off<br>
-            CP정보
+            화면 클릭시 구동
         </section>
-            <!-- //컨텐츠 영역 -->
+        <!-- //컨텐츠 영역 -->
     </div>
 
     <!-- 하단 팝업 -->
@@ -72,51 +70,26 @@
                 </div>
             </div>
             <div class="bottom-pop-cont">
-                <div class="line-box">
-                    <div class="full-size-area top">
-                        <img src="../img/temp/@poptemp06.jpg" alt="김민규 부교수">
-                    </div>
-                    <div class="txt-cont03">
-                        <div class="q-txt">김민규 부교수</div>
+                <div id="setDrQADetailHead" class="line-box"></div>
+                <div class="card-content-area line-box">
+                    <div class="card-content">
+                        <p style="font-size: 24px">어떻게 진단할까?</p>
+                        <p style="font-size: 16px">편두통은 대개는 간헐적이면서 만성적인 경과를 보이나 그렇지 않은 경우도 상당수 있으며, 증상은 환자마다 천차만별이다.
+                            그만큼 진단이 어려울 수도 있으므로 편두통을 악화시키는 요인이 있는지, 머릿속에 다른 원인적 질환이 있는지 놓치지 않는 감별진단이 중요하다. 환자의 병력을
+                            물어보는 문진이 물로 중요하고 머리 MRI/MRA 검사, 혈액검사, 간단한 심리검사, 과거 약 복용 이력(부작용 포함) 등도 중요하다.</p>
                     </div>
                 </div>
-
-                <div class="line-box">
-                    <h4 class="tit-h4">인필라테스의 건강레시피 (5)</h4>
-                    <ul class="list-03">
-                        <li>
-                            <a href="#">
-                                <span class="word-box">
-                                    <span class="txt">허리디스크와 척추관협착증은 어떻게 다른가요?</span>
-                                </span>
-                                <span class="ex-img">
-                                    <img src="../img/temp/@poptemp07.jpg" alt="예시 이미지">
-                                </span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <span class="word-box">
-                                    <span class="txt">내시경적 허리디스크 치료 수술은 어떤 건가요?</span>
-                                </span>
-                                <span class="ex-img">
-                                    <img src="../img/temp/@poptemp07.jpg" alt="예시 이미지">
-                                </span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <span class="word-box">
-                                    <span class="txt">환자들이 알고 있어야 할 식이 습관을 알려주세요.</span>
-                                </span>
-                                <span class="ex-img">
-                                    <img src="../img/temp/@poptemp07.jpg" alt="예시 이미지">
-                                </span>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
+                <div id="setDrQADetailBot" class="line-box"></div>
             </div>
+        </div>
+        <div class="floating-btns">
+            <button type="button" class="btn-view-more">더보기</button>
+            <ul class="more-view-btns">
+                <li><button type="button" class="more-btns btn-doc-qa">닥터 QA</button></li>
+                <li><button type="button" class="more-btns btn-bookmark">관심 질병으로 저장하기</button></li>
+                <li><button type="button" class="more-btns btn-find-h">병원찾기</button></li>
+                <li><button type="button" class="more-btns btn-share">공유하기</button></li>
+            </ul>
         </div>
     </div>
     <!-- // 하단 팝업 -->
@@ -124,15 +97,34 @@
 
 <!-- 팝업 구동 샘플 -->
 <script>
+    // 화면 로딩후 floating-btns을 동적으로 삽입할경우
+    // floatBtns(); 함수 호출 필요
+
     $(function() {
-        $('html').click(function() {
-            if (!$('.bottom-pop').hasClass('opened')) {
-                $('.bottom-pop').openPop();
-            } else {
-                $('.bottom-pop').closePop();
-            }
+        $('.layer-content').click(function() {
+            $('.bottom-pop').openPop();
         });
-    })
+        $('.layer-close-btn').click(function() {
+            $('.bottom-pop').closePop();
+        });
+    });
+    console.log('qq');
+
+
+    // 질병 상세 상단 기본정보
+    const exData01 = {
+        "thumbnail": "../img/temp/@poptemp03.jpg",
+        "subject": "정형외과",
+        "detail": "척추관협착증은 어떻게 다른가요?",
+        "linkTxt": "이석기 원장 / 내과 전문의 / 서울대학교",
+    };
+    $('#setDrQADetailHead').drawUi('setDrQADetailHead', exData01);
+
+    // 질병 상세 상단 기본정보
+    const exData02 = {
+        "linkTxt": "이석기 원장 / 내과 전문의 / 서울대학교",
+    };
+    $('#setDrQADetailBot').drawUi('setDrQADetailBot', exData02);
 </script>
 <!--// 팝업 구동 샘플 -->
 

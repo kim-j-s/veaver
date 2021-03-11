@@ -11,6 +11,8 @@
             else if (code == 'setSelfDiagnosisCheck') $this.setSelfDiagnosisCheck(data);
             else if (code == 'setSelfDiagnosisResult') $this.setSelfDiagnosisResult(data);
             else if (code == 'setDiseaseDetailHead') $this.setDiseaseDetailHead(data);
+            else if (code == 'setDrQADetailHead') $this.setDrQADetailHead(data);
+            else if (code == 'setDrQADetailBot') $this.setDrQADetailBot(data);
             else if (code == 'setDetailCardView') $this.setDetailCardView(data);
             else if (code == 'setDiseaseSymptomSubject') $this.setDiseaseSymptomSubject(data);
             else if (code == 'setDrQAList') $this.setDrQAList(data);
@@ -83,7 +85,7 @@
         return $(this).each(function () {
             let strHtml = '';
 
-            if (data.thumbnail) strHtml += `<div class="full-size-area"><img src="${data.thumbnail}"></div>`;
+            if (data.thumbnail) strHtml += `<div class="full-size-area top"><img src="${data.thumbnail}"></div>`;
 
             strHtml += '<dl class="txt-cont">';
 
@@ -91,6 +93,35 @@
             if (data.detail) strHtml += `<dd>${data.detail}</dd>`;
 
             strHtml += '</dl>';
+
+            $(this).append(strHtml);
+        });
+    };
+
+    // 닥터QA 상세 탑
+    $.fn.setDrQADetailHead = function (data) {
+        return $(this).each(function () {
+            let strHtml = '';
+
+            if (data.thumbnail) strHtml += `<div class="full-size-area top"><img src="${data.thumbnail}"></div>`;
+
+            strHtml += '<div class="txt-cont03">';
+
+            if (data.subject) strHtml += `<strong class="b-txt">${data.subject}</strong>`;
+            if (data.detail) strHtml += `<div class="q-txt">${data.detail}</div>`;
+            if (data.linkTxt) strHtml += `<a href="#" class="link02">${data.linkTxt}</a>`;
+
+            strHtml += '</div>';
+
+            $(this).append(strHtml);
+        });
+    };
+
+    // 닥터QA 상세 바텀
+    $.fn.setDrQADetailBot = function (data) {
+        return $(this).each(function () {
+            let strHtml = '';
+            if (data.linkTxt) strHtml += `<a href="#" class="link02">${data.linkTxt}</a>`;
 
             $(this).append(strHtml);
         });

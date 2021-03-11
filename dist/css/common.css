@@ -3632,7 +3632,7 @@ html, body {
 		    margin: 0 -22px;
 		}
 		.full-size-area.top{
-			margin: -20px 0 20px 0;
+			margin-top: -20px;
 		}
 		.full-size-area > img{
 		    display: block;

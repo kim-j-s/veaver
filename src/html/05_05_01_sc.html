@@ -25,16 +25,7 @@
                 </div>
             </div>
             <div class="bottom-pop-cont">
-                <div class="line-box">
-                    <div class="full-size-area top">
-                        <img src="../img/temp/@poptemp03.jpg" alt="예시 이미지">
-                    </div>
-                    <div class="txt-cont03">
-                        <strong class="b-txt">정형외과</strong>
-                        <div class="q-txt">허리디스크와 척추관협착증은 어떻게 다른가요?</div>
-                        <a href="#" class="link02">이석기 원장 / 내과 전문의 / 서울대학교</a>
-                    </div>
-                </div>
+                <div id="setDrQADetailHead" class="line-box"></div>
                 <div class="card-content-area line-box">
                     <div class="card-content">
                         <p style="font-size: 24px">어떻게 진단할까?</p>
@@ -43,9 +34,7 @@
                             물어보는 문진이 물로 중요하고 머리 MRI/MRA 검사, 혈액검사, 간단한 심리검사, 과거 약 복용 이력(부작용 포함) 등도 중요하다.</p>
                     </div>
                 </div>
-                <div class="line-box">
-                    <a href="#" class="link02">이석기 원장 / 내과 전문의 / 서울대학교</a>
-                </div>
+                <div id="setDrQADetailBot"  class="line-box"></div>
             </div>
         </div>
         <div class="floating-btns">
@@ -74,6 +63,23 @@
             $('.bottom-pop').closePop();
         });
     });
+    console.log('qq');
+
+
+    // 질병 상세 상단 기본정보
+    const exData01 = {
+        "thumbnail": "../img/temp/@poptemp03.jpg",
+        "subject": "정형외과",
+        "detail": "척추관협착증은 어떻게 다른가요?",
+        "linkTxt": "이석기 원장 / 내과 전문의 / 서울대학교",
+    };
+    $('#setDrQADetailHead').drawUi('setDrQADetailHead', exData01);
+
+    // 질병 상세 상단 기본정보
+    const exData02 = {
+        "linkTxt": "이석기 원장 / 내과 전문의 / 서울대학교",
+    };
+    $('#setDrQADetailBot').drawUi('setDrQADetailBot', exData02);
 </script>
 <!--// 팝업 구동 샘플 -->
 </html>
