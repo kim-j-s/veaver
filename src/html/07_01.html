@@ -191,21 +191,20 @@ shareButton.addEventListener('click', event => {
 */
 
 shareButton.addEventListener('click', event => {
-    //shareDialog.classList.add('is-open');
     if (navigator.share) {
         navigator.share({
+            // native 공유하기 타이틀 제공
             title: '공유하기',
-            // url: 'https://codepen.io/ayoisaiah/pen/YbNazJ'
+            // 공유하는 url 제공
             url: 'https://kim-j-s.github.io/veaver/dist/index.html'
         }).then(() => {
             console.log('Thanks for sharing!');
         })
         .catch(console.error);
-        }
-         else {
-            shareDialog.classList.add('is-open');
-        }
-    //shareDialog.classList.add('is-open');
+    }
+    else {
+        shareDialog.classList.add('is-open');
+    }
 });
 
 closeButton.addEventListener('click', event => {
