@@ -1742,6 +1742,17 @@ html, body {
 
 	/** full layer Popup **/
 
+	.layer-content{
+		position:relative;
+		flex: 1;
+		/*padding: 20px 22px 0 20px;*/
+		padding: 20px 22px;
+		overflow: auto;
+	}
+	.layer-content.full{
+		padding: 20px 0;
+	}
+
 	.layer-full-wrap{
 		position: fixed;
 		top: 0;
@@ -1757,8 +1768,8 @@ html, body {
 		padding: 0 0 0 0;
 		background: #fff;
 	}
-	.layer-full-wrap.fl-btn-add{
-		padding-bottom: 68px;
+	.fl-btn-add .scroll-ud-inner{
+		padding-bottom: 108px;
 	}
 
 	.flex-none-cont{
