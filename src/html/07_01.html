@@ -198,11 +198,10 @@ shareButton.addEventListener('click', event => {
             // url: 'https://codepen.io/ayoisaiah/pen/YbNazJ'
             url: 'https://kim-j-s.github.io/veaver/dist/index.html'
         }).then(() => {
-            console.log('Thanks for sharing!');
+            console.log('공유하기 성공');
         })
-        .catch(console.error);
-        } else {
-            shareDialog.classList.add('is-open');
+            .catch(console.error);
+        }
     }
     //shareDialog.classList.add('is-open');
 });
