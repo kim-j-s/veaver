@@ -237,7 +237,7 @@
         */
 
         shareButton.addEventListener('click', event => {
-            shareDialog.classList.add('is-open');
+            //shareDialog.classList.add('is-open');
             if (navigator.share) {
                 navigator.share({
                         title: '공유하기',
@@ -247,12 +247,9 @@
                         console.log('Thanks for sharing!');
                     })
                     .catch(console.error);
+            } else {
+                shareDialog.classList.add('is-open');
             }
-            /*
-         else {
-            //shareDialog.classList.add('is-open');
-    }
-    */
             //shareDialog.classList.add('is-open');
         });
 

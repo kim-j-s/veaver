@@ -191,7 +191,7 @@ shareButton.addEventListener('click', event => {
 */
 
 shareButton.addEventListener('click', event => {
-    shareDialog.classList.add('is-open');
+    //shareDialog.classList.add('is-open');
     if (navigator.share) {
         navigator.share({
             title: '공유하기',
@@ -202,11 +202,9 @@ shareButton.addEventListener('click', event => {
         })
         .catch(console.error);
         }
-        /*
          else {
-            //shareDialog.classList.add('is-open');
-    }
-    */
+            shareDialog.classList.add('is-open');
+        }
     //shareDialog.classList.add('is-open');
 });
 
