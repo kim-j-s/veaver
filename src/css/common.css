@@ -585,6 +585,7 @@ html, body {
 		}
 		.btn-black-clock{
 			display: inline-block;
+			vertical-align: middle;
 			width: 30px;
 			height: 30px;
 			overflow: hidden;
@@ -593,6 +594,7 @@ html, body {
 		}
 		.btn-black-setting{
 			display: inline-block;
+			vertical-align: middle;
 			width: 30px;
 			height: 30px;
 			overflow: hidden;
@@ -1791,9 +1793,13 @@ html, body {
 		.header-inner .u-profile{
 			margin: 4px 0 0 11px;
 		}
+		.header-inner * + .u-profile{
+			margin: 0 0 0 11px;
+		}
 		.u-profile{
 			position: relative;
 			display: inline-block;
+			vertical-align: middle;
 			padding: 2px 6px 2px 24px;
 			border-radius: 25px;
 			background: #f7f9fa;
