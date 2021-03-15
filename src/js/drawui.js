@@ -170,7 +170,7 @@
                         strHtml += `</a></div>`;
                         $this.append(strHtml);
                     } else {
-                        $this.append(`<a href="${obj.linkUrl}" class="link"><span>${obj.linkTitle ? obj.linkTitle : obj.linkUrl}</span></a>`);
+                        $this.append(`<a href="${obj.linkUrl ? obj.linkUrl : ''}" class="link"><span>${obj.linkTitle ? obj.linkTitle : obj.linkUrl}</span></a>`);
                     }
                 } else if (obj.typeId == 'V') {
                     // V: 비디오 카드뷰
