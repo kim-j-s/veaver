@@ -156,7 +156,7 @@
                     // NI 질병정보
                     // SI1 닥터QA
                     if (obj.link_typ=='2') {
-                        let strHtml = `<div class="link-box"><a href="${obj.linkUrl}">`;
+                        let strHtml = `<div class="link-box"><a href="">`;
                         strHtml += `<span class="word-box">`;
                         if (obj.nisiType == 'SI1') {
                             // SI1 닥터QA
