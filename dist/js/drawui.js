@@ -156,7 +156,7 @@
                     // NI 질병정보
                     // SI1 닥터QA
                     if (obj.link_typ=='2') {
-                        let strHtml = `<div class="link-box"><a href="">`;
+                        let strHtml = `<div class="link-box"><a href="${obj.linkUrl}">`;
                         strHtml += `<span class="word-box">`;
                         if (obj.nisiType == 'SI1') {
                             // SI1 닥터QA
@@ -170,7 +170,7 @@
                         strHtml += `</a></div>`;
                         $this.append(strHtml);
                     } else {
-                        $this.append(`<a href="${obj.linkUrl}" class="link"><span>${obj.linkTitle ? obj.linkTitle : obj.linkUrl}</span></a>`);
+                        $this.append(`<a href="${obj.linkUrl ? obj.linkUrl : ''}" class="link"><span>${obj.linkTitle ? obj.linkTitle : obj.linkUrl}</span></a>`);
                     }
                 } else if (obj.typeId == 'V') {
                     // V: 비디오 카드뷰
