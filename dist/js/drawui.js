@@ -158,7 +158,7 @@
                     // NI 질병정보
                     // SI1 닥터QA
                     if (obj.link_typ=='2') {
-                        let strHtml = `<div class="link-box"><a href="${obj.linkUrl}" onclick="gourl('${obj.linkDetailId}');">`;
+                        let strHtml = `<div class="link-box"><a onclick="gourl('${obj.linkDetailId}');">`;
                         strHtml += `<span class="word-box">`;
                         if (obj.nisiType == 'SI1') {
                             // SI1 닥터QA
@@ -171,8 +171,10 @@
                         strHtml += `<span class="lb-img"><img src="${obj.Re_thumbnail}" alt="예시 이미지"></span>`;
                         strHtml += `</a></div>`;
                         $this.append(strHtml);
-                    } else {
-                        $this.append(`<a onclick="gourl('${obj.linkDetailId}');" href="${obj.linkUrl ? obj.linkUrl : ''}" class="link"><span>${obj.linkTitle ? obj.linkTitle : obj.linkUrl}</span></a>`);
+                    } else if(obj.link_typ=='1'){
+                        $this.append(`<a onclick="gourl('${obj.linkDetailId}');" class="link"><span>${obj.linkTitle}</span></a>`);
+                    } else if(obj.link_typ=='3') {
+                        $this.append(`<a href="${obj.linkUrl ? obj.linkUrl : ''}"  class="link"><span>${obj.linkTitle ? obj.linkTitle : obj.linkUrl}</span></a>`);
                     }
                 } else if (obj.typeId == 'V') {
                     // V: 비디오 카드뷰
