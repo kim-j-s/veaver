@@ -2,7 +2,9 @@
     $DOC = $(document);
 
     $.fn.drawUi = function (code, data, option) {
-        if (!code || !data) return;
+        if (!code || !data) {
+            return;
+        }
 
         return $(this).each(function () {
             const $this = $(this);
@@ -156,7 +158,7 @@
                     // NI 질병정보
                     // SI1 닥터QA
                     if (obj.link_typ=='2') {
-                        let strHtml = `<div class="link-box"><a href="${obj.linkUrl}" ldid="${obj.linkDetailId}">`;
+                        let strHtml = `<div class="link-box"><a href="${obj.linkUrl}" onclick="gourl('${obj.linkDetailId}');">`;
                         strHtml += `<span class="word-box">`;
                         if (obj.nisiType == 'SI1') {
                             // SI1 닥터QA
@@ -170,7 +172,7 @@
                         strHtml += `</a></div>`;
                         $this.append(strHtml);
                     } else {
-                        $this.append(`<a ldid="${obj.linkDetailId}" href="${obj.linkUrl ? obj.linkUrl : ''}" class="link"><span>${obj.linkTitle ? obj.linkTitle : obj.linkUrl}</span></a>`);
+                        $this.append(`<a onclick="gourl('${obj.linkDetailId}');" href="${obj.linkUrl ? obj.linkUrl : ''}" class="link"><span>${obj.linkTitle ? obj.linkTitle : obj.linkUrl}</span></a>`);
                     }
                 } else if (obj.typeId == 'V') {
                     // V: 비디오 카드뷰
