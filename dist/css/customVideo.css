@@ -315,6 +315,7 @@
 .custom-video.cv-floating .cv-video {
     flex: 1 1 auto;
     display: flex;
+    position: relative;
     align-items: center;
     justify-content: center;
 }

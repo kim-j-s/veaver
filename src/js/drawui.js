@@ -2,7 +2,9 @@
     $DOC = $(document);
 
     $.fn.drawUi = function (code, data, option) {
-        if (!code || !data) return;
+        if (!code || !data) {
+            return;
+        }
 
         return $(this).each(function () {
             const $this = $(this);
@@ -155,8 +157,8 @@
                     // * 브라우저 링크와 자체 컨텐츠 링크 둘다 L 타입을 사용한다.
                     // NI 질병정보
                     // SI1 닥터QA
-                    if (obj.linkDetailId) {
-                        let strHtml = `<div class="link-box"><a href="${obj.linkUrl}">`;
+                    if (obj.link_typ=='2') {
+                        let strHtml = `<div class="link-box"><a onclick="gourl('${obj.linkDetailId}');">`;
                         strHtml += `<span class="word-box">`;
                         if (obj.nisiType == 'SI1') {
                             // SI1 닥터QA
@@ -165,12 +167,14 @@
                             // NI 질병정보
                             strHtml += `<strong class="b-tit">질병정보</strong>`;
                         }
-                        strHtml += `<span class="txt">${obj.linkTitle}</span></span>`;
-                        strHtml += `<span class="lb-img"><img src="${obj.dataUrl}" alt="예시 이미지"></span>`;
+                        strHtml += `<span class="txt">${obj.Re_title}</span></span>`;
+                        strHtml += `<span class="lb-img"><img src="${obj.Re_thumbnail}" alt="예시 이미지"></span>`;
                         strHtml += `</a></div>`;
                         $this.append(strHtml);
-                    } else if (!obj.linkDetailId && obj.linkUrl) {
-                        $this.append(`<a href="${obj.linkUrl}" class="link"><span>${obj.linkTitle ? obj.linkTitle : obj.linkUrl}</span></a>`);
+                    } else if(obj.link_typ=='1'){
+                        $this.append(`<a onclick="gourl('${obj.linkDetailId}');" class="link"><span>${obj.linkTitle}</span></a>`);
+                    } else if(obj.link_typ=='3') {
+                        $this.append(`<a href="${obj.linkUrl ? obj.linkUrl : ''}"  class="link"><span>${obj.linkTitle ? obj.linkTitle : obj.linkUrl}</span></a>`);
                     }
                 } else if (obj.typeId == 'V') {
                     // V: 비디오 카드뷰
