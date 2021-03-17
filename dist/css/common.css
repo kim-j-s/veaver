@@ -1796,7 +1796,7 @@ html, body {
 			display: flex;
 			flex-direction: row;
 			min-height: 30px;
-			padding-left: 35px;
+			/*padding-left: 35px;*/
 		}
 		.header-inner.etc{
 			padding-left: 0;
@@ -1867,11 +1867,16 @@ html, body {
 			background:url(../img/ac-black-close.png) no-repeat 0 0 / 100% auto;
 			text-indent:-9999px;
 		}
-		.header-inner .history-back{
-			position:absolute;
+		.header-inner .history-back,
+		.header-inner .layer-close-btn{
+			/*position:absolute;
 			top: 0;
-			left: 0px;
+			left: 0px;*/
+			position: relative;
+			vertical-align: middle;
+			margin-right: 5px;
 		}
+		
 	/* // 헤더 */
 
 
