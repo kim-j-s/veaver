@@ -1742,7 +1742,7 @@ html, body {
 		padding: 0 0 0 0;
 		background: #fff;
 	}
-	.fl-btn-add .scroll-ud-inner{
+	.scroll-ud-inner.fl-btn-add {
 		padding-bottom: 108px;
 	}
 
