@@ -2,7 +2,7 @@
 
 
 /* HTML Default */
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, article, aside, hgroup, header, footer, figure, figcaption, nav, section { margin:0; padding:0; border:0; font-weight: 300; font-size:14px; vertical-align:baseline; box-sizing:border-box;}
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, article, aside, hgroup, header, footer, figure, figcaption, nav, section { margin:0; padding:0; border:0; font-weight: 300; font-size:14px; vertical-align:baseline;-webkit-box-sizing:border-box; box-sizing:border-box;}
 article, aside, hgroup, header, footer, figure, figcaption, nav, section { display: block; }
 html {height: 100%; font-size: 100px;}
 @media screen and (max-width: 375px) {
@@ -10,7 +10,7 @@ html {height: 100%; font-size: 100px;}
     font-size: 65px;
   }
 }
-body {min-width:100%; height: 100%; margin:0; padding:0; box-sizing:border-box; font-family: 'Noto Sans Kr', sans-serif; font-size:14px; color:#000;}
+body {min-width:100%; height: 100%; margin:0; padding:0; -webkit-box-sizing:border-box; box-sizing:border-box; font-family: 'Noto Sans Kr', sans-serif; font-size:14px; color:#000;}
 body {width:100%; -webkit-text-size-adjust: none;}
 ol, ul { list-style:none; }
 blockquote, q { quotes:none; }
@@ -20,7 +20,7 @@ button {margin:0; padding:0; border:0; font:inherit; color:inherit; background:t
 a:link, a:visited, a:hover, a,active, a:focus { text-decoration:none; cursor:pointer;}
 legend, caption {overflow: hidden;position: absolute;top: 0;left: 0;width: 1px;height: 1px;font-size: 0;line-height: 0}
 textarea { resize:vertical; font:inherit; overflow-y:auto; }
-input, select { color:inherit; font:inherit; vertical-align: middle; box-sizing:border-box;}
+input, select { color:inherit; font:inherit; vertical-align: middle; -webkit-box-sizing:border-box; box-sizing:border-box;}
 address, i { font-style:normal; }
 table { border-collapse:collapse; table-layout:fixed; }
 img, select, input, button { vertical-align:middle; }

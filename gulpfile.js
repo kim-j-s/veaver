@@ -84,9 +84,7 @@ function htmlBuild(done){
 function cssBuild(done){
   gulp.src(paths.srcCss)
 	.pipe(wait(200))
-	.pipe(autoprefixer({
-		cascade: false
-	}))
+	.pipe(autoprefixer())
 	.pipe(gulp.dest(paths.distCss));
   done();
 }
