@@ -2,15 +2,15 @@
 <html lang="ko">
 
 <head>
-    <meta charset="utf-8">
-    <meta content="IE=edge" http-equiv="X-UA-Compatible">
-    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
-    <title>공통 템플릿</title>
-    <link href="../css/reset.css" rel="stylesheet" />
-    <link href="../css/common.css" rel="stylesheet" />
-    <script type="text/javascript" src="../js/jquery.min.js"></script>
-    <script type="text/javascript" src="../js/commonui.js"></script>
-    <!--[if lt IE 9]>
+	<meta charset="utf-8">
+	<meta content="IE=edge" http-equiv="X-UA-Compatible">
+	<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+	<title>공통 템플릿</title>
+	<link href="../css/reset.css" rel="stylesheet" />
+	<link href="../css/common.css" rel="stylesheet" />
+	<script type="text/javascript" src="../js/jquery.min.js"></script>
+	<script type="text/javascript" src="../js/commonui.js"></script>
+	<!--[if lt IE 9]>
     <script type="text/javascript">
         document.createElement("header"); 
         document.createElement("nav"); 
@@ -22,152 +22,152 @@
 <![endif]-->
 
 
-    <!-- 2018.05.16 -->
-    <script type="text/javascript" src="code/scripts/shCore.js"></script>
-    <script type="text/javascript" src="code/scripts/shBrushBash.js"></script>
-    <script type="text/javascript" src="code/scripts/shBrushCss.js"></script>
-    <script type="text/javascript" src="code/scripts/shBrushJava.js"></script>
-    <script type="text/javascript" src="code/scripts/shBrushJScript.js"></script>
-    <script type="text/javascript" src="code/scripts/shBrushXml.js"></script>
+	<!-- 2018.05.16 -->
+	<script type="text/javascript" src="code/scripts/shCore.js"></script>
+	<script type="text/javascript" src="code/scripts/shBrushBash.js"></script>
+	<script type="text/javascript" src="code/scripts/shBrushCss.js"></script>
+	<script type="text/javascript" src="code/scripts/shBrushJava.js"></script>
+	<script type="text/javascript" src="code/scripts/shBrushJScript.js"></script>
+	<script type="text/javascript" src="code/scripts/shBrushXml.js"></script>
 
-    <link type="text/css" rel="stylesheet" href="code/styles/shCore.css" />
-    <link type="text/css" rel="stylesheet" href="code/styles/shThemeDefault.css" />
-    <script type="text/javascript">
-        SyntaxHighlighter.all();
-    </script>
-    <!-- //2018.05.16 -->
-    <style>
-        body {
-            padding: 20px;
-            padding-top: 100px;
-            background: #fff;
-        }
+	<link type="text/css" rel="stylesheet" href="code/styles/shCore.css" />
+	<link type="text/css" rel="stylesheet" href="code/styles/shThemeDefault.css" />
+	<script type="text/javascript">
+		SyntaxHighlighter.all();
+	</script>
+	<!-- //2018.05.16 -->
+	<style>
+		body{
+			padding: 20px;
+			padding-top: 100px;
+			background: #fff;
+		}
 
-        h1 {
-            font-size: 30px;
-            padding: 0 20px;
-        }
+		h1{
+			font-size: 30px;
+			padding: 0 20px;
+		}
 
-        h2:not(.header-title) {
-            padding: 20px 0;
-            margin-top: 20px;
-            border-top: 1px dashed #666666;
-            font-size: 20px;
-        }
+		h2:not(.header-title){
+			padding: 20px 0;
+			margin-top: 20px;
+			border-top: 1px dashed #666666;
+			font-size: 20px;
+		}
 
-        .guideLink {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            padding: 10px;
-            background: #fff;
-            border-bottom: 1px solid #333;
-        }
+		.guideLink{
+			position: fixed;
+			top: 0;
+			left: 0;
+			width: 100%;
+			padding: 10px;
+			background: #fff;
+			border-bottom: 1px solid #333;
+		}
 
-        .guideLink>a {
-            display: inline-block;
-            border: 1px solid #333;
-            padding: 5px;
-        }
+		.guideLink>a{
+			display: inline-block;
+			border: 1px solid #333;
+			padding: 5px;
+		}
 
-        .box {
-            margin-top: 20px;
-            border: 1px solid #E3E3E3
-        }
+		.box{
+			margin-top: 20px;
+			border: 1px solid #E3E3E3
+		}
 
-        .font {
-            font-size: 20px;
-            line-height: normal;
-        }
+		.font{
+			font-size: 20px;
+			line-height: normal;
+		}
 
-        .font+.font {
-            margin-top: 10px
-        }
+		.font+.font{
+			margin-top: 10px
+		}
 
-        .a2 {
-            font-weight: 200;
-        }
+		.a2{
+			font-weight: 200;
+		}
 
-        .a3 {
-            font-weight: 300;
-        }
+		.a3{
+			font-weight: 300;
+		}
 
-        .a4 {
-            font-weight: 400;
-        }
+		.a4{
+			font-weight: 400;
+		}
 
-        .a5 {
-            font-weight: 500;
-        }
+		.a5{
+			font-weight: 500;
+		}
 
-        .a6 {
-            font-weight: 700;
-        }
+		.a6{
+			font-weight: 700;
+		}
 
-        header {
-            position: relative !important;
-            background: rgba(0, 0, 0, 0.2);
-        }
-    </style>
+		header{
+			position: relative !important;
+			background: rgba(0,0,0,0.2);
+		}
+	</style>
 
 <body>
-    <h1>헤더 종류</h1>
+	<h1>헤더 종류</h1>
 
-    <h2>문구</h2>
-    <dl class="txt-cont">
+	<h2>문구</h2>
+	<dl class="txt-cont">
         <dt>편두통</dt>
         <dd>편두통은 뇌가 특정 자극에 매우 예민하게 반응하도록 유전적으로 세팅된 뇌의 만성 질병이다. </dd>
     </dl>
-
-    <!-- souce code 뷰어 -->
-    <div class="box">
-        <pre class="brush: html;">
+	
+	<!-- souce code 뷰어 -->
+	<div class="box">
+		<pre class="brush: html;">
 			<dl class="txt-cont">
 				<dt></dt>
 				<dd></dd>
 		    </dl>
 		</pre>
-    </div>
-    <!-- //souce code 뷰어 -->
+	</div>
+	<!-- //souce code 뷰어 -->
 
-    <h2>문구2</h2>
-    <dl class="txt-cont02">
+	<h2>문구2</h2>
+	<dl class="txt-cont02">
         <dt>증상</dt>
         <dd>편두통은 대개는 간헐적이면서 만성적인 경과를 보이나 그렇지 않은 경우도 상당수 있으며, 증상은 환자마다 천차만별이다.</dd>
     </dl>
-
-    <!-- souce code 뷰어 -->
-    <div class="box">
-        <pre class="brush: html;">
+	
+	<!-- souce code 뷰어 -->
+	<div class="box">
+		<pre class="brush: html;">
 			<dl class="txt-cont02">
 				<dt></dt>
 				<dd></dd>
 		    </dl>
 		</pre>
-    </div>
-    <!-- //souce code 뷰어 -->
+	</div>
+	<!-- //souce code 뷰어 -->
 
-    <h2>문구</h2>
-    <div class="txt-cont03">
+	<h2>문구</h2>
+	<div class="txt-cont03">
         <strong class="sort-txt">정형외과</strong>
         <div class="q-txt">허리디스크와 척추관협착증은 어떻게 다른가요?</div>
         <a href="#" class="link02">이석기 원장 / 내과 전문의 / 서울대학교</a>
     </div>
-    <!-- souce code 뷰어 -->
-    <div class="box">
-        <pre class="brush: html;">
+	<!-- souce code 뷰어 -->
+	<div class="box">
+		<pre class="brush: html;">
 			<div class="txt-cont03">
 		        <strong class="sort-txt"></strong>
 		        <div class="q-txt"></div>
 		        <a href="#" class="link02"></a>
 		    </div>
 		</pre>
-    </div>
-    <!-- //souce code 뷰어 -->
+	</div>
+	<!-- //souce code 뷰어 -->
 
-    <h2>문구</h2>
-    <div class="txt-cont04">
+	<h2>문구</h2>
+	<div class="txt-cont04">
         <div class="t-case">
             <span>정형외과 전문의</span>
             <span>정형외과 전문의</span>
@@ -179,9 +179,9 @@
         </div>
         <div class="sort-txt">전문의</div>
     </div>
-    <!-- souce code 뷰어 -->
-    <div class="box">
-        <pre class="brush: html;">
+	<!-- souce code 뷰어 -->
+	<div class="box">
+		<pre class="brush: html;">
 			<div class="txt-cont04">
 		        <div class="t-case">
 		            <span></span>
@@ -193,70 +193,70 @@
 		        </div>
 		    </div>
 		</pre>
-    </div>
-    <!-- //souce code 뷰어 -->
+	</div>
+	<!-- //souce code 뷰어 -->
 
+	
 
-
-    <h2>안내 문구</h2>
-    <p class="i-txt">증상에 대한 정확한 진단 및 치료는 반드시 의료기관을 방문하셔서 의사 선생님께 받으셔야합니다.</p>
-    <!-- souce code 뷰어 -->
-    <div class="box">
-        <pre class="brush: html;">
+	<h2>안내 문구</h2>
+	<p class="i-txt">증상에 대한 정확한 진단 및 치료는 반드시 의료기관을 방문하셔서 의사 선생님께 받으셔야합니다.</p>
+	<!-- souce code 뷰어 -->
+	<div class="box">
+		<pre class="brush: html;">
 			<p class="i-txt"></p>
 		</pre>
-    </div>
-    <!-- //souce code 뷰어 -->
+	</div>
+	<!-- //souce code 뷰어 -->
 
-    <h2>Gradient Box</h2>
-    <div class="gr-box">
+	<h2>Gradient Box</h2>
+	<div class="gr-box">
         <p class="i-txt">증상에 대한 정확한 진단 및 치료는 반드시 의료기관을 방문하셔서 의사 선생님께 받으셔야합니다.</p>
     </div>
-    <!-- souce code 뷰어 -->
-    <div class="box">
-        <pre class="brush: html;">
+	<!-- souce code 뷰어 -->
+	<div class="box">
+		<pre class="brush: html;">
 			<div class="gr-box">
 		    </div>
 		</pre>
-    </div>
-    <!-- //souce code 뷰어 -->
+	</div>
+	<!-- //souce code 뷰어 -->
 
-    <h2>위 아래 경계선이 존재하는 콘텐츠</h2>
-    <div class="line-box">콘텐츠</div>
-    <div class="line-box">콘텐츠</div>
-    <!-- souce code 뷰어 -->
-    <div class="box">
-        <pre class="brush: html;">
+	<h2>위 아래 경계선이 존재하는 콘텐츠</h2>	
+	<div class="line-box">콘텐츠</div>
+	<div class="line-box">콘텐츠</div>
+	<!-- souce code 뷰어 -->
+	<div class="box">
+		<pre class="brush: html;">
 			<div class="line-box"></div>
 		</pre>
-    </div>
-    <!-- //souce code 뷰어 -->
+	</div>
+	<!-- //souce code 뷰어 -->
 
-    <h2>위 아래 경계선이 존재하는 콘텐츠 - 두꺼운 선</h2>
-    <div class="line-box bold-line">콘텐츠</div>
-    <div class="line-box bold-line">콘텐츠</div>
-    <!-- souce code 뷰어 -->
-    <div class="box">
-        <pre class="brush: html;">
+	<h2>위 아래 경계선이 존재하는 콘텐츠 - 두꺼운 선</h2>	
+	<div class="line-box bold-line">콘텐츠</div>
+	<div class="line-box bold-line">콘텐츠</div>
+	<!-- souce code 뷰어 -->
+	<div class="box">
+		<pre class="brush: html;">
 			<div class="line-box bold-line"></div>
 		</pre>
-    </div>
-    <!-- //souce code 뷰어 -->
+	</div>
+	<!-- //souce code 뷰어 -->
 
-    <h2>버튼 좌우 드레그 영역</h2>
-    <div class="rnd-group">
+	<h2>버튼 좌우 드레그 영역</h2>	
+	<div class="rnd-group">
         <div class="scroll-x">
-            <label class="checkbox-rnd-gr"><input type="checkbox" checked><span>증상1</span></label>
-            <label class="checkbox-rnd-gr"><input type="checkbox" checked><span>증상1</span></label>
-            <label class="checkbox-rnd-gr"><input type="checkbox" checked><span>증상1</span></label>
-            <label class="checkbox-rnd-gr"><input type="checkbox" checked><span>증상1</span></label>
-            <label class="checkbox-rnd-gr"><input type="checkbox" checked><span>증상1</span></label>
-            <label class="checkbox-rnd-gr"><input type="checkbox" checked><span>증상1</span></label>
+			<label class="checkbox-rnd-gr"><input type="checkbox" checked><span>증상1</span></label>
+			<label class="checkbox-rnd-gr"><input type="checkbox" checked><span>증상1</span></label>
+			<label class="checkbox-rnd-gr"><input type="checkbox" checked><span>증상1</span></label>
+			<label class="checkbox-rnd-gr"><input type="checkbox" checked><span>증상1</span></label>
+			<label class="checkbox-rnd-gr"><input type="checkbox" checked><span>증상1</span></label>
+			<label class="checkbox-rnd-gr"><input type="checkbox" checked><span>증상1</span></label>
         </div>
     </div>
-    <!-- souce code 뷰어 -->
-    <div class="box">
-        <pre class="brush: html;">
+	<!-- souce code 뷰어 -->
+	<div class="box">
+		<pre class="brush: html;">
 			<div class="rnd-group">
 		        <div class="scroll-x">
 					<label class="checkbox-rnd-gr"><input type="checkbox"><span></span></label>
@@ -264,49 +264,49 @@
 		        </div>
 		    </div>
 		</pre>
-    </div>
-    <!-- //souce code 뷰어 -->
+	</div>
+	<!-- //souce code 뷰어 -->
 
-    <h2>전체 넓이 이미지</h2>
-    <div class="full-img-area" style="width: 300px;">
+	<h2>전체 넓이 이미지</h2>
+	<div class="full-img-area" style="width: 300px;">
         <img src="../img/temp/@poptemp03.jpg" alt="예시 이미지">
     </div>
-    <!-- souce code 뷰어 -->
-    <div class="box">
-        <pre class="brush: html;">
+	<!-- souce code 뷰어 -->
+	<div class="box">
+		<pre class="brush: html;">
 			<div class="full-img-area">
 		        <img src="" alt="">
 		    </div>
 		</pre>
-    </div>
-    <!-- //souce code 뷰어 -->
+	</div>
+	<!-- //souce code 뷰어 -->
 
-    <h2>다운로드 - 한줄 말줄임 처리</h2>
-    <div class="download-box">
+	<h2>다운로드 - 한줄 말줄임 처리</h2>
+	<div class="download-box">
         <a href="#"><span>편두통 증상 자가 진단하기.pdf</span>(12.3kb)</a>
     </div>
-    <!-- souce code 뷰어 -->
-    <div class="box">
-        <pre class="brush: html;">
+	<!-- souce code 뷰어 -->
+	<div class="box">
+		<pre class="brush: html;">
 			<div class="download-box">
 		        <a href="#"><span></span></a>
 		    </div>
 		</pre>
-    </div>
-    <!-- //souce code 뷰어 -->
+	</div>
+	<!-- //souce code 뷰어 -->
 
-    <h2>링크 타입 - 1</h2>
-    <a href="#" class="link"><span>https://link.card.co.kr</span></a>
-    <!-- souce code 뷰어 -->
-    <div class="box">
-        <pre class="brush: html;">
+	<h2>링크 타입 - 1</h2>
+	<a href="#" class="link"><span>https://link.card.co.kr</span></a>
+	<!-- souce code 뷰어 -->
+	<div class="box">
+		<pre class="brush: html;">
 			<a href="#" class="link"><span></span></a>
 		</pre>
-    </div>
-    <!-- //souce code 뷰어 -->
+	</div>
+	<!-- //souce code 뷰어 -->
 
-    <h2>링크 타입 - 2 [ 두줄 말줄임 처리 ]</h2>
-    <div class="link-box">
+	<h2>링크 타입 - 2 [ 두줄 말줄임 처리 ]</h2>
+	<div class="link-box">
         <a href="#">
             <span class="word-box">
                 <span class="txt">지역사회성 폐렴</span>
@@ -327,9 +327,9 @@
             </span>
         </a>
     </div>
-    <!-- souce code 뷰어 -->
-    <div class="box">
-        <pre class="brush: html;">
+	<!-- souce code 뷰어 -->
+	<div class="box">
+		<pre class="brush: html;">
 			<div class="link-box">
 		        <a href="#">
 		            <span class="word-box">
@@ -341,59 +341,59 @@
 		        </a>
 		    </div>
 		</pre>
-    </div>
-    <!-- //souce code 뷰어 -->
+	</div>
+	<!-- //souce code 뷰어 -->
 
 
-    <h2>list 01</h2>
-    <ul class="list-01">
+	<h2>list 01</h2>
+	<ul class="list-01">
         <li>서울대학교 의학 학사</li>
         <li><span class="gr">화요일</span> 10:00~19:00</li>
     </ul>
-    <!-- souce code 뷰어 -->
-    <div class="box">
-        <pre class="brush: html;">
+	<!-- souce code 뷰어 -->
+	<div class="box">
+		<pre class="brush: html;">
 			<ul class="list-01">
 				<li></li>
 
 				<li><span class="gr"></span> </li>
 			</ul>
 		</pre>
-    </div>
-    <!-- //souce code 뷰어 -->
+	</div>
+	<!-- //souce code 뷰어 -->
 
-    <h2>list 02</h2>
-    <ul class="list-02">
+	<h2>list 02</h2>
+	<ul class="list-02">
         <li>대한수부외과학회 의사장 편찬위원장(현)</li>
         <li>대한미세수술학회 이사장 및 회장 역임</li>
         <li>대한 류마티스학회 회장 역임, 자문위원(현)</li>
     </ul>
-    <!-- souce code 뷰어 -->
-    <div class="box">
-        <pre class="brush: html;">
+	<!-- souce code 뷰어 -->
+	<div class="box">
+		<pre class="brush: html;">
 			<ul class="list-02">
 				<li></li>
 			</ul>
 		</pre>
-    </div>
-    <!-- //souce code 뷰어 -->
+	</div>
+	<!-- //souce code 뷰어 -->
 
-    <h2>list 03</h2>
-    <ul class="list-03">
+	<h2>list 03</h2>
+	<ul class="list-03">
         <li>
             <a href="#">
                 <span class="word-box">
                    <span class="txt">허리디스크와 척추관협착증은 어떻게 다른가요?</span>
-                </span>
-                <span class="ex-img">
+               </span>
+               <span class="ex-img">
                    <img src="../img/temp/@poptemp07.jpg" alt="예시 이미지">
                </span>
             </a>
         </li>
     </ul>
-    <!-- souce code 뷰어 -->
-    <div class="box">
-        <pre class="brush: html;">
+	<!-- souce code 뷰어 -->
+	<div class="box">
+		<pre class="brush: html;">
 			<ul class="list-03">
 		        <li>
 		            <a href="#">
@@ -407,21 +407,21 @@
 		        </li>
 		    </ul>
 		</pre>
-    </div>
-    <!-- //souce code 뷰어 -->
+	</div>
+	<!-- //souce code 뷰어 -->
 
-    <h2>list 05 - 상하 간격 20px</h2>
-    <ul class="list-05">
-        <li class="ty1">
+	<h2>list 05 - 상하 간격 20px</h2>
+	<ul class="list-05">
+		<li class="ty1">
             <a href="#" class="front">
                 <span class="txt">B형간염</span>
                 <span class="ing-box">
                     <span class="on"></span>
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
                 </span>
             </a>
         </li>
@@ -464,27 +464,27 @@
             </dl>
         </li>
         <li class="etc">
-            <div class="front">
-                <span class="date">2020.01.21</span>
-                <span class="txt2">li에 etc 클래스 부여 padding 20 -> 16으로 변경</span>
-            </div>
-            <div class="right-ty btn-add">
-                <button type="button" class="btn-rnd-bd-gr">보기</button>
-            </div>
-        </li>
-        <li>
+	        <div class="front">
+	            <span class="date">2020.01.21</span>
+	            <span class="txt2">li에 etc 클래스 부여 padding 20 -> 16으로 변경</span>
+	        </div>
+	        <div class="right-ty btn-add">
+	            <button type="button" class="btn-rnd-bd-gr">보기</button>
+	        </div>
+	    </li>
+	    <li>
             <label class="input-checkbox">
                 <input type="checkbox">
                 <span>
                     <span class="date">2020.01.21</span>
-                <span class="txt2">채용검진</span>
+                    <span class="txt2">채용검진</span>
                 </span>
             </label>
         </li>
-    </ul>
-    <!-- souce code 뷰어 -->
-    <div class="box">
-        <pre class="brush: html;">
+	</ul>
+	<!-- souce code 뷰어 -->
+	<div class="box">
+		<pre class="brush: html;">
 			<ul class="list-05">
 				<li class="ty1">
 		            <a href="#" class="front">
@@ -557,62 +557,61 @@
 	            </li>
 			</ul>
 		</pre>
-    </div>
-    <!-- //souce code 뷰어 -->
+	</div>
+	<!-- //souce code 뷰어 -->
 
 
-    <h2>list 06</h2>
-
-    <!-- souce code 뷰어 -->
-    <div class="box">
-        <pre class="brush: html;">
-
+	<h2>list 06</h2>
+	
+	<!-- souce code 뷰어 -->
+	<div class="box">
+		<pre class="brush: html;">
+			
 		</pre>
-    </div>
-    <!-- //souce code 뷰어 -->
+	</div>
+	<!-- //souce code 뷰어 -->
 
 
-    <h2>box content</h2>
-    <div class="g-box">
+	<h2>box content</h2>
+	<div class="g-box">
         병원정보는 건강보험심사평가원에서<br>
         제공하는 의료빅데이터입니다.
     </div>
-    <!-- souce code 뷰어 -->
-    <div class="box">
-        <pre class="brush: html;">
+	<!-- souce code 뷰어 -->
+	<div class="box">
+		<pre class="brush: html;">
 			<div class="g-box"></div>
 		</pre>
-    </div>
-    <!-- //souce code 뷰어 -->
+	</div>
+	<!-- //souce code 뷰어 -->
+
+
+
+	
 
 
 
 
 
 
+	
 
 
-
-
-
-
-
-    <h2>타입</h2>
-    <!-- souce code 뷰어 -->
-    <div class="box">
-        <pre class="brush: html;">
+	<h2>타입</h2>
+	<!-- souce code 뷰어 -->
+	<div class="box">
+		<pre class="brush: html;">
 			<div class="gr-box">
 		    </div>
 		</pre>
-    </div>
-    <!-- //souce code 뷰어 -->
+	</div>
+	<!-- //souce code 뷰어 -->
 
-    <div class="guideLink">
-        <a href="template_a.html">가이드 1</a>
-        <a href="template_b.html">가이드 2</a>
-        <a href="template_c.html">가이드 3</a>
-    </div>
+	<div class="guideLink">
+		<a href="template_a.html">가이드 1</a>
+		<a href="template_b.html">가이드 2</a>
+		<a href="template_c.html">가이드 3</a>
+	</div>
 
 </body>
-
 </html>
