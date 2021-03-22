@@ -2,15 +2,15 @@
 <html lang="ko">
 
 <head>
-    <meta charset="utf-8">
-    <meta content="IE=edge" http-equiv="X-UA-Compatible">
-    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
-    <title>공통 템플릿</title>
-    <link href="../css/reset.css" rel="stylesheet" />
-    <link href="../css/common.css" rel="stylesheet" />
-    <script type="text/javascript" src="../js/jquery.min.js"></script>
-    <script type="text/javascript" src="../js/commonui.js"></script>
-    <!--[if lt IE 9]>
+	<meta charset="utf-8">
+	<meta content="IE=edge" http-equiv="X-UA-Compatible">
+	<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+	<title>공통 템플릿</title>
+	<link href="../css/reset.css" rel="stylesheet" />
+	<link href="../css/common.css" rel="stylesheet" />
+	<script type="text/javascript" src="../js/jquery.min.js"></script>
+	<script type="text/javascript" src="../js/commonui.js"></script>
+	<!--[if lt IE 9]>
     <script type="text/javascript">
         document.createElement("header"); 
         document.createElement("nav"); 
@@ -22,674 +22,359 @@
 <![endif]-->
 
 
-    <!-- 2018.05.16 -->
-    <script type="text/javascript" src="code/scripts/shCore.js"></script>
-    <script type="text/javascript" src="code/scripts/shBrushBash.js"></script>
-    <script type="text/javascript" src="code/scripts/shBrushCss.js"></script>
-    <script type="text/javascript" src="code/scripts/shBrushJava.js"></script>
-    <script type="text/javascript" src="code/scripts/shBrushJScript.js"></script>
-    <script type="text/javascript" src="code/scripts/shBrushXml.js"></script>
+	<!-- 2018.05.16 -->
+	<script type="text/javascript" src="code/scripts/shCore.js"></script>
+	<script type="text/javascript" src="code/scripts/shBrushBash.js"></script>
+	<script type="text/javascript" src="code/scripts/shBrushCss.js"></script>
+	<script type="text/javascript" src="code/scripts/shBrushJava.js"></script>
+	<script type="text/javascript" src="code/scripts/shBrushJScript.js"></script>
+	<script type="text/javascript" src="code/scripts/shBrushXml.js"></script>
 
-    <link type="text/css" rel="stylesheet" href="code/styles/shCore.css" />
-    <link type="text/css" rel="stylesheet" href="code/styles/shThemeDefault.css" />
-    <script type="text/javascript">
-        SyntaxHighlighter.all();
-    </script>
-    <!-- //2018.05.16 -->
-    <style>
-        body {
-            padding: 20px;
-            padding-top: 100px;
-            background: #fff;
-        }
+	<link type="text/css" rel="stylesheet" href="code/styles/shCore.css" />
+	<link type="text/css" rel="stylesheet" href="code/styles/shThemeDefault.css" />
+	<script type="text/javascript">
+		SyntaxHighlighter.all();
+	</script>
+	<!-- //2018.05.16 -->
+	<style>
+		body{
+			padding: 20px;
+			padding-top: 100px;
+			background: #fff;
+		}
 
-        h1 {
-            font-size: 30px;
-            padding: 0 20px;
-        }
+		h1{
+			font-size: 30px;
+			padding: 0 20px;
+		}
 
-        h2:not(.header-title) {
-            padding: 20px 0;
-            margin-top: 20px;
-            border-top: 1px dashed #666666;
-            font-size: 20px;
-        }
+		h2:not(.header-title){
+			padding: 20px 0;
+			margin-top: 20px;
+			border-top: 1px dashed #666666;
+			font-size: 20px;
+		}
 
-        .guideLink {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            padding: 10px;
-            background: #fff;
-            border-bottom: 1px solid #333;
-        }
+		.guideLink{
+			position: fixed;
+			top: 0;
+			left: 0;
+			width: 100%;
+			padding: 10px;
+			background: #fff;
+			border-bottom: 1px solid #333;
+		}
 
-        .guideLink>a {
-            display: inline-block;
-            border: 1px solid #333;
-            padding: 5px;
-        }
+		.guideLink>a{
+			display: inline-block;
+			border: 1px solid #333;
+			padding: 5px;
+		}
 
-        .box {
-            margin-top: 20px;
-            border: 1px solid #E3E3E3
-        }
+		.box{
+			margin-top: 20px;
+			border: 1px solid #E3E3E3
+		}
 
-        .font {
-            font-size: 20px;
-            line-height: normal;
-        }
+		.font{
+			font-size: 20px;
+			line-height: normal;
+		}
 
-        .font+.font {
-            margin-top: 10px
-        }
+		.font+.font{
+			margin-top: 10px
+		}
 
-        .a2 {
-            font-weight: 200;
-        }
+		.a2{
+			font-weight: 200;
+		}
 
-        .a3 {
-            font-weight: 300;
-        }
+		.a3{
+			font-weight: 300;
+		}
 
-        .a4 {
-            font-weight: 400;
-        }
+		.a4{
+			font-weight: 400;
+		}
 
-        .a5 {
-            font-weight: 500;
-        }
+		.a5{
+			font-weight: 500;
+		}
 
-        .a6 {
-            font-weight: 700;
-        }
+		.a6{
+			font-weight: 700;
+		}
 
-        header {
-            position: relative !important;
-            background: rgba(0, 0, 0, 0.2);
-        }
-    </style>
+		header{
+			position: relative !important;
+			background: rgba(0,0,0,0.2);
+		}
+	</style>
 
 <body>
-    <h1>헤더 종류</h1>
+	<h1>헤더 종류</h1>
 
-    <h2>타입</h2>
-    <header>
-        <div class="header-inner">
-            <h2 class="header-title">Ai헬스큐</h2>
-            <div class="h-utils">
-                <a href="#" class="u-profile">
-                    <span class="u-profile-img">
-		    		<!-- 적용된 썸네일 -->
-		    		<img src="https://m.upinews.kr/data/upi/image/20190523/p1065574177335900_669_thum.jpg" alt="프로픨 사진" class="u-profile-img">
-		    		<!-- 남성 기본 썸네일 -->
-		    		<!-- <img src="../img/acProfile01B.png" alt="프로픨 사진" class="u-profile-img"> -->
-		    		<!-- 여성 기본 썸네일 -->
-		    		<!-- <img src="../img/acProfile02B.png" alt="프로픨 사진" class="u-profile-img"> -->
-		    	</span>
-                    <span class="name">Guest</span>
-                </a>
-            </div>
-        </div>
-    </header>
-    <!-- souce code 뷰어 -->
-    <div class="box">
-        <pre class="brush: html;">
-			<header>
-	<div class="header-inner">
-	    <h2 class="header-title">Ai헬스큐</h2>
-	    <div class="h-utils">
-	    	<a href="#" class="u-profile">
-		    	<span class="u-profile-img">
-		    		<!-- 적용된 썸네일 -->
-		    		<img src="https://m.upinews.kr/data/upi/image/20190523/p1065574177335900_669_thum.jpg" alt="프로픨 사진" class="u-profile-img">
-		    		<!-- 남성 기본 썸네일 -->
-		    		<!-- <img src="../img/acProfile01B.png" alt="프로픨 사진" class="u-profile-img"> -->
-		    		<!-- 여성 기본 썸네일 -->
-		    		<!-- <img src="../img/acProfile02B.png" alt="프로픨 사진" class="u-profile-img"> -->
-		    	</span>
-		    	<span class="name">Guest</span>
-		    </a>
-	    </div>
-    </div>
-</header>
+	<h2>타입</h2>
+	@@include('header03.html',{
+		"layertitle":"Ai헬스큐"
+	})
+	<!-- souce code 뷰어 -->
+	<div class="box">
+		<pre class="brush: html;">
+			@@include('header03.html',{
+				"layertitle":"Ai헬스큐"
+			})
 		</pre>
-    </div>
-    <div class="box">
-        <pre class="brush: html;">
+	</div>
+	<div class="box">
+		<pre class="brush: html;">
 			include('header03.html',{
 				"layertitle":"Ai헬스큐"
 			})
 		</pre>
-    </div>
-    <!-- //souce code 뷰어 -->
+	</div>
+	<!-- //souce code 뷰어 -->
 
-    <h2>타입</h2>
-    <header>
-        <div class="header-inner">
-            <button type="buton" class="layer-close-btn">닫기</button>
-            <h2 class="header-title">Ai헬스큐</h2>
-        </div>
-    </header>
-    <!-- souce code 뷰어 -->
-    <div class="box">
-        <pre class="brush: html;">
-			 <header>
- 	<div class="header-inner">
-	    <button type="buton" class="layer-close-btn">닫기</button>
-	    <h2 class="header-title">Ai헬스큐</h2>
-    </div>
-</header>
+	<h2>타입</h2>
+	@@include('header02.html',{
+		"layertitle":"Ai헬스큐"
+	})
+	<!-- souce code 뷰어 -->
+	<div class="box">
+		<pre class="brush: html;">
+			@@include('header02.html',{
+				"layertitle":"Ai헬스큐"
+			})
 		</pre>
-    </div>
-    <div class="box">
-        <pre class="brush: html;">
+	</div>
+	<div class="box">
+		<pre class="brush: html;">
 			include('header02.html',{
 				"layertitle":"Ai헬스큐"
 			})
 		</pre>
-    </div>
-    <!-- //souce code 뷰어 -->
+	</div>
+	<!-- //souce code 뷰어 -->
 
-    <h2>타입</h2>
-    <header>
-        <div class="header-inner">
-            <button type="buton" class="layer-close-btn">닫기</button>
-            <h2 class="header-title">Ai헬스큐</h2>
-            <div class="h-utils">
-                <a href="#" class="u-profile">
-                    <span class="u-profile-img">
-		    		<!-- 적용된 썸네일 -->
-		    		<img src="https://m.upinews.kr/data/upi/image/20190523/p1065574177335900_669_thum.jpg" alt="프로픨 사진" class="u-profile-img">
-		    		<!-- 남성 기본 썸네일 -->
-		    		<!-- <img src="../img/acProfile01B.png" alt="프로픨 사진" class="u-profile-img"> -->
-		    		<!-- 여성 기본 썸네일 -->
-		    		<!-- <img src="../img/acProfile02B.png" alt="프로픨 사진" class="u-profile-img"> -->
-		    	</span>
-                    <span class="name">Guest</span>
-                </a>
-            </div>
-        </div>
-    </header>
-    <!-- souce code 뷰어 -->
-    <div class="box">
-        <pre class="brush: html;">
-			 <header>
- 	<div class="header-inner">
- 		<button type="buton" class="layer-close-btn">닫기</button>
-	    <h2 class="header-title">Ai헬스큐</h2>
-	    <div class="h-utils">
-		    <a href="#" class="u-profile">
-		    	<span class="u-profile-img">
-		    		<!-- 적용된 썸네일 -->
-		    		<img src="https://m.upinews.kr/data/upi/image/20190523/p1065574177335900_669_thum.jpg" alt="프로픨 사진" class="u-profile-img">
-		    		<!-- 남성 기본 썸네일 -->
-		    		<!-- <img src="../img/acProfile01B.png" alt="프로픨 사진" class="u-profile-img"> -->
-		    		<!-- 여성 기본 썸네일 -->
-		    		<!-- <img src="../img/acProfile02B.png" alt="프로픨 사진" class="u-profile-img"> -->
-		    	</span>
-		    	<span class="name">Guest</span>
-		    </a>
-	    </div>
-    </div>
-</header>
+	<h2>타입</h2>
+	@@include('header01.html',{
+		"layertitle":"Ai헬스큐"
+	})
+	<!-- souce code 뷰어 -->
+	<div class="box">
+		<pre class="brush: html;">
+			@@include('header01.html',{
+				"layertitle":"Ai헬스큐"
+			})
 		</pre>
-    </div>
-    <div class="box">
-        <pre class="brush: html;">
+	</div>
+	<div class="box">
+		<pre class="brush: html;">
 			include('header01.html',{
 				"layertitle":"Ai헬스큐"
 			})
 		</pre>
-    </div>
-    <!-- //souce code 뷰어 -->
+	</div>
+	<!-- //souce code 뷰어 -->
 
-    <h2>타입</h2>
-    <header>
-        <div class="header-inner">
-            <button type="buton" class="layer-close-btn">닫기</button>
-            <div class="h-utils">
-                <a href="#" class="u-profile">
-                    <span class="u-profile-img">
-		    		<!-- 적용된 썸네일 -->
-		    		<img src="https://m.upinews.kr/data/upi/image/20190523/p1065574177335900_669_thum.jpg" alt="프로픨 사진" class="u-profile-img">
-		    		<!-- 남성 기본 썸네일 -->
-		    		<!-- <img src="../img/acProfile01B.png" alt="프로픨 사진" class="u-profile-img"> -->
-		    		<!-- 여성 기본 썸네일 -->
-		    		<!-- <img src="../img/acProfile02B.png" alt="프로픨 사진" class="u-profile-img"> -->
-		    	</span>
-                    <span class="name">Guest</span>
-                </a>
-            </div>
-        </div>
-    </header>
-    <!-- souce code 뷰어 -->
-    <div class="box">
-        <pre class="brush: html;">
-			 <header>
- 	<div class="header-inner">
- 		<button type="buton" class="layer-close-btn">닫기</button>
- 		<div class="h-utils">
-		    <a href="#" class="u-profile">
-		    	<span class="u-profile-img">
-		    		<!-- 적용된 썸네일 -->
-		    		<img src="https://m.upinews.kr/data/upi/image/20190523/p1065574177335900_669_thum.jpg" alt="프로픨 사진" class="u-profile-img">
-		    		<!-- 남성 기본 썸네일 -->
-		    		<!-- <img src="../img/acProfile01B.png" alt="프로픨 사진" class="u-profile-img"> -->
-		    		<!-- 여성 기본 썸네일 -->
-		    		<!-- <img src="../img/acProfile02B.png" alt="프로픨 사진" class="u-profile-img"> -->
-		    	</span>
-		    	<span class="name">Guest</span>
-		    </a>
-	    </div>
-    </div>
-</header>
+	<h2>타입</h2>
+	@@include('header05.html')
+	<!-- souce code 뷰어 -->
+	<div class="box">
+		<pre class="brush: html;">
+			@@include('header05.html')
 		</pre>
-    </div>
-    <div class="box">
-        <pre class="brush: html;">
+	</div>
+	<div class="box">
+		<pre class="brush: html;">
 			include('header05.html')
 		</pre>
-    </div>
-    <!-- //souce code 뷰어 -->
+	</div>
+	<!-- //souce code 뷰어 -->
 
-    <h2>타입</h2>
-    <header>
-        <div class="header-inner">
-            <button type="buton" class="layer-close-btn">닫기</button>
-            <div class="h-utils">
-                <input type="button" value="방문기록 보기" class="btn-black-clock">
-                <a href="#" class="u-profile">
-                    <span class="u-profile-img">
-		    		<!-- 적용된 썸네일 -->
-		    		<img src="https://m.upinews.kr/data/upi/image/20190523/p1065574177335900_669_thum.jpg" alt="프로픨 사진" class="u-profile-img">
-		    		<!-- 남성 기본 썸네일 -->
-		    		<!-- <img src="../img/acProfile01B.png" alt="프로픨 사진" class="u-profile-img"> -->
-		    		<!-- 여성 기본 썸네일 -->
-		    		<!-- <img src="../img/acProfile02B.png" alt="프로픨 사진" class="u-profile-img"> -->
-		    	</span>
-                    <span class="name">Guest</span>
-                </a>
-            </div>
-        </div>
-    </header>
-    <!-- souce code 뷰어 -->
-    <div class="box">
-        <pre class="brush: html;">
-			 <header>
- 	<div class="header-inner">
- 		<button type="buton" class="layer-close-btn">닫기</button>
- 		<div class="h-utils">
- 			<input type="button" value="방문기록 보기" class="btn-black-clock">
-		    <a href="#" class="u-profile">
-		    	<span class="u-profile-img">
-		    		<!-- 적용된 썸네일 -->
-		    		<img src="https://m.upinews.kr/data/upi/image/20190523/p1065574177335900_669_thum.jpg" alt="프로픨 사진" class="u-profile-img">
-		    		<!-- 남성 기본 썸네일 -->
-		    		<!-- <img src="../img/acProfile01B.png" alt="프로픨 사진" class="u-profile-img"> -->
-		    		<!-- 여성 기본 썸네일 -->
-		    		<!-- <img src="../img/acProfile02B.png" alt="프로픨 사진" class="u-profile-img"> -->
-		    	</span>
-		    	<span class="name">Guest</span>
-		    </a>
-	    </div>
-    </div>
-</header>
+	<h2>타입</h2>
+	@@include('header07.html')
+	<!-- souce code 뷰어 -->
+	<div class="box">
+		<pre class="brush: html;">
+			@@include('header07.html')
 		</pre>
-    </div>
-    <div class="box">
-        <pre class="brush: html;">
+	</div>
+	<div class="box">
+		<pre class="brush: html;">
 			include('header07.html')
 		</pre>
-    </div>
-    <!-- //souce code 뷰어 -->
+	</div>
+	<!-- //souce code 뷰어 -->
 
-    <h2>타입</h2>
-    <header>
-        <div class="header-inner">
-            <button type="buton" class="layer-close-btn">닫기</button>
-            <h2 class="header-title">프로필 관리</h2>
-            <div class="h-utils">
-                <input type="button" value="설정" class="btn-black-setting">
-            </div>
-        </div>
-    </header>
-    <!-- souce code 뷰어 -->
-    <div class="box">
-        <pre class="brush: html;">
-			 <header>
- 	<div class="header-inner">
- 		<button type="buton" class="layer-close-btn">닫기</button>
-	    <h2 class="header-title">프로필 관리</h2>
-	    <div class="h-utils">
-		    <input type="button" value="설정" class="btn-black-setting">
-	    </div>
-    </div>
-</header>
+	<h2>타입</h2>
+	@@include('header12.html',{
+		"layertitle":"프로필 관리"
+	})
+	<!-- souce code 뷰어 -->
+	<div class="box">
+		<pre class="brush: html;">
+			@@include('header12.html',{
+				"layertitle":"프로필 관리"
+			})
 		</pre>
-    </div>
-    <div class="box">
-        <pre class="brush: html;">
+	</div>
+	<div class="box">
+		<pre class="brush: html;">
 			include('header12.html',{
 				"layertitle":"프로필 관리"
 			})
 		</pre>
-    </div>
-    <!-- //souce code 뷰어 -->
+	</div>
+	<!-- //souce code 뷰어 -->
 
-    <h2>타입</h2>
-    <header>
-        <div class="header-inner">
-            <button type="buton" class="layer-close-btn">닫기</button>
-            <div class="h-utils">
-                <!-- 페이지 진입 시 슬라이드 처음에 걸려있는 이미지 경로 부여 -->
-                <a href="../img/temp/@poptemp07.jpg" class="btn-black-download" download>다운로드</a>
-                <!-- // 페이지 진입 시 슬라이드 처음에 걸려있는 이미지 경로 부여 -->
-            </div>
-        </div>
-    </header>
-    <!-- souce code 뷰어 -->
-    <div class="box">
-        <pre class="brush: html;">
-			 <header>
- 	<div class="header-inner">
- 		<button type="buton" class="layer-close-btn">닫기</button>
-	    <div class="h-utils">
-	    	<!-- 페이지 진입 시 슬라이드 처음에 걸려있는 이미지 경로 부여 -->
-		    <a href="../img/temp/@poptemp07.jpg" class="btn-black-download" download>다운로드</a>
-		    <!-- // 페이지 진입 시 슬라이드 처음에 걸려있는 이미지 경로 부여 -->
-	    </div>
-    </div>
-</header>
+	<h2>타입</h2>
+	@@include('header13.html',{
+		"layertitle":"프로필 관리"
+	})
+	<!-- souce code 뷰어 -->
+	<div class="box">
+		<pre class="brush: html;">
+			@@include('header13.html',{
+				"layertitle":"프로필 관리"
+			})
 		</pre>
-    </div>
-    <div class="box">
-        <pre class="brush: html;">
+	</div>
+	<div class="box">
+		<pre class="brush: html;">
 			include('header13.html',{
 				"layertitle":"프로필 관리"
 			})
 		</pre>
-    </div>
-    <!-- //souce code 뷰어 -->
+	</div>
+	<!-- //souce code 뷰어 -->
 
+	
 
+	
 
-
-
-    <h2>검색</h2>
-    <header class="search-header">
-        <div class="search-header-inner">
-            <a href="#" class="history-back">뒤로가기</a>
-            <div class="input-text">
-                <input type="text" placeholder="검색어를 입력하세요" value="머리가 아파요">
-                <button type="button" class="btn-remove">삭제</button>
-            </div>
-        </div>
-    </header>
-    <!-- souce code 뷰어 -->
-    <div class="box">
-        <pre class="brush: html;">
-			<header class="search-header">
-    <div class="search-header-inner">
-    	<a href="#" class="history-back">뒤로가기</a>
-        <div class="input-text">
-            <input type="text" placeholder="검색어를 입력하세요" value="머리가 아파요">
-            <button type="button" class="btn-remove">삭제</button>
-        </div>
-    </div>
-</header>
+	<h2>검색</h2>
+	@@include('header04.html')
+	<!-- souce code 뷰어 -->
+	<div class="box">
+		<pre class="brush: html;">
+			@@include('header04.html')
 		</pre>
-    </div>
-    <div class="box">
-        <pre class="brush: html;">
+	</div>
+	<div class="box">
+		<pre class="brush: html;">
 			include('header04.html')
 		</pre>
-    </div>
-    <!-- //souce code 뷰어 -->
+	</div>
+	<!-- //souce code 뷰어 -->
 
 
+	
 
-
-    <h2>타입</h2>
-    <header>
-        <div class="header-inner">
-            <a href="#" class="history-back">뒤로가기</a>
-            <div class="h-utils">
-                <a href="#" class="u-profile">
-                    <span class="u-profile-img">
-		    		<!-- 적용된 썸네일 -->
-		    		<img src="https://m.upinews.kr/data/upi/image/20190523/p1065574177335900_669_thum.jpg" alt="프로픨 사진" class="u-profile-img">
-		    		<!-- 남성 기본 썸네일 -->
-		    		<!-- <img src="../img/acProfile01B.png" alt="프로픨 사진" class="u-profile-img"> -->
-		    		<!-- 여성 기본 썸네일 -->
-		    		<!-- <img src="../img/acProfile02B.png" alt="프로픨 사진" class="u-profile-img"> -->
-		    	</span>
-                    <span class="name">Guest</span>
-                </a>
-            </div>
-        </div>
-    </header>
-    <!-- souce code 뷰어 -->
-    <div class="box">
-        <pre class="brush: html;">
-			 <header>
- 	<div class="header-inner">
- 		<a href="#" class="history-back">뒤로가기</a>
- 		<div class="h-utils">
-		    <a href="#" class="u-profile">
-		    	<span class="u-profile-img">
-		    		<!-- 적용된 썸네일 -->
-		    		<img src="https://m.upinews.kr/data/upi/image/20190523/p1065574177335900_669_thum.jpg" alt="프로픨 사진" class="u-profile-img">
-		    		<!-- 남성 기본 썸네일 -->
-		    		<!-- <img src="../img/acProfile01B.png" alt="프로픨 사진" class="u-profile-img"> -->
-		    		<!-- 여성 기본 썸네일 -->
-		    		<!-- <img src="../img/acProfile02B.png" alt="프로픨 사진" class="u-profile-img"> -->
-		    	</span>
-		    	<span class="name">Guest</span>
-		    </a>
-	    </div>
-    </div>
-</header>
+	<h2>타입</h2>
+	@@include('header06.html')
+	<!-- souce code 뷰어 -->
+	<div class="box">
+		<pre class="brush: html;">
+			@@include('header06.html')
 		</pre>
-    </div>
-    <div class="box">
-        <pre class="brush: html;">
+	</div>
+	<div class="box">
+		<pre class="brush: html;">
 			include('header06.html')
 		</pre>
-    </div>
-    <!-- //souce code 뷰어 -->
+	</div>
+	<!-- //souce code 뷰어 -->
 
+	
 
-
-    <h2>타입</h2>
-    <header>
-        <div class="header-inner">
-            <a href="#" class="history-back">뒤로가기</a>
-            <h2 class="header-title">Ai헬스큐</h2>
-            <div class="h-utils">
-                <a href="#" class="u-profile">
-                    <span class="u-profile-img">
-		    		<!-- 적용된 썸네일 -->
-		    		<img src="https://m.upinews.kr/data/upi/image/20190523/p1065574177335900_669_thum.jpg" alt="프로픨 사진" class="u-profile-img">
-		    		<!-- 남성 기본 썸네일 -->
-		    		<!-- <img src="../img/acProfile01B.png" alt="프로픨 사진" class="u-profile-img"> -->
-		    		<!-- 여성 기본 썸네일 -->
-		    		<!-- <img src="../img/acProfile02B.png" alt="프로픨 사진" class="u-profile-img"> -->
-		    	</span>
-                    <span class="name">Guest</span>
-                </a>
-            </div>
-        </div>
-    </header>
-    <!-- souce code 뷰어 -->
-    <div class="box">
-        <pre class="brush: html;">
-			 <header>
- 	<div class="header-inner">
- 		<a href="#" class="history-back">뒤로가기</a>
- 		<h2 class="header-title">Ai헬스큐</h2>
- 		<div class="h-utils">
-		    <a href="#" class="u-profile">
-		    	<span class="u-profile-img">
-		    		<!-- 적용된 썸네일 -->
-		    		<img src="https://m.upinews.kr/data/upi/image/20190523/p1065574177335900_669_thum.jpg" alt="프로픨 사진" class="u-profile-img">
-		    		<!-- 남성 기본 썸네일 -->
-		    		<!-- <img src="../img/acProfile01B.png" alt="프로픨 사진" class="u-profile-img"> -->
-		    		<!-- 여성 기본 썸네일 -->
-		    		<!-- <img src="../img/acProfile02B.png" alt="프로픨 사진" class="u-profile-img"> -->
-		    	</span>
-		    	<span class="name">Guest</span>
-		    </a>
-	    </div>
-    </div>
-</header>
+	<h2>타입</h2>
+	@@include('header08.html',{
+        "layertitle":"Ai헬스큐"
+    })
+	<!-- souce code 뷰어 -->
+	<div class="box">
+		<pre class="brush: html;">
+			@@include('header08.html',{
+	            "layertitle":"Ai헬스큐"
+	        })
 		</pre>
-    </div>
-    <div class="box">
-        <pre class="brush: html;">
+	</div>
+	<div class="box">
+		<pre class="brush: html;">
 			include('header08.html',{
 	            "layertitle":"Ai헬스큐"
 	        })
 		</pre>
-    </div>
-    <!-- //souce code 뷰어 -->
+	</div>
+	<!-- //souce code 뷰어 -->
 
-    <h2>타입</h2>
-    <header>
-        <div class="header-inner">
-            <a href="#" class="history-back">뒤로가기</a>
-            <h2 class="header-title">Ai헬스큐</h2>
-            <div class="h-utils">
-                <input type="button" value="업데이트" class="btn-black-clock">
-                <a href="#" class="u-profile">
-                    <span class="u-profile-img">
-		    		<!-- 적용된 썸네일 -->
-		    		<img src="https://m.upinews.kr/data/upi/image/20190523/p1065574177335900_669_thum.jpg" alt="프로픨 사진" class="u-profile-img">
-		    		<!-- 남성 기본 썸네일 -->
-		    		<!-- <img src="../img/acProfile01B.png" alt="프로픨 사진" class="u-profile-img"> -->
-		    		<!-- 여성 기본 썸네일 -->
-		    		<!-- <img src="../img/acProfile02B.png" alt="프로픨 사진" class="u-profile-img"> -->
-		    	</span>
-                    <span class="name">Guest</span>
-                </a>
-            </div>
-        </div>
-    </header>
-    <!-- souce code 뷰어 -->
-    <div class="box">
-        <pre class="brush: html;">
-			 <header>
- 	<div class="header-inner">
- 		<a href="#" class="history-back">뒤로가기</a>
- 		<h2 class="header-title">Ai헬스큐</h2>
- 		<div class="h-utils">
- 			<input type="button" value="업데이트" class="btn-black-clock">
-		    <a href="#" class="u-profile">
-		    	<span class="u-profile-img">
-		    		<!-- 적용된 썸네일 -->
-		    		<img src="https://m.upinews.kr/data/upi/image/20190523/p1065574177335900_669_thum.jpg" alt="프로픨 사진" class="u-profile-img">
-		    		<!-- 남성 기본 썸네일 -->
-		    		<!-- <img src="../img/acProfile01B.png" alt="프로픨 사진" class="u-profile-img"> -->
-		    		<!-- 여성 기본 썸네일 -->
-		    		<!-- <img src="../img/acProfile02B.png" alt="프로픨 사진" class="u-profile-img"> -->
-		    	</span>
-		    	<span class="name">Guest</span>
-		    </a>
-	    </div>
-    </div>
-</header>
+	<h2>타입</h2>
+	@@include('header09.html',{
+        "layertitle":"Ai헬스큐"
+    })
+	<!-- souce code 뷰어 -->
+	<div class="box">
+		<pre class="brush: html;">
+			@@include('header09.html',{
+	            "layertitle":"Ai헬스큐"
+	        })
 		</pre>
-    </div>
-    <div class="box">
-        <pre class="brush: html;">
+	</div>
+	<div class="box">
+		<pre class="brush: html;">
 			include('header09.html',{
 	            "layertitle":"Ai헬스큐"
 	        })
 		</pre>
-    </div>
-    <!-- //souce code 뷰어 -->
+	</div>
+	<!-- //souce code 뷰어 -->
 
-    <h2>타입</h2>
-    <header>
-        <div class="header-inner">
-            <a href="#" class="history-back">뒤로가기</a>
-            <h2 class="header-title">Ai헬스큐</h2>
-            <div class="h-utils">
-                <input type="button" value="설정" class="btn-black-setting">
-                <a href="#" class="u-profile">
-                    <span class="u-profile-img">
-		    		<!-- 적용된 썸네일 -->
-		    		<img src="https://m.upinews.kr/data/upi/image/20190523/p1065574177335900_669_thum.jpg" alt="프로픨 사진" class="u-profile-img">
-		    		<!-- 남성 기본 썸네일 -->
-		    		<!-- <img src="../img/acProfile01B.png" alt="프로픨 사진" class="u-profile-img"> -->
-		    		<!-- 여성 기본 썸네일 -->
-		    		<!-- <img src="../img/acProfile02B.png" alt="프로픨 사진" class="u-profile-img"> -->
-		    	</span>
-                    <span class="name">Guest</span>
-                </a>
-            </div>
-        </div>
-    </header>
-    <!-- souce code 뷰어 -->
-    <div class="box">
-        <pre class="brush: html;">
-			 <header>
- 	<div class="header-inner">
- 		<a href="#" class="history-back">뒤로가기</a>
- 		<h2 class="header-title">Ai헬스큐</h2>
- 		<div class="h-utils">
- 			<input type="button" value="설정" class="btn-black-setting">
-		    <a href="#" class="u-profile">
-		    	<span class="u-profile-img">
-		    		<!-- 적용된 썸네일 -->
-		    		<img src="https://m.upinews.kr/data/upi/image/20190523/p1065574177335900_669_thum.jpg" alt="프로픨 사진" class="u-profile-img">
-		    		<!-- 남성 기본 썸네일 -->
-		    		<!-- <img src="../img/acProfile01B.png" alt="프로픨 사진" class="u-profile-img"> -->
-		    		<!-- 여성 기본 썸네일 -->
-		    		<!-- <img src="../img/acProfile02B.png" alt="프로픨 사진" class="u-profile-img"> -->
-		    	</span>
-		    	<span class="name">Guest</span>
-		    </a>
-	    </div>
-    </div>
-</header>
+	<h2>타입</h2>
+	@@include('header11.html',{
+        "layertitle":"Ai헬스큐"
+    })
+	<!-- souce code 뷰어 -->
+	<div class="box">
+		<pre class="brush: html;">
+			@@include('header11.html',{
+	            "layertitle":"Ai헬스큐"
+	        })
 		</pre>
-    </div>
-    <div class="box">
-        <pre class="brush: html;">
+	</div>
+	<div class="box">
+		<pre class="brush: html;">
 			include('header11.html',{
 	            "layertitle":"Ai헬스큐"
 	        })
 		</pre>
-    </div>
-    <!-- //souce code 뷰어 -->
+	</div>
+	<!-- //souce code 뷰어 -->
 
 
 
 
 
+	
 
 
-
-    <h2>타입</h2>
-    <!-- souce code 뷰어 -->
-    <div class="box">
-        <pre class="brush: html;">
+	<h2>타입</h2>	
+	<!-- souce code 뷰어 -->
+	<div class="box">
+		<pre class="brush: html;">
 			<div class="gr-box">
 		    </div>
 		</pre>
-    </div>
-    <!-- //souce code 뷰어 -->
+	</div>
+	<!-- //souce code 뷰어 -->
 
 
 
-    <div class="guideLink">
-        <a href="template_a.html">가이드 1</a>
-        <a href="template_b.html">가이드 2</a>
-        <a href="template_c.html">가이드 3</a>
-    </div>
+	<div class="guideLink">
+		<a href="template_a.html">가이드 1</a>
+		<a href="template_b.html">가이드 2</a>
+		<a href="template_c.html">가이드 3</a>
+	</div>
 
 </body>
-
 </html>

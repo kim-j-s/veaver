@@ -24,6 +24,32 @@
 		return Math.round(d * 1000);
 	}
 
+	// 병원 마커
+	var hosImgSrc = '../img/ic-location-hospital-nor.png', // 마커이미지의 주소입니다
+		hosImgSize = new kakao.maps.Size(40, 40), // 마커이미지의 크기입니다
+		hosImgOption = { offset: new kakao.maps.Point(20, 20) }; // 마커이미지의 옵션입니다. 마커의 좌표와 일치시킬 이미지 안에서의 좌표를 설정합니다.
+
+	var hosImgImage = new kakao.maps.MarkerImage(hosImgSrc, hosImgSize, hosImgOption);
+
+	var sltHosImgSrc = '../img/ic-location-hospital-sel.png', // 마커이미지의 주소입니다
+		sltHosImgSize = new kakao.maps.Size(58, 70), // 마커이미지의 크기입니다
+		sltHosImgOption = { offset: new kakao.maps.Point(29, 50) }; // 마커이미지의 옵션입니다. 마커의 좌표와 일치시킬 이미지 안에서의 좌표를 설정합니다.
+
+	var sltHosImgImage = new kakao.maps.MarkerImage(sltHosImgSrc, sltHosImgSize, sltHosImgOption);
+
+	// 약국 마커
+	var phaImgSrc = '../img/ic-location-pharmacy-nor.png', // 마커이미지의 주소입니다
+		phaImgSize = new kakao.maps.Size(40, 40), // 마커이미지의 크기입니다
+		phaImgOption = { offset: new kakao.maps.Point(20, 20) }; // 마커이미지의 옵션입니다. 마커의 좌표와 일치시킬 이미지 안에서의 좌표를 설정합니다.
+
+	var phaImgImage = new kakao.maps.MarkerImage(phaImgSrc, phaImgSize, phaImgOption);
+
+	var sltPhaImgSrc = '../img/ic-location-pharmacy-sel.png', // 마커이미지의 주소입니다
+		sltPhaImgSize = new kakao.maps.Size(58, 70), // 마커이미지의 크기입니다
+		sltPhaImgOption = { offset: new kakao.maps.Point(29, 50) }; // 마커이미지의 옵션입니다. 마커의 좌표와 일치시킬 이미지 안에서의 좌표를 설정합니다.
+
+		var sltPhaImgImage = new kakao.maps.MarkerImage(sltPhaImgSrc, sltPhaImgSize, sltPhaImgOption);
+
 	$.fn.initMap = function (options) {
 		if (this.length != 1) return null;
 
@@ -80,9 +106,9 @@
 
 			clearInterval(map.boundChangeTimer);
 
-			map.boundChangeTimer = setTimeout(function(){
+			map.boundChangeTimer = setTimeout(function () {
 				if (map.boundChangeEnd) map.boundChangeEnd(map);
-			},300);
+			}, 300);
 		});
 
 		kakao.maps.event.addListener(map, 'dragend', function () {
@@ -112,11 +138,15 @@
 				console.log('geolocation 을 지원하지 않는 브라우져입니다.');
 			}
 		};
+
+		var bfMarker = null;
+
 		map.setHospData = function (data) {
 			data.forEach(function (obj) {
 				var marker = new kakao.maps.Marker({
 					position: new kakao.maps.LatLng(Number(obj.YPos), Number(obj.XPos)),
-					clickable: true
+					clickable: true,
+					image: hosImgImage,
 				});
 
 				marker.data = obj;
@@ -126,6 +156,11 @@
 					// console.log('marker click !!');
 					// console.log(clusterer);
 					// console.log(obj);
+
+					if(bfMarker) bfMarker.setImage(hosImgImage);
+					marker.setImage(sltHosImgImage);
+					bfMarker = marker;
+
 					$popArea.find('.map-marker-info').remove();
 					$popArea.append(`
 							<div class="map-marker-info">
@@ -152,7 +187,7 @@
 			const markers = clusterer.getMarkers();
 			for (let i = 0; i < markers.length; i++) {
 				const d = markers[i].data.ykiho;
-				if(d == v) {
+				if (d == v) {
 					clusterer.removeMarker(markers[i]);
 					console.log(clusterer.getMarkers().length);
 					break;
@@ -164,13 +199,19 @@
 			data.forEach(function (obj) {
 				var marker = new kakao.maps.Marker({
 					position: new kakao.maps.LatLng(Number(obj.latitude), Number(obj.longitude)),
-					clickable: true
+					clickable: true,
+					image: 	phaImgImage
 				});
 
 				marker.data = obj;
 				clusterer.addMarker(marker);
 
 				kakao.maps.event.addListener(marker, 'click', function () {
+
+					if(bfMarker) bfMarker.setImage(phaImgImage);
+					marker.setImage(sltPhaImgImage);
+					bfMarker = marker;
+
 					$popArea.find('.map-marker-info').remove();
 					$popArea.append(`
 							<div class="map-marker-info">
@@ -194,7 +235,7 @@
 			const markers = clusterer.getMarkers();
 			for (let i = 0; i < markers.length; i++) {
 				const d = markers[i].data.hpid;
-				if(d == v) {
+				if (d == v) {
 					clusterer.removeMarker(markers[i]);
 					console.log(clusterer.getMarkers().length);
 					break;
