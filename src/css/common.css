@@ -1,13 +1,7 @@
 @charset "utf-8";
 
-/*@import url(http://fonts.googleapis.com/earlyaccess/notosanskr.css);*/
 @import url(http://fonts.googleapis.com/css?family=Roboto:400,300,500,700);
-/*
-html, body {
-	width: 100%;
-	height: 100%;
-	overflow: hidden;
-} */
+
 /*** util ***/
 .blind {
 	position: absolute;
@@ -98,6 +92,9 @@ html, body {
 }
 .pb0 {
 	padding-bottom: 0 !important;
+}
+.pb20 {
+	padding-bottom: 20px !important;
 }
 .pb40 {
 	padding-bottom: 40px !important;
@@ -692,6 +689,9 @@ html, body {
 
 	/** input-text **/
 
+		.layer-content .input-text {
+			padding: 0 22px;
+		}
 		.input-text {
 			display: block;
 			position: relative;
@@ -1399,9 +1399,9 @@ html, body {
 		flex-direction: column;
 		width: calc(100% - 20px);
 		height: 100%;
-		padding: 0 0 78px 0;
 		background: #fff;
 		transition: .6s;
+		overflow: auto;
 	}
 	.menu-open.on + nav .nav-inner{
 		left: 0;
@@ -1583,6 +1583,12 @@ html, body {
 			color: #000;
 			line-height: 27px;
 		}
+		.nav-cate-list > li > a .btn-cb.sm{
+			position: relative;
+			top: 5px;
+			vertical-align: top;
+			margin-left: 5px;
+		}
 		.nav-sub-link{
 
 		}
@@ -1601,10 +1607,8 @@ html, body {
 		}
 
 		/*nva footer*/
+			
 			.nav-links{
-				position: absolute;
-				bottom: 0px;
-				left: 0;
 				display: flex;
 				width: 100%;
 				height: 78px;
@@ -1630,6 +1634,7 @@ html, body {
 				margin-top: -6px;
 				border-left: 1px solid #ebeff3;
 			}
+
 		/* // nav footer*/
 
 	/* // Nav Content */
@@ -1704,6 +1709,13 @@ html, body {
 	    font-size: 20px;
 	    line-height: 29px;
 	}
+	.main-health-list > li .tit .btn-cb.sm{
+		position: relative;
+		top: 5px;
+		vertical-align: top;
+		margin-left: 5px;
+	}
+	
 	.main-health-list > li .txt{
 	    display: block;
 	    color: #74777b;
@@ -1720,7 +1732,8 @@ html, body {
 		position:relative;
 		flex: 1;
 		/*padding: 20px 22px 0 20px;*/
-		padding: 20px 22px;
+		/*padding: 20px 22px;*/
+		padding: 20px 0;
 		overflow: auto;
 	}
 	.layer-content.full{
@@ -1738,7 +1751,6 @@ html, body {
 		flex-direction: column;
 		width: 100%;
 		height: 100%;
-		/*padding: 0 0 20px 0;*/
 		padding: 0 0 0 0;
 		background: #fff;
 	}
@@ -1768,7 +1780,6 @@ html, body {
 			display: flex;
 			flex-direction: row;
 			min-height: 30px;
-			/*padding-left: 35px;*/
 		}
 		.header-inner.etc{
 			padding-left: 0;
@@ -1780,9 +1791,7 @@ html, body {
 			font-weight: 400;
 			font-size: 16px;
 		}
-		/* .header-title:first-child {
-			margin-left: -35px;
-		} */
+		
 		.header-inner .h-utils{
 			flex: 1 1 auto;
 			margin-left: 10px;
@@ -1839,14 +1848,11 @@ html, body {
 			left: 0px;
 			width: 30px;
 			height: 30px;
-			background:url(../img/ac-black-close.png) no-repeat 0 0 / 100% auto;
+			background:url(../img/ac-black-close.png) no-repeat 0 center / 100% auto;
 			text-indent:-9999px;
 		}
 		.header-inner .history-back,
 		.header-inner .layer-close-btn{
-			/*position:absolute;
-			top: 0;
-			left: 0px;*/
 			position: relative;
 			vertical-align: middle;
 			margin-right: 5px;
@@ -1969,6 +1975,7 @@ html, body {
 			margin-top: 30px;
 		}
 		.d-txt{
+			padding: 0 22px;
 		    font-size: 16px;
 		    line-height: 24px;
 		}
@@ -2334,7 +2341,6 @@ html, body {
 		display: flex;
 		flex-direction: column;
 		height: 100%;
-		/*padding: 0 0 20px 0;*/
 		padding: 0;
 		position: fixed;
 		width: 100%;
@@ -2346,6 +2352,7 @@ html, body {
 	/** 문진 리스트 **/
 
 		.g-txt{
+			padding: 0 22px;
 			font-size: 20px;
 			line-height: 29px;
 		}
@@ -2374,6 +2381,7 @@ html, body {
 			display: flex;
 			flex-direction: column;	
 			height: 100%;
+			overflow: auto;
 		}
 		.scroll-list-wrap .tab-box{
 			flex: none;
@@ -2663,6 +2671,7 @@ html, body {
 
 		.ralated-d{
 		    margin-top: 90px;
+		    padding: 0 22px;
 		}
 		.ralated-d > .tit{
 		   font-weight: 500;
@@ -2746,9 +2755,9 @@ html, body {
 	/* 탭 */
 		.tab-box{
 		    position: relative;
-		    margin: 0 -22px;
-		    width: calc(100% + 44px);
-		    margin-left: -22px;
+		    /*margin: 0 -22px;*/
+		    /*width: calc(100% + 44px);*/
+		    /*margin-left: -22px;*/
 		    padding-left: 22px;
 		    overflow: hidden;
 		    background: #fff;
@@ -3390,12 +3399,16 @@ html, body {
 		    position: relative;
 		    height: 30px;
 		    margin-top: 17px;
+		    margin: 17px 0 0 22px;
 		    padding-left: 40px;
 		}
 		.sort-area >.btn-setting-b{
 		    position: absolute;
 		    top: 0;
 		    left: 0;
+		}
+		.sort-area .scroll-x{
+			padding-right: 22px;
 		}
 
 	/* // 버튼 좌우 스크롤 영역 */
@@ -3667,6 +3680,9 @@ html, body {
 
 	/* 병원 / 약국 찾기 - 지도보기 */
 
+		.layer-content .map-area{
+			margin: 20px 0 0;
+		}
 		.map-area{
 		    position: relative;
 		    margin: 20px -22px 0;
@@ -4243,6 +4259,33 @@ html, body {
 
 	/* // 공유하기 */
 
+	/* 안내 페이지 */
+
+		.i-txt-cont{
+			flex-grow: 1;
+		    padding-top: 310px;
+		    text-align: center;
+		    background-repeat: no-repeat;
+		    background-position: center top;
+		    background-size: 300px auto;
+		}
+		.i-txt-cont.ty1{
+		    background-image: url(../img/img-inoculation.png);
+		}
+		.i-txt-cont.ty2{
+		    background-image: url(../img/img-365.png);
+		}
+		.i-txt-cont .txt{
+		    line-height: 22px;
+		}
+		.i-txt-cont .txt strong{
+		    display: block;
+		    margin-top: 6px;
+		    font-weight: 500;
+		}
+
+	/* // 안내 페이지 */
+
 /*** // content ***/
 
 
@@ -4317,7 +4360,7 @@ html, body {
 	    margin-top: 0;
 	}
 	.scroll-ud .full-size-area.top{
-		margin-top: -20px;
+		margin: -20px 0 20px 0;
 	}
 
 
@@ -4529,6 +4572,9 @@ html, body {
 
 	/* 차트 */
 
+		.chart-ele{
+			padding: 0 22px;
+		}
 		#chart-canvas {height: 400px;}
 		#canvas {height: 400px;}
 
