@@ -171,11 +171,11 @@ function InputReset() {
 
 // scroll 화살표
 function ScrollActive() {
-	$('.scroll-ud').each(function(){
+	$('.scroll-ud').each(function () {
 		var $wrap = $('.scroll-ud');
 		var $inner = $wrap.children('.scroll-ud-inner');
 
-		if($wrap.length != 1 || $inner.length != 1) {
+		if ($wrap.length != 1 || $inner.length != 1) {
 			$wrap.removeClass('ov-case');
 			return true;
 		} else {
@@ -187,13 +187,13 @@ function ScrollActive() {
 			var sct = $inner.scrollTop();
 			var h = $inner.outerHeight();
 
-			if(sct <= 0) {
+			if (sct <= 0) {
 				$wrap.removeClass('up-dp');
 			} else {
 				$wrap.addClass('up-dp');
 			}
 
-			if(sct >= this.scrollHeight - h) {
+			if (sct >= this.scrollHeight - h) {
 				$wrap.removeClass('down-dp');
 			} else {
 				$wrap.addClass('down-dp');
@@ -214,12 +214,12 @@ function floatBtns() {
 		var t;
 		if ($targetWrap.hasClass('bottom-pop')) {
 			$targetScroll = $targetWrap.find('.bottom-pop-cont');
-		} else if($targetWrap.hasClass('wrap')){
+		} else if ($targetWrap.hasClass('wrap')) {
 			$targetScroll = $targetWrap.find('.scroll-ud-inner');
 		}
 
-		if($targetScroll) {
-			$targetScroll.off('scroll.floatingBtn').on('scroll.floatingBtn',function () {
+		if ($targetScroll) {
+			$targetScroll.off('scroll.floatingBtn').on('scroll.floatingBtn', function () {
 				$target.addClass('on');
 				setTimeout(function () {
 					$target.hide();
@@ -487,3 +487,138 @@ $.fn.audioBtn = function (url) {
 		});
 	});
 }
+
+$.fn.wwsInit = function () {
+	var $this = $(this);
+
+	if ($this.length != 1) returnss;
+
+	var $inner = $this.children('.wws-inner');
+	var $items = $inner.children('.wws-item');
+	var lth = $items.length;
+	var orgLth = lth;
+
+	$this.addClass('no-motion');
+
+	if (lth < 6 && lth > 2) {
+		$items.each(function () {
+			$inner.append($(this).clone());
+		});
+	} else if (lth == 2) {
+		$items.each(function () {
+			$inner.append($(this).clone());
+		});
+		$items.each(function () {
+			$inner.append($(this).clone());
+		});
+	} else if (lth == 1) {
+		for (var i = 0; i < 5; i++) $inner.append($items.eq(0).clone());
+	}
+
+	$items = $inner.children('.wws-item');
+	lth = $items.length;
+
+	$items.eq(0).addClass('crt');
+	$items.eq(1).addClass('r1');
+	$items.eq(2).addClass('r2');
+	$items.eq(lth - 1).addClass('l1');
+	$items.eq(lth - 2).addClass('l2');
+	$items.eq(lth - 3).addClass('lst');
+
+	var _moveToRight = function () {
+		var l1Idx = $items.filter('.crt').index();
+
+		var l2Idx = l1Idx - 1 < 0 ? lth - 1 : l1Idx - 1;
+		var nxtIdx = l1Idx + 1 == lth ? 0 : l1Idx + 1;
+		var r1Idx = nxtIdx + 1 == lth ? 0 : nxtIdx + 1;
+		var r2Idx = r1Idx + 1 == lth ? 0 : r1Idx + 1;
+
+		var lstIdx = $items.filter('.l2').index();
+
+		$items.attr('class', 'wws-item');
+
+		$items.eq(l2Idx).addClass('l2');
+		$items.eq(l1Idx).addClass('l1');
+		$items.eq(nxtIdx).addClass('crt');
+		$items.eq(r1Idx).addClass('r1');
+		$items.eq(r2Idx).addClass('r2');
+
+		$items.eq(lstIdx).addClass('lst');
+
+		$this.trigger('tabChange');
+	};
+
+	var _moveToLeft = function () {
+		var r1Idx = $items.filter('.crt').index();
+
+		var r2Idx = r1Idx + 1 == lth ? 0 : r1Idx + 1;
+		var nxtIdx = r1Idx - 1 < 0 ? lth - 1 : r1Idx - 1;
+		var l1Idx = nxtIdx - 1 < 0 ? lth - 1 : nxtIdx - 1;
+		var l2Idx = l1Idx - 1 < 0 ? lth - 1 : l1Idx - 1;
+
+		var lstIdx = $items.filter('.r2').index();
+
+		$items.attr('class', 'wws-item');
+
+		$items.eq(l2Idx).addClass('l2');
+		$items.eq(l1Idx).addClass('l1');
+		$items.eq(nxtIdx).addClass('crt');
+		$items.eq(r1Idx).addClass('r1');
+		$items.eq(r2Idx).addClass('r2');
+
+		$items.eq(lstIdx).addClass('lst');
+
+		$this.trigger('tabChange');
+	};
+
+	if (orgLth > 1) {
+		$this.on('click', '.l1, .r1', function () {
+			var $this = $(this);
+
+			if ($this.hasClass('l1')) {
+				_moveToLeft();
+			} else if ($this.hasClass('r1')) {
+				_moveToRight();
+			}
+		});
+
+		var touchstartY = 0
+			, touchstartX = 0
+			, touchendX = 0
+			, touchendY = 0
+			, touchoffsetX = 0
+			, touchoffsetY = 0;
+
+		$this.on('touchstart', function (e) {
+			var touch = e.touches[0];
+			touchstartX = touch.clientX;
+			touchstartY = touch.clientY;
+		});
+
+		$this.on('touchend', function (e) {
+			if (e.touches.length == 0) {
+				var touch = e.changedTouches[e.changedTouches.length - 1];
+				touchendX = touch.clientX;
+				touchendY = touch.clientY;
+
+				touchoffsetX = touchendX - touchstartX;
+				touchoffsetY = touchendY - touchstartY;
+
+				if (Math.abs(touchoffsetX) >= 80 && Math.abs(touchoffsetY) <= 30) {
+					if (touchoffsetX < 0) {
+						// swipe left
+						_moveToRight();
+					}
+					else {
+						// swipe right
+						_moveToLeft();
+					}
+				}
+			}
+		});
+	}
+
+	setTimeout(function () {
+		$this.removeClass('no-motion');
+	}, 0);
+};

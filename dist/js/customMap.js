@@ -150,12 +150,10 @@
 				});
 
 				marker.data = obj;
+				marker.is = 'hos';
 				clusterer.addMarker(marker);
 
 				kakao.maps.event.addListener(marker, 'click', function () {
-					// console.log('marker click !!');
-					// console.log(clusterer);
-					// console.log(obj);
 
 					if(bfMarker) bfMarker.setImage(hosImgImage);
 					marker.setImage(sltHosImgImage);
@@ -204,6 +202,7 @@
 				});
 
 				marker.data = obj;
+				marker.is = 'pha';
 				clusterer.addMarker(marker);
 
 				kakao.maps.event.addListener(marker, 'click', function () {
@@ -258,10 +257,15 @@
 		};
 
 		map.clearAll = function () {
+			$popArea.find('.map-marker-info').remove();
 			clusterer.clear();
 		};
 
 		map.clearInfoPop = function () {
+			if(bfMarker) {
+				if(bfMarker.is == 'hos') bfMarker.setImage(hosImgImage);
+				else if(bfMarker.is == 'pha') bfMarker.setImage(phaImgImage);
+			}
 			$popArea.find('.map-marker-info').remove();
 		};
 
