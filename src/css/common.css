@@ -625,6 +625,16 @@
 		    text-indent: -9999px;
 		    background: url(../img/ic-graph.png) no-repeat 0 0 / 100% auto;
 		}
+		.btn-mic{
+		    position: relative;
+		    z-index: 1;
+		    display: inline-block;
+		    width: 100px;
+		    height: 100px;
+		    background: url(../img/btn-voice.png) no-repeat 0 0 / 100px auto;
+		    overflow: hidden;
+		    text-indent: -9999px;
+		}
 
 
 		/*링크버튼*/
@@ -2088,9 +2098,13 @@
 		    min-height: 30px;
 		    padding-left: 35px;
 		}
+		.bph-innner .history-back{
+			position: absolute;
+			top: 0;
+			left: 0;
+		}
 		.bottom-pop-cont{
 		    position: relative;
-		    /*padding: 20px 22px;*/
 		    padding: 20px 0;
 		    flex-grow: 1;
 		    overflow: auto;
@@ -2377,6 +2391,13 @@
 		.g-txt.b-type + .input-text{
 			margin-top: 40px;
 		}
+		.g-txt > .st{
+			font-size: 20px;
+			line-height: 29px;
+		}
+		.flex-none-cont .g-txt{
+			padding: 0;
+		}
 		.scroll-list-wrap{
 			display: flex;
 			flex-direction: column;	
@@ -2641,6 +2662,16 @@
 		    width: 100%;
 		    height: 100%;
 		}
+
+		.bg-txt{
+		    margin-top: 40px;
+		    padding: 11px 22px;
+		    font-weight: 700;
+		    font-size: 16px;
+		    line-height: 24px;
+		    background: #ebeff3;    
+		}
+
 	/* // 검진 결과 */
 
 	/* 닥터 QA */
@@ -4752,4 +4783,54 @@
 		height: 18px;
 		line-height: 18px;
 		font-weight: 300;
+	}
+
+	.mic-area-wrap{
+	    position: relative;
+	    flex: none;
+	    height: 170px;
+	}
+	.mic-area{
+	    text-align: center;
+	    font-size: 0;
+	}
+
+	.b-txt{
+	    margin-top: 20px;
+	    font-weight: 700;
+	    font-size: 14px;
+	    color: #056bff;
+	    line-height: 20px;
+	}
+
+	.ing .btn-mic{
+	    background: url(../img/btn-voice-sel-02.png) no-repeat 0 0 / 100px auto;
+	}
+	.ing > .wave {
+	    display: block;
+	    position: absolute;
+	    overflow: hidden;
+	    top: 10px;
+	    left: 0;
+	    width: 100%;
+	    height: 80px;
+	    animation: loadingWave infinite linear;
+	}
+	.ing > .wave.ty1 {
+	    animation-duration: 3s;
+	    background: url(../img/loading-line-01.png) repeat-x;
+	    background-size: 895px 80px;
+	    background-position: 0 0;
+	}
+	.ing > .wave.ty2 {
+	    animation-duration: 4s;
+	    background: url(../img/loading-line-02.png) repeat-x;
+	    background-size: 895px 80px;
+	    background-position: 0 0;
+	}
+	.ing > .wave.ty3 {
+	    animation-duration: 5s;
+	    background: url(../img/loading-line-03.png) repeat-x;
+	    background-size: 895px 80px;
+	    background-position: 0 0;
 	}
