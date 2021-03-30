@@ -3979,6 +3979,14 @@
 		.card-content-area span {
 			font-weight: inherit;
 		}
+		.card-content sup {
+			font-size: inherit;
+			font-weight: inherit;
+			display: inline-block;
+			line-height: inherit;
+			vertical-align: super;
+			margin-top: -.5em;
+		}
 		.card-content {
 			margin-bottom: 20px;
 		}
