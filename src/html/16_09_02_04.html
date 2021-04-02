@@ -66,24 +66,27 @@
 $(function(){
 
     var COLOR = {
-        type1: "#fff",
-        type2: "#000",
-        type3: "#056bff",
-        type4: "#0ca6ea",
-        type5: "#ffbf00",
-        type6: "#ff7300",
-        type7: "#c00000",
+        type1: "#fff",      //흰색
+        type2: "#000",      //검정
+        type3: "#056bff",   //파랑
+        type4: "#0ca6ea",   //옥색
+        type5: "#ffbf00",   //노랑
+        type6: "#ff7300",   //주황
+        type7: "#c00000",   //빨강
     };
 
     var ctx = document.getElementById("chart-canvas").getContext("2d");
 
     var data = {
+        // 라벨
         labels: ['201510', '201703', '201901', '201903', '202010', '202009', '202009', '202009', '202009', '202009'],
         datasets: [
         {
             type: "line",
+            // 초기값
             data: [10, 9, 8, 7, 6, 5, 4, 3, 2, 1],
-            //data: [10, 9, 8, 7, 1, 1, 1, 1, 1, 1],
+
+            // 툴팁
             customTooltip: [{
                 textColor: COLOR.type1,
                 bgColor: COLOR.type3,
@@ -202,7 +205,32 @@ $(function(){
         type: 'bar',
         data: data,
         options: options,
-    });    
+    });
+
+    console.log(myLineChart);
+
+    // 값 변경
+    myLineChart.data.labels = ['201510', '201703', '201901', '201903'];
+    myLineChart.data.datasets[0].data = [10, 9, 8, 7];
+    myLineChart.data.datasets[0].customTooltip = [{
+        textColor: COLOR.type1,
+        bgColor: COLOR.type3,
+        text: "정A"
+    }, {
+        textColor: COLOR.type1,
+        bgColor: COLOR.type4,
+        text: "정B"
+    }, {
+        textColor: COLOR.type2,
+        bgColor: COLOR.type5,
+        text: "주의"
+    }, {
+        textColor: COLOR.type1,
+        bgColor: COLOR.type6,
+        text: "의심"
+    }];
+
+    myLineChart.update();
 
 })
 </script>
@@ -212,6 +240,7 @@ $(function(){
 
     $('.waterwheel-slide').on('tabChange',function() {
         console.log($(this).find('.crt').text());
+        console.log($(this).find('.crt').index());
 
     });
 </script>
