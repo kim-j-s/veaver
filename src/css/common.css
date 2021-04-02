@@ -4487,6 +4487,16 @@
 			text-align: right;
 			padding: 0 4px 0 0;
 		}
+		.part-cont.half{
+			flex-flow: row wrap;
+		}
+		.part-cont.half > *{
+			width: 50%;
+			margin-top: 12px;
+		}
+		.part-cont.half > *:nth-child(-n + 2){
+			margin-top: 0;
+		}
 
 		.bg-box + .l-cont{
 			padding-top: 30px;
