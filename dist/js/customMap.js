@@ -24,6 +24,13 @@
 		return Math.round(d * 1000);
 	}
 
+	// 현재 위치 마커
+	var curImgSrc = '../img/ic-position.png', // 마커이미지의 주소입니다
+		curImgSize = new kakao.maps.Size(16, 16), // 마커이미지의 크기입니다
+		curImgOption = { offset: new kakao.maps.Point(8, 8) }; // 마커이미지의 옵션입니다. 마커의 좌표와 일치시킬 이미지 안에서의 좌표를 설정합니다.
+
+	var curImgImage = new kakao.maps.MarkerImage(curImgSrc, curImgSize, curImgOption);
+
 	// 병원 마커
 	var hosImgSrc = '../img/ic-location-hospital-nor.png', // 마커이미지의 주소입니다
 		hosImgSize = new kakao.maps.Size(40, 40), // 마커이미지의 크기입니다
@@ -48,7 +55,7 @@
 		sltPhaImgSize = new kakao.maps.Size(58, 70), // 마커이미지의 크기입니다
 		sltPhaImgOption = { offset: new kakao.maps.Point(29, 50) }; // 마커이미지의 옵션입니다. 마커의 좌표와 일치시킬 이미지 안에서의 좌표를 설정합니다.
 
-		var sltPhaImgImage = new kakao.maps.MarkerImage(sltPhaImgSrc, sltPhaImgSize, sltPhaImgOption);
+	var sltPhaImgImage = new kakao.maps.MarkerImage(sltPhaImgSrc, sltPhaImgSize, sltPhaImgOption);
 
 	$.fn.initMap = function (options) {
 		if (this.length != 1) return null;
@@ -155,7 +162,7 @@
 
 				kakao.maps.event.addListener(marker, 'click', function () {
 
-					if(bfMarker) bfMarker.setImage(hosImgImage);
+					if (bfMarker) bfMarker.setImage(hosImgImage);
 					marker.setImage(sltHosImgImage);
 					bfMarker = marker;
 
@@ -198,7 +205,7 @@
 				var marker = new kakao.maps.Marker({
 					position: new kakao.maps.LatLng(Number(obj.latitude), Number(obj.longitude)),
 					clickable: true,
-					image: 	phaImgImage
+					image: phaImgImage
 				});
 
 				marker.data = obj;
@@ -207,7 +214,7 @@
 
 				kakao.maps.event.addListener(marker, 'click', function () {
 
-					if(bfMarker) bfMarker.setImage(phaImgImage);
+					if (bfMarker) bfMarker.setImage(phaImgImage);
 					marker.setImage(sltPhaImgImage);
 					bfMarker = marker;
 
@@ -245,7 +252,8 @@
 		map.setSimpleMark = function (lat, lon) {
 			var pos = new kakao.maps.LatLng(lat, lon);
 			var marker = new kakao.maps.Marker({
-				position: pos
+				position: pos,
+				image: curImgImage
 			});
 			clusterer.addMarker(marker);
 			map.setCenter(pos);
@@ -262,9 +270,9 @@
 		};
 
 		map.clearInfoPop = function () {
-			if(bfMarker) {
-				if(bfMarker.is == 'hos') bfMarker.setImage(hosImgImage);
-				else if(bfMarker.is == 'pha') bfMarker.setImage(phaImgImage);
+			if (bfMarker) {
+				if (bfMarker.is == 'hos') bfMarker.setImage(hosImgImage);
+				else if (bfMarker.is == 'pha') bfMarker.setImage(phaImgImage);
 			}
 			$popArea.find('.map-marker-info').remove();
 		};
