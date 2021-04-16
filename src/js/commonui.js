@@ -488,12 +488,20 @@ $.fn.audioBtn = function (url) {
 	});
 }
 
-$.fn.wwsInit = function () {
+$.fn.wwsInit = function (params) {
 	var $this = $(this);
 
 	if ($this.length != 1) returnss;
 
 	var $inner = $this.children('.wws-inner');
+
+	if(params) {
+		$inner.empty();
+		params.forEach(function(v) {
+			$inner.append(`<span class="wws-item">${v}</span>`);
+		});
+	}
+
 	var $items = $inner.children('.wws-item');
 	var lth = $items.length;
 	var orgLth = lth;

@@ -45,14 +45,7 @@
         <section class="layer-content">
             <!-- waterwheel-slide -->
             <div class="waterwheel-slide">
-                <div class="wws-inner">
-                    <span class="wws-item">질환1</span>
-                    <span class="wws-item">질환2</span>
-                    <span class="wws-item">질환3</span>
-                    <span class="wws-item">질환4</span>
-                    <span class="wws-item">질환5</span>
-                    <span class="wws-item">질환6</span>
-                </div>
+                <div class="wws-inner"></div>
             </div>
             <!-- // waterwheel-slide -->
 
@@ -133,7 +126,9 @@
 </script>
 <script>
     // 탭
-    $('.waterwheel-slide').wwsInit();
+    $('.waterwheel-slide').wwsInit([
+        '질환1', '질환2', '질환3', '질환4', '질환5'
+    ]);
 
     $('.waterwheel-slide').on('tabChange', function() {
         var txt = $(this).find('.crt').text();
