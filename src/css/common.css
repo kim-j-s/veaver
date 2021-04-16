@@ -4855,3 +4855,10 @@
 	    background-size: 895px 80px;
 	    background-position: 0 0;
 	}
+
+
+.flx-wrap {
+	display: flex;
+	flex-direction: column;
+	flex: 1 1 auto;
+}
