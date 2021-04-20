@@ -1,11 +1,12 @@
 @@include('head.html',{
-    "title":"건강365 | "
+"title":"건강365 | "
 })
+
 <body>
     <div class="layer-full-wrap opened">
         <!-- 헤더영역 -->
         @@include('header02.html',{
-            "layertitle":"혈색소"
+        "layertitle":"혈색소"
         })
         <!-- //헤더영역 -->
 
@@ -13,14 +14,7 @@
         <section class="layer-content">
             <!-- waterwheel-slide -->
             <div class="waterwheel-slide">
-                <div class="wws-inner">
-                    <span class="wws-item">질환1</span>
-                    <span class="wws-item">질환2</span>
-                    <span class="wws-item">질환3</span>
-                    <span class="wws-item">질환4</span>
-                    <span class="wws-item">질환5</span>
-                    <span class="wws-item">질환6</span>
-                </div>
+                <div class="wws-inner"></div>
             </div>
             <!-- // waterwheel-slide -->
 
@@ -61,187 +55,56 @@
 </body>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@0.7.0"></script>
+<script src="../js/customChart.js"></script>
 <script>
-// 차트
-$(function(){
-
-    var COLOR = {
-        type1: "#fff",      //흰색
-        type2: "#000",      //검정
-        type3: "#056bff",   //파랑
-        type4: "#0ca6ea",   //옥색
-        type5: "#ffbf00",   //노랑
-        type6: "#ff7300",   //주황
-        type7: "#c00000",   //빨강
-    };
-
-    var ctx = document.getElementById("chart-canvas").getContext("2d");
-
-    var data = {
-        // 라벨
-        labels: ['201510', '201703', '201901', '201903', '202010', '202009', '202009', '202009', '202009', '202009'],
-        datasets: [
-        {
-            type: "line",
-            // 초기값
-            data: [10, 9, 8, 7, 6, 5, 4, 3, 2, 1],
-
-            // 툴팁
-            customTooltip: [{
-                textColor: COLOR.type1,
-                bgColor: COLOR.type3,
-                text: "정A"
-            }, {
-                textColor: COLOR.type1,
-                bgColor: COLOR.type4,
-                text: "정B"
-            }, {
-                textColor: COLOR.type2,
-                bgColor: COLOR.type5,
-                text: "주의"
-            }, {
-                textColor: COLOR.type1,
-                bgColor: COLOR.type6,
-                text: "의심"
-            }, {
-                textColor: COLOR.type1,
-                bgColor: COLOR.type7,
-                text: "고당"
-            }, {
-                textColor: COLOR.type1,
-                bgColor: COLOR.type7,
-                text: "유질"
-            }, {
-                textColor: COLOR.type1,
-                bgColor: COLOR.type7,
-                text: "일반"
-            }, {
-                textColor: COLOR.type1,
-                bgColor: COLOR.type7,
-                text: "직업"
-            }, {
-                textColor: COLOR.type1,
-                bgColor: COLOR.type7,
-                text: "단순"
-            }, {
-                textColor: COLOR.type1,
-                bgColor: COLOR.type7,
-                text: "휴무"
-            }],
-            fill: false,
-            borderColor: 'rgba(0, 0, 0, 1)',
-            lineTension: 0,
-            borderWidth: 1,
-        }]
-    };
-
-    var options = {
-        responsive: true,
-        maintainAspectRatio: false,
-        legend: {
-            display: false,
-        },
-        scales: {
-            yAxes: [{
-                ticks: {
-                    display: false,
-                    beginAtZero: true,
-                    stepSize : 1,
-                },
-                // 최대값  + 1
-                afterDataLimits(scale) {
-                    scale.max += 1;
-                }
-            }],
-        },
-        layout: {
-            // 레이아웃 여백
-            padding: {
-                top: 20,
-                right: 20,
+    $('#chart-canvas').setChart({
+        "type": 3, //타입3 : 1가지 값 꺽은선 - 툴팁적용
+        "data": [
+            {
+                "date": "20121110",
+                "value": "10",
+                "color": "#FFFFFF",
+                "text": "정상A"
+            },
+            {
+                "date": "20141025",
+                "value": "9",
+                "color": "#FFFFFF",
+                "text": "정상A"
+            },
+            {
+                "date": "20161110",
+                "value": "8",
+                "color": "#FFFFFF",
+                "text": "정상A"
+            },
+            {
+                "date": "20171025",
+                "value": "7",
+                "color": "#FFFFFF",
+                "text": "정상A"
+            },
+            {
+                "date": "20200814",
+                "value": "6",
+                "color": "#FFFFFF",
+                "text": "정상A"
             }
-        },
-        tooltips: {
-            enabled: false,
-        },
-        
-        plugins: {
-            datalabels: {
-                align: 'top',
-                font: {
-                    size: '12',
-                },
-                borderRadius: 50,
-                padding: {
-                    top: 7,
-                    right: 7,
-                    bottom: 5,
-                    left: 7,
-                },
-                // 색상 정의
-                color: function(context) {
-                    var index = context.dataIndex;
-                    var value = context.dataset.customTooltip[index].textColor;
-                    return value ? value : '#ffffff';
-                },
-                //바탕색 정의
-                backgroundColor: function(context) {
-                    var index = context.dataIndex;
-                    var value = context.dataset.customTooltip[index].bgColor;
-                    return value ? value : '#ffffff';
-                },
-                // Label 문구 정의
-                formatter: function(value, context) {
-                    var index = context.dataIndex;
-                    var value = context.dataset.customTooltip[index].text;
-                    return value;
-                },
-            }
-        }
-    }
-
-    // 호출
-    var myLineChart = new Chart(ctx, {
-        type: 'bar',
-        data: data,
-        options: options,
-    });
-
-    console.log(myLineChart);
-
-    // 값 변경
-    myLineChart.data.labels = ['201510', '201703', '201901', '201903'];
-    myLineChart.data.datasets[0].data = [10, 9, 8, 7];
-    myLineChart.data.datasets[0].customTooltip = [{
-        textColor: COLOR.type1,
-        bgColor: COLOR.type3,
-        text: "정A"
-    }, {
-        textColor: COLOR.type1,
-        bgColor: COLOR.type4,
-        text: "정B"
-    }, {
-        textColor: COLOR.type2,
-        bgColor: COLOR.type5,
-        text: "주의"
-    }, {
-        textColor: COLOR.type1,
-        bgColor: COLOR.type6,
-        text: "의심"
-    }];
-
-    myLineChart.update();
-
-})
-</script>
-<script>
-// 탭
-    $('.waterwheel-slide').wwsInit();
-
-    $('.waterwheel-slide').on('tabChange',function() {
-        console.log($(this).find('.crt').text());
-        console.log($(this).find('.crt').index());
-
+        ], // 수치
+        "cfValue": [] // 참고치 double array
     });
 </script>
+<script>
+    // 탭
+    $('.waterwheel-slide').wwsInit([
+        '질환1', '질환2', '질환3', '질환4', '질환5'
+    ]);
+
+    $('.waterwheel-slide').on('tabChange', function () {
+        var txt = $(this).find('.crt').text();
+        var idx = $(this).find('.crt').index();
+        console.log(txt, idx);
+    });
+</script>
+
 </html>
