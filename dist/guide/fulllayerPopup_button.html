@@ -1,18 +1,63 @@
-@@include('head.html',{
-	"title":"증상입력 | "
-})
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+    <meta name="x-apple-disable-message-reformatting">
+    <title>증상입력 | Veaver Health mining</title>
+    <link href="../css/reset.css" rel="stylesheet">
+    <link href="../css/pickadate.default.css" rel="stylesheet">
+    <link href="../css/pickadate.default.date.css" rel="stylesheet">
+    <link href="../css/pickadate.default.time.css" rel="stylesheet">
+    <link href="../css/swiper.css" rel="stylesheet">
+    <link href="../css/common.css" rel="stylesheet">
+    <script type="text/javascript" src="../js/jquery.min.js"></script>
+    <script type="text/javascript" src="../js/jquery.swiper.js"></script>
+    <script type="text/javascript" src="../js/commonui.js"></script>
+    <script type="text/javascript" src="../js/drawui.js"></script>
+    <script type="text/javascript" src="../js/picker.js"></script>
+    <script type="text/javascript" src="../js/picker.date.js"></script>
+    <!--[if lt IE 9]>
+    <script type="text/javascript">
+        document.createElement("header"); 
+        document.createElement("nav"); 
+        document.createElement("section"); 
+        document.createElement("article"); 
+        document.createElement("footer");
+    </script>
+<![endif]-->
+</head>
+
 <body>
-	<div class="layer-full-wrap opened pb0">
+    <div class="layer-full-wrap opened pb0">
         <!-- 헤더영역 -->
-        @@include('header01.html',{
-			"layertitle":"Ai헬스큐"
-		})
+        <header>
+            <div class="header-inner">
+                <button type="buton" class="layer-close-btn">닫기</button>
+                <h2 class="header-title">Ai헬스큐</h2>
+                <div class="h-utils">
+                    <a href="#" class="u-profile">
+                        <span class="u-profile-img">
+		    		<!-- 적용된 썸네일 -->
+		    		<img src="https://m.upinews.kr/data/upi/image/20190523/p1065574177335900_669_thum.jpg" alt="프로픨 사진" class="u-profile-img">
+		    		<!-- 남성 기본 썸네일 -->
+		    		<!-- <img src="../img/acProfile01B.png" alt="프로픨 사진" class="u-profile-img"> -->
+		    		<!-- 여성 기본 썸네일 -->
+		    		<!-- <img src="../img/acProfile02B.png" alt="프로픨 사진" class="u-profile-img"> -->
+		    	</span>
+                        <span class="name">Guest</span>
+                    </a>
+                </div>
+            </div>
+        </header>
         <!-- //헤더영역 -->
 
         <!-- 컨텐츠 영역 -->
         <section class="layer-content">
             <div class="layer-inner">
-            	content
+                content
             </div>
         </section>
         <!-- //컨텐츠 영역 -->
@@ -21,4 +66,5 @@
         </div>
     </div>
 </body>
+
 </html>
