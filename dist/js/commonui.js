@@ -47,6 +47,9 @@ $(function () {
 	// 지도 보기 하단 리스트 토글
 	listToggle();
 
+	// 필터 슬라이드
+	slide();
+
 	//script ready
 });
 
@@ -266,10 +269,10 @@ function termsWrap() {
 
 			if (!$this.hasClass('on')) {
 				$this.closest('.terms-list').find('.on').removeClass('on').find('.term-slide-cont').stop(true).slideUp(500);
-				$this.addClass('on').html('닫기').attr('aria-expanded', true);
+				$this.addClass('on');
 				$this.closest('li').addClass('on').find('.term-slide-cont').stop(true).slideDown(500);
 			} else {
-				$this.removeClass('on').html('열기').attr('aria-expanded', false);
+				$this.removeClass('on');
 				$this.closest('li').removeClass('on').find('.term-slide-cont').stop(true).slideUp(500);
 			}
 		}).on('input.termsWrap', 'input[type=checkbox]', function () {
@@ -409,6 +412,29 @@ function viewSwiper() {
 		// 하단 페이징 display 처리용
 		$('.btn-bottom-area.view').hide();
 	}
+}
+
+
+// 필터 슬라이드
+function slide() {
+    var $this = $('[data-slide]');
+    var time = 500;
+    $this.on('click', function(){
+        var $this = $(this);
+        var data = $this.data('slide');
+        var $cont = $('[data-slidecont="'+ data +'"]');
+        console.log(data);
+
+        if ( $cont.css('display') == 'block' ) {
+            $this.removeClass('on');
+            $cont.stop(true).slideUp(500);
+        } else {
+            $('[data-slide]').removeClass('on');
+            $('[data-slidecont]').stop(true).slideUp(500);
+            $this.addClass('on');
+            $cont.stop(true).slideDown(500);
+        }
+    });
 }
 
 // 지도 보기 하단 리스트 토글
