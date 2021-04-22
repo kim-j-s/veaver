@@ -672,7 +672,14 @@
 		    line-height: 20px;
 		    background: url(../img/ic-location.png) no-repeat left center / 20px 20px;
 		}
-
+		.btn-recommend{
+			display: inline-block;
+			text-indent: -9999px;
+			width: 86px;
+			height: 18px;
+			background: url(../img/ic-konarecommend.png) no-repeat center center / 86px 16px;
+			overflow: hidden;
+		}
 
 		/*링크버튼*/
 		.b-link{
@@ -3340,8 +3347,13 @@
 		    margin-top: 10px;
 		}
 		.txt-cont04{
-
+			position: relative;
 		}
+		.txt-cont04 .btn-recommend{
+			position: absolute;
+			top: 0;
+			right: 0;
+		}		
 		.txt-cont04 > .t-case{
 		    margin-bottom: 12px;
 		    font-size: 0;
