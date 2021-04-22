@@ -457,6 +457,16 @@
 		    text-indent: -9999px;
 		    background: url(../img/ac-black-close-right.png) no-repeat center center / 100% auto;
 		}
+		.btn-copy{
+			display: inline-block;
+			padding-left: 20px;
+			font-weight: 300;
+			font-size: 12px;
+			line-height: 18px;
+			color: #000;
+			background: url(../img/icon-address-copy.png) no-repeat left center / 18px 18px;
+		}
+
 
 		.checkbox-rnd-gr {
 			display: inline-block;
@@ -634,6 +644,15 @@
 		    background: url(../img/btn-voice.png) no-repeat 0 0 / 100px auto;
 		    overflow: hidden;
 		    text-indent: -9999px;
+		}
+		.btn-location{
+		    display: inline-block;
+		    padding-left: 26px;
+		    font-weight: 300;
+		    font-size: 14px;
+		    color: #000;
+		    line-height: 20px;
+		    background: url(../img/ic-location.png) no-repeat left center / 20px 20px;
 		}
 
 
@@ -1780,6 +1799,9 @@
 			padding-bottom: 108px;
 		}
 
+		.flex-none{
+			flex: none !important;
+		}
 		.flex-none-cont{
 			flex: none;
 			margin-top: 20px;
@@ -2030,20 +2052,43 @@
 
 		.toast-layer{
 		    position: fixed;
-		    bottom: 5%;
+		    bottom: 0;
 		    left: 50%;
 		    z-index: 150;
 		    width: calc(100% - 44px);
-		    transform: translate(-50%, -50%);
+		    transform: translate(-50%, 0);
+		    opacity: 0;
+		}
+		.toast-layer.on{
+		    animation: toastpopup 4s linear alternate;
 		}
 		.toast-cont{
-		    padding: 15px;
+		    padding: 0 15px;
 		    color: #fff;
 		    text-align: center;
 		    font-size: 14px;
+		    line-height: 52px;
 		    background: #000;
-		    opacity: 0.7;
+		    opacity: 1;
 		    border-radius: 10px;
+		}
+		@keyframes toastpopup {
+		    0%{
+		        bottom: 0;
+		        opacity: 0;
+		    }
+		    25% {
+		        bottom: 30px;
+		        opacity: 1;
+		    }
+		    75% {
+		        bottom: 30px;
+		        opacity: 1;
+		    }
+		    100% {
+		        bottom: 0;
+		        opacity: 0;
+		    }
 		}
 
 	/* // 토스트 팝업 */
@@ -2312,8 +2357,6 @@
 	.btn-reading{
 	    background: url(../img/btn-floating-reading.png) no-repeat right center / auto 100%;
 	}
-
-
 	.btn-fl-location{
 		display: inline-block;
 		width: 70px;
@@ -2800,9 +2843,6 @@
 	/* 탭 */
 		.tab-box{
 		    position: relative;
-		    /*margin: 0 -22px;*/
-		    /*width: calc(100% + 44px);*/
-		    /*margin-left: -22px;*/
 		    padding-left: 22px;
 		    overflow: hidden;
 		    background: #fff;
@@ -2825,6 +2865,12 @@
 			height: 100%;
 			background: #fff;
 			opacity: 0.7;
+		}
+		.tab-box .btn-location{
+			position: absolute;
+			top: 6px;
+			right: 22px;
+			z-index: 1;
 		}
 		.tab-menu-wrap.swiper-container{
 		    width: 100%;
@@ -3010,16 +3056,16 @@
 
 		}
 		.txt-cont04 > .t-case{
-		    margin-bottom: 2px;
-		    font-size: 12px;
+		    margin-bottom: 12px;
+		    font-size: 0;
 		    line-height: 18px;
 		}
 		.txt-cont04 > .t-case > span{
 			position: relative;
 			display: inline-block;
 			vertical-align: top;
-			margin-right: 10px;
-			padding-right: 11px;
+			margin-right: 5px;
+			padding-right: 6px;
 			font-size: 12px;
 		    line-height: 18px;
 		}
@@ -3038,19 +3084,49 @@
 		.txt-cont04 > .t-case > span:last-child:after{
 			content: none;
 		}
+
+		.txt-cont04 > .t-case > span.st-on{
+			padding-right: 23px;
+		}
+		.txt-cont04 > .t-case > span.st-on:before{
+			content: '';
+			position: absolute;
+			top: 50%;
+			right: 0;
+			width: 19px;
+			height: 16px;
+			background: url(../img/ic-badge-on.png) no-repeat center center / 100% 100%;
+			transform: translateY(-50%);
+		}		
+		.txt-cont04 > .t-case > span.st-off{
+			padding-right: 26px;
+		}
+		.txt-cont04 > .t-case > span.st-off:before{
+			content: '';
+			position: absolute;
+			top: 50%;
+			right: 0;
+			width: 23px;
+			height: 16px;
+			background: url(../img/ic-badge-off.png) no-repeat center center / 100% 100%;
+			transform: translateY(-50%);
+		}
 		.txt-cont04 > .q-txt{
 		    font-weight: 500;
 		    font-size: 16px;
 		    line-height: 24px;
 		}
 		.txt-cont04 > .q-txt + .d-info{
-		    margin-top: 2px;
+		    margin-top: 4px;
 		}
 		.txt-cont04 .d-info{
 		    display: flex;
 		    flex-direction: row;
 		}
-		.txt-cont04 .d-info > span{
+		.txt-cont04 .d-info + .d-info{
+			margin-top: 12px;
+		}
+		.txt-cont04 .d-info span{
 		    position: relative;
 		    vertical-align: top;
 		    font-size: 12px;
@@ -3058,8 +3134,8 @@
 		    line-height: 18px;
 		}
 		.txt-cont04 .d-info > span + span{
-		    margin-left: 10px;
-		    padding-left: 11px;
+		    margin-left: 5px;
+		    padding-left: 6px;
 		    flex-grow: 1;
 		}
 		.txt-cont04 .d-info > span + span:before{
@@ -3069,6 +3145,12 @@
 		    left: 0;
 		    height: 10px;
 		    border-left: 1px solid #dbdee5;
+		}
+		.txt-cont04 .d-info > span .btn-copy{
+			vertical-align: baseline;
+		}
+		.txt-cont04 .d-info .copy-addr{
+			padding-right: 4px;
 		}
 		.txt-cont04 .sort-txt{
 			margin-top: 10px;

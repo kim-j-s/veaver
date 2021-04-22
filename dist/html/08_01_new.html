@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+    <meta name="x-apple-disable-message-reformatting">
+    <title>병원목록 | Veaver Health mining</title>
+    <link href="../css/reset.css" rel="stylesheet">
+    <link href="../css/pickadate.default.css" rel="stylesheet">
+    <link href="../css/pickadate.default.date.css" rel="stylesheet">
+    <link href="../css/pickadate.default.time.css" rel="stylesheet">
+    <link href="../css/swiper.css" rel="stylesheet">
+    <link href="../css/common.css" rel="stylesheet">
+    <script type="text/javascript" src="../js/jquery.min.js"></script>
+    <script type="text/javascript" src="../js/jquery.swiper.js"></script>
+    <script type="text/javascript" src="../js/commonui.js"></script>
+    <script type="text/javascript" src="../js/drawui.js"></script>
+    <script type="text/javascript" src="../js/picker.js"></script>
+    <script type="text/javascript" src="../js/picker.date.js"></script>
+    <!--[if lt IE 9]>
+    <script type="text/javascript">
+        document.createElement("header"); 
+        document.createElement("nav"); 
+        document.createElement("section"); 
+        document.createElement("article"); 
+        document.createElement("footer");
+    </script>
+<![endif]-->
+</head>
+
+<body>
+    <div class="layer-full-wrap opened ">
+        <!-- 헤더영역 -->
+        <header>
+            <div class="header-inner">
+                <button type="buton" class="layer-close-btn">닫기</button>
+                <div class="h-utils">
+                    <a href="#" class="u-profile">
+                        <span class="u-profile-img">
+		    		<!-- 적용된 썸네일 -->
+		    		<img src="https://m.upinews.kr/data/upi/image/20190523/p1065574177335900_669_thum.jpg" alt="프로픨 사진" class="u-profile-img">
+		    		<!-- 남성 기본 썸네일 -->
+		    		<!-- <img src="../img/acProfile01B.png" alt="프로픨 사진" class="u-profile-img"> -->
+		    		<!-- 여성 기본 썸네일 -->
+		    		<!-- <img src="../img/acProfile02B.png" alt="프로픨 사진" class="u-profile-img"> -->
+		    	</span>
+                        <span class="name">Guest</span>
+                    </a>
+                </div>
+            </div>
+        </header>
+        <!-- //헤더영역 -->
+
+        <!-- 컨텐츠 영역 -->
+        <section class="layer-content">
+            <div class="scroll-list-wrap">
+                <div class="tab-box">
+                    <div class="tab-menu-wrap swiper-container">
+                        <div class="tab-menu swiper-wrapper">
+                            <div class="swiper-slide">
+                                <a href="#" class="active">병원</a>
+                            </div>
+                            <div class="swiper-slide">
+                                <a href="#">약국</a>
+                            </div>
+                        </div>
+                    </div>
+                    <button type="button" class="btn-location">여의도동</button>
+                </div>
+
+                <div class="sort-area">
+                    <button type="button" class="btn-setting-b">진료과목 설정</button>
+                    <div class="rnd-group">
+                        <div class="scroll-x">
+                            <label class="checkbox-rnd-gr"><input type="checkbox" checked><span>진료중</span></label>
+                            <label class="checkbox-rnd-gr"><input type="checkbox" checked><span>내과</span></label>
+                            <label class="checkbox-rnd-gr"><input type="checkbox" checked><span>이비인후과</span></label>
+                            <label class="checkbox-rnd-gr"><input type="checkbox" checked><span>치과</span></label>
+                            <label class="checkbox-rnd-gr"><input type="checkbox" checked><span>이비인후과</span></label>
+                            <label class="checkbox-rnd-gr"><input type="checkbox" checked><span>재활의학과</span></label>
+                            <label class="checkbox-rnd-gr"><input type="checkbox" checked><span>소아 청소년과</span></label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="scroll-ud">
+                    <div class="scroll-ud-inner">
+                        <div class="rst-list-wrap">
+                            <ul class="rst-list">
+                                <li>
+                                    <div class="txt-cont04">
+                                        <div class="t-case">
+                                            <span>전문병원</span>
+                                            <span>응급실</span>
+                                            <span class="st-on">진료중</span>
+                                        </div>
+                                        <div class="q-txt">한국의학연구소 케이엠아이여의도의원</div>
+                                        <div class="d-info">
+                                            <span class="font_02">전문의</span>
+                                            <span class="font_01">내과, 소아과, 이비인후과, 치과, 정형외과</span>
+                                        </div>
+                                        <div class="d-info">
+                                            <span>327km</span>
+                                            <span>
+                                                <span class="copy-addr">서울특별시 영등포구 국제금융로2길 24</span>
+                                            <button type="button" class="btn-copy">주소복사</button>
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="more-cont">
+                                        <div class="inner">
+                                            <a href="tel:010-0000-0000">전화걸기</a>
+                                            <a href="#">길찾기</a>
+                                            <a href="#">더보기</a>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="txt-cont04">
+                                        <div class="t-case">
+                                            <span>전문병원</span>
+                                            <span class="st-off">진료중</span>
+                                        </div>
+                                        <div class="q-txt">김치과의원</div>
+                                        <div class="d-info">
+                                            <span class="font_02">전문의</span>
+                                            <span class="font_01">치과</span>
+                                        </div>
+                                        <div class="d-info">
+                                            <span>327km</span>
+                                            <span>
+                                                <span class="copy-addr">서울특별시 영등포구 은행로3</span>
+                                            <button type="button" class="btn-copy">주소복사</button>
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="more-cont">
+                                        <div class="inner">
+                                            <a href="tel:010-0000-0000">전화걸기</a>
+                                            <a href="#">길찾기</a>
+                                            <a href="#">더보기</a>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="floating-btns">
+                <ul class="fb-list">
+                    <li><button type="button" class="btn-fl-location">지도로 보기</button></li>
+                </ul>
+            </div>
+        </section>
+        <!-- //컨텐츠 영역 -->
+    </div>
+</body>
+
+</html>

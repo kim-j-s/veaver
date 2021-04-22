@@ -50,6 +50,9 @@ $(function () {
 	// 필터 슬라이드
 	slide();
 
+	// 주소 복사
+	clipboard()
+
 	//script ready
 });
 
@@ -58,6 +61,31 @@ $(window).on('load', function () {
 	// 공통 스크롤 표시 설정
 	// ScrollAreaChk();
 })
+
+
+function clipboard() {
+	var $copyText = $('.btn-copy');
+	$copyText.off().on('click', function(){
+		clearTimeout(clearToast);
+		var $this = $(this);
+		var copy = $this.prev().text();
+		var $temp = '<input type="text" class="inp-copy">';
+		var $toast = '<div class="toast-layer"><div class="toast-cont">주소 정보를 복사하였습니다.</div></div>';
+		$('.toast-layer').remove();
+		$('body').append($temp, $toast);
+		$('.inp-copy').val(copy).select();
+		document.execCommand("copy");
+		$('.toast-layer').addClass('on');
+		$('.inp-copy').remove();
+		clearToast();		
+	});
+}
+
+function clearToast(){
+	clearToast = setTimeout(function(){
+		$('.toast-layer').remove();
+	},4000);
+}
 
 // Nav Open Close
 function MenuOpenClose() {
