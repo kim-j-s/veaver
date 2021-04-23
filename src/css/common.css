@@ -308,13 +308,30 @@
 		    font-size: 14px;
 		    line-height: 24px;
 		    border: 1px solid #ebeff3;
-		    border-radius: 4px;
+		    border-radius: 5px;
 		}
+		.btn-gr{
+		    display: block;
+		    width: 100%;
+		    padding: 10px 10px;
+		    text-align: center;
+		    font-weight: 300;
+		    font-size: 14px;
+		    line-height: 20px;
+		    color: #74777b;
+		    border-radius: 5px;
+		    background: #f6f8fb;
+		}
+		.btn-gr.on{
+			font-weight: 500;
+			color: #000;
+		}
+
 
 		.btn-cb {
 			display: block;
 			box-sizing: border-box;
-			border-radius: 4px;
+			border-radius: 5px;
 			width: 100%;
 			font-weight: 500;
 			line-height: 50px;
@@ -608,6 +625,15 @@
 			text-indent: -9999px;
 			background: url(../img/ac-black-setting.png) no-repeat center center / 100% auto;
 		}
+		.btn-black-location{
+			display: inline-block;
+			vertical-align: middle;
+			width: 30px;
+			height: 30px;
+			overflow: hidden;
+			text-indent: -9999px;
+			background: url(../img/ac-black-location-change.png) no-repeat center center / 100% auto;
+		}
 		.btn-black-download{
 			display: inline-block;
 			width: 30px;
@@ -833,7 +859,7 @@
 		    flex-direction: row;
 		    align-items: center;
 		    padding: 0;
-		    border-radius: 4px;
+		    border-radius: 5px;
 			border: 1px solid #dbdee5;
 			background: #fff;
 			overflow: hidden;
@@ -4398,7 +4424,7 @@
 		    z-index: -1;
 		    border: 1px solid #ddd;
 		    padding: 22px;
-		    border-radius: 4px;
+		    border-radius: 5px;
 		    background-color: #fff;
 		}
 		.share-head{
@@ -4764,7 +4790,10 @@
 	/* 진료과목 리스트 */
 
 		.box-chk-list-wrap{
-		    margin: 20px 22px 0 22px;
+		    margin: 0 22px;
+		}
+		* + .box-chk-list-wrap{
+			margin-top: 20px;
 		}
 		.box-chk-list{
 		    font-size: 0;
@@ -4774,23 +4803,25 @@
 		    display: inline-block;
 		    vertical-align: top;
 		    width: calc(100% / 3);
-		    margin-top: 5px;
+		    margin-top: 6px;
 		    padding: 0 5px;
 		}
 		.box-chk-list > li:nth-child(-n + 3){
 		    margin-top: 0;
 		}
 		.box-chk-list > li .box-chk-item{
+			display: block;
 		    width: 100%;
 		}
 
 		.box-chk-item{
 		    position: relative;
 		    display: inline-block;
-		    padding: 12px 12px 4px 12px;
+		    padding: 4px 8px;
 		    overflow: hidden;
 		}
-		.box-chk-item > input[type="checkbox"]{
+		.box-chk-item > input[type="checkbox"],
+		.box-chk-item > input[type="radio"]{
 		    position: absolute;
 		    top: 0;
 		    left: -9999px;
@@ -4799,6 +4830,7 @@
 		    position: relative;
 		    display: block;
 		    height: 51px;
+		    margin: 8px 0 2px 0;
 		}
 		.box-chk-item .sub-img img{
 		    position: absolute;
@@ -4809,7 +4841,6 @@
 		    max-height: 100%;
 		}
 		.box-chk-item .sub-name{
-		    margin-top: 2px;
 		    display: flex;
 		    height: 40px;
 		    text-align: center;
@@ -4847,6 +4878,15 @@
 		}
 
 	/* // 진료과목 리스트 */
+
+	/* 지역 선택 */
+
+		.area-select-btns{}
+		.area-select-btns > button + button{
+		    margin-top: 5px;
+		}
+
+	/* // 지역 선택 */
 
 	/* 슬라이드 */
 

@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+    <meta name="x-apple-disable-message-reformatting">
+    <title>진료과목 선택 | Veaver Health mining</title>
+    <link href="../css/reset.css" rel="stylesheet">
+    <link href="../css/pickadate.default.css" rel="stylesheet">
+    <link href="../css/pickadate.default.date.css" rel="stylesheet">
+    <link href="../css/pickadate.default.time.css" rel="stylesheet">
+    <link href="../css/swiper.css" rel="stylesheet">
+    <link href="../css/common.css" rel="stylesheet">
+    <script type="text/javascript" src="../js/jquery.min.js"></script>
+    <script type="text/javascript" src="../js/jquery.swiper.js"></script>
+    <script type="text/javascript" src="../js/commonui.js"></script>
+    <script type="text/javascript" src="../js/drawui.js"></script>
+    <script type="text/javascript" src="../js/picker.js"></script>
+    <script type="text/javascript" src="../js/picker.date.js"></script>
+    <!--[if lt IE 9]>
+    <script type="text/javascript">
+        document.createElement("header"); 
+        document.createElement("nav"); 
+        document.createElement("section"); 
+        document.createElement("article"); 
+        document.createElement("footer");
+    </script>
+<![endif]-->
+</head>
+
+<body>
+    <div class="wrap">
+        <!-- 헤더영역 -->
+        <header>
+            <div class="header-inner">
+                <a href="#" class="history-back">뒤로가기</a>
+                <h2 class="header-title">지역 선택</h2>
+                <div class="h-utils">
+                    <input type="button" value="설정" class="btn-black-location">
+                </div>
+            </div>
+        </header>
+        <!-- //헤더영역 -->
+
+        <div class="flex-none-cont">
+            <div class="area-select-btns">
+                <button type="button" class="btn-gr on">시/도 선택</button>
+                <button type="button" class="btn-gr">구/군 선택</button>
+                <button type="button" class="btn-gr">동/읍/면 선택</button>
+            </div>
+        </div>
+
+        <!-- 컨텐츠 영역 -->
+        <section class="scroll-ud">
+            <div class="scroll-ud-inner">
+                <div class="box-chk-list-wrap">
+                    <ul class="box-chk-list">
+                        <li>
+                            <label class="box-chk-item">
+                                <input type="radio" name="area01">
+                                <span class="sub-name">
+                                    <span class="txt">서울</span>
+                                </span>
+                            </label>
+                        </li>
+                        <li>
+                            <label class="box-chk-item">
+                                <input type="radio" name="area01">
+                                <span class="sub-name">
+                                    <span class="txt">부산</span>
+                                </span>
+                            </label>
+                        </li>
+                        <li>
+                            <label class="box-chk-item">
+                                <input type="radio" name="area01">
+                                <span class="sub-name">
+                                    <span class="txt">대구</span>
+                                </span>
+                            </label>
+                        </li>
+                        <li>
+                            <label class="box-chk-item">
+                                <input type="radio" name="area01">
+                                <span class="sub-name">
+                                    <span class="txt">인천</span>
+                                </span>
+                            </label>
+                        </li>
+                        <li>
+                            <label class="box-chk-item">
+                                <input type="radio" name="area01">
+                                <span class="sub-name">
+                                    <span class="txt">광주</span>
+                                </span>
+                            </label>
+                        </li>
+                        <li>
+                            <label class="box-chk-item">
+                                <input type="radio" name="area01">
+                                <span class="sub-name">
+                                    <span class="txt">대전</span>
+                                </span>
+                            </label>
+                        </li>
+                        <li>
+                            <label class="box-chk-item">
+                                <input type="radio" name="area01">
+                                <span class="sub-name">
+                                    <span class="txt">울산</span>
+                                </span>
+                            </label>
+                        </li>
+                        <li>
+                            <label class="box-chk-item">
+                                <input type="radio" name="area01">
+                                <span class="sub-name">
+                                    <span class="txt">세종</span>
+                                </span>
+                            </label>
+                        </li>
+                        <li>
+                            <label class="box-chk-item">
+                                <input type="radio" name="area01">
+                                <span class="sub-name">
+                                    <span class="txt">경기</span>
+                                </span>
+                            </label>
+                        </li>
+                        <li>
+                            <label class="box-chk-item">
+                                <input type="radio" name="area01">
+                                <span class="sub-name">
+                                    <span class="txt">강원</span>
+                                </span>
+                            </label>
+                        </li>
+                        <li>
+                            <label class="box-chk-item">
+                                <input type="radio" name="area01">
+                                <span class="sub-name">
+                                    <span class="txt">충북</span>
+                                </span>
+                            </label>
+                        </li>
+                        <li>
+                            <label class="box-chk-item">
+                                <input type="radio" name="area01">
+                                <span class="sub-name">
+                                    <span class="txt">충남</span>
+                                </span>
+                            </label>
+                        </li>
+                        <li>
+                            <label class="box-chk-item">
+                                <input type="radio" name="area01">
+                                <span class="sub-name">
+                                    <span class="txt">전북</span>
+                                </span>
+                            </label>
+                        </li>
+                        <li>
+                            <label class="box-chk-item">
+                                <input type="radio" name="area01">
+                                <span class="sub-name">
+                                    <span class="txt">전남</span>
+                                </span>
+                            </label>
+                        </li>
+                        <li>
+                            <label class="box-chk-item">
+                                <input type="radio" name="area01">
+                                <span class="sub-name">
+                                    <span class="txt">경북</span>
+                                </span>
+                            </label>
+                        </li>
+                        <li>
+                            <label class="box-chk-item">
+                                <input type="radio" name="area01">
+                                <span class="sub-name">
+                                    <span class="txt">경남</span>
+                                </span>
+                            </label>
+                        </li>
+                        <li>
+                            <label class="box-chk-item">
+                                <input type="radio" name="area01">
+                                <span class="sub-name">
+                                    <span class="txt">제주</span>
+                                </span>
+                            </label>
+                        </li>
+                        <li>
+                            <label class="box-chk-item">
+                                <input type="radio" name="area01">
+                                <span class="sub-name">
+                                    <span class="txt">전국</span>
+                                </span>
+                            </label>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <!-- //컨텐츠 영역 -->
+    </div>
+</body>
+
+</html>
