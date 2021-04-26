@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+    <meta name="x-apple-disable-message-reformatting">
+    <title>병원찾기 상세 | Veaver Health mining</title>
+    <link href="../css/reset.css" rel="stylesheet">
+    <link href="../css/pickadate.default.css" rel="stylesheet">
+    <link href="../css/pickadate.default.date.css" rel="stylesheet">
+    <link href="../css/pickadate.default.time.css" rel="stylesheet">
+    <link href="../css/swiper.css" rel="stylesheet">
+    <link href="../css/common.css" rel="stylesheet">
+    <script type="text/javascript" src="../js/jquery.min.js"></script>
+    <script type="text/javascript" src="../js/jquery.swiper.js"></script>
+    <script type="text/javascript" src="../js/commonui.js"></script>
+    <script type="text/javascript" src="../js/drawui.js"></script>
+    <script type="text/javascript" src="../js/picker.js"></script>
+    <script type="text/javascript" src="../js/picker.date.js"></script>
+    <!--[if lt IE 9]>
+    <script type="text/javascript">
+        document.createElement("header"); 
+        document.createElement("nav"); 
+        document.createElement("section"); 
+        document.createElement("article"); 
+        document.createElement("footer");
+    </script>
+<![endif]-->
+</head>
+
+<body>
+    <div class="layer-full-wrap opened">
+        <!-- 헤더영역 -->
+        <header>
+            <div class="header-inner">
+                <button type="buton" class="layer-close-btn">닫기</button>
+                <div class="h-utils">
+                    <a href="#" class="u-profile">
+                        <span class="u-profile-img">
+		    		<!-- 적용된 썸네일 -->
+		    		<img src="https://m.upinews.kr/data/upi/image/20190523/p1065574177335900_669_thum.jpg" alt="프로픨 사진" class="u-profile-img">
+		    		<!-- 남성 기본 썸네일 -->
+		    		<!-- <img src="../img/acProfile01B.png" alt="프로픨 사진" class="u-profile-img"> -->
+		    		<!-- 여성 기본 썸네일 -->
+		    		<!-- <img src="../img/acProfile02B.png" alt="프로픨 사진" class="u-profile-img"> -->
+		    	</span>
+                        <span class="name">Guest</span>
+                    </a>
+                </div>
+            </div>
+        </header>
+        <!-- //헤더영역 -->
+
+        <!-- 컨텐츠 영역 -->
+        <!-- <section class="layer-content"> -->
+        <section class="scroll-ud">
+            <div class="scroll-ud-inner">
+                <div class="full-size-area top">
+                    <!-- 지도 영역 샘플 이미지 -->
+                    <img src="../img/temp/@poptemp08.jpg" alt="예시 이미지">
+                    <!-- 지도 영역 샘플 이미지 -->
+                </div>
+
+                <div class="line-box bold-line">
+                    <div class="txt-cont04">
+                        <div class="t-case">
+                            <span>전문병원</span>
+                            <span>응급실</span>
+                            <span class="st-on">진료중</span>
+                        </div>
+                        <div class="q-txt">한국의학연구소 케이엠아이여의도의원</div>
+                        <div class="d-info">
+                            <span class="font_02">전문의</span>
+                            <span class="font_01">내과, 소아과, 이비인후과, 치과, 정형외과</span>
+                        </div>
+                        <div class="d-info">
+                            <span>327km</span>
+                            <span>
+                                <span class="copy-addr">서울특별시 영등포구 국제금융로2길 24</span>
+                            <button type="button" class="btn-copy">주소복사</button>
+                            </span>
+                        </div>
+                        <button type="button" class="btn-recommend">추천병원</button>
+                    </div>
+                </div>
+
+                <div class="line-box bold-line">
+                    <div class="tab-box full">
+                        <div class="tab-menu-wrap swiper-container">
+                            <div class="tab-menu swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <a href="#">병원 정보</a>
+                                </div>
+                                <div class="swiper-slide">
+                                    <a href="#">진료 정보</a>
+                                </div>
+                                <div class="swiper-slide">
+                                    <a href="#" class="active">시설 정보</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="line-box pt30">
+                        <h4 class="tit-h4 font_01">의료장비 4종</h4>
+                        <ul class="list-07">
+                            <li>순음청력검사기 <em>1대</em></li>
+                            <li>임피던스청력검사기 <em>1대</em></li>
+                            <li>후두경 <em>1대</em></li>
+                            <li>적외선조사기 <em>1대</em></li>
+                        </ul>
+                    </div>
+
+                    <div class="line-box">
+                        <h4 class="tit-h4 font_01">응급실정보</h4>
+                        <ul class="list-01">
+                            <li><span class="gr">응급실</span> 운영</li>
+                            <li><span class="gr">운영시간</span> 주간/야간</li>
+                            <li><span class="gr">응급병실</span> 4</li>
+                            <li><span class="gr">전화번호(주간)</span> 02-222-3322</li>
+                            <li><span class="gr">전화번호(야간)</span> 02-222-3311</li>
+                        </ul>
+                    </div>
+
+                    <div class="g-box">
+                        상기 병원의 상세 정보는 건강보험심사평가원에서<br>
+                        제공하는 의료 빅데이터를 기반으로 작성되었습니다.
+                    </div>
+
+                    <div class="btnTwo mt40">
+                        <button type="button" class="btn-bd-pu">예약하기(준비중)</button>
+                        <a href="tel:010-0000-0000" class="btn-pu">전화걸기</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- //컨텐츠 영역 -->
+    </div>
+</body>
+
+</html>
