@@ -3980,15 +3980,23 @@
 		    z-index: 101;
 		    width: calc(100% - 44px);
 		}
+		.map-pop-area.full{
+			left: 0;
+			width: 100%;
+		}
 		.map-pop-area .btn-po-change{
 		    position: absolute;
-		    top: -40px;
+		    top: -44px;
 		    right: 0;
+		}
+		.map-pop-area.full .btn-po-change{
+			right: 22px;
 		}
 		.map-marker-info {
 			padding: 22px;
 		    border-radius: 14px 14px 0 0;
 		    background: #fff;
+		    box-shadow: 0 0 8px 0 rgba(43, 45, 49, 0.3);
 		}
 		.map-area-dp {
 			height: 160px;
