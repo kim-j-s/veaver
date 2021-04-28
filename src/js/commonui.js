@@ -217,6 +217,7 @@ function ScrollActive() {
 		$inner.off('scroll.scrollud').on('scroll.scrollud', function (e) {
 			var sct = $inner.scrollTop();
 			var h = $inner.outerHeight();
+			var innH = $inner[0].scrollHeight;
 
 			if (sct <= 0) {
 				$wrap.removeClass('up-dp');
@@ -228,6 +229,10 @@ function ScrollActive() {
 				$wrap.removeClass('down-dp');
 			} else {
 				$wrap.addClass('down-dp');
+			}
+
+			if (sct == innH-h) {
+				$wrap.trigger('on-bottom');
 			}
 		});
 
