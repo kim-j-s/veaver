@@ -5134,6 +5134,9 @@
 	.no-motion .wws-item {
 		transition: none;
 	}
+	.wws-item.no-icon::after {
+		display: none !important;
+	}
 	.wws-item.crt {
 		transform: translate(0, 40px);
 		background-color: #056bff;

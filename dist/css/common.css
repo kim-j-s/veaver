@@ -5648,6 +5648,9 @@
 		-webkit-transition: none;
 		transition: none;
 	}
+	.wws-item.no-icon::after {
+		display: none !important;
+	}
 	.wws-item.crt {
 		-webkit-transform: translate(0, 40px);
 		    -ms-transform: translate(0, 40px);
