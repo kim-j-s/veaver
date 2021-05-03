@@ -84,48 +84,9 @@
                         </div>
                     </div>
                 </div>
-
                 <!-- 지도영역 -->
-                <div class="map-area" style="background: rgba(0,0,0,0.3);">
-                    <!-- 더미 이미지 -->
-                    <div class="map-area-inner">
-                        <img src="../img/temp/@poptemp08.jpg" alt="" style="display: block; width: 100%; height: 100%;">
-
-                        <!-- bottom-pop-wrap -->
-                        <div class="map-pop-area full">
-                            <div class="map-marker-info">
-                                <div class="txt-cont04">
-                                    <div class="t-case">
-                                        <span>전문병원</span>
-                                        <span>응급실</span>
-                                        <span class="st-on">진료중</span>
-                                    </div>
-                                    <div class="q-txt">한국의학연구소 케이엠아이여의도의원</div>
-                                    <div class="d-info">
-                                        <span class="font_02">전문의</span>
-                                        <span class="font_01">내과, 소아과, 이비인후과, 치과, 정형외과</span>
-                                    </div>
-                                    <div class="d-info">
-                                        <span>327km</span>
-                                        <span>
-                                            <span class="copy-addr">서울특별시 영등포구 국제금융로2길 24</span>
-                                        <button type="button" class="btn-copy">주소복사</button>
-                                        </span>
-                                    </div>
-                                    <button type="button" class="btn-recommend">추천병원</button>
-                                </div>
-                                <div class="more-cont">
-                                    <div class="inner">
-                                        <a href="tel:010-0000-0000">전화걸기</a>
-                                        <a href="#">길찾기</a>
-                                        <a href="#">더보기</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <button type="button" class="btn-po-change">내 위치로 이동</button>
-                        </div>
-                    </div>
-                    <!-- // 더미 이미지 -->
+                <div class="map-area">
+                    <div class="map-area-inner" id="map"></div>
                     <button type="button" class="btn-view-list">목록보기</button>
                 </div>
                 <!-- // 지도영역 -->
@@ -133,76 +94,2280 @@
         </section>
         <!-- //컨텐츠 영역 -->
     </div>
-
-    <!-- 하단 팝업 목록 -->
-    <div class="bottom-pop-wrap">
-        <!-- 병원 스위퍼 -->
-        <div class="hos-swiper swiper-container">
-            <div class="swiper-wrapper">
-                <div class="swiper-slide">
-                    <div class="txt-cont04">
-                        <div class="t-case">
-                            <span>전문병원</span>
-                            <span>응급실</span>
-                            <span class="st-on">진료중</span>
-                        </div>
-                        <div class="q-txt">한국의학연구소 케이엠아이여의도의원</div>
-                        <div class="d-info">
-                            <span class="font_02">전문의</span>
-                            <span class="font_01">내과, 소아과, 이비인후과, 치과, 정형외과</span>
-                        </div>
-                        <div class="d-info">
-                            <span>327km</span>
-                            <span>
-                                <span class="copy-addr">서울특별시 영등포구 국제금융로2길 24</span>
-                            <button type="button" class="btn-copy">주소복사</button>
-                            </span>
-                        </div>
-                        <button type="button" class="btn-recommend">추천병원</button>
-                    </div>
-                    <div class="more-cont">
-                        <div class="inner">
-                            <a href="tel:010-0000-0000">전화걸기</a>
-                            <a href="#">길찾기</a>
-                            <a href="#">더보기</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="swiper-slide">
-                    <div class="txt-cont04">
-                        <div class="t-case">
-                            <span>전문병원</span>
-                            <span>응급실</span>
-                            <span class="st-on">진료중</span>
-                        </div>
-                        <div class="q-txt">한국의학연구소 케이엠아이여의도의원</div>
-                        <div class="d-info">
-                            <span class="font_02">전문의</span>
-                            <span class="font_01">내과, 소아과, 이비인후과, 치과, 정형외과</span>
-                        </div>
-                        <div class="d-info">
-                            <span>327km</span>
-                            <span>
-                                <span class="copy-addr">서울특별시 영등포구 국제금융로2길 24</span>
-                            <button type="button" class="btn-copy">주소복사</button>
-                            </span>
-                        </div>
-                        <button type="button" class="btn-recommend">추천병원</button>
-                    </div>
-                    <div class="more-cont">
-                        <div class="inner">
-                            <a href="tel:010-0000-0000">전화걸기</a>
-                            <a href="#">길찾기</a>
-                            <a href="#">더보기</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- 병원 스위퍼 -->
-        <button type="button" class="btn-po-change">내 위치로 이동</button>
-    </div>
-    <!-- // 하단 팝업 목록 -->
 </body>
+<!-- 지도 스크립트 -->
+<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=fd3872d29334db88f3bf802e6c8c0ca1&libraries=clusterer"></script>
+<script type="text/javascript" src="../js/customMap_new.js"></script>
+<script>
+    var exData = [{
+            "isOpen": "N", // 영업중 임시 데이터
+            "isRcmd": "Y", // 추천 임시 데이터
+            "addr": "인천광역시 부평구 동수로 56 (부평동)",
+            "clCd": 1,
+            "yadmNm": "가톨릭대학교인천성모병원",
+            "telno": "032-1544-9004",
+            "distance": 0.13425232662457948,
+            "xPos": 126.7248987,
+            "yPos": 37.4848309,
+            "ykiho": "JDQ4MTYyMiM1MSMkMSMkMCMkODkkMzgxMzUxIzExIyQxIyQzIyQ3OSQyNjE4MzIjNDEjJDEjJDgjJDgz",
+            "sdrCnt": "210",
+            "emyDayYn": "Y",
+            "emyNgtYn": "Y",
+            "estbDd": "19810806",
+            "subjectInfo": [{
+                    "dgsbjtCd": 1,
+                    "dgsbjtPrSdrCnt": 54
+                },
+                {
+                    "dgsbjtCd": 2,
+                    "dgsbjtPrSdrCnt": 7
+                },
+                {
+                    "dgsbjtCd": 3,
+                    "dgsbjtPrSdrCnt": 4
+                },
+                {
+                    "dgsbjtCd": 4,
+                    "dgsbjtPrSdrCnt": 20
+                },
+                {
+                    "dgsbjtCd": 5,
+                    "dgsbjtPrSdrCnt": 7
+                },
+                {
+                    "dgsbjtCd": 6,
+                    "dgsbjtPrSdrCnt": 12
+                },
+                {
+                    "dgsbjtCd": 7,
+                    "dgsbjtPrSdrCnt": 6
+                },
+                {
+                    "dgsbjtCd": 8,
+                    "dgsbjtPrSdrCnt": 5
+                },
+                {
+                    "dgsbjtCd": 9,
+                    "dgsbjtPrSdrCnt": 13
+                },
+                {
+                    "dgsbjtCd": 10,
+                    "dgsbjtPrSdrCnt": 5
+                },
+                {
+                    "dgsbjtCd": 11,
+                    "dgsbjtPrSdrCnt": 9
+                },
+                {
+                    "dgsbjtCd": 12,
+                    "dgsbjtPrSdrCnt": 4
+                },
+                {
+                    "dgsbjtCd": 13,
+                    "dgsbjtPrSdrCnt": 4
+                },
+                {
+                    "dgsbjtCd": 14,
+                    "dgsbjtPrSdrCnt": 4
+                },
+                {
+                    "dgsbjtCd": 15,
+                    "dgsbjtPrSdrCnt": 4
+                },
+                {
+                    "dgsbjtCd": 16,
+                    "dgsbjtPrSdrCnt": 13
+                },
+                {
+                    "dgsbjtCd": 17,
+                    "dgsbjtPrSdrCnt": 4
+                },
+                {
+                    "dgsbjtCd": 18,
+                    "dgsbjtPrSdrCnt": 7
+                },
+                {
+                    "dgsbjtCd": 19,
+                    "dgsbjtPrSdrCnt": 2
+                },
+                {
+                    "dgsbjtCd": 21,
+                    "dgsbjtPrSdrCnt": 5
+                },
+                {
+                    "dgsbjtCd": 22,
+                    "dgsbjtPrSdrCnt": 3
+                },
+                {
+                    "dgsbjtCd": 23,
+                    "dgsbjtPrSdrCnt": 10
+                },
+                {
+                    "dgsbjtCd": 24,
+                    "dgsbjtPrSdrCnt": 7
+                },
+                {
+                    "dgsbjtCd": 54,
+                    "dgsbjtPrSdrCnt": 1
+                },
+                {
+                    "dgsbjtCd": 80,
+                    "dgsbjtPrSdrCnt": 0
+                },
+                {
+                    "dgsbjtCd": 85,
+                    "dgsbjtPrSdrCnt": 0
+                }
+            ]
+        },
+        {
+            "isOpen": "N", // 영업중 임시 데이터
+            "isRcmd": "Y", // 추천 임시 데이터
+            "addr": "인천광역시 부평구 동수로 61 4층 (부평동, 공익스포렉스빌딩)",
+            "clCd": 31,
+            "yadmNm": "한마음정신과의원",
+            "telno": "032-508-7513",
+            "distance": 77.48836817630477,
+            "xPos": 126.7254245,
+            "yPos": 37.4855958,
+            "ykiho": "JDU4MTI3MSM1MSMkMiMkMCMkMDAkMzgxMzUxIzExIyQxIyQ3IyQxMyQyNjEyMjIjNzEjJDEjJDgjJDgz",
+            "sdrCnt": "2",
+            "emyDayYn": "N",
+            "emyNgtYn": "N",
+            "estbDd": "20011112",
+            "subjectInfo": [{
+                    "dgsbjtCd": 1,
+                    "dgsbjtPrSdrCnt": 0
+                },
+                {
+                    "dgsbjtCd": 2,
+                    "dgsbjtPrSdrCnt": 0
+                },
+                {
+                    "dgsbjtCd": 3,
+                    "dgsbjtPrSdrCnt": 2
+                }
+            ]
+        },
+        {
+            "isOpen": "N", // 영업중 임시 데이터
+            "isRcmd": "Y", // 추천 임시 데이터
+            "addr": "인천광역시 부평구 경인로 948 3층 (부평동, 유성메디칼프라자)",
+            "clCd": 31,
+            "yadmNm": "고은성모의원",
+            "telno": "032-504-8822",
+            "distance": 164.99447086242873,
+            "xPos": 126.7248598,
+            "yPos": 37.4873116,
+            "ykiho": "JDQ4MTYyMiM1MSMkMiMkMCMkMDAkNDgxMzUxIzExIyQxIyQzIyQ4OSQzNjE0ODEjODEjJDEjJDIjJDgz",
+            "sdrCnt": "1",
+            "emyDayYn": "N",
+            "emyNgtYn": "N",
+            "estbDd": "20030913",
+            "subjectInfo": [{
+                    "dgsbjtCd": 1,
+                    "dgsbjtPrSdrCnt": 0
+                },
+                {
+                    "dgsbjtCd": 4,
+                    "dgsbjtPrSdrCnt": 0
+                },
+                {
+                    "dgsbjtCd": 8,
+                    "dgsbjtPrSdrCnt": 0
+                },
+                {
+                    "dgsbjtCd": 10,
+                    "dgsbjtPrSdrCnt": 1
+                },
+                {
+                    "dgsbjtCd": 11,
+                    "dgsbjtPrSdrCnt": 0
+                },
+                {
+                    "dgsbjtCd": 13,
+                    "dgsbjtPrSdrCnt": 0
+                },
+                {
+                    "dgsbjtCd": 14,
+                    "dgsbjtPrSdrCnt": 0
+                },
+                {
+                    "dgsbjtCd": 15,
+                    "dgsbjtPrSdrCnt": 0
+                },
+                {
+                    "dgsbjtCd": 23,
+                    "dgsbjtPrSdrCnt": 0
+                }
+            ]
+        },
+        {
+            "addr": "인천광역시 부평구 장제로 62 M-city 3층 301, 302호 (부평동)",
+            "clCd": 31,
+            "yadmNm": "새봄이비인후과의원",
+            "telno": "032-527-7050",
+            "distance": 164.99447086242873,
+            "xPos": 126.7248598,
+            "yPos": 37.4873116,
+            "ykiho": "JDU4MTI3MSM1MSMkMiMkMCMkMDAkNDgxOTYxIzIxIyQxIyQ5IyQxMyQzNjE0ODEjNDEjJDEjJDQjJDgz",
+            "sdrCnt": "1",
+            "emyDayYn": "N",
+            "emyNgtYn": "N",
+            "estbDd": "20160406",
+            "subjectInfo": [{
+                    "dgsbjtCd": 1,
+                    "dgsbjtPrSdrCnt": 0
+                },
+                {
+                    "dgsbjtCd": 11,
+                    "dgsbjtPrSdrCnt": 0
+                },
+                {
+                    "dgsbjtCd": 13,
+                    "dgsbjtPrSdrCnt": 1
+                }
+            ]
+        },
+        {
+            "isOpen": "N", // 영업중 임시 데이터
+            "isRcmd": "Y", // 추천 임시 데이터
+            "addr": "인천광역시 부평구 경인로 947 402호, 403호 (부평동)",
+            "clCd": 31,
+            "yadmNm": "부평봄내과의원",
+            "telno": "032-514-8275",
+            "distance": 200.60141497418252,
+            "xPos": 126.7249311,
+            "yPos": 37.4878475,
+            "ykiho": "JDU4MTI3MSM1MSMkMiMkMCMkMDAkNDgxMTkxIzExIyQxIyQzIyQ4MiQzNjE0ODEjODEjJDEjJDIjJDgz",
+            "sdrCnt": "2",
+            "emyDayYn": "N",
+            "emyNgtYn": "N",
+            "estbDd": "20170523",
+            "subjectInfo": [{
+                    "dgsbjtCd": 1,
+                    "dgsbjtPrSdrCnt": 2
+                },
+                {
+                    "dgsbjtCd": 11,
+                    "dgsbjtPrSdrCnt": 0
+                },
+                {
+                    "dgsbjtCd": 13,
+                    "dgsbjtPrSdrCnt": 0
+                },
+                {
+                    "dgsbjtCd": 14,
+                    "dgsbjtPrSdrCnt": 0
+                }
+            ]
+        },
+        {
+            "addr": "인천광역시 부평구 경인로 947 5층 (부평동, 태성메디칼)",
+            "clCd": 31,
+            "yadmNm": "신정형외과의원",
+            "telno": "032-362-7800",
+            "distance": 200.60141497418252,
+            "xPos": 126.7249311,
+            "yPos": 37.4878475,
+            "ykiho": "JDU4MTI3MSM1MSMkMiMkMCMkMDAkNDgxMTkxIzExIyQxIyQ3IyQ4MiQzNjE4MzIjODEjJDEjJDYjJDgz",
+            "sdrCnt": "1",
+            "emyDayYn": "N",
+            "emyNgtYn": "N",
+            "estbDd": "20170817",
+            "subjectInfo": [{
+                    "dgsbjtCd": 1,
+                    "dgsbjtPrSdrCnt": 0
+                },
+                {
+                    "dgsbjtCd": 2,
+                    "dgsbjtPrSdrCnt": 0
+                },
+                {
+                    "dgsbjtCd": 5,
+                    "dgsbjtPrSdrCnt": 1
+                },
+                {
+                    "dgsbjtCd": 6,
+                    "dgsbjtPrSdrCnt": 0
+                },
+                {
+                    "dgsbjtCd": 9,
+                    "dgsbjtPrSdrCnt": 0
+                },
+                {
+                    "dgsbjtCd": 11,
+                    "dgsbjtPrSdrCnt": 0
+                },
+                {
+                    "dgsbjtCd": 13,
+                    "dgsbjtPrSdrCnt": 0
+                },
+                {
+                    "dgsbjtCd": 14,
+                    "dgsbjtPrSdrCnt": 0
+                },
+                {
+                    "dgsbjtCd": 21,
+                    "dgsbjtPrSdrCnt": 0
+                }
+            ]
+        },
+        {
+            "isRcmd": "Y", // 추천 임시 데이터
+            "addr": "인천광역시 부평구 경인로 943 (부평동)",
+            "clCd": 31,
+            "yadmNm": "남부정형외과의원",
+            "telno": "032-501-0424",
+            "distance": 210.09459681668284,
+            "xPos": 126.7244483,
+            "yPos": 37.4878997,
+            "ykiho": "JDQ4MTYyMiM1MSMkMiMkMCMkMDAkNDgxNzAyIzMxIyQxIyQ3IyQ3MiQzNjE0ODEjNDEjJDEjJDgjJDgz",
+            "sdrCnt": "1",
+            "emyDayYn": "N",
+            "emyNgtYn": "N",
+            "estbDd": "19981016",
+            "subjectInfo": [{
+                    "dgsbjtCd": 1,
+                    "dgsbjtPrSdrCnt": 0
+                },
+                {
+                    "dgsbjtCd": 4,
+                    "dgsbjtPrSdrCnt": 0
+                },
+                {
+                    "dgsbjtCd": 5,
+                    "dgsbjtPrSdrCnt": 1
+                },
+                {
+                    "dgsbjtCd": 6,
+                    "dgsbjtPrSdrCnt": 0
+                },
+                {
+                    "dgsbjtCd": 11,
+                    "dgsbjtPrSdrCnt": 0
+                }
+            ]
+        },
+        {
+            "addr": "인천광역시 부평구 동수북로158번길 3 201,301호 (부평동, 원명빌딩)",
+            "clCd": 31,
+            "yadmNm": "부평열린내과의원",
+            "telno": "032-501-0036",
+            "distance": 284.0930546957266,
+            "xPos": 126.7239911,
+            "yPos": 37.4888251,
+            "ykiho": "JDU4MTI3MSM1MSMkMiMkMCMkMDAkNDgxOTYxIzExIyQxIyQ3IyQ5OSQzNjEwMDIjODEjJDEjJDIjJDgz",
+            "sdrCnt": "1",
+            "emyDayYn": "N",
+            "emyNgtYn": "N",
+            "estbDd": "20091130",
+            "subjectInfo": [{
+                    "dgsbjtCd": 1,
+                    "dgsbjtPrSdrCnt": 1
+                },
+                {
+                    "dgsbjtCd": 2,
+                    "dgsbjtPrSdrCnt": 0
+                },
+                {
+                    "dgsbjtCd": 5,
+                    "dgsbjtPrSdrCnt": 0
+                },
+                {
+                    "dgsbjtCd": 6,
+                    "dgsbjtPrSdrCnt": 0
+                },
+                {
+                    "dgsbjtCd": 10,
+                    "dgsbjtPrSdrCnt": 0
+                },
+                {
+                    "dgsbjtCd": 11,
+                    "dgsbjtPrSdrCnt": 0
+                },
+                {
+                    "dgsbjtCd": 12,
+                    "dgsbjtPrSdrCnt": 0
+                },
+                {
+                    "dgsbjtCd": 13,
+                    "dgsbjtPrSdrCnt": 0
+                },
+                {
+                    "dgsbjtCd": 14,
+                    "dgsbjtPrSdrCnt": 0
+                },
+                {
+                    "dgsbjtCd": 15,
+                    "dgsbjtPrSdrCnt": 0
+                },
+                {
+                    "dgsbjtCd": 16,
+                    "dgsbjtPrSdrCnt": 0
+                }
+            ]
+        },
+        {
+            "addr": "인천광역시 부평구 광장로 16 6층 (부평동, 부평역사롯데마트)",
+            "clCd": 31,
+            "yadmNm": "이상순정형외과의원",
+            "telno": "032-529-0475",
+            "distance": 358.8965215863075,
+            "xPos": 126.7233507,
+            "yPos": 37.4895676,
+            "ykiho": "JDQ4MTYyMiM1MSMkMiMkMCMkMDAkNDgxNzAyIzUxIyQxIyQ1IyQ3MiQyNjEwMDIjNjEjJDEjJDgjJDgz",
+            "sdrCnt": "1",
+            "emyDayYn": "N",
+            "emyNgtYn": "N",
+            "estbDd": "20011113",
+            "subjectInfo": [{
+                    "dgsbjtCd": 1,
+                    "dgsbjtPrSdrCnt": 0
+                },
+                {
+                    "dgsbjtCd": 5,
+                    "dgsbjtPrSdrCnt": 1
+                },
+                {
+                    "dgsbjtCd": 6,
+                    "dgsbjtPrSdrCnt": 0
+                },
+                {
+                    "dgsbjtCd": 14,
+                    "dgsbjtPrSdrCnt": 0
+                },
+                {
+                    "dgsbjtCd": 23,
+                    "dgsbjtPrSdrCnt": 0
+                }
+            ]
+        },
+        {
+            "isRcmd": "Y", // 추천 임시 데이터
+            "addr": "인천광역시 부평구 광장로 16 6층 (부평동, 부평역사쇼핑몰)",
+            "clCd": 31,
+            "yadmNm": "함춘내과의원",
+            "telno": "032-518-7557",
+            "distance": 358.8965215863075,
+            "xPos": 126.7233507,
+            "yPos": 37.4895676,
+            "ykiho": "JDU4MTI3MSM1MSMkMiMkMCMkMDAkNDgxOTYxIzIxIyQxIyQ5IyQ5MiQyNjEyMjIjODEjJDEjJDYjJDgz",
+            "sdrCnt": "1",
+            "emyDayYn": "N",
+            "emyNgtYn": "N",
+            "estbDd": "20011031",
+            "subjectInfo": [{
+                    "dgsbjtCd": 1,
+                    "dgsbjtPrSdrCnt": 1
+                },
+                {
+                    "dgsbjtCd": 11,
+                    "dgsbjtPrSdrCnt": 0
+                },
+                {
+                    "dgsbjtCd": 13,
+                    "dgsbjtPrSdrCnt": 0
+                },
+                {
+                    "dgsbjtCd": 14,
+                    "dgsbjtPrSdrCnt": 0
+                }
+            ]
+        },
+        {
+            "addr": "인천광역시 부평구 동수로 25 2층 (부평동)",
+            "clCd": 31,
+            "yadmNm": "사랑의가정의학과의원",
+            "telno": "032-507-3737",
+            "distance": 393.33700214497844,
+            "xPos": 126.7213633,
+            "yPos": 37.4850364,
+            "ykiho": "JDQ4MTYyMiM1MSMkMiMkMCMkMDAkNDgxOTYxIzQxIyQxIyQ3IyQ5OSQyNjEwMDIjNDEjJDEjJDgjJDgz",
+            "sdrCnt": "1",
+            "emyDayYn": "N",
+            "emyNgtYn": "N",
+            "estbDd": "20040510",
+            "subjectInfo": [{
+                    "dgsbjtCd": 1,
+                    "dgsbjtPrSdrCnt": 0
+                },
+                {
+                    "dgsbjtCd": 3,
+                    "dgsbjtPrSdrCnt": 0
+                },
+                {
+                    "dgsbjtCd": 4,
+                    "dgsbjtPrSdrCnt": 0
+                },
+                {
+                    "dgsbjtCd": 5,
+                    "dgsbjtPrSdrCnt": 0
+                },
+                {
+                    "dgsbjtCd": 6,
+                    "dgsbjtPrSdrCnt": 0
+                },
+                {
+                    "dgsbjtCd": 8,
+                    "dgsbjtPrSdrCnt": 0
+                },
+                {
+                    "dgsbjtCd": 11,
+                    "dgsbjtPrSdrCnt": 0
+                },
+                {
+                    "dgsbjtCd": 12,
+                    "dgsbjtPrSdrCnt": 0
+                },
+                {
+                    "dgsbjtCd": 13,
+                    "dgsbjtPrSdrCnt": 0
+                },
+                {
+                    "dgsbjtCd": 14,
+                    "dgsbjtPrSdrCnt": 0
+                },
+                {
+                    "dgsbjtCd": 15,
+                    "dgsbjtPrSdrCnt": 0
+                },
+                {
+                    "dgsbjtCd": 16,
+                    "dgsbjtPrSdrCnt": 0
+                },
+                {
+                    "dgsbjtCd": 19,
+                    "dgsbjtPrSdrCnt": 0
+                },
+                {
+                    "dgsbjtCd": 23,
+                    "dgsbjtPrSdrCnt": 1
+                }
+            ]
+        },
+        {
+            "addr": "인천광역시 부평구 경원대로 1404 (부평동)",
+            "clCd": 31,
+            "yadmNm": "그랑프리의원",
+            "telno": "032-522-7007",
+            "distance": 407.1235064164656,
+            "xPos": 126.7250512,
+            "yPos": 37.4909488,
+            "ykiho": "JDQ4MTYyMiM1MSMkMiMkMCMkMDAkMzgxOTYxIzUxIyQxIyQ1IyQ3OSQyNjEwMDIjNzEjJDEjJDgjJDgz",
+            "sdrCnt": "2",
+            "emyDayYn": "N",
+            "emyNgtYn": "N",
+            "estbDd": "19880302",
+            "subjectInfo": [{
+                    "dgsbjtCd": 1,
+                    "dgsbjtPrSdrCnt": 0
+                },
+                {
+                    "dgsbjtCd": 8,
+                    "dgsbjtPrSdrCnt": 0
+                },
+                {
+                    "dgsbjtCd": 14,
+                    "dgsbjtPrSdrCnt": 0
+                },
+                {
+                    "dgsbjtCd": 15,
+                    "dgsbjtPrSdrCnt": 1
+                }
+            ]
+        },
+        {
+            "addr": "인천광역시 부평구 경원대로 1401 5층 (부평동, 대성빌딩)",
+            "clCd": 31,
+            "yadmNm": "미앤미의원",
+            "telno": "032-506-1111",
+            "distance": 448.2839882012154,
+            "xPos": 126.7248781,
+            "yPos": 37.4915731,
+            "ykiho": "JDU4MTI3MSM1MSMkMiMkMCMkMDAkNDgxMzUxIzUxIyQxIyQxIyQ2MiQyNjEwMDIjODEjJDEjJDYjJDgz",
+            "sdrCnt": "1",
+            "emyDayYn": "N",
+            "emyNgtYn": "N",
+            "estbDd": "20050729",
+            "subjectInfo": [{
+                    "dgsbjtCd": 1,
+                    "dgsbjtPrSdrCnt": 0
+                },
+                {
+                    "dgsbjtCd": 5,
+                    "dgsbjtPrSdrCnt": 0
+                },
+                {
+                    "dgsbjtCd": 9,
+                    "dgsbjtPrSdrCnt": 0
+                },
+                {
+                    "dgsbjtCd": 14,
+                    "dgsbjtPrSdrCnt": 0
+                }
+            ]
+        },
+        {
+            "addr": "인천광역시 부평구 경원대로 1397 (부평동)",
+            "clCd": 31,
+            "yadmNm": "타임의원",
+            "telno": "518-0005",
+            "distance": 452.004018293795,
+            "xPos": 126.7245074,
+            "yPos": 37.4915976,
+            "ykiho": "JDU4MTI3MSM1MSMkMiMkMCMkMDAkMzgxOTYxIzUxIyQyIyQ1IyQwMCQyNjE0ODEjNTEjJDEjJDYjJDgz",
+            "sdrCnt": "0",
+            "emyDayYn": "N",
+            "emyNgtYn": "N",
+            "estbDd": "20080102",
+            "subjectInfo": [{
+                    "dgsbjtCd": 1,
+                    "dgsbjtPrSdrCnt": 0
+                },
+                {
+                    "dgsbjtCd": 4,
+                    "dgsbjtPrSdrCnt": 0
+                },
+                {
+                    "dgsbjtCd": 8,
+                    "dgsbjtPrSdrCnt": 0
+                },
+                {
+                    "dgsbjtCd": 9,
+                    "dgsbjtPrSdrCnt": 0
+                },
+                {
+                    "dgsbjtCd": 14,
+                    "dgsbjtPrSdrCnt": 0
+                },
+                {
+                    "dgsbjtCd": 23,
+                    "dgsbjtPrSdrCnt": 0
+                }
+            ]
+        },
+        {
+            "isRcmd": "Y", // 추천 임시 데이터
+            "addr": "인천광역시 부평구 경원대로 1407 (부평동)",
+            "clCd": 31,
+            "yadmNm": "연세정형외과의원",
+            "telno": "032-524-7111",
+            "distance": 453.7477010079666,
+            "xPos": 126.7255128,
+            "yPos": 37.4915776,
+            "ykiho": "JDQ4MTYyMiM1MSMkMiMkMCMkMDAkNTgxOTYxIzUxIyQxIyQ1IyQ5MiQzNjEwMDIjNjEjJDEjJDAjJDgz",
+            "sdrCnt": "1",
+            "emyDayYn": "N",
+            "emyNgtYn": "N",
+            "estbDd": "19990430",
+            "subjectInfo": [{
+                    "dgsbjtCd": 1,
+                    "dgsbjtPrSdrCnt": 0
+                },
+                {
+                    "dgsbjtCd": 5,
+                    "dgsbjtPrSdrCnt": 1
+                },
+                {
+                    "dgsbjtCd": 6,
+                    "dgsbjtPrSdrCnt": 0
+                },
+                {
+                    "dgsbjtCd": 11,
+                    "dgsbjtPrSdrCnt": 0
+                },
+                {
+                    "dgsbjtCd": 14,
+                    "dgsbjtPrSdrCnt": 0
+                },
+                {
+                    "dgsbjtCd": 15,
+                    "dgsbjtPrSdrCnt": 0
+                },
+                {
+                    "dgsbjtCd": 16,
+                    "dgsbjtPrSdrCnt": 0
+                }
+            ]
+        },
+        {
+            "addr": "인천광역시 부평구 부평대로 20 4층 일부호 (부평동)",
+            "clCd": 31,
+            "yadmNm": "영앤필의원",
+            "telno": "032-715-5252",
+            "distance": 463.3764709370182,
+            "xPos": 126.7244606,
+            "yPos": 37.4917616,
+            "ykiho": "JDU4MTI3MSM1MSMkMiMkMCMkMDAkMzgxMTkxIzUxIyQyIyQ1IyQwMCQ0NjE0ODEjNjEjJDEjJDAjJDgz",
+            "sdrCnt": "0",
+            "emyDayYn": "N",
+            "emyNgtYn": "N",
+            "estbDd": "20120608",
+            "subjectInfo": [{
+                    "dgsbjtCd": 1,
+                    "dgsbjtPrSdrCnt": 0
+                },
+                {
+                    "dgsbjtCd": 8,
+                    "dgsbjtPrSdrCnt": 0
+                },
+                {
+                    "dgsbjtCd": 11,
+                    "dgsbjtPrSdrCnt": 0
+                },
+                {
+                    "dgsbjtCd": 14,
+                    "dgsbjtPrSdrCnt": 0
+                },
+                {
+                    "dgsbjtCd": 23,
+                    "dgsbjtPrSdrCnt": 0
+                }
+            ]
+        },
+        {
+            "addr": "인천광역시 부평구 부평대로 16 4층 (부평동)",
+            "clCd": 31,
+            "yadmNm": "포에버의원",
+            "telno": "1644-8343",
+            "distance": 463.3764709370182,
+            "xPos": 126.7244606,
+            "yPos": 37.4917616,
+            "ykiho": "JDU4MTI3MSM1MSMkMiMkMCMkMDAkNDgxMzUxIzUxIyQxIyQxIyQwMyQzNjE4MzIjNzEjJDEjJDgjJDgz",
+            "sdrCnt": "0",
+            "emyDayYn": "N",
+            "emyNgtYn": "N",
+            "estbDd": "20121002",
+            "subjectInfo": [{
+                    "dgsbjtCd": 1,
+                    "dgsbjtPrSdrCnt": 0
+                },
+                {
+                    "dgsbjtCd": 8,
+                    "dgsbjtPrSdrCnt": 0
+                },
+                {
+                    "dgsbjtCd": 14,
+                    "dgsbjtPrSdrCnt": 0
+                },
+                {
+                    "dgsbjtCd": 23,
+                    "dgsbjtPrSdrCnt": 0
+                }
+            ]
+        },
+        {
+            "addr": "인천광역시 부평구 경원대로 1415 304호 (부평동, 파라움)",
+            "clCd": 31,
+            "yadmNm": "인천어바웃유외과의원",
+            "telno": "032-362-1717",
+            "distance": 476.01623139992967,
+            "xPos": 126.7263394,
+            "yPos": 37.4915726,
+            "ykiho": "JDU4MTI3MSM1MSMkMiMkMCMkMDAkNDgxOTYxIzMxIyQxIyQzIyQwMyQyNjEwMDIjNjEjJDEjJDAjJDgz",
+            "sdrCnt": "2",
+            "emyDayYn": "N",
+            "emyNgtYn": "N",
+            "estbDd": "20160601",
+            "subjectInfo": [{
+                    "dgsbjtCd": 1,
+                    "dgsbjtPrSdrCnt": 0
+                },
+                {
+                    "dgsbjtCd": 4,
+                    "dgsbjtPrSdrCnt": 2
+                },
+                {
+                    "dgsbjtCd": 8,
+                    "dgsbjtPrSdrCnt": 0
+                },
+                {
+                    "dgsbjtCd": 9,
+                    "dgsbjtPrSdrCnt": 0
+                },
+                {
+                    "dgsbjtCd": 13,
+                    "dgsbjtPrSdrCnt": 0
+                },
+                {
+                    "dgsbjtCd": 14,
+                    "dgsbjtPrSdrCnt": 0
+                },
+                {
+                    "dgsbjtCd": 16,
+                    "dgsbjtPrSdrCnt": 0
+                }
+            ]
+        },
+        {
+            "isRcmd": "Y", // 추천 임시 데이터
+            "addr": "인천광역시 부평구 장제로 27 201호 (부평동, 해마루)",
+            "clCd": 31,
+            "yadmNm": "동수녹십자의원",
+            "telno": "032-525-7531",
+            "distance": 499.4823397650608,
+            "xPos": 126.729051,
+            "yPos": 37.4876972,
+            "ykiho": "JDQ4MTYyMiM1MSMkMiMkMCMkMDAkMzgxNzAyIzIxIyQyIyQ1IyQwMCQzNjEwMDIjNjEjJDEjJDAjJDgz",
+            "sdrCnt": "1",
+            "emyDayYn": "N",
+            "emyNgtYn": "N",
+            "estbDd": "19920627",
+            "subjectInfo": [{
+                    "dgsbjtCd": 1,
+                    "dgsbjtPrSdrCnt": 1
+                },
+                {
+                    "dgsbjtCd": 4,
+                    "dgsbjtPrSdrCnt": 0
+                },
+                {
+                    "dgsbjtCd": 11,
+                    "dgsbjtPrSdrCnt": 0
+                },
+                {
+                    "dgsbjtCd": 19,
+                    "dgsbjtPrSdrCnt": 0
+                }
+            ]
+        },
+        {
+            "addr": "인천광역시 부평구 부평대로 3 3층 (부평동)",
+            "clCd": 31,
+            "yadmNm": "란의원",
+            "telno": "032-517-4466",
+            "distance": 521.3153374103925,
+            "xPos": 126.7227649,
+            "yPos": 37.4918127,
+            "ykiho": "JDQ4MTYyMiM1MSMkMiMkMCMkMDAkNDgxNzAyIzUxIyQxIyQ1IyQ3OSQzNjE0ODEjNjEjJDEjJDAjJDgz",
+            "sdrCnt": "1",
+            "emyDayYn": "N",
+            "emyNgtYn": "N",
+            "estbDd": "20030901",
+            "subjectInfo": [{
+                    "dgsbjtCd": 1,
+                    "dgsbjtPrSdrCnt": 0
+                },
+                {
+                    "dgsbjtCd": 4,
+                    "dgsbjtPrSdrCnt": 1
+                },
+                {
+                    "dgsbjtCd": 8,
+                    "dgsbjtPrSdrCnt": 0
+                },
+                {
+                    "dgsbjtCd": 14,
+                    "dgsbjtPrSdrCnt": 0
+                },
+                {
+                    "dgsbjtCd": 15,
+                    "dgsbjtPrSdrCnt": 0
+                }
+            ]
+        },
+        {
+            "addr": "인천광역시 부평구 부평대로 9 (부평동)",
+            "clCd": 31,
+            "yadmNm": "부평내과의원",
+            "telno": "032-522-7563",
+            "distance": 546.9612626442705,
+            "xPos": 126.7226033,
+            "yPos": 37.492107,
+            "ykiho": "JDQ4MTYyMiM1MSMkMiMkMCMkMDAkMzgxNzAyIzIxIyQxIyQ5IyQ3MiQyNjEyMjIjNDEjJDEjJDgjJDgz",
+            "sdrCnt": "6",
+            "emyDayYn": "N",
+            "emyNgtYn": "N",
+            "estbDd": "19930121",
+            "subjectInfo": [{
+                    "dgsbjtCd": 1,
+                    "dgsbjtPrSdrCnt": 6
+                },
+                {
+                    "dgsbjtCd": 11,
+                    "dgsbjtPrSdrCnt": 0
+                }
+            ]
+        },
+        {
+            "addr": "인천광역시 부평구 부평대로 11 제일메디컬크리닉센터 3층 (부평동)",
+            "clCd": 31,
+            "yadmNm": "제일외과의원",
+            "telno": "032-519-2314",
+            "distance": 557.5443362852175,
+            "xPos": 126.7226837,
+            "yPos": 37.4923542,
+            "ykiho": "JDQ4MTYyMiM1MSMkMiMkMCMkMDAkNTgxOTYxIzIxIyQxIyQ1IyQ4OSQyNjE0ODEjNDEjJDEjJDgjJDgz",
+            "sdrCnt": "1",
+            "emyDayYn": "N",
+            "emyNgtYn": "N",
+            "estbDd": "20161017",
+            "subjectInfo": [{
+                    "dgsbjtCd": 1,
+                    "dgsbjtPrSdrCnt": 0
+                },
+                {
+                    "dgsbjtCd": 4,
+                    "dgsbjtPrSdrCnt": 1
+                },
+                {
+                    "dgsbjtCd": 5,
+                    "dgsbjtPrSdrCnt": 0
+                },
+                {
+                    "dgsbjtCd": 6,
+                    "dgsbjtPrSdrCnt": 0
+                },
+                {
+                    "dgsbjtCd": 14,
+                    "dgsbjtPrSdrCnt": 0
+                },
+                {
+                    "dgsbjtCd": 15,
+                    "dgsbjtPrSdrCnt": 0
+                }
+            ]
+        },
+        {
+            "addr": "인천광역시 부평구 경원대로 1436 (부평동)",
+            "clCd": 31,
+            "yadmNm": "푸른솔신경과의원",
+            "telno": "032-518-3080",
+            "distance": 568.6516531389476,
+            "xPos": 126.7285171,
+            "yPos": 37.4908748,
+            "ykiho": "JDQ4MTYyMiM1MSMkMiMkMCMkMDAkNTgxMzUxIzIxIyQxIyQ5IyQ2MiQyNjEwMDIjNTEjJDEjJDIjJDgz",
+            "sdrCnt": "1",
+            "emyDayYn": "N",
+            "emyNgtYn": "N",
+            "estbDd": "20020423",
+            "subjectInfo": [{
+                    "dgsbjtCd": 1,
+                    "dgsbjtPrSdrCnt": 0
+                },
+                {
+                    "dgsbjtCd": 2,
+                    "dgsbjtPrSdrCnt": 1
+                },
+                {
+                    "dgsbjtCd": 6,
+                    "dgsbjtPrSdrCnt": 0
+                },
+                {
+                    "dgsbjtCd": 11,
+                    "dgsbjtPrSdrCnt": 0
+                },
+                {
+                    "dgsbjtCd": 21,
+                    "dgsbjtPrSdrCnt": 0
+                }
+            ]
+        },
+        {
+            "addr": "인천광역시 부평구 부평대로 24 203호 (부평동, 가나베스트텔)",
+            "clCd": 31,
+            "yadmNm": "성모내과의원",
+            "telno": "032-526-7200",
+            "distance": 606.876383166029,
+            "xPos": 126.7233183,
+            "yPos": 37.4935676,
+            "ykiho": "JDQ4MTYyMiM1MSMkMiMkMCMkMDAkMzgxMTkxIzExIyQxIyQzIyQxMyQzNjEyMjIjNDEjJDEjJDgjJDgz",
+            "sdrCnt": "1",
+            "emyDayYn": "N",
+            "emyNgtYn": "N",
+            "estbDd": "19880704",
+            "subjectInfo": [{
+                    "dgsbjtCd": 1,
+                    "dgsbjtPrSdrCnt": 1
+                },
+                {
+                    "dgsbjtCd": 11,
+                    "dgsbjtPrSdrCnt": 0
+                }
+            ]
+        },
+        {
+            "addr": "인천광역시 부평구 부평대로 24 4,5층 (부평동)",
+            "clCd": 31,
+            "yadmNm": "안정경내과의원",
+            "telno": "032-514-9086",
+            "distance": 606.876383166029,
+            "xPos": 126.7233183,
+            "yPos": 37.4935676,
+            "ykiho": "JDQ4MTYyMiM1MSMkMiMkMCMkMDAkMzgxNzAyIzIxIyQxIyQxIyQ2MiQ0NjE0ODEjNDEjJDEjJDQjJDgz",
+            "sdrCnt": "1",
+            "emyDayYn": "N",
+            "emyNgtYn": "N",
+            "estbDd": "19920411",
+            "subjectInfo": [{
+                    "dgsbjtCd": 1,
+                    "dgsbjtPrSdrCnt": 1
+                },
+                {
+                    "dgsbjtCd": 11,
+                    "dgsbjtPrSdrCnt": 0
+                }
+            ]
+        },
+        {
+            "addr": "인천광역시 부평구 부평대로 24 (부평동)",
+            "clCd": 31,
+            "yadmNm": "필산부인과의원",
+            "telno": "032-528-0878",
+            "distance": 606.876383166029,
+            "xPos": 126.7233183,
+            "yPos": 37.4935676,
+            "ykiho": "JDQ4MTYyMiM1MSMkMiMkMCMkMDAkMzgxMTkxIzIxIyQxIyQ5IyQ4OSQyNjEyMjIjNjEjJDEjJDgjJDgz",
+            "sdrCnt": "1",
+            "emyDayYn": "N",
+            "emyNgtYn": "N",
+            "estbDd": "19891116",
+            "subjectInfo": [{
+                    "dgsbjtCd": 1,
+                    "dgsbjtPrSdrCnt": 0
+                },
+                {
+                    "dgsbjtCd": 4,
+                    "dgsbjtPrSdrCnt": 0
+                },
+                {
+                    "dgsbjtCd": 10,
+                    "dgsbjtPrSdrCnt": 1
+                },
+                {
+                    "dgsbjtCd": 11,
+                    "dgsbjtPrSdrCnt": 0
+                },
+                {
+                    "dgsbjtCd": 23,
+                    "dgsbjtPrSdrCnt": 0
+                }
+            ]
+        },
+        {
+            "addr": "인천광역시 부평구 부평대로 19-1 도시프라자빌딩 2층 일부호 (부평동)",
+            "clCd": 31,
+            "yadmNm": "원더이비인후과의원",
+            "telno": "032-330-2275",
+            "distance": 614.2592668157657,
+            "xPos": 126.7225052,
+            "yPos": 37.4931576,
+            "ykiho": "JDU4MTI3MSM1MSMkMiMkMCMkMDAkMzgxMTkxIzMxIyQyIyQzIyQwMCQyNjE4MzIjODEjJDEjJDIjJDgz",
+            "sdrCnt": "1",
+            "emyDayYn": "N",
+            "emyNgtYn": "N",
+            "estbDd": "20070103",
+            "subjectInfo": [{
+                    "dgsbjtCd": 1,
+                    "dgsbjtPrSdrCnt": 0
+                },
+                {
+                    "dgsbjtCd": 8,
+                    "dgsbjtPrSdrCnt": 0
+                },
+                {
+                    "dgsbjtCd": 9,
+                    "dgsbjtPrSdrCnt": 0
+                },
+                {
+                    "dgsbjtCd": 11,
+                    "dgsbjtPrSdrCnt": 0
+                },
+                {
+                    "dgsbjtCd": 13,
+                    "dgsbjtPrSdrCnt": 1
+                },
+                {
+                    "dgsbjtCd": 14,
+                    "dgsbjtPrSdrCnt": 0
+                }
+            ]
+        },
+        {
+            "addr": "인천광역시 부평구 부평대로 26 (부평동)",
+            "clCd": 31,
+            "yadmNm": "티아라의원",
+            "telno": "032-508-7767",
+            "distance": 619.7324139699633,
+            "xPos": 126.723291,
+            "yPos": 37.4937558,
+            "ykiho": "JDQ4MTYyMiM1MSMkMiMkMCMkMDAkNTgxMzUxIzIxIyQxIyQxIyQ2MiQyNjEyMjIjODEjJDEjJDIjJDgz",
+            "sdrCnt": "1",
+            "emyDayYn": "N",
+            "emyNgtYn": "N",
+            "estbDd": "20071010",
+            "subjectInfo": [{
+                    "dgsbjtCd": 1,
+                    "dgsbjtPrSdrCnt": 0
+                },
+                {
+                    "dgsbjtCd": 8,
+                    "dgsbjtPrSdrCnt": 0
+                },
+                {
+                    "dgsbjtCd": 10,
+                    "dgsbjtPrSdrCnt": 1
+                },
+                {
+                    "dgsbjtCd": 11,
+                    "dgsbjtPrSdrCnt": 0
+                },
+                {
+                    "dgsbjtCd": 14,
+                    "dgsbjtPrSdrCnt": 0
+                }
+            ]
+        },
+        {
+            "addr": "인천광역시 부평구 부평대로 21 4층 401호 (부평동, 금남빌딩)",
+            "clCd": 31,
+            "yadmNm": "휴의원",
+            "telno": "032-504-7553",
+            "distance": 630.3766712658575,
+            "xPos": 126.7223099,
+            "yPos": 37.493266,
+            "ykiho": "JDU4MTI3MSM1MSMkMiMkMCMkMDAkNDgxOTYxIzExIyQxIyQzIyQ2MiQ0NjEwMDIjODEjJDEjJDYjJDgz",
+            "sdrCnt": "1",
+            "emyDayYn": "N",
+            "emyNgtYn": "N",
+            "estbDd": "20140128",
+            "subjectInfo": [{
+                    "dgsbjtCd": 1,
+                    "dgsbjtPrSdrCnt": 0
+                },
+                {
+                    "dgsbjtCd": 4,
+                    "dgsbjtPrSdrCnt": 0
+                },
+                {
+                    "dgsbjtCd": 5,
+                    "dgsbjtPrSdrCnt": 0
+                },
+                {
+                    "dgsbjtCd": 8,
+                    "dgsbjtPrSdrCnt": 0
+                },
+                {
+                    "dgsbjtCd": 9,
+                    "dgsbjtPrSdrCnt": 0
+                },
+                {
+                    "dgsbjtCd": 10,
+                    "dgsbjtPrSdrCnt": 0
+                },
+                {
+                    "dgsbjtCd": 11,
+                    "dgsbjtPrSdrCnt": 0
+                },
+                {
+                    "dgsbjtCd": 14,
+                    "dgsbjtPrSdrCnt": 0
+                },
+                {
+                    "dgsbjtCd": 15,
+                    "dgsbjtPrSdrCnt": 0
+                },
+                {
+                    "dgsbjtCd": 23,
+                    "dgsbjtPrSdrCnt": 1
+                }
+            ]
+        },
+        {
+            "addr": "인천광역시 부평구 부평문화로 96 4층 (부평동)",
+            "clCd": 31,
+            "yadmNm": "연세마취통증의학과의원",
+            "telno": "514-7585",
+            "distance": 664.0344551770916,
+            "xPos": 126.7270385,
+            "yPos": 37.4941548,
+            "ykiho": "JDU4MTI3MSM1MSMkMiMkMCMkMDAkMzgxNzAyIzQxIyQxIyQ3IyQ5MiQzNjEwMDIjNDEjJDEjJDgjJDgz",
+            "sdrCnt": "2",
+            "emyDayYn": "N",
+            "emyNgtYn": "N",
+            "estbDd": "20120220",
+            "subjectInfo": [{
+                    "dgsbjtCd": 1,
+                    "dgsbjtPrSdrCnt": 0
+                },
+                {
+                    "dgsbjtCd": 5,
+                    "dgsbjtPrSdrCnt": 0
+                },
+                {
+                    "dgsbjtCd": 6,
+                    "dgsbjtPrSdrCnt": 0
+                },
+                {
+                    "dgsbjtCd": 9,
+                    "dgsbjtPrSdrCnt": 2
+                },
+                {
+                    "dgsbjtCd": 21,
+                    "dgsbjtPrSdrCnt": 0
+                }
+            ]
+        },
+        {
+            "addr": "인천광역시 부평구 경인로999번길 1 (부평동, 지하1층, 지상1층일부, 지상2~5층)",
+            "clCd": 92,
+            "yadmNm": "다나은한방병원",
+            "telno": "032-523-1075",
+            "distance": 667.6087844203659,
+            "xPos": 126.7306876,
+            "yPos": 37.4874957,
+            "ykiho": "JDQ4MTYyMiM1MSMkMSMkMCMkMTMkMzgxMTkxIzExIyQxIyQ3IyQwMyQzNjEyMjIjODEjJDEjJDIjJDgz",
+            "sdrCnt": "1",
+            "emyDayYn": "N",
+            "emyNgtYn": "N",
+            "estbDd": "20160303",
+            "subjectInfo": [{
+                    "dgsbjtCd": 1,
+                    "dgsbjtPrSdrCnt": 0
+                },
+                {
+                    "dgsbjtCd": 5,
+                    "dgsbjtPrSdrCnt": 1
+                },
+                {
+                    "dgsbjtCd": 80,
+                    "dgsbjtPrSdrCnt": 0
+                },
+                {
+                    "dgsbjtCd": 81,
+                    "dgsbjtPrSdrCnt": 0
+                },
+                {
+                    "dgsbjtCd": 82,
+                    "dgsbjtPrSdrCnt": 0
+                },
+                {
+                    "dgsbjtCd": 83,
+                    "dgsbjtPrSdrCnt": 0
+                },
+                {
+                    "dgsbjtCd": 84,
+                    "dgsbjtPrSdrCnt": 0
+                },
+                {
+                    "dgsbjtCd": 85,
+                    "dgsbjtPrSdrCnt": 0
+                },
+                {
+                    "dgsbjtCd": 86,
+                    "dgsbjtPrSdrCnt": 0
+                },
+                {
+                    "dgsbjtCd": 87,
+                    "dgsbjtPrSdrCnt": 0
+                }
+            ]
+        },
+        {
+            "addr": "인천광역시 부평구 부평문화로 100-1 (부평동)",
+            "clCd": 31,
+            "yadmNm": "노내과의원",
+            "telno": "032-523-5244",
+            "distance": 679.1475701591862,
+            "xPos": 126.7274444,
+            "yPos": 37.4941157,
+            "ykiho": "JDQ4MTYyMiM1MSMkMiMkMCMkMDAkMzgxOTYxIzIxIyQxIyQxIyQ4OSQ0NjEwMDIjNjEjJDEjJDQjJDgz",
+            "sdrCnt": "2",
+            "emyDayYn": "N",
+            "emyNgtYn": "N",
+            "estbDd": "19840330",
+            "subjectInfo": [{
+                    "dgsbjtCd": 1,
+                    "dgsbjtPrSdrCnt": 2
+                },
+                {
+                    "dgsbjtCd": 11,
+                    "dgsbjtPrSdrCnt": 0
+                }
+            ]
+        },
+        {
+            "addr": "인천광역시 부평구 부평문화로 97 2층 (부평동)",
+            "clCd": 31,
+            "yadmNm": "김인호내과의원",
+            "telno": "032-522-8275",
+            "distance": 687.0470278389649,
+            "xPos": 126.7271928,
+            "yPos": 37.4944254,
+            "ykiho": "JDQ4MTYyMiM1MSMkMiMkMCMkMDAkNDgxOTYxIzUxIyQxIyQ1IyQ2MiQzNjE0ODEjNTEjJDEjJDIjJDgz",
+            "sdrCnt": "1",
+            "emyDayYn": "N",
+            "emyNgtYn": "N",
+            "estbDd": "19980801",
+            "subjectInfo": [{
+                    "dgsbjtCd": 1,
+                    "dgsbjtPrSdrCnt": 1
+                },
+                {
+                    "dgsbjtCd": 11,
+                    "dgsbjtPrSdrCnt": 0
+                },
+                {
+                    "dgsbjtCd": 14,
+                    "dgsbjtPrSdrCnt": 0
+                },
+                {
+                    "dgsbjtCd": 15,
+                    "dgsbjtPrSdrCnt": 0
+                }
+            ]
+        },
+        {
+            "addr": "인천광역시 부평구 부평문화로 55 501호 (부평동, 와이디타워)",
+            "clCd": 31,
+            "yadmNm": "우리소아청소년과의원",
+            "telno": "032-516-4916",
+            "distance": 692.0609518044618,
+            "xPos": 126.7222969,
+            "yPos": 37.4942869,
+            "ykiho": "JDU4MTI3MSM1MSMkMiMkMCMkMDAkNDgxOTYxIzExIyQxIyQzIyQwMyQyNjEyMjIjNDEjJDEjJDgjJDgz",
+            "sdrCnt": "0",
+            "emyDayYn": "N",
+            "emyNgtYn": "N",
+            "estbDd": "20150515",
+            "subjectInfo": [{
+                    "dgsbjtCd": 1,
+                    "dgsbjtPrSdrCnt": 0
+                },
+                {
+                    "dgsbjtCd": 11,
+                    "dgsbjtPrSdrCnt": 2
+                },
+                {
+                    "dgsbjtCd": 12,
+                    "dgsbjtPrSdrCnt": 0
+                },
+                {
+                    "dgsbjtCd": 13,
+                    "dgsbjtPrSdrCnt": 0
+                },
+                {
+                    "dgsbjtCd": 14,
+                    "dgsbjtPrSdrCnt": 0
+                }
+            ]
+        },
+        {
+            "addr": "인천광역시 부평구 부평문화로 55 603호 (부평동, 와이디타워)",
+            "clCd": 31,
+            "yadmNm": "미래항맥외과의원",
+            "telno": "032-507-7175",
+            "distance": 693.013124157973,
+            "xPos": 126.7222819,
+            "yPos": 37.4942911,
+            "ykiho": "JDU4MTI3MSM1MSMkMiMkMCMkMDAkMzgxOTYxIzMxIyQxIyQzIyQxMyQyNjE0ODEjNDEjJDEjJDgjJDgz",
+            "sdrCnt": "1",
+            "emyDayYn": "N",
+            "emyNgtYn": "N",
+            "estbDd": "20070423",
+            "subjectInfo": [{
+                    "dgsbjtCd": 1,
+                    "dgsbjtPrSdrCnt": 0
+                },
+                {
+                    "dgsbjtCd": 4,
+                    "dgsbjtPrSdrCnt": 1
+                }
+            ]
+        },
+        {
+            "addr": "인천광역시 부평구 부평문화로 55 203호, 302호, 303호, 와이디타워 (부평동)",
+            "clCd": 31,
+            "yadmNm": "인천성모내과의원",
+            "telno": "1855-1875",
+            "distance": 693.013124157973,
+            "xPos": 126.7222819,
+            "yPos": 37.4942911,
+            "ykiho": "JDU4MTI3MSM1MSMkMiMkMCMkMDAkNDgxMzUxIzUxIyQxIyQxIyQ5OSQ0NjE0ODEjNDEjJDEjJDgjJDgz",
+            "sdrCnt": "2",
+            "emyDayYn": "N",
+            "emyNgtYn": "N",
+            "estbDd": "20141021",
+            "subjectInfo": [{
+                    "dgsbjtCd": 1,
+                    "dgsbjtPrSdrCnt": 2
+                },
+                {
+                    "dgsbjtCd": 2,
+                    "dgsbjtPrSdrCnt": 0
+                },
+                {
+                    "dgsbjtCd": 11,
+                    "dgsbjtPrSdrCnt": 0
+                },
+                {
+                    "dgsbjtCd": 13,
+                    "dgsbjtPrSdrCnt": 0
+                },
+                {
+                    "dgsbjtCd": 14,
+                    "dgsbjtPrSdrCnt": 0
+                },
+                {
+                    "dgsbjtCd": 15,
+                    "dgsbjtPrSdrCnt": 0
+                },
+                {
+                    "dgsbjtCd": 16,
+                    "dgsbjtPrSdrCnt": 0
+                }
+            ]
+        },
+        {
+            "addr": "인천광역시 부평구 부평대로 35 1층일부,2층~10층 (부평동, 정명빌딩)",
+            "clCd": 21,
+            "yadmNm": "의료법인한길의료재단한길안과병원",
+            "telno": "032-503-3322",
+            "distance": 706.7699043555888,
+            "xPos": 126.722362,
+            "yPos": 37.494578,
+            "ykiho": "JDQ4MTYyMiM1MSMkMSMkMCMkOTkkMzgxMzUxIzIxIyQxIyQxIyQxMyQzNjE0ODEjNTEjJDEjJDIjJDgz",
+            "sdrCnt": "24",
+            "emyDayYn": "N",
+            "emyNgtYn": "N",
+            "estbDd": "19980801",
+            "subjectInfo": [{
+                    "dgsbjtCd": 1,
+                    "dgsbjtPrSdrCnt": 0
+                },
+                {
+                    "dgsbjtCd": 9,
+                    "dgsbjtPrSdrCnt": 2
+                },
+                {
+                    "dgsbjtCd": 12,
+                    "dgsbjtPrSdrCnt": 22
+                }
+            ]
+        },
+        {
+            "addr": "인천광역시 부평구 부평문화로 46 5층 (부평동, 중앙빌딩)",
+            "clCd": 31,
+            "yadmNm": "에이스피부과의원",
+            "telno": "032-503-5600",
+            "distance": 720.6930495678622,
+            "xPos": 126.7211928,
+            "yPos": 37.4937242,
+            "ykiho": "JDQ4MTYyMiM1MSMkMiMkMCMkMDAkNDgxMTkxIzMxIyQxIyQ3IyQwMyQzNjE4MzIjNTEjJDEjJDIjJDgz",
+            "sdrCnt": "1",
+            "emyDayYn": "N",
+            "emyNgtYn": "N",
+            "estbDd": "20010502",
+            "subjectInfo": [{
+                    "dgsbjtCd": 1,
+                    "dgsbjtPrSdrCnt": 0
+                },
+                {
+                    "dgsbjtCd": 14,
+                    "dgsbjtPrSdrCnt": 1
+                }
+            ]
+        },
+        {
+            "addr": "인천광역시 부평구 경인로 883 2층 (부평동, 재현빌딩)",
+            "clCd": 31,
+            "yadmNm": "참조은내과의원",
+            "telno": "032-525-7582",
+            "distance": 729.2174065212688,
+            "xPos": 126.71836,
+            "yPos": 37.4856788,
+            "ykiho": "JDU4MTI3MSM1MSMkMiMkMCMkMDAkMzgxMTkxIzMxIyQxIyQzIyQ4OSQzNjE0ODEjNDEjJDEjJDgjJDgz",
+            "sdrCnt": "1",
+            "emyDayYn": "N",
+            "emyNgtYn": "N",
+            "estbDd": "20090320",
+            "subjectInfo": [{
+                    "dgsbjtCd": 1,
+                    "dgsbjtPrSdrCnt": 1
+                },
+                {
+                    "dgsbjtCd": 11,
+                    "dgsbjtPrSdrCnt": 0
+                },
+                {
+                    "dgsbjtCd": 13,
+                    "dgsbjtPrSdrCnt": 0
+                },
+                {
+                    "dgsbjtCd": 14,
+                    "dgsbjtPrSdrCnt": 0
+                },
+                {
+                    "dgsbjtCd": 15,
+                    "dgsbjtPrSdrCnt": 0
+                },
+                {
+                    "dgsbjtCd": 23,
+                    "dgsbjtPrSdrCnt": 0
+                }
+            ]
+        },
+        {
+            "addr": "인천광역시 부평구 경원대로 1355 4층,5층 (부평동, 성우빌딩)",
+            "clCd": 31,
+            "yadmNm": "신의의원",
+            "telno": "032-521-3336",
+            "distance": 745.2997693691957,
+            "xPos": 126.7194687,
+            "yPos": 37.4914035,
+            "ykiho": "JDU4MTI3MSM1MSMkMiMkMCMkMDAkMzgxNzAyIzUxIyQxIyQxIyQ4OSQzNjEyMjIjNTEjJDEjJDIjJDgz",
+            "sdrCnt": "2",
+            "emyDayYn": "N",
+            "emyNgtYn": "N",
+            "estbDd": "20050725",
+            "subjectInfo": [{
+                    "dgsbjtCd": 1,
+                    "dgsbjtPrSdrCnt": 0
+                },
+                {
+                    "dgsbjtCd": 8,
+                    "dgsbjtPrSdrCnt": 0
+                },
+                {
+                    "dgsbjtCd": 14,
+                    "dgsbjtPrSdrCnt": 0
+                },
+                {
+                    "dgsbjtCd": 21,
+                    "dgsbjtPrSdrCnt": 0
+                },
+                {
+                    "dgsbjtCd": 23,
+                    "dgsbjtPrSdrCnt": 1
+                }
+            ]
+        },
+        {
+            "addr": "인천광역시 부평구 부평문화로 43 3층 (부평동, 성균빌딩)",
+            "clCd": 31,
+            "yadmNm": "부평아이들소아청소년과의원",
+            "telno": "032-521-8686",
+            "distance": 750.6340109102464,
+            "xPos": 126.7211049,
+            "yPos": 37.4941697,
+            "ykiho": "JDQ4MTYyMiM1MSMkMiMkMCMkMDAkNDgxOTYxIzMxIyQxIyQ3IyQ3OSQyNjEyMjIjODEjJDEjJDIjJDgz",
+            "sdrCnt": "2",
+            "emyDayYn": "N",
+            "emyNgtYn": "N",
+            "estbDd": "20020701",
+            "subjectInfo": [{
+                    "dgsbjtCd": 1,
+                    "dgsbjtPrSdrCnt": 0
+                },
+                {
+                    "dgsbjtCd": 11,
+                    "dgsbjtPrSdrCnt": 2
+                },
+                {
+                    "dgsbjtCd": 13,
+                    "dgsbjtPrSdrCnt": 0
+                },
+                {
+                    "dgsbjtCd": 14,
+                    "dgsbjtPrSdrCnt": 0
+                }
+            ]
+        },
+        {
+            "addr": "인천광역시 부평구 부평문화로 38 202호 (부평동, 부평동대학빌딩)",
+            "clCd": 31,
+            "yadmNm": "전형식내과의원",
+            "telno": "032-504-7575",
+            "distance": 757.1820931017279,
+            "xPos": 126.7206197,
+            "yPos": 37.4936905,
+            "ykiho": "JDQ4MTYyMiM1MSMkMiMkMCMkMDAkNDgxMzUxIzIxIyQxIyQ5IyQwMyQzNjE4MzIjODEjJDEjJDYjJDgz",
+            "sdrCnt": "1",
+            "emyDayYn": "N",
+            "emyNgtYn": "N",
+            "estbDd": "19950603",
+            "subjectInfo": [{
+                "dgsbjtCd": 1,
+                "dgsbjtPrSdrCnt": 1
+            }]
+        },
+        {
+            "addr": "인천광역시 부평구 시장로 55 2층 (부평동)",
+            "clCd": 31,
+            "yadmNm": "부평성모재활의학과의원",
+            "telno": "032-523-8277",
+            "distance": 758.4978503836978,
+            "xPos": 126.7273422,
+            "yPos": 37.4954816,
+            "ykiho": "JDU4MTI3MSM1MSMkMiMkMCMkMDAkMzgxMTkxIzExIyQxIyQzIyQ3OSQ0NjEwMDIjNTEjJDEjJDYjJDgz",
+            "sdrCnt": "1",
+            "emyDayYn": "N",
+            "emyNgtYn": "N",
+            "estbDd": "20050507",
+            "subjectInfo": [{
+                    "dgsbjtCd": 1,
+                    "dgsbjtPrSdrCnt": 0
+                },
+                {
+                    "dgsbjtCd": 5,
+                    "dgsbjtPrSdrCnt": 0
+                },
+                {
+                    "dgsbjtCd": 11,
+                    "dgsbjtPrSdrCnt": 0
+                },
+                {
+                    "dgsbjtCd": 13,
+                    "dgsbjtPrSdrCnt": 0
+                },
+                {
+                    "dgsbjtCd": 21,
+                    "dgsbjtPrSdrCnt": 1
+                }
+            ]
+        },
+        {
+            "addr": "인천광역시 부평구 시장로 55-1 2층 1호 (부평동)",
+            "clCd": 31,
+            "yadmNm": "조경준의원",
+            "telno": "032-513-4546",
+            "distance": 772.6456777365222,
+            "xPos": 126.7274909,
+            "yPos": 37.4956125,
+            "ykiho": "JDQ4MTYyMiM1MSMkMiMkMCMkMDAkMzgxNzAyIzIxIyQxIyQ1IyQ5OSQzNjEwMDIjNzEjJDEjJDgjJDgz",
+            "sdrCnt": "0",
+            "emyDayYn": "N",
+            "emyNgtYn": "N",
+            "estbDd": "19920613",
+            "subjectInfo": [{
+                    "dgsbjtCd": 1,
+                    "dgsbjtPrSdrCnt": 0
+                },
+                {
+                    "dgsbjtCd": 11,
+                    "dgsbjtPrSdrCnt": 0
+                }
+            ]
+        },
+        {
+            "addr": "인천광역시 부평구 장제로 78 (부평동)",
+            "clCd": 21,
+            "yadmNm": "의)상원의료재단부평힘찬병원",
+            "telno": "032-363-9121",
+            "distance": 778.1022683823652,
+            "xPos": 126.7302152,
+            "yPos": 37.4924402,
+            "ykiho": "JDQ4MTYyMiM1MSMkMSMkMCMkOTkkMzgxMzUxIzMxIyQxIyQ3IyQ5OSQyNjEwMDIjNTEjJDEjJDIjJDgz",
+            "sdrCnt": "17",
+            "emyDayYn": "N",
+            "emyNgtYn": "N",
+            "estbDd": "20080610",
+            "subjectInfo": [{
+                    "dgsbjtCd": 1,
+                    "dgsbjtPrSdrCnt": 2
+                },
+                {
+                    "dgsbjtCd": 5,
+                    "dgsbjtPrSdrCnt": 8
+                },
+                {
+                    "dgsbjtCd": 6,
+                    "dgsbjtPrSdrCnt": 3
+                },
+                {
+                    "dgsbjtCd": 9,
+                    "dgsbjtPrSdrCnt": 1
+                },
+                {
+                    "dgsbjtCd": 16,
+                    "dgsbjtPrSdrCnt": 2
+                },
+                {
+                    "dgsbjtCd": 19,
+                    "dgsbjtPrSdrCnt": 0
+                },
+                {
+                    "dgsbjtCd": 21,
+                    "dgsbjtPrSdrCnt": 1
+                }
+            ]
+        },
+        {
+            "addr": "인천광역시 부평구 부흥로304번길 38 (부평동)",
+            "clCd": 31,
+            "yadmNm": "미소 가득한 의원",
+            "telno": "032-508-2468",
+            "distance": 788.2076724644965,
+            "xPos": 126.7252755,
+            "yPos": 37.4966689,
+            "ykiho": "JDQ4MTYyMiM1MSMkMiMkMCMkMDAkNTgxOTYxIzExIyQyIyQzIyQwMCQ0NjE0ODEjNTEjJDEjJDIjJDgz",
+            "sdrCnt": "1",
+            "emyDayYn": "N",
+            "emyNgtYn": "N",
+            "estbDd": "20030305",
+            "subjectInfo": [{
+                    "dgsbjtCd": 1,
+                    "dgsbjtPrSdrCnt": 0
+                },
+                {
+                    "dgsbjtCd": 4,
+                    "dgsbjtPrSdrCnt": 1
+                },
+                {
+                    "dgsbjtCd": 5,
+                    "dgsbjtPrSdrCnt": 0
+                },
+                {
+                    "dgsbjtCd": 6,
+                    "dgsbjtPrSdrCnt": 0
+                },
+                {
+                    "dgsbjtCd": 8,
+                    "dgsbjtPrSdrCnt": 0
+                },
+                {
+                    "dgsbjtCd": 11,
+                    "dgsbjtPrSdrCnt": 0
+                },
+                {
+                    "dgsbjtCd": 12,
+                    "dgsbjtPrSdrCnt": 0
+                },
+                {
+                    "dgsbjtCd": 13,
+                    "dgsbjtPrSdrCnt": 0
+                },
+                {
+                    "dgsbjtCd": 14,
+                    "dgsbjtPrSdrCnt": 0
+                },
+                {
+                    "dgsbjtCd": 15,
+                    "dgsbjtPrSdrCnt": 0
+                },
+                {
+                    "dgsbjtCd": 16,
+                    "dgsbjtPrSdrCnt": 0
+                }
+            ]
+        },
+        {
+            "addr": "인천광역시 부평구 부평대로 51 (부평동)",
+            "clCd": 31,
+            "yadmNm": "김종숙정신건강의학과의원",
+            "telno": "032-526-9203",
+            "distance": 804.999648838,
+            "xPos": 126.7222059,
+            "yPos": 37.49607,
+            "ykiho": "JDQ4MTYyMiM1MSMkMiMkMCMkMDAkNDgxOTYxIzIxIyQxIyQ5IyQ3MiQ0NjEwMDIjODEjJDEjJDYjJDgz",
+            "sdrCnt": "1",
+            "emyDayYn": "N",
+            "emyNgtYn": "N",
+            "estbDd": "19970910",
+            "subjectInfo": [{
+                    "dgsbjtCd": 1,
+                    "dgsbjtPrSdrCnt": 0
+                },
+                {
+                    "dgsbjtCd": 2,
+                    "dgsbjtPrSdrCnt": 0
+                },
+                {
+                    "dgsbjtCd": 3,
+                    "dgsbjtPrSdrCnt": 1
+                }
+            ]
+        },
+        {
+            "addr": "인천광역시 부평구 부평문화로130번길 48 (부평동)",
+            "clCd": 31,
+            "yadmNm": "제민의원",
+            "telno": "032-524-9778",
+            "distance": 818.4442795853324,
+            "xPos": 126.7309635,
+            "yPos": 37.4918061,
+            "ykiho": "JDQ4MTYyMiM1MSMkMiMkMCMkMDAkMzgxOTYxIzIxIyQxIyQ1IyQ4MiQyNjEwMDIjNTEjJDEjJDIjJDgz",
+            "sdrCnt": "1",
+            "emyDayYn": "N",
+            "emyNgtYn": "N",
+            "estbDd": "19850305",
+            "subjectInfo": [{
+                    "dgsbjtCd": 1,
+                    "dgsbjtPrSdrCnt": 0
+                },
+                {
+                    "dgsbjtCd": 4,
+                    "dgsbjtPrSdrCnt": 1
+                },
+                {
+                    "dgsbjtCd": 11,
+                    "dgsbjtPrSdrCnt": 0
+                }
+            ]
+        },
+        {
+            "addr": "인천광역시 부평구 부영로 11 3,4층 (부평동, 광현빌딩)",
+            "clCd": 31,
+            "yadmNm": "부광의원",
+            "telno": "032-514-7214",
+            "distance": 822.1421213671781,
+            "xPos": 126.7175534,
+            "yPos": 37.4862487,
+            "ykiho": "JDQ4MTYyMiM1MSMkMiMkMCMkMDAkMzgxNzAyIzMxIyQxIyQ3IyQ4MiQyNjE4MzIjODEjJDEjJDYjJDgz",
+            "sdrCnt": "0",
+            "emyDayYn": "N",
+            "emyNgtYn": "N",
+            "estbDd": "19930729",
+            "subjectInfo": [{
+                    "dgsbjtCd": 1,
+                    "dgsbjtPrSdrCnt": 0
+                },
+                {
+                    "dgsbjtCd": 8,
+                    "dgsbjtPrSdrCnt": 0
+                },
+                {
+                    "dgsbjtCd": 11,
+                    "dgsbjtPrSdrCnt": 0
+                },
+                {
+                    "dgsbjtCd": 14,
+                    "dgsbjtPrSdrCnt": 0
+                },
+                {
+                    "dgsbjtCd": 15,
+                    "dgsbjtPrSdrCnt": 0
+                }
+            ]
+        },
+        {
+            "addr": "인천광역시 부평구 부일로 11 203,204호 (부평동, 아이앤비아파트)",
+            "clCd": 31,
+            "yadmNm": "미소진의원",
+            "telno": "032-525-7222",
+            "distance": 835.3276648901316,
+            "xPos": 126.731542,
+            "yPos": 37.490697,
+            "ykiho": "JDU4MTI3MSM1MSMkMiMkMCMkMDAkMzgxOTYxIzIxIyQxIyQ1IyQ4OSQ0NjE0ODEjNjEjJDEjJDgjJDgz",
+            "sdrCnt": "0",
+            "emyDayYn": "N",
+            "emyNgtYn": "N",
+            "estbDd": "20061031",
+            "subjectInfo": [{
+                    "dgsbjtCd": 1,
+                    "dgsbjtPrSdrCnt": 0
+                },
+                {
+                    "dgsbjtCd": 4,
+                    "dgsbjtPrSdrCnt": 0
+                },
+                {
+                    "dgsbjtCd": 5,
+                    "dgsbjtPrSdrCnt": 0
+                },
+                {
+                    "dgsbjtCd": 11,
+                    "dgsbjtPrSdrCnt": 0
+                },
+                {
+                    "dgsbjtCd": 13,
+                    "dgsbjtPrSdrCnt": 0
+                },
+                {
+                    "dgsbjtCd": 14,
+                    "dgsbjtPrSdrCnt": 0
+                },
+                {
+                    "dgsbjtCd": 15,
+                    "dgsbjtPrSdrCnt": 0
+                }
+            ]
+        },
+        {
+            "addr": "인천광역시 부평구 동수로 125 (부개동)",
+            "clCd": 31,
+            "yadmNm": "꾸러기소아청소년과의원",
+            "telno": "032-522-8575",
+            "distance": 859.593781898982,
+            "xPos": 126.7326286,
+            "yPos": 37.4850372,
+            "ykiho": "JDQ4MTYyMiM1MSMkMiMkMCMkMDAkNTgxOTYxIzMxIyQxIyQzIyQ3MiQ0NjEwMDIjNzEjJDEjJDgjJDgz",
+            "sdrCnt": "1",
+            "emyDayYn": "N",
+            "emyNgtYn": "N",
+            "estbDd": "20031125",
+            "subjectInfo": [{
+                    "dgsbjtCd": 1,
+                    "dgsbjtPrSdrCnt": 0
+                },
+                {
+                    "dgsbjtCd": 11,
+                    "dgsbjtPrSdrCnt": 1
+                },
+                {
+                    "dgsbjtCd": 13,
+                    "dgsbjtPrSdrCnt": 0
+                },
+                {
+                    "dgsbjtCd": 23,
+                    "dgsbjtPrSdrCnt": 0
+                }
+            ]
+        },
+        {
+            "addr": "인천광역시 부평구 부평대로 66 (부평동)",
+            "clCd": 31,
+            "yadmNm": "부평정형외과신경외과의원",
+            "telno": "032-523-3788",
+            "distance": 862.1070732388002,
+            "xPos": 126.7228427,
+            "yPos": 37.4973333,
+            "ykiho": "JDQ4MTYyMiM1MSMkMiMkMCMkMDAkNDgxMTkxIzIxIyQxIyQ1IyQ4OSQyNjE0ODEjNjEjJDEjJDQjJDgz",
+            "sdrCnt": "2",
+            "emyDayYn": "N",
+            "emyNgtYn": "N",
+            "estbDd": "19990426",
+            "subjectInfo": [{
+                    "dgsbjtCd": 1,
+                    "dgsbjtPrSdrCnt": 0
+                },
+                {
+                    "dgsbjtCd": 5,
+                    "dgsbjtPrSdrCnt": 1
+                },
+                {
+                    "dgsbjtCd": 6,
+                    "dgsbjtPrSdrCnt": 1
+                },
+                {
+                    "dgsbjtCd": 8,
+                    "dgsbjtPrSdrCnt": 0
+                },
+                {
+                    "dgsbjtCd": 15,
+                    "dgsbjtPrSdrCnt": 0
+                }
+            ]
+        },
+        {
+            "addr": "인천광역시 부평구 안남로 5 2,3,4,5,8층 (부평동)",
+            "clCd": 31,
+            "yadmNm": "동수성모의원",
+            "telno": "032-518-5511",
+            "distance": 870.7420707289765,
+            "xPos": 126.7170722,
+            "yPos": 37.4852821,
+            "ykiho": "JDQ4MTYyMiM1MSMkMiMkMCMkMDAkNDgxOTYxIzIxIyQxIyQ5IyQ5MiQzNjE4MzIjNzEjJDEjJDgjJDgz",
+            "sdrCnt": "1",
+            "emyDayYn": "N",
+            "emyNgtYn": "N",
+            "estbDd": "20181123",
+            "subjectInfo": [{
+                    "dgsbjtCd": 1,
+                    "dgsbjtPrSdrCnt": 0
+                },
+                {
+                    "dgsbjtCd": 4,
+                    "dgsbjtPrSdrCnt": 1
+                },
+                {
+                    "dgsbjtCd": 5,
+                    "dgsbjtPrSdrCnt": 0
+                },
+                {
+                    "dgsbjtCd": 11,
+                    "dgsbjtPrSdrCnt": 0
+                },
+                {
+                    "dgsbjtCd": 13,
+                    "dgsbjtPrSdrCnt": 0
+                },
+                {
+                    "dgsbjtCd": 15,
+                    "dgsbjtPrSdrCnt": 0
+                },
+                {
+                    "dgsbjtCd": 23,
+                    "dgsbjtPrSdrCnt": 0
+                }
+            ]
+        },
+        {
+            "addr": "인천광역시 부평구 부흥로294번길 4 5층 (부평동, 추인타워)",
+            "clCd": 31,
+            "yadmNm": "유앤항외과의원",
+            "telno": "032-518-7175",
+            "distance": 892.300027696972,
+            "xPos": 126.7242883,
+            "yPos": 37.4982125,
+            "ykiho": "JDQ4MTYyMiM1MSMkMiMkMCMkMDAkNDgxMTkxIzExIyQxIyQzIyQxMyQyNjE4MzIjODEjJDEjJDYjJDgz",
+            "sdrCnt": "1",
+            "emyDayYn": "N",
+            "emyNgtYn": "N",
+            "estbDd": "20030607",
+            "subjectInfo": [{
+                    "dgsbjtCd": 1,
+                    "dgsbjtPrSdrCnt": 0
+                },
+                {
+                    "dgsbjtCd": 4,
+                    "dgsbjtPrSdrCnt": 1
+                }
+            ]
+        },
+        {
+            "addr": "인천광역시 부평구 경인로1024번길 42 (부개동)",
+            "clCd": 31,
+            "yadmNm": "제일성심의원",
+            "telno": "032-519-9493",
+            "distance": 914.980996449943,
+            "xPos": 126.7331267,
+            "yPos": 37.4850473,
+            "ykiho": "JDQ4MTYyMiM1MSMkMiMkMCMkMDAkNDgxNzAyIzMxIyQxIyQ3IyQ4MiQyNjE0ODEjNjEjJDEjJDgjJDgz",
+            "sdrCnt": "1",
+            "emyDayYn": "N",
+            "emyNgtYn": "N",
+            "estbDd": "20010618",
+            "subjectInfo": [{
+                    "dgsbjtCd": 1,
+                    "dgsbjtPrSdrCnt": 0
+                },
+                {
+                    "dgsbjtCd": 5,
+                    "dgsbjtPrSdrCnt": 0
+                },
+                {
+                    "dgsbjtCd": 9,
+                    "dgsbjtPrSdrCnt": 1
+                },
+                {
+                    "dgsbjtCd": 11,
+                    "dgsbjtPrSdrCnt": 0
+                }
+            ]
+        },
+        {
+            "addr": "인천광역시 부평구 장제로 117 (부평동)",
+            "clCd": 28,
+            "yadmNm": "인천노인전문병원",
+            "telno": "032-506-6262",
+            "distance": 924.1363327566586,
+            "xPos": 126.7298484,
+            "yPos": 37.4959959,
+            "ykiho": "JDQ4MTYyMiM1MSMkMSMkMCMkOTkkNTgxMzUxIzUxIyQxIyQxIyQ2MiQzNjEwMDIjNjEjJDEjJDgjJDgz",
+            "sdrCnt": "2",
+            "emyDayYn": "N",
+            "emyNgtYn": "N",
+            "estbDd": "20071115",
+            "subjectInfo": [{
+                    "dgsbjtCd": 1,
+                    "dgsbjtPrSdrCnt": 0
+                },
+                {
+                    "dgsbjtCd": 6,
+                    "dgsbjtPrSdrCnt": 1
+                },
+                {
+                    "dgsbjtCd": 18,
+                    "dgsbjtPrSdrCnt": 0
+                },
+                {
+                    "dgsbjtCd": 80,
+                    "dgsbjtPrSdrCnt": 0
+                }
+            ]
+        },
+        {
+            "addr": "인천광역시 부평구 부흥로 281-1 (부평동)",
+            "clCd": 31,
+            "yadmNm": "자애내과의원",
+            "telno": "032-529-1002",
+            "distance": 947.0127440342844,
+            "xPos": 126.7232312,
+            "yPos": 37.4987988,
+            "ykiho": "JDQ4MTYyMiM1MSMkMiMkMCMkMDAkNTgxOTYxIzUxIyQyIyQxIyQwMCQ0NjE0ODEjNTEjJDEjJDYjJDgz",
+            "sdrCnt": "1",
+            "emyDayYn": "N",
+            "emyNgtYn": "N",
+            "estbDd": "20040414",
+            "subjectInfo": [{
+                    "dgsbjtCd": 1,
+                    "dgsbjtPrSdrCnt": 1
+                },
+                {
+                    "dgsbjtCd": 2,
+                    "dgsbjtPrSdrCnt": 0
+                },
+                {
+                    "dgsbjtCd": 11,
+                    "dgsbjtPrSdrCnt": 0
+                },
+                {
+                    "dgsbjtCd": 13,
+                    "dgsbjtPrSdrCnt": 0
+                },
+                {
+                    "dgsbjtCd": 14,
+                    "dgsbjtPrSdrCnt": 0
+                },
+                {
+                    "dgsbjtCd": 15,
+                    "dgsbjtPrSdrCnt": 0
+                }
+            ]
+        },
+        {
+            "addr": "인천광역시 부평구 부평대로 75 (부평동)",
+            "clCd": 31,
+            "yadmNm": "한화생명(주)인천부속의원",
+            "telno": "032-520-8466",
+            "distance": 948.7364728671563,
+            "xPos": 126.7218782,
+            "yPos": 37.4981766,
+            "ykiho": "JDU4MTI3MSM1MSMkMiMkMCMkMDAkMzgxNzAyIzQxIyQyIyQ3IyQwMCQzNjE0ODEjNjEjJDEjJDAjJDgz",
+            "sdrCnt": "1",
+            "emyDayYn": "N",
+            "emyNgtYn": "N",
+            "estbDd": "20050520",
+            "subjectInfo": [{
+                "dgsbjtCd": 1,
+                "dgsbjtPrSdrCnt": 0
+            }]
+        },
+        {
+            "addr": "인천광역시 부평구 충선로 21 (부평동)",
+            "clCd": 31,
+            "yadmNm": "우리의원",
+            "telno": "032-507-0061",
+            "distance": 977.7389761159806,
+            "xPos": 126.732419,
+            "yPos": 37.4924516,
+            "ykiho": "JDU4MTI3MSM1MSMkMiMkMCMkMDAkMzgxMzUxIzExIyQxIyQ3IyQ2MiQzNjEyMjIjNTEjJDEjJDYjJDgz",
+            "sdrCnt": "1",
+            "emyDayYn": "N",
+            "emyNgtYn": "N",
+            "estbDd": "20041019",
+            "subjectInfo": [{
+                    "dgsbjtCd": 1,
+                    "dgsbjtPrSdrCnt": 0
+                },
+                {
+                    "dgsbjtCd": 5,
+                    "dgsbjtPrSdrCnt": 0
+                },
+                {
+                    "dgsbjtCd": 6,
+                    "dgsbjtPrSdrCnt": 0
+                },
+                {
+                    "dgsbjtCd": 11,
+                    "dgsbjtPrSdrCnt": 0
+                },
+                {
+                    "dgsbjtCd": 13,
+                    "dgsbjtPrSdrCnt": 0
+                },
+                {
+                    "dgsbjtCd": 14,
+                    "dgsbjtPrSdrCnt": 0
+                },
+                {
+                    "dgsbjtCd": 15,
+                    "dgsbjtPrSdrCnt": 0
+                }
+            ]
+        },
+        {
+            "addr": "인천광역시 부평구 장제로 129 (부평동)",
+            "clCd": 28,
+            "yadmNm": "올리브요양병원",
+            "telno": "032-523-7771",
+            "distance": 988.5528484585604,
+            "xPos": 126.7299234,
+            "yPos": 37.497096,
+            "ykiho": "JDQ4MTYyMiM1MSMkMSMkMCMkOTkkNTgxMzUxIzMxIyQxIyQzIyQ3OSQzNjE4MzIjNjEjJDEjJDAjJDgz",
+            "sdrCnt": "3",
+            "emyDayYn": "N",
+            "emyNgtYn": "N",
+            "estbDd": "20121005",
+            "subjectInfo": [{
+                    "dgsbjtCd": 1,
+                    "dgsbjtPrSdrCnt": 0
+                },
+                {
+                    "dgsbjtCd": 4,
+                    "dgsbjtPrSdrCnt": 2
+                },
+                {
+                    "dgsbjtCd": 5,
+                    "dgsbjtPrSdrCnt": 0
+                },
+                {
+                    "dgsbjtCd": 6,
+                    "dgsbjtPrSdrCnt": 0
+                },
+                {
+                    "dgsbjtCd": 21,
+                    "dgsbjtPrSdrCnt": 1
+                },
+                {
+                    "dgsbjtCd": 23,
+                    "dgsbjtPrSdrCnt": 0
+                }
+            ]
+        },
+        {
+            "addr": "인천광역시 부평구 부흥로 264 (부평동, 동아웰빙타운)",
+            "clCd": 31,
+            "yadmNm": "서울드림내과의원",
+            "telno": "032-719-7123",
+            "distance": 992.219488904214,
+            "xPos": 126.7211007,
+            "yPos": 37.4983356,
+            "ykiho": "JDU4MTI3MSM1MSMkMiMkMCMkMDAkNDgxOTYxIzUxIyQxIyQ1IyQxMyQzNjEyMjIjODEjJDEjJDIjJDgz",
+            "sdrCnt": "1",
+            "emyDayYn": "N",
+            "emyNgtYn": "N",
+            "estbDd": "20170406",
+            "subjectInfo": [{
+                "dgsbjtCd": 1,
+                "dgsbjtPrSdrCnt": 1
+            }]
+        }
+    ];
+
+    // 지도 초기화
+    const map = $('#map').initMap();
+
+    // 현재위치
+    map.currentLocation(true);
+    // map.currentLocation(flag); (flag == true) 현재위치에 마크 삽입
+
+    // 지도에 병원 데이터 추가 exData : exData 형태
+    map.setHospData(exData);
+
+    // 지도에 병원 데이터 삭제 (ykiho)
+    map.delHospDataYkiho('JDQ4MTg4MSM1MSMkMSMkMCMkOTkkMzgxMzUxIzMxIyQxIyQ3IyQ2MiQzNjE0ODEjNjEjJDEjJDgjJDgz');
+
+    // 맵 보여지는 영역 변경 이벤트 (확대, 축소, 이동시 발생)
+    map.boundChangeEnd = function(mapIns) {
+        console.log('지도 영역 변경');
+        // console.log(mapIns.radius); // 반경
+        // console.log(mapIns.centerLat); // 중심 위도
+        // console.log(mapIns.centerLng); // 중심 경도
+    };
+
+    // $('#test').append(map.centerLat, map.centerLng);
+
+    // 위도 경도로 센터 위치 설정
+    // map.setCenterLatLon(33.450701, 126.570667);
+
+    // 팝업 닫기
+    // map.clearInfoPop();
+
+    // 마커 전부 삭제
+    // map.clearAll();
+</script>
 
 </html>
