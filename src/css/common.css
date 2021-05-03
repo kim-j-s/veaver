@@ -4883,16 +4883,6 @@
 	/* // 달력 */
 
 
-	/* 차트 */
-
-		.chart-ele{
-			padding: 0 22px;
-		}
-		#chart-canvas {height: 400px;}
-		#canvas {height: 400px;}
-
-	/* 차트 */
-
 	/* 진료과목 리스트 */
 
 		.box-chk-list-wrap{
@@ -5244,10 +5234,15 @@
 	}
 
 	/* chart-ele */
+	
+	#chart-canvas {height: 400px;}
+	#canvas {height: 400px;}
+
 	.chart-ele {
-		background-color: rgba(75,0,255,.05);
-		text-align: center;
+		padding: 0 22px;
 		margin-top: 50px;
+		text-align: center;
+		/*background-color: rgba(75,0,255,.05);*/
 	}
 	.chart-ele .chart-tit {
 		display: inline-block;

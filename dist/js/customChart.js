@@ -31,14 +31,23 @@
                         display: false,
                     },
                     scales: {
+                        xAxes: [{
+                            gridLines : {
+                                drawOnChartArea: false,
+                            },
+                        }],
                         yAxes: [{
                             ticks: {
+                                display: false,
                                 stepSize: 2,
                             },
                             afterDataLimits(scale) {
                                 scale.min -= 2;
                                 scale.max += 2;
-                            }
+                            },
+                            gridLines : {
+                                drawOnChartArea: false,
+                            },
                         }],
                     },
                     layout: {
@@ -98,9 +107,13 @@
                     type: "line",
                     data: [],
                     fill: false,
-                    borderColor: 'rgba(0, 0, 0, 1)',
+                    borderColor: 'rgba(5, 107, 255, 1)',
                     lineTension: 0,
-                    borderWidth: 1,
+                    borderWidth: 3,
+                    pointBorderWidth: 7,
+                    pointHoverBorderWidth: 7,
+                    hitRadius: 7,
+                    pointBackgroundColor: 'rgba(5, 107, 255, 1)',
                 });
 
                 obj.data.forEach(function (v) {
@@ -114,13 +127,22 @@
                     responsive: true,
                     maintainAspectRatio: false,
                     scales: {
+                        xAxes: [{
+                            gridLines : {
+                                drawOnChartArea: false,
+                            },
+                        }],
                         yAxes: [{
                             ticks: {
+                                display: false,
                                 stepSize: 0.2,
                             },
                             afterDataLimits(scale) {
                                 scale.max += 0.2;
-                            }
+                            },
+                            gridLines : {
+                                drawOnChartArea: false,
+                            },
                         }],
                     },
                     layout: {
@@ -143,13 +165,13 @@
                     label: "좌",
                     data: [],
                     fill: false,
-                    borderColor: 'rgba(91, 155, 213, 0.5)',
+                    borderColor: 'rgba(255, 192, 0, 1)',
                     lineTension: 0,
                     borderWidth: 3,
                     pointBorderWidth: 10,
                     pointHoverBorderWidth: 10,
                     hitRadius: 10,
-                    pointBackgroundColor: 'rgba(91, 155, 213, 0.5)',
+                    pointBackgroundColor: 'rgba(255, 192, 0, 1)',
                 });
 
                 config.data.datasets.push({
@@ -157,13 +179,13 @@
                     label: "우",
                     data: [],
                     fill: false,
-                    borderColor: 'rgba(112, 173, 71, 0.5)',
+                    borderColor: 'rgba(89, 233, 222, 1)',
                     lineTension: 0,
                     borderWidth: 3,
                     pointBorderWidth: 10,
                     pointHoverBorderWidth: 10,
                     hitRadius: 10,
-                    pointBackgroundColor: 'rgba(112, 173, 71, 0.5)',
+                    pointBackgroundColor: 'rgba(89, 233, 222, 1)',
                 });
 
                 obj.data.forEach(function (v) {
@@ -182,16 +204,24 @@
                         display: false,
                     },
                     scales: {
+                        xAxes: [{
+                            gridLines : {
+                                drawOnChartArea: false,
+                            },
+                        }],
                         yAxes: [{
                             ticks: {
                                 display: false,
-                                beginAtZero: true,
                                 stepSize: 1,
                             },
                             // 최대값  + 1
                             afterDataLimits(scale) {
+                                scale.min -= 1;
                                 scale.max += 1;
-                            }
+                            },
+                            gridLines : {
+                                drawOnChartArea: false,
+                            },
                         }],
                     },
                     layout: {
@@ -245,9 +275,13 @@
                     data: [],
                     customTooltip: [],
                     fill: false,
-                    borderColor: 'rgba(0, 0, 0, 1)',
+                    borderColor: 'rgba(5, 107, 255, 1)',
                     lineTension: 0,
-                    borderWidth: 1,
+                    borderWidth: 3,
+                    pointBorderWidth: 7,
+                    pointHoverBorderWidth: 7,
+                    hitRadius: 7,
+                    pointBackgroundColor: 'rgba(5, 107, 255, 1)',
                 });
 
                 obj.data.forEach(function (v) {
