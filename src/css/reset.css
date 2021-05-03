@@ -25,7 +25,7 @@ address, i { font-style:normal; }
 table { border-collapse:collapse; table-layout:fixed; }
 img, select, input, button { vertical-align:middle; }
 em { font-style:normal; }
-input { font-family: 'Noto Sans Kr', sans-serif;}
+input { font-family: 'Noto Sans Kr', sans-serif; appearance: none;}
 label {cursor:pointer;}
 input::-webkit-input-placeholder,
 input::-webkit-input-placeholder,
@@ -62,7 +62,8 @@ select,
 a {
   -webkit-tap-highlight-color: rgba(0,0,0,0);
 }
-::-ms-clear {display:none;}
+::-ms-clear,
+::-ms-reveal {display:none;}
 
 input[type="button"],
 input[type="submit"] {
