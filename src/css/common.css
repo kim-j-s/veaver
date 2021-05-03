@@ -5138,15 +5138,17 @@
 		opacity: 1;
 		z-index: 10;
 	}
-	.wws-item.crt::after {
-		content: '';
-		display: inline-block;
+	.wws-item .btn-sub {
+		display: none;
 		vertical-align: top;
 		width: 30px;
 		height: 30px;
 		background: url(../img/ic_edit.svg) no-repeat;
 		background-size: contain;
 		margin-left: 5px;
+	}
+	.wws-item.crt .btn-sub {
+		display: inline-block;
 	}
 	.wws-item.r1 {
 		opacity: 1;

@@ -556,8 +556,9 @@ $.fn.wwsInit = function (params) {
 
 	if(params) {
 		$inner.empty();
-		params.forEach(function(v) {
-			$inner.append(`<span class="wws-item">${v}</span>`);
+		params.forEach(function(v,i) {
+			console.log(v,i);
+			$inner.append(`<span class="wws-item" index="${i}">${v}<button class="btn-sub"></button></span>`);
 		});
 	}
 

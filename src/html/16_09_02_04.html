@@ -97,16 +97,25 @@
 <script>
     // 탭
     $('.waterwheel-slide').wwsInit([
-        ['질환1',true], '질환2', '질환3', '질환4', '질환5'
+        '질환0', '질환1', '질환2', '질환3', '질환4'
     ]);
 
-    // 아이콘 삭제 .eq(인덱스번호) 0~
-    $('.waterwheel-slide .wws-item').eq(0).addClass('no-icon');
+    // 서브 버튼 삭제 (index 번호로 삭제)
+    $('.waterwheel-slide .wws-item').filter('[index=0]').find('.btn-sub').remove();
 
+    // 탭 체인지
     $('.waterwheel-slide').on('tabChange', function () {
-        var txt = $(this).find('.crt').text();
-        var idx = $(this).find('.crt').index();
+        var $target = $(this).find('.crt');
+        var txt = $target.text();
+        var idx = Number($target.attr('index'));
         console.log(txt, idx);
+    });
+
+    // 탭 서브버튼 클릭
+    $('.waterwheel-slide .btn-sub').on('click', function(){
+        var $target = $(this).parent();
+        var idx = Number($target.attr('index'));
+        console.log(idx);
     });
 </script>
 
