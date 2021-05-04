@@ -71,7 +71,7 @@
                                 yMax: obj.cfValue[3],
                                 //초과 영역 - 최소값
                                 yMin: obj.cfValue[2],
-                                backgroundColor: "rgba(215, 42, 43, 0.3)"
+                                backgroundColor: "rgba(12, 166, 234, 0.3)"
                             },
                             // 안정 영역
                             {
@@ -84,7 +84,7 @@
                                 yMax: obj.cfValue[2],
                                 //안정 영역 - 최소값
                                 yMin: obj.cfValue[1],
-                                backgroundColor: "rgba(246, 149, 26, 0.3)"
+                                backgroundColor: "rgba(255, 191, 0, 0.3)"
                             },
                             // 미달 영역
                             {
@@ -97,7 +97,7 @@
                                 yMax: obj.cfValue[1],
                                 //미달 영역 - 최소값
                                 yMin: obj.cfValue[0],
-                                backgroundColor: "rgba(146, 204, 85, 0.3)"
+                                backgroundColor: "rgba(255, 115, 0, 0.3)"
                             },
                         ]
                     }
@@ -139,6 +139,7 @@
                             },
                             afterDataLimits(scale) {
                                 scale.max += 0.2;
+                                scale.min -= 0.2;
                             },
                             gridLines : {
                                 drawOnChartArea: false,
