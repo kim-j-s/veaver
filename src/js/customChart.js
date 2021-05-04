@@ -46,7 +46,7 @@
                                  scale.max += 2;
                              },
                              gridLines : {
-                                 drawOnChartArea: false,
+                                 display: false,
                              },
                          }],
                      },
@@ -142,7 +142,7 @@
                                  scale.min -= 0.2;
                              },
                              gridLines : {
-                                 drawOnChartArea: false,
+                                display: false,
                              },
                          }],
                      },
@@ -221,7 +221,7 @@
                                  scale.max += 1;
                              },
                              gridLines : {
-                                 drawOnChartArea: false,
+                                 display: false,
                              },
                          }],
                      },
