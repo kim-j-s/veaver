@@ -5768,14 +5768,13 @@
 
 	/* chart-ele */
 	
-	#chart-canvas {height: 400px;}
-	#canvas {height: 400px;}
+	#chart-canvas {height: 250px;}
+	#canvas {height: auto;}
 
 	.chart-ele {
 		padding: 0 22px;
 		margin-top: 50px;
 		text-align: center;
-		/*background-color: rgba(75,0,255,.05);*/
 	}
 	.chart-ele .chart-tit {
 		display: inline-block;
