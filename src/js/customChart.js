@@ -1,4 +1,5 @@
 (function ($) {
+      
      var COLOR = {
          type1: "#fff",
          type2: "#000",
